@@ -36,6 +36,18 @@
       },
       "group": "test",
       "problemMatcher": []
+    },
+    {
+      "label": "Modal: InstantX FLUX IP-Adapter inference",
+      "type": "shell",
+      "command": "python -m modal run instantx_flux_ip_adapter/modal_inference.py",
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "test",
+      "problemMatcher": []
     }
   ]
 }
