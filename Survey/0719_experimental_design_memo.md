@@ -79,7 +79,7 @@ IP tokens [B, 128, 4096]
 SigLIP text pooled embedding을 다음과 같이 정의한다.
 
 $$
-e(p)=\operatorname{normalize}\big(E_T^{\text{pool}}(p)\big)
+e(p)=\mathrm{normalize}\big(E_T^{\text{pool}}(p)\big)
 $$
 
 Reference image의 raw SigLIP vision pooled embedding은 다음과 같다.
@@ -159,13 +159,13 @@ Action token span이 $S_A$, background token span이 $S_B$라면 다음 방향�
 
 $$
 d_A^{\text{raw}}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left(\frac{1}{|S_A|}\sum_{i\in S_A}h_i\right)
 $$
 
 $$
 d_B^{\text{raw}}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left(\frac{1}{|S_B|}\sum_{i\in S_B}h_i\right)
 $$
 
@@ -219,7 +219,7 @@ SigLIP text affine head를 $g_T(h)=W_T h+b_T$라고 하면 action basis는 다�
 
 $$
 d_A^{\text{head}}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left(
 g_T\left(
 \frac{1}{|S_A|}\sum_{i\in S_A}h_i
@@ -231,7 +231,7 @@ Background도 동일하게 구성한다.
 
 $$
 d_B^{\text{head}}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left(
 g_T\left(
 \frac{1}{|S_B|}\sum_{i\in S_B}h_i
@@ -368,7 +368,7 @@ Action contribution은 다음과 같다.
 
 $$
 d_A^{\Delta}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left[
 e(\text{“a spotted dog running in a snowy field”})
 -e(\text{“a spotted dog in a snowy field”})
@@ -379,7 +379,7 @@ Background contribution은 다음과 같다.
 
 $$
 d_B^{\Delta}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left[
 e(\text{“a spotted dog running in a snowy field”})
 -e(\text{“a spotted dog running”})
@@ -390,7 +390,7 @@ Action과 background를 한 번에 제거하고 싶다면 joint difference를 �
 
 $$
 d_{AB}^{\Delta}
-=\operatorname{normalize}
+=\mathrm{normalize}
 \left[
 e(\text{“a spotted dog running in a snowy field”})
 -e(\text{“a spotted dog”})
