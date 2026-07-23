@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orthogonalization-instantx-ip-adapter"
+version = "0.1.0"
+description = "Training-free pooled-space and attention-routing experiments for InstantX FLUX IP-Adapter"
+requires-python = ">=3.10"
+dependencies = [
+  "accelerate==1.10.0",
+  "diffusers==0.35.2",
+  "huggingface-hub==0.34.3",
+  "modal==1.4.3",
+  "pillow==11.3.0",
+  "torch==2.7.1",
+  "transformers==4.54.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["orthogonalization_instantx_ip_adapter*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

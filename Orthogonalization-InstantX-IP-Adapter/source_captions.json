@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "references": {
+    "cat2_00": {
+      "source_behavior": "sitting",
+      "source_background": "on a wood floor"
+    },
+    "cat_03": {
+      "source_behavior": "sitting",
+      "source_background": "on dry leaves"
+    },
+    "dog2_04": {
+      "source_behavior": "lying",
+      "source_background": "on a street"
+    },
+    "dog3_04": {
+      "source_behavior": "running",
+      "source_background": "on a rocky beach"
+    },
+    "dog5_02": {
+      "source_behavior": "lying",
+      "source_background": "on a grey sofa"
+    },
+    "dog6_02": {
+      "source_behavior": "sitting",
+      "source_background": "against a solid orange background"
+    },
+    "dog7_03": {
+      "source_behavior": "running",
+      "source_background": "on the beach"
+    },
+    "dog8_04": {
+      "source_behavior": "lying",
+      "source_background": "on a blanket"
+    },
+    "dog_02": {
+      "source_behavior": "sitting",
+      "source_background": "against an orange wall"
+    },
+    "PA_white_cat_background": {
+      "source_behavior": "walking",
+      "source_background": "through green grass"
+    }
+  }
+}
