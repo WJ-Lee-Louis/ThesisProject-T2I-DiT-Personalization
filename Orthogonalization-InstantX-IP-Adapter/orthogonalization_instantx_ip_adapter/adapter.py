@@ -24,6 +24,27 @@ ORTHOGONALIZATION_MODES = {"off", "local", "factorial"}
 
 
 @dataclass(frozen=True)
+class TextDirectionSet:
+    """One named prompt-contrast set contributing rows to a shared SVD."""
+
+    mode: str
+    prompts: PromptSet
+    include_behavior: bool = True
+    include_background: bool = True
+    include_interaction: bool = False
+    label: Optional[str] = None
+
+    def __post_init__(self) -> None:
+        _validate_direction_set(
+            mode=self.mode,
+            prompts=self.prompts,
+            include_behavior=self.include_behavior,
+            include_background=self.include_background,
+            label=self.label,
+        )
+
+
+@dataclass(frozen=True)
 class OrthogonalizationRequest:
     """Per-generation settings for editing the SigLIP visual pooled vector."""
 
@@ -35,6 +56,8 @@ class OrthogonalizationRequest:
     include_interaction: bool = False
     restore_norm: bool = True
     relative_tolerance: float = 1e-3
+    primary_label: Optional[str] = None
+    additional_direction_sets: tuple[TextDirectionSet, ...] = ()
 
     def __post_init__(self) -> None:
         if self.mode not in ORTHOGONALIZATION_MODES:
@@ -42,27 +65,120 @@ class OrthogonalizationRequest:
             raise ValueError(f"mode must be one of: {choices}")
         if not math.isfinite(self.strength) or not 0.0 <= self.strength <= 1.0:
             raise ValueError("strength must be finite and in [0, 1]")
+        if not isinstance(self.additional_direction_sets, tuple):
+            raise TypeError("additional_direction_sets must be a tuple")
+        if not all(
+            isinstance(direction_set, TextDirectionSet)
+            for direction_set in self.additional_direction_sets
+        ):
+            raise TypeError(
+                "additional_direction_sets must contain TextDirectionSet values"
+            )
         if self.mode == "off":
+            if self.primary_label is not None or self.additional_direction_sets:
+                raise ValueError(
+                    "direction labels/sets are not valid when orthogonalization is off"
+                )
             return
         if self.prompts is None:
             raise ValueError("prompts are required when orthogonalization is enabled")
-        if not self.include_behavior and not self.include_background:
-            raise ValueError(
-                "at least one of include_behavior/include_background must be enabled"
+        _validate_direction_set(
+            mode=self.mode,
+            prompts=self.prompts,
+            include_behavior=self.include_behavior,
+            include_background=self.include_background,
+            label=self.primary_label,
+        )
+
+        labels = [
+            label
+            for label in (
+                self.primary_label,
+                *(value.label for value in self.additional_direction_sets),
             )
-        if self.mode == "factorial" and any(
-            value is None
-            for value in (
-                self.prompts.object_behavior,
-                self.prompts.object_background,
-                self.prompts.object_behavior_background,
-            )
-        ):
-            raise ValueError("factorial mode requires all four counterfactual prompts")
+            if label is not None
+        ]
+        if len(labels) != len(set(labels)):
+            raise ValueError("direction-set labels must be unique")
 
     @property
     def enabled(self) -> bool:
         return self.mode != "off"
+
+
+def _validate_direction_set(
+    *,
+    mode: str,
+    prompts: PromptSet,
+    include_behavior: bool,
+    include_background: bool,
+    label: Optional[str],
+) -> None:
+    if mode not in ORTHOGONALIZATION_MODES - {"off"}:
+        raise ValueError("direction-set mode must be local or factorial")
+    if not isinstance(prompts, PromptSet):
+        raise TypeError("direction-set prompts must be a PromptSet")
+    if not include_behavior and not include_background:
+        raise ValueError(
+            "at least one of include_behavior/include_background must be enabled"
+        )
+    if label is not None and (not isinstance(label, str) or not label.strip()):
+        raise ValueError("direction-set label must be a non-empty string or None")
+    if mode == "factorial" and any(
+        value is None
+        for value in (
+            prompts.object_behavior,
+            prompts.object_background,
+            prompts.object_behavior_background,
+        )
+    ):
+        raise ValueError("factorial mode requires all four counterfactual prompts")
+
+
+def _build_direction_set(
+    direction_set: TextDirectionSet,
+    embedding_by_prompt: dict[str, torch.Tensor],
+) -> ContrastDirections:
+    def get(prompt: Optional[str]):
+        return None if prompt is None else embedding_by_prompt[prompt]
+
+    prompts = direction_set.prompts
+    if direction_set.mode == "factorial":
+        factorial = build_factorial_directions(
+            get(prompts.object_only),
+            get(prompts.object_behavior),
+            get(prompts.object_background),
+            get(prompts.object_behavior_background),
+            include_interaction=direction_set.include_interaction,
+        )
+        retained_indices = []
+        if direction_set.include_behavior:
+            retained_indices.append(0)
+        if direction_set.include_background:
+            retained_indices.append(1)
+        if direction_set.include_interaction:
+            retained_indices.append(2)
+        result = ContrastDirections(
+            values=factorial.values[retained_indices],
+            names=tuple(factorial.names[index] for index in retained_indices),
+        )
+    else:
+        result = build_local_directions(
+            get(prompts.object_only),
+            object_behavior=get(prompts.object_behavior),
+            object_background=get(prompts.object_background),
+            object_behavior_background=get(prompts.object_behavior_background),
+            include_behavior=direction_set.include_behavior,
+            include_background=direction_set.include_background,
+            include_joint=direction_set.include_interaction,
+        )
+
+    if direction_set.label is None:
+        return result
+    return ContrastDirections(
+        values=result.values,
+        names=tuple(f"{direction_set.label}/{name}" for name in result.names),
+    )
 
 
 class OrthogonalizedIPAdapterMixin:
@@ -247,49 +363,46 @@ class OrthogonalizedIPAdapterMixin:
 
     def _build_text_directions(self, request: OrthogonalizationRequest):
         assert request.prompts is not None
-        prompt_values = [
-            request.prompts.object_only,
-            request.prompts.object_behavior,
-            request.prompts.object_background,
-            request.prompts.object_behavior_background,
-        ]
-        present_prompts = [value for value in prompt_values if value is not None]
+        direction_sets = (
+            TextDirectionSet(
+                mode=request.mode,
+                prompts=request.prompts,
+                include_behavior=request.include_behavior,
+                include_background=request.include_background,
+                include_interaction=request.include_interaction,
+                label=request.primary_label,
+            ),
+            *request.additional_direction_sets,
+        )
+        present_prompts = list(
+            dict.fromkeys(
+                prompt
+                for direction_set in direction_sets
+                for prompt in (
+                    direction_set.prompts.object_only,
+                    direction_set.prompts.object_behavior,
+                    direction_set.prompts.object_background,
+                    direction_set.prompts.object_behavior_background,
+                )
+                if prompt is not None
+            )
+        )
         encoded = self._encode_siglip_text_pool(present_prompts)
         embedding_by_prompt = dict(zip(present_prompts, encoded))
 
-        def get(prompt: Optional[str]):
-            return None if prompt is None else embedding_by_prompt[prompt]
-
-        if request.mode == "factorial":
-            factorial = build_factorial_directions(
-                get(request.prompts.object_only),
-                get(request.prompts.object_behavior),
-                get(request.prompts.object_background),
-                get(request.prompts.object_behavior_background),
-                include_interaction=request.include_interaction,
-            )
-            retained_indices = []
-            if request.include_behavior:
-                retained_indices.append(0)
-            if request.include_background:
-                retained_indices.append(1)
-            if request.include_interaction:
-                retained_indices.append(2)
-            return ContrastDirections(
-                values=factorial.values[retained_indices],
-                names=tuple(factorial.names[index] for index in retained_indices),
-            )
-
-        return build_local_directions(
-            get(request.prompts.object_only),
-            object_behavior=get(request.prompts.object_behavior),
-            object_background=get(request.prompts.object_background),
-            object_behavior_background=get(
-                request.prompts.object_behavior_background
+        built_sets = [
+            _build_direction_set(direction_set, embedding_by_prompt)
+            for direction_set in direction_sets
+        ]
+        return ContrastDirections(
+            values=torch.cat(
+                [directions.values for directions in built_sets], dim=0
             ),
-            include_behavior=request.include_behavior,
-            include_background=request.include_background,
-            include_joint=request.include_interaction,
+            names=tuple(
+                name
+                for directions in built_sets
+                for name in directions.names
+            ),
         )
 
     @torch.inference_mode()
@@ -337,10 +450,20 @@ class OrthogonalizedIPAdapterMixin:
             "enabled": True,
             "mode": request.mode,
             "strength": request.strength,
+            "direction_set_count": 1 + len(request.additional_direction_sets),
             "direction_names": list(directions.names),
+            "input_direction_count": result.basis_diagnostics.direction_count,
+            "direction_cosine_matrix": _tensor_to_python(
+                directions.values @ directions.values.transpose(0, 1)
+            ),
             "basis_rank": result.basis_diagnostics.retained_rank,
+            "dropped_rank": result.basis_diagnostics.dropped_rank,
+            "basis_threshold": result.basis_diagnostics.threshold,
             "singular_values": _tensor_to_python(
                 result.basis_diagnostics.singular_values
+            ),
+            "relative_singular_values": _tensor_to_python(
+                result.basis_diagnostics.relative_singular_values
             ),
             "original_norm": _tensor_to_python(
                 result.projection_diagnostics.original_norm
@@ -399,4 +522,5 @@ __all__ = [
     "ORTHOGONALIZATION_MODES",
     "OrthogonalizationRequest",
     "OrthogonalizedIPAdapterMixin",
+    "TextDirectionSet",
 ]

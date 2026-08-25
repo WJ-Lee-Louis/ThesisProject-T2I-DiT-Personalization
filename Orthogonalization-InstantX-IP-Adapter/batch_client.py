@@ -21,6 +21,7 @@ if str(EXPERIMENT_ROOT) not in sys.path:
 
 from orthogonalization_instantx_ip_adapter.batch_config import (
     BatchGenerationConfig,
+    SOURCE_CAPTION_CONDITIONS,
 )
 from orthogonalization_instantx_ip_adapter.batch_manifest import (
     DEFAULT_REFERENCE_ROOT,
@@ -86,6 +87,8 @@ def build_parser() -> argparse.ArgumentParser:
             "combined",
             "sa_projection",
             "sa_combined",
+            "st_projection",
+            "st_combined",
         ),
     )
     submit.add_argument("--batch-id")
@@ -99,7 +102,7 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=DEFAULT_SOURCE_CAPTIONS_PATH,
         help=(
-            "Reference caption JSON used by sa_projection/sa_combined "
+            "Reference caption JSON used by sa_* and st_* conditions "
             f"(default: {DEFAULT_SOURCE_CAPTIONS_PATH})"
         ),
     )
@@ -177,7 +180,7 @@ def command_preview(args: argparse.Namespace) -> int:
 def command_submit(args: argparse.Namespace) -> int:
     manifest = build_batch_manifest(args.reference_root)
     source_captions = None
-    if args.condition in {"sa_projection", "sa_combined"}:
+    if args.condition in SOURCE_CAPTION_CONDITIONS:
         source_captions = load_source_caption_manifest(
             args.source_captions,
             manifest,

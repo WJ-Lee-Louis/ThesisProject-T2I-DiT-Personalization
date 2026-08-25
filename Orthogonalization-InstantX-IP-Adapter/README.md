@@ -1,12 +1,15 @@
 # Orthogonalization InstantX FLUX IP-Adapter
 
-Training-free research overlay for the three interventions described in
-`0723_experimental_design_memo.md`, plus source-aware projection variants.
+Training-free research overlay for the interventions described in
+`0723_experimental_design_memo.md`, including target-, source-, and
+source-target pooled-space projection variants.
 
 - SigLIP pooled-space content projection
 - FLUX single-stream direct IP-to-text residual gate
 - Their combination
 - Reference-caption behavior/background projection, with or without the gate
+- One-SVD union of target-prompt and reference-caption directions, with or
+  without the gate
 
 The existing `instantx_flux_ip_adapter` package remains the untouched baseline.
 This package shares the Hugging Face weight cache but uses a separate Modal app,
@@ -54,8 +57,9 @@ python -m modal run Orthogonalization-InstantX-IP-Adapter/modal_inference.py `
 ```
 
 Each generated PNG receives a sidecar JSON containing the retained basis rank,
-edit norm, removed-component norm, input/output cosine, mask state, and the
-actual FLUX text-row length.
+source/target direction cosine matrix, singular-value diagnostics, edit norm,
+removed-component norm, input/output cosine, mask state, and the actual FLUX
+text-row length.
 
 ## Verification
 
@@ -76,15 +80,31 @@ the 9 fixed prompts into 90 unique jobs per condition, and commits each PNG and
 diagnostics file independently.
 
 The original conditions remain available as `baseline`, `projection`, `gate`,
-and `combined`. Source-aware experiments use separate condition names:
+and `combined`. Caption-aware experiments use separate condition names:
 
 - `sa_projection`: construct behavior/background directions from each
   reference caption and remove the factor required by the target prompt type.
 - `sa_combined`: apply the same source-aware projection plus the single-stream
   text-row gate.
+- `st_projection`: concatenate target-prompt and reference-caption contrast
+  rows, estimate one shared SVD basis, and project once.
+- `st_combined`: apply the same shared-basis projection plus the single-stream
+  text-row gate.
 
-The source-aware conditions require `source_captions.json`; the original four
-conditions neither load nor modify it.
+The `sa_*` and `st_*` conditions require `source_captions.json`; the original
+four conditions neither load nor modify it. The `st_*` path does not apply two
+sequential projections: it stacks all selected source and target directions
+before the existing orthogonalizer performs one SVD and one projection.
+
+From a VS Code CMD terminal opened at `C:\Users\82107\Downloads\AI_PROJECT`,
+deploy the updated worker and submit the two union conditions with distinct
+batch IDs:
+
+```bat
+python -m modal deploy Orthogonalization-InstantX-IP-Adapter\batch_modal.py
+python Orthogonalization-InstantX-IP-Adapter\batch_client.py submit --condition st_projection --source-captions Orthogonalization-InstantX-IP-Adapter\source_captions.json --batch-id dreambench-st-projection-lambda05 --orthogonalization-strength 0.5 --yes
+python Orthogonalization-InstantX-IP-Adapter\batch_client.py submit --condition st_combined --source-captions Orthogonalization-InstantX-IP-Adapter\source_captions.json --batch-id dreambench-st-combined-lambda05 --orthogonalization-strength 0.5 --yes
+```
 
 Start with a no-GPU preview:
 

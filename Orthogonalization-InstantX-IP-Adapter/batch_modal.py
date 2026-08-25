@@ -177,11 +177,11 @@ class BatchGenerator:
             )
 
         source_captions = None
-        if config.source_aware_projection_enabled:
+        if config.requires_source_captions:
             if source_caption_payload is None:
                 raise ValueError(
-                    "source_caption_payload is required for source-aware "
-                    "conditions"
+                    "source_caption_payload is required for source-aware or "
+                    "source-target conditions"
                 )
             source_captions = build_source_caption_manifest(
                 source_caption_payload,
@@ -196,8 +196,8 @@ class BatchGenerator:
                 )
         elif source_caption_payload is not None:
             raise ValueError(
-                "source_caption_payload is only valid for source-aware "
-                "conditions"
+                "source_caption_payload is only valid for source-aware or "
+                "source-target conditions"
             )
 
         batch_root = _safe_child(REMOTE_RESULTS_ROOT, config.batch_id)
@@ -498,6 +498,18 @@ def _request_to_dict(request) -> dict:
         "include_interaction": request.include_interaction,
         "restore_norm": request.restore_norm,
         "relative_tolerance": request.relative_tolerance,
+        "primary_label": request.primary_label,
+        "additional_direction_sets": [
+            {
+                "mode": direction_set.mode,
+                "include_behavior": direction_set.include_behavior,
+                "include_background": direction_set.include_background,
+                "include_interaction": direction_set.include_interaction,
+                "label": direction_set.label,
+                "prompts": asdict(direction_set.prompts),
+            }
+            for direction_set in request.additional_direction_sets
+        ],
         "prompts": None,
     }
     if request.prompts is not None:

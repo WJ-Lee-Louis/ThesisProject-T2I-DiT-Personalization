@@ -50,6 +50,8 @@ def test_condition_derives_intervention_flags(
     assert config.mask_single_text_rows is mask_single_text_rows
     assert config.target_projection_enabled is projection_enabled
     assert config.source_aware_projection_enabled is False
+    assert config.source_target_projection_enabled is False
+    assert config.requires_source_captions is False
 
 
 @pytest.mark.parametrize(
@@ -84,6 +86,36 @@ def test_source_aware_conditions_derive_independent_intervention_flags(
         config.source_aware_projection_enabled
         is source_aware_projection_enabled
     )
+    assert config.source_target_projection_enabled is False
+    assert config.requires_source_captions is True
+    assert config.mask_single_text_rows is mask_single_text_rows
+
+
+@pytest.mark.parametrize(
+    (
+        "condition",
+        "mask_single_text_rows",
+    ),
+    [
+        ("st_projection", False),
+        ("st_combined", True),
+    ],
+)
+def test_source_target_union_conditions_derive_independent_intervention_flags(
+    condition: str,
+    mask_single_text_rows: bool,
+) -> None:
+    config = BatchGenerationConfig(
+        batch_id="source-target-union",
+        condition=condition,
+        source_caption_digest="ab" * 32,
+    )
+
+    assert config.projection_enabled is True
+    assert config.target_projection_enabled is False
+    assert config.source_aware_projection_enabled is False
+    assert config.source_target_projection_enabled is True
+    assert config.requires_source_captions is True
     assert config.mask_single_text_rows is mask_single_text_rows
 
 
@@ -105,8 +137,34 @@ def test_source_aware_config_round_trips_with_caption_digest(
     assert serialized["source_caption_digest"] == "56" * 32
 
 
+@pytest.mark.parametrize("condition", ["st_projection", "st_combined"])
+def test_source_target_union_config_round_trips_with_caption_digest(
+    condition: str,
+) -> None:
+    config = BatchGenerationConfig(
+        batch_id=f"{condition}-run",
+        condition=condition,
+        expected_manifest_digest="12" * 32,
+        implementation_digest="34" * 32,
+        source_caption_digest="56" * 32,
+    )
+
+    serialized = json.loads(json.dumps(config.to_dict()))
+
+    assert BatchGenerationConfig.from_dict(serialized) == config
+    assert serialized["source_caption_digest"] == "56" * 32
+
+
 @pytest.mark.parametrize("condition", ["sa_projection", "sa_combined"])
 def test_source_aware_condition_requires_caption_digest(condition: str) -> None:
+    with pytest.raises(ValueError, match="source_caption_digest is required"):
+        BatchGenerationConfig(batch_id="batch", condition=condition)
+
+
+@pytest.mark.parametrize("condition", ["st_projection", "st_combined"])
+def test_source_target_union_condition_requires_caption_digest(
+    condition: str,
+) -> None:
     with pytest.raises(ValueError, match="source_caption_digest is required"):
         BatchGenerationConfig(batch_id="batch", condition=condition)
 

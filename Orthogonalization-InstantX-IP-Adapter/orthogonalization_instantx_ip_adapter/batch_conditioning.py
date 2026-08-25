@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Literal
 
-from .adapter import OrthogonalizationRequest
+from .adapter import OrthogonalizationRequest, TextDirectionSet
 from .batch_config import BatchGenerationConfig
 from .batch_manifest import BatchJob, PROMPT_SUFFIXES
 from .orthogonalization import PromptSet
@@ -22,7 +22,12 @@ class BatchConditioning:
 
     orthogonalization: OrthogonalizationRequest
     mask_single_text_rows: bool
-    basis_origin: Literal["none", "target_prompt", "reference_caption"]
+    basis_origin: Literal[
+        "none",
+        "target_prompt",
+        "reference_caption",
+        "source_target_union",
+    ]
     removed_factors: tuple[str, ...]
 
 
@@ -33,7 +38,7 @@ def build_batch_conditioning(
 ) -> BatchConditioning:
     """Build projection prompts and the single-stream row-gate flag.
 
-    The two interventions are selected by six non-overlapping experiment
+    The two interventions are selected by eight non-overlapping experiment
     conditions:
 
     * ``baseline``: neither intervention;
@@ -42,6 +47,9 @@ def build_batch_conditioning(
     * ``combined``: target-prompt projection plus the gate;
     * ``sa_projection``: reference-caption projection only;
     * ``sa_combined``: reference-caption projection plus the gate.
+    * ``st_projection``: target and reference-caption directions combined in
+      one SVD projection;
+    * ``st_combined``: the same single-SVD projection plus the gate.
 
     The original projection directions are target-local for a single
     behavior/background suffix and factorial for ``running on a street``.
@@ -60,7 +68,19 @@ def build_batch_conditioning(
     ):
         raise TypeError("source_caption must be a SourceCaptionRecord or None")
 
-    if config.target_projection_enabled:
+    if config.source_target_projection_enabled:
+        if source_caption is None:
+            raise ValueError(
+                "source_caption is required for source-target conditions"
+            )
+        request = _build_source_target_projection_request(
+            job,
+            source_caption=source_caption,
+            strength=config.orthogonalization_strength,
+        )
+        basis_origin = "source_target_union"
+        removed_factors = _target_factors(job.prompt_suffix)
+    elif config.target_projection_enabled:
         if source_caption is not None:
             raise ValueError(
                 "source_caption must not be supplied for target-local conditions"
@@ -86,7 +106,8 @@ def build_batch_conditioning(
     else:
         if source_caption is not None:
             raise ValueError(
-                "source_caption is only valid for source-aware conditions"
+                "source_caption is only valid for source-aware or "
+                "source-target conditions"
             )
         request = OrthogonalizationRequest(
             mode="off",
@@ -196,6 +217,36 @@ def _build_source_aware_projection_request(
         include_behavior="behavior" in factors,
         include_background="background" in factors,
         include_interaction=False,
+    )
+
+
+def _build_source_target_projection_request(
+    job: BatchJob,
+    *,
+    source_caption: SourceCaptionRecord,
+    strength: float,
+) -> OrthogonalizationRequest:
+    """Build target and source rows for one shared downstream SVD."""
+
+    target_request = _build_projection_request(job, strength=strength)
+    source_request = _build_source_aware_projection_request(
+        job,
+        source_caption=source_caption,
+        strength=strength,
+    )
+    assert source_request.prompts is not None
+    source_direction_set = TextDirectionSet(
+        mode=source_request.mode,
+        prompts=source_request.prompts,
+        include_behavior=source_request.include_behavior,
+        include_background=source_request.include_background,
+        include_interaction=source_request.include_interaction,
+        label="source",
+    )
+    return replace(
+        target_request,
+        primary_label="target",
+        additional_direction_sets=(source_direction_set,),
     )
 
 

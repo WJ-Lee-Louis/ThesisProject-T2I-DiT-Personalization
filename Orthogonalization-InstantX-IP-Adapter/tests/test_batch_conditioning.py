@@ -56,6 +56,17 @@ def _source_config(
     )
 
 
+def _source_target_config(
+    condition: str = "st_projection",
+) -> BatchGenerationConfig:
+    return BatchGenerationConfig(
+        batch_id=condition,
+        condition=condition,
+        orthogonalization_strength=0.73,
+        source_caption_digest="cd" * 32,
+    )
+
+
 @pytest.mark.parametrize(
     ("condition", "projection_enabled", "mask_enabled"),
     (
@@ -372,5 +383,194 @@ def test_source_caption_must_match_reference_stem_and_species() -> None:
         build_batch_conditioning(
             _job("running"),
             _source_config(),
+            _source_caption(species="cat", reference_stem="dog_01"),
+        )
+
+
+@pytest.mark.parametrize(
+    ("condition", "mask_enabled"),
+    (
+        ("st_projection", False),
+        ("st_combined", True),
+    ),
+)
+@pytest.mark.parametrize("prompt_suffix", PROMPT_SUFFIXES)
+def test_source_target_conditions_build_one_union_request_and_only_gate_differs(
+    condition: str,
+    mask_enabled: bool,
+    prompt_suffix: str,
+) -> None:
+    conditioning = build_batch_conditioning(
+        _job(prompt_suffix),
+        _source_target_config(condition),
+        _source_caption(),
+    )
+    request = conditioning.orthogonalization
+
+    assert request.enabled is True
+    assert request.strength == pytest.approx(0.73)
+    assert request.primary_label == "target"
+    assert len(request.additional_direction_sets) == 1
+    assert request.additional_direction_sets[0].label == "source"
+    assert conditioning.mask_single_text_rows is mask_enabled
+    assert conditioning.basis_origin == "source_target_union"
+
+
+@pytest.mark.parametrize(
+    "prompt_suffix",
+    tuple(
+        suffix
+        for suffix in PROMPT_SUFFIXES
+        if suffix not in {"on a street", "running on a street"}
+    ),
+)
+def test_source_target_behavior_target_unions_two_behavior_directions(
+    prompt_suffix: str,
+) -> None:
+    job = _job(prompt_suffix)
+    source_caption = _source_caption()
+    conditioning = build_batch_conditioning(
+        job,
+        _source_target_config(),
+        source_caption,
+    )
+    request = conditioning.orthogonalization
+    source = request.additional_direction_sets[0]
+
+    assert request.mode == "local"
+    assert request.prompts is not None
+    assert request.prompts.object_only == "a dog"
+    assert request.prompts.object_behavior == job.prompt
+    assert request.prompts.object_background is None
+    assert request.include_behavior is True
+    assert request.include_background is False
+
+    assert source.mode == "factorial"
+    assert source.prompts.object_only == source_caption.object_only
+    assert source.prompts.object_behavior == source_caption.object_behavior
+    assert source.prompts.object_background == source_caption.object_background
+    assert (
+        source.prompts.object_behavior_background
+        == source_caption.object_behavior_background
+    )
+    assert source.include_behavior is True
+    assert source.include_background is False
+    assert source.include_interaction is False
+    assert conditioning.removed_factors == ("behavior",)
+
+
+def test_source_target_background_target_unions_two_background_directions() -> None:
+    source_caption = _source_caption()
+    conditioning = build_batch_conditioning(
+        _job("on a street"),
+        _source_target_config(),
+        source_caption,
+    )
+    request = conditioning.orthogonalization
+    source = request.additional_direction_sets[0]
+
+    assert request.mode == "local"
+    assert request.prompts is not None
+    assert request.prompts.object_only == "a dog"
+    assert request.prompts.object_behavior is None
+    assert request.prompts.object_background == "a dog on a street"
+    assert request.include_behavior is False
+    assert request.include_background is True
+
+    assert source.mode == "factorial"
+    assert source.prompts.object_only == source_caption.object_only
+    assert source.prompts.object_behavior == source_caption.object_behavior
+    assert source.prompts.object_background == source_caption.object_background
+    assert (
+        source.prompts.object_behavior_background
+        == source_caption.object_behavior_background
+    )
+    assert source.include_behavior is False
+    assert source.include_background is True
+    assert source.include_interaction is False
+    assert conditioning.removed_factors == ("background",)
+
+
+def test_source_target_joint_target_unions_four_main_effect_directions() -> None:
+    source_caption = _source_caption()
+    conditioning = build_batch_conditioning(
+        _job("running on a street"),
+        _source_target_config(),
+        source_caption,
+    )
+    request = conditioning.orthogonalization
+    source = request.additional_direction_sets[0]
+
+    assert request.mode == "factorial"
+    assert request.prompts is not None
+    assert request.prompts.object_only == "a dog"
+    assert request.prompts.object_behavior == "a dog running"
+    assert request.prompts.object_background == "a dog on a street"
+    assert (
+        request.prompts.object_behavior_background
+        == "a dog running on a street"
+    )
+    assert request.include_behavior is True
+    assert request.include_background is True
+    assert request.include_interaction is False
+
+    assert source.mode == "factorial"
+    assert source.prompts.object_only == source_caption.object_only
+    assert source.prompts.object_behavior == source_caption.object_behavior
+    assert source.prompts.object_background == source_caption.object_background
+    assert (
+        source.prompts.object_behavior_background
+        == source_caption.object_behavior_background
+    )
+    assert source.include_behavior is True
+    assert source.include_background is True
+    assert source.include_interaction is False
+    assert conditioning.removed_factors == ("behavior", "background")
+
+
+def test_source_target_projection_is_identical_with_and_without_gate() -> None:
+    job = _job("running on a street")
+    source_caption = _source_caption()
+
+    projection = build_batch_conditioning(
+        job,
+        _source_target_config("st_projection"),
+        source_caption,
+    )
+    combined = build_batch_conditioning(
+        job,
+        _source_target_config("st_combined"),
+        source_caption,
+    )
+
+    assert projection.orthogonalization == combined.orthogonalization
+    assert projection.removed_factors == combined.removed_factors
+    assert projection.mask_single_text_rows is False
+    assert combined.mask_single_text_rows is True
+
+
+@pytest.mark.parametrize("condition", ["st_projection", "st_combined"])
+def test_source_target_conditions_require_a_source_caption(
+    condition: str,
+) -> None:
+    with pytest.raises(ValueError, match="source_caption is required"):
+        build_batch_conditioning(
+            _job("running"),
+            _source_target_config(condition),
+        )
+
+
+def test_source_target_caption_must_match_reference_stem_and_species() -> None:
+    with pytest.raises(ValueError, match="reference mismatch"):
+        build_batch_conditioning(
+            _job("running"),
+            _source_target_config(),
+            _source_caption(reference_stem="dog_99"),
+        )
+
+    with pytest.raises(ValueError, match="species"):
+        build_batch_conditioning(
+            _job("running"),
+            _source_target_config(),
             _source_caption(species="cat", reference_stem="dog_01"),
         )

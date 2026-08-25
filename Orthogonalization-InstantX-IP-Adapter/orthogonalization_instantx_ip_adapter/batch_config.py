@@ -15,7 +15,13 @@ BatchCondition = Literal[
     "combined",
     "sa_projection",
     "sa_combined",
+    "st_projection",
+    "st_combined",
 ]
+
+SOURCE_CAPTION_CONDITIONS = frozenset(
+    {"sa_projection", "sa_combined", "st_projection", "st_combined"}
+)
 
 _SAFE_BATCH_ID = re.compile(r"[A-Za-z0-9._-]+\Z")
 _HEX_DIGEST = re.compile(r"[0-9A-Fa-f]{64}\Z")
@@ -66,6 +72,8 @@ class BatchGenerationConfig:
             "combined",
             "sa_projection",
             "sa_combined",
+            "st_projection",
+            "st_combined",
         }
     )
 
@@ -87,7 +95,8 @@ class BatchGenerationConfig:
         if self.condition not in self._CONDITIONS:
             raise ValueError(
                 "condition must be one of: baseline, projection, gate, "
-                "combined, sa_projection, sa_combined"
+                "combined, sa_projection, sa_combined, st_projection, "
+                "st_combined"
             )
 
         self._validate_real(
@@ -141,21 +150,27 @@ class BatchGenerationConfig:
                 raise ValueError(
                     "source_caption_digest must be a 64-character SHA-256 hex digest"
                 )
-        if self.source_aware_projection_enabled:
+        if self.requires_source_captions:
             if source_caption_digest is None:
                 raise ValueError(
-                    "source_caption_digest is required for source-aware conditions"
+                    "source_caption_digest is required for source-aware or "
+                    "source-target conditions"
                 )
         elif source_caption_digest is not None:
             raise ValueError(
-                "source_caption_digest is only valid for source-aware conditions"
+                "source_caption_digest is only valid for source-aware conditions, "
+                "including source-target union conditions"
             )
 
     @property
     def projection_enabled(self) -> bool:
         """Whether pooled-space projection is active for this condition."""
 
-        return self.target_projection_enabled or self.source_aware_projection_enabled
+        return (
+            self.target_projection_enabled
+            or self.source_aware_projection_enabled
+            or self.source_target_projection_enabled
+        )
 
     @property
     def target_projection_enabled(self) -> bool:
@@ -170,10 +185,27 @@ class BatchGenerationConfig:
         return self.condition in {"sa_projection", "sa_combined"}
 
     @property
+    def source_target_projection_enabled(self) -> bool:
+        """Whether target and reference directions share one SVD basis."""
+
+        return self.condition in {"st_projection", "st_combined"}
+
+    @property
+    def requires_source_captions(self) -> bool:
+        """Whether the remote run requires per-reference source captions."""
+
+        return self.condition in SOURCE_CAPTION_CONDITIONS
+
+    @property
     def mask_single_text_rows(self) -> bool:
         """Whether direct single-stream IP residuals into text rows are masked."""
 
-        return self.condition in {"gate", "combined", "sa_combined"}
+        return self.condition in {
+            "gate",
+            "combined",
+            "sa_combined",
+            "st_combined",
+        }
 
     def to_dict(self) -> dict[str, object]:
         """Return the stable JSON-compatible representation."""

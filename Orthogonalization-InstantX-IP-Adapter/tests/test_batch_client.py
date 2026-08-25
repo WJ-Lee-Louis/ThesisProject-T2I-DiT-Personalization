@@ -71,9 +71,11 @@ def test_submit_requires_an_explicit_condition():
         "combined",
         "sa_projection",
         "sa_combined",
+        "st_projection",
+        "st_combined",
     ],
 )
-def test_submit_parser_exposes_all_six_non_conflicting_conditions(
+def test_submit_parser_exposes_all_eight_non_conflicting_conditions(
     condition: str,
 ) -> None:
     args = batch_client.build_parser().parse_args(
@@ -84,8 +86,11 @@ def test_submit_parser_exposes_all_six_non_conflicting_conditions(
     assert args.source_captions == DEFAULT_SOURCE_CAPTIONS_PATH
 
 
-@pytest.mark.parametrize("condition", ["sa_projection", "sa_combined"])
-def test_default_source_aware_batch_id_is_safe(
+@pytest.mark.parametrize(
+    "condition",
+    ["sa_projection", "sa_combined", "st_projection", "st_combined"],
+)
+def test_default_caption_aware_batch_id_is_safe(
     condition: str,
 ) -> None:
     value = batch_client.default_batch_id(condition)
@@ -247,8 +252,11 @@ def test_original_submit_conditions_do_not_load_or_upload_source_captions(
     assert caption_payload is None
 
 
-@pytest.mark.parametrize("condition", ["sa_projection", "sa_combined"])
-def test_source_aware_submit_validates_and_sends_caption_payload(
+@pytest.mark.parametrize(
+    "condition",
+    ["sa_projection", "sa_combined", "st_projection", "st_combined"],
+)
+def test_caption_aware_submit_validates_and_sends_caption_payload(
     condition: str,
     submit_harness,
 ) -> None:
