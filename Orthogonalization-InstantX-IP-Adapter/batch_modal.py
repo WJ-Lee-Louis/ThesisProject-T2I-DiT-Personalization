@@ -1,4 +1,4 @@
-"""Deployed Modal worker for one 10-reference by 9-prompt experiment batch."""
+"""Deployed Modal worker for the condition-aware 10-reference experiment."""
 
 from __future__ import annotations
 
@@ -25,8 +25,11 @@ from orthogonalization_instantx_ip_adapter.config import (
     BASE_MODEL_ID,
     BASE_MODEL_REVISION,
     BATCH_APP_NAME,
+    BATCH_GPU,
     BATCH_INPUTS_VOLUME_NAME,
+    BATCH_MAX_CONTAINERS,
     BATCH_RESULTS_VOLUME_NAME,
+    BATCH_SCALEDOWN_WINDOW_SECONDS,
     IMAGE_ENCODER_ID,
     IMAGE_ENCODER_REVISION,
     IP_ADAPTER_REPO_ID,
@@ -36,8 +39,11 @@ from orthogonalization_instantx_ip_adapter.config import (
 from orthogonalization_instantx_ip_adapter.implementation import (
     compute_batch_implementation_digest,
 )
+from orthogonalization_instantx_ip_adapter.prompt_catalog import (
+    PROMPT_CATALOG,
+    get_prompt_spec,
+)
 from shared.modal_runtime import (
-    DEFAULT_GPU,
     HF_SECRET_NAME,
     build_hf_cache_volume,
 )
@@ -46,6 +52,57 @@ from shared.modal_runtime import (
 REMOTE_INPUT_ROOT = Path("/inputs")
 REMOTE_RESULTS_ROOT = Path("/results")
 IMPLEMENTATION_DIGEST = compute_batch_implementation_digest(EXPERIMENT_ROOT)
+
+
+def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
+    if condition == "st_all_combined":
+        return tuple(
+            spec.suffix for spec in PROMPT_CATALOG if not spec.is_factorial
+        )
+    return tuple(spec.suffix for spec in PROMPT_CATALOG)
+
+
+def _select_jobs_for_condition(jobs, condition: str):
+    jobs = tuple(jobs)
+    if condition == "st_all_combined":
+        selected_items = []
+        redundant_items = []
+        for job in jobs:
+            destination = (
+                redundant_items
+                if get_prompt_spec(job.prompt_suffix).is_factorial
+                else selected_items
+            )
+            destination.append(job)
+        return tuple(selected_items), tuple(redundant_items)
+    return jobs, ()
+
+
+def _job_selection_metadata(jobs, condition: str) -> dict[str, object]:
+    jobs = tuple(jobs)
+    selected, redundant = _select_jobs_for_condition(jobs, condition)
+    selected_suffixes = _selected_prompt_suffixes(condition)
+    selected_suffix_set = frozenset(selected_suffixes)
+    redundant_suffixes = tuple(
+        spec.suffix
+        for spec in PROMPT_CATALOG
+        if spec.suffix not in selected_suffix_set
+    )
+    return {
+        "schema_version": 1,
+        "condition": condition,
+        "full_manifest_count": len(jobs),
+        "selected_job_count": len(selected),
+        "selected_prompt_suffixes": list(selected_suffixes),
+        "skipped_as_redundant_job_count": len(redundant),
+        "skipped_as_redundant_prompt_suffixes": list(redundant_suffixes),
+        "redundancy_reason": (
+            "O+A+B is identical to st_combined because matched union already "
+            "includes both source factors"
+            if redundant
+            else None
+        ),
+    }
 
 app = modal.App(BATCH_APP_NAME)
 hf_cache = build_hf_cache_volume()
@@ -80,14 +137,14 @@ image = (
 
 @app.cls(
     image=image,
-    gpu=DEFAULT_GPU,
-    max_containers=1,
+    gpu=BATCH_GPU,
+    max_containers=BATCH_MAX_CONTAINERS,
     retries=modal.Retries(
         max_retries=2,
         initial_delay=5.0,
         backoff_coefficient=2.0,
     ),
-    scaledown_window=300,
+    scaledown_window=BATCH_SCALEDOWN_WINDOW_SECONDS,
     startup_timeout=30 * 60,
     timeout=24 * 60 * 60,
     volumes={
@@ -130,7 +187,6 @@ class BatchGenerator:
             BatchGenerationConfig,
         )
         from orthogonalization_instantx_ip_adapter.batch_manifest import (
-            EXPECTED_JOB_COUNT,
             build_batch_manifest,
         )
         from orthogonalization_instantx_ip_adapter.inference import (
@@ -175,6 +231,15 @@ class BatchGenerator:
                 f"expected {config.expected_manifest_digest}, "
                 f"got {manifest.semantic_digest}"
             )
+        selected_jobs, _redundant_jobs = _select_jobs_for_condition(
+            manifest.jobs,
+            config.condition,
+        )
+        selection_metadata = _job_selection_metadata(
+            manifest.jobs,
+            config.condition,
+        )
+        selected_job_count = len(selected_jobs)
 
         source_captions = None
         if config.requires_source_captions:
@@ -206,6 +271,8 @@ class BatchGenerator:
         config_path = metadata_root / "config.json"
         manifest_path = metadata_root / "manifest.json"
         source_captions_path = metadata_root / "source_captions.json"
+        selection_path = metadata_root / "job_selection.json"
+        execution_path = metadata_root / "execution.json"
         status_path = metadata_root / "status.json"
 
         metadata_root.mkdir(parents=True, exist_ok=True)
@@ -225,6 +292,17 @@ class BatchGenerator:
 
         _atomic_write_json(config_path, config.to_dict())
         _atomic_write_json(manifest_path, manifest.to_dict())
+        _atomic_write_json(selection_path, selection_metadata)
+        _atomic_write_json(
+            execution_path,
+            {
+                "requested_gpu": BATCH_GPU,
+                "actual_gpu": _cuda_device_name(),
+                "max_containers": BATCH_MAX_CONTAINERS,
+                "scaledown_window_seconds": BATCH_SCALEDOWN_WINDOW_SECONDS,
+                "implementation_digest": IMPLEMENTATION_DIGEST,
+            },
+        )
         if source_captions is not None:
             _atomic_write_json(
                 source_captions_path,
@@ -234,7 +312,17 @@ class BatchGenerator:
             "batch_id": config.batch_id,
             "condition": config.condition,
             "state": "running",
-            "total_count": len(manifest.jobs),
+            "total_count": selected_job_count,
+            "full_manifest_count": len(manifest.jobs),
+            "selected_prompt_suffixes": selection_metadata[
+                "selected_prompt_suffixes"
+            ],
+            "skipped_as_redundant_count": selection_metadata[
+                "skipped_as_redundant_job_count"
+            ],
+            "skipped_as_redundant_prompt_suffixes": selection_metadata[
+                "skipped_as_redundant_prompt_suffixes"
+            ],
             "completed_count": 0,
             "generated_count": 0,
             "skipped_count": 0,
@@ -252,7 +340,7 @@ class BatchGenerator:
         current_job = None
 
         try:
-            for index, job in enumerate(manifest.jobs, start=1):
+            for index, job in enumerate(selected_jobs, start=1):
                 current_job = job
                 output_path = _safe_child(
                     batch_root,
@@ -281,7 +369,7 @@ class BatchGenerator:
                     _atomic_write_json(status_path, status)
                     results_volume.commit()
                     print(
-                        f"[{index}/{EXPECTED_JOB_COUNT}] skip "
+                        f"[{index}/{selected_job_count}] skip "
                         f"{job.output_relative_path}",
                         flush=True,
                     )
@@ -331,9 +419,27 @@ class BatchGenerator:
                         "height": config.height,
                     },
                     "conditioning": {
+                        "prompt_spec": get_prompt_spec(
+                            job.prompt_suffix
+                        ).to_dict(),
                         "basis_origin": conditioning.basis_origin,
                         "removed_factors": list(
                             conditioning.removed_factors
+                        ),
+                        "target_factors": list(
+                            conditioning.target_factors
+                        ),
+                        "source_factors": list(
+                            conditioning.source_factors
+                        ),
+                        "source_factor_policy": (
+                            "all"
+                            if config.all_source_factors_enabled
+                            else (
+                                "matched"
+                                if conditioning.source_factors
+                                else "none"
+                            )
                         ),
                         "source_caption": (
                             source_caption.to_dict()
@@ -376,7 +482,7 @@ class BatchGenerator:
                 _atomic_write_json(status_path, status)
                 results_volume.commit()
                 print(
-                    f"[{index}/{EXPECTED_JOB_COUNT}] saved "
+                    f"[{index}/{selected_job_count}] saved "
                     f"{job.output_relative_path}",
                     flush=True,
                 )
@@ -395,6 +501,13 @@ class BatchGenerator:
                 "completed_count": status["completed_count"],
                 "generated_count": status["generated_count"],
                 "skipped_count": status["skipped_count"],
+                "full_manifest_count": status["full_manifest_count"],
+                "skipped_as_redundant_count": status[
+                    "skipped_as_redundant_count"
+                ],
+                "selected_prompt_suffixes": status[
+                    "selected_prompt_suffixes"
+                ],
                 "manifest_digest": manifest.semantic_digest,
                 "source_caption_digest": config.source_caption_digest,
                 "remote_result_path": f"/{config.batch_id}",
@@ -417,6 +530,14 @@ class BatchGenerator:
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _cuda_device_name() -> str | None:
+    import torch
+
+    if not torch.cuda.is_available():
+        return None
+    return torch.cuda.get_device_name(0)
 
 
 def _safe_child(root: Path, relative_value: str) -> Path:

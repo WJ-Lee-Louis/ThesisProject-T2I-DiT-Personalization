@@ -11,6 +11,7 @@ from orthogonalization_instantx_ip_adapter.batch_manifest import (
     ReferenceRecord,
 )
 from orthogonalization_instantx_ip_adapter.source_captions import (
+    DEFAULT_SOURCE_CAPTIONS_PATH,
     SOURCE_CAPTION_SCHEMA_VERSION,
     build_source_caption_manifest,
     load_source_caption_manifest,
@@ -29,6 +30,16 @@ REFERENCE_SPECIES = (
     ("dog_02", "dog"),
     ("PA_white_cat_background", "cat"),
 )
+
+
+def test_checked_in_dog7_caption_uses_standing() -> None:
+    payload = json.loads(DEFAULT_SOURCE_CAPTIONS_PATH.read_text(encoding="utf-8"))
+
+    dog7 = payload["references"]["dog7_03"]
+    assert dog7 == {
+        "source_behavior": "standing",
+        "source_background": "on the beach",
+    }
 
 
 def _image_manifest() -> BatchManifest:

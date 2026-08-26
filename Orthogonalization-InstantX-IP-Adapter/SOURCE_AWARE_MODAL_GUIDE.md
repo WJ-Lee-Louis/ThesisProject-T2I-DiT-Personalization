@@ -53,7 +53,7 @@ Test-Path -LiteralPath $captionFile
 | `dog3_04` | `running` | `on a rocky beach` |
 | `dog5_02` | `lying` | `on a grey sofa` |
 | `dog6_02` | `sitting` | `against a solid orange background` |
-| `dog7_03` | `running` | `on the beach` |
+| `dog7_03` | `standing` | `on the beach` |
 | `dog8_04` | `lying` | `on a blanket` |
 | `cat_03` | `sitting` | `on dry leaves` |
 | `cat2_00` | `sitting` | `on a wood floor` |
@@ -97,7 +97,7 @@ prompts/reference: 9
 total jobs: 90
 Source caption 검증 완료
 references: 10
-semantic digest: 587f3d0c02cabf1f79d13cbfb1ac585ed4f21ed45fa5f54d0a9e001c85b91cb7
+semantic digest: 8d8f45a950c2b2669cca2b51d68b89047cf2c187bf2e83f9a1dfa57c50a41c84
 ```
 
 누락된 reference, 잘못된 species, 비어 있는 behavior/background가 있으면 여기서 중단되므로 오류를 수정한 후 다시 실행한다. 위 digest는 현재 확정 caption과 정확한 10개 reference 이미지 content hash에 대응한다.

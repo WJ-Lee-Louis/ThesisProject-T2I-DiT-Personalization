@@ -308,6 +308,16 @@ def test_source_target_union_reaches_orthogonalizer_in_one_call(
     ] == 2
     assert adapter.last_orthogonalization_diagnostics["basis_rank"] == 1
     assert adapter.last_orthogonalization_diagnostics["dropped_rank"] == 1
+    assert adapter.last_orthogonalization_diagnostics[
+        "direction_normalization"
+    ] == "l2_per_row"
+    assert len(
+        adapter.last_orthogonalization_diagnostics["direction_raw_norms"]
+    ) == 2
+    assert adapter.last_orthogonalization_diagnostics[
+        "projection_component_norm"
+    ] >= 0.0
+    assert adapter.last_orthogonalization_diagnostics["degenerate"] is False
     cosine_matrix = adapter.last_orthogonalization_diagnostics[
         "direction_cosine_matrix"
     ]

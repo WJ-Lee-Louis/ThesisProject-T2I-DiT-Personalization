@@ -161,6 +161,11 @@ def _build_direction_set(
         result = ContrastDirections(
             values=factorial.values[retained_indices],
             names=tuple(factorial.names[index] for index in retained_indices),
+            raw_norms=(
+                factorial.raw_norms[retained_indices]
+                if factorial.raw_norms is not None
+                else None
+            ),
         )
     else:
         result = build_local_directions(
@@ -178,6 +183,7 @@ def _build_direction_set(
     return ContrastDirections(
         values=result.values,
         names=tuple(f"{direction_set.label}/{name}" for name in result.names),
+        raw_norms=result.raw_norms,
     )
 
 
@@ -403,6 +409,16 @@ class OrthogonalizedIPAdapterMixin:
                 for directions in built_sets
                 for name in directions.names
             ),
+            raw_norms=(
+                torch.cat(
+                    [directions.raw_norms for directions in built_sets], dim=0
+                )
+                if all(
+                    directions.raw_norms is not None
+                    for directions in built_sets
+                )
+                else None
+            ),
         )
 
     @torch.inference_mode()
@@ -452,6 +468,12 @@ class OrthogonalizedIPAdapterMixin:
             "strength": request.strength,
             "direction_set_count": 1 + len(request.additional_direction_sets),
             "direction_names": list(directions.names),
+            "direction_normalization": "l2_per_row",
+            "direction_raw_norms": (
+                _tensor_to_python(directions.raw_norms)
+                if directions.raw_norms is not None
+                else None
+            ),
             "input_direction_count": result.basis_diagnostics.direction_count,
             "direction_cosine_matrix": _tensor_to_python(
                 directions.values @ directions.values.transpose(0, 1)
@@ -468,11 +490,20 @@ class OrthogonalizedIPAdapterMixin:
             "original_norm": _tensor_to_python(
                 result.projection_diagnostics.original_norm
             ),
+            "projection_component_norm": _tensor_to_python(
+                result.projection_diagnostics.projection_component_norm
+            ),
             "output_norm": _tensor_to_python(
                 result.projection_diagnostics.output_norm
             ),
             "removed_component_norm": _tensor_to_python(
                 result.projection_diagnostics.removed_component_norm
+            ),
+            "adjusted_unit_norm": _tensor_to_python(
+                result.projection_diagnostics.adjusted_unit_norm
+            ),
+            "degenerate": _tensor_to_python(
+                result.projection_diagnostics.degenerate
             ),
             "edit_norm": _tensor_to_python(
                 result.projection_diagnostics.edit_norm
@@ -512,6 +543,11 @@ class OrthogonalizedIPAdapterMixin:
 
 
 def _tensor_to_python(value: torch.Tensor):
+    if value.dtype == torch.bool:
+        value = value.detach().cpu()
+        if value.numel() == 1:
+            return bool(value.item())
+        return value.tolist()
     value = value.detach().float().cpu()
     if value.numel() == 1:
         return float(value.item())

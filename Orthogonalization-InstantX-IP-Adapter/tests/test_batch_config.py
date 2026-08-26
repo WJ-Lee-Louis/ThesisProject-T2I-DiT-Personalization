@@ -51,6 +51,7 @@ def test_condition_derives_intervention_flags(
     assert config.target_projection_enabled is projection_enabled
     assert config.source_aware_projection_enabled is False
     assert config.source_target_projection_enabled is False
+    assert config.all_source_factors_enabled is False
     assert config.requires_source_captions is False
 
 
@@ -87,6 +88,7 @@ def test_source_aware_conditions_derive_independent_intervention_flags(
         is source_aware_projection_enabled
     )
     assert config.source_target_projection_enabled is False
+    assert config.all_source_factors_enabled is False
     assert config.requires_source_captions is True
     assert config.mask_single_text_rows is mask_single_text_rows
 
@@ -99,6 +101,7 @@ def test_source_aware_conditions_derive_independent_intervention_flags(
     [
         ("st_projection", False),
         ("st_combined", True),
+        ("st_all_combined", True),
     ],
 )
 def test_source_target_union_conditions_derive_independent_intervention_flags(
@@ -115,6 +118,9 @@ def test_source_target_union_conditions_derive_independent_intervention_flags(
     assert config.target_projection_enabled is False
     assert config.source_aware_projection_enabled is False
     assert config.source_target_projection_enabled is True
+    assert config.all_source_factors_enabled is (
+        condition == "st_all_combined"
+    )
     assert config.requires_source_captions is True
     assert config.mask_single_text_rows is mask_single_text_rows
 
@@ -137,7 +143,9 @@ def test_source_aware_config_round_trips_with_caption_digest(
     assert serialized["source_caption_digest"] == "56" * 32
 
 
-@pytest.mark.parametrize("condition", ["st_projection", "st_combined"])
+@pytest.mark.parametrize(
+    "condition", ["st_projection", "st_combined", "st_all_combined"]
+)
 def test_source_target_union_config_round_trips_with_caption_digest(
     condition: str,
 ) -> None:
@@ -161,7 +169,9 @@ def test_source_aware_condition_requires_caption_digest(condition: str) -> None:
         BatchGenerationConfig(batch_id="batch", condition=condition)
 
 
-@pytest.mark.parametrize("condition", ["st_projection", "st_combined"])
+@pytest.mark.parametrize(
+    "condition", ["st_projection", "st_combined", "st_all_combined"]
+)
 def test_source_target_union_condition_requires_caption_digest(
     condition: str,
 ) -> None:

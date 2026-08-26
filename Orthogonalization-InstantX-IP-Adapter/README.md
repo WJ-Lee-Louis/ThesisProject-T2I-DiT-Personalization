@@ -57,9 +57,9 @@ python -m modal run Orthogonalization-InstantX-IP-Adapter/modal_inference.py `
 ```
 
 Each generated PNG receives a sidecar JSON containing the retained basis rank,
-source/target direction cosine matrix, singular-value diagnostics, edit norm,
-removed-component norm, input/output cosine, mask state, and the actual FLUX
-text-row length.
+source/target direction cosine matrix, normalized-direction singular values,
+pre-normalization direction norms, projection/edit norms, input/output cosine,
+mask state, and the actual FLUX text-row length.
 
 ## Verification
 
@@ -76,8 +76,8 @@ dimensions, and scales.
 
 The animal dataset batch uses a separate deployed Modal class and named input
 and result Volumes. It validates exactly 7 dog plus 3 cat references, expands
-the 9 fixed prompts into 90 unique jobs per condition, and commits each PNG and
-diagnostics file independently.
+the structured 16-prompt catalog into 160 unique jobs per full condition, and
+commits each PNG and diagnostics file independently.
 
 The original conditions remain available as `baseline`, `projection`, `gate`,
 and `combined`. Caption-aware experiments use separate condition names:
@@ -90,21 +90,15 @@ and `combined`. Caption-aware experiments use separate condition names:
   rows, estimate one shared SVD basis, and project once.
 - `st_combined`: apply the same shared-basis projection plus the single-stream
   text-row gate.
+- `st_all_combined`: keep target directions prompt-matched, include both source
+  behavior/background directions in the same SVD, and apply the gate.
 
 The `sa_*` and `st_*` conditions require `source_captions.json`; the original
 four conditions neither load nor modify it. The `st_*` path does not apply two
 sequential projections: it stacks all selected source and target directions
-before the existing orthogonalizer performs one SVD and one projection.
-
-From a VS Code CMD terminal opened at `C:\Users\82107\Downloads\AI_PROJECT`,
-deploy the updated worker and submit the two union conditions with distinct
-batch IDs:
-
-```bat
-python -m modal deploy Orthogonalization-InstantX-IP-Adapter\batch_modal.py
-python Orthogonalization-InstantX-IP-Adapter\batch_client.py submit --condition st_projection --source-captions Orthogonalization-InstantX-IP-Adapter\source_captions.json --batch-id dreambench-st-projection-lambda05 --orthogonalization-strength 0.5 --yes
-python Orthogonalization-InstantX-IP-Adapter\batch_client.py submit --condition st_combined --source-captions Orthogonalization-InstantX-IP-Adapter\source_captions.json --batch-id dreambench-st-combined-lambda05 --orthogonalization-strength 0.5 --yes
-```
+before the existing orthogonalizer performs one SVD and one projection. The
+final `st_all_combined` batch generates only the 100 informative `O+A`/`O+B`
+jobs; its 60 `O+A+B` jobs are identical to `st_combined` and are not recomputed.
 
 Start with a no-GPU preview:
 
@@ -112,25 +106,38 @@ Start with a no-GPU preview:
 python Orthogonalization-InstantX-IP-Adapter\batch_client.py preview
 ```
 
-Deployment, asynchronous submission, status polling, recovery, and download
-commands are documented in [BATCH_MODAL_GUIDE.md](BATCH_MODAL_GUIDE.md).
+The final six-condition, lambda-1 experiment—including CMD deployment,
+submission, status, recovery, and download commands—is documented in
+[FINAL_16_PROMPT_MODAL_GUIDE.md](FINAL_16_PROMPT_MODAL_GUIDE.md).
+
+The earlier batch workflow is retained in
+[BATCH_MODAL_GUIDE.md](BATCH_MODAL_GUIDE.md) for historical reference.
 
 The two concurrent source-aware runs (90 + 90 images) are documented in
 [SOURCE_AWARE_MODAL_GUIDE.md](SOURCE_AWARE_MODAL_GUIDE.md).
 
-## Six-method comparison grids
+## Final comparison grids and basis diagnostics
 
-After all eight batch variants have been downloaded, create one 8-variant by
-9-prompt comparison PNG for each reference:
+The compositor renders the final six-method by 16-prompt experiment.  The
+six factorial `st_all_combined` columns reuse the mathematically identical
+`st_combined` images, so the optimized 100-image batch remains sufficient.
+Earlier comparison-grid outputs remain under `outputs/comparison_grids`.
 
 ```powershell
 python Orthogonalization-InstantX-IP-Adapter\create_comparison_grids.py
 ```
 
-The script validates the batch conditions, expected orthogonalization strengths,
-common generation settings, reference and caption digests, all 720 expected
-files, and their image dimensions before rendering. It writes ten
-`3066x3494` PNGs and `comparison_manifest.json` under
-`outputs/comparison_grids`. The final two rows compare target and source-aware
-projection at lambda 1.0 with the single-stream gate. To intentionally
-regenerate existing grids, add `--overwrite`.
+The script validates batch conditions, orthogonalization strength, common
+generation settings, reference/caption digests, required files, and image
+dimensions before rendering. To intentionally regenerate existing grids, add
+`--overwrite`.
+
+After downloading the batches, summarize the stored basis/SVD diagnostics
+without loading a model or using a GPU:
+
+```powershell
+python Orthogonalization-InstantX-IP-Adapter\summarize_basis_diagnostics.py <batch-directory> [<batch-directory> ...] --output-dir Orthogonalization-InstantX-IP-Adapter\outputs\basis_analysis_v2
+```
+
+This writes a per-image CSV and grouped JSON summaries by condition, prompt
+category, and semantic factors.

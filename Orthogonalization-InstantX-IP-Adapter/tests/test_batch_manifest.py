@@ -11,6 +11,12 @@ from orthogonalization_instantx_ip_adapter.batch_manifest import (
     build_reference_records,
     infer_species,
 )
+from orthogonalization_instantx_ip_adapter.prompt_catalog import (
+    PROMPT_CATALOG,
+    PROMPT_SPECS_BY_SUFFIX,
+    PromptSpec,
+    get_prompt_spec,
+)
 
 
 REFERENCE_NAMES = (
@@ -65,36 +71,112 @@ def test_infer_species_rejects_unknown_or_ambiguous_names(name: str) -> None:
         infer_species(name)
 
 
-def test_build_manifest_discovers_fixed_90_job_design(tmp_path: Path) -> None:
+def test_prompt_catalog_has_expected_order_and_factor_decompositions() -> None:
+    assert PROMPT_SUFFIXES == (
+        "flying",
+        "sleeping",
+        "playing the piano",
+        "holding an umbrella",
+        "eating watermelon",
+        "riding a skateboard",
+        "flying in the sky",
+        "sleeping in the snow",
+        "smiling",
+        "crying",
+        "playing the guitar on a stage",
+        "swimming in the pool",
+        "jumping over a wooden fence",
+        "reading a book on a sofa",
+        "on a stage",
+        "in the snow",
+    )
+    assert len(PROMPT_CATALOG) == len(PROMPT_SPECS_BY_SUFFIX) == 16
+
+    behavior = get_prompt_spec("playing the piano")
+    assert behavior.category == "object_related"
+    assert behavior.behavior == "playing the piano"
+    assert behavior.background is None
+    assert behavior.factors == ("behavior",)
+    assert behavior.is_factorial is False
+
+    factorial = get_prompt_spec("playing the guitar on a stage")
+    assert factorial.category == "complex"
+    assert factorial.behavior == "playing the guitar"
+    assert factorial.background == "on a stage"
+    assert factorial.factors == ("behavior", "background")
+    assert factorial.is_factorial is True
+
+    background = get_prompt_spec("in the snow")
+    assert background.category == "background_only"
+    assert background.behavior is None
+    assert background.background == "in the snow"
+    assert background.factors == ("background",)
+    assert background.is_factorial is False
+
+
+def test_relational_fence_prompt_is_decomposed_as_a_factorial_prompt() -> None:
+    spec = get_prompt_spec("jumping over a wooden fence")
+
+    assert spec.category == "complex"
+    assert spec.behavior == "jumping"
+    assert spec.background == "over a wooden fence"
+    assert spec.factors == ("behavior", "background")
+    assert spec.is_factorial is True
+
+
+def test_prompt_catalog_is_immutable_and_rejects_invalid_specs() -> None:
+    spec = get_prompt_spec("flying")
+
+    with pytest.raises((AttributeError, TypeError)):
+        spec.behavior = "sleeping"  # type: ignore[misc]
+    with pytest.raises(TypeError):
+        PROMPT_SPECS_BY_SUFFIX["new"] = spec  # type: ignore[index]
+    with pytest.raises(ValueError, match="Unknown prompt suffix"):
+        get_prompt_spec("unknown")
+    with pytest.raises(ValueError, match="composition"):
+        PromptSpec(
+            suffix="flying elsewhere",
+            category="single_behavior",
+            behavior="flying",
+        )
+    with pytest.raises(ValueError, match="category"):
+        PromptSpec(
+            suffix="flying",
+            category="unknown",  # type: ignore[arg-type]
+            behavior="flying",
+        )
+
+
+def test_build_manifest_discovers_fixed_160_job_design(tmp_path: Path) -> None:
     make_references(tmp_path)
     (tmp_path / "notes.txt").write_text("ignored", encoding="utf-8")
 
     manifest = build_batch_manifest(tmp_path)
 
     assert len(manifest.references) == 10
-    assert len(manifest.jobs) == EXPECTED_JOB_COUNT == 90
+    assert len(manifest.jobs) == EXPECTED_JOB_COUNT == 160
     assert sum(record.species == "dog" for record in manifest.references) == 7
     assert sum(record.species == "cat" for record in manifest.references) == 3
 
-    cat_running = next(
+    cat_flying = next(
         job
         for job in manifest.jobs
-        if job.reference_stem == "cat_03" and job.prompt_suffix == "running"
+        if job.reference_stem == "cat_03" and job.prompt_suffix == "flying"
     )
-    assert cat_running.prompt == "a cat running"
-    assert cat_running.prompt_slug == "running"
-    assert cat_running.output_relative_path == "cat_03/cat_03_running.png"
+    assert cat_flying.prompt == "a cat flying"
+    assert cat_flying.prompt_slug == "flying"
+    assert cat_flying.output_relative_path == "cat_03/cat_03_flying.png"
 
-    dog_street = next(
+    dog_complex = next(
         job
         for job in manifest.jobs
         if job.reference_stem == "dog_02"
-        and job.prompt_suffix == "running on a street"
+        and job.prompt_suffix == "playing the guitar on a stage"
     )
-    assert dog_street.prompt == "a dog running on a street"
+    assert dog_complex.prompt == "a dog playing the guitar on a stage"
     assert (
-        dog_street.output_relative_path
-        == "dog_02/dog_02_running_on_a_street.png"
+        dog_complex.output_relative_path
+        == "dog_02/dog_02_playing_the_guitar_on_a_stage.png"
     )
 
     assert tuple(
@@ -104,7 +186,7 @@ def test_build_manifest_discovers_fixed_90_job_design(tmp_path: Path) -> None:
     ) == PROMPT_SUFFIXES
     assert len(
         {job.output_relative_path.casefold() for job in manifest.jobs}
-    ) == 90
+    ) == 160
 
 
 def test_manifest_dataclasses_are_json_serializable(tmp_path: Path) -> None:
@@ -114,11 +196,13 @@ def test_manifest_dataclasses_are_json_serializable(tmp_path: Path) -> None:
     payload = manifest.to_dict()
 
     assert payload["reference_count"] == 10
-    assert payload["job_count"] == 90
+    assert payload["job_count"] == 160
+    assert payload["prompt_suffixes"] == list(PROMPT_SUFFIXES)
+    assert payload["prompt_specs"] == [spec.to_dict() for spec in PROMPT_CATALOG]
     assert len(payload["semantic_digest"]) == 64
     assert all(len(record["content_sha256"]) == 64 for record in payload["references"])
     assert len(payload["references"]) == 10
-    assert len(payload["jobs"]) == 90
+    assert len(payload["jobs"]) == 160
     assert json.loads(manifest.to_json()) == payload
     json.dumps(manifest.references[0].to_dict())
     json.dumps(manifest.jobs[0].to_dict())
@@ -153,6 +237,22 @@ def test_explicit_relative_paths_resolve_against_reference_root(
         Path(record.reference_path).is_absolute()
         for record in manifest.references
     )
+
+
+def test_discovered_relative_root_is_not_prefixed_twice(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    reference_root = tmp_path / "references"
+    reference_root.mkdir()
+    make_references(reference_root)
+    monkeypatch.chdir(tmp_path)
+
+    manifest = build_batch_manifest("references")
+
+    assert manifest.reference_root == str(reference_root.resolve())
+    assert len(manifest.references) == 10
+    assert all(Path(record.reference_path).is_file() for record in manifest.references)
 
 
 def test_missing_reference_file_is_rejected(tmp_path: Path) -> None:

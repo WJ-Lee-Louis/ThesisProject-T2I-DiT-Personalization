@@ -1,9 +1,10 @@
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
 
 import pytest
 
 import batch_client
+import batch_modal
 from orthogonalization_instantx_ip_adapter.batch_config import (
     BatchGenerationConfig,
 )
@@ -73,9 +74,10 @@ def test_submit_requires_an_explicit_condition():
         "sa_combined",
         "st_projection",
         "st_combined",
+        "st_all_combined",
     ],
 )
-def test_submit_parser_exposes_all_eight_non_conflicting_conditions(
+def test_submit_parser_exposes_all_nine_non_conflicting_conditions(
     condition: str,
 ) -> None:
     args = batch_client.build_parser().parse_args(
@@ -88,7 +90,13 @@ def test_submit_parser_exposes_all_eight_non_conflicting_conditions(
 
 @pytest.mark.parametrize(
     "condition",
-    ["sa_projection", "sa_combined", "st_projection", "st_combined"],
+    [
+        "sa_projection",
+        "sa_combined",
+        "st_projection",
+        "st_combined",
+        "st_all_combined",
+    ],
 )
 def test_default_caption_aware_batch_id_is_safe(
     condition: str,
@@ -115,6 +123,10 @@ def submit_harness(monkeypatch, tmp_path):
                 reference_stem="dog_01",
                 species="dog",
             ),
+        ),
+        jobs=(
+            SimpleNamespace(prompt_suffix="flying"),
+            SimpleNamespace(prompt_suffix="flying in the sky"),
         ),
         to_json=lambda: '{"test_manifest": true}',
     )
@@ -254,7 +266,13 @@ def test_original_submit_conditions_do_not_load_or_upload_source_captions(
 
 @pytest.mark.parametrize(
     "condition",
-    ["sa_projection", "sa_combined", "st_projection", "st_combined"],
+    [
+        "sa_projection",
+        "sa_combined",
+        "st_projection",
+        "st_combined",
+        "st_all_combined",
+    ],
 )
 def test_caption_aware_submit_validates_and_sends_caption_payload(
     condition: str,
@@ -291,3 +309,139 @@ def test_caption_aware_submit_validates_and_sends_caption_payload(
         captured["job_records"][0]["source_caption_digest"]
         == captions.semantic_digest
     )
+    selection = captured["job_records"][0]["job_selection"]
+    if condition == "st_all_combined":
+        assert selection["selected_job_count"] == 1
+        assert selection["skipped_as_redundant_job_count"] == 1
+    else:
+        assert selection["selected_job_count"] == 2
+        assert selection["skipped_as_redundant_job_count"] == 0
+
+
+def _catalog_jobs(reference_count: int = 10):
+    return tuple(
+        SimpleNamespace(prompt_suffix=spec.suffix)
+        for _ in range(reference_count)
+        for spec in batch_client.PROMPT_CATALOG
+    )
+
+
+@pytest.mark.parametrize(
+    "condition",
+    [
+        "baseline",
+        "projection",
+        "gate",
+        "combined",
+        "sa_projection",
+        "sa_combined",
+        "st_projection",
+        "st_combined",
+    ],
+)
+def test_normal_conditions_select_all_160_jobs(condition: str) -> None:
+    jobs = _catalog_jobs()
+
+    selected, redundant = batch_client._select_jobs_for_condition(
+        jobs,
+        condition,
+    )
+
+    assert len(selected) == 160
+    assert redundant == ()
+
+
+@pytest.mark.parametrize("module", [batch_client, batch_modal])
+def test_all_source_condition_skips_only_redundant_factorial_jobs(
+    module,
+) -> None:
+    jobs = _catalog_jobs()
+
+    selected, redundant = module._select_jobs_for_condition(
+        jobs,
+        "st_all_combined",
+    )
+
+    assert len(selected) == 100
+    assert len(redundant) == 60
+    assert {job.prompt_suffix for job in selected} == {
+        spec.suffix
+        for spec in batch_client.PROMPT_CATALOG
+        if not spec.is_factorial
+    }
+    assert {job.prompt_suffix for job in redundant} == {
+        spec.suffix
+        for spec in batch_client.PROMPT_CATALOG
+        if spec.is_factorial
+    }
+
+
+def test_selection_metadata_records_suffixes_and_redundant_jobs() -> None:
+    metadata = batch_modal._job_selection_metadata(
+        _catalog_jobs(),
+        "st_all_combined",
+    )
+
+    assert metadata["full_manifest_count"] == 160
+    assert metadata["selected_job_count"] == 100
+    assert metadata["skipped_as_redundant_job_count"] == 60
+    assert len(metadata["selected_prompt_suffixes"]) == 10
+    assert len(metadata["skipped_as_redundant_prompt_suffixes"]) == 6
+    assert metadata["redundancy_reason"]
+
+
+def test_download_count_prefers_remote_status_for_legacy_batches() -> None:
+    assert batch_client._resolve_expected_png_count(
+        {"total_count": 90},
+        {"condition": "baseline"},
+    ) == 90
+
+
+@pytest.mark.parametrize(
+    ("condition", "expected"),
+    [
+        ("baseline", 160),
+        ("st_combined", 160),
+        ("st_all_combined", 100),
+    ],
+)
+def test_download_count_falls_back_to_condition_aware_config(
+    condition: str,
+    expected: int,
+) -> None:
+    assert batch_client._resolve_expected_png_count(
+        None,
+        {"condition": condition},
+    ) == expected
+
+
+@pytest.mark.parametrize("value", [0, -1, True, 1.5, "100"])
+def test_download_count_rejects_invalid_remote_status(value) -> None:
+    with pytest.raises(ValueError, match="positive integer"):
+        batch_client._resolve_expected_png_count(
+            {"total_count": value},
+            {"condition": "st_all_combined"},
+        )
+
+
+def test_download_temporary_name_does_not_repeat_a_long_destination_name(
+    tmp_path: Path,
+) -> None:
+    destination = (
+        tmp_path
+        / "_metadata"
+        / "images"
+        / "PA_white_cat_background"
+        / (
+            "PA_white_cat_background_playing_the_guitar_"
+            "on_a_stage.json"
+        )
+    )
+
+    temporary = batch_client._download_temporary_path(destination)
+
+    assert temporary.parent == destination.parent
+    assert destination.name not in temporary.name
+    assert temporary.name.startswith(".download-")
+    assert temporary.name.endswith(".tmp")
+    assert len(temporary.name) == len(".download-") + 32 + len(".tmp")

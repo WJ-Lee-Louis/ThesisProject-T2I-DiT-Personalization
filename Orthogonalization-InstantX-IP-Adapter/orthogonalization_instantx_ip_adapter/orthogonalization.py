@@ -52,12 +52,20 @@ class ContrastDirections:
 
     values: Tensor
     names: Tuple[str, ...]
+    raw_norms: Optional[Tensor] = None
 
     def __post_init__(self) -> None:
         if self.values.ndim != 2:
             raise ValueError("values must have shape [direction_count, embedding_dim]")
         if self.values.shape[0] != len(self.names):
             raise ValueError("the number of names must match the number of directions")
+        if self.raw_norms is not None:
+            if self.raw_norms.ndim != 1:
+                raise ValueError("raw_norms must have shape [direction_count]")
+            if self.raw_norms.shape[0] != self.values.shape[0]:
+                raise ValueError(
+                    "raw_norms must match the number of contrast directions"
+                )
 
 
 @dataclass(frozen=True)
@@ -513,11 +521,17 @@ def _finalize_directions(
 ) -> ContrastDirections:
     if directions:
         values = torch.stack(tuple(directions), dim=0).float()
+        raw_norms = torch.linalg.vector_norm(values, dim=-1)
         if normalize_directions:
             values = normalize_fp32(values, eps=eps)
     else:
         values = torch.empty((0, embedding_dim), dtype=torch.float32, device=device)
-    return ContrastDirections(values=values, names=tuple(names))
+        raw_norms = torch.empty(0, dtype=torch.float32, device=device)
+    return ContrastDirections(
+        values=values,
+        names=tuple(names),
+        raw_norms=raw_norms,
+    )
 
 
 def _validate_float_tensor(name: str, value: Tensor) -> None:

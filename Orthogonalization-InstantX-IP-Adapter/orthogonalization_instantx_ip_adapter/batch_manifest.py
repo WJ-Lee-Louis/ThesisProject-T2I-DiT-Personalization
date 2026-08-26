@@ -1,4 +1,4 @@
-"""Deterministic manifest construction for the 90-image animal experiment."""
+"""Deterministic manifest construction for the 160-image animal experiment."""
 
 from __future__ import annotations
 
@@ -10,20 +10,14 @@ from pathlib import Path
 import re
 from typing import Iterable, Literal
 
+from .prompt_catalog import (
+    PROMPT_CATALOG,
+    PROMPT_SUFFIXES,
+    get_prompt_spec,
+)
+
 
 Species = Literal["dog", "cat"]
-
-PROMPT_SUFFIXES: tuple[str, ...] = (
-    "running",
-    "on a street",
-    "running on a street",
-    "sleeping",
-    "looking up",
-    "jumping",
-    "riding a bicycle",
-    "playing the guitar",
-    "reading a book",
-)
 
 EXPECTED_REFERENCE_COUNTS: dict[Species, int] = {
     "dog": 7,
@@ -98,7 +92,7 @@ class BatchJob:
 
 @dataclass(frozen=True, slots=True)
 class BatchManifest:
-    """The complete, validated 10-reference by 9-prompt experiment."""
+    """The complete, validated 10-reference by 16-prompt experiment."""
 
     reference_root: str
     references: tuple[ReferenceRecord, ...]
@@ -109,6 +103,7 @@ class BatchManifest:
         """Hash semantic inputs while ignoring machine-specific absolute paths."""
 
         canonical = {
+            "prompt_specs": [spec.to_dict() for spec in PROMPT_CATALOG],
             "references": [
                 {
                     "reference_stem": record.reference_stem,
@@ -143,6 +138,7 @@ class BatchManifest:
             "reference_count": len(self.references),
             "job_count": len(self.jobs),
             "prompt_suffixes": list(PROMPT_SUFFIXES),
+            "prompt_specs": [spec.to_dict() for spec in PROMPT_CATALOG],
             "references": [record.to_dict() for record in self.references],
             "jobs": [job.to_dict() for job in self.jobs],
         }
@@ -154,8 +150,7 @@ class BatchManifest:
 def prompt_slug(prompt_suffix: str) -> str:
     """Convert one fixed prompt suffix into its stable filename component."""
 
-    if prompt_suffix not in PROMPT_SUFFIXES:
-        raise ValueError(f"Unknown prompt suffix: {prompt_suffix!r}")
+    get_prompt_spec(prompt_suffix)
     return "_".join(prompt_suffix.split())
 
 
@@ -255,7 +250,7 @@ def build_batch_manifest_from_paths(
     *,
     reference_root: str | Path | None = None,
 ) -> BatchManifest:
-    """Build the fixed 90-job manifest from explicit local image paths."""
+    """Build the fixed 160-job manifest from explicit local image paths."""
 
     records = build_reference_records(
         reference_paths,
@@ -279,9 +274,12 @@ def build_batch_manifest_from_paths(
 def build_batch_manifest(
     reference_root: str | Path = DEFAULT_REFERENCE_ROOT,
 ) -> BatchManifest:
-    """Discover a configured directory and build its fixed 90-job manifest."""
+    """Discover a configured directory and build its fixed 160-job manifest."""
 
-    root = Path(reference_root).expanduser()
+    # Resolve before discovery so paths returned from a relative root are
+    # already absolute.  Otherwise ``build_reference_records`` would prefix
+    # the same relative root a second time.
+    root = Path(reference_root).expanduser().resolve()
     return build_batch_manifest_from_paths(
         discover_reference_images(root),
         reference_root=root,

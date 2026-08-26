@@ -17,10 +17,17 @@ BatchCondition = Literal[
     "sa_combined",
     "st_projection",
     "st_combined",
+    "st_all_combined",
 ]
 
 SOURCE_CAPTION_CONDITIONS = frozenset(
-    {"sa_projection", "sa_combined", "st_projection", "st_combined"}
+    {
+        "sa_projection",
+        "sa_combined",
+        "st_projection",
+        "st_combined",
+        "st_all_combined",
+    }
 )
 
 _SAFE_BATCH_ID = re.compile(r"[A-Za-z0-9._-]+\Z")
@@ -74,6 +81,7 @@ class BatchGenerationConfig:
             "sa_combined",
             "st_projection",
             "st_combined",
+            "st_all_combined",
         }
     )
 
@@ -96,7 +104,7 @@ class BatchGenerationConfig:
             raise ValueError(
                 "condition must be one of: baseline, projection, gate, "
                 "combined, sa_projection, sa_combined, st_projection, "
-                "st_combined"
+                "st_combined, st_all_combined"
             )
 
         self._validate_real(
@@ -188,7 +196,17 @@ class BatchGenerationConfig:
     def source_target_projection_enabled(self) -> bool:
         """Whether target and reference directions share one SVD basis."""
 
-        return self.condition in {"st_projection", "st_combined"}
+        return self.condition in {
+            "st_projection",
+            "st_combined",
+            "st_all_combined",
+        }
+
+    @property
+    def all_source_factors_enabled(self) -> bool:
+        """Whether both source-caption factors enter the union basis."""
+
+        return self.condition == "st_all_combined"
 
     @property
     def requires_source_captions(self) -> bool:
@@ -205,6 +223,7 @@ class BatchGenerationConfig:
             "combined",
             "sa_combined",
             "st_combined",
+            "st_all_combined",
         }
 
     def to_dict(self) -> dict[str, object]:

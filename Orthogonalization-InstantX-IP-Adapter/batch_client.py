@@ -25,9 +25,13 @@ from orthogonalization_instantx_ip_adapter.batch_config import (
 )
 from orthogonalization_instantx_ip_adapter.batch_manifest import (
     DEFAULT_REFERENCE_ROOT,
-    EXPECTED_JOB_COUNT,
+    EXPECTED_REFERENCE_COUNT,
     PROMPT_SUFFIXES,
     build_batch_manifest,
+)
+from orthogonalization_instantx_ip_adapter.prompt_catalog import (
+    PROMPT_CATALOG,
+    get_prompt_spec,
 )
 from orthogonalization_instantx_ip_adapter.config import (
     BATCH_APP_NAME,
@@ -48,10 +52,68 @@ DEFAULT_OUTPUT_ROOT = EXPERIMENT_ROOT / "outputs"
 JOB_RECORD_ROOT = EXPERIMENT_ROOT / ".modal_jobs"
 
 
+def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
+    """Return prompts that require generation for one experiment condition."""
+
+    if condition == "st_all_combined":
+        # On O+A+B prompts, all-source union is identical to matched union, so
+        # those images can be reused from st_combined without another GPU run.
+        return tuple(
+            spec.suffix for spec in PROMPT_CATALOG if not spec.is_factorial
+        )
+    return tuple(spec.suffix for spec in PROMPT_CATALOG)
+
+
+def _select_jobs_for_condition(jobs, condition: str):
+    jobs = tuple(jobs)
+    if condition == "st_all_combined":
+        selected_items = []
+        skipped_items = []
+        for job in jobs:
+            destination = (
+                skipped_items
+                if get_prompt_spec(job.prompt_suffix).is_factorial
+                else selected_items
+            )
+            destination.append(job)
+        selected = tuple(selected_items)
+        skipped = tuple(skipped_items)
+    else:
+        selected = jobs
+        skipped = ()
+    return selected, skipped
+
+
+def _job_selection_metadata(jobs, condition: str) -> dict[str, object]:
+    selected, skipped = _select_jobs_for_condition(jobs, condition)
+    selected_suffixes = _selected_prompt_suffixes(condition)
+    selected_suffix_set = frozenset(selected_suffixes)
+    skipped_suffixes = tuple(
+        spec.suffix
+        for spec in PROMPT_CATALOG
+        if spec.suffix not in selected_suffix_set
+    )
+    return {
+        "schema_version": 1,
+        "condition": condition,
+        "full_manifest_count": len(jobs),
+        "selected_job_count": len(selected),
+        "selected_prompt_suffixes": list(selected_suffixes),
+        "skipped_as_redundant_job_count": len(skipped),
+        "skipped_as_redundant_prompt_suffixes": list(skipped_suffixes),
+        "redundancy_reason": (
+            "O+A+B is identical to st_combined because matched union already "
+            "includes both source factors"
+            if skipped
+            else None
+        ),
+    }
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Submit and recover the 10-reference x 9-prompt InstantX "
+            "Submit and recover the 10-reference x 16-prompt InstantX "
             "orthogonalization experiment."
         )
     )
@@ -59,7 +121,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     preview = commands.add_parser(
         "preview",
-        help="Validate the local references and print the 90-job manifest.",
+        help="Validate the local references and print the 160-job manifest.",
     )
     preview.add_argument(
         "--reference-root",
@@ -75,7 +137,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     submit = commands.add_parser(
         "submit",
-        help="Upload the references and asynchronously submit one 90-image run.",
+        help="Upload the references and asynchronously submit one image run.",
     )
     submit.add_argument(
         "--condition",
@@ -89,6 +151,7 @@ def build_parser() -> argparse.ArgumentParser:
             "sa_combined",
             "st_projection",
             "st_combined",
+            "st_all_combined",
         ),
     )
     submit.add_argument("--batch-id")
@@ -156,7 +219,7 @@ def build_parser() -> argparse.ArgumentParser:
     download.add_argument(
         "--allow-partial",
         action="store_true",
-        help="Download even if fewer than 90 remote PNGs are present.",
+        help="Download even if fewer than the expected remote PNGs are present.",
     )
     download.set_defaults(handler=command_download)
     return parser
@@ -179,6 +242,10 @@ def command_preview(args: argparse.Namespace) -> int:
 
 def command_submit(args: argparse.Namespace) -> int:
     manifest = build_batch_manifest(args.reference_root)
+    job_selection = _job_selection_metadata(
+        manifest.jobs,
+        args.condition,
+    )
     source_captions = None
     if args.condition in SOURCE_CAPTION_CONDITIONS:
         source_captions = load_source_caption_manifest(
@@ -221,6 +288,17 @@ def command_submit(args: argparse.Namespace) -> int:
         f"  generation: seed={config.seed}, steps={config.steps}, "
         f"size={config.width}x{config.height}"
     )
+    print(
+        "  jobs selected: "
+        f"{job_selection['selected_job_count']}/"
+        f"{job_selection['full_manifest_count']}"
+    )
+    if job_selection["skipped_as_redundant_job_count"]:
+        print(
+            "  redundant jobs skipped: "
+            f"{job_selection['skipped_as_redundant_job_count']} "
+            "(factorial O+A+B prompts; reuse st_combined)"
+        )
     if source_captions is not None:
         print_source_caption_summary(
             source_captions,
@@ -282,6 +360,7 @@ def command_submit(args: argparse.Namespace) -> int:
             if source_captions is not None
             else None
         ),
+        "job_selection": job_selection,
         "config": config.to_dict(),
     }
     _write_job_record(record)
@@ -383,9 +462,39 @@ def command_download(args: argparse.Namespace) -> int:
     png_files = [
         entry for entry in files if entry.path.casefold().endswith(".png")
     ]
-    if len(png_files) != EXPECTED_JOB_COUNT and not args.allow_partial:
+    remote_status = _read_remote_metadata_json(
+        volume,
+        args.batch_id,
+        "status.json",
+    )
+    remote_config = _read_remote_metadata_json(
+        volume,
+        args.batch_id,
+        "config.json",
+    )
+    try:
+        expected_png_count = _resolve_expected_png_count(
+            remote_status,
+            remote_config,
+        )
+    except ValueError as error:
+        print(f"Remote batch metadata is inconsistent: {error}")
+        return 1
+
+    if expected_png_count is None and not args.allow_partial:
         print(
-            f"원격 PNG가 {len(png_files)}/{EXPECTED_JOB_COUNT}장입니다. "
+            "Could not determine the condition-aware expected image count "
+            "from remote status/config metadata. Use --allow-partial only "
+            "for an intentionally incomplete or legacy batch."
+        )
+        return 1
+    if (
+        expected_png_count is not None
+        and len(png_files) != expected_png_count
+        and not args.allow_partial
+    ):
+        print(
+            f"원격 PNG가 {len(png_files)}/{expected_png_count}장입니다. "
             "배치 완료 후 다시 실행하세요. 진행 중 결과가 꼭 필요하면 "
             "--allow-partial을 사용하세요."
         )
@@ -416,13 +525,17 @@ def command_download(args: argparse.Namespace) -> int:
     )
     for index, (entry, local_path) in enumerate(download_plan, start=1):
         local_path.parent.mkdir(parents=True, exist_ok=True)
-        temporary = local_path.with_name(
-            f".{local_path.name}.{uuid4().hex}.tmp"
-        )
-        with temporary.open("wb") as stream:
-            for chunk in volume.read_file(entry.path):
-                stream.write(chunk)
-        os.replace(temporary, local_path)
+        temporary = _download_temporary_path(local_path)
+        try:
+            with temporary.open("wb") as stream:
+                for chunk in volume.read_file(entry.path):
+                    stream.write(chunk)
+            os.replace(temporary, local_path)
+        finally:
+            # A dropped connection must not leave a partial file that looks
+            # resumable.  Keep the temporary basename short so long batch,
+            # reference, and prompt names stay below Windows MAX_PATH.
+            temporary.unlink(missing_ok=True)
         if index % 20 == 0 or index == len(download_plan):
             print(f"  {index}/{len(download_plan)}")
 
@@ -431,13 +544,23 @@ def command_download(args: argparse.Namespace) -> int:
     )
     print(f"다운로드 완료: {destination_root}")
     print(f"로컬 PNG 수: {local_png_count}")
-    if not args.allow_partial and local_png_count != EXPECTED_JOB_COUNT:
+    if (
+        not args.allow_partial
+        and expected_png_count is not None
+        and local_png_count != expected_png_count
+    ):
         print(
-            f"경고: 정확히 {EXPECTED_JOB_COUNT}장을 기대했지만 "
+            f"경고: 정확히 {expected_png_count}장을 기대했지만 "
             f"{local_png_count}장이 확인되었습니다."
         )
         return 1
     return 0
+
+
+def _download_temporary_path(local_path: Path) -> Path:
+    """Return a short same-directory path for an atomic downloaded file."""
+
+    return local_path.parent / f".download-{uuid4().hex}.tmp"
 
 
 def print_manifest_summary(manifest) -> None:
@@ -452,6 +575,16 @@ def print_manifest_summary(manifest) -> None:
     )
     print(f"  prompts/reference: {len(PROMPT_SUFFIXES)}")
     print(f"  total jobs: {len(manifest.jobs)}")
+    optimized = _job_selection_metadata(
+        manifest.jobs,
+        "st_all_combined",
+    )
+    print(
+        "  st_all_combined optimized jobs: "
+        f"{optimized['selected_job_count']} "
+        f"(skips {optimized['skipped_as_redundant_job_count']} redundant "
+        "O+A+B jobs)"
+    )
     print(f"  semantic digest: {manifest.semantic_digest}")
     print("  references:")
     for reference in manifest.references:
@@ -542,12 +675,44 @@ def _find_record_by_call_id(call_id: str):
 
 def _read_remote_status(batch_id: str):
     volume = modal.Volume.from_name(BATCH_RESULTS_VOLUME_NAME)
-    remote_path = f"{batch_id}/_metadata/status.json"
+    return _read_remote_metadata_json(volume, batch_id, "status.json")
+
+
+def _read_remote_metadata_json(volume, batch_id: str, filename: str):
+    remote_path = f"{batch_id}/_metadata/{filename}"
     try:
         encoded = b"".join(volume.read_file(remote_path))
     except (FileNotFoundError, modal.exception.NotFoundError):
         return None
     return json.loads(encoded.decode("utf-8"))
+
+
+def _resolve_expected_png_count(remote_status, remote_config) -> int | None:
+    """Resolve the batch-specific image count, preferring persisted status.
+
+    Status is authoritative because it was written by the deployed worker and
+    keeps legacy batches downloadable even after the local prompt catalog
+    changes. Config-derived selection is a fallback for a missing status file.
+    """
+
+    if isinstance(remote_status, dict) and "total_count" in remote_status:
+        value = remote_status["total_count"]
+        if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+            raise ValueError("status.total_count must be a positive integer")
+        return value
+
+    if isinstance(remote_config, dict):
+        condition = remote_config.get("condition")
+        if condition is None:
+            return None
+        if condition not in BatchGenerationConfig._CONDITIONS:
+            raise ValueError(
+                f"config.condition is unknown: {condition!r}"
+            )
+        return EXPECTED_REFERENCE_COUNT * len(
+            _selected_prompt_suffixes(condition)
+        )
+    return None
 
 
 def _relative_remote_path(remote_path: str, batch_id: str) -> PurePosixPath:

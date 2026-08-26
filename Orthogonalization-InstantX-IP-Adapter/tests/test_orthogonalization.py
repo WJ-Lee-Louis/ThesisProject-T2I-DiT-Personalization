@@ -56,6 +56,11 @@ def test_local_directions_hold_the_other_factor_fixed() -> None:
     )
     assert result.names == ("behavior_local", "background_local")
     torch.testing.assert_close(result.values, expected)
+    assert result.raw_norms is not None
+    torch.testing.assert_close(
+        result.raw_norms,
+        torch.linalg.vector_norm(expected, dim=-1),
+    )
 
 
 def test_local_direction_falls_back_to_object_only_contrast() -> None:
@@ -101,6 +106,11 @@ def test_factorial_main_effects_and_interaction_follow_two_by_two_contrasts() ->
         "behavior_background_interaction",
     )
     torch.testing.assert_close(result.values, expected)
+    assert result.raw_norms is not None
+    torch.testing.assert_close(
+        result.raw_norms,
+        torch.linalg.vector_norm(expected, dim=-1),
+    )
 
 
 def test_svd_basis_drops_collinear_and_zero_directions() -> None:

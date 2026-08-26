@@ -1,9 +1,11 @@
-"""Create one eight-variant by nine-prompt comparison grid per reference.
+"""Create one final six-method by sixteen-prompt grid per reference.
 
 The compositor never crops or regenerates experiment images. It validates the
-eight batch variants and generation settings, downsamples each 3:4 PNG into a
+six batch variants and generation settings, downsamples each 3:4 PNG into a
 fixed display cell, and writes ten deterministic high-resolution contact sheets
-plus a machine-readable artifact manifest.
+plus a machine-readable artifact manifest. For ``st_all_combined``, the six
+factorial O+A+B cells are definitionally identical to ``st_combined`` and are
+reused instead of requiring sixty redundant GPU generations.
 """
 
 from __future__ import annotations
@@ -22,6 +24,10 @@ from orthogonalization_instantx_ip_adapter.batch_manifest import (
     PROMPT_SUFFIXES,
     BatchManifest,
     build_batch_manifest,
+)
+from orthogonalization_instantx_ip_adapter.prompt_catalog import (
+    PROMPT_CATALOG,
+    get_prompt_spec,
 )
 from orthogonalization_instantx_ip_adapter.source_captions import (
     DEFAULT_SOURCE_CAPTIONS_PATH,
@@ -51,80 +57,66 @@ class MethodDefinition:
     orthogonalization_strength: float
     default_batch: str
     display_label: str
+    reuse_factorial_from_variant: str | None = None
 
 
 METHODS: tuple[MethodDefinition, ...] = (
     MethodDefinition(
         variant_id="baseline",
         condition="baseline",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-baseline-0723",
+        orthogonalization_strength=1.0,
+        default_batch="dreambench-v2-baseline-0825",
         display_label="Baseline\n(InstantX-IP-Adapter)",
-    ),
-    MethodDefinition(
-        variant_id="projection",
-        condition="projection",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-projection-0723",
-        display_label="+ Target Projection\n(λ = 0.5)",
     ),
     MethodDefinition(
         variant_id="gate",
         condition="gate",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-gate-0723",
-        display_label="+ Single-Stream Gate",
+        orthogonalization_strength=1.0,
+        default_batch="dreambench-v2-gate-0825",
+        display_label="Single-Stream Gate\n(Gate Only)",
     ),
     MethodDefinition(
         variant_id="combined",
         condition="combined",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-combined-0723",
+        orthogonalization_strength=1.0,
+        default_batch="dreambench-v2-target-gate-l1-0825",
         display_label=(
-            "+ Target Projection\n"
-            "(λ = 0.5)\n"
+            "Target Projection (λ = 1.0)\n"
             "+ Single-Stream Gate"
         ),
-    ),
-    MethodDefinition(
-        variant_id="sa_projection",
-        condition="sa_projection",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-sa-projection-0724",
-        display_label="+ Source-Aware Projection\n(λ = 0.5)",
     ),
     MethodDefinition(
         variant_id="sa_combined",
         condition="sa_combined",
-        orthogonalization_strength=0.5,
-        default_batch="dreambench-sa-combined-0724",
+        orthogonalization_strength=1.0,
+        default_batch="dreambench-v2-source-gate-l1-0825",
         display_label=(
-            "+ Source-Aware Projection\n"
-            "(λ = 0.5)\n"
+            "Source-Aware Projection (λ = 1.0)\n"
             "+ Single-Stream Gate"
         ),
     ),
     MethodDefinition(
-        variant_id="combined_lambda1",
-        condition="combined",
+        variant_id="st_combined",
+        condition="st_combined",
         orthogonalization_strength=1.0,
-        default_batch="dreambench-combined-lambda1-0724",
+        default_batch="dreambench-v2-matched-union-gate-l1-0825",
         display_label=(
-            "+ Target Projection\n"
-            "(λ = 1.0)\n"
+            "Target + Source-Aware Projection\n"
+            "Matched-Union SVD (λ = 1.0)\n"
             "+ Single-Stream Gate"
         ),
     ),
     MethodDefinition(
-        variant_id="sa_combined_lambda1",
-        condition="sa_combined",
+        variant_id="st_all_combined",
+        condition="st_all_combined",
         orthogonalization_strength=1.0,
-        default_batch="dreambench-sa-combined-lambda1-0724",
+        default_batch="dreambench-v2-all-source-union-gate-l1-0825",
         display_label=(
-            "+ Source-Aware Projection\n"
-            "(λ = 1.0)\n"
+            "Target + All Source Factors\n"
+            "Union SVD (λ = 1.0)\n"
             "+ Single-Stream Gate"
         ),
+        reuse_factorial_from_variant="st_combined",
     ),
 )
 
@@ -139,7 +131,7 @@ class Layout:
     column_gap: int = 12
     row_gap: int = 14
     header_height: int = 340
-    prompt_header_height: int = 80
+    prompt_header_height: int = 96
     reference_size: int = 300
 
     @property
@@ -184,7 +176,7 @@ class FontSet:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Create ten reference-specific 8-variant x 9-prompt comparison "
+            "Create ten reference-specific 6-method x 16-prompt comparison "
             "PNGs from the downloaded InstantX experiment batches."
         )
     )
@@ -287,8 +279,16 @@ def main(argv: list[str] | None = None) -> int:
             flush=True,
         )
 
+    generated_source_image_count = sum(
+        len(_generated_prompt_suffixes(method))
+        for method in METHODS
+    ) * len(output_paths)
+    reused_display_cell_count = sum(
+        len(_reused_prompt_suffixes(method))
+        for method in METHODS
+    ) * len(output_paths)
     artifact_manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "image_manifest_digest": image_manifest.semantic_digest,
         "source_caption_digest": source_captions.semantic_digest,
         "canvas": {
@@ -297,7 +297,18 @@ def main(argv: list[str] | None = None) -> int:
             "cell_width": layout.cell_width,
             "cell_height": layout.cell_height,
         },
+        "grid_shape": {
+            "method_count": len(METHODS),
+            "prompt_count": len(PROMPT_SUFFIXES),
+            "reference_count": len(output_paths),
+            "display_cell_count": (
+                len(METHODS) * len(PROMPT_SUFFIXES) * len(output_paths)
+            ),
+            "generated_source_image_count": generated_source_image_count,
+            "reused_display_cell_count": reused_display_cell_count,
+        },
         "prompt_suffixes": list(PROMPT_SUFFIXES),
+        "prompt_specs": [spec.to_dict() for spec in PROMPT_CATALOG],
         "methods": [
             {
                 "variant_id": method.variant_id,
@@ -307,6 +318,15 @@ def main(argv: list[str] | None = None) -> int:
                 ),
                 "display_label": method.display_label,
                 "batch_folder": batch_roots[method.variant_id].name,
+                "generated_prompt_suffixes": list(
+                    _generated_prompt_suffixes(method)
+                ),
+                "reused_prompt_suffixes": list(
+                    _reused_prompt_suffixes(method)
+                ),
+                "reused_from_variant_id": (
+                    method.reuse_factorial_from_variant
+                ),
                 "config": batch_configs[method.variant_id],
             }
             for method in METHODS
@@ -333,8 +353,8 @@ def main(argv: list[str] | None = None) -> int:
     print(
         "\nComparison grid generation complete\n"
         f"  references: {len(output_paths)}\n"
-        f"  source images: "
-        f"{len(METHODS) * len(PROMPT_SUFFIXES) * len(output_paths)}\n"
+        f"  generated source images: {generated_source_image_count}\n"
+        f"  reused display cells: {reused_display_cell_count}\n"
         f"  canvas: {layout.canvas_size[0]}x{layout.canvas_size[1]}\n"
         f"  destination: {destination_root}",
         flush=True,
@@ -350,9 +370,6 @@ def validate_inputs(
 ) -> dict[str, dict]:
     """Fail before rendering if any batch cannot support a fair comparison."""
 
-    expected_relative_paths = {
-        job.output_relative_path for job in image_manifest.jobs
-    }
     expected_image_size: tuple[int, int] | None = None
     reference_settings: dict[str, object] | None = None
     configs: dict[str, dict] = {}
@@ -389,7 +406,7 @@ def validate_inputs(
             raise ValueError(
                 f"Reference manifest mismatch in {config_path}"
             )
-        if method.condition.startswith("sa_"):
+        if method.condition.startswith(("sa_", "st_")):
             if (
                 config.get("source_caption_digest")
                 != source_captions.semantic_digest
@@ -422,6 +439,14 @@ def validate_inputs(
                 "Configured image dimensions differ across batches"
             )
 
+        generated_prompt_suffixes = frozenset(
+            _generated_prompt_suffixes(method)
+        )
+        expected_relative_paths = {
+            job.output_relative_path
+            for job in image_manifest.jobs
+            if job.prompt_suffix in generated_prompt_suffixes
+        }
         actual_relative_paths = {
             path.relative_to(batch_root).as_posix()
             for path in batch_root.rglob("*.png")
@@ -498,8 +523,12 @@ def create_reference_grid(
             cell_x = layout.grid_x + column_index * (
                 layout.cell_width + layout.column_gap
             )
+            source_variant_id = _cell_source_variant_id(
+                method,
+                prompt_suffix,
+            )
             image_path = (
-                batch_roots[method.variant_id]
+                batch_roots[source_variant_id]
                 / reference_stem
                 / (
                     f"{reference_stem}_"
@@ -527,6 +556,49 @@ def create_reference_grid(
             )
 
     _atomic_save_png(output_path, canvas)
+
+
+def _generated_prompt_suffixes(
+    method: MethodDefinition,
+) -> tuple[str, ...]:
+    """Return prompts that must physically exist in ``method``'s batch."""
+
+    if method.reuse_factorial_from_variant is None:
+        return PROMPT_SUFFIXES
+    return tuple(
+        suffix
+        for suffix in PROMPT_SUFFIXES
+        if not get_prompt_spec(suffix).is_factorial
+    )
+
+
+def _reused_prompt_suffixes(
+    method: MethodDefinition,
+) -> tuple[str, ...]:
+    """Return display prompts sourced from another equivalent batch."""
+
+    if method.reuse_factorial_from_variant is None:
+        return ()
+    return tuple(
+        suffix
+        for suffix in PROMPT_SUFFIXES
+        if get_prompt_spec(suffix).is_factorial
+    )
+
+
+def _cell_source_variant_id(
+    method: MethodDefinition,
+    prompt_suffix: str,
+) -> str:
+    """Resolve the physical batch supplying one rendered comparison cell."""
+
+    prompt_spec = get_prompt_spec(prompt_suffix)
+    if (
+        method.reuse_factorial_from_variant is not None
+        and prompt_spec.is_factorial
+    ):
+        return method.reuse_factorial_from_variant
+    return method.variant_id
 
 
 def _draw_reference_header(

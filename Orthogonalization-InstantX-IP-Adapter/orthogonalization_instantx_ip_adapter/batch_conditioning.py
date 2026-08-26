@@ -7,13 +7,10 @@ from typing import Literal
 
 from .adapter import OrthogonalizationRequest, TextDirectionSet
 from .batch_config import BatchGenerationConfig
-from .batch_manifest import BatchJob, PROMPT_SUFFIXES
+from .batch_manifest import BatchJob
 from .orthogonalization import PromptSet
+from .prompt_catalog import PromptFactor, PromptSpec, get_prompt_spec
 from .source_captions import SourceCaptionRecord
-
-
-BACKGROUND_ONLY_SUFFIX = "on a street"
-FACTORIAL_SUFFIX = "running on a street"
 
 
 @dataclass(frozen=True, slots=True)
@@ -28,7 +25,9 @@ class BatchConditioning:
         "reference_caption",
         "source_target_union",
     ]
-    removed_factors: tuple[str, ...]
+    removed_factors: tuple[PromptFactor, ...]
+    target_factors: tuple[PromptFactor, ...]
+    source_factors: tuple[PromptFactor, ...]
 
 
 def build_batch_conditioning(
@@ -38,7 +37,7 @@ def build_batch_conditioning(
 ) -> BatchConditioning:
     """Build projection prompts and the single-stream row-gate flag.
 
-    The two interventions are selected by eight non-overlapping experiment
+    The two interventions are selected by nine non-overlapping experiment
     conditions:
 
     * ``baseline``: neither intervention;
@@ -50,12 +49,15 @@ def build_batch_conditioning(
     * ``st_projection``: target and reference-caption directions combined in
       one SVD projection;
     * ``st_combined``: the same single-SVD projection plus the gate.
+    * ``st_all_combined``: target directions plus both source-caption main
+      effects in one SVD projection, with the gate.
 
-    The original projection directions are target-local for a single
-    behavior/background suffix and factorial for ``running on a street``.
+    Target projection directions are local for a one-factor prompt and
+    factorial for a prompt containing both behavior and background.
     Source-aware directions are always estimated from the reference caption's
     complete 2-by-2 factorial prompt set, while the target suffix selects which
-    source factor(s) are attenuated.
+    source factor(s) are attenuated.  ``st_all_combined`` is the explicit
+    ablation that includes both source factors regardless of target taxonomy.
     """
 
     if not isinstance(job, BatchJob):
@@ -77,9 +79,16 @@ def build_batch_conditioning(
             job,
             source_caption=source_caption,
             strength=config.orthogonalization_strength,
+            include_all_source_factors=config.all_source_factors_enabled,
         )
         basis_origin = "source_target_union"
-        removed_factors = _target_factors(job.prompt_suffix)
+        target_factors = _target_factors(job.prompt_suffix)
+        source_factors = (
+            ("behavior", "background")
+            if config.all_source_factors_enabled
+            else target_factors
+        )
+        removed_factors = _merge_factors(target_factors, source_factors)
     elif config.target_projection_enabled:
         if source_caption is not None:
             raise ValueError(
@@ -90,7 +99,9 @@ def build_batch_conditioning(
             strength=config.orthogonalization_strength,
         )
         basis_origin = "target_prompt"
-        removed_factors = _target_factors(job.prompt_suffix)
+        target_factors = _target_factors(job.prompt_suffix)
+        source_factors = ()
+        removed_factors = target_factors
     elif config.source_aware_projection_enabled:
         if source_caption is None:
             raise ValueError(
@@ -102,7 +113,9 @@ def build_batch_conditioning(
             strength=config.orthogonalization_strength,
         )
         basis_origin = "reference_caption"
-        removed_factors = _target_factors(job.prompt_suffix)
+        target_factors = ()
+        source_factors = _target_factors(job.prompt_suffix)
+        removed_factors = source_factors
     else:
         if source_caption is not None:
             raise ValueError(
@@ -115,12 +128,16 @@ def build_batch_conditioning(
         )
         basis_origin = "none"
         removed_factors = ()
+        target_factors = ()
+        source_factors = ()
 
     return BatchConditioning(
         orthogonalization=request,
         mask_single_text_rows=config.mask_single_text_rows,
         basis_origin=basis_origin,
         removed_factors=removed_factors,
+        target_factors=target_factors,
+        source_factors=source_factors,
     )
 
 
@@ -129,18 +146,25 @@ def _build_projection_request(
     *,
     strength: float,
 ) -> OrthogonalizationRequest:
-    if job.prompt_suffix not in PROMPT_SUFFIXES:
-        raise ValueError(f"Unknown prompt suffix: {job.prompt_suffix!r}")
-
+    prompt_spec = get_prompt_spec(job.prompt_suffix)
     object_only = f"a {job.species}"
-    expected_prompt = f"{object_only} {job.prompt_suffix}"
-    if job.prompt != expected_prompt:
-        raise ValueError(
-            "BatchJob prompt does not match its species and prompt_suffix: "
-            f"expected {expected_prompt!r}, got {job.prompt!r}"
+    expected_prompt = _validate_job_prompt(job, prompt_spec)
+
+    if prompt_spec.is_factorial:
+        return OrthogonalizationRequest(
+            mode="factorial",
+            strength=strength,
+            prompts=PromptSet(
+                object_only=object_only,
+                object_behavior=f"{object_only} {prompt_spec.behavior}",
+                object_background=f"{object_only} {prompt_spec.background}",
+                object_behavior_background=expected_prompt,
+            ),
+            include_behavior=True,
+            include_background=True,
         )
 
-    if job.prompt_suffix == BACKGROUND_ONLY_SUFFIX:
+    if prompt_spec.background is not None:
         return OrthogonalizationRequest(
             mode="local",
             strength=strength,
@@ -152,20 +176,7 @@ def _build_projection_request(
             include_background=True,
         )
 
-    if job.prompt_suffix == FACTORIAL_SUFFIX:
-        return OrthogonalizationRequest(
-            mode="factorial",
-            strength=strength,
-            prompts=PromptSet(
-                object_only=object_only,
-                object_behavior=f"{object_only} running",
-                object_background=f"{object_only} on a street",
-                object_behavior_background=expected_prompt,
-            ),
-            include_behavior=True,
-            include_background=True,
-        )
-
+    assert prompt_spec.behavior is not None
     return OrthogonalizationRequest(
         mode="local",
         strength=strength,
@@ -184,12 +195,8 @@ def _build_source_aware_projection_request(
     source_caption: SourceCaptionRecord,
     strength: float,
 ) -> OrthogonalizationRequest:
-    expected_prompt = f"a {job.species} {job.prompt_suffix}"
-    if job.prompt != expected_prompt:
-        raise ValueError(
-            "BatchJob prompt does not match its species and prompt_suffix: "
-            f"expected {expected_prompt!r}, got {job.prompt!r}"
-        )
+    prompt_spec = get_prompt_spec(job.prompt_suffix)
+    _validate_job_prompt(job, prompt_spec)
     if source_caption.reference_stem != job.reference_stem:
         raise ValueError(
             "Source caption/reference mismatch: "
@@ -225,6 +232,7 @@ def _build_source_target_projection_request(
     *,
     source_caption: SourceCaptionRecord,
     strength: float,
+    include_all_source_factors: bool = False,
 ) -> OrthogonalizationRequest:
     """Build target and source rows for one shared downstream SVD."""
 
@@ -234,6 +242,12 @@ def _build_source_target_projection_request(
         source_caption=source_caption,
         strength=strength,
     )
+    if include_all_source_factors:
+        source_request = replace(
+            source_request,
+            include_behavior=True,
+            include_background=True,
+        )
     assert source_request.prompts is not None
     source_direction_set = TextDirectionSet(
         mode=source_request.mode,
@@ -250,19 +264,30 @@ def _build_source_target_projection_request(
     )
 
 
-def _target_factors(prompt_suffix: str) -> tuple[str, ...]:
-    if prompt_suffix not in PROMPT_SUFFIXES:
-        raise ValueError(f"Unknown prompt suffix: {prompt_suffix!r}")
-    if prompt_suffix == BACKGROUND_ONLY_SUFFIX:
-        return ("background",)
-    if prompt_suffix == FACTORIAL_SUFFIX:
-        return ("behavior", "background")
-    return ("behavior",)
+def _target_factors(prompt_suffix: str) -> tuple[PromptFactor, ...]:
+    return get_prompt_spec(prompt_suffix).factors
+
+
+def _validate_job_prompt(job: BatchJob, prompt_spec: PromptSpec) -> str:
+    expected_prompt = f"a {job.species} {prompt_spec.suffix}"
+    if job.prompt != expected_prompt:
+        raise ValueError(
+            "BatchJob prompt does not match its species and prompt_suffix: "
+            f"expected {expected_prompt!r}, got {job.prompt!r}"
+        )
+    return expected_prompt
+
+
+def _merge_factors(
+    target_factors: tuple[PromptFactor, ...],
+    source_factors: tuple[PromptFactor, ...],
+) -> tuple[PromptFactor, ...]:
+    present = set(target_factors) | set(source_factors)
+    factor_order: tuple[PromptFactor, ...] = ("behavior", "background")
+    return tuple(factor for factor in factor_order if factor in present)
 
 
 __all__ = [
-    "BACKGROUND_ONLY_SUFFIX",
-    "FACTORIAL_SUFFIX",
     "BatchConditioning",
     "build_batch_conditioning",
 ]
