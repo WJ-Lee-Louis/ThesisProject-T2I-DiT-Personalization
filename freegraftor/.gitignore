@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.modal_jobs/
+outputs/
+image_cache/
+image_info_cache/
+inference_results/
+sam_vit_h_4b8939.pth
