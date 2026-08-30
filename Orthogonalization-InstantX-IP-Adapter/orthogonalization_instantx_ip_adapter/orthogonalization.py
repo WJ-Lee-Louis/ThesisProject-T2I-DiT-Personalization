@@ -123,6 +123,46 @@ class OrthogonalizationResult:
     projection_diagnostics: ProjectionDiagnostics
 
 
+@dataclass(frozen=True)
+class HierarchicalProjectionDiagnostics:
+    """Measurements for nuisance-first, class-residual attenuation."""
+
+    nuisance_strength: float
+    class_strength: float
+    original_norm: Tensor
+    nuisance_component_norm: Tensor
+    class_component_norm: Tensor
+    projection_component_norm: Tensor
+    nuisance_removed_component_norm: Tensor
+    class_removed_component_norm: Tensor
+    removed_component_norm: Tensor
+    adjusted_unit_norm: Tensor
+    output_norm: Tensor
+    edit_norm: Tensor
+    cosine_to_input: Tensor
+    max_abs_nuisance_basis_dot: Tensor
+    max_abs_class_basis_dot: Tensor
+    max_abs_basis_dot: Tensor
+    degenerate: Tensor
+
+
+@dataclass(frozen=True)
+class HierarchicalOrthogonalizationResult:
+    """Result of an ordered nuisance basis plus residual class basis."""
+
+    embedding: Tensor
+    nuisance_basis: Tensor
+    class_basis: Tensor
+    nuisance_basis_diagnostics: BasisDiagnostics
+    class_input_norm: float
+    class_overlap_norm: float
+    class_residual_norm: float
+    class_residual_ratio: float
+    class_threshold: float
+    class_retained: bool
+    projection_diagnostics: HierarchicalProjectionDiagnostics
+
+
 def normalize_fp32(value: Tensor, *, dim: int = -1, eps: float = 1e-12) -> Tensor:
     """L2-normalize ``value`` in FP32 while preserving zero vectors as zero."""
 
@@ -253,6 +293,105 @@ def build_factorial_directions(
         device=e00.device,
         normalize_directions=normalize_directions,
         eps=eps,
+    )
+
+
+def build_absolute_direction(
+    embedding: Tensor,
+    *,
+    name: str = "class_anchor_absolute",
+    eps: float = 1e-12,
+) -> ContrastDirections:
+    """Use one pooled embedding itself as a normalized projection direction.
+
+    This is the explicit absolute-anchor ablation: unlike the existing local
+    and factorial builders, it does not estimate a counterfactual difference.
+    """
+
+    _validate_float_tensor("embedding", embedding)
+    _validate_eps(eps)
+    if embedding.ndim != 1:
+        raise ValueError("embedding must be one-dimensional")
+    if not torch.isfinite(embedding).all():
+        raise ValueError("embedding must contain only finite values")
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("name must be a non-empty string")
+
+    embedding_fp32 = embedding.float()
+    raw_norm = torch.linalg.vector_norm(embedding_fp32)
+    if raw_norm <= eps:
+        raise ValueError("absolute direction embedding must be non-zero")
+    return ContrastDirections(
+        values=normalize_fp32(embedding_fp32, eps=eps).unsqueeze(0),
+        names=(name,),
+        raw_norms=raw_norm.reshape(1),
+    )
+
+
+def build_mean_paired_contrast_direction(
+    positive_embeddings: Tensor,
+    negative_embeddings: Tensor,
+    *,
+    name: str = "source_class_context_mean",
+    eps: float = 1e-12,
+) -> ContrastDirections:
+    """Average normalized, paired text contrasts into one direction.
+
+    Each prompt embedding is normalized first.  Every positive-minus-negative
+    contrast is then normalized so no source context dominates merely because
+    its chord is longer.  Finally, the normalized contrasts are averaged and
+    normalized once more, matching the experiment's intended single class
+    direction rather than constructing a multi-row union subspace.
+    """
+
+    _validate_float_tensor("positive_embeddings", positive_embeddings)
+    _validate_float_tensor("negative_embeddings", negative_embeddings)
+    _validate_eps(eps)
+    if positive_embeddings.ndim != 2:
+        raise ValueError(
+            "positive_embeddings must have shape [contrast_count, embedding_dim]"
+        )
+    if negative_embeddings.shape != positive_embeddings.shape:
+        raise ValueError(
+            "positive_embeddings and negative_embeddings must have the same shape"
+        )
+    if negative_embeddings.device != positive_embeddings.device:
+        raise ValueError(
+            "positive_embeddings and negative_embeddings must share a device"
+        )
+    if positive_embeddings.shape[0] == 0:
+        raise ValueError("at least one paired contrast is required")
+    if not torch.isfinite(positive_embeddings).all() or not torch.isfinite(
+        negative_embeddings
+    ).all():
+        raise ValueError("paired embeddings must contain only finite values")
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("name must be a non-empty string")
+
+    positive_unit = normalize_fp32(positive_embeddings, eps=eps)
+    negative_unit = normalize_fp32(negative_embeddings, eps=eps)
+    paired_raw = positive_unit - negative_unit
+    paired_raw_norms = torch.linalg.vector_norm(paired_raw, dim=-1)
+    if torch.any(paired_raw_norms <= eps):
+        indices = torch.nonzero(
+            paired_raw_norms <= eps,
+            as_tuple=False,
+        ).flatten().tolist()
+        raise ValueError(
+            "paired contrasts must be non-zero; degenerate indices="
+            f"{indices}"
+        )
+    paired_directions = paired_raw / paired_raw_norms.unsqueeze(-1)
+    mean_direction = paired_directions.mean(dim=0)
+    mean_norm = torch.linalg.vector_norm(mean_direction)
+    if mean_norm <= eps:
+        raise ValueError("normalized paired contrasts cancel to a zero mean")
+    return ContrastDirections(
+        values=(mean_direction / mean_norm).unsqueeze(0),
+        names=(name,),
+        # For this builder, the raw norm is the pre-final-normalization mean
+        # norm.  It is also a compact agreement diagnostic in [0, 1].
+        raw_norms=mean_norm.reshape(1),
     )
 
 
@@ -460,6 +599,202 @@ def orthogonalize_pooled_embedding(
         basis=basis_result.basis,
         basis_diagnostics=basis_result.diagnostics,
         projection_diagnostics=projection_result.diagnostics,
+    )
+
+
+def hierarchical_orthogonalize_pooled_embedding(
+    embedding: Tensor,
+    nuisance_directions: Tensor,
+    class_direction: Tensor,
+    *,
+    nuisance_strength: float = 1.0,
+    class_strength: float = 0.25,
+    relative_tolerance: float = 1e-3,
+    absolute_tolerance: float = 0.0,
+    max_nuisance_rank: Optional[int] = None,
+    restore_norm: bool = True,
+    preserve_dtype: bool = True,
+    eps: float = 1e-12,
+) -> HierarchicalOrthogonalizationResult:
+    """Attenuate nuisance and class components with independent strengths.
+
+    The nuisance rows are first converted to an SVD basis ``Q_n``.  The class
+    direction is then residualized as ``(I - Q_n Q_n^T)c`` so its retained
+    rank-one basis is orthogonal to the nuisance subspace.  This makes the two
+    attenuation strengths well-defined and avoids double subtraction.
+    """
+
+    _validate_float_tensor("embedding", embedding)
+    _validate_float_tensor("nuisance_directions", nuisance_directions)
+    _validate_float_tensor("class_direction", class_direction)
+    _validate_eps(eps)
+    for name, strength in (
+        ("nuisance_strength", nuisance_strength),
+        ("class_strength", class_strength),
+    ):
+        if not math.isfinite(strength) or not 0.0 <= strength <= 1.0:
+            raise ValueError(f"{name} must be finite and in [0, 1]")
+    if embedding.ndim < 1:
+        raise ValueError("embedding must have at least one dimension")
+    if nuisance_directions.ndim != 2:
+        raise ValueError(
+            "nuisance_directions must have shape [direction_count, embedding_dim]"
+        )
+    if class_direction.ndim != 1:
+        raise ValueError("class_direction must have shape [embedding_dim]")
+    embedding_dim = embedding.shape[-1]
+    if nuisance_directions.shape[-1] != embedding_dim:
+        raise ValueError("nuisance directions and embedding dimensions do not match")
+    if class_direction.shape[0] != embedding_dim:
+        raise ValueError("class direction and embedding dimensions do not match")
+    if (
+        nuisance_directions.device != embedding.device
+        or class_direction.device != embedding.device
+    ):
+        raise ValueError("embedding and directions must share a device")
+    if (
+        not torch.isfinite(embedding).all()
+        or not torch.isfinite(nuisance_directions).all()
+        or not torch.isfinite(class_direction).all()
+    ):
+        raise ValueError("embedding and directions must contain only finite values")
+
+    nuisance_result = estimate_orthonormal_basis(
+        nuisance_directions,
+        relative_tolerance=relative_tolerance,
+        absolute_tolerance=absolute_tolerance,
+        max_rank=max_nuisance_rank,
+    )
+    nuisance_basis = nuisance_result.basis
+
+    class_fp32 = class_direction.float()
+    class_input_norm_tensor = torch.linalg.vector_norm(class_fp32)
+    if class_input_norm_tensor <= eps:
+        raise ValueError("class_direction must be non-zero")
+    class_unit = class_fp32 / class_input_norm_tensor
+    if nuisance_basis.shape[1]:
+        class_overlap = (
+            (class_unit @ nuisance_basis) @ nuisance_basis.transpose(0, 1)
+        )
+    else:
+        class_overlap = torch.zeros_like(class_unit)
+    class_residual = class_unit - class_overlap
+    class_overlap_norm_tensor = torch.linalg.vector_norm(class_overlap)
+    class_residual_norm_tensor = torch.linalg.vector_norm(class_residual)
+    class_threshold = max(
+        float(absolute_tolerance),
+        float(relative_tolerance),
+        float(eps),
+    )
+    class_retained = bool(class_residual_norm_tensor.item() > class_threshold)
+    if class_retained:
+        class_basis = (class_residual / class_residual_norm_tensor).unsqueeze(1)
+    else:
+        class_basis = torch.empty(
+            (embedding_dim, 0),
+            dtype=torch.float32,
+            device=embedding.device,
+        )
+
+    embedding_fp32 = embedding.float()
+    original_norm_keep = torch.linalg.vector_norm(
+        embedding_fp32,
+        dim=-1,
+        keepdim=True,
+    )
+    unit = torch.where(
+        original_norm_keep > eps,
+        embedding_fp32 / original_norm_keep.clamp_min(eps),
+        torch.zeros_like(embedding_fp32),
+    )
+
+    if nuisance_basis.shape[1]:
+        nuisance_component = (
+            (unit @ nuisance_basis) @ nuisance_basis.transpose(0, 1)
+        )
+    else:
+        nuisance_component = torch.zeros_like(unit)
+    if class_basis.shape[1]:
+        class_component = (unit @ class_basis) @ class_basis.transpose(0, 1)
+    else:
+        class_component = torch.zeros_like(unit)
+
+    nuisance_removed = nuisance_strength * nuisance_component
+    class_removed = class_strength * class_component
+    adjusted = unit - nuisance_removed - class_removed
+    adjusted_norm_keep = torch.linalg.vector_norm(adjusted, dim=-1, keepdim=True)
+    degenerate_keep = adjusted_norm_keep <= eps
+    if restore_norm:
+        output_fp32 = torch.where(
+            ~degenerate_keep,
+            adjusted / adjusted_norm_keep.clamp_min(eps) * original_norm_keep,
+            torch.zeros_like(adjusted),
+        )
+    else:
+        output_fp32 = adjusted
+
+    output_unit = normalize_fp32(output_fp32, eps=eps)
+    input_unit = normalize_fp32(embedding_fp32, eps=eps)
+    combined_component = nuisance_component + class_component
+    combined_removed = nuisance_removed + class_removed
+
+    def _max_abs_dot(basis: Tensor) -> Tensor:
+        if basis.shape[1] == 0:
+            return torch.zeros(
+                embedding.shape[:-1],
+                dtype=torch.float32,
+                device=embedding.device,
+            )
+        return (output_unit @ basis).abs().amax(dim=-1)
+
+    max_nuisance_dot = _max_abs_dot(nuisance_basis)
+    max_class_dot = _max_abs_dot(class_basis)
+    max_basis_dot = torch.maximum(max_nuisance_dot, max_class_dot)
+    output = output_fp32.to(dtype=embedding.dtype) if preserve_dtype else output_fp32
+    diagnostics = HierarchicalProjectionDiagnostics(
+        nuisance_strength=float(nuisance_strength),
+        class_strength=float(class_strength),
+        original_norm=original_norm_keep.squeeze(-1),
+        nuisance_component_norm=torch.linalg.vector_norm(
+            nuisance_component, dim=-1
+        ),
+        class_component_norm=torch.linalg.vector_norm(class_component, dim=-1),
+        projection_component_norm=torch.linalg.vector_norm(
+            combined_component, dim=-1
+        ),
+        nuisance_removed_component_norm=torch.linalg.vector_norm(
+            nuisance_removed, dim=-1
+        ),
+        class_removed_component_norm=torch.linalg.vector_norm(
+            class_removed, dim=-1
+        ),
+        removed_component_norm=torch.linalg.vector_norm(
+            combined_removed, dim=-1
+        ),
+        adjusted_unit_norm=adjusted_norm_keep.squeeze(-1),
+        output_norm=torch.linalg.vector_norm(output_fp32, dim=-1),
+        edit_norm=torch.linalg.vector_norm(output_fp32 - embedding_fp32, dim=-1),
+        cosine_to_input=(input_unit * output_unit).sum(dim=-1),
+        max_abs_nuisance_basis_dot=max_nuisance_dot,
+        max_abs_class_basis_dot=max_class_dot,
+        max_abs_basis_dot=max_basis_dot,
+        degenerate=degenerate_keep.squeeze(-1),
+    )
+    return HierarchicalOrthogonalizationResult(
+        embedding=output,
+        nuisance_basis=nuisance_basis,
+        class_basis=class_basis,
+        nuisance_basis_diagnostics=nuisance_result.diagnostics,
+        class_input_norm=float(class_input_norm_tensor.item()),
+        class_overlap_norm=float(class_overlap_norm_tensor.item()),
+        class_residual_norm=float(class_residual_norm_tensor.item()),
+        class_residual_ratio=float(
+            class_residual_norm_tensor.item()
+            / max(class_input_norm_tensor.item(), eps)
+        ),
+        class_threshold=class_threshold,
+        class_retained=class_retained,
+        projection_diagnostics=diagnostics,
     )
 
 

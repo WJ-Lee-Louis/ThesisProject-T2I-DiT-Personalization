@@ -30,6 +30,20 @@ def test_config_round_trips_through_dict_and_json() -> None:
     assert "mask_single_text_rows" not in payload
 
 
+def test_new_config_fields_preserve_legacy_positional_signature() -> None:
+    config = BatchGenerationConfig(
+        "legacy-positional",
+        "projection",
+        0.6,
+        0.9,
+    )
+
+    assert config.orthogonalization_strength == pytest.approx(0.6)
+    assert config.ip_adapter_scale == pytest.approx(0.9)
+    assert config.class_projection_strength == pytest.approx(0.5)
+    assert config.class_superclass_prompt == "an animal"
+
+
 @pytest.mark.parametrize(
     ("condition", "projection_enabled", "mask_single_text_rows"),
     [
@@ -125,6 +139,120 @@ def test_source_target_union_conditions_derive_independent_intervention_flags(
     assert config.mask_single_text_rows is mask_single_text_rows
 
 
+@pytest.mark.parametrize(
+    (
+        "condition",
+        "requires_source_captions",
+        "class_mode",
+        "context_origin",
+        "counterfactual",
+    ),
+    [
+        ("class_absolute_combined", False, "absolute", None, None),
+        (
+            "class_contextual_combined",
+            True,
+            "contextual",
+            "source",
+            "superclass",
+        ),
+        (
+            "class_target_superclass_combined",
+            False,
+            "contextual",
+            "target",
+            "superclass",
+        ),
+        (
+            "class_target_no_object_combined",
+            False,
+            "contextual",
+            "target",
+            "no_object",
+        ),
+        (
+            "class_source_superclass_combined",
+            True,
+            "contextual",
+            "source",
+            "superclass",
+        ),
+        (
+            "class_source_no_object_combined",
+            True,
+            "contextual",
+            "source",
+            "no_object",
+        ),
+    ],
+)
+def test_class_conditions_have_independent_strength_and_always_use_gate(
+    condition: str,
+    requires_source_captions: bool,
+    class_mode: str,
+    context_origin: str | None,
+    counterfactual: str | None,
+) -> None:
+    config = BatchGenerationConfig(
+        batch_id=condition,
+        condition=condition,
+        orthogonalization_strength=0.9,
+        class_projection_strength=0.35,
+        class_superclass_prompt="an animal",
+        source_caption_digest=(
+            "ab" * 32 if requires_source_captions else None
+        ),
+    )
+
+    assert config.projection_enabled is True
+    assert config.class_projection_enabled is True
+    assert config.class_absolute_projection_enabled is (class_mode == "absolute")
+    assert config.class_contextual_projection_enabled is (
+        class_mode == "contextual"
+    )
+    assert config.class_target_contextual_projection_enabled is (
+        context_origin == "target"
+    )
+    assert config.class_source_contextual_projection_enabled is (
+        context_origin == "source"
+    )
+    assert config.class_superclass_projection_enabled is (
+        counterfactual == "superclass"
+    )
+    assert config.class_no_object_projection_enabled is (
+        counterfactual == "no_object"
+    )
+    assert config.target_projection_enabled is False
+    assert config.source_aware_projection_enabled is False
+    assert config.source_target_projection_enabled is False
+    assert config.requires_source_captions is requires_source_captions
+    assert config.mask_single_text_rows is True
+    assert config.class_projection_strength == pytest.approx(0.35)
+
+    serialized = json.loads(json.dumps(config.to_dict()))
+    assert BatchGenerationConfig.from_dict(serialized) == config
+    assert serialized["class_projection_strength"] == pytest.approx(0.35)
+    assert serialized["class_superclass_prompt"] == "an animal"
+
+
+@pytest.mark.parametrize(
+    "condition",
+    [
+        "class_contextual_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
+    ],
+)
+def test_source_contextual_class_condition_requires_caption_digest(
+    condition: str,
+) -> None:
+    with pytest.raises(ValueError, match="source_caption_digest is required"):
+        BatchGenerationConfig(
+            batch_id="class-contextual",
+            condition=condition,
+        )
+
+
 @pytest.mark.parametrize("condition", ["sa_projection", "sa_combined"])
 def test_source_aware_config_round_trips_with_caption_digest(
     condition: str,
@@ -181,14 +309,22 @@ def test_source_target_union_condition_requires_caption_digest(
 
 @pytest.mark.parametrize(
     "condition",
-    ["baseline", "projection", "gate", "combined"],
+    [
+        "baseline",
+        "projection",
+        "gate",
+        "combined",
+        "class_absolute_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+    ],
 )
 def test_original_conditions_reject_source_caption_digest(
     condition: str,
 ) -> None:
     with pytest.raises(
         ValueError,
-        match="only valid for source-aware conditions",
+        match="only valid for caption-aware",
     ):
         BatchGenerationConfig(
             batch_id="batch",
@@ -259,6 +395,10 @@ def test_invalid_condition_is_rejected() -> None:
         ("orthogonalization_strength", 1.01),
         ("orthogonalization_strength", float("nan")),
         ("orthogonalization_strength", True),
+        ("class_projection_strength", -0.01),
+        ("class_projection_strength", 1.01),
+        ("class_projection_strength", float("nan")),
+        ("class_projection_strength", True),
         ("ip_adapter_scale", -0.01),
         ("ip_adapter_scale", float("inf")),
         ("guidance_scale", -1),
@@ -295,6 +435,18 @@ def test_invalid_integer_controls_are_rejected(field: str, value: object) -> Non
 def test_overwrite_requires_a_boolean() -> None:
     with pytest.raises(TypeError, match="overwrite"):
         BatchGenerationConfig(batch_id="batch", overwrite=1)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize(
+    "value",
+    ["", " an animal", "an animal ", "an  animal", 123],
+)
+def test_invalid_class_superclass_prompt_is_rejected(value: object) -> None:
+    with pytest.raises(ValueError, match="class_superclass_prompt"):
+        BatchGenerationConfig(
+            batch_id="batch",
+            class_superclass_prompt=value,  # type: ignore[arg-type]
+        )
 
 
 @pytest.mark.parametrize(

@@ -3,13 +3,75 @@ import torch
 
 from orthogonalization_instantx_ip_adapter.orthogonalization import (
     PromptSet,
+    build_absolute_direction,
     build_factorial_directions,
     build_local_directions,
+    build_mean_paired_contrast_direction,
     estimate_orthonormal_basis,
+    hierarchical_orthogonalize_pooled_embedding,
     normalize_fp32,
     orthogonalize_pooled_embedding,
     project_pooled_embedding,
 )
+
+
+def test_absolute_direction_uses_one_normalized_embedding_row() -> None:
+    result = build_absolute_direction(torch.tensor([3.0, 4.0]))
+
+    assert result.names == ("class_anchor_absolute",)
+    assert result.values.shape == (1, 2)
+    torch.testing.assert_close(result.values[0], torch.tensor([0.6, 0.8]))
+    assert result.raw_norms is not None
+    torch.testing.assert_close(result.raw_norms, torch.tensor([5.0]))
+
+
+def test_contextual_class_builder_returns_one_normalized_mean_direction() -> None:
+    positive = torch.tensor(
+        [
+            [1.0, 1.0, 0.0],
+            [1.0, 0.0, 1.0],
+            [1.0, 2.0, 2.0],
+        ]
+    )
+    negative = torch.tensor(
+        [
+            [1.0, 0.0, 0.0],
+            [1.0, 0.0, 0.0],
+            [1.0, 1.0, 1.0],
+        ]
+    )
+
+    result = build_mean_paired_contrast_direction(positive, negative)
+    paired = normalize_fp32(
+        normalize_fp32(positive) - normalize_fp32(negative)
+    )
+    expected_mean = paired.mean(dim=0)
+
+    assert result.names == ("source_class_context_mean",)
+    assert result.values.shape == (1, 3)
+    torch.testing.assert_close(result.values[0], normalize_fp32(expected_mean))
+    assert result.raw_norms is not None
+    torch.testing.assert_close(
+        result.raw_norms,
+        torch.linalg.vector_norm(expected_mean).reshape(1),
+    )
+
+
+def test_class_direction_builders_reject_degenerate_inputs() -> None:
+    with pytest.raises(ValueError, match="non-zero"):
+        build_absolute_direction(torch.zeros(3))
+
+    with pytest.raises(ValueError, match="degenerate indices"):
+        build_mean_paired_contrast_direction(
+            torch.tensor([[1.0, 0.0], [0.0, 1.0]]),
+            torch.tensor([[1.0, 0.0], [1.0, 0.0]]),
+        )
+
+    with pytest.raises(ValueError, match="zero mean"):
+        build_mean_paired_contrast_direction(
+            torch.tensor([[1.0, 0.0], [-1.0, 0.0]]),
+            torch.tensor([[0.0, 1.0], [0.0, -1.0]]),
+        )
 
 
 def test_prompt_set_accepts_partial_p2_and_rejects_blank_prompts() -> None:
@@ -192,3 +254,92 @@ def test_convenience_pipeline_reports_rank_and_rejects_bad_strength() -> None:
 
     with pytest.raises(ValueError, match="strength"):
         project_pooled_embedding(embedding, result.basis, strength=1.01)
+
+
+def test_hierarchical_projection_residualizes_class_and_uses_two_strengths() -> None:
+    embedding = torch.tensor([1.0, 1.0, 1.0])
+    nuisance = torch.tensor([[1.0, 0.0, 0.0]])
+    class_direction = normalize_fp32(torch.tensor([1.0, 1.0, 0.0]))
+
+    result = hierarchical_orthogonalize_pooled_embedding(
+        embedding,
+        nuisance,
+        class_direction,
+        nuisance_strength=1.0,
+        class_strength=0.25,
+        restore_norm=False,
+    )
+
+    unit = normalize_fp32(embedding)
+    torch.testing.assert_close(
+        result.embedding,
+        torch.tensor([0.0, 0.75 * unit[1], unit[2]]),
+    )
+    assert result.nuisance_basis.shape == (3, 1)
+    assert result.class_basis.shape == (3, 1)
+    assert torch.abs(
+        result.nuisance_basis[:, 0] @ result.class_basis[:, 0]
+    ) < 1e-6
+    assert result.class_retained is True
+    assert result.class_residual_ratio == pytest.approx(2**-0.5)
+    assert result.projection_diagnostics.nuisance_strength == pytest.approx(1.0)
+    assert result.projection_diagnostics.class_strength == pytest.approx(0.25)
+
+
+def test_hierarchical_projection_drops_class_inside_nuisance_subspace() -> None:
+    result = hierarchical_orthogonalize_pooled_embedding(
+        torch.tensor([1.0, 1.0, 0.0]),
+        torch.tensor([[1.0, 0.0, 0.0]]),
+        torch.tensor([2.0, 0.0, 0.0]),
+        nuisance_strength=1.0,
+        class_strength=0.5,
+    )
+
+    assert result.class_retained is False
+    assert result.class_basis.shape == (3, 0)
+    assert result.class_residual_ratio == pytest.approx(0.0, abs=1e-7)
+    assert result.projection_diagnostics.class_component_norm == pytest.approx(0.0)
+
+
+def test_zero_class_strength_matches_existing_nuisance_projection() -> None:
+    embedding = torch.tensor([[1.0, 2.0, 3.0, 4.0]])
+    nuisance = torch.tensor(
+        [[1.0, 1.0, 0.0, 0.0], [0.0, 1.0, 1.0, 0.0]]
+    )
+    class_direction = torch.tensor([0.0, 0.0, 1.0, 1.0])
+
+    legacy = orthogonalize_pooled_embedding(
+        embedding,
+        nuisance,
+        strength=0.8,
+        preserve_dtype=False,
+    )
+    hierarchical = hierarchical_orthogonalize_pooled_embedding(
+        embedding,
+        nuisance,
+        class_direction,
+        nuisance_strength=0.8,
+        class_strength=0.0,
+        preserve_dtype=False,
+    )
+
+    torch.testing.assert_close(hierarchical.embedding, legacy.embedding)
+    assert hierarchical.projection_diagnostics.class_removed_component_norm == pytest.approx(0.0)
+
+
+@pytest.mark.parametrize(
+    ("keyword", "value"),
+    (("nuisance_strength", -0.1), ("class_strength", 1.1)),
+)
+def test_hierarchical_projection_rejects_invalid_independent_strengths(
+    keyword: str,
+    value: float,
+) -> None:
+    kwargs = {keyword: value}
+    with pytest.raises(ValueError, match=keyword):
+        hierarchical_orthogonalize_pooled_embedding(
+            torch.tensor([1.0, 1.0]),
+            torch.tensor([[1.0, 0.0]]),
+            torch.tensor([0.0, 1.0]),
+            **kwargs,
+        )

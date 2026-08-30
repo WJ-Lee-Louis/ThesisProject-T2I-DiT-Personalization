@@ -10,6 +10,8 @@ source-target pooled-space projection variants.
 - Reference-caption behavior/background projection, with or without the gate
 - One-SVD union of target-prompt and reference-caption directions, with or
   without the gate
+- Absolute generic-class and source-contextual class-contrast projection,
+  both with the single-stream gate
 
 The existing `instantx_flux_ip_adapter` package remains the untouched baseline.
 This package shares the Hugging Face weight cache but uses a separate Modal app,
@@ -92,13 +94,36 @@ and `combined`. Caption-aware experiments use separate condition names:
   text-row gate.
 - `st_all_combined`: keep target directions prompt-matched, include both source
   behavior/background directions in the same SVD, and apply the gate.
+- `class_absolute_combined`: project the normalized `a dog/cat` SigLIP text
+  anchor with an independently configured class lambda, and apply the gate.
+- `class_target_superclass_combined`: retain the original target A/B nuisance
+  SVD, residualize a target-context `dog/cat - animal` direction against that
+  basis, and apply independent nuisance/class lambdas plus the gate.
+- `class_target_no_object_combined`: replace that counterfactual with the
+  context-only phrase, e.g. `(O+A)-A`, under the same hierarchical projection.
+- `class_source_superclass_combined`: average three normalized source-caption
+  `dog/cat - animal` contrasts, residualize the result against the matched
+  source-caption nuisance basis, and apply both lambdas plus the gate.
+- `class_source_no_object_combined`: average `(O+A)-A`, `(O+B)-B`, and
+  `(O+A+B)-(A+B)` from the source caption before the same residualization.
+- `class_contextual_combined`: backward-compatible alias for
+  `class_source_superclass_combined`.
 
-The `sa_*` and `st_*` conditions require `source_captions.json`; the original
-four conditions neither load nor modify it. The `st_*` path does not apply two
-sequential projections: it stacks all selected source and target directions
-before the existing orthogonalizer performs one SVD and one projection. The
-final `st_all_combined` batch generates only the 100 informative `O+A`/`O+B`
-jobs; its 60 `O+A+B` jobs are identical to `st_combined` and are not recomputed.
+The `sa_*`, `st_*`, `class_source_*`, and legacy
+`class_contextual_combined` conditions require `source_captions.json`; the
+original four conditions, `class_absolute_combined`, and `class_target_*`
+conditions neither load nor modify it. Target O+A/O+B class conditions use one
+matched pair; target O+A+B and all source-context class conditions normalize
+three pair differences before averaging them into one class direction. The
+class direction is then made orthogonal to the nuisance SVD basis, so
+`orthogonalization_strength` controls A/B attenuation and
+`class_projection_strength` controls only the remaining object component. The
+`st_*` path does not
+apply two sequential projections: it stacks all selected source and target
+directions before the existing orthogonalizer performs one SVD and one
+projection. The final `st_all_combined` batch generates only the 100 informative
+`O+A`/`O+B` jobs; its 60 `O+A+B` jobs are identical to `st_combined` and are not
+recomputed.
 
 Start with a no-GPU preview:
 
@@ -112,6 +137,9 @@ submission, status, recovery, and download commands—is documented in
 
 The earlier batch workflow is retained in
 [BATCH_MODAL_GUIDE.md](BATCH_MODAL_GUIDE.md) for historical reference.
+
+The class-component condition matrix and its independent lambda sweep are
+documented in [CLASS_PROJECTION_MODAL_GUIDE.md](CLASS_PROJECTION_MODAL_GUIDE.md).
 
 The two concurrent source-aware runs (90 + 90 images) are documented in
 [SOURCE_AWARE_MODAL_GUIDE.md](SOURCE_AWARE_MODAL_GUIDE.md).

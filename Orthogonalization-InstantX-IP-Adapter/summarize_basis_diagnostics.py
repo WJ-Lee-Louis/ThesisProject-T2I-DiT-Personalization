@@ -251,6 +251,10 @@ def _read_batch(batch_root: Path) -> tuple[list[dict], dict]:
             config.get("orthogonalization_strength"),
             "config.orthogonalization_strength",
         ),
+        "class_projection_strength": _optional_finite_number(
+            config.get("class_projection_strength"),
+            "config.class_projection_strength",
+        ),
         "state": state,
         "full_manifest_count": full_count,
         "selected_job_count": selected_count,
@@ -338,6 +342,31 @@ def _normalize_sidecar(
         result.get("direction_cosine_matrix"),
         f"direction_cosine_matrix in {sidecar_path}",
     )
+    class_pair_raw_norms = _number_list(
+        result.get("class_pair_raw_norms"),
+        f"class_pair_raw_norms in {sidecar_path}",
+    )
+    class_pair_direction_cosine_matrix = _number_matrix(
+        result.get("class_pair_direction_cosine_matrix"),
+        f"class_pair_direction_cosine_matrix in {sidecar_path}",
+    )
+    class_pair_labels = _text_list(
+        result.get("class_pair_labels", []),
+        f"class_pair_labels in {sidecar_path}",
+    )
+    class_pair_count = _optional_nonnegative_integer(
+        result.get("class_pair_count"),
+        "class_pair_count",
+    )
+    if class_pair_count is not None:
+        if class_pair_labels and len(class_pair_labels) != class_pair_count:
+            raise DiagnosticsValidationError(
+                f"Class pair label count differs in {sidecar_path}"
+            )
+        if class_pair_raw_norms and len(class_pair_raw_norms) != class_pair_count:
+            raise DiagnosticsValidationError(
+                f"Class pair raw-norm count differs in {sidecar_path}"
+            )
 
     basis_rank = _optional_nonnegative_integer(result.get("basis_rank"), "basis_rank")
     dropped_rank = _optional_nonnegative_integer(result.get("dropped_rank"), "dropped_rank")
@@ -371,6 +400,20 @@ def _normalize_sidecar(
     degenerate = result.get("degenerate")
     if degenerate is not None and not isinstance(degenerate, bool):
         raise DiagnosticsValidationError(f"degenerate must be boolean or null in {sidecar_path}")
+    hierarchical_class_projection = result.get("hierarchical_class_projection")
+    if hierarchical_class_projection is not None and not isinstance(
+        hierarchical_class_projection, bool
+    ):
+        raise DiagnosticsValidationError(
+            f"hierarchical_class_projection must be boolean or null in {sidecar_path}"
+        )
+    class_direction_dropped = result.get("class_direction_dropped")
+    if class_direction_dropped is not None and not isinstance(
+        class_direction_dropped, bool
+    ):
+        raise DiagnosticsValidationError(
+            f"class_direction_dropped must be boolean or null in {sidecar_path}"
+        )
 
     return {
         "batch_directory": str(batch_root),
@@ -380,6 +423,10 @@ def _normalize_sidecar(
             config.get("orthogonalization_strength"),
             "config.orthogonalization_strength",
         ),
+        "class_projection_strength": _optional_finite_number(
+            config.get("class_projection_strength"),
+            "config.class_projection_strength",
+        ),
         "reference_stem": reference_stem,
         "species": species,
         "prompt_suffix": prompt_suffix,
@@ -388,19 +435,69 @@ def _normalize_sidecar(
         "output_relative_path": output_relative_path,
         "sidecar_relative_path": str(sidecar_path.relative_to(batch_root).as_posix()),
         "basis_origin": _optional_text(conditioning.get("basis_origin")),
+        "class_projection_mode": _optional_text(
+            conditioning.get("class_projection_mode")
+        ),
         "source_factor_policy": _optional_text(conditioning.get("source_factor_policy")),
         "orthogonalization_enabled": enabled,
         "gate": gate,
+        "hierarchical_class_projection": hierarchical_class_projection,
         "direction_names": direction_names,
         "direction_raw_norms": direction_raw_norms,
+        "direction_raw_norm_kind": _optional_text(
+            result.get("direction_raw_norm_kind")
+        ),
+        "class_pair_raw_norms": class_pair_raw_norms,
+        "class_pair_count": class_pair_count,
+        "class_pair_labels": class_pair_labels,
+        "class_pair_direction_cosine_matrix": (
+            class_pair_direction_cosine_matrix
+        ),
         "basis_rank": basis_rank,
         "dropped_rank": dropped_rank,
+        "nuisance_basis_rank": _optional_nonnegative_integer(
+            result.get("nuisance_basis_rank"),
+            "nuisance_basis_rank",
+        ),
+        "class_basis_rank": _optional_nonnegative_integer(
+            result.get("class_basis_rank"),
+            "class_basis_rank",
+        ),
+        "class_direction_dropped": class_direction_dropped,
+        "class_overlap_norm": _optional_finite_number(
+            result.get("class_overlap_norm"),
+            f"class_overlap_norm in {sidecar_path}",
+        ),
+        "class_residual_norm": _optional_finite_number(
+            result.get("class_residual_norm"),
+            f"class_residual_norm in {sidecar_path}",
+        ),
+        "class_residual_ratio": _optional_finite_number(
+            result.get("class_residual_ratio"),
+            f"class_residual_ratio in {sidecar_path}",
+        ),
         "singular_values": singular_values,
         "relative_singular_values": relative_singular_values,
         "direction_cosine_matrix": direction_cosine_matrix,
         "projection_component_norm": _optional_finite_number(
             result.get("projection_component_norm"),
             f"projection_component_norm in {sidecar_path}",
+        ),
+        "nuisance_component_norm": _optional_finite_number(
+            result.get("nuisance_component_norm"),
+            f"nuisance_component_norm in {sidecar_path}",
+        ),
+        "class_component_norm": _optional_finite_number(
+            result.get("class_component_norm"),
+            f"class_component_norm in {sidecar_path}",
+        ),
+        "nuisance_removed_component_norm": _optional_finite_number(
+            result.get("nuisance_removed_component_norm"),
+            f"nuisance_removed_component_norm in {sidecar_path}",
+        ),
+        "class_removed_component_norm": _optional_finite_number(
+            result.get("class_removed_component_norm"),
+            f"class_removed_component_norm in {sidecar_path}",
         ),
         "removed_component_norm": _optional_finite_number(
             result.get("removed_component_norm"),
@@ -690,4 +787,3 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

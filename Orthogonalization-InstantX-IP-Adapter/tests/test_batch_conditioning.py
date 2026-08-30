@@ -3,6 +3,7 @@ from __future__ import annotations
 import pytest
 
 from orthogonalization_instantx_ip_adapter.batch_conditioning import (
+    BatchConditioning,
     build_batch_conditioning,
 )
 from orthogonalization_instantx_ip_adapter.batch_config import (
@@ -31,6 +32,11 @@ BACKGROUND_ONLY_SUFFIXES = tuple(
 FACTORIAL_SUFFIXES = tuple(
     spec.suffix for spec in PROMPT_CATALOG if spec.is_factorial
 )
+CLASS_SOURCE_CONDITIONS = {
+    "class_contextual_combined",
+    "class_source_superclass_combined",
+    "class_source_no_object_combined",
+}
 
 
 def _job(prompt_suffix: str, *, species: str = "dog") -> BatchJob:
@@ -80,6 +86,293 @@ def _source_target_config(
         orthogonalization_strength=0.73,
         source_caption_digest="cd" * 32,
     )
+
+
+def _class_config(
+    condition: str,
+) -> BatchGenerationConfig:
+    return BatchGenerationConfig(
+        batch_id=condition,
+        condition=condition,
+        orthogonalization_strength=0.91,
+        class_projection_strength=0.42,
+        source_caption_digest=(
+            "ef" * 32 if condition in CLASS_SOURCE_CONDITIONS else None
+        ),
+    )
+
+
+def _class_pairs(conditioning: BatchConditioning):
+    return tuple(
+        (pair.positive, pair.negative, pair.label)
+        for pair in conditioning.orthogonalization.class_contextual_pairs
+    )
+
+
+def test_new_conditioning_field_preserves_legacy_positional_signature() -> None:
+    request = build_batch_conditioning(
+        _job("flying"),
+        BatchGenerationConfig(batch_id="baseline", condition="baseline"),
+    ).orthogonalization
+
+    conditioning = BatchConditioning(
+        request,
+        False,
+        "none",
+        (),
+        (),
+        (),
+    )
+
+    assert conditioning.removed_factors == ()
+    assert conditioning.target_factors == ()
+    assert conditioning.source_factors == ()
+    assert conditioning.class_projection_mode == "none"
+
+
+def test_class_absolute_condition_uses_only_species_anchor_and_gate() -> None:
+    conditioning = build_batch_conditioning(
+        _job("sleeping", species="cat"),
+        _class_config("class_absolute_combined"),
+    )
+    request = conditioning.orthogonalization
+
+    assert request.mode == "class_absolute"
+    assert request.strength == pytest.approx(0.42)
+    assert request.prompts == request.prompts.__class__(object_only="a cat")
+    assert request.comparison_prompts is None
+    assert request.class_contextual_pairs == ()
+    assert request.include_behavior is False
+    assert request.include_background is False
+    assert conditioning.mask_single_text_rows is True
+    assert conditioning.basis_origin == "class_absolute"
+    assert conditioning.class_projection_mode == "absolute"
+    assert conditioning.removed_factors == ()
+    assert conditioning.target_factors == ()
+    assert conditioning.source_factors == ()
+
+
+@pytest.mark.parametrize(
+    ("condition", "class_projection_mode", "negative_prefix"),
+    (
+        (
+            "class_target_superclass_combined",
+            "target_superclass",
+            "an animal ",
+        ),
+        (
+            "class_target_no_object_combined",
+            "target_no_object",
+            "",
+        ),
+    ),
+)
+@pytest.mark.parametrize(
+    ("prompt_suffix", "positive_contexts"),
+    (
+        (
+            "flying",
+            (("a dog flying", "flying", "behavior_context"),),
+        ),
+        (
+            "on a stage",
+            (("a dog on a stage", "on a stage", "background_context"),),
+        ),
+        (
+            "flying in the sky",
+            (
+                ("a dog flying", "flying", "behavior_context"),
+                ("a dog in the sky", "in the sky", "background_context"),
+                (
+                    "a dog flying in the sky",
+                    "flying in the sky",
+                    "joint_context",
+                ),
+            ),
+        ),
+    ),
+)
+def test_target_class_conditions_build_exact_one_or_three_context_pairs(
+    condition: str,
+    class_projection_mode: str,
+    negative_prefix: str,
+    prompt_suffix: str,
+    positive_contexts: tuple[tuple[str, str, str], ...],
+) -> None:
+    conditioning = build_batch_conditioning(
+        _job(prompt_suffix),
+        _class_config(condition),
+    )
+    request = conditioning.orthogonalization
+
+    assert request.mode == (
+        "factorial" if len(positive_contexts) == 3 else "local"
+    )
+    assert request.strength == pytest.approx(0.91)
+    assert request.class_strength == pytest.approx(0.42)
+    assert request.prompts is not None
+    assert request.comparison_prompts is None
+    assert _class_pairs(conditioning) == tuple(
+        (positive, f"{negative_prefix}{context}", label)
+        for positive, context, label in positive_contexts
+    )
+    assert request.include_behavior is ("behavior" in get_prompt_spec(prompt_suffix).factors)
+    assert request.include_background is (
+        "background" in get_prompt_spec(prompt_suffix).factors
+    )
+    assert request.hierarchical_class_enabled is True
+    assert conditioning.mask_single_text_rows is True
+    assert conditioning.basis_origin == "class_target_contextual"
+    assert conditioning.class_projection_mode == class_projection_mode
+    assert conditioning.removed_factors == get_prompt_spec(prompt_suffix).factors
+    assert conditioning.target_factors == get_prompt_spec(prompt_suffix).factors
+    assert conditioning.source_factors == ()
+
+
+@pytest.mark.parametrize(
+    ("condition", "class_projection_mode", "negative_prompts"),
+    (
+        (
+            "class_source_superclass_combined",
+            "source_superclass",
+            (
+                "an animal lying down",
+                "an animal on a beach",
+                "an animal lying down on a beach",
+            ),
+        ),
+        (
+            "class_source_no_object_combined",
+            "source_no_object",
+            ("lying down", "on a beach", "lying down on a beach"),
+        ),
+    ),
+)
+def test_source_class_conditions_build_exact_three_caption_context_pairs(
+    condition: str,
+    class_projection_mode: str,
+    negative_prompts: tuple[str, str, str],
+) -> None:
+    source_caption = _source_caption()
+    conditioning = build_batch_conditioning(
+        _job("playing the piano"),
+        _class_config(condition),
+        source_caption,
+    )
+
+    assert _class_pairs(conditioning) == tuple(
+        zip(
+            (
+                "a dog lying down",
+                "a dog on a beach",
+                "a dog lying down on a beach",
+            ),
+            negative_prompts,
+            ("behavior_context", "background_context", "joint_context"),
+        )
+    )
+    assert len(conditioning.orthogonalization.class_contextual_pairs) == 3
+    assert conditioning.orthogonalization.strength == pytest.approx(0.91)
+    assert conditioning.orthogonalization.class_strength == pytest.approx(0.42)
+    assert conditioning.orthogonalization.mode == "factorial"
+    assert conditioning.orthogonalization.hierarchical_class_enabled is True
+    assert conditioning.mask_single_text_rows is True
+    assert conditioning.basis_origin == "class_source_contextual"
+    assert conditioning.class_projection_mode == class_projection_mode
+    assert conditioning.removed_factors == ("behavior",)
+    assert conditioning.target_factors == ()
+    assert conditioning.source_factors == ("behavior",)
+
+
+@pytest.mark.parametrize(
+    "condition",
+    (
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
+    ),
+)
+def test_source_class_request_is_invariant_to_target_prompt_structure(
+    condition: str,
+) -> None:
+    source_caption = _source_caption()
+    config = _class_config(condition)
+    conditionings = tuple(
+        build_batch_conditioning(_job(suffix), config, source_caption)
+        for suffix in ("flying", "on a stage", "flying in the sky")
+    )
+
+    pair_sets = tuple(_class_pairs(value) for value in conditionings)
+    assert pair_sets[0] == pair_sets[1] == pair_sets[2]
+    requests = tuple(value.orthogonalization for value in conditionings)
+    assert requests[0].include_behavior is True
+    assert requests[0].include_background is False
+    assert requests[1].include_behavior is False
+    assert requests[1].include_background is True
+    assert requests[2].include_behavior is True
+    assert requests[2].include_background is True
+
+
+def test_legacy_contextual_alias_matches_explicit_source_superclass_request() -> None:
+    job = _job("flying in the sky")
+    source_caption = _source_caption()
+
+    legacy = build_batch_conditioning(
+        job,
+        _class_config("class_contextual_combined"),
+        source_caption,
+    )
+    explicit = build_batch_conditioning(
+        job,
+        _class_config("class_source_superclass_combined"),
+        source_caption,
+    )
+
+    assert legacy == explicit
+    assert legacy.class_projection_mode == "source_superclass"
+
+
+@pytest.mark.parametrize(
+    "condition",
+    (
+        "class_absolute_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+    ),
+)
+def test_non_source_class_conditions_reject_source_captions(
+    condition: str,
+) -> None:
+    with pytest.raises(ValueError, match="must not be supplied"):
+        build_batch_conditioning(
+            _job("flying"),
+            _class_config(condition),
+            _source_caption(),
+        )
+
+
+@pytest.mark.parametrize("condition", tuple(sorted(CLASS_SOURCE_CONDITIONS)))
+def test_source_class_conditions_require_and_validate_source_caption(
+    condition: str,
+) -> None:
+    with pytest.raises(ValueError, match="source_caption is required"):
+        build_batch_conditioning(
+            _job("flying"),
+            _class_config(condition),
+        )
+
+    with pytest.raises(ValueError, match="reference mismatch"):
+        build_batch_conditioning(
+            _job("flying"),
+            _class_config(condition),
+            _source_caption(reference_stem="dog_99"),
+        )
+
+    with pytest.raises(ValueError, match="species"):
+        build_batch_conditioning(
+            _job("flying"),
+            _class_config(condition),
+            _source_caption(species="cat", reference_stem="dog_01"),
+        )
 
 
 @pytest.mark.parametrize(

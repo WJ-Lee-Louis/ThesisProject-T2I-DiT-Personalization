@@ -5,12 +5,17 @@ import pytest
 
 import batch_client
 import batch_modal
+from orthogonalization_instantx_ip_adapter.adapter import (
+    OrthogonalizationRequest,
+    PromptContrastPair,
+)
 from orthogonalization_instantx_ip_adapter.batch_config import (
     BatchGenerationConfig,
 )
 from orthogonalization_instantx_ip_adapter.source_captions import (
     DEFAULT_SOURCE_CAPTIONS_PATH,
 )
+from orthogonalization_instantx_ip_adapter.orthogonalization import PromptSet
 
 
 def test_default_batch_id_is_a_valid_safe_component():
@@ -75,9 +80,15 @@ def test_submit_requires_an_explicit_condition():
         "st_projection",
         "st_combined",
         "st_all_combined",
+        "class_absolute_combined",
+        "class_contextual_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
     ],
 )
-def test_submit_parser_exposes_all_nine_non_conflicting_conditions(
+def test_submit_parser_exposes_all_non_conflicting_conditions(
     condition: str,
 ) -> None:
     args = batch_client.build_parser().parse_args(
@@ -96,6 +107,9 @@ def test_submit_parser_exposes_all_nine_non_conflicting_conditions(
         "st_projection",
         "st_combined",
         "st_all_combined",
+        "class_contextual_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
     ],
 )
 def test_default_caption_aware_batch_id_is_safe(
@@ -237,7 +251,15 @@ def submit_harness(monkeypatch, tmp_path):
 
 @pytest.mark.parametrize(
     "condition",
-    ["baseline", "projection", "gate", "combined"],
+    [
+        "baseline",
+        "projection",
+        "gate",
+        "combined",
+        "class_absolute_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+    ],
 )
 def test_original_submit_conditions_do_not_load_or_upload_source_captions(
     condition: str,
@@ -262,6 +284,9 @@ def test_original_submit_conditions_do_not_load_or_upload_source_captions(
     assert config_payload["condition"] == condition
     assert config_payload["source_caption_digest"] is None
     assert caption_payload is None
+    if condition.startswith("class_"):
+        assert config_payload["class_projection_strength"] == pytest.approx(0.5)
+        assert config_payload["class_superclass_prompt"] == "an animal"
 
 
 @pytest.mark.parametrize(
@@ -272,6 +297,9 @@ def test_original_submit_conditions_do_not_load_or_upload_source_captions(
         "st_projection",
         "st_combined",
         "st_all_combined",
+        "class_contextual_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
     ],
 )
 def test_caption_aware_submit_validates_and_sends_caption_payload(
@@ -305,6 +333,9 @@ def test_caption_aware_submit_validates_and_sends_caption_payload(
         == captions.semantic_digest
     )
     assert caption_payload == captions.to_upload_dict()
+    if condition.startswith("class_"):
+        assert config_payload["class_projection_strength"] == pytest.approx(0.5)
+        assert config_payload["class_superclass_prompt"] == "an animal"
     assert (
         captured["job_records"][0]["source_caption_digest"]
         == captions.semantic_digest
@@ -337,6 +368,12 @@ def _catalog_jobs(reference_count: int = 10):
         "sa_combined",
         "st_projection",
         "st_combined",
+        "class_absolute_combined",
+        "class_contextual_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
     ],
 )
 def test_normal_conditions_select_all_160_jobs(condition: str) -> None:
@@ -403,6 +440,12 @@ def test_download_count_prefers_remote_status_for_legacy_batches() -> None:
         ("baseline", 160),
         ("st_combined", 160),
         ("st_all_combined", 100),
+        ("class_absolute_combined", 160),
+        ("class_contextual_combined", 160),
+        ("class_target_superclass_combined", 160),
+        ("class_target_no_object_combined", 160),
+        ("class_source_superclass_combined", 160),
+        ("class_source_no_object_combined", 160),
     ],
 )
 def test_download_count_falls_back_to_condition_aware_config(
@@ -445,3 +488,121 @@ def test_download_temporary_name_does_not_repeat_a_long_destination_name(
     assert temporary.name.startswith(".download-")
     assert temporary.name.endswith(".tmp")
     assert len(temporary.name) == len(".download-") + 32 + len(".tmp")
+
+
+def test_modal_request_serializer_records_contextual_comparison_prompts() -> None:
+    request = OrthogonalizationRequest(
+        mode="class_contextual",
+        strength=0.5,
+        prompts=PromptSet(
+            object_only="a dog",
+            object_behavior="a dog sitting",
+            object_background="a dog on a beach",
+            object_behavior_background="a dog sitting on a beach",
+        ),
+        comparison_prompts=PromptSet(
+            object_only="an animal",
+            object_behavior="an animal sitting",
+            object_background="an animal on a beach",
+            object_behavior_background="an animal sitting on a beach",
+        ),
+        include_behavior=False,
+        include_background=False,
+    )
+
+    payload = batch_modal._request_to_dict(request)
+
+    assert payload["mode"] == "class_contextual"
+    assert payload["strength"] == pytest.approx(0.5)
+    assert payload["include_behavior"] is False
+    assert payload["include_background"] is False
+    assert payload["prompts"]["object_behavior"] == "a dog sitting"
+    assert (
+        payload["comparison_prompts"]["object_behavior"]
+        == "an animal sitting"
+    )
+
+
+def test_modal_request_serializer_records_explicit_contextual_pairs() -> None:
+    request = OrthogonalizationRequest(
+        mode="class_contextual",
+        strength=0.75,
+        include_behavior=False,
+        include_background=False,
+        class_contextual_pairs=(
+            PromptContrastPair(
+                positive="a dog running",
+                negative="running",
+                label="behavior_context",
+            ),
+            PromptContrastPair(
+                positive="a dog on a street",
+                negative="on a street",
+                label="background_context",
+            ),
+            PromptContrastPair(
+                positive="a dog running on a street",
+                negative="running on a street",
+                label="joint_context",
+            ),
+        ),
+    )
+
+    payload = batch_modal._request_to_dict(request)
+
+    assert payload["mode"] == "class_contextual"
+    assert payload["strength"] == pytest.approx(0.75)
+    assert payload["prompts"] is None
+    assert payload["comparison_prompts"] is None
+    assert payload["class_contextual_pairs"] == [
+        {
+            "positive": "a dog running",
+            "negative": "running",
+            "label": "behavior_context",
+        },
+        {
+            "positive": "a dog on a street",
+            "negative": "on a street",
+            "label": "background_context",
+        },
+        {
+            "positive": "a dog running on a street",
+            "negative": "running on a street",
+            "label": "joint_context",
+        },
+    ]
+
+
+def test_modal_request_serializer_records_hierarchical_independent_strengths() -> None:
+    request = OrthogonalizationRequest(
+        mode="local",
+        strength=1.0,
+        prompts=PromptSet(
+            object_only="a dog",
+            object_behavior="a dog flying",
+        ),
+        include_behavior=True,
+        include_background=False,
+        class_contextual_pairs=(
+            PromptContrastPair(
+                positive="a dog flying",
+                negative="flying",
+                label="behavior_context",
+            ),
+        ),
+        class_strength=0.25,
+    )
+
+    payload = batch_modal._request_to_dict(request)
+
+    assert payload["mode"] == "local"
+    assert payload["strength"] == pytest.approx(1.0)
+    assert payload["class_strength"] == pytest.approx(0.25)
+    assert payload["prompts"]["object_behavior"] == "a dog flying"
+    assert payload["class_contextual_pairs"] == [
+        {
+            "positive": "a dog flying",
+            "negative": "flying",
+            "label": "behavior_context",
+        }
+    ]

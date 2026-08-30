@@ -18,7 +18,50 @@ BatchCondition = Literal[
     "st_projection",
     "st_combined",
     "st_all_combined",
+    "class_absolute_combined",
+    "class_contextual_combined",
+    "class_target_superclass_combined",
+    "class_target_no_object_combined",
+    "class_source_superclass_combined",
+    "class_source_no_object_combined",
 ]
+
+CLASS_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        "class_contextual_combined",
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
+    }
+)
+CLASS_TARGET_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        "class_target_superclass_combined",
+        "class_target_no_object_combined",
+    }
+)
+CLASS_SOURCE_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        # Backward-compatible alias for source + superclass.
+        "class_contextual_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
+    }
+)
+CLASS_SUPERCLASS_CONDITIONS = frozenset(
+    {
+        "class_contextual_combined",
+        "class_target_superclass_combined",
+        "class_source_superclass_combined",
+    }
+)
+CLASS_NO_OBJECT_CONDITIONS = frozenset(
+    {
+        "class_target_no_object_combined",
+        "class_source_no_object_combined",
+    }
+)
 
 SOURCE_CAPTION_CONDITIONS = frozenset(
     {
@@ -27,6 +70,9 @@ SOURCE_CAPTION_CONDITIONS = frozenset(
         "st_projection",
         "st_combined",
         "st_all_combined",
+        "class_contextual_combined",
+        "class_source_superclass_combined",
+        "class_source_no_object_combined",
     }
 )
 
@@ -55,6 +101,9 @@ class BatchGenerationConfig:
     expected_manifest_digest: str | None = None
     implementation_digest: str | None = None
     source_caption_digest: str | None = None
+    # Appended after every legacy field to preserve positional-call behavior.
+    class_projection_strength: float = 0.5
+    class_superclass_prompt: str = "an animal"
 
     _SERIALIZED_FIELDS: ClassVar[tuple[str, ...]] = (
         "batch_id",
@@ -70,6 +119,8 @@ class BatchGenerationConfig:
         "expected_manifest_digest",
         "implementation_digest",
         "source_caption_digest",
+        "class_projection_strength",
+        "class_superclass_prompt",
     )
     _CONDITIONS: ClassVar[frozenset[str]] = frozenset(
         {
@@ -82,6 +133,12 @@ class BatchGenerationConfig:
             "st_projection",
             "st_combined",
             "st_all_combined",
+            "class_absolute_combined",
+            "class_contextual_combined",
+            "class_target_superclass_combined",
+            "class_target_no_object_combined",
+            "class_source_superclass_combined",
+            "class_source_no_object_combined",
         }
     )
 
@@ -104,7 +161,11 @@ class BatchGenerationConfig:
             raise ValueError(
                 "condition must be one of: baseline, projection, gate, "
                 "combined, sa_projection, sa_combined, st_projection, "
-                "st_combined, st_all_combined"
+                "st_combined, st_all_combined, class_absolute_combined, "
+                "class_contextual_combined, class_target_superclass_combined, "
+                "class_target_no_object_combined, "
+                "class_source_superclass_combined, "
+                "class_source_no_object_combined"
             )
 
         self._validate_real(
@@ -113,6 +174,21 @@ class BatchGenerationConfig:
             minimum=0.0,
             maximum=1.0,
         )
+        self._validate_real(
+            "class_projection_strength",
+            self.class_projection_strength,
+            minimum=0.0,
+            maximum=1.0,
+        )
+        if (
+            not isinstance(self.class_superclass_prompt, str)
+            or not self.class_superclass_prompt
+            or self.class_superclass_prompt
+            != " ".join(self.class_superclass_prompt.split())
+        ):
+            raise ValueError(
+                "class_superclass_prompt must be a normalized non-empty string"
+            )
         self._validate_real(
             "ip_adapter_scale",
             self.ip_adapter_scale,
@@ -161,13 +237,13 @@ class BatchGenerationConfig:
         if self.requires_source_captions:
             if source_caption_digest is None:
                 raise ValueError(
-                    "source_caption_digest is required for source-aware or "
-                    "source-target conditions"
+                    "source_caption_digest is required for source-aware, "
+                    "source-target, or class-contextual conditions"
                 )
         elif source_caption_digest is not None:
             raise ValueError(
-                "source_caption_digest is only valid for source-aware conditions, "
-                "including source-target union conditions"
+                "source_caption_digest is only valid for caption-aware "
+                "projection conditions"
             )
 
     @property
@@ -178,6 +254,7 @@ class BatchGenerationConfig:
             self.target_projection_enabled
             or self.source_aware_projection_enabled
             or self.source_target_projection_enabled
+            or self.class_projection_enabled
         )
 
     @property
@@ -209,6 +286,50 @@ class BatchGenerationConfig:
         return self.condition == "st_all_combined"
 
     @property
+    def class_projection_enabled(self) -> bool:
+        """Whether one of the generic-class projection experiments is active."""
+
+        return self.condition in {
+            "class_absolute_combined",
+        } | CLASS_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_absolute_projection_enabled(self) -> bool:
+        """Whether the absolute ``a dog/cat`` text anchor is projected out."""
+
+        return self.condition == "class_absolute_combined"
+
+    @property
+    def class_contextual_projection_enabled(self) -> bool:
+        """Whether a target/source contextual class direction is projected."""
+
+        return self.condition in CLASS_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_target_contextual_projection_enabled(self) -> bool:
+        """Whether target-prompt context defines the class direction."""
+
+        return self.condition in CLASS_TARGET_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_source_contextual_projection_enabled(self) -> bool:
+        """Whether reference-caption context defines the class direction."""
+
+        return self.condition in CLASS_SOURCE_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_superclass_projection_enabled(self) -> bool:
+        """Whether the counterfactual keeps context and replaces O by S."""
+
+        return self.condition in CLASS_SUPERCLASS_CONDITIONS
+
+    @property
+    def class_no_object_projection_enabled(self) -> bool:
+        """Whether the counterfactual removes O and keeps only context."""
+
+        return self.condition in CLASS_NO_OBJECT_CONDITIONS
+
+    @property
     def requires_source_captions(self) -> bool:
         """Whether the remote run requires per-reference source captions."""
 
@@ -224,6 +345,12 @@ class BatchGenerationConfig:
             "sa_combined",
             "st_combined",
             "st_all_combined",
+            "class_absolute_combined",
+            "class_contextual_combined",
+            "class_target_superclass_combined",
+            "class_target_no_object_combined",
+            "class_source_superclass_combined",
+            "class_source_no_object_combined",
         }
 
     def to_dict(self) -> dict[str, object]:

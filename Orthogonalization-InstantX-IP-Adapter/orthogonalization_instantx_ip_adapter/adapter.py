@@ -14,13 +14,24 @@ from .attention_processor import IPAFluxAttnProcessor2_0
 from .orthogonalization import (
     ContrastDirections,
     PromptSet,
+    build_absolute_direction,
     build_factorial_directions,
     build_local_directions,
+    build_mean_paired_contrast_direction,
+    hierarchical_orthogonalize_pooled_embedding,
+    normalize_fp32,
     orthogonalize_pooled_embedding,
 )
 
 
-ORTHOGONALIZATION_MODES = {"off", "local", "factorial"}
+ORTHOGONALIZATION_MODES = {
+    "off",
+    "local",
+    "factorial",
+    "class_absolute",
+    "class_contextual",
+}
+CONTRAST_SET_MODES = {"local", "factorial"}
 
 
 @dataclass(frozen=True)
@@ -45,6 +56,27 @@ class TextDirectionSet:
 
 
 @dataclass(frozen=True)
+class PromptContrastPair:
+    """One positive-minus-counterfactual prompt pair for class projection."""
+
+    positive: str
+    negative: str
+    label: str
+
+    def __post_init__(self) -> None:
+        for field_name in ("positive", "negative", "label"):
+            value = getattr(self, field_name)
+            if (
+                not isinstance(value, str)
+                or not value
+                or value != " ".join(value.split())
+            ):
+                raise ValueError(
+                    f"{field_name} must be a normalized non-empty string"
+                )
+
+
+@dataclass(frozen=True)
 class OrthogonalizationRequest:
     """Per-generation settings for editing the SigLIP visual pooled vector."""
 
@@ -58,6 +90,10 @@ class OrthogonalizationRequest:
     relative_tolerance: float = 1e-3
     primary_label: Optional[str] = None
     additional_direction_sets: tuple[TextDirectionSet, ...] = ()
+    # Appended after every legacy field to preserve positional-call behavior.
+    comparison_prompts: Optional[PromptSet] = None
+    class_contextual_pairs: tuple[PromptContrastPair, ...] = ()
+    class_strength: Optional[float] = None
 
     def __post_init__(self) -> None:
         if self.mode not in ORTHOGONALIZATION_MODES:
@@ -65,6 +101,11 @@ class OrthogonalizationRequest:
             raise ValueError(f"mode must be one of: {choices}")
         if not math.isfinite(self.strength) or not 0.0 <= self.strength <= 1.0:
             raise ValueError("strength must be finite and in [0, 1]")
+        if self.class_strength is not None and (
+            not math.isfinite(self.class_strength)
+            or not 0.0 <= self.class_strength <= 1.0
+        ):
+            raise ValueError("class_strength must be finite and in [0, 1]")
         if not isinstance(self.additional_direction_sets, tuple):
             raise TypeError("additional_direction_sets must be a tuple")
         if not all(
@@ -74,14 +115,127 @@ class OrthogonalizationRequest:
             raise TypeError(
                 "additional_direction_sets must contain TextDirectionSet values"
             )
+        if not isinstance(self.class_contextual_pairs, tuple):
+            raise TypeError("class_contextual_pairs must be a tuple")
+        if not all(
+            isinstance(pair, PromptContrastPair)
+            for pair in self.class_contextual_pairs
+        ):
+            raise TypeError(
+                "class_contextual_pairs must contain PromptContrastPair values"
+            )
+        if self.class_contextual_pairs:
+            if len(self.class_contextual_pairs) not in {1, 3}:
+                raise ValueError(
+                    "class_contextual_pairs must contain exactly one or three pairs"
+                )
+            labels = [pair.label for pair in self.class_contextual_pairs]
+            if len(labels) != len(set(labels)):
+                raise ValueError("class_contextual pair labels must be unique")
         if self.mode == "off":
+            if self.comparison_prompts is not None:
+                raise ValueError(
+                    "comparison_prompts are not valid when orthogonalization is off"
+                )
+            # Preserve the legacy behavior in which an unused primary prompt
+            # set was tolerated while mode='off'.
             if self.primary_label is not None or self.additional_direction_sets:
                 raise ValueError(
                     "direction labels/sets are not valid when orthogonalization is off"
                 )
+            if self.class_contextual_pairs:
+                raise ValueError(
+                    "class_contextual_pairs are not valid when orthogonalization is off"
+                )
+            if self.class_strength is not None:
+                raise ValueError(
+                    "class_strength is not valid when orthogonalization is off"
+                )
             return
+
+        if self.mode == "class_absolute":
+            if self.prompts is None:
+                raise ValueError("prompts are required by class_absolute mode")
+            if self.comparison_prompts is not None:
+                raise ValueError(
+                    "comparison_prompts are not used by class_absolute mode"
+                )
+            if self.class_contextual_pairs:
+                raise ValueError(
+                    "class_contextual_pairs are not used by class_absolute mode"
+                )
+            if self.class_strength is not None:
+                raise ValueError("class_strength is not used by class_absolute mode")
+            if self.primary_label is not None or self.additional_direction_sets:
+                raise ValueError(
+                    "class projection modes do not accept direction labels/sets"
+                )
+            if any(
+                value is not None
+                for value in (
+                    self.prompts.object_behavior,
+                    self.prompts.object_background,
+                    self.prompts.object_behavior_background,
+                )
+            ):
+                raise ValueError(
+                    "class_absolute mode accepts only the object_only prompt"
+                )
+            return
+
+        if self.mode == "class_contextual":
+            if self.class_strength is not None:
+                raise ValueError(
+                    "class_contextual mode uses strength directly; "
+                    "class_strength is only for hierarchical requests"
+                )
+            if self.primary_label is not None or self.additional_direction_sets:
+                raise ValueError(
+                    "class projection modes do not accept direction labels/sets"
+                )
+            if self.class_contextual_pairs:
+                if self.prompts is not None or self.comparison_prompts is not None:
+                    raise ValueError(
+                        "class_contextual mode accepts either explicit pairs or "
+                        "legacy prompt sets, not both"
+                    )
+                return
+            if self.prompts is None or self.comparison_prompts is None:
+                raise ValueError(
+                    "class_contextual requires explicit pairs, or "
+                    "comparison_prompts are required with legacy prompts"
+                )
+            required_fields = (
+                "object_behavior",
+                "object_background",
+                "object_behavior_background",
+            )
+            if any(
+                getattr(prompt_set, field_name) is None
+                for prompt_set in (self.prompts, self.comparison_prompts)
+                for field_name in required_fields
+            ):
+                raise ValueError(
+                    "class_contextual mode requires behavior, background, and "
+                    "behavior-background prompts for both classes"
+                )
+            return
+
         if self.prompts is None:
             raise ValueError("prompts are required when orthogonalization is enabled")
+        if self.comparison_prompts is not None:
+            raise ValueError(
+                "comparison_prompts are only valid for class_contextual mode"
+            )
+        if self.class_contextual_pairs and self.class_strength is None:
+            raise ValueError(
+                "class_strength is required when nuisance and class projections "
+                "are combined"
+            )
+        if not self.class_contextual_pairs and self.class_strength is not None:
+            raise ValueError(
+                "class_strength requires class_contextual_pairs"
+            )
         _validate_direction_set(
             mode=self.mode,
             prompts=self.prompts,
@@ -105,6 +259,10 @@ class OrthogonalizationRequest:
     def enabled(self) -> bool:
         return self.mode != "off"
 
+    @property
+    def hierarchical_class_enabled(self) -> bool:
+        return bool(self.class_contextual_pairs) and self.mode in CONTRAST_SET_MODES
+
 
 def _validate_direction_set(
     *,
@@ -114,7 +272,7 @@ def _validate_direction_set(
     include_background: bool,
     label: Optional[str],
 ) -> None:
-    if mode not in ORTHOGONALIZATION_MODES - {"off"}:
+    if mode not in CONTRAST_SET_MODES:
         raise ValueError("direction-set mode must be local or factorial")
     if not isinstance(prompts, PromptSet):
         raise TypeError("direction-set prompts must be a PromptSet")
@@ -201,6 +359,7 @@ class OrthogonalizedIPAdapterMixin:
         self._generation_lock = threading.RLock()
         self._siglip_text_encoder = None
         self._text_pool_cache: dict[str, torch.Tensor] = {}
+        self._last_direction_build_diagnostics: dict = {}
         self.last_orthogonalization_diagnostics: dict = {"enabled": False}
         self.last_single_stream_text_seq_len: Optional[int] = None
         super().__init__(*args, **kwargs)
@@ -368,7 +527,29 @@ class OrthogonalizedIPAdapterMixin:
         ).to(self.device)
 
     def _build_text_directions(self, request: OrthogonalizationRequest):
+        if request.mode == "class_absolute":
+            assert request.prompts is not None
+            encoded = self._encode_siglip_text_pool(
+                [request.prompts.object_only]
+            )
+            self._last_direction_build_diagnostics = {
+                "direction_strategy": "absolute_class_anchor",
+                "direction_raw_norm_kind": "absolute_embedding_norm",
+                "class_anchor_prompt": request.prompts.object_only,
+            }
+            return build_absolute_direction(
+                encoded[0],
+                name="class_anchor_absolute",
+            )
+
+        if request.mode == "class_contextual":
+            return self._build_class_direction(request)
+
         assert request.prompts is not None
+        self._last_direction_build_diagnostics = {
+            "direction_strategy": "legacy_prompt_contrast_rows",
+            "direction_raw_norm_kind": "pre_row_normalization_contrast_norm",
+        }
         direction_sets = (
             TextDirectionSet(
                 mode=request.mode,
@@ -421,6 +602,89 @@ class OrthogonalizedIPAdapterMixin:
             ),
         )
 
+    def _build_class_direction(self, request: OrthogonalizationRequest):
+        """Build the single contextual class direction for either use mode."""
+
+        if request.class_contextual_pairs:
+            positive_prompts = tuple(
+                pair.positive for pair in request.class_contextual_pairs
+            )
+            negative_prompts = tuple(
+                pair.negative for pair in request.class_contextual_pairs
+            )
+            pair_labels = tuple(
+                pair.label for pair in request.class_contextual_pairs
+            )
+            direction_name = "class_context_mean"
+        else:
+            assert request.mode == "class_contextual"
+            assert request.prompts is not None
+            assert request.comparison_prompts is not None
+            positive_prompts = (
+                request.prompts.object_behavior,
+                request.prompts.object_background,
+                request.prompts.object_behavior_background,
+            )
+            negative_prompts = (
+                request.comparison_prompts.object_behavior,
+                request.comparison_prompts.object_background,
+                request.comparison_prompts.object_behavior_background,
+            )
+            assert all(prompt is not None for prompt in positive_prompts)
+            assert all(prompt is not None for prompt in negative_prompts)
+            pair_labels = (
+                "behavior_context",
+                "background_context",
+                "joint_context",
+            )
+            direction_name = "source_class_context_mean"
+
+        present_prompts = list(
+            dict.fromkeys((*positive_prompts, *negative_prompts))
+        )
+        encoded = self._encode_siglip_text_pool(present_prompts)
+        embedding_by_prompt = dict(zip(present_prompts, encoded))
+        positive_embeddings = torch.stack(
+            [embedding_by_prompt[prompt] for prompt in positive_prompts]
+        )
+        negative_embeddings = torch.stack(
+            [embedding_by_prompt[prompt] for prompt in negative_prompts]
+        )
+        paired_raw = normalize_fp32(positive_embeddings) - normalize_fp32(
+            negative_embeddings
+        )
+        paired_unit = normalize_fp32(paired_raw)
+        self._last_direction_build_diagnostics = {
+            "direction_strategy": "contextual_class_contrast_mean",
+            "direction_raw_norm_kind": (
+                "pre_final_normalization_mean_direction_norm"
+            ),
+            "class_pair_labels": list(pair_labels),
+            "class_pair_count": len(pair_labels),
+            "class_positive_prompts": list(positive_prompts),
+            "class_negative_prompts": list(negative_prompts),
+            # Keep stable list/matrix shapes even for a single pair.
+            "class_pair_raw_norms": (
+                torch.linalg.vector_norm(paired_raw, dim=-1)
+                .detach()
+                .float()
+                .cpu()
+                .tolist()
+            ),
+            "class_pair_direction_cosine_matrix": (
+                (paired_unit @ paired_unit.transpose(0, 1))
+                .detach()
+                .float()
+                .cpu()
+                .tolist()
+            ),
+        }
+        return build_mean_paired_contrast_direction(
+            positive_embeddings,
+            negative_embeddings,
+            name=direction_name,
+        )
+
     @torch.inference_mode()
     def get_image_embeds(self, pil_image=None, clip_image_embeds=None):
         request = self._active_orthogonalization
@@ -447,6 +711,183 @@ class OrthogonalizedIPAdapterMixin:
         else:
             clip_image_embeds = clip_image_embeds.to(self.device)
 
+        if request.hierarchical_class_enabled:
+            nuisance_directions = self._build_text_directions(request)
+            nuisance_build_diagnostics = dict(
+                self._last_direction_build_diagnostics
+            )
+            class_directions = self._build_class_direction(request)
+            class_build_diagnostics = dict(
+                self._last_direction_build_diagnostics
+            )
+            assert request.class_strength is not None
+            hierarchical_result = hierarchical_orthogonalize_pooled_embedding(
+                clip_image_embeds,
+                nuisance_directions.values,
+                class_directions.values[0],
+                nuisance_strength=request.strength,
+                class_strength=request.class_strength,
+                relative_tolerance=request.relative_tolerance,
+                restore_norm=request.restore_norm,
+                preserve_dtype=False,
+            )
+            edited_visual_pool = hierarchical_result.embedding.to(
+                device=self.device,
+                dtype=torch.bfloat16,
+            )
+            image_prompt_embeds = self.image_proj_model(edited_visual_pool)
+            nuisance_basis_diagnostics = (
+                hierarchical_result.nuisance_basis_diagnostics
+            )
+            projection_diagnostics = (
+                hierarchical_result.projection_diagnostics
+            )
+            combined_input_directions = torch.cat(
+                (nuisance_directions.values, class_directions.values),
+                dim=0,
+            )
+            nuisance_raw_norms = (
+                nuisance_directions.raw_norms.detach().float().cpu().tolist()
+                if nuisance_directions.raw_norms is not None
+                else []
+            )
+            class_raw_norms = (
+                class_directions.raw_norms.detach().float().cpu().tolist()
+                if class_directions.raw_norms is not None
+                else []
+            )
+            singular_values = (
+                nuisance_basis_diagnostics.singular_values
+                .detach()
+                .float()
+                .cpu()
+                .tolist()
+                + [hierarchical_result.class_residual_norm]
+            )
+            relative_singular_values = (
+                nuisance_basis_diagnostics.relative_singular_values
+                .detach()
+                .float()
+                .cpu()
+                .tolist()
+                + [hierarchical_result.class_residual_ratio]
+            )
+            self.last_orthogonalization_diagnostics = {
+                "enabled": True,
+                "mode": request.mode,
+                "strength": request.strength,
+                "nuisance_strength": request.strength,
+                "class_strength": request.class_strength,
+                "hierarchical_class_projection": True,
+                "direction_strategy": "nuisance_svd_then_class_residual",
+                "nuisance_direction_build": nuisance_build_diagnostics,
+                **class_build_diagnostics,
+                "direction_set_count": 2 + len(
+                    request.additional_direction_sets
+                ),
+                "direction_names": [
+                    *nuisance_directions.names,
+                    *class_directions.names,
+                ],
+                "direction_normalization": (
+                    "nuisance_l2_rows_then_class_pair_mean_then_residual"
+                ),
+                "direction_raw_norms": [
+                    *nuisance_raw_norms,
+                    *class_raw_norms,
+                ],
+                "input_direction_count": (
+                    nuisance_basis_diagnostics.direction_count + 1
+                ),
+                "direction_cosine_matrix": _tensor_to_python(
+                    combined_input_directions
+                    @ combined_input_directions.transpose(0, 1)
+                ),
+                "basis_rank": (
+                    nuisance_basis_diagnostics.retained_rank
+                    + int(hierarchical_result.class_retained)
+                ),
+                "dropped_rank": (
+                    nuisance_basis_diagnostics.dropped_rank
+                    + int(not hierarchical_result.class_retained)
+                ),
+                "basis_threshold": nuisance_basis_diagnostics.threshold,
+                "singular_values": singular_values,
+                "relative_singular_values": relative_singular_values,
+                "nuisance_basis_rank": (
+                    nuisance_basis_diagnostics.retained_rank
+                ),
+                "nuisance_dropped_rank": (
+                    nuisance_basis_diagnostics.dropped_rank
+                ),
+                "nuisance_singular_values": (
+                    nuisance_basis_diagnostics.singular_values
+                    .detach()
+                    .float()
+                    .cpu()
+                    .tolist()
+                ),
+                "class_basis_rank": int(
+                    hierarchical_result.class_retained
+                ),
+                "class_input_norm": hierarchical_result.class_input_norm,
+                "class_overlap_norm": hierarchical_result.class_overlap_norm,
+                "class_residual_norm": hierarchical_result.class_residual_norm,
+                "class_residual_ratio": (
+                    hierarchical_result.class_residual_ratio
+                ),
+                "class_basis_threshold": hierarchical_result.class_threshold,
+                "class_direction_dropped": not (
+                    hierarchical_result.class_retained
+                ),
+                "original_norm": _tensor_to_python(
+                    projection_diagnostics.original_norm
+                ),
+                "nuisance_component_norm": _tensor_to_python(
+                    projection_diagnostics.nuisance_component_norm
+                ),
+                "class_component_norm": _tensor_to_python(
+                    projection_diagnostics.class_component_norm
+                ),
+                "projection_component_norm": _tensor_to_python(
+                    projection_diagnostics.projection_component_norm
+                ),
+                "nuisance_removed_component_norm": _tensor_to_python(
+                    projection_diagnostics.nuisance_removed_component_norm
+                ),
+                "class_removed_component_norm": _tensor_to_python(
+                    projection_diagnostics.class_removed_component_norm
+                ),
+                "removed_component_norm": _tensor_to_python(
+                    projection_diagnostics.removed_component_norm
+                ),
+                "adjusted_unit_norm": _tensor_to_python(
+                    projection_diagnostics.adjusted_unit_norm
+                ),
+                "output_norm": _tensor_to_python(
+                    projection_diagnostics.output_norm
+                ),
+                "degenerate": _tensor_to_python(
+                    projection_diagnostics.degenerate
+                ),
+                "edit_norm": _tensor_to_python(
+                    projection_diagnostics.edit_norm
+                ),
+                "cosine_to_input": _tensor_to_python(
+                    projection_diagnostics.cosine_to_input
+                ),
+                "max_abs_nuisance_basis_dot": _tensor_to_python(
+                    projection_diagnostics.max_abs_nuisance_basis_dot
+                ),
+                "max_abs_class_basis_dot": _tensor_to_python(
+                    projection_diagnostics.max_abs_class_basis_dot
+                ),
+                "max_abs_basis_dot": _tensor_to_python(
+                    projection_diagnostics.max_abs_basis_dot
+                ),
+            }
+            return image_prompt_embeds
+
         directions = self._build_text_directions(request)
         result = orthogonalize_pooled_embedding(
             clip_image_embeds,
@@ -466,9 +907,14 @@ class OrthogonalizedIPAdapterMixin:
             "enabled": True,
             "mode": request.mode,
             "strength": request.strength,
+            **self._last_direction_build_diagnostics,
             "direction_set_count": 1 + len(request.additional_direction_sets),
             "direction_names": list(directions.names),
-            "direction_normalization": "l2_per_row",
+            "direction_normalization": (
+                "normalize_prompts_then_pairs_then_mean"
+                if request.mode == "class_contextual"
+                else "l2_per_row"
+            ),
             "direction_raw_norms": (
                 _tensor_to_python(directions.raw_norms)
                 if directions.raw_norms is not None
@@ -558,5 +1004,6 @@ __all__ = [
     "ORTHOGONALIZATION_MODES",
     "OrthogonalizationRequest",
     "OrthogonalizedIPAdapterMixin",
+    "PromptContrastPair",
     "TextDirectionSet",
 ]

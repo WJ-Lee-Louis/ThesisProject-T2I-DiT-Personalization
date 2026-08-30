@@ -152,6 +152,12 @@ def build_parser() -> argparse.ArgumentParser:
             "st_projection",
             "st_combined",
             "st_all_combined",
+            "class_absolute_combined",
+            "class_contextual_combined",
+            "class_target_superclass_combined",
+            "class_target_no_object_combined",
+            "class_source_superclass_combined",
+            "class_source_no_object_combined",
         ),
     )
     submit.add_argument("--batch-id")
@@ -165,7 +171,8 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=DEFAULT_SOURCE_CAPTIONS_PATH,
         help=(
-            "Reference caption JSON used by sa_* and st_* conditions "
+            "Reference caption JSON used by sa_*, st_*, class_source_*, "
+            "and the legacy class_contextual_combined condition "
             f"(default: {DEFAULT_SOURCE_CAPTIONS_PATH})"
         ),
     )
@@ -173,6 +180,23 @@ def build_parser() -> argparse.ArgumentParser:
         "--orthogonalization-strength",
         type=float,
         default=0.5,
+    )
+    submit.add_argument(
+        "--class-projection-strength",
+        type=float,
+        default=0.5,
+        help=(
+            "Class-component attenuation lambda used only by "
+            "class_* conditions (default: 0.5)."
+        ),
+    )
+    submit.add_argument(
+        "--class-superclass-prompt",
+        default="an animal",
+        help=(
+            "Matched superclass phrase used by class_*_superclass_* and the "
+            "legacy class_contextual_combined condition (default: 'an animal')."
+        ),
     )
     submit.add_argument("--ip-adapter-scale", type=float, default=0.7)
     submit.add_argument("--guidance-scale", type=float, default=3.5)
@@ -258,6 +282,8 @@ def command_submit(args: argparse.Namespace) -> int:
         batch_id=batch_id,
         condition=args.condition,
         orthogonalization_strength=args.orthogonalization_strength,
+        class_projection_strength=args.class_projection_strength,
+        class_superclass_prompt=args.class_superclass_prompt,
         ip_adapter_scale=args.ip_adapter_scale,
         guidance_scale=args.guidance_scale,
         steps=args.steps,
@@ -284,6 +310,36 @@ def command_submit(args: argparse.Namespace) -> int:
         f"{'on' if config.projection_enabled else 'off'} / "
         f"{'on' if config.mask_single_text_rows else 'off'}"
     )
+    if config.class_projection_enabled:
+        if config.class_absolute_projection_enabled:
+            class_summary = "absolute a dog/cat anchor"
+        else:
+            origin = (
+                "target-context"
+                if config.class_target_contextual_projection_enabled
+                else "source-context"
+            )
+            counterfactual = (
+                f"superclass {config.class_superclass_prompt!r}"
+                if config.class_superclass_projection_enabled
+                else "no-object context"
+            )
+            class_summary = f"{origin} class-vs-{counterfactual} mean"
+        print(
+            "  active class projection: "
+            f"{class_summary}, class lambda={config.class_projection_strength:g}"
+        )
+        if config.class_contextual_projection_enabled:
+            print(
+                "  active nuisance projection: "
+                f"lambda={config.orthogonalization_strength:g} "
+                "(class direction is residualized after this SVD basis)"
+            )
+    elif config.projection_enabled:
+        print(
+            "  active target/source projection: "
+            f"lambda={config.orthogonalization_strength:g}"
+        )
     print(
         f"  generation: seed={config.seed}, steps={config.steps}, "
         f"size={config.width}x{config.height}"

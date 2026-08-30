@@ -245,8 +245,8 @@ class BatchGenerator:
         if config.requires_source_captions:
             if source_caption_payload is None:
                 raise ValueError(
-                    "source_caption_payload is required for source-aware or "
-                    "source-target conditions"
+                    "source_caption_payload is required for caption-aware "
+                    "projection conditions"
                 )
             source_captions = build_source_caption_manifest(
                 source_caption_payload,
@@ -261,8 +261,8 @@ class BatchGenerator:
                 )
         elif source_caption_payload is not None:
             raise ValueError(
-                "source_caption_payload is only valid for source-aware or "
-                "source-target conditions"
+                "source_caption_payload is only valid for caption-aware "
+                "projection conditions"
             )
 
         batch_root = _safe_child(REMOTE_RESULTS_ROOT, config.batch_id)
@@ -423,6 +423,19 @@ class BatchGenerator:
                             job.prompt_suffix
                         ).to_dict(),
                         "basis_origin": conditioning.basis_origin,
+                        "class_projection_mode": (
+                            conditioning.class_projection_mode
+                        ),
+                        "class_projection_strength": (
+                            config.class_projection_strength
+                            if config.class_projection_enabled
+                            else None
+                        ),
+                        "class_superclass_prompt": (
+                            config.class_superclass_prompt
+                            if config.class_superclass_projection_enabled
+                            else None
+                        ),
                         "removed_factors": list(
                             conditioning.removed_factors
                         ),
@@ -614,6 +627,7 @@ def _request_to_dict(request) -> dict:
     value = {
         "mode": request.mode,
         "strength": request.strength,
+        "class_strength": request.class_strength,
         "include_behavior": request.include_behavior,
         "include_background": request.include_background,
         "include_interaction": request.include_interaction,
@@ -632,9 +646,15 @@ def _request_to_dict(request) -> dict:
             for direction_set in request.additional_direction_sets
         ],
         "prompts": None,
+        "comparison_prompts": None,
+        "class_contextual_pairs": [
+            asdict(pair) for pair in request.class_contextual_pairs
+        ],
     }
     if request.prompts is not None:
         value["prompts"] = asdict(request.prompts)
+    if request.comparison_prompts is not None:
+        value["comparison_prompts"] = asdict(request.comparison_prompts)
     return value
 
 
