@@ -21,6 +21,7 @@ if str(EXPERIMENT_ROOT) not in sys.path:
 
 from orthogonalization_instantx_ip_adapter.batch_config import (
     BatchGenerationConfig,
+    FINAL_CONDITIONS,
     SOURCE_CAPTION_CONDITIONS,
 )
 from orthogonalization_instantx_ip_adapter.batch_manifest import (
@@ -55,9 +56,9 @@ JOB_RECORD_ROOT = EXPERIMENT_ROOT / ".modal_jobs"
 def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
     """Return prompts that require generation for one experiment condition."""
 
-    if condition == "st_all_combined":
+    if _is_st_all_condition(condition):
         # On O+A+B prompts, all-source union is identical to matched union, so
-        # those images can be reused from st_combined without another GPU run.
+        # those images can be reused from the matching st_matched condition.
         return tuple(
             spec.suffix for spec in PROMPT_CATALOG if not spec.is_factorial
         )
@@ -66,7 +67,7 @@ def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
 
 def _select_jobs_for_condition(jobs, condition: str):
     jobs = tuple(jobs)
-    if condition == "st_all_combined":
+    if _is_st_all_condition(condition):
         selected_items = []
         skipped_items = []
         for job in jobs:
@@ -102,7 +103,8 @@ def _job_selection_metadata(jobs, condition: str) -> dict[str, object]:
         "skipped_as_redundant_job_count": len(skipped),
         "skipped_as_redundant_prompt_suffixes": list(skipped_suffixes),
         "redundancy_reason": (
-            "O+A+B is identical to st_combined because matched union already "
+            "O+A+B is identical to the corresponding st_matched condition "
+            "because matched union already "
             "includes both source factors"
             if skipped
             else None
@@ -110,10 +112,17 @@ def _job_selection_metadata(jobs, condition: str) -> dict[str, object]:
     }
 
 
+def _is_st_all_condition(condition: str) -> bool:
+    # Only the historical optimized batch omitted factorial jobs. New ST-all
+    # conditions are self-contained 140-image batches and do not depend on a
+    # separately generated matched batch.
+    return condition == "st_all_combined"
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Submit and recover the 10-reference x 16-prompt InstantX "
+            "Submit and recover the 10-reference x 14-prompt InstantX "
             "orthogonalization experiment."
         )
     )
@@ -121,7 +130,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     preview = commands.add_parser(
         "preview",
-        help="Validate the local references and print the 160-job manifest.",
+        help="Validate the local references and print the 140-job manifest.",
     )
     preview.add_argument(
         "--reference-root",
@@ -142,23 +151,7 @@ def build_parser() -> argparse.ArgumentParser:
     submit.add_argument(
         "--condition",
         required=True,
-        choices=(
-            "baseline",
-            "projection",
-            "gate",
-            "combined",
-            "sa_projection",
-            "sa_combined",
-            "st_projection",
-            "st_combined",
-            "st_all_combined",
-            "class_absolute_combined",
-            "class_contextual_combined",
-            "class_target_superclass_combined",
-            "class_target_no_object_combined",
-            "class_source_superclass_combined",
-            "class_source_no_object_combined",
-        ),
+        choices=FINAL_CONDITIONS,
     )
     submit.add_argument("--batch-id")
     submit.add_argument(
@@ -171,8 +164,8 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=DEFAULT_SOURCE_CAPTIONS_PATH,
         help=(
-            "Reference caption JSON used by sa_*, st_*, class_source_*, "
-            "and the legacy class_contextual_combined condition "
+            "Reference caption JSON used by source_*, st_*, class_source_*, "
+            "and class_st_* conditions "
             f"(default: {DEFAULT_SOURCE_CAPTIONS_PATH})"
         ),
     )
@@ -194,8 +187,8 @@ def build_parser() -> argparse.ArgumentParser:
         "--class-superclass-prompt",
         default="an animal",
         help=(
-            "Matched superclass phrase used by class_*_superclass_* and the "
-            "legacy class_contextual_combined condition (default: 'an animal')."
+            "Matched superclass phrase used by class_*_superclass_* conditions "
+            "(default: 'an animal')."
         ),
     )
     submit.add_argument("--ip-adapter-scale", type=float, default=0.7)
@@ -312,13 +305,19 @@ def command_submit(args: argparse.Namespace) -> int:
     )
     if config.class_projection_enabled:
         if config.class_absolute_projection_enabled:
-            class_summary = "absolute a dog/cat anchor"
-        else:
-            origin = (
-                "target-context"
-                if config.class_target_contextual_projection_enabled
-                else "source-context"
+            overlap_policy = (
+                "residualized against nuisance"
+                if config.class_absolute_residual_projection_enabled
+                else "direct overlap-unaware"
             )
+            class_summary = f"absolute a dog/cat anchor ({overlap_policy})"
+        else:
+            if config.class_source_target_contextual_projection_enabled:
+                origin = "target+source-context"
+            elif config.class_target_contextual_projection_enabled:
+                origin = "target-context"
+            else:
+                origin = "source-context"
             counterfactual = (
                 f"superclass {config.class_superclass_prompt!r}"
                 if config.class_superclass_projection_enabled
@@ -329,12 +328,15 @@ def command_submit(args: argparse.Namespace) -> int:
             "  active class projection: "
             f"{class_summary}, class lambda={config.class_projection_strength:g}"
         )
-        if config.class_contextual_projection_enabled:
-            print(
-                "  active nuisance projection: "
-                f"lambda={config.orthogonalization_strength:g} "
-                "(class direction is residualized after this SVD basis)"
-            )
+        class_policy = (
+            "direct; nuisance overlap retained"
+            if config.class_absolute_direct_projection_enabled
+            else "residualized after nuisance SVD"
+        )
+        print(
+            "  active nuisance projection: "
+            f"lambda={config.orthogonalization_strength:g}; {class_policy}"
+        )
     elif config.projection_enabled:
         print(
             "  active target/source projection: "
@@ -353,7 +355,7 @@ def command_submit(args: argparse.Namespace) -> int:
         print(
             "  redundant jobs skipped: "
             f"{job_selection['skipped_as_redundant_job_count']} "
-            "(factorial O+A+B prompts; reuse st_combined)"
+            "(factorial O+A+B prompts; reuse corresponding st_matched batch)"
         )
     if source_captions is not None:
         print_source_caption_summary(
@@ -631,16 +633,7 @@ def print_manifest_summary(manifest) -> None:
     )
     print(f"  prompts/reference: {len(PROMPT_SUFFIXES)}")
     print(f"  total jobs: {len(manifest.jobs)}")
-    optimized = _job_selection_metadata(
-        manifest.jobs,
-        "st_all_combined",
-    )
-    print(
-        "  st_all_combined optimized jobs: "
-        f"{optimized['selected_job_count']} "
-        f"(skips {optimized['skipped_as_redundant_job_count']} redundant "
-        "O+A+B jobs)"
-    )
+    print(f"  self-contained ST-all jobs: {len(manifest.jobs)}")
     print(f"  semantic digest: {manifest.semantic_digest}")
     print("  references:")
     for reference in manifest.references:

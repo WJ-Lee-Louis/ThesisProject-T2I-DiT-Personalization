@@ -154,10 +154,16 @@ class HierarchicalOrthogonalizationResult:
     nuisance_basis: Tensor
     class_basis: Tensor
     nuisance_basis_diagnostics: BasisDiagnostics
+    class_basis_diagnostics: BasisDiagnostics
+    class_direction_count: int
     class_input_norm: float
     class_overlap_norm: float
     class_residual_norm: float
     class_residual_ratio: float
+    class_input_norms: Tensor
+    class_overlap_norms: Tensor
+    class_residual_norms: Tensor
+    class_residual_ratios: Tensor
     class_threshold: float
     class_retained: bool
     projection_diagnostics: HierarchicalProjectionDiagnostics
@@ -609,6 +615,7 @@ def hierarchical_orthogonalize_pooled_embedding(
     *,
     nuisance_strength: float = 1.0,
     class_strength: float = 0.25,
+    residualize_class_against_nuisance: bool = True,
     relative_tolerance: float = 1e-3,
     absolute_tolerance: float = 0.0,
     max_nuisance_rank: Optional[int] = None,
@@ -618,16 +625,18 @@ def hierarchical_orthogonalize_pooled_embedding(
 ) -> HierarchicalOrthogonalizationResult:
     """Attenuate nuisance and class components with independent strengths.
 
-    The nuisance rows are first converted to an SVD basis ``Q_n``.  The class
-    direction is then residualized as ``(I - Q_n Q_n^T)c`` so its retained
-    rank-one basis is orthogonal to the nuisance subspace.  This makes the two
-    attenuation strengths well-defined and avoids double subtraction.
+    The nuisance rows are first converted to an SVD basis ``Q_n``. By default,
+    class rows are residualized as ``(I - Q_n Q_n^T)c`` before their second
+    SVD. Setting ``residualize_class_against_nuisance=False`` keeps the direct
+    class basis as an explicit overlap-unaware ablation.
     """
 
     _validate_float_tensor("embedding", embedding)
     _validate_float_tensor("nuisance_directions", nuisance_directions)
     _validate_float_tensor("class_direction", class_direction)
     _validate_eps(eps)
+    if not isinstance(residualize_class_against_nuisance, bool):
+        raise TypeError("residualize_class_against_nuisance must be a boolean")
     for name, strength in (
         ("nuisance_strength", nuisance_strength),
         ("class_strength", class_strength),
@@ -640,12 +649,22 @@ def hierarchical_orthogonalize_pooled_embedding(
         raise ValueError(
             "nuisance_directions must have shape [direction_count, embedding_dim]"
         )
-    if class_direction.ndim != 1:
-        raise ValueError("class_direction must have shape [embedding_dim]")
+    if class_direction.ndim not in {1, 2}:
+        raise ValueError(
+            "class_direction must have shape [embedding_dim] or "
+            "[direction_count, embedding_dim]"
+        )
+    class_directions = (
+        class_direction.unsqueeze(0)
+        if class_direction.ndim == 1
+        else class_direction
+    )
+    if class_directions.shape[0] == 0:
+        raise ValueError("at least one class direction is required")
     embedding_dim = embedding.shape[-1]
     if nuisance_directions.shape[-1] != embedding_dim:
         raise ValueError("nuisance directions and embedding dimensions do not match")
-    if class_direction.shape[0] != embedding_dim:
+    if class_directions.shape[-1] != embedding_dim:
         raise ValueError("class direction and embedding dimensions do not match")
     if (
         nuisance_directions.device != embedding.device
@@ -667,34 +686,56 @@ def hierarchical_orthogonalize_pooled_embedding(
     )
     nuisance_basis = nuisance_result.basis
 
-    class_fp32 = class_direction.float()
-    class_input_norm_tensor = torch.linalg.vector_norm(class_fp32)
-    if class_input_norm_tensor <= eps:
-        raise ValueError("class_direction must be non-zero")
-    class_unit = class_fp32 / class_input_norm_tensor
+    class_fp32 = class_directions.float()
+    class_input_norm_tensors = torch.linalg.vector_norm(class_fp32, dim=-1)
+    if torch.any(class_input_norm_tensors <= eps):
+        indices = torch.nonzero(
+            class_input_norm_tensors <= eps,
+            as_tuple=False,
+        ).flatten().tolist()
+        raise ValueError(
+            "class directions must be non-zero; degenerate indices="
+            f"{indices}"
+        )
+    class_units = class_fp32 / class_input_norm_tensors.unsqueeze(-1)
     if nuisance_basis.shape[1]:
-        class_overlap = (
-            (class_unit @ nuisance_basis) @ nuisance_basis.transpose(0, 1)
+        class_overlaps = (
+            (class_units @ nuisance_basis) @ nuisance_basis.transpose(0, 1)
         )
     else:
-        class_overlap = torch.zeros_like(class_unit)
-    class_residual = class_unit - class_overlap
-    class_overlap_norm_tensor = torch.linalg.vector_norm(class_overlap)
-    class_residual_norm_tensor = torch.linalg.vector_norm(class_residual)
+        class_overlaps = torch.zeros_like(class_units)
+    class_residuals = class_units - class_overlaps
+    class_overlap_norm_tensors = torch.linalg.vector_norm(
+        class_overlaps,
+        dim=-1,
+    )
+    class_residual_norm_tensors = torch.linalg.vector_norm(
+        class_residuals,
+        dim=-1,
+    )
+    class_residual_ratios = class_residual_norm_tensors
     class_threshold = max(
         float(absolute_tolerance),
         float(relative_tolerance),
         float(eps),
     )
-    class_retained = bool(class_residual_norm_tensor.item() > class_threshold)
-    if class_retained:
-        class_basis = (class_residual / class_residual_norm_tensor).unsqueeze(1)
-    else:
-        class_basis = torch.empty(
-            (embedding_dim, 0),
-            dtype=torch.float32,
-            device=embedding.device,
+    if residualize_class_against_nuisance:
+        retained_class_rows = class_residual_norm_tensors > class_threshold
+        class_basis_rows = torch.where(
+            retained_class_rows.unsqueeze(-1),
+            class_residuals
+            / class_residual_norm_tensors.clamp_min(eps).unsqueeze(-1),
+            torch.zeros_like(class_residuals),
         )
+    else:
+        class_basis_rows = class_units
+    class_basis_result = estimate_orthonormal_basis(
+        class_basis_rows,
+        relative_tolerance=relative_tolerance,
+        absolute_tolerance=absolute_tolerance,
+    )
+    class_basis = class_basis_result.basis
+    class_retained = class_basis_result.diagnostics.retained_rank > 0
 
     embedding_fp32 = embedding.float()
     original_norm_keep = torch.linalg.vector_norm(
@@ -785,13 +826,16 @@ def hierarchical_orthogonalize_pooled_embedding(
         nuisance_basis=nuisance_basis,
         class_basis=class_basis,
         nuisance_basis_diagnostics=nuisance_result.diagnostics,
-        class_input_norm=float(class_input_norm_tensor.item()),
-        class_overlap_norm=float(class_overlap_norm_tensor.item()),
-        class_residual_norm=float(class_residual_norm_tensor.item()),
-        class_residual_ratio=float(
-            class_residual_norm_tensor.item()
-            / max(class_input_norm_tensor.item(), eps)
-        ),
+        class_basis_diagnostics=class_basis_result.diagnostics,
+        class_direction_count=int(class_directions.shape[0]),
+        class_input_norm=float(class_input_norm_tensors.mean().item()),
+        class_overlap_norm=float(class_overlap_norm_tensors.mean().item()),
+        class_residual_norm=float(class_residual_norm_tensors.mean().item()),
+        class_residual_ratio=float(class_residual_ratios.mean().item()),
+        class_input_norms=class_input_norm_tensors,
+        class_overlap_norms=class_overlap_norm_tensors,
+        class_residual_norms=class_residual_norm_tensors,
+        class_residual_ratios=class_residual_ratios,
         class_threshold=class_threshold,
         class_retained=class_retained,
         projection_diagnostics=diagnostics,

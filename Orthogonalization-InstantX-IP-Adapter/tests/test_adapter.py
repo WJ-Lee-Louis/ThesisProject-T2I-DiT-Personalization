@@ -5,6 +5,7 @@ import torch
 import torch.nn as nn
 
 from orthogonalization_instantx_ip_adapter.adapter import (
+    ClassDirectionSet,
     OrthogonalizationRequest,
     OrthogonalizedIPAdapterMixin,
     PromptContrastPair,
@@ -123,6 +124,14 @@ def test_factorial_request_requires_all_counterfactual_prompts():
         )
 
 
+def test_removed_class_only_absolute_mode_is_rejected() -> None:
+    with pytest.raises(ValueError, match="mode must be one of"):
+        OrthogonalizationRequest(
+            mode="class_absolute",
+            prompts=PromptSet(object_only="a dog"),
+        )
+
+
 def test_class_absolute_request_builds_one_anchor_direction(monkeypatch) -> None:
     adapter = _CheckpointAdapter()
     monkeypatch.setattr(
@@ -133,13 +142,18 @@ def test_class_absolute_request_builds_one_anchor_direction(monkeypatch) -> None
         ),
     )
     request = OrthogonalizationRequest(
-        mode="class_absolute",
-        prompts=PromptSet(object_only="a dog"),
-        include_behavior=False,
+        mode="local",
+        prompts=PromptSet(
+            object_only="a dog",
+            object_behavior="a dog flying",
+        ),
+        include_behavior=True,
         include_background=False,
+        class_absolute_prompt="a dog",
+        class_strength=0.5,
     )
 
-    directions = adapter._build_text_directions(request)
+    directions = adapter._build_hierarchical_class_directions(request)
 
     assert directions.names == ("class_anchor_absolute",)
     assert directions.values.shape == (1, 2)
@@ -358,13 +372,18 @@ def test_class_requests_validate_explicit_pair_cardinality_and_exclusivity() -> 
 
 
 def test_class_requests_reject_missing_or_extraneous_prompt_sets() -> None:
-    with pytest.raises(ValueError, match="only the object_only"):
+    with pytest.raises(ValueError, match="either contextual class pairs"):
         OrthogonalizationRequest(
-            mode="class_absolute",
+            mode="local",
             prompts=PromptSet(
                 object_only="a dog",
                 object_behavior="a dog running",
             ),
+            class_contextual_pairs=(
+                PromptContrastPair("a dog running", "running", "context"),
+            ),
+            class_absolute_prompt="a dog",
+            class_strength=0.5,
         )
 
     with pytest.raises(ValueError, match="requires explicit pairs"):
@@ -393,7 +412,7 @@ def test_hierarchical_request_requires_pairs_and_independent_class_strength() ->
             include_background=False,
             class_contextual_pairs=(pair,),
         )
-    with pytest.raises(ValueError, match="requires class_contextual_pairs"):
+    with pytest.raises(ValueError, match="requires contextual class pairs"):
         OrthogonalizationRequest(
             mode="local",
             prompts=prompts,
@@ -468,6 +487,63 @@ def test_adapter_hierarchical_path_reports_separate_nuisance_and_class_edits(
         torch.linalg.vector_norm(visual.float()),
         rtol=2e-3,
         atol=2e-3,
+    )
+
+
+def test_adapter_hierarchical_path_builds_target_source_class_subspace(
+    monkeypatch,
+) -> None:
+    adapter = _CheckpointAdapter()
+    adapter.image_proj_model = nn.Identity()
+    embeddings = {
+        "a dog": torch.tensor([1.0, 0.0, 0.0, 0.0]),
+        "a dog flying": torch.tensor([0.0, 1.0, 0.0, 0.0]),
+        "flying": torch.tensor([0.0, 0.0, 1.0, 0.0]),
+        "a dog sitting": torch.tensor([0.0, 0.0, 0.0, 1.0]),
+        "sitting": torch.tensor([0.5, 0.0, 0.0, 0.5]),
+    }
+    monkeypatch.setattr(
+        adapter,
+        "_encode_siglip_text_pool",
+        lambda prompts: torch.stack([embeddings[prompt] for prompt in prompts]),
+    )
+    request = OrthogonalizationRequest(
+        mode="local",
+        strength=0.8,
+        prompts=PromptSet(
+            object_only="a dog",
+            object_behavior="a dog flying",
+        ),
+        include_behavior=True,
+        include_background=False,
+        class_contextual_pairs=(
+            PromptContrastPair("a dog flying", "flying", "target_behavior"),
+        ),
+        class_strength=0.25,
+        primary_class_label="target_class_context",
+        additional_class_direction_sets=(
+            ClassDirectionSet(
+                label="source_class_context",
+                pairs=(
+                    PromptContrastPair("a dog sitting", "sitting", "source_behavior"),
+                ),
+            ),
+        ),
+    )
+
+    adapter._active_orthogonalization = request
+    adapter.get_image_embeds(
+        clip_image_embeds=torch.tensor([[1.0, 2.0, 3.0, 4.0]])
+    )
+    diagnostics = adapter.last_orthogonalization_diagnostics
+
+    assert diagnostics["class_direction_count"] == 2
+    assert diagnostics["class_pair_count"] == 2
+    assert diagnostics["class_direction_set_count"] == 2
+    assert len(diagnostics["class_direction_sets"]) == 2
+    assert diagnostics["class_basis_rank"] in {1, 2}
+    assert diagnostics["basis_rank"] == (
+        diagnostics["nuisance_basis_rank"] + diagnostics["class_basis_rank"]
     )
 
 

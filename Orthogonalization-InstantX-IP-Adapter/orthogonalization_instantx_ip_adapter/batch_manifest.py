@@ -1,4 +1,4 @@
-"""Deterministic manifest construction for the 160-image animal experiment."""
+"""Deterministic manifest construction for the 140-image animal experiment."""
 
 from __future__ import annotations
 
@@ -92,7 +92,7 @@ class BatchJob:
 
 @dataclass(frozen=True, slots=True)
 class BatchManifest:
-    """The complete, validated 10-reference by 16-prompt experiment."""
+    """The complete, validated 10-reference by 14-prompt experiment."""
 
     reference_root: str
     references: tuple[ReferenceRecord, ...]
@@ -250,7 +250,7 @@ def build_batch_manifest_from_paths(
     *,
     reference_root: str | Path | None = None,
 ) -> BatchManifest:
-    """Build the fixed 160-job manifest from explicit local image paths."""
+    """Build the fixed 140-job manifest from explicit local image paths."""
 
     records = build_reference_records(
         reference_paths,
@@ -274,7 +274,7 @@ def build_batch_manifest_from_paths(
 def build_batch_manifest(
     reference_root: str | Path = DEFAULT_REFERENCE_ROOT,
 ) -> BatchManifest:
-    """Discover a configured directory and build its fixed 160-job manifest."""
+    """Discover a configured directory and build its fixed 140-job manifest."""
 
     # Resolve before discovery so paths returned from a relative root are
     # already absolute.  Otherwise ``build_reference_records`` would prefix

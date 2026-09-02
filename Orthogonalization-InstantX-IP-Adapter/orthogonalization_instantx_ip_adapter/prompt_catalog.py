@@ -16,7 +16,6 @@ PromptCategory = Literal[
     "single_behavior",
     "object_related",
     "background_related",
-    "expression_related",
     "complex",
     "background_only",
 ]
@@ -25,7 +24,6 @@ PROMPT_CATEGORIES = frozenset(
         "single_behavior",
         "object_related",
         "background_related",
-        "expression_related",
         "complex",
         "background_only",
     }
@@ -142,16 +140,6 @@ PROMPT_CATALOG: tuple[PromptSpec, ...] = (
         category="background_related",
         behavior="sleeping",
         background="in the snow",
-    ),
-    PromptSpec(
-        suffix="smiling",
-        category="expression_related",
-        behavior="smiling",
-    ),
-    PromptSpec(
-        suffix="crying",
-        category="expression_related",
-        behavior="crying",
     ),
     PromptSpec(
         suffix="playing the guitar on a stage",

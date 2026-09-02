@@ -78,52 +78,28 @@ dimensions, and scales.
 
 The animal dataset batch uses a separate deployed Modal class and named input
 and result Volumes. It validates exactly 7 dog plus 3 cat references, expands
-the structured 16-prompt catalog into 160 unique jobs per full condition, and
+the structured 14-prompt catalog into 140 unique jobs per full condition, and
 commits each PNG and diagnostics file independently.
 
-The original conditions remain available as `baseline`, `projection`, `gate`,
-and `combined`. Caption-aware experiments use separate condition names:
+The finalized API exposes exactly 22 unambiguous conditions: `baseline`,
+SSG-only `ssg`, four nuisance-projection origins with an `_ssg` suffix, and a
+4-by-4 matrix crossing those origins with `absolute_direct`,
+`absolute_residual`, `no_object`, and `superclass` generic-class strategies.
+Old `combined`, no-gate projection, class-only absolute, and compatibility
+alias names are not accepted for new submissions.
 
-- `sa_projection`: construct behavior/background directions from each
-  reference caption and remove the factor required by the target prompt type.
-- `sa_combined`: apply the same source-aware projection plus the single-stream
-  text-row gate.
-- `st_projection`: concatenate target-prompt and reference-caption contrast
-  rows, estimate one shared SVD basis, and project once.
-- `st_combined`: apply the same shared-basis projection plus the single-stream
-  text-row gate.
-- `st_all_combined`: keep target directions prompt-matched, include both source
-  behavior/background directions in the same SVD, and apply the gate.
-- `class_absolute_combined`: project the normalized `a dog/cat` SigLIP text
-  anchor with an independently configured class lambda, and apply the gate.
-- `class_target_superclass_combined`: retain the original target A/B nuisance
-  SVD, residualize a target-context `dog/cat - animal` direction against that
-  basis, and apply independent nuisance/class lambdas plus the gate.
-- `class_target_no_object_combined`: replace that counterfactual with the
-  context-only phrase, e.g. `(O+A)-A`, under the same hierarchical projection.
-- `class_source_superclass_combined`: average three normalized source-caption
-  `dog/cat - animal` contrasts, residualize the result against the matched
-  source-caption nuisance basis, and apply both lambdas plus the gate.
-- `class_source_no_object_combined`: average `(O+A)-A`, `(O+B)-B`, and
-  `(O+A+B)-(A+B)` from the source caption before the same residualization.
-- `class_contextual_combined`: backward-compatible alias for
-  `class_source_superclass_combined`.
+Every intervention condition uses the single-stream gate. Absolute-direct
+keeps overlap between the nuisance SVD basis and the normalized `a dog/cat`
+anchor as a deliberate ablation. Absolute-residual, no-object, and superclass
+remove this overlap before applying the independently scaled class projection.
+Generic conditions accept class strengths 0.5 and 1.0. Source and ST conditions
+require `source_captions.json`. See
+[CLASS_PROJECTION_MODAL_GUIDE.md](CLASS_PROJECTION_MODAL_GUIDE.md) for the full
+22-name matrix and Modal commands.
 
-The `sa_*`, `st_*`, `class_source_*`, and legacy
-`class_contextual_combined` conditions require `source_captions.json`; the
-original four conditions, `class_absolute_combined`, and `class_target_*`
-conditions neither load nor modify it. Target O+A/O+B class conditions use one
-matched pair; target O+A+B and all source-context class conditions normalize
-three pair differences before averaging them into one class direction. The
-class direction is then made orthogonal to the nuisance SVD basis, so
-`orthogonalization_strength` controls A/B attenuation and
-`class_projection_strength` controls only the remaining object component. The
-`st_*` path does not
-apply two sequential projections: it stacks all selected source and target
-directions before the existing orthogonalizer performs one SVD and one
-projection. The final `st_all_combined` batch generates only the 100 informative
-`O+A`/`O+B` jobs; its 60 `O+A+B` jobs are identical to `st_combined` and are not
-recomputed.
+Each new condition generates a self-contained 140-image batch. ST-all does not
+assume that a corresponding ST-matched batch exists, so its O+A+B jobs are not
+automatically omitted.
 
 Start with a no-GPU preview:
 
@@ -146,10 +122,10 @@ The two concurrent source-aware runs (90 + 90 images) are documented in
 
 ## Final comparison grids and basis diagnostics
 
-The compositor renders the final six-method by 16-prompt experiment.  The
-six factorial `st_all_combined` columns reuse the mathematically identical
-`st_combined` images, so the optimized 100-image batch remains sufficient.
-Earlier comparison-grid outputs remain under `outputs/comparison_grids`.
+The existing compositor still renders the historical six-method experiment
+using its original batch metadata names. New 22-condition submissions use the
+SSG names documented above. Earlier comparison-grid outputs remain under
+`outputs/comparison_grids`.
 
 ```powershell
 python Orthogonalization-InstantX-IP-Adapter\create_comparison_grids.py

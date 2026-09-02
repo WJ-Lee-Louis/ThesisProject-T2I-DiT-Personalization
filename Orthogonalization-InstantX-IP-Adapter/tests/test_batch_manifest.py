@@ -81,8 +81,6 @@ def test_prompt_catalog_has_expected_order_and_factor_decompositions() -> None:
         "riding a skateboard",
         "flying in the sky",
         "sleeping in the snow",
-        "smiling",
-        "crying",
         "playing the guitar on a stage",
         "swimming in the pool",
         "jumping over a wooden fence",
@@ -90,7 +88,7 @@ def test_prompt_catalog_has_expected_order_and_factor_decompositions() -> None:
         "on a stage",
         "in the snow",
     )
-    assert len(PROMPT_CATALOG) == len(PROMPT_SPECS_BY_SUFFIX) == 16
+    assert len(PROMPT_CATALOG) == len(PROMPT_SPECS_BY_SUFFIX) == 14
 
     behavior = get_prompt_spec("playing the piano")
     assert behavior.category == "object_related"
@@ -147,14 +145,14 @@ def test_prompt_catalog_is_immutable_and_rejects_invalid_specs() -> None:
         )
 
 
-def test_build_manifest_discovers_fixed_160_job_design(tmp_path: Path) -> None:
+def test_build_manifest_discovers_fixed_140_job_design(tmp_path: Path) -> None:
     make_references(tmp_path)
     (tmp_path / "notes.txt").write_text("ignored", encoding="utf-8")
 
     manifest = build_batch_manifest(tmp_path)
 
     assert len(manifest.references) == 10
-    assert len(manifest.jobs) == EXPECTED_JOB_COUNT == 160
+    assert len(manifest.jobs) == EXPECTED_JOB_COUNT == 140
     assert sum(record.species == "dog" for record in manifest.references) == 7
     assert sum(record.species == "cat" for record in manifest.references) == 3
 
@@ -186,7 +184,7 @@ def test_build_manifest_discovers_fixed_160_job_design(tmp_path: Path) -> None:
     ) == PROMPT_SUFFIXES
     assert len(
         {job.output_relative_path.casefold() for job in manifest.jobs}
-    ) == 160
+    ) == 140
 
 
 def test_manifest_dataclasses_are_json_serializable(tmp_path: Path) -> None:
@@ -196,13 +194,13 @@ def test_manifest_dataclasses_are_json_serializable(tmp_path: Path) -> None:
     payload = manifest.to_dict()
 
     assert payload["reference_count"] == 10
-    assert payload["job_count"] == 160
+    assert payload["job_count"] == 140
     assert payload["prompt_suffixes"] == list(PROMPT_SUFFIXES)
     assert payload["prompt_specs"] == [spec.to_dict() for spec in PROMPT_CATALOG]
     assert len(payload["semantic_digest"]) == 64
     assert all(len(record["content_sha256"]) == 64 for record in payload["references"])
     assert len(payload["references"]) == 10
-    assert len(payload["jobs"]) == 160
+    assert len(payload["jobs"]) == 140
     assert json.loads(manifest.to_json()) == payload
     json.dumps(manifest.references[0].to_dict())
     json.dumps(manifest.jobs[0].to_dict())

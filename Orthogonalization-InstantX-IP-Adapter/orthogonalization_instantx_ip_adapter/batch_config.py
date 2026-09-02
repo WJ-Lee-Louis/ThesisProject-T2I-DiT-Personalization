@@ -10,71 +10,148 @@ from typing import Any, ClassVar, Literal, Mapping
 
 BatchCondition = Literal[
     "baseline",
-    "projection",
-    "gate",
-    "combined",
-    "sa_projection",
-    "sa_combined",
-    "st_projection",
-    "st_combined",
-    "st_all_combined",
-    "class_absolute_combined",
-    "class_contextual_combined",
-    "class_target_superclass_combined",
-    "class_target_no_object_combined",
-    "class_source_superclass_combined",
-    "class_source_no_object_combined",
+    "ssg",
+    "target_projection_ssg",
+    "source_projection_ssg",
+    "st_matched_projection_ssg",
+    "st_all_projection_ssg",
+    "class_target_absolute_direct_ssg",
+    "class_source_absolute_direct_ssg",
+    "class_st_matched_absolute_direct_ssg",
+    "class_st_all_absolute_direct_ssg",
+    "class_target_absolute_residual_ssg",
+    "class_source_absolute_residual_ssg",
+    "class_st_matched_absolute_residual_ssg",
+    "class_st_all_absolute_residual_ssg",
+    "class_target_no_object_ssg",
+    "class_source_no_object_ssg",
+    "class_st_matched_no_object_ssg",
+    "class_st_all_no_object_ssg",
+    "class_target_superclass_ssg",
+    "class_source_superclass_ssg",
+    "class_st_matched_superclass_ssg",
+    "class_st_all_superclass_ssg",
 ]
 
-CLASS_CONTEXTUAL_CONDITIONS = frozenset(
+BASE_TARGET_CONDITIONS = frozenset({"target_projection_ssg"})
+BASE_SOURCE_CONDITIONS = frozenset({"source_projection_ssg"})
+BASE_ST_MATCHED_CONDITIONS = frozenset({"st_matched_projection_ssg"})
+BASE_ST_ALL_CONDITIONS = frozenset({"st_all_projection_ssg"})
+
+CLASS_ABSOLUTE_DIRECT_CONDITIONS = frozenset(
     {
-        "class_contextual_combined",
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
+        "class_target_absolute_direct_ssg",
+        "class_source_absolute_direct_ssg",
+        "class_st_matched_absolute_direct_ssg",
+        "class_st_all_absolute_direct_ssg",
     }
 )
-CLASS_TARGET_CONTEXTUAL_CONDITIONS = frozenset(
+CLASS_ABSOLUTE_RESIDUAL_CONDITIONS = frozenset(
     {
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-    }
-)
-CLASS_SOURCE_CONTEXTUAL_CONDITIONS = frozenset(
-    {
-        # Backward-compatible alias for source + superclass.
-        "class_contextual_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    }
-)
-CLASS_SUPERCLASS_CONDITIONS = frozenset(
-    {
-        "class_contextual_combined",
-        "class_target_superclass_combined",
-        "class_source_superclass_combined",
+        "class_target_absolute_residual_ssg",
+        "class_source_absolute_residual_ssg",
+        "class_st_matched_absolute_residual_ssg",
+        "class_st_all_absolute_residual_ssg",
     }
 )
 CLASS_NO_OBJECT_CONDITIONS = frozenset(
     {
-        "class_target_no_object_combined",
-        "class_source_no_object_combined",
+        "class_target_no_object_ssg",
+        "class_source_no_object_ssg",
+        "class_st_matched_no_object_ssg",
+        "class_st_all_no_object_ssg",
+    }
+)
+CLASS_SUPERCLASS_CONDITIONS = frozenset(
+    {
+        "class_target_superclass_ssg",
+        "class_source_superclass_ssg",
+        "class_st_matched_superclass_ssg",
+        "class_st_all_superclass_ssg",
+    }
+)
+CLASS_CONTEXTUAL_CONDITIONS = frozenset(
+    CLASS_NO_OBJECT_CONDITIONS | CLASS_SUPERCLASS_CONDITIONS
+)
+CLASS_ABSOLUTE_CONDITIONS = frozenset(
+    CLASS_ABSOLUTE_DIRECT_CONDITIONS | CLASS_ABSOLUTE_RESIDUAL_CONDITIONS
+)
+CLASS_CONDITIONS = frozenset(CLASS_ABSOLUTE_CONDITIONS | CLASS_CONTEXTUAL_CONDITIONS)
+CLASS_TARGET_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        "class_target_no_object_ssg",
+        "class_target_superclass_ssg",
+    }
+)
+CLASS_SOURCE_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        "class_source_no_object_ssg",
+        "class_source_superclass_ssg",
+    }
+)
+CLASS_SOURCE_TARGET_CONTEXTUAL_CONDITIONS = frozenset(
+    {
+        "class_st_matched_no_object_ssg",
+        "class_st_all_no_object_ssg",
+        "class_st_matched_superclass_ssg",
+        "class_st_all_superclass_ssg",
+    }
+)
+CLASS_TARGET_CONDITIONS = frozenset(
+    {
+        condition for condition in CLASS_CONDITIONS if condition.startswith("class_target_")
+    }
+)
+CLASS_SOURCE_CONDITIONS = frozenset(
+    {
+        condition for condition in CLASS_CONDITIONS if condition.startswith("class_source_")
+    }
+)
+CLASS_ST_MATCHED_CONDITIONS = frozenset(
+    {
+        condition for condition in CLASS_CONDITIONS if condition.startswith("class_st_matched_")
+    }
+)
+CLASS_ST_ALL_CONDITIONS = frozenset(
+    {
+        condition for condition in CLASS_CONDITIONS if condition.startswith("class_st_all_")
     }
 )
 
 SOURCE_CAPTION_CONDITIONS = frozenset(
-    {
-        "sa_projection",
-        "sa_combined",
-        "st_projection",
-        "st_combined",
-        "st_all_combined",
-        "class_contextual_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    }
+    BASE_SOURCE_CONDITIONS
+    | BASE_ST_MATCHED_CONDITIONS
+    | BASE_ST_ALL_CONDITIONS
+    | CLASS_SOURCE_CONDITIONS
+    | CLASS_ST_MATCHED_CONDITIONS
+    | CLASS_ST_ALL_CONDITIONS
 )
+
+FINAL_CONDITIONS: tuple[BatchCondition, ...] = (
+    "baseline",
+    "ssg",
+    "target_projection_ssg",
+    "source_projection_ssg",
+    "st_matched_projection_ssg",
+    "st_all_projection_ssg",
+    "class_target_absolute_direct_ssg",
+    "class_source_absolute_direct_ssg",
+    "class_st_matched_absolute_direct_ssg",
+    "class_st_all_absolute_direct_ssg",
+    "class_target_absolute_residual_ssg",
+    "class_source_absolute_residual_ssg",
+    "class_st_matched_absolute_residual_ssg",
+    "class_st_all_absolute_residual_ssg",
+    "class_target_no_object_ssg",
+    "class_source_no_object_ssg",
+    "class_st_matched_no_object_ssg",
+    "class_st_all_no_object_ssg",
+    "class_target_superclass_ssg",
+    "class_source_superclass_ssg",
+    "class_st_matched_superclass_ssg",
+    "class_st_all_superclass_ssg",
+)
+ALL_CONDITIONS = frozenset(FINAL_CONDITIONS)
 
 _SAFE_BATCH_ID = re.compile(r"[A-Za-z0-9._-]+\Z")
 _HEX_DIGEST = re.compile(r"[0-9A-Fa-f]{64}\Z")
@@ -122,25 +199,7 @@ class BatchGenerationConfig:
         "class_projection_strength",
         "class_superclass_prompt",
     )
-    _CONDITIONS: ClassVar[frozenset[str]] = frozenset(
-        {
-            "baseline",
-            "projection",
-            "gate",
-            "combined",
-            "sa_projection",
-            "sa_combined",
-            "st_projection",
-            "st_combined",
-            "st_all_combined",
-            "class_absolute_combined",
-            "class_contextual_combined",
-            "class_target_superclass_combined",
-            "class_target_no_object_combined",
-            "class_source_superclass_combined",
-            "class_source_no_object_combined",
-        }
-    )
+    _CONDITIONS: ClassVar[frozenset[str]] = ALL_CONDITIONS
 
     def __post_init__(self) -> None:
         if not isinstance(self.batch_id, str):
@@ -159,13 +218,7 @@ class BatchGenerationConfig:
             raise TypeError("condition must be a string")
         if self.condition not in self._CONDITIONS:
             raise ValueError(
-                "condition must be one of: baseline, projection, gate, "
-                "combined, sa_projection, sa_combined, st_projection, "
-                "st_combined, st_all_combined, class_absolute_combined, "
-                "class_contextual_combined, class_target_superclass_combined, "
-                "class_target_no_object_combined, "
-                "class_source_superclass_combined, "
-                "class_source_no_object_combined"
+                "condition must be one of the 22 finalized SSG experiment conditions"
             )
 
         self._validate_real(
@@ -174,6 +227,14 @@ class BatchGenerationConfig:
             minimum=0.0,
             maximum=1.0,
         )
+        if self.class_projection_enabled and self.class_projection_strength not in {
+            0.5,
+            1.0,
+        }:
+            raise ValueError(
+                "class_projection_strength must be either 0.5 or 1.0 for "
+                "generic-class conditions"
+            )
         self._validate_real(
             "class_projection_strength",
             self.class_projection_strength,
@@ -259,45 +320,51 @@ class BatchGenerationConfig:
 
     @property
     def target_projection_enabled(self) -> bool:
-        """Whether the original target-local projection is active."""
+        """Whether a non-class target-only projection is active."""
 
-        return self.condition in {"projection", "combined"}
+        return self.condition in BASE_TARGET_CONDITIONS
 
     @property
     def source_aware_projection_enabled(self) -> bool:
         """Whether reference-caption directions control the projection."""
 
-        return self.condition in {"sa_projection", "sa_combined"}
+        return self.condition in BASE_SOURCE_CONDITIONS
 
     @property
     def source_target_projection_enabled(self) -> bool:
         """Whether target and reference directions share one SVD basis."""
 
-        return self.condition in {
-            "st_projection",
-            "st_combined",
-            "st_all_combined",
-        }
+        return self.condition in BASE_ST_MATCHED_CONDITIONS | BASE_ST_ALL_CONDITIONS
 
     @property
     def all_source_factors_enabled(self) -> bool:
         """Whether both source-caption factors enter the union basis."""
 
-        return self.condition == "st_all_combined"
+        return self.condition in BASE_ST_ALL_CONDITIONS | CLASS_ST_ALL_CONDITIONS
 
     @property
     def class_projection_enabled(self) -> bool:
         """Whether one of the generic-class projection experiments is active."""
 
-        return self.condition in {
-            "class_absolute_combined",
-        } | CLASS_CONTEXTUAL_CONDITIONS
+        return self.condition in CLASS_CONDITIONS
 
     @property
     def class_absolute_projection_enabled(self) -> bool:
-        """Whether the absolute ``a dog/cat`` text anchor is projected out."""
+        """Whether a nuisance-combined absolute class anchor is active."""
 
-        return self.condition == "class_absolute_combined"
+        return self.condition in CLASS_ABSOLUTE_CONDITIONS
+
+    @property
+    def class_absolute_direct_projection_enabled(self) -> bool:
+        """Whether the absolute anchor is used without nuisance residualization."""
+
+        return self.condition in CLASS_ABSOLUTE_DIRECT_CONDITIONS
+
+    @property
+    def class_absolute_residual_projection_enabled(self) -> bool:
+        """Whether the absolute anchor is residualized against nuisance."""
+
+        return self.condition in CLASS_ABSOLUTE_RESIDUAL_CONDITIONS
 
     @property
     def class_contextual_projection_enabled(self) -> bool:
@@ -316,6 +383,30 @@ class BatchGenerationConfig:
         """Whether reference-caption context defines the class direction."""
 
         return self.condition in CLASS_SOURCE_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_source_target_contextual_projection_enabled(self) -> bool:
+        """Whether target and source jointly define nuisance/class subspaces."""
+
+        return self.condition in CLASS_SOURCE_TARGET_CONTEXTUAL_CONDITIONS
+
+    @property
+    def class_target_projection_enabled(self) -> bool:
+        """Whether target prompts define the nuisance branch."""
+
+        return self.condition in CLASS_TARGET_CONDITIONS
+
+    @property
+    def class_source_projection_enabled(self) -> bool:
+        """Whether the reference caption defines the nuisance branch."""
+
+        return self.condition in CLASS_SOURCE_CONDITIONS
+
+    @property
+    def class_source_target_projection_enabled(self) -> bool:
+        """Whether target and source directions share a nuisance SVD."""
+
+        return self.condition in CLASS_ST_MATCHED_CONDITIONS | CLASS_ST_ALL_CONDITIONS
 
     @property
     def class_superclass_projection_enabled(self) -> bool:
@@ -339,19 +430,7 @@ class BatchGenerationConfig:
     def mask_single_text_rows(self) -> bool:
         """Whether direct single-stream IP residuals into text rows are masked."""
 
-        return self.condition in {
-            "gate",
-            "combined",
-            "sa_combined",
-            "st_combined",
-            "st_all_combined",
-            "class_absolute_combined",
-            "class_contextual_combined",
-            "class_target_superclass_combined",
-            "class_target_no_object_combined",
-            "class_source_superclass_combined",
-            "class_source_no_object_combined",
-        }
+        return self.condition != "baseline"
 
     def to_dict(self) -> dict[str, object]:
         """Return the stable JSON-compatible representation."""

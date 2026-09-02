@@ -55,7 +55,7 @@ IMPLEMENTATION_DIGEST = compute_batch_implementation_digest(EXPERIMENT_ROOT)
 
 
 def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
-    if condition == "st_all_combined":
+    if _is_st_all_condition(condition):
         return tuple(
             spec.suffix for spec in PROMPT_CATALOG if not spec.is_factorial
         )
@@ -64,7 +64,7 @@ def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:
 
 def _select_jobs_for_condition(jobs, condition: str):
     jobs = tuple(jobs)
-    if condition == "st_all_combined":
+    if _is_st_all_condition(condition):
         selected_items = []
         redundant_items = []
         for job in jobs:
@@ -97,12 +97,17 @@ def _job_selection_metadata(jobs, condition: str) -> dict[str, object]:
         "skipped_as_redundant_job_count": len(redundant),
         "skipped_as_redundant_prompt_suffixes": list(redundant_suffixes),
         "redundancy_reason": (
-            "O+A+B is identical to st_combined because matched union already "
-            "includes both source factors"
+            "O+A+B is identical to the corresponding st_matched condition "
+            "because matched union already includes both source factors"
             if redundant
             else None
         ),
     }
+
+
+def _is_st_all_condition(condition: str) -> bool:
+    # New ST-all runs are self-contained because a matched batch is optional.
+    return False
 
 app = modal.App(BATCH_APP_NAME)
 hf_cache = build_hf_cache_volume()
@@ -628,6 +633,11 @@ def _request_to_dict(request) -> dict:
         "mode": request.mode,
         "strength": request.strength,
         "class_strength": request.class_strength,
+        "primary_class_label": request.primary_class_label,
+        "class_absolute_prompt": request.class_absolute_prompt,
+        "residualize_class_against_nuisance": (
+            request.residualize_class_against_nuisance
+        ),
         "include_behavior": request.include_behavior,
         "include_background": request.include_background,
         "include_interaction": request.include_interaction,
@@ -649,6 +659,13 @@ def _request_to_dict(request) -> dict:
         "comparison_prompts": None,
         "class_contextual_pairs": [
             asdict(pair) for pair in request.class_contextual_pairs
+        ],
+        "additional_class_direction_sets": [
+            {
+                "label": direction_set.label,
+                "pairs": [asdict(pair) for pair in direction_set.pairs],
+            }
+            for direction_set in request.additional_class_direction_sets
         ],
     }
     if request.prompts is not None:

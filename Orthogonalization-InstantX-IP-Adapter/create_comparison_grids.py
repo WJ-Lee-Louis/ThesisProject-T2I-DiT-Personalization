@@ -176,7 +176,7 @@ class FontSet:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Create ten reference-specific 6-method x 16-prompt comparison "
+            "Create ten reference-specific 6-method x 14-prompt comparison "
             "PNGs from the downloaded InstantX experiment batches."
         )
     )

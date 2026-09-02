@@ -45,7 +45,7 @@ def build_orthogonalization_request(
 ) -> OrthogonalizationRequest:
     if mode == "off":
         return OrthogonalizationRequest()
-    if mode in {"class_absolute", "class_contextual"}:
+    if mode == "class_contextual":
         raise ValueError(
             "Class projection modes require batch conditioning; use "
             "batch_client.py so species/source-caption prompts and metadata "

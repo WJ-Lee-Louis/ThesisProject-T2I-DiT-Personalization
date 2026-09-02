@@ -194,26 +194,26 @@ def test_baseline_and_gate_disabled_projection_are_retained(tmp_path: Path) -> N
     assert all(row["projection_component_norm"] is None for row in rows)
 
 
-def test_st_all_completed_partial_selection_accepts_100_sidecars(tmp_path: Path) -> None:
+def test_st_all_completed_partial_selection_accepts_80_sidecars(tmp_path: Path) -> None:
     prompt_specs = [
         (f"behavior {index}", "single_behavior", ["behavior"])
-        for index in range(10)
+        for index in range(8)
     ]
     batch = _make_batch(
         tmp_path,
         batch_id="st-all",
-        condition="st_all_combined",
+        condition="st_all_projection_ssg",
         prompt_specs=prompt_specs,
         references=10,
-        full_count=160,
+        full_count=140,
         redundant_count=60,
     )
 
     rows, batches = diagnostics.analyze_batches([batch])
 
-    assert len(rows) == 100
-    assert batches[0]["full_manifest_count"] == 160
-    assert batches[0]["selected_job_count"] == 100
+    assert len(rows) == 80
+    assert batches[0]["full_manifest_count"] == 140
+    assert batches[0]["selected_job_count"] == 80
     assert batches[0]["skipped_as_redundant_job_count"] == 60
 
 

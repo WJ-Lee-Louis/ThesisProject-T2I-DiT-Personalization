@@ -1,5 +1,9 @@
 # Final 16-Prompt Modal Inference Guide
 
+> Historical document only. The active catalog now has 14 prompts after
+> removing `smiling` and `crying`, and the legacy condition names below are no
+> longer accepted for new submissions. Use `CLASS_PROJECTION_MODAL_GUIDE.md`.
+
 이 문서는 VS Code의 **CMD 터미널**에서 최종 실험 6개를 실행하는 절차다.
 PowerShell 변수나 줄 연결 문법을 사용하지 않으며, 모든 명령은 한 줄씩 실행한다.
 

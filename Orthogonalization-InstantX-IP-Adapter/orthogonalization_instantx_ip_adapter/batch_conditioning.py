@@ -6,6 +6,7 @@ from dataclasses import dataclass, replace
 from typing import Literal
 
 from .adapter import (
+    ClassDirectionSet,
     OrthogonalizationRequest,
     PromptContrastPair,
     TextDirectionSet,
@@ -27,10 +28,8 @@ class BatchConditioning:
         "none",
         "target_prompt",
         "reference_caption",
-        "source_target_union",
-        "class_absolute",
-        "class_target_contextual",
-        "class_source_contextual",
+        "source_target_matched",
+        "source_target_all",
     ]
     removed_factors: tuple[PromptFactor, ...]
     target_factors: tuple[PromptFactor, ...]
@@ -38,11 +37,10 @@ class BatchConditioning:
     # Appended after every legacy field to preserve positional-call behavior.
     class_projection_mode: Literal[
         "none",
-        "absolute",
-        "target_superclass",
-        "target_no_object",
-        "source_superclass",
-        "source_no_object",
+        "absolute_direct",
+        "absolute_residual",
+        "no_object",
+        "superclass",
     ] = "none"
 
 
@@ -53,39 +51,11 @@ def build_batch_conditioning(
 ) -> BatchConditioning:
     """Build projection prompts and the single-stream row-gate flag.
 
-    The interventions are selected by non-overlapping experiment
-    conditions:
-
-    * ``baseline``: neither intervention;
-    * ``projection``: target-prompt pooled-space projection only;
-    * ``gate``: single-stream text-row gate only;
-    * ``combined``: target-prompt projection plus the gate;
-    * ``sa_projection``: reference-caption projection only;
-    * ``sa_combined``: reference-caption projection plus the gate.
-    * ``st_projection``: target and reference-caption directions combined in
-      one SVD projection;
-    * ``st_combined``: the same single-SVD projection plus the gate.
-    * ``st_all_combined``: target directions plus both source-caption main
-      effects in one SVD projection, with the gate.
-    * ``class_absolute_combined``: absolute ``a dog/cat`` class direction plus
-      the single-stream gate;
-    * ``class_target_*_combined``: target nuisance SVD, an orthogonal residual
-      target-context class direction with its own strength, and the gate;
-    * ``class_source_*_combined``: matched source-caption nuisance SVD, an
-      orthogonal residual source-context class direction with its own strength,
-      and the gate;
-    * ``class_contextual_combined``: backward-compatible alias for
-      ``class_source_superclass_combined``.
-
-    Target projection directions are local for a one-factor prompt and
-    factorial for a prompt containing both behavior and background.
-    Source-aware directions are always estimated from the reference caption's
-    complete 2-by-2 factorial prompt set, while the target suffix selects which
-    source factor(s) are attenuated. Contextual class conditions preserve this
-    nuisance basis, residualize the class direction against it, and use
-    ``orthogonalization_strength`` and ``class_projection_strength``
-    independently. ``st_all_combined`` is the explicit
-    ablation that includes both source factors regardless of target taxonomy.
+    Exactly 22 finalized conditions are supported: baseline, SSG-only, four
+    nuisance projections with SSG, and four nuisance origins crossed with four
+    generic-class strategies. Generic conditions use independent nuisance and
+    class strengths. The absolute-direct strategy deliberately keeps nuisance
+    overlap; every other generic strategy residualizes class against nuisance.
     """
 
     if not isinstance(job, BatchJob):
@@ -98,76 +68,91 @@ def build_batch_conditioning(
     ):
         raise TypeError("source_caption must be a SourceCaptionRecord or None")
 
-    if config.class_absolute_projection_enabled:
-        if source_caption is not None:
-            raise ValueError(
-                "source_caption must not be supplied for class-absolute conditions"
-            )
-        request = _build_class_absolute_projection_request(
-            job,
-            strength=config.class_projection_strength,
-        )
-        basis_origin = "class_absolute"
-        class_projection_mode = "absolute"
-        removed_factors = ()
-        target_factors = ()
-        source_factors = ()
-    elif config.class_contextual_projection_enabled:
-        contrast_type: Literal["superclass", "no_object"] = (
-            "superclass"
-            if config.class_superclass_projection_enabled
-            else "no_object"
-        )
-        if config.class_target_contextual_projection_enabled:
-            if source_caption is not None:
-                raise ValueError(
-                    "source_caption must not be supplied for target-context "
-                    "class conditions"
-                )
-            request = _build_class_target_contextual_projection_request(
+    target_factors_for_prompt = _target_factors(job.prompt_suffix)
+
+    if config.requires_source_captions and source_caption is None:
+        raise ValueError("source_caption is required for this condition")
+    if not config.requires_source_captions and source_caption is not None:
+        raise ValueError("source_caption must not be supplied for this condition")
+
+    if config.class_projection_enabled:
+        request, basis_origin, target_factors, source_factors = (
+            _build_class_nuisance_request(
                 job,
-                contrast_type=contrast_type,
-                superclass_prompt=config.class_superclass_prompt,
-                nuisance_strength=config.orthogonalization_strength,
-                class_strength=config.class_projection_strength,
-            )
-            basis_origin = "class_target_contextual"
-            class_projection_mode = f"target_{contrast_type}"
-            target_factors = _target_factors(job.prompt_suffix)
-            source_factors = ()
-            removed_factors = target_factors
-        else:
-            if source_caption is None:
-                raise ValueError(
-                    "source_caption is required for source-context class conditions"
-                )
-            request = _build_class_source_contextual_projection_request(
-                job,
+                config=config,
                 source_caption=source_caption,
-                contrast_type=contrast_type,
-                superclass_prompt=config.class_superclass_prompt,
-                nuisance_strength=config.orthogonalization_strength,
+            )
+        )
+        if config.class_absolute_projection_enabled:
+            request = replace(
+                request,
+                class_absolute_prompt=f"a {job.species}",
                 class_strength=config.class_projection_strength,
+                primary_class_label="absolute_class_anchor",
+                residualize_class_against_nuisance=(
+                    config.class_absolute_residual_projection_enabled
+                ),
             )
-            basis_origin = "class_source_contextual"
-            class_projection_mode = f"source_{contrast_type}"
-            target_factors = ()
-            source_factors = _target_factors(job.prompt_suffix)
-            removed_factors = source_factors
+            class_projection_mode = (
+                "absolute_residual"
+                if config.class_absolute_residual_projection_enabled
+                else "absolute_direct"
+            )
+        else:
+            assert config.class_contextual_projection_enabled
+            assert (
+                source_caption is None
+                or isinstance(source_caption, SourceCaptionRecord)
+            )
+            contrast_type: Literal["superclass", "no_object"] = (
+                "superclass"
+                if config.class_superclass_projection_enabled
+                else "no_object"
+            )
+            if config.class_target_contextual_projection_enabled:
+                request = _add_target_contextual_class(
+                    request,
+                    job=job,
+                    contrast_type=contrast_type,
+                    superclass_prompt=config.class_superclass_prompt,
+                    class_strength=config.class_projection_strength,
+                )
+            elif config.class_source_contextual_projection_enabled:
+                assert source_caption is not None
+                request = _add_source_contextual_class(
+                    request,
+                    source_caption=source_caption,
+                    contrast_type=contrast_type,
+                    superclass_prompt=config.class_superclass_prompt,
+                    class_strength=config.class_projection_strength,
+                )
+            else:
+                assert source_caption is not None
+                request = _add_source_target_contextual_class(
+                    request,
+                    job=job,
+                    source_caption=source_caption,
+                    contrast_type=contrast_type,
+                    superclass_prompt=config.class_superclass_prompt,
+                    class_strength=config.class_projection_strength,
+                )
+            class_projection_mode = contrast_type
+        removed_factors = _merge_factors(target_factors, source_factors)
     elif config.source_target_projection_enabled:
-        if source_caption is None:
-            raise ValueError(
-                "source_caption is required for source-target conditions"
-            )
+        assert source_caption is not None
         request = _build_source_target_projection_request(
             job,
             source_caption=source_caption,
             strength=config.orthogonalization_strength,
             include_all_source_factors=config.all_source_factors_enabled,
         )
-        basis_origin = "source_target_union"
+        basis_origin = (
+            "source_target_all"
+            if config.all_source_factors_enabled
+            else "source_target_matched"
+        )
         class_projection_mode = "none"
-        target_factors = _target_factors(job.prompt_suffix)
+        target_factors = target_factors_for_prompt
         source_factors = (
             ("behavior", "background")
             if config.all_source_factors_enabled
@@ -175,24 +160,17 @@ def build_batch_conditioning(
         )
         removed_factors = _merge_factors(target_factors, source_factors)
     elif config.target_projection_enabled:
-        if source_caption is not None:
-            raise ValueError(
-                "source_caption must not be supplied for target-local conditions"
-            )
         request = _build_projection_request(
             job,
             strength=config.orthogonalization_strength,
         )
         basis_origin = "target_prompt"
         class_projection_mode = "none"
-        target_factors = _target_factors(job.prompt_suffix)
+        target_factors = target_factors_for_prompt
         source_factors = ()
         removed_factors = target_factors
     elif config.source_aware_projection_enabled:
-        if source_caption is None:
-            raise ValueError(
-                "source_caption is required for source-aware conditions"
-            )
+        assert source_caption is not None
         request = _build_source_aware_projection_request(
             job,
             source_caption=source_caption,
@@ -201,14 +179,9 @@ def build_batch_conditioning(
         basis_origin = "reference_caption"
         class_projection_mode = "none"
         target_factors = ()
-        source_factors = _target_factors(job.prompt_suffix)
+        source_factors = target_factors_for_prompt
         removed_factors = source_factors
     else:
-        if source_caption is not None:
-            raise ValueError(
-                "source_caption is only valid for source-aware or "
-                "source-target/class-contextual conditions"
-            )
         request = OrthogonalizationRequest(
             mode="off",
             strength=config.orthogonalization_strength,
@@ -230,38 +203,166 @@ def build_batch_conditioning(
     )
 
 
-def _build_class_absolute_projection_request(
+def _build_class_nuisance_request(
     job: BatchJob,
     *,
-    strength: float,
-) -> OrthogonalizationRequest:
-    """Build one absolute generic-class anchor from the job species."""
+    config: BatchGenerationConfig,
+    source_caption: SourceCaptionRecord | None,
+) -> tuple[
+    OrthogonalizationRequest,
+    Literal[
+        "target_prompt",
+        "reference_caption",
+        "source_target_matched",
+        "source_target_all",
+    ],
+    tuple[PromptFactor, ...],
+    tuple[PromptFactor, ...],
+]:
+    """Build the nuisance branch shared by all four generic strategies."""
 
-    prompt_spec = get_prompt_spec(job.prompt_suffix)
-    _validate_job_prompt(job, prompt_spec)
-    return OrthogonalizationRequest(
-        mode="class_absolute",
-        strength=strength,
-        prompts=PromptSet(object_only=f"a {job.species}"),
-        include_behavior=False,
-        include_background=False,
+    factors = _target_factors(job.prompt_suffix)
+    if config.class_target_projection_enabled:
+        return (
+            _build_projection_request(
+                job,
+                strength=config.orthogonalization_strength,
+            ),
+            "target_prompt",
+            factors,
+            (),
+        )
+    if config.class_source_projection_enabled:
+        assert source_caption is not None
+        return (
+            _build_source_aware_projection_request(
+                job,
+                source_caption=source_caption,
+                strength=config.orthogonalization_strength,
+            ),
+            "reference_caption",
+            (),
+            factors,
+        )
+    assert config.class_source_target_projection_enabled
+    assert source_caption is not None
+    source_factors = (
+        ("behavior", "background")
+        if config.all_source_factors_enabled
+        else factors
+    )
+    return (
+        _build_source_target_projection_request(
+            job,
+            source_caption=source_caption,
+            strength=config.orthogonalization_strength,
+            include_all_source_factors=config.all_source_factors_enabled,
+        ),
+        (
+            "source_target_all"
+            if config.all_source_factors_enabled
+            else "source_target_matched"
+        ),
+        factors,
+        source_factors,
     )
 
 
-def _build_class_target_contextual_projection_request(
+def _add_target_contextual_class(
+    request: OrthogonalizationRequest,
+    *,
+    job: BatchJob,
+    contrast_type: Literal["superclass", "no_object"],
+    superclass_prompt: str,
+    class_strength: float,
+) -> OrthogonalizationRequest:
+    """Attach a target-context class direction to an existing nuisance request."""
+
+    pairs = _build_target_class_pairs(
+        job,
+        contrast_type=contrast_type,
+        superclass_prompt=superclass_prompt,
+    )
+
+    return replace(
+        request,
+        class_contextual_pairs=pairs,
+        class_strength=class_strength,
+        primary_class_label="target_class_context",
+    )
+
+
+def _add_source_contextual_class(
+    request: OrthogonalizationRequest,
+    *,
+    source_caption: SourceCaptionRecord,
+    contrast_type: Literal["superclass", "no_object"],
+    superclass_prompt: str,
+    class_strength: float,
+) -> OrthogonalizationRequest:
+    """Attach a source-context class direction to an existing nuisance request."""
+
+    pairs = _build_source_class_pairs(
+        source_caption,
+        contrast_type=contrast_type,
+        superclass_prompt=superclass_prompt,
+    )
+
+    return replace(
+        request,
+        class_contextual_pairs=pairs,
+        class_strength=class_strength,
+        primary_class_label="source_class_context",
+    )
+
+
+def _add_source_target_contextual_class(
+    request: OrthogonalizationRequest,
+    *,
+    job: BatchJob,
+    source_caption: SourceCaptionRecord,
+    contrast_type: Literal["superclass", "no_object"],
+    superclass_prompt: str,
+    class_strength: float,
+) -> OrthogonalizationRequest:
+    """Attach balanced target/source class directions to a joint nuisance request."""
+
+    target_pairs = _build_target_class_pairs(
+        job,
+        contrast_type=contrast_type,
+        superclass_prompt=superclass_prompt,
+    )
+    _validate_source_caption_matches_job(job, source_caption)
+    source_pairs = _build_source_class_pairs(
+        source_caption,
+        contrast_type=contrast_type,
+        superclass_prompt=superclass_prompt,
+    )
+    return replace(
+        request,
+        class_contextual_pairs=target_pairs,
+        class_strength=class_strength,
+        primary_class_label="target_class_context",
+        additional_class_direction_sets=(
+            ClassDirectionSet(
+                label="source_class_context",
+                pairs=source_pairs,
+            ),
+        ),
+    )
+
+
+def _build_target_class_pairs(
     job: BatchJob,
     *,
     contrast_type: Literal["superclass", "no_object"],
     superclass_prompt: str,
-    nuisance_strength: float,
-    class_strength: float,
-) -> OrthogonalizationRequest:
-    """Combine target nuisance rows with a residualized class direction."""
+) -> tuple[PromptContrastPair, ...]:
+    """Estimate target object directions in each available target context."""
 
     prompt_spec = get_prompt_spec(job.prompt_suffix)
     expected_prompt = _validate_job_prompt(job, prompt_spec)
     object_only = f"a {job.species}"
-
     pairs: list[PromptContrastPair] = []
     if prompt_spec.behavior is not None:
         pairs.append(
@@ -287,40 +388,22 @@ def _build_class_target_contextual_projection_request(
         pairs.append(
             _make_class_context_pair(
                 positive=expected_prompt,
-                context=(
-                    f"{prompt_spec.behavior} {prompt_spec.background}"
-                ),
+                context=f"{prompt_spec.behavior} {prompt_spec.background}",
                 label="joint_context",
                 contrast_type=contrast_type,
                 superclass_prompt=superclass_prompt,
             )
         )
-
-    nuisance_request = _build_projection_request(
-        job,
-        strength=nuisance_strength,
-    )
-    return replace(
-        nuisance_request,
-        class_contextual_pairs=tuple(pairs),
-        class_strength=class_strength,
-    )
+    return tuple(pairs)
 
 
-def _build_class_source_contextual_projection_request(
-    job: BatchJob,
-    *,
+def _build_source_class_pairs(
     source_caption: SourceCaptionRecord,
+    *,
     contrast_type: Literal["superclass", "no_object"],
     superclass_prompt: str,
-    nuisance_strength: float,
-    class_strength: float,
-) -> OrthogonalizationRequest:
-    """Combine source nuisance rows with a residualized class direction."""
-
-    prompt_spec = get_prompt_spec(job.prompt_suffix)
-    _validate_job_prompt(job, prompt_spec)
-    _validate_source_caption_matches_job(job, source_caption)
+) -> tuple[PromptContrastPair, ...]:
+    """Estimate the source object direction without weighting it by target rows."""
 
     contexts = (
         source_caption.source_behavior,
@@ -332,12 +415,8 @@ def _build_class_source_contextual_projection_request(
         source_caption.object_background,
         source_caption.object_behavior_background,
     )
-    labels = (
-        "behavior_context",
-        "background_context",
-        "joint_context",
-    )
-    pairs = tuple(
+    labels = ("behavior_context", "background_context", "joint_context")
+    return tuple(
         _make_class_context_pair(
             positive=positive,
             context=context,
@@ -346,17 +425,6 @@ def _build_class_source_contextual_projection_request(
             superclass_prompt=superclass_prompt,
         )
         for positive, context, label in zip(positives, contexts, labels)
-    )
-
-    nuisance_request = _build_source_aware_projection_request(
-        job,
-        source_caption=source_caption,
-        strength=nuisance_strength,
-    )
-    return replace(
-        nuisance_request,
-        class_contextual_pairs=pairs,
-        class_strength=class_strength,
     )
 
 

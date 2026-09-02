@@ -358,6 +358,22 @@ def _normalize_sidecar(
         result.get("class_pair_count"),
         "class_pair_count",
     )
+    class_singular_values = _number_list(
+        result.get("class_singular_values"),
+        f"class_singular_values in {sidecar_path}",
+    )
+    class_overlap_norms = _number_list(
+        result.get("class_overlap_norms"),
+        f"class_overlap_norms in {sidecar_path}",
+    )
+    class_residual_norms = _number_list(
+        result.get("class_residual_norms"),
+        f"class_residual_norms in {sidecar_path}",
+    )
+    class_residual_ratios = _number_list(
+        result.get("class_residual_ratios"),
+        f"class_residual_ratios in {sidecar_path}",
+    )
     if class_pair_count is not None:
         if class_pair_labels and len(class_pair_labels) != class_pair_count:
             raise DiagnosticsValidationError(
@@ -442,6 +458,9 @@ def _normalize_sidecar(
         "orthogonalization_enabled": enabled,
         "gate": gate,
         "hierarchical_class_projection": hierarchical_class_projection,
+        "class_overlap_policy": _optional_text(
+            result.get("class_overlap_policy")
+        ),
         "direction_names": direction_names,
         "direction_raw_norms": direction_raw_norms,
         "direction_raw_norm_kind": _optional_text(
@@ -463,6 +482,15 @@ def _normalize_sidecar(
             result.get("class_basis_rank"),
             "class_basis_rank",
         ),
+        "class_direction_count": _optional_nonnegative_integer(
+            result.get("class_direction_count"),
+            "class_direction_count",
+        ),
+        "class_dropped_rank": _optional_nonnegative_integer(
+            result.get("class_dropped_rank"),
+            "class_dropped_rank",
+        ),
+        "class_singular_values": class_singular_values,
         "class_direction_dropped": class_direction_dropped,
         "class_overlap_norm": _optional_finite_number(
             result.get("class_overlap_norm"),
@@ -476,6 +504,9 @@ def _normalize_sidecar(
             result.get("class_residual_ratio"),
             f"class_residual_ratio in {sidecar_path}",
         ),
+        "class_overlap_norms": class_overlap_norms,
+        "class_residual_norms": class_residual_norms,
+        "class_residual_ratios": class_residual_ratios,
         "singular_values": singular_values,
         "relative_singular_values": relative_singular_values,
         "direction_cosine_matrix": direction_cosine_matrix,

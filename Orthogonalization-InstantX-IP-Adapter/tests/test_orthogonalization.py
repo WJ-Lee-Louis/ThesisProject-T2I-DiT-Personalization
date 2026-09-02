@@ -286,6 +286,33 @@ def test_hierarchical_projection_residualizes_class_and_uses_two_strengths() -> 
     assert result.projection_diagnostics.class_strength == pytest.approx(0.25)
 
 
+def test_absolute_direct_ablation_retains_nuisance_overlap() -> None:
+    embedding = torch.tensor([1.0, 1.0, 1.0])
+    nuisance = torch.tensor([[1.0, 0.0, 0.0]])
+    absolute = torch.tensor([1.0, 1.0, 0.0])
+
+    direct = hierarchical_orthogonalize_pooled_embedding(
+        embedding,
+        nuisance,
+        absolute,
+        nuisance_strength=1.0,
+        class_strength=0.5,
+        residualize_class_against_nuisance=False,
+    )
+    residual = hierarchical_orthogonalize_pooled_embedding(
+        embedding,
+        nuisance,
+        absolute,
+        nuisance_strength=1.0,
+        class_strength=0.5,
+        residualize_class_against_nuisance=True,
+    )
+
+    assert torch.abs(direct.nuisance_basis.T @ direct.class_basis).item() > 0.5
+    assert torch.abs(residual.nuisance_basis.T @ residual.class_basis).item() < 1e-6
+    assert not torch.allclose(direct.embedding, residual.embedding)
+
+
 def test_hierarchical_projection_drops_class_inside_nuisance_subspace() -> None:
     result = hierarchical_orthogonalize_pooled_embedding(
         torch.tensor([1.0, 1.0, 0.0]),
@@ -299,6 +326,46 @@ def test_hierarchical_projection_drops_class_inside_nuisance_subspace() -> None:
     assert result.class_basis.shape == (3, 0)
     assert result.class_residual_ratio == pytest.approx(0.0, abs=1e-7)
     assert result.projection_diagnostics.class_component_norm == pytest.approx(0.0)
+
+
+def test_hierarchical_projection_builds_rank_two_class_residual_basis() -> None:
+    result = hierarchical_orthogonalize_pooled_embedding(
+        torch.tensor([1.0, 1.0, 1.0]),
+        torch.tensor([[1.0, 0.0, 0.0]]),
+        torch.tensor([[1.0, 1.0, 0.0], [1.0, 0.0, 1.0]]),
+        nuisance_strength=1.0,
+        class_strength=0.5,
+        restore_norm=False,
+    )
+
+    assert result.class_direction_count == 2
+    assert result.class_basis_diagnostics.retained_rank == 2
+    assert result.class_basis_diagnostics.dropped_rank == 0
+    torch.testing.assert_close(
+        result.nuisance_basis.T @ result.class_basis,
+        torch.zeros(1, 2),
+        atol=1e-6,
+        rtol=0,
+    )
+    unit = normalize_fp32(torch.tensor([1.0, 1.0, 1.0]))
+    torch.testing.assert_close(
+        result.embedding,
+        torch.tensor([0.0, 0.5 * unit[1], 0.5 * unit[2]]),
+        atol=1e-6,
+        rtol=0,
+    )
+
+
+def test_hierarchical_projection_svd_drops_collinear_class_residual() -> None:
+    result = hierarchical_orthogonalize_pooled_embedding(
+        torch.tensor([1.0, 1.0, 0.0]),
+        torch.tensor([[1.0, 0.0, 0.0]]),
+        torch.tensor([[1.0, 1.0, 0.0], [2.0, 2.0, 0.0]]),
+    )
+
+    assert result.class_direction_count == 2
+    assert result.class_basis_diagnostics.retained_rank == 1
+    assert result.class_basis_diagnostics.dropped_rank == 1
 
 
 def test_zero_class_strength_matches_existing_nuisance_projection() -> None:

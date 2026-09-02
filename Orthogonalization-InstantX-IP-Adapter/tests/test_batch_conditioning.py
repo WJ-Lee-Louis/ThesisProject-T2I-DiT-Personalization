@@ -3,10 +3,12 @@ from __future__ import annotations
 import pytest
 
 from orthogonalization_instantx_ip_adapter.batch_conditioning import (
-    BatchConditioning,
     build_batch_conditioning,
 )
 from orthogonalization_instantx_ip_adapter.batch_config import (
+    CLASS_CONDITIONS,
+    FINAL_CONDITIONS,
+    SOURCE_CAPTION_CONDITIONS,
     BatchGenerationConfig,
 )
 from orthogonalization_instantx_ip_adapter.batch_manifest import (
@@ -14,51 +16,28 @@ from orthogonalization_instantx_ip_adapter.batch_manifest import (
     PROMPT_SUFFIXES,
     prompt_slug,
 )
+from orthogonalization_instantx_ip_adapter.prompt_catalog import get_prompt_spec
 from orthogonalization_instantx_ip_adapter.source_captions import (
     SourceCaptionRecord,
 )
-from orthogonalization_instantx_ip_adapter.prompt_catalog import (
-    PROMPT_CATALOG,
-    get_prompt_spec,
-)
 
 
-BEHAVIOR_ONLY_SUFFIXES = tuple(
-    spec.suffix for spec in PROMPT_CATALOG if spec.factors == ("behavior",)
-)
-BACKGROUND_ONLY_SUFFIXES = tuple(
-    spec.suffix for spec in PROMPT_CATALOG if spec.factors == ("background",)
-)
-FACTORIAL_SUFFIXES = tuple(
-    spec.suffix for spec in PROMPT_CATALOG if spec.is_factorial
-)
-CLASS_SOURCE_CONDITIONS = {
-    "class_contextual_combined",
-    "class_source_superclass_combined",
-    "class_source_no_object_combined",
-}
-
-
-def _job(prompt_suffix: str, *, species: str = "dog") -> BatchJob:
-    slug = prompt_slug(prompt_suffix)
+def _job(suffix: str, species: str = "dog") -> BatchJob:
+    slug = prompt_slug(suffix)
     return BatchJob(
-        reference_path=f"C:/{species}_01.png",
+        reference_path=f"C:/{species}_01.jpg",
         reference_stem=f"{species}_01",
         species=species,
-        prompt_suffix=prompt_suffix,
+        prompt_suffix=suffix,
         prompt_slug=slug,
-        prompt=f"a {species} {prompt_suffix}",
+        prompt=f"a {species} {suffix}",
         output_relative_path=f"{species}_01/{species}_01_{slug}.png",
     )
 
 
-def _source_caption(
-    *,
-    species: str = "dog",
-    reference_stem: str | None = None,
-) -> SourceCaptionRecord:
+def _caption(species: str = "dog") -> SourceCaptionRecord:
     return SourceCaptionRecord(
-        reference_stem=reference_stem or f"{species}_01",
+        reference_stem=f"{species}_01",
         species=species,
         content_sha256="ab" * 32,
         source_behavior="lying down",
@@ -66,871 +45,244 @@ def _source_caption(
     )
 
 
-def _source_config(
-    condition: str = "sa_projection",
-) -> BatchGenerationConfig:
+def _config(condition: str, class_strength: float = 0.5) -> BatchGenerationConfig:
     return BatchGenerationConfig(
         batch_id=condition,
         condition=condition,
-        orthogonalization_strength=0.73,
-        source_caption_digest="cd" * 32,
-    )
-
-
-def _source_target_config(
-    condition: str = "st_projection",
-) -> BatchGenerationConfig:
-    return BatchGenerationConfig(
-        batch_id=condition,
-        condition=condition,
-        orthogonalization_strength=0.73,
-        source_caption_digest="cd" * 32,
-    )
-
-
-def _class_config(
-    condition: str,
-) -> BatchGenerationConfig:
-    return BatchGenerationConfig(
-        batch_id=condition,
-        condition=condition,
-        orthogonalization_strength=0.91,
-        class_projection_strength=0.42,
+        orthogonalization_strength=1.0,
+        class_projection_strength=class_strength,
         source_caption_digest=(
-            "ef" * 32 if condition in CLASS_SOURCE_CONDITIONS else None
+            "cd" * 32 if condition in SOURCE_CAPTION_CONDITIONS else None
         ),
     )
 
 
-def _class_pairs(conditioning: BatchConditioning):
-    return tuple(
-        (pair.positive, pair.negative, pair.label)
-        for pair in conditioning.orthogonalization.class_contextual_pairs
-    )
-
-
-def test_new_conditioning_field_preserves_legacy_positional_signature() -> None:
-    request = build_batch_conditioning(
-        _job("flying"),
-        BatchGenerationConfig(batch_id="baseline", condition="baseline"),
-    ).orthogonalization
-
-    conditioning = BatchConditioning(
-        request,
-        False,
-        "none",
-        (),
-        (),
-        (),
-    )
-
-    assert conditioning.removed_factors == ()
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ()
-    assert conditioning.class_projection_mode == "none"
-
-
-def test_class_absolute_condition_uses_only_species_anchor_and_gate() -> None:
-    conditioning = build_batch_conditioning(
-        _job("sleeping", species="cat"),
-        _class_config("class_absolute_combined"),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "class_absolute"
-    assert request.strength == pytest.approx(0.42)
-    assert request.prompts == request.prompts.__class__(object_only="a cat")
-    assert request.comparison_prompts is None
-    assert request.class_contextual_pairs == ()
-    assert request.include_behavior is False
-    assert request.include_background is False
-    assert conditioning.mask_single_text_rows is True
-    assert conditioning.basis_origin == "class_absolute"
-    assert conditioning.class_projection_mode == "absolute"
-    assert conditioning.removed_factors == ()
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ()
-
-
-@pytest.mark.parametrize(
-    ("condition", "class_projection_mode", "negative_prefix"),
-    (
-        (
-            "class_target_superclass_combined",
-            "target_superclass",
-            "an animal ",
-        ),
-        (
-            "class_target_no_object_combined",
-            "target_no_object",
-            "",
-        ),
-    ),
-)
-@pytest.mark.parametrize(
-    ("prompt_suffix", "positive_contexts"),
-    (
-        (
-            "flying",
-            (("a dog flying", "flying", "behavior_context"),),
-        ),
-        (
-            "on a stage",
-            (("a dog on a stage", "on a stage", "background_context"),),
-        ),
-        (
-            "flying in the sky",
-            (
-                ("a dog flying", "flying", "behavior_context"),
-                ("a dog in the sky", "in the sky", "background_context"),
-                (
-                    "a dog flying in the sky",
-                    "flying in the sky",
-                    "joint_context",
-                ),
-            ),
-        ),
-    ),
-)
-def test_target_class_conditions_build_exact_one_or_three_context_pairs(
+@pytest.mark.parametrize("condition", FINAL_CONDITIONS)
+@pytest.mark.parametrize("suffix", PROMPT_SUFFIXES)
+def test_all_22_conditions_build_for_every_prompt(
     condition: str,
-    class_projection_mode: str,
-    negative_prefix: str,
-    prompt_suffix: str,
-    positive_contexts: tuple[tuple[str, str, str], ...],
+    suffix: str,
 ) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _class_config(condition),
+    source = _caption() if condition in SOURCE_CAPTION_CONDITIONS else None
+    result = build_batch_conditioning(_job(suffix), _config(condition), source)
+
+    assert result.mask_single_text_rows is (condition != "baseline")
+    assert result.orthogonalization.enabled is (
+        condition not in {"baseline", "ssg"}
     )
-    request = conditioning.orthogonalization
+    assert result.orthogonalization.hierarchical_class_enabled is (
+        condition in CLASS_CONDITIONS
+    )
+
+
+@pytest.mark.parametrize(
+    ("condition", "origin", "target_factors", "source_factors", "extra_sets"),
+    (
+        ("target_projection_ssg", "target_prompt", ("behavior",), (), 0),
+        ("source_projection_ssg", "reference_caption", (), ("behavior",), 0),
+        (
+            "st_matched_projection_ssg",
+            "source_target_matched",
+            ("behavior",),
+            ("behavior",),
+            1,
+        ),
+        (
+            "st_all_projection_ssg",
+            "source_target_all",
+            ("behavior",),
+            ("behavior", "background"),
+            1,
+        ),
+    ),
+)
+def test_four_base_nuisance_origins(
+    condition: str,
+    origin: str,
+    target_factors: tuple[str, ...],
+    source_factors: tuple[str, ...],
+    extra_sets: int,
+) -> None:
+    source = _caption() if condition in SOURCE_CAPTION_CONDITIONS else None
+    result = build_batch_conditioning(_job("flying"), _config(condition), source)
+    request = result.orthogonalization
+
+    assert result.basis_origin == origin
+    assert result.class_projection_mode == "none"
+    assert result.target_factors == target_factors
+    assert result.source_factors == source_factors
+    assert len(request.additional_direction_sets) == extra_sets
+    assert request.include_behavior is True
+    assert request.include_background is False
+    if extra_sets:
+        source_set = request.additional_direction_sets[0]
+        assert source_set.include_behavior is True
+        assert source_set.include_background is (
+            condition == "st_all_projection_ssg"
+        )
+
+
+@pytest.mark.parametrize(
+    ("condition", "origin", "policy"),
+    (
+        ("class_target_absolute_direct_ssg", "target_prompt", False),
+        ("class_source_absolute_direct_ssg", "reference_caption", False),
+        (
+            "class_st_matched_absolute_direct_ssg",
+            "source_target_matched",
+            False,
+        ),
+        ("class_st_all_absolute_direct_ssg", "source_target_all", False),
+        ("class_target_absolute_residual_ssg", "target_prompt", True),
+        ("class_source_absolute_residual_ssg", "reference_caption", True),
+        (
+            "class_st_matched_absolute_residual_ssg",
+            "source_target_matched",
+            True,
+        ),
+        ("class_st_all_absolute_residual_ssg", "source_target_all", True),
+    ),
+)
+def test_absolute_strategies_always_keep_nuisance_projection(
+    condition: str,
+    origin: str,
+    policy: bool,
+) -> None:
+    source = _caption() if condition in SOURCE_CAPTION_CONDITIONS else None
+    result = build_batch_conditioning(_job("flying"), _config(condition, 1.0), source)
+    request = result.orthogonalization
 
     assert request.mode == (
-        "factorial" if len(positive_contexts) == 3 else "local"
+        "factorial" if condition.startswith("class_source_") else "local"
     )
-    assert request.strength == pytest.approx(0.91)
-    assert request.class_strength == pytest.approx(0.42)
     assert request.prompts is not None
-    assert request.comparison_prompts is None
-    assert _class_pairs(conditioning) == tuple(
-        (positive, f"{negative_prefix}{context}", label)
-        for positive, context, label in positive_contexts
-    )
-    assert request.include_behavior is ("behavior" in get_prompt_spec(prompt_suffix).factors)
-    assert request.include_background is (
-        "background" in get_prompt_spec(prompt_suffix).factors
-    )
-    assert request.hierarchical_class_enabled is True
-    assert conditioning.mask_single_text_rows is True
-    assert conditioning.basis_origin == "class_target_contextual"
-    assert conditioning.class_projection_mode == class_projection_mode
-    assert conditioning.removed_factors == get_prompt_spec(prompt_suffix).factors
-    assert conditioning.target_factors == get_prompt_spec(prompt_suffix).factors
-    assert conditioning.source_factors == ()
-
-
-@pytest.mark.parametrize(
-    ("condition", "class_projection_mode", "negative_prompts"),
-    (
-        (
-            "class_source_superclass_combined",
-            "source_superclass",
-            (
-                "an animal lying down",
-                "an animal on a beach",
-                "an animal lying down on a beach",
-            ),
-        ),
-        (
-            "class_source_no_object_combined",
-            "source_no_object",
-            ("lying down", "on a beach", "lying down on a beach"),
-        ),
-    ),
-)
-def test_source_class_conditions_build_exact_three_caption_context_pairs(
-    condition: str,
-    class_projection_mode: str,
-    negative_prompts: tuple[str, str, str],
-) -> None:
-    source_caption = _source_caption()
-    conditioning = build_batch_conditioning(
-        _job("playing the piano"),
-        _class_config(condition),
-        source_caption,
+    assert request.include_behavior is True
+    assert request.class_absolute_prompt == "a dog"
+    assert request.class_contextual_pairs == ()
+    assert request.class_strength == 1.0
+    assert request.residualize_class_against_nuisance is policy
+    assert result.basis_origin == origin
+    assert result.class_projection_mode == (
+        "absolute_residual" if policy else "absolute_direct"
     )
 
-    assert _class_pairs(conditioning) == tuple(
-        zip(
-            (
-                "a dog lying down",
-                "a dog on a beach",
-                "a dog lying down on a beach",
-            ),
-            negative_prompts,
-            ("behavior_context", "background_context", "joint_context"),
-        )
+
+@pytest.mark.parametrize("kind", ("no_object", "superclass"))
+@pytest.mark.parametrize("origin", ("target", "source", "st_matched", "st_all"))
+def test_contextual_four_by_two_matrix(kind: str, origin: str) -> None:
+    condition = f"class_{origin}_{kind}_ssg"
+    source = _caption() if condition in SOURCE_CAPTION_CONDITIONS else None
+    result = build_batch_conditioning(
+        _job("flying in the sky"),
+        _config(condition, 1.0),
+        source,
     )
-    assert len(conditioning.orthogonalization.class_contextual_pairs) == 3
-    assert conditioning.orthogonalization.strength == pytest.approx(0.91)
-    assert conditioning.orthogonalization.class_strength == pytest.approx(0.42)
-    assert conditioning.orthogonalization.mode == "factorial"
-    assert conditioning.orthogonalization.hierarchical_class_enabled is True
-    assert conditioning.mask_single_text_rows is True
-    assert conditioning.basis_origin == "class_source_contextual"
-    assert conditioning.class_projection_mode == class_projection_mode
-    assert conditioning.removed_factors == ("behavior",)
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ("behavior",)
+    request = result.orthogonalization
+
+    assert result.class_projection_mode == kind
+    assert request.class_strength == 1.0
+    assert request.residualize_class_against_nuisance is True
+    assert request.class_absolute_prompt is None
+    if origin == "target":
+        assert len(request.class_contextual_pairs) == 3
+        assert request.additional_class_direction_sets == ()
+    elif origin == "source":
+        assert len(request.class_contextual_pairs) == 3
+        assert request.additional_class_direction_sets == ()
+    else:
+        assert len(request.class_contextual_pairs) == 3
+        assert len(request.additional_class_direction_sets) == 1
+        assert len(request.additional_class_direction_sets[0].pairs) == 3
+
+    negatives = tuple(pair.negative for pair in request.class_contextual_pairs)
+    if kind == "superclass":
+        assert all(value.startswith("an animal ") for value in negatives)
+    else:
+        assert all(not value.startswith("an animal ") for value in negatives)
 
 
 @pytest.mark.parametrize(
     "condition",
     (
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
+        "class_st_all_absolute_direct_ssg",
+        "class_st_all_absolute_residual_ssg",
+        "class_st_all_no_object_ssg",
+        "class_st_all_superclass_ssg",
     ),
 )
-def test_source_class_request_is_invariant_to_target_prompt_structure(
+def test_all_source_generic_conditions_include_both_source_nuisance_factors(
     condition: str,
 ) -> None:
-    source_caption = _source_caption()
-    config = _class_config(condition)
-    conditionings = tuple(
-        build_batch_conditioning(_job(suffix), config, source_caption)
-        for suffix in ("flying", "on a stage", "flying in the sky")
+    result = build_batch_conditioning(
+        _job("flying"),
+        _config(condition),
+        _caption(),
     )
+    request = result.orthogonalization
+    source_set = request.additional_direction_sets[0]
 
-    pair_sets = tuple(_class_pairs(value) for value in conditionings)
-    assert pair_sets[0] == pair_sets[1] == pair_sets[2]
-    requests = tuple(value.orthogonalization for value in conditionings)
-    assert requests[0].include_behavior is True
-    assert requests[0].include_background is False
-    assert requests[1].include_behavior is False
-    assert requests[1].include_background is True
-    assert requests[2].include_behavior is True
-    assert requests[2].include_background is True
+    assert result.source_factors == ("behavior", "background")
+    assert source_set.include_behavior is True
+    assert source_set.include_background is True
 
 
-def test_legacy_contextual_alias_matches_explicit_source_superclass_request() -> None:
-    job = _job("flying in the sky")
-    source_caption = _source_caption()
-
-    legacy = build_batch_conditioning(
-        job,
-        _class_config("class_contextual_combined"),
-        source_caption,
-    )
-    explicit = build_batch_conditioning(
-        job,
-        _class_config("class_source_superclass_combined"),
-        source_caption,
-    )
-
-    assert legacy == explicit
-    assert legacy.class_projection_mode == "source_superclass"
+def test_target_factorial_uses_three_class_pairs_but_single_factor_uses_one() -> None:
+    config = _config("class_target_no_object_ssg")
+    single = build_batch_conditioning(_job("flying"), config)
+    factorial = build_batch_conditioning(_job("flying in the sky"), config)
+    assert len(single.orthogonalization.class_contextual_pairs) == 1
+    assert len(factorial.orthogonalization.class_contextual_pairs) == 3
 
 
-@pytest.mark.parametrize(
-    "condition",
-    (
-        "class_absolute_combined",
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-    ),
-)
-def test_non_source_class_conditions_reject_source_captions(
-    condition: str,
-) -> None:
-    with pytest.raises(ValueError, match="must not be supplied"):
-        build_batch_conditioning(
-            _job("flying"),
-            _class_config(condition),
-            _source_caption(),
-        )
-
-
-@pytest.mark.parametrize("condition", tuple(sorted(CLASS_SOURCE_CONDITIONS)))
-def test_source_class_conditions_require_and_validate_source_caption(
-    condition: str,
-) -> None:
+@pytest.mark.parametrize("condition", tuple(sorted(SOURCE_CAPTION_CONDITIONS)))
+def test_caption_aware_conditions_require_source_caption(condition: str) -> None:
     with pytest.raises(ValueError, match="source_caption is required"):
-        build_batch_conditioning(
-            _job("flying"),
-            _class_config(condition),
-        )
+        build_batch_conditioning(_job("flying"), _config(condition))
 
+
+def test_non_caption_condition_rejects_source_caption() -> None:
+    with pytest.raises(ValueError, match="must not be supplied"):
+        build_batch_conditioning(_job("flying"), _config("target_projection_ssg"), _caption())
+
+
+def test_caption_must_match_reference_and_species() -> None:
+    bad = SourceCaptionRecord(
+        reference_stem="dog_99",
+        species="dog",
+        content_sha256="ab" * 32,
+        source_behavior="lying",
+        source_background="on a beach",
+    )
     with pytest.raises(ValueError, match="reference mismatch"):
         build_batch_conditioning(
             _job("flying"),
-            _class_config(condition),
-            _source_caption(reference_stem="dog_99"),
-        )
-
-    with pytest.raises(ValueError, match="species"):
-        build_batch_conditioning(
-            _job("flying"),
-            _class_config(condition),
-            _source_caption(species="cat", reference_stem="dog_01"),
+            _config("source_projection_ssg"),
+            bad,
         )
 
 
-@pytest.mark.parametrize(
-    ("condition", "projection_enabled", "mask_enabled"),
-    (
-        ("baseline", False, False),
-        ("projection", True, False),
-        ("gate", False, True),
-        ("combined", True, True),
-    ),
-)
-@pytest.mark.parametrize("prompt_suffix", PROMPT_SUFFIXES)
-def test_every_condition_and_suffix_maps_to_independent_controls(
-    condition: str,
-    projection_enabled: bool,
-    mask_enabled: bool,
-    prompt_suffix: str,
-) -> None:
-    config = BatchGenerationConfig(
-        batch_id="test",
-        condition=condition,
-        orthogonalization_strength=0.73,
-    )
-
-    conditioning = build_batch_conditioning(_job(prompt_suffix), config)
-
-    assert conditioning.mask_single_text_rows is mask_enabled
-    assert conditioning.orthogonalization.enabled is projection_enabled
-    assert conditioning.orthogonalization.strength == pytest.approx(0.73)
-
-
-@pytest.mark.parametrize(
-    ("condition", "basis_origin", "removed_factors"),
-    (
-        ("baseline", "none", ()),
-        ("projection", "target_prompt", ("behavior",)),
-        ("gate", "none", ()),
-        ("combined", "target_prompt", ("behavior",)),
-    ),
-)
-def test_original_four_conditions_keep_their_basis_origin_and_factor_contract(
-    condition: str,
-    basis_origin: str,
-    removed_factors: tuple[str, ...],
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job("sleeping"),
-        BatchGenerationConfig(batch_id=condition, condition=condition),
-    )
-
-    assert conditioning.basis_origin == basis_origin
-    assert conditioning.removed_factors == removed_factors
-    assert conditioning.target_factors == removed_factors
-    assert conditioning.source_factors == ()
-
-
-@pytest.mark.parametrize(
-    "prompt_suffix",
-    BEHAVIOR_ONLY_SUFFIXES,
-)
-def test_behavior_suffixes_use_one_local_behavior_contrast(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix, species="cat"),
-        BatchGenerationConfig(batch_id="projection", condition="projection"),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "local"
-    assert request.include_behavior is True
-    assert request.include_background is False
-    assert request.include_interaction is False
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a cat"
-    assert request.prompts.object_behavior == f"a cat {prompt_suffix}"
-    assert request.prompts.object_background is None
-    assert request.prompts.object_behavior_background is None
-
-
-@pytest.mark.parametrize("prompt_suffix", BACKGROUND_ONLY_SUFFIXES)
-def test_background_suffixes_use_one_local_background_contrast(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        BatchGenerationConfig(batch_id="projection", condition="projection"),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "local"
-    assert request.include_behavior is False
-    assert request.include_background is True
-    assert request.include_interaction is False
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a dog"
-    assert request.prompts.object_behavior is None
-    assert request.prompts.object_background == f"a dog {prompt_suffix}"
-    assert request.prompts.object_behavior_background is None
-
-
-@pytest.mark.parametrize("prompt_suffix", FACTORIAL_SUFFIXES)
-def test_joint_suffixes_use_factorial_contrasts(prompt_suffix: str) -> None:
-    spec = get_prompt_spec(prompt_suffix)
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        BatchGenerationConfig(batch_id="combined", condition="combined"),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "factorial"
-    assert request.include_behavior is True
-    assert request.include_background is True
-    assert request.include_interaction is False
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a dog"
-    assert request.prompts.object_behavior == f"a dog {spec.behavior}"
-    assert request.prompts.object_background == f"a dog {spec.background}"
-    assert (
-        request.prompts.object_behavior_background
-        == f"a dog {prompt_suffix}"
-    )
-
-
-def test_non_projection_conditions_do_not_construct_prompt_set() -> None:
-    for condition in ("baseline", "gate"):
-        conditioning = build_batch_conditioning(
-            _job("flying in the sky"),
-            BatchGenerationConfig(batch_id=condition, condition=condition),
-        )
-
-        assert conditioning.orthogonalization.mode == "off"
-        assert conditioning.orthogonalization.prompts is None
-
-
-def test_projection_rejects_a_job_with_mismatched_prompt() -> None:
+def test_job_prompt_is_validated() -> None:
     job = _job("flying")
-    malformed = BatchJob(
+    invalid = BatchJob(
         reference_path=job.reference_path,
         reference_stem=job.reference_stem,
         species=job.species,
         prompt_suffix=job.prompt_suffix,
         prompt_slug=job.prompt_slug,
-        prompt="a cat flying",
+        prompt="a dog sleeping",
         output_relative_path=job.output_relative_path,
     )
-
-    with pytest.raises(ValueError, match="prompt does not match"):
+    with pytest.raises(ValueError, match="does not match"):
         build_batch_conditioning(
-            malformed,
-            BatchGenerationConfig(batch_id="projection", condition="projection"),
+            invalid,
+            _config("target_projection_ssg"),
         )
 
 
-@pytest.mark.parametrize(
-    ("condition", "mask_enabled"),
-    (
-        ("sa_projection", False),
-        ("sa_combined", True),
-    ),
-)
-@pytest.mark.parametrize("prompt_suffix", PROMPT_SUFFIXES)
-def test_source_aware_conditions_share_projection_and_only_gate_differs(
-    condition: str,
-    mask_enabled: bool,
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_config(condition),
-        _source_caption(),
+def test_prompt_taxonomy_still_covers_behavior_background_and_factorial() -> None:
+    assert get_prompt_spec("flying").factors == ("behavior",)
+    assert get_prompt_spec("on a stage").factors == ("background",)
+    assert get_prompt_spec("flying in the sky").factors == (
+        "behavior",
+        "background",
     )
-
-    assert conditioning.orthogonalization.enabled is True
-    assert conditioning.orthogonalization.mode == "factorial"
-    assert conditioning.orthogonalization.strength == pytest.approx(0.73)
-    assert conditioning.mask_single_text_rows is mask_enabled
-    assert conditioning.basis_origin == "reference_caption"
-
-
-@pytest.mark.parametrize(
-    "prompt_suffix",
-    BEHAVIOR_ONLY_SUFFIXES,
-)
-def test_source_aware_behavior_targets_select_only_source_behavior_main_effect(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_config(),
-        _source_caption(),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "factorial"
-    assert request.include_behavior is True
-    assert request.include_background is False
-    assert request.include_interaction is False
-    assert conditioning.removed_factors == ("behavior",)
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ("behavior",)
-
-
-@pytest.mark.parametrize("prompt_suffix", BACKGROUND_ONLY_SUFFIXES)
-def test_source_aware_background_targets_select_only_source_background_main_effect(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_config(),
-        _source_caption(),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "factorial"
-    assert request.include_behavior is False
-    assert request.include_background is True
-    assert request.include_interaction is False
-    assert conditioning.removed_factors == ("background",)
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ("background",)
-
-
-@pytest.mark.parametrize("prompt_suffix", FACTORIAL_SUFFIXES)
-def test_source_aware_joint_targets_select_both_source_main_effects(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_config("sa_combined"),
-        _source_caption(),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.mode == "factorial"
-    assert request.include_behavior is True
-    assert request.include_background is True
-    assert request.include_interaction is False
-    assert conditioning.removed_factors == ("behavior", "background")
-    assert conditioning.target_factors == ()
-    assert conditioning.source_factors == ("behavior", "background")
-
-
-def test_source_aware_basis_contains_only_reference_caption_prompts() -> None:
-    job = _job("playing the piano")
-    source_caption = _source_caption()
-
-    conditioning = build_batch_conditioning(
-        job,
-        _source_config(),
-        source_caption,
-    )
-    prompts = conditioning.orthogonalization.prompts
-
-    assert prompts is not None
-    assert prompts.object_only == "a dog"
-    assert prompts.object_behavior == "a dog lying down"
-    assert prompts.object_background == "a dog on a beach"
-    assert (
-        prompts.object_behavior_background
-        == "a dog lying down on a beach"
-    )
-    basis_prompts = {
-        prompts.object_only,
-        prompts.object_behavior,
-        prompts.object_background,
-        prompts.object_behavior_background,
-    }
-    assert job.prompt not in basis_prompts
-    assert all("playing the piano" not in prompt for prompt in basis_prompts)
-
-
-def test_source_aware_projection_is_identical_with_and_without_gate() -> None:
-    job = _job("flying in the sky")
-    source_caption = _source_caption()
-
-    projection = build_batch_conditioning(
-        job,
-        _source_config("sa_projection"),
-        source_caption,
-    )
-    combined = build_batch_conditioning(
-        job,
-        _source_config("sa_combined"),
-        source_caption,
-    )
-
-    assert projection.orthogonalization == combined.orthogonalization
-    assert projection.removed_factors == combined.removed_factors
-    assert projection.mask_single_text_rows is False
-    assert combined.mask_single_text_rows is True
-
-
-@pytest.mark.parametrize("condition", ["sa_projection", "sa_combined"])
-def test_source_aware_conditions_require_a_source_caption(
-    condition: str,
-) -> None:
-    with pytest.raises(ValueError, match="source_caption is required"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_config(condition),
-        )
-
-
-@pytest.mark.parametrize(
-    "condition",
-    ["baseline", "projection", "gate", "combined"],
-)
-def test_original_conditions_reject_a_source_caption(condition: str) -> None:
-    with pytest.raises(ValueError, match="source_caption"):
-        build_batch_conditioning(
-            _job("flying"),
-            BatchGenerationConfig(batch_id=condition, condition=condition),
-            _source_caption(),
-        )
-
-
-def test_source_caption_must_match_reference_stem_and_species() -> None:
-    with pytest.raises(ValueError, match="reference mismatch"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_config(),
-            _source_caption(reference_stem="dog_99"),
-        )
-
-    with pytest.raises(ValueError, match="species"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_config(),
-            _source_caption(species="cat", reference_stem="dog_01"),
-        )
-
-
-@pytest.mark.parametrize(
-    ("condition", "mask_enabled"),
-    (
-        ("st_projection", False),
-        ("st_combined", True),
-    ),
-)
-@pytest.mark.parametrize("prompt_suffix", PROMPT_SUFFIXES)
-def test_source_target_conditions_build_one_union_request_and_only_gate_differs(
-    condition: str,
-    mask_enabled: bool,
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_target_config(condition),
-        _source_caption(),
-    )
-    request = conditioning.orthogonalization
-
-    assert request.enabled is True
-    assert request.strength == pytest.approx(0.73)
-    assert request.primary_label == "target"
-    assert len(request.additional_direction_sets) == 1
-    assert request.additional_direction_sets[0].label == "source"
-    assert conditioning.mask_single_text_rows is mask_enabled
-    assert conditioning.basis_origin == "source_target_union"
-
-
-@pytest.mark.parametrize(
-    "prompt_suffix",
-    BEHAVIOR_ONLY_SUFFIXES,
-)
-def test_source_target_behavior_target_unions_two_behavior_directions(
-    prompt_suffix: str,
-) -> None:
-    job = _job(prompt_suffix)
-    source_caption = _source_caption()
-    conditioning = build_batch_conditioning(
-        job,
-        _source_target_config(),
-        source_caption,
-    )
-    request = conditioning.orthogonalization
-    source = request.additional_direction_sets[0]
-
-    assert request.mode == "local"
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a dog"
-    assert request.prompts.object_behavior == job.prompt
-    assert request.prompts.object_background is None
-    assert request.include_behavior is True
-    assert request.include_background is False
-
-    assert source.mode == "factorial"
-    assert source.prompts.object_only == source_caption.object_only
-    assert source.prompts.object_behavior == source_caption.object_behavior
-    assert source.prompts.object_background == source_caption.object_background
-    assert (
-        source.prompts.object_behavior_background
-        == source_caption.object_behavior_background
-    )
-    assert source.include_behavior is True
-    assert source.include_background is False
-    assert source.include_interaction is False
-    assert conditioning.removed_factors == ("behavior",)
-    assert conditioning.target_factors == ("behavior",)
-    assert conditioning.source_factors == ("behavior",)
-
-
-@pytest.mark.parametrize("prompt_suffix", BACKGROUND_ONLY_SUFFIXES)
-def test_source_target_background_targets_union_two_background_directions(
-    prompt_suffix: str,
-) -> None:
-    source_caption = _source_caption()
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_target_config(),
-        source_caption,
-    )
-    request = conditioning.orthogonalization
-    source = request.additional_direction_sets[0]
-
-    assert request.mode == "local"
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a dog"
-    assert request.prompts.object_behavior is None
-    assert request.prompts.object_background == f"a dog {prompt_suffix}"
-    assert request.include_behavior is False
-    assert request.include_background is True
-
-    assert source.mode == "factorial"
-    assert source.prompts.object_only == source_caption.object_only
-    assert source.prompts.object_behavior == source_caption.object_behavior
-    assert source.prompts.object_background == source_caption.object_background
-    assert (
-        source.prompts.object_behavior_background
-        == source_caption.object_behavior_background
-    )
-    assert source.include_behavior is False
-    assert source.include_background is True
-    assert source.include_interaction is False
-    assert conditioning.removed_factors == ("background",)
-    assert conditioning.target_factors == ("background",)
-    assert conditioning.source_factors == ("background",)
-
-
-@pytest.mark.parametrize("prompt_suffix", FACTORIAL_SUFFIXES)
-def test_source_target_joint_targets_union_four_main_effect_directions(
-    prompt_suffix: str,
-) -> None:
-    spec = get_prompt_spec(prompt_suffix)
-    source_caption = _source_caption()
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_target_config(),
-        source_caption,
-    )
-    request = conditioning.orthogonalization
-    source = request.additional_direction_sets[0]
-
-    assert request.mode == "factorial"
-    assert request.prompts is not None
-    assert request.prompts.object_only == "a dog"
-    assert request.prompts.object_behavior == f"a dog {spec.behavior}"
-    assert request.prompts.object_background == f"a dog {spec.background}"
-    assert (
-        request.prompts.object_behavior_background
-        == f"a dog {prompt_suffix}"
-    )
-    assert request.include_behavior is True
-    assert request.include_background is True
-    assert request.include_interaction is False
-
-    assert source.mode == "factorial"
-    assert source.prompts.object_only == source_caption.object_only
-    assert source.prompts.object_behavior == source_caption.object_behavior
-    assert source.prompts.object_background == source_caption.object_background
-    assert (
-        source.prompts.object_behavior_background
-        == source_caption.object_behavior_background
-    )
-    assert source.include_behavior is True
-    assert source.include_background is True
-    assert source.include_interaction is False
-    assert conditioning.removed_factors == ("behavior", "background")
-    assert conditioning.target_factors == ("behavior", "background")
-    assert conditioning.source_factors == ("behavior", "background")
-
-
-@pytest.mark.parametrize("prompt_suffix", PROMPT_SUFFIXES)
-def test_all_source_union_keeps_target_taxonomy_but_adds_both_source_factors(
-    prompt_suffix: str,
-) -> None:
-    conditioning = build_batch_conditioning(
-        _job(prompt_suffix),
-        _source_target_config("st_all_combined"),
-        _source_caption(),
-    )
-    request = conditioning.orthogonalization
-    source = request.additional_direction_sets[0]
-    expected_target_factors = get_prompt_spec(prompt_suffix).factors
-
-    assert conditioning.mask_single_text_rows is True
-    assert conditioning.basis_origin == "source_target_union"
-    assert conditioning.target_factors == expected_target_factors
-    assert conditioning.source_factors == ("behavior", "background")
-    assert conditioning.removed_factors == ("behavior", "background")
-    assert request.include_behavior is (
-        "behavior" in expected_target_factors
-    )
-    assert request.include_background is (
-        "background" in expected_target_factors
-    )
-    assert source.mode == "factorial"
-    assert source.include_behavior is True
-    assert source.include_background is True
-    assert source.include_interaction is False
-
-
-def test_source_target_projection_is_identical_with_and_without_gate() -> None:
-    job = _job("flying in the sky")
-    source_caption = _source_caption()
-
-    projection = build_batch_conditioning(
-        job,
-        _source_target_config("st_projection"),
-        source_caption,
-    )
-    combined = build_batch_conditioning(
-        job,
-        _source_target_config("st_combined"),
-        source_caption,
-    )
-
-    assert projection.orthogonalization == combined.orthogonalization
-    assert projection.removed_factors == combined.removed_factors
-    assert projection.mask_single_text_rows is False
-    assert combined.mask_single_text_rows is True
-
-
-@pytest.mark.parametrize(
-    "condition", ["st_projection", "st_combined", "st_all_combined"]
-)
-def test_source_target_conditions_require_a_source_caption(
-    condition: str,
-) -> None:
-    with pytest.raises(ValueError, match="source_caption is required"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_target_config(condition),
-        )
-
-
-def test_source_target_caption_must_match_reference_stem_and_species() -> None:
-    with pytest.raises(ValueError, match="reference mismatch"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_target_config(),
-            _source_caption(reference_stem="dog_99"),
-        )
-
-    with pytest.raises(ValueError, match="species"):
-        build_batch_conditioning(
-            _job("flying"),
-            _source_target_config(),
-            _source_caption(species="cat", reference_stem="dog_01"),
-        )

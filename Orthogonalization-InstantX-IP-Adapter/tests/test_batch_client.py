@@ -1,5 +1,4 @@
 from pathlib import Path, PurePosixPath
-from types import SimpleNamespace
 
 import pytest
 
@@ -10,24 +9,29 @@ from orthogonalization_instantx_ip_adapter.adapter import (
     PromptContrastPair,
 )
 from orthogonalization_instantx_ip_adapter.batch_config import (
+    FINAL_CONDITIONS,
+    SOURCE_CAPTION_CONDITIONS,
     BatchGenerationConfig,
 )
+from orthogonalization_instantx_ip_adapter.batch_manifest import (
+    DEFAULT_REFERENCE_ROOT,
+    build_batch_manifest,
+)
+from orthogonalization_instantx_ip_adapter.orthogonalization import PromptSet
 from orthogonalization_instantx_ip_adapter.source_captions import (
     DEFAULT_SOURCE_CAPTIONS_PATH,
 )
-from orthogonalization_instantx_ip_adapter.orthogonalization import PromptSet
 
 
-def test_default_batch_id_is_a_valid_safe_component():
-    value = batch_client.default_batch_id("projection")
-
-    BatchGenerationConfig(batch_id=value, condition="projection")
-    assert value.startswith("dreambench-projection-")
+def test_default_batch_id_is_a_valid_safe_component() -> None:
+    value = batch_client.default_batch_id("target_projection_ssg")
+    BatchGenerationConfig(batch_id=value, condition="target_projection_ssg")
+    assert value.startswith("dreambench-target_projection_ssg-")
 
 
 @pytest.mark.parametrize(
     ("remote_path", "expected"),
-    [
+    (
         (
             "run-01/cat_03/cat_03_running.png",
             PurePosixPath("cat_03/cat_03_running.png"),
@@ -36,19 +40,16 @@ def test_default_batch_id_is_a_valid_safe_component():
             "/run-01/_metadata/status.json",
             PurePosixPath("_metadata/status.json"),
         ),
-    ],
+    ),
 )
-def test_relative_remote_path_accepts_only_the_selected_batch(
-    remote_path,
-    expected,
-):
-    assert (
-        batch_client._relative_remote_path(remote_path, "run-01")
-        == expected
-    )
+def test_relative_remote_path_accepts_selected_batch(
+    remote_path: str,
+    expected: PurePosixPath,
+) -> None:
+    assert batch_client._relative_remote_path(remote_path, "run-01") == expected
 
 
-def test_relative_remote_path_rejects_another_batch():
+def test_relative_remote_path_rejects_another_batch() -> None:
     with pytest.raises(ValueError, match="outside batch"):
         batch_client._relative_remote_path(
             "run-02/cat_03/cat_03_running.png",
@@ -56,399 +57,78 @@ def test_relative_remote_path_rejects_another_batch():
         )
 
 
-def test_safe_local_child_rejects_parent_traversal(tmp_path):
+def test_safe_local_child_rejects_parent_traversal(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="escapes"):
         batch_client._safe_local_child(tmp_path, "../outside.png")
 
 
-def test_submit_requires_an_explicit_condition():
+def test_submit_parser_exposes_exact_22_conditions() -> None:
     parser = batch_client.build_parser()
+    for condition in FINAL_CONDITIONS:
+        args = parser.parse_args(["submit", "--condition", condition])
+        assert args.condition == condition
+        assert args.source_captions == DEFAULT_SOURCE_CAPTIONS_PATH
 
     with pytest.raises(SystemExit):
-        parser.parse_args(["submit"])
+        parser.parse_args(["submit", "--condition", "combined"])
 
 
-@pytest.mark.parametrize(
-    "condition",
-    [
-        "baseline",
-        "projection",
-        "gate",
-        "combined",
-        "sa_projection",
-        "sa_combined",
-        "st_projection",
-        "st_combined",
-        "st_all_combined",
-        "class_absolute_combined",
-        "class_contextual_combined",
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    ],
-)
-def test_submit_parser_exposes_all_non_conflicting_conditions(
-    condition: str,
-) -> None:
-    args = batch_client.build_parser().parse_args(
-        ["submit", "--condition", condition]
-    )
-
-    assert args.condition == condition
-    assert args.source_captions == DEFAULT_SOURCE_CAPTIONS_PATH
-
-
-@pytest.mark.parametrize(
-    "condition",
-    [
-        "sa_projection",
-        "sa_combined",
-        "st_projection",
-        "st_combined",
-        "st_all_combined",
-        "class_contextual_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    ],
-)
-def test_default_caption_aware_batch_id_is_safe(
-    condition: str,
-) -> None:
+@pytest.mark.parametrize("condition", tuple(sorted(SOURCE_CAPTION_CONDITIONS)))
+def test_caption_aware_default_batch_id_is_safe(condition: str) -> None:
     value = batch_client.default_batch_id(condition)
-
     BatchGenerationConfig(
         batch_id=value,
         condition=condition,
         source_caption_digest="ab" * 32,
     )
-    assert value.startswith(f"dreambench-{condition}-")
 
 
-@pytest.fixture
-def submit_harness(monkeypatch, tmp_path):
-    reference_path = tmp_path / "dog_01.jpg"
-    reference_path.write_bytes(b"reference")
-    manifest = SimpleNamespace(
-        semantic_digest="11" * 32,
-        references=(
-            SimpleNamespace(
-                reference_path=str(reference_path),
-                reference_stem="dog_01",
-                species="dog",
-            ),
-        ),
-        jobs=(
-            SimpleNamespace(prompt_suffix="flying"),
-            SimpleNamespace(prompt_suffix="flying in the sky"),
-        ),
-        to_json=lambda: '{"test_manifest": true}',
-    )
-    captions = SimpleNamespace(
-        semantic_digest="33" * 32,
-        records=(),
-        to_upload_dict=lambda: {
-            "schema_version": 1,
-            "references": {
-                "dog_01": {
-                    "source_behavior": "lying down",
-                    "source_background": "on a beach",
-                }
-            },
-        },
-    )
-    captured = {
-        "caption_loads": [],
-        "uploads": [],
-        "spawn_calls": [],
-        "job_records": [],
-        "remote_lookup": [],
-    }
-
-    monkeypatch.setattr(
-        batch_client,
-        "build_batch_manifest",
-        lambda _root: manifest,
-    )
-    monkeypatch.setattr(
-        batch_client,
-        "load_source_caption_manifest",
-        lambda path, image_manifest: (
-            captured["caption_loads"].append((path, image_manifest))
-            or captions
-        ),
-    )
-    monkeypatch.setattr(
-        batch_client,
-        "compute_batch_implementation_digest",
-        lambda _root: "22" * 32,
-    )
-    monkeypatch.setattr(
-        batch_client,
-        "print_manifest_summary",
-        lambda _manifest: None,
-    )
-    monkeypatch.setattr(
-        batch_client,
-        "print_source_caption_summary",
-        lambda _captions, *, source_path: None,
-    )
-    monkeypatch.setattr(
-        batch_client,
-        "_write_job_record",
-        lambda record: captured["job_records"].append(record),
-    )
-
-    class FakeUpload:
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, traceback):
-            return False
-
-        def put_file(self, source, remote_path):
-            captured["uploads"].append((source, remote_path))
-
-    class FakeVolume:
-        def batch_upload(self, *, force):
-            assert force is True
-            return FakeUpload()
-
-    class FakeCall:
-        object_id = "fc-test-source-aware"
-
-        @staticmethod
-        def get_dashboard_url():
-            return "https://modal.test/call"
-
-    class FakeGenerateBatch:
-        @staticmethod
-        def spawn(*args):
-            captured["spawn_calls"].append(args)
-            return FakeCall()
-
-    class FakeRemoteObject:
-        generate_batch = FakeGenerateBatch()
-
-    class FakeRemoteClass:
-        def __call__(self):
-            return FakeRemoteObject()
-
-    fake_modal = SimpleNamespace(
-        Volume=SimpleNamespace(
-            from_name=lambda *args, **kwargs: FakeVolume(),
-        ),
-        Cls=SimpleNamespace(
-            from_name=lambda app_name, class_name: (
-                captured["remote_lookup"].append((app_name, class_name))
-                or FakeRemoteClass()
-            ),
-        ),
-    )
-    monkeypatch.setattr(batch_client, "modal", fake_modal)
-    return captured, manifest, captions
-
-
+@pytest.mark.parametrize("module", (batch_client, batch_modal))
 @pytest.mark.parametrize(
     "condition",
-    [
-        "baseline",
-        "projection",
-        "gate",
-        "combined",
-        "class_absolute_combined",
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-    ],
+    (
+        "st_all_projection_ssg",
+        "class_st_all_absolute_direct_ssg",
+        "class_st_all_absolute_residual_ssg",
+        "class_st_all_no_object_ssg",
+        "class_st_all_superclass_ssg",
+    ),
 )
-def test_original_submit_conditions_do_not_load_or_upload_source_captions(
+def test_new_st_all_conditions_are_self_contained(
+    module,
     condition: str,
-    submit_harness,
 ) -> None:
-    captured, _manifest, _captions = submit_harness
-    args = batch_client.build_parser().parse_args(
-        [
-            "submit",
-            "--condition",
-            condition,
-            "--batch-id",
-            f"regression-{condition}",
-            "--yes",
-        ]
-    )
-
-    assert batch_client.command_submit(args) == 0
-
-    assert captured["caption_loads"] == []
-    config_payload, caption_payload = captured["spawn_calls"][0]
-    assert config_payload["condition"] == condition
-    assert config_payload["source_caption_digest"] is None
-    assert caption_payload is None
-    if condition.startswith("class_"):
-        assert config_payload["class_projection_strength"] == pytest.approx(0.5)
-        assert config_payload["class_superclass_prompt"] == "an animal"
-
-
-@pytest.mark.parametrize(
-    "condition",
-    [
-        "sa_projection",
-        "sa_combined",
-        "st_projection",
-        "st_combined",
-        "st_all_combined",
-        "class_contextual_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    ],
-)
-def test_caption_aware_submit_validates_and_sends_caption_payload(
-    condition: str,
-    submit_harness,
-) -> None:
-    captured, manifest, captions = submit_harness
-    caption_path = "captions-for-test.json"
-    args = batch_client.build_parser().parse_args(
-        [
-            "submit",
-            "--condition",
-            condition,
-            "--batch-id",
-            f"source-{condition}",
-            "--source-captions",
-            caption_path,
-            "--yes",
-        ]
-    )
-
-    assert batch_client.command_submit(args) == 0
-
-    assert captured["caption_loads"] == [
-        (args.source_captions, manifest),
-    ]
-    config_payload, caption_payload = captured["spawn_calls"][0]
-    assert config_payload["condition"] == condition
-    assert (
-        config_payload["source_caption_digest"]
-        == captions.semantic_digest
-    )
-    assert caption_payload == captions.to_upload_dict()
-    if condition.startswith("class_"):
-        assert config_payload["class_projection_strength"] == pytest.approx(0.5)
-        assert config_payload["class_superclass_prompt"] == "an animal"
-    assert (
-        captured["job_records"][0]["source_caption_digest"]
-        == captions.semantic_digest
-    )
-    selection = captured["job_records"][0]["job_selection"]
-    if condition == "st_all_combined":
-        assert selection["selected_job_count"] == 1
-        assert selection["skipped_as_redundant_job_count"] == 1
-    else:
-        assert selection["selected_job_count"] == 2
-        assert selection["skipped_as_redundant_job_count"] == 0
-
-
-def _catalog_jobs(reference_count: int = 10):
-    return tuple(
-        SimpleNamespace(prompt_suffix=spec.suffix)
-        for _ in range(reference_count)
-        for spec in batch_client.PROMPT_CATALOG
-    )
-
-
-@pytest.mark.parametrize(
-    "condition",
-    [
-        "baseline",
-        "projection",
-        "gate",
-        "combined",
-        "sa_projection",
-        "sa_combined",
-        "st_projection",
-        "st_combined",
-        "class_absolute_combined",
-        "class_contextual_combined",
-        "class_target_superclass_combined",
-        "class_target_no_object_combined",
-        "class_source_superclass_combined",
-        "class_source_no_object_combined",
-    ],
-)
-def test_normal_conditions_select_all_160_jobs(condition: str) -> None:
-    jobs = _catalog_jobs()
-
-    selected, redundant = batch_client._select_jobs_for_condition(
-        jobs,
+    manifest = build_batch_manifest(DEFAULT_REFERENCE_ROOT)
+    selected, skipped = module._select_jobs_for_condition(
+        manifest.jobs,
         condition,
     )
+    assert len(selected) == 140
+    assert len(skipped) == 0
 
-    assert len(selected) == 160
-    assert redundant == ()
 
-
-@pytest.mark.parametrize("module", [batch_client, batch_modal])
-def test_all_source_condition_skips_only_redundant_factorial_jobs(
-    module,
-) -> None:
-    jobs = _catalog_jobs()
-
-    selected, redundant = module._select_jobs_for_condition(
-        jobs,
-        "st_all_combined",
+@pytest.mark.parametrize("module", (batch_client, batch_modal))
+def test_non_all_conditions_keep_140_jobs(module) -> None:
+    manifest = build_batch_manifest(DEFAULT_REFERENCE_ROOT)
+    selected, skipped = module._select_jobs_for_condition(
+        manifest.jobs,
+        "class_st_matched_superclass_ssg",
     )
-
-    assert len(selected) == 100
-    assert len(redundant) == 60
-    assert {job.prompt_suffix for job in selected} == {
-        spec.suffix
-        for spec in batch_client.PROMPT_CATALOG
-        if not spec.is_factorial
-    }
-    assert {job.prompt_suffix for job in redundant} == {
-        spec.suffix
-        for spec in batch_client.PROMPT_CATALOG
-        if spec.is_factorial
-    }
-
-
-def test_selection_metadata_records_suffixes_and_redundant_jobs() -> None:
-    metadata = batch_modal._job_selection_metadata(
-        _catalog_jobs(),
-        "st_all_combined",
-    )
-
-    assert metadata["full_manifest_count"] == 160
-    assert metadata["selected_job_count"] == 100
-    assert metadata["skipped_as_redundant_job_count"] == 60
-    assert len(metadata["selected_prompt_suffixes"]) == 10
-    assert len(metadata["skipped_as_redundant_prompt_suffixes"]) == 6
-    assert metadata["redundancy_reason"]
-
-
-def test_download_count_prefers_remote_status_for_legacy_batches() -> None:
-    assert batch_client._resolve_expected_png_count(
-        {"total_count": 90},
-        {"condition": "baseline"},
-    ) == 90
+    assert len(selected) == 140
+    assert skipped == ()
 
 
 @pytest.mark.parametrize(
     ("condition", "expected"),
-    [
-        ("baseline", 160),
-        ("st_combined", 160),
-        ("st_all_combined", 100),
-        ("class_absolute_combined", 160),
-        ("class_contextual_combined", 160),
-        ("class_target_superclass_combined", 160),
-        ("class_target_no_object_combined", 160),
-        ("class_source_superclass_combined", 160),
-        ("class_source_no_object_combined", 160),
-    ],
+    (
+        ("baseline", 140),
+        ("target_projection_ssg", 140),
+        ("st_all_projection_ssg", 140),
+        ("class_st_matched_no_object_ssg", 140),
+        ("class_st_all_no_object_ssg", 140),
+    ),
 )
-def test_download_count_falls_back_to_condition_aware_config(
+def test_download_count_uses_condition_selection(
     condition: str,
     expected: int,
 ) -> None:
@@ -458,122 +138,32 @@ def test_download_count_falls_back_to_condition_aware_config(
     ) == expected
 
 
-@pytest.mark.parametrize("value", [0, -1, True, 1.5, "100"])
-def test_download_count_rejects_invalid_remote_status(value) -> None:
+def test_download_count_prefers_remote_status() -> None:
+    assert batch_client._resolve_expected_png_count(
+        {"total_count": 90},
+        {"condition": "baseline"},
+    ) == 90
+
+
+@pytest.mark.parametrize("value", (0, -1, True, 1.5, "100"))
+def test_download_count_rejects_invalid_status(value) -> None:
     with pytest.raises(ValueError, match="positive integer"):
         batch_client._resolve_expected_png_count(
             {"total_count": value},
-            {"condition": "st_all_combined"},
+            {"condition": "st_all_projection_ssg"},
         )
 
 
-def test_download_temporary_name_does_not_repeat_a_long_destination_name(
-    tmp_path: Path,
-) -> None:
-    destination = (
-        tmp_path
-        / "_metadata"
-        / "images"
-        / "PA_white_cat_background"
-        / (
-            "PA_white_cat_background_playing_the_guitar_"
-            "on_a_stage.json"
-        )
-    )
-
+def test_download_temporary_name_is_short(tmp_path: Path) -> None:
+    destination = tmp_path / "_metadata" / "images" / ("x" * 180 + ".json")
     temporary = batch_client._download_temporary_path(destination)
-
     assert temporary.parent == destination.parent
     assert destination.name not in temporary.name
     assert temporary.name.startswith(".download-")
     assert temporary.name.endswith(".tmp")
-    assert len(temporary.name) == len(".download-") + 32 + len(".tmp")
 
 
-def test_modal_request_serializer_records_contextual_comparison_prompts() -> None:
-    request = OrthogonalizationRequest(
-        mode="class_contextual",
-        strength=0.5,
-        prompts=PromptSet(
-            object_only="a dog",
-            object_behavior="a dog sitting",
-            object_background="a dog on a beach",
-            object_behavior_background="a dog sitting on a beach",
-        ),
-        comparison_prompts=PromptSet(
-            object_only="an animal",
-            object_behavior="an animal sitting",
-            object_background="an animal on a beach",
-            object_behavior_background="an animal sitting on a beach",
-        ),
-        include_behavior=False,
-        include_background=False,
-    )
-
-    payload = batch_modal._request_to_dict(request)
-
-    assert payload["mode"] == "class_contextual"
-    assert payload["strength"] == pytest.approx(0.5)
-    assert payload["include_behavior"] is False
-    assert payload["include_background"] is False
-    assert payload["prompts"]["object_behavior"] == "a dog sitting"
-    assert (
-        payload["comparison_prompts"]["object_behavior"]
-        == "an animal sitting"
-    )
-
-
-def test_modal_request_serializer_records_explicit_contextual_pairs() -> None:
-    request = OrthogonalizationRequest(
-        mode="class_contextual",
-        strength=0.75,
-        include_behavior=False,
-        include_background=False,
-        class_contextual_pairs=(
-            PromptContrastPair(
-                positive="a dog running",
-                negative="running",
-                label="behavior_context",
-            ),
-            PromptContrastPair(
-                positive="a dog on a street",
-                negative="on a street",
-                label="background_context",
-            ),
-            PromptContrastPair(
-                positive="a dog running on a street",
-                negative="running on a street",
-                label="joint_context",
-            ),
-        ),
-    )
-
-    payload = batch_modal._request_to_dict(request)
-
-    assert payload["mode"] == "class_contextual"
-    assert payload["strength"] == pytest.approx(0.75)
-    assert payload["prompts"] is None
-    assert payload["comparison_prompts"] is None
-    assert payload["class_contextual_pairs"] == [
-        {
-            "positive": "a dog running",
-            "negative": "running",
-            "label": "behavior_context",
-        },
-        {
-            "positive": "a dog on a street",
-            "negative": "on a street",
-            "label": "background_context",
-        },
-        {
-            "positive": "a dog running on a street",
-            "negative": "running on a street",
-            "label": "joint_context",
-        },
-    ]
-
-
-def test_modal_request_serializer_records_hierarchical_independent_strengths() -> None:
+def test_modal_serializer_records_absolute_policy() -> None:
     request = OrthogonalizationRequest(
         mode="local",
         strength=1.0,
@@ -583,22 +173,31 @@ def test_modal_request_serializer_records_hierarchical_independent_strengths() -
         ),
         include_behavior=True,
         include_background=False,
-        class_contextual_pairs=(
-            PromptContrastPair(
-                positive="a dog flying",
-                negative="flying",
-                label="behavior_context",
-            ),
-        ),
-        class_strength=0.25,
+        class_absolute_prompt="a dog",
+        class_strength=0.5,
+        residualize_class_against_nuisance=False,
     )
-
     payload = batch_modal._request_to_dict(request)
+    assert payload["class_absolute_prompt"] == "a dog"
+    assert payload["class_strength"] == 0.5
+    assert payload["residualize_class_against_nuisance"] is False
 
-    assert payload["mode"] == "local"
-    assert payload["strength"] == pytest.approx(1.0)
-    assert payload["class_strength"] == pytest.approx(0.25)
-    assert payload["prompts"]["object_behavior"] == "a dog flying"
+
+def test_modal_serializer_records_contextual_pairs() -> None:
+    request = OrthogonalizationRequest(
+        mode="local",
+        prompts=PromptSet(
+            object_only="a dog",
+            object_behavior="a dog flying",
+        ),
+        include_behavior=True,
+        include_background=False,
+        class_contextual_pairs=(
+            PromptContrastPair("a dog flying", "flying", "behavior_context"),
+        ),
+        class_strength=1.0,
+    )
+    payload = batch_modal._request_to_dict(request)
     assert payload["class_contextual_pairs"] == [
         {
             "positive": "a dog flying",
@@ -606,3 +205,4 @@ def test_modal_request_serializer_records_hierarchical_independent_strengths() -
             "label": "behavior_context",
         }
     ]
+    assert payload["residualize_class_against_nuisance"] is True

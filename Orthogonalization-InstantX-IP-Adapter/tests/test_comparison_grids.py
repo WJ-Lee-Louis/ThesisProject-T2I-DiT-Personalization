@@ -154,7 +154,7 @@ def test_all_source_variant_reuses_exactly_factorial_cells() -> None:
     generated = grids._generated_prompt_suffixes(method)
     reused = grids._reused_prompt_suffixes(method)
 
-    assert len(generated) == 10
+    assert len(generated) == 8
     assert len(reused) == 6
     assert all(not get_prompt_spec(suffix).is_factorial for suffix in generated)
     assert all(get_prompt_spec(suffix).is_factorial for suffix in reused)
@@ -182,7 +182,7 @@ def test_validate_inputs_accepts_optimized_all_source_batch(
 
     assert set(configs) == {method.variant_id for method in grids.METHODS}
     st_all_pngs = tuple(roots["st_all_combined"].rglob("*.png"))
-    assert len(st_all_pngs) == 10
+    assert len(st_all_pngs) == 8
 
 
 def test_validate_inputs_rejects_missing_selected_all_source_image(
