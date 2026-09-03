@@ -50,8 +50,8 @@ InstantX's model card example uses `scale=0.7`, so this scaffold uses the same d
 --ip-adapter-scale 0.7
 --guidance-scale 3.5
 --num-inference-steps 24
---width 960
---height 1280
+--width 1024
+--height 1024
 ```
 
 Outputs are written to:

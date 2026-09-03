@@ -172,8 +172,8 @@ class BatchGenerationConfig:
     guidance_scale: float = 3.5
     steps: int = 24
     seed: int = 42
-    width: int = 960
-    height: int = 1280
+    width: int = 1024
+    height: int = 1024
     overwrite: bool = False
     expected_manifest_digest: str | None = None
     implementation_digest: str | None = None

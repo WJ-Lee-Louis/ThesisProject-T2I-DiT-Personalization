@@ -195,8 +195,8 @@ def build_parser() -> argparse.ArgumentParser:
     submit.add_argument("--guidance-scale", type=float, default=3.5)
     submit.add_argument("--steps", type=int, default=24)
     submit.add_argument("--seed", type=int, default=42)
-    submit.add_argument("--width", type=int, default=960)
-    submit.add_argument("--height", type=int, default=1280)
+    submit.add_argument("--width", type=int, default=1024)
+    submit.add_argument("--height", type=int, default=1024)
     submit.add_argument(
         "--overwrite",
         action="store_true",

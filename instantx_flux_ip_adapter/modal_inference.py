@@ -76,8 +76,8 @@ def generate_with_instantx_ip_adapter(
     guidance_scale: float = 3.5,
     num_inference_steps: int = 24,
     seed: int = 42,
-    width: int = 960,
-    height: int = 1280,
+    width: int = 1024,
+    height: int = 1024,
 ) -> bytes:
     from instantx_flux_ip_adapter.inference import generate_png_bytes
 
@@ -103,8 +103,8 @@ def main(
     guidance_scale: float = 3.5,
     num_inference_steps: int = 24,
     seed: int = 42,
-    width: int = 960,
-    height: int = 1280,
+    width: int = 1024,
+    height: int = 1024,
     output_path: str = DEFAULT_OUTPUT_PATH,
 ):
     reference_image_bytes = None
