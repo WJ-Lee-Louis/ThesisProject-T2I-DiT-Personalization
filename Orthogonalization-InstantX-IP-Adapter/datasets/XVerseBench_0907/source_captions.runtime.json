@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "xverse_single_animal_29",
+  "semantic_digest": "bb195d743f557a0e70ee16bc8c9114358bd456dd31b05230aa4b04c5166dffdd",
+  "reference_count": 29,
+  "records": [
+    {
+      "official_index": 0,
+      "reference_filename": "13_polar bear.jpg",
+      "reference_stem": "13_polar bear",
+      "content_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "subject_caption": "a polar bear",
+      "source_behavior": "standing",
+      "source_background": "on the snow",
+      "source_prompts": {
+        "object_only": "a polar bear",
+        "object_behavior": "a polar bear standing",
+        "object_background": "a polar bear on the snow",
+        "object_behavior_background": "a polar bear standing on the snow"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 1,
+      "reference_filename": "18_sea turtle.jpg",
+      "reference_stem": "18_sea turtle",
+      "content_sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+      "subject_caption": "a sea turtle",
+      "source_behavior": "swimming",
+      "source_background": "in the ocean",
+      "source_prompts": {
+        "object_only": "a sea turtle",
+        "object_behavior": "a sea turtle swimming",
+        "object_background": "a sea turtle in the ocean",
+        "object_behavior_background": "a sea turtle swimming in the ocean"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 2,
+      "reference_filename": "08_raccoon.jpg",
+      "reference_stem": "08_raccoon",
+      "content_sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+      "subject_caption": "a raccoon",
+      "source_behavior": "walking",
+      "source_background": "on the grass",
+      "source_prompts": {
+        "object_only": "a raccoon",
+        "object_behavior": "a raccoon walking",
+        "object_background": "a raccoon on the grass",
+        "object_behavior_background": "a raccoon walking on the grass"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 3,
+      "reference_filename": "12_dog.jpg",
+      "reference_stem": "12_dog",
+      "content_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+      "subject_caption": "a dog",
+      "source_behavior": "lying",
+      "source_background": "on a white background",
+      "source_prompts": {
+        "object_only": "a dog",
+        "object_behavior": "a dog lying",
+        "object_background": "a dog on a white background",
+        "object_behavior_background": "a dog lying on a white background"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 4,
+      "reference_filename": "25_Sphynx cat.jpg",
+      "reference_stem": "25_Sphynx cat",
+      "content_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+      "subject_caption": "a sphynx cat",
+      "source_behavior": "sitting",
+      "source_background": "in a dark room",
+      "source_prompts": {
+        "object_only": "a sphynx cat",
+        "object_behavior": "a sphynx cat sitting",
+        "object_background": "a sphynx cat in a dark room",
+        "object_behavior_background": "a sphynx cat sitting in a dark room"
+      },
+      "notes": "Subject casing normalized to the official XVerse caption."
+    },
+    {
+      "official_index": 5,
+      "reference_filename": "15_butterfly.jpg",
+      "reference_stem": "15_butterfly",
+      "content_sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+      "subject_caption": "a butterfly",
+      "source_behavior": "resting",
+      "source_background": "on a white background",
+      "source_prompts": {
+        "object_only": "a butterfly",
+        "object_behavior": "a butterfly resting",
+        "object_background": "a butterfly on a white background",
+        "object_behavior_background": "a butterfly resting on a white background"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 6,
+      "reference_filename": "29_grasshopper.jpg",
+      "reference_stem": "29_grasshopper",
+      "content_sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+      "subject_caption": "a grasshopper",
+      "source_behavior": "sitting",
+      "source_background": "on the wood",
+      "source_prompts": {
+        "object_only": "a grasshopper",
+        "object_behavior": "a grasshopper sitting",
+        "object_background": "a grasshopper on the wood",
+        "object_behavior_background": "a grasshopper sitting on the wood"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 7,
+      "reference_filename": "31_deer.jpg",
+      "reference_stem": "31_deer",
+      "content_sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+      "subject_caption": "a deer",
+      "source_behavior": "standing",
+      "source_background": "on the grass",
+      "source_prompts": {
+        "object_only": "a deer",
+        "object_behavior": "a deer standing",
+        "object_background": "a deer on the grass",
+        "object_behavior_background": "a deer standing on the grass"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 8,
+      "reference_filename": "39_dolphin.jpg",
+      "reference_stem": "39_dolphin",
+      "content_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+      "subject_caption": "a dolphin",
+      "source_behavior": "jumping",
+      "source_background": "in the ocean",
+      "source_prompts": {
+        "object_only": "a dolphin",
+        "object_behavior": "a dolphin jumping",
+        "object_background": "a dolphin in the ocean",
+        "object_behavior_background": "a dolphin jumping in the ocean"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 9,
+      "reference_filename": "02_kitten.jpg",
+      "reference_stem": "02_kitten",
+      "content_sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+      "subject_caption": "a kitten",
+      "source_behavior": "sitting",
+      "source_background": "on the stairs",
+      "source_prompts": {
+        "object_only": "a kitten",
+        "object_behavior": "a kitten sitting",
+        "object_background": "a kitten on the stairs",
+        "object_behavior_background": "a kitten sitting on the stairs"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 10,
+      "reference_filename": "38_elephant.jpg",
+      "reference_stem": "38_elephant",
+      "content_sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+      "subject_caption": "an elephant",
+      "source_behavior": "walking",
+      "source_background": "on the grass",
+      "source_prompts": {
+        "object_only": "an elephant",
+        "object_behavior": "an elephant walking",
+        "object_background": "an elephant on the grass",
+        "object_behavior_background": "an elephant walking on the grass"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 11,
+      "reference_filename": "06_shark.jpg",
+      "reference_stem": "06_shark",
+      "content_sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+      "subject_caption": "a shark",
+      "source_behavior": "swimming",
+      "source_background": "in the ocean",
+      "source_prompts": {
+        "object_only": "a shark",
+        "object_behavior": "a shark swimming",
+        "object_background": "a shark in the ocean",
+        "object_behavior_background": "a shark swimming in the ocean"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 12,
+      "reference_filename": "14_eagle.jpg",
+      "reference_stem": "14_eagle",
+      "content_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+      "subject_caption": "an eagle",
+      "source_behavior": "flying",
+      "source_background": "in the sky",
+      "source_prompts": {
+        "object_only": "an eagle",
+        "object_behavior": "an eagle flying",
+        "object_background": "an eagle in the sky",
+        "object_behavior_background": "an eagle flying in the sky"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 13,
+      "reference_filename": "33_panda.jpg",
+      "reference_stem": "33_panda",
+      "content_sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+      "subject_caption": "a panda",
+      "source_behavior": "walking",
+      "source_background": "on the ground",
+      "source_prompts": {
+        "object_only": "a panda",
+        "object_behavior": "a panda walking",
+        "object_background": "a panda on the ground",
+        "object_behavior_background": "a panda walking on the ground"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 14,
+      "reference_filename": "09_rooster.jpg",
+      "reference_stem": "09_rooster",
+      "content_sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+      "subject_caption": "a rooster",
+      "source_behavior": "standing",
+      "source_background": "on the ground",
+      "source_prompts": {
+        "object_only": "a rooster",
+        "object_behavior": "a rooster standing",
+        "object_background": "a rooster on the ground",
+        "object_behavior_background": "a rooster standing on the ground"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 15,
+      "reference_filename": "00_kitten.jpg",
+      "reference_stem": "00_kitten",
+      "content_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "subject_caption": "a kitten",
+      "source_behavior": "sitting",
+      "source_background": "on a bed",
+      "source_prompts": {
+        "object_only": "a kitten",
+        "object_behavior": "a kitten sitting",
+        "object_background": "a kitten on a bed",
+        "object_behavior_background": "a kitten sitting on a bed"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 16,
+      "reference_filename": "36_lizard.jpg",
+      "reference_stem": "36_lizard",
+      "content_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+      "subject_caption": "a lizard",
+      "source_behavior": "sitting",
+      "source_background": "on the ground",
+      "source_prompts": {
+        "object_only": "a lizard",
+        "object_behavior": "a lizard sitting",
+        "object_background": "a lizard on the ground",
+        "object_behavior_background": "a lizard sitting on the ground"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 17,
+      "reference_filename": "05_penguin.jpg",
+      "reference_stem": "05_penguin",
+      "content_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+      "subject_caption": "a penguin",
+      "source_behavior": "standing",
+      "source_background": "on the snow",
+      "source_prompts": {
+        "object_only": "a penguin",
+        "object_behavior": "a penguin standing",
+        "object_background": "a penguin on the snow",
+        "object_behavior_background": "a penguin standing on the snow"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 18,
+      "reference_filename": "40_white tiger.jpg",
+      "reference_stem": "40_white tiger",
+      "content_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+      "subject_caption": "a white tiger",
+      "source_behavior": "standing",
+      "source_background": "in the forest",
+      "source_prompts": {
+        "object_only": "a white tiger",
+        "object_behavior": "a white tiger standing",
+        "object_background": "a white tiger in the forest",
+        "object_behavior_background": "a white tiger standing in the forest"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 19,
+      "reference_filename": "43_French bulldog.jpg",
+      "reference_stem": "43_French bulldog",
+      "content_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+      "subject_caption": "a french bulldog",
+      "source_behavior": "sitting",
+      "source_background": "on a blue background",
+      "source_prompts": {
+        "object_only": "a french bulldog",
+        "object_behavior": "a french bulldog sitting",
+        "object_background": "a french bulldog on a blue background",
+        "object_behavior_background": "a french bulldog sitting on a blue background"
+      },
+      "notes": "Subject casing normalized to the official XVerse caption."
+    },
+    {
+      "official_index": 20,
+      "reference_filename": "20_hamster.jpg",
+      "reference_stem": "20_hamster",
+      "content_sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+      "subject_caption": "a hamster",
+      "source_behavior": "standing",
+      "source_background": "on a floor",
+      "source_prompts": {
+        "object_only": "a hamster",
+        "object_behavior": "a hamster standing",
+        "object_background": "a hamster on a floor",
+        "object_behavior_background": "a hamster standing on a floor"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 21,
+      "reference_filename": "04_crab.jpg",
+      "reference_stem": "04_crab",
+      "content_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+      "subject_caption": "a crab",
+      "source_behavior": "walking",
+      "source_background": "on the sand",
+      "source_prompts": {
+        "object_only": "a crab",
+        "object_behavior": "a crab walking",
+        "object_background": "a crab on the sand",
+        "object_behavior_background": "a crab walking on the sand"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 22,
+      "reference_filename": "01_stork.jpg",
+      "reference_stem": "01_stork",
+      "content_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "subject_caption": "a stork",
+      "source_behavior": "standing",
+      "source_background": "on a rooftop",
+      "source_prompts": {
+        "object_only": "a stork",
+        "object_behavior": "a stork standing",
+        "object_background": "a stork on a rooftop",
+        "object_behavior_background": "a stork standing on a rooftop"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 23,
+      "reference_filename": "27_wolf.jpg",
+      "reference_stem": "27_wolf",
+      "content_sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+      "subject_caption": "a wolf",
+      "source_behavior": "walking",
+      "source_background": "on a path",
+      "source_prompts": {
+        "object_only": "a wolf",
+        "object_behavior": "a wolf walking",
+        "object_background": "a wolf on a path",
+        "object_behavior_background": "a wolf walking on a path"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 24,
+      "reference_filename": "10_fox.jpg",
+      "reference_stem": "10_fox",
+      "content_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+      "subject_caption": "a fox",
+      "source_behavior": "standing",
+      "source_background": "on the snow",
+      "source_prompts": {
+        "object_only": "a fox",
+        "object_behavior": "a fox standing",
+        "object_background": "a fox on the snow",
+        "object_behavior_background": "a fox standing on the snow"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 25,
+      "reference_filename": "42_puppy.jpg",
+      "reference_stem": "42_puppy",
+      "content_sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+      "subject_caption": "a puppy",
+      "source_behavior": "running",
+      "source_background": "on the ground",
+      "source_prompts": {
+        "object_only": "a puppy",
+        "object_behavior": "a puppy running",
+        "object_background": "a puppy on the ground",
+        "object_behavior_background": "a puppy running on the ground"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 26,
+      "reference_filename": "44_cat.jpg",
+      "reference_stem": "44_cat",
+      "content_sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+      "subject_caption": "a cat",
+      "source_behavior": "sitting",
+      "source_background": "on a white background",
+      "source_prompts": {
+        "object_only": "a cat",
+        "object_behavior": "a cat sitting",
+        "object_background": "a cat on a white background",
+        "object_behavior_background": "a cat sitting on a white background"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 27,
+      "reference_filename": "07_dog.jpg",
+      "reference_stem": "07_dog",
+      "content_sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+      "subject_caption": "a dog",
+      "source_behavior": "standing",
+      "source_background": "on the beach",
+      "source_prompts": {
+        "object_only": "a dog",
+        "object_behavior": "a dog standing",
+        "object_background": "a dog on the beach",
+        "object_behavior_background": "a dog standing on the beach"
+      },
+      "notes": null
+    },
+    {
+      "official_index": 28,
+      "reference_filename": "11_heron.jpg",
+      "reference_stem": "11_heron",
+      "content_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+      "subject_caption": "a heron",
+      "source_behavior": "flying",
+      "source_background": "in the air",
+      "source_prompts": {
+        "object_only": "a heron",
+        "object_behavior": "a heron flying",
+        "object_background": "a heron in the air",
+        "object_behavior_background": "a heron flying in the air"
+      },
+      "notes": null
+    }
+  ]
+}

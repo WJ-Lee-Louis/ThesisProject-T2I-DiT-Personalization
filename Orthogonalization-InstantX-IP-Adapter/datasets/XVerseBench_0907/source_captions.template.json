@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "description": "Fill behavior/background/full_caption after visual inspection. This file is for source-aware projection only, not DPG scoring.",
+  "records": [
+    {
+      "official_index": 0,
+      "reference_filename": "13_polar bear.jpg",
+      "content_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "subject_caption": "a polar bear",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 1,
+      "reference_filename": "18_sea turtle.jpg",
+      "content_sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+      "subject_caption": "a sea turtle",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 2,
+      "reference_filename": "08_raccoon.jpg",
+      "content_sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+      "subject_caption": "a raccoon",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 3,
+      "reference_filename": "12_dog.jpg",
+      "content_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+      "subject_caption": "a dog",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 4,
+      "reference_filename": "25_Sphynx cat.jpg",
+      "content_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+      "subject_caption": "a sphynx cat",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 5,
+      "reference_filename": "15_butterfly.jpg",
+      "content_sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+      "subject_caption": "a butterfly",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 6,
+      "reference_filename": "29_grasshopper.jpg",
+      "content_sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+      "subject_caption": "a grasshopper",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 7,
+      "reference_filename": "31_deer.jpg",
+      "content_sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+      "subject_caption": "a deer",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 8,
+      "reference_filename": "39_dolphin.jpg",
+      "content_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+      "subject_caption": "a dolphin",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 9,
+      "reference_filename": "02_kitten.jpg",
+      "content_sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+      "subject_caption": "a kitten",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 10,
+      "reference_filename": "38_elephant.jpg",
+      "content_sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+      "subject_caption": "an elephant",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 11,
+      "reference_filename": "06_shark.jpg",
+      "content_sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+      "subject_caption": "a shark",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 12,
+      "reference_filename": "14_eagle.jpg",
+      "content_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+      "subject_caption": "an eagle",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 13,
+      "reference_filename": "33_panda.jpg",
+      "content_sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+      "subject_caption": "a panda",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 14,
+      "reference_filename": "09_rooster.jpg",
+      "content_sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+      "subject_caption": "a rooster",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 15,
+      "reference_filename": "00_kitten.jpg",
+      "content_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "subject_caption": "a kitten",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 16,
+      "reference_filename": "36_lizard.jpg",
+      "content_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+      "subject_caption": "a lizard",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 17,
+      "reference_filename": "05_penguin.jpg",
+      "content_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+      "subject_caption": "a penguin",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 18,
+      "reference_filename": "40_white tiger.jpg",
+      "content_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+      "subject_caption": "a white tiger",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 19,
+      "reference_filename": "43_French bulldog.jpg",
+      "content_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+      "subject_caption": "a french bulldog",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 20,
+      "reference_filename": "20_hamster.jpg",
+      "content_sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+      "subject_caption": "a hamster",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 21,
+      "reference_filename": "04_crab.jpg",
+      "content_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+      "subject_caption": "a crab",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 22,
+      "reference_filename": "01_stork.jpg",
+      "content_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "subject_caption": "a stork",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 23,
+      "reference_filename": "27_wolf.jpg",
+      "content_sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+      "subject_caption": "a wolf",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 24,
+      "reference_filename": "10_fox.jpg",
+      "content_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+      "subject_caption": "a fox",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 25,
+      "reference_filename": "42_puppy.jpg",
+      "content_sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+      "subject_caption": "a puppy",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 26,
+      "reference_filename": "44_cat.jpg",
+      "content_sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+      "subject_caption": "a cat",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 27,
+      "reference_filename": "07_dog.jpg",
+      "content_sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+      "subject_caption": "a dog",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    },
+    {
+      "official_index": 28,
+      "reference_filename": "11_heron.jpg",
+      "content_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+      "subject_caption": "a heron",
+      "behavior": null,
+      "background": null,
+      "full_caption": null,
+      "notes": null
+    }
+  ]
+}

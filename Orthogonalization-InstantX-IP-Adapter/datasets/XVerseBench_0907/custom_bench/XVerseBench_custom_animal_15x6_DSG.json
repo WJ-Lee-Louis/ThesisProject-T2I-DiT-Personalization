@@ -1,0 +1,3632 @@
+[
+  {
+    "record_id": "custom_000",
+    "prompt": "a kitten sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is the kitten sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_001",
+    "prompt": "a kitten playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a guitar?",
+      "3": "Is the kitten playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_002",
+    "prompt": "a kitten in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there snow?",
+      "3": "Is the kitten in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_003",
+    "prompt": "a kitten on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a sofa?",
+      "3": "Is the kitten on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_004",
+    "prompt": "a kitten sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there snow?",
+      "3": "Is the kitten sleeping?",
+      "4": "Is the kitten in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_005",
+    "prompt": "a kitten playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the kitten playing the guitar?",
+      "5": "Is the kitten on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_006",
+    "prompt": "a kitten sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is the kitten sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_007",
+    "prompt": "a kitten playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a guitar?",
+      "3": "Is the kitten playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_008",
+    "prompt": "a kitten in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there snow?",
+      "3": "Is the kitten in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_009",
+    "prompt": "a kitten on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a sofa?",
+      "3": "Is the kitten on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_010",
+    "prompt": "a kitten sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there snow?",
+      "3": "Is the kitten sleeping?",
+      "4": "Is the kitten in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_011",
+    "prompt": "a kitten playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a kitten?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the kitten playing the guitar?",
+      "5": "Is the kitten on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_012",
+    "prompt": "a dog sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is the dog sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_013",
+    "prompt": "a dog playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a guitar?",
+      "3": "Is the dog playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_014",
+    "prompt": "a dog in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there snow?",
+      "3": "Is the dog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_015",
+    "prompt": "a dog on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a sofa?",
+      "3": "Is the dog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_016",
+    "prompt": "a dog sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there snow?",
+      "3": "Is the dog sleeping?",
+      "4": "Is the dog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_017",
+    "prompt": "a dog playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the dog playing the guitar?",
+      "5": "Is the dog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_018",
+    "prompt": "a raccoon sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is the raccoon sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_019",
+    "prompt": "a raccoon playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is there a guitar?",
+      "3": "Is the raccoon playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_020",
+    "prompt": "a raccoon in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is there snow?",
+      "3": "Is the raccoon in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_021",
+    "prompt": "a raccoon on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is there a sofa?",
+      "3": "Is the raccoon on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_022",
+    "prompt": "a raccoon sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is there snow?",
+      "3": "Is the raccoon sleeping?",
+      "4": "Is the raccoon in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_023",
+    "prompt": "a raccoon playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a raccoon?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the raccoon playing the guitar?",
+      "5": "Is the raccoon on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_024",
+    "prompt": "a fox sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is the fox sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_025",
+    "prompt": "a fox playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is there a guitar?",
+      "3": "Is the fox playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_026",
+    "prompt": "a fox in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is there snow?",
+      "3": "Is the fox in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_027",
+    "prompt": "a fox on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is there a sofa?",
+      "3": "Is the fox on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_028",
+    "prompt": "a fox sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is there snow?",
+      "3": "Is the fox sleeping?",
+      "4": "Is the fox in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_029",
+    "prompt": "a fox playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a fox?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the fox playing the guitar?",
+      "5": "Is the fox on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_030",
+    "prompt": "a dog sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is the dog sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_031",
+    "prompt": "a dog playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a guitar?",
+      "3": "Is the dog playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_032",
+    "prompt": "a dog in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there snow?",
+      "3": "Is the dog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_033",
+    "prompt": "a dog on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a sofa?",
+      "3": "Is the dog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_034",
+    "prompt": "a dog sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there snow?",
+      "3": "Is the dog sleeping?",
+      "4": "Is the dog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_035",
+    "prompt": "a dog playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a dog?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the dog playing the guitar?",
+      "5": "Is the dog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_036",
+    "prompt": "a polar bear sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is the polar bear sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_037",
+    "prompt": "a polar bear playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is there a guitar?",
+      "3": "Is the polar bear playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_038",
+    "prompt": "a polar bear in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is there snow?",
+      "3": "Is the polar bear in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_039",
+    "prompt": "a polar bear on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is there a sofa?",
+      "3": "Is the polar bear on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_040",
+    "prompt": "a polar bear sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is there snow?",
+      "3": "Is the polar bear sleeping?",
+      "4": "Is the polar bear in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_041",
+    "prompt": "a polar bear playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a polar bear?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the polar bear playing the guitar?",
+      "5": "Is the polar bear on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_042",
+    "prompt": "a hamster sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is the hamster sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_043",
+    "prompt": "a hamster playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is there a guitar?",
+      "3": "Is the hamster playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_044",
+    "prompt": "a hamster in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is there snow?",
+      "3": "Is the hamster in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_045",
+    "prompt": "a hamster on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is there a sofa?",
+      "3": "Is the hamster on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_046",
+    "prompt": "a hamster sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is there snow?",
+      "3": "Is the hamster sleeping?",
+      "4": "Is the hamster in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_047",
+    "prompt": "a hamster playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a hamster?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the hamster playing the guitar?",
+      "5": "Is the hamster on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_048",
+    "prompt": "a sphynx cat sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is the sphynx cat sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_049",
+    "prompt": "a sphynx cat playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is there a guitar?",
+      "3": "Is the sphynx cat playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_050",
+    "prompt": "a sphynx cat in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is there snow?",
+      "3": "Is the sphynx cat in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_051",
+    "prompt": "a sphynx cat on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is there a sofa?",
+      "3": "Is the sphynx cat on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_052",
+    "prompt": "a sphynx cat sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is there snow?",
+      "3": "Is the sphynx cat sleeping?",
+      "4": "Is the sphynx cat in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_053",
+    "prompt": "a sphynx cat playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a sphynx cat?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the sphynx cat playing the guitar?",
+      "5": "Is the sphynx cat on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_054",
+    "prompt": "a wolf sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is the wolf sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_055",
+    "prompt": "a wolf playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is there a guitar?",
+      "3": "Is the wolf playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_056",
+    "prompt": "a wolf in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is there snow?",
+      "3": "Is the wolf in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_057",
+    "prompt": "a wolf on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is there a sofa?",
+      "3": "Is the wolf on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_058",
+    "prompt": "a wolf sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is there snow?",
+      "3": "Is the wolf sleeping?",
+      "4": "Is the wolf in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_059",
+    "prompt": "a wolf playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a wolf?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the wolf playing the guitar?",
+      "5": "Is the wolf on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_060",
+    "prompt": "a panda sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is the panda sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_061",
+    "prompt": "a panda playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is there a guitar?",
+      "3": "Is the panda playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_062",
+    "prompt": "a panda in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is there snow?",
+      "3": "Is the panda in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_063",
+    "prompt": "a panda on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is there a sofa?",
+      "3": "Is the panda on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_064",
+    "prompt": "a panda sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is there snow?",
+      "3": "Is the panda sleeping?",
+      "4": "Is the panda in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_065",
+    "prompt": "a panda playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a panda?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the panda playing the guitar?",
+      "5": "Is the panda on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_066",
+    "prompt": "a white tiger sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is the white tiger sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_067",
+    "prompt": "a white tiger playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is there a guitar?",
+      "3": "Is the white tiger playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_068",
+    "prompt": "a white tiger in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is there snow?",
+      "3": "Is the white tiger in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_069",
+    "prompt": "a white tiger on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is there a sofa?",
+      "3": "Is the white tiger on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_070",
+    "prompt": "a white tiger sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is there snow?",
+      "3": "Is the white tiger sleeping?",
+      "4": "Is the white tiger in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_071",
+    "prompt": "a white tiger playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a white tiger?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the white tiger playing the guitar?",
+      "5": "Is the white tiger on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_072",
+    "prompt": "a puppy sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is the puppy sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_073",
+    "prompt": "a puppy playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is there a guitar?",
+      "3": "Is the puppy playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_074",
+    "prompt": "a puppy in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is there snow?",
+      "3": "Is the puppy in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_075",
+    "prompt": "a puppy on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is there a sofa?",
+      "3": "Is the puppy on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_076",
+    "prompt": "a puppy sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is there snow?",
+      "3": "Is the puppy sleeping?",
+      "4": "Is the puppy in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_077",
+    "prompt": "a puppy playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a puppy?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the puppy playing the guitar?",
+      "5": "Is the puppy on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_078",
+    "prompt": "a french bulldog sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is the french bulldog sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_079",
+    "prompt": "a french bulldog playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is there a guitar?",
+      "3": "Is the french bulldog playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_080",
+    "prompt": "a french bulldog in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is there snow?",
+      "3": "Is the french bulldog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_081",
+    "prompt": "a french bulldog on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is there a sofa?",
+      "3": "Is the french bulldog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_082",
+    "prompt": "a french bulldog sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is there snow?",
+      "3": "Is the french bulldog sleeping?",
+      "4": "Is the french bulldog in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_083",
+    "prompt": "a french bulldog playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a french bulldog?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the french bulldog playing the guitar?",
+      "5": "Is the french bulldog on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  },
+  {
+    "record_id": "custom_084",
+    "prompt": "a cat sleeping",
+    "composition": "O+A",
+    "prompt_id": "oa_sleeping",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "attribute - state"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        1
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is the cat sleeping?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_state"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action"
+    }
+  },
+  {
+    "record_id": "custom_085",
+    "prompt": "a cat playing the guitar",
+    "composition": "O+A",
+    "prompt_id": "oa_playing_guitar",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "action -"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is there a guitar?",
+      "3": "Is the cat playing the guitar?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "action_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "action"
+    }
+  },
+  {
+    "record_id": "custom_086",
+    "prompt": "a cat in the snow",
+    "composition": "O+B",
+    "prompt_id": "ob_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is there snow?",
+      "3": "Is the cat in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_087",
+    "prompt": "a cat on a sofa",
+    "composition": "O+B",
+    "prompt_id": "ob_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is there a sofa?",
+      "3": "Is the cat on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "background"
+    }
+  },
+  {
+    "record_id": "custom_088",
+    "prompt": "a cat sleeping in the snow",
+    "composition": "O+A+B",
+    "prompt_id": "oab_sleeping_snow",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "attribute - state",
+      "4": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        1
+      ],
+      "4": [
+        1,
+        2
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is there snow?",
+      "3": "Is the cat sleeping?",
+      "4": "Is the cat in the snow?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "background_presence",
+      "3": "action_state",
+      "4": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "background",
+      "3": "action",
+      "4": "background"
+    }
+  },
+  {
+    "record_id": "custom_089",
+    "prompt": "a cat playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "prompt_id": "oab_playing_guitar_sofa",
+    "qid2tuple": {
+      "1": "entity - whole",
+      "2": "entity - whole",
+      "3": "entity - whole",
+      "4": "action -",
+      "5": "relation - spatial"
+    },
+    "qid2dependency": {
+      "1": [
+        0
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1,
+        2
+      ],
+      "5": [
+        1,
+        3
+      ]
+    },
+    "qid2question": {
+      "1": "Is there a cat?",
+      "2": "Is there a guitar?",
+      "3": "Is there a sofa?",
+      "4": "Is the cat playing the guitar?",
+      "5": "Is the cat on the sofa?"
+    },
+    "qid2component": {
+      "1": "subject_presence",
+      "2": "action_object_presence",
+      "3": "background_presence",
+      "4": "action_relation",
+      "5": "background_relation"
+    },
+    "qid2factor": {
+      "1": "object",
+      "2": "action",
+      "3": "background",
+      "4": "action",
+      "5": "background"
+    }
+  }
+]

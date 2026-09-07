@@ -1,0 +1,56 @@
+[
+  {
+    "prompt_id": "oa_sleeping",
+    "suffix": "sleeping",
+    "composition": "O+A",
+    "action": "sleeping",
+    "background": null,
+    "background_entity": null,
+    "background_relation": null
+  },
+  {
+    "prompt_id": "oa_playing_guitar",
+    "suffix": "playing the guitar",
+    "composition": "O+A",
+    "action": "playing the guitar",
+    "background": null,
+    "background_entity": null,
+    "background_relation": null
+  },
+  {
+    "prompt_id": "ob_snow",
+    "suffix": "in the snow",
+    "composition": "O+B",
+    "action": null,
+    "background": "in the snow",
+    "background_entity": "snow",
+    "background_relation": "in the snow"
+  },
+  {
+    "prompt_id": "ob_sofa",
+    "suffix": "on a sofa",
+    "composition": "O+B",
+    "action": null,
+    "background": "on a sofa",
+    "background_entity": "sofa",
+    "background_relation": "on the sofa"
+  },
+  {
+    "prompt_id": "oab_sleeping_snow",
+    "suffix": "sleeping in the snow",
+    "composition": "O+A+B",
+    "action": "sleeping",
+    "background": "in the snow",
+    "background_entity": "snow",
+    "background_relation": "in the snow"
+  },
+  {
+    "prompt_id": "oab_playing_guitar_sofa",
+    "suffix": "playing the guitar on a sofa",
+    "composition": "O+A+B",
+    "action": "playing the guitar",
+    "background": "on a sofa",
+    "background_entity": "sofa",
+    "background_relation": "on the sofa"
+  }
+]

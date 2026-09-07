@@ -1,0 +1,30 @@
+﻿official_index,reference_filename,subject_caption,official_target_prompt,composition,included_in_custom_bench
+0,13_polar bear.jpg,a polar bear,a polar bear standing on iceberg,O+A+B,True
+1,18_sea turtle.jpg,a sea turtle,a sea turtle swimming in the sea.,O+A+B,False
+2,08_raccoon.jpg,a raccoon,a raccoon standing in a forest,O+A+B,True
+3,12_dog.jpg,a dog,a dog wearing a red collar running,O+A,True
+4,25_Sphynx cat.jpg,a sphynx cat,a sphynx cat sitting on a sofa,O+A+B,True
+5,15_butterfly.jpg,a butterfly,a colorful butterfly flying in the garden,O+A+B,False
+6,29_grasshopper.jpg,a grasshopper,a grasshopper jumping on the grass,O+A+B,False
+7,31_deer.jpg,a deer,a deer standing in a forest,O+A+B,False
+8,39_dolphin.jpg,a dolphin,a dolphin jumping out of the water,O+A+B,False
+9,02_kitten.jpg,a kitten,a cute kitten wearing a bowtie,O+attribute,True
+10,38_elephant.jpg,an elephant,an elephant standing in the savannah,O+A+B,False
+11,06_shark.jpg,a shark,a shark swimming in the blue sea,O+A+B,False
+12,14_eagle.jpg,an eagle,an eagle flying in the blue sky,O+A+B,False
+13,33_panda.jpg,a panda,a panda sitting on a bamboo mat,O+A+B,True
+14,09_rooster.jpg,a rooster,a rooster standing on a wooden fence,O+A+B,False
+15,00_kitten.jpg,a kitten,a cute kitten sitting on a mat.,O+A+B,True
+16,36_lizard.jpg,a lizard,a lizard on a rocky background,O+B,False
+17,05_penguin.jpg,a penguin,a penguin standing on an iceberg,O+A+B,False
+18,40_white tiger.jpg,a white tiger,a white tiger standing in the grass.,O+A+B,True
+19,43_French bulldog.jpg,a french bulldog,a french bulldog in a cozy sweater,O+attribute,True
+20,20_hamster.jpg,a hamster,a cute hamster wearing a tiny hat,O+attribute,True
+21,04_crab.jpg,a crab,a crab walking on the sandy beach,O+A+B,False
+22,01_stork.jpg,a stork,a stork standing on a grassy field,O+A+B,False
+23,27_wolf.jpg,a wolf,a wolf howling in the forest,O+A+B,True
+24,10_fox.jpg,a fox,a sly fox in a forest setting,O+B,True
+25,42_puppy.jpg,a puppy,a cute puppy in a red bow,O+attribute,True
+26,44_cat.jpg,a cat,a cute cat sitting on a mat,O+A+B,True
+27,07_dog.jpg,a dog,a cute dog in a red collar,O+attribute,True
+28,11_heron.jpg,a heron,a heron standing by a pond,O+A+B,False

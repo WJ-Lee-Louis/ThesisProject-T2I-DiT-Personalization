@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "official_xverse_commit": "65e2581aac0faffe4607881a10cc486186f6499d",
+  "reconstructed_prepared_reference_root": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench\\prepared\\assets\\XVerseBench\\animal",
+  "records": [
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "00_kitten.jpg",
+      "sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "bytes": 57746,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "01_stork.jpg",
+      "sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "bytes": 86038,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "02_kitten.jpg",
+      "sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+      "bytes": 97150,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "04_crab.jpg",
+      "sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+      "bytes": 186036,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "05_penguin.jpg",
+      "sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+      "bytes": 61150,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "06_shark.jpg",
+      "sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+      "bytes": 112761,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "07_dog.jpg",
+      "sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+      "bytes": 95971,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "08_raccoon.jpg",
+      "sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+      "bytes": 115135,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "09_rooster.jpg",
+      "sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+      "bytes": 187935,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "10_fox.jpg",
+      "sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+      "bytes": 68610,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "11_heron.jpg",
+      "sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+      "bytes": 90542,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "12_dog.jpg",
+      "sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+      "bytes": 77291,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "13_polar bear.jpg",
+      "sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "bytes": 69787,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "14_eagle.jpg",
+      "sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+      "bytes": 51249,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "15_butterfly.jpg",
+      "sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+      "bytes": 80485,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "18_sea turtle.jpg",
+      "sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+      "bytes": 103806,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "20_hamster.jpg",
+      "sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+      "bytes": 50869,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "25_Sphynx cat.jpg",
+      "sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+      "bytes": 70154,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "27_wolf.jpg",
+      "sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+      "bytes": 128291,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "29_grasshopper.jpg",
+      "sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+      "bytes": 121880,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "31_deer.jpg",
+      "sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+      "bytes": 100132,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "33_panda.jpg",
+      "sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+      "bytes": 134865,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "36_lizard.jpg",
+      "sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+      "bytes": 81615,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "38_elephant.jpg",
+      "sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+      "bytes": 180231,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "39_dolphin.jpg",
+      "sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+      "bytes": 147242,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "40_white tiger.jpg",
+      "sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+      "bytes": 113879,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "42_puppy.jpg",
+      "sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+      "bytes": 71932,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "43_French bulldog.jpg",
+      "sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+      "bytes": 76563,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "subset_bench",
+      "reference_filename": "44_cat.jpg",
+      "sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+      "bytes": 70139,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "00_kitten.jpg",
+      "sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "bytes": 57746,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "02_kitten.jpg",
+      "sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+      "bytes": 97150,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "07_dog.jpg",
+      "sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+      "bytes": 95971,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "08_raccoon.jpg",
+      "sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+      "bytes": 115135,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "10_fox.jpg",
+      "sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+      "bytes": 68610,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "12_dog.jpg",
+      "sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+      "bytes": 77291,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "13_polar bear.jpg",
+      "sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "bytes": 69787,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "20_hamster.jpg",
+      "sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+      "bytes": 50869,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "25_Sphynx cat.jpg",
+      "sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+      "bytes": 70154,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "27_wolf.jpg",
+      "sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+      "bytes": 128291,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "33_panda.jpg",
+      "sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+      "bytes": 134865,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "40_white tiger.jpg",
+      "sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+      "bytes": 113879,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "42_puppy.jpg",
+      "sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+      "bytes": 71932,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "43_French bulldog.jpg",
+      "sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+      "bytes": 76563,
+      "matches_reconstructed_prepared_source": true
+    },
+    {
+      "benchmark": "custom_bench",
+      "reference_filename": "44_cat.jpg",
+      "sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+      "bytes": 70139,
+      "matches_reconstructed_prepared_source": true
+    }
+  ]
+}

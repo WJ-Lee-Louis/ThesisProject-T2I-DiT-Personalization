@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "XVerseBench 0907 generated-image manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "benchmark_id",
+    "images"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "benchmark_id": {
+      "enum": [
+        "xverse_single_animal_29",
+        "xverse_ref_custom_animal_15x6"
+      ]
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "condition",
+          "seed",
+          "image_path"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "image_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

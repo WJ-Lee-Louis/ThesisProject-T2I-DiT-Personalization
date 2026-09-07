@@ -1,0 +1,785 @@
+[
+  {
+    "index": 0,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a polar bear standing on iceberg",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/13_polar bear.jpg",
+            "caption": "a polar bear"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "polar bear",
+            "polar bear"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a sea turtle swimming in the sea.",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/18_sea turtle.jpg",
+            "caption": "a sea turtle"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "sea turtle",
+            "sea turtle"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a raccoon standing in a forest\n",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/08_raccoon.jpg",
+            "caption": "a raccoon"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "raccoon",
+            "raccoon"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a dog wearing a red collar running",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/12_dog.jpg",
+            "caption": "a dog"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "dog",
+            "dog"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a sphynx cat sitting on a sofa",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/25_Sphynx cat.jpg",
+            "caption": "a sphynx cat"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "sphynx cat",
+            "sphynx cat"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a colorful butterfly flying in the garden",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/15_butterfly.jpg",
+            "caption": "a butterfly"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "butterfly",
+            "butterfly"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a grasshopper jumping on the grass",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/29_grasshopper.jpg",
+            "caption": "a grasshopper"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "grasshopper",
+            "grasshopper"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a deer standing in a forest",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/31_deer.jpg",
+            "caption": "a deer"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "deer",
+            "deer"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a dolphin jumping out of the water",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/39_dolphin.jpg",
+            "caption": "a dolphin"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "dolphin",
+            "dolphin"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute kitten wearing a bowtie",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/02_kitten.jpg",
+            "caption": "a kitten"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "kitten",
+            "kitten"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "an elephant standing in the savannah",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/38_elephant.jpg",
+            "caption": "an elephant"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "elephant",
+            "elephant"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a shark swimming in the blue sea",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/06_shark.jpg",
+            "caption": "a shark"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "shark",
+            "shark"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "an eagle flying in the blue sky",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/14_eagle.jpg",
+            "caption": "an eagle"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "eagle",
+            "eagle"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a panda sitting on a bamboo mat",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/33_panda.jpg",
+            "caption": "a panda"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "panda",
+            "panda"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a rooster standing on a wooden fence",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/09_rooster.jpg",
+            "caption": "a rooster"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "rooster",
+            "rooster"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute kitten sitting on a mat.",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/00_kitten.jpg",
+            "caption": "a kitten"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "kitten",
+            "kitten"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a lizard on a rocky background",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/36_lizard.jpg",
+            "caption": "a lizard"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "lizard",
+            "lizard"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a penguin standing on an iceberg",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/05_penguin.jpg",
+            "caption": "a penguin"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "penguin",
+            "penguin"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a white tiger standing in the grass.",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/40_white tiger.jpg",
+            "caption": "a white tiger"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "white tiger",
+            "white tiger"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a french bulldog in a cozy sweater",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/43_French bulldog.jpg",
+            "caption": "a french bulldog"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "french bulldog",
+            "french bulldog"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute hamster wearing a tiny hat",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/20_hamster.jpg",
+            "caption": "a hamster"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "hamster",
+            "hamster"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a crab walking on the sandy beach",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/04_crab.jpg",
+            "caption": "a crab"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "crab",
+            "crab"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a stork standing on a grassy field",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/01_stork.jpg",
+            "caption": "a stork"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "stork",
+            "stork"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a wolf howling in the forest\n",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/27_wolf.jpg",
+            "caption": "a wolf"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "wolf",
+            "wolf"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a sly fox in a forest setting",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/10_fox.jpg",
+            "caption": "a fox"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "fox",
+            "fox"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute puppy in a red bow\n",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/42_puppy.jpg",
+            "caption": "a puppy"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "puppy",
+            "puppy"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute cat sitting on a mat",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/44_cat.jpg",
+            "caption": "a cat"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "cat",
+            "cat"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a cute dog in a red collar",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/07_dog.jpg",
+            "caption": "a dog"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "dog",
+            "dog"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "input_images": [],
+    "position_delta": [
+      0,
+      -32
+    ],
+    "prompt": "a heron standing by a pond",
+    "modulation": [
+      {
+        "type": "adapter",
+        "src_inputs": [
+          {
+            "image_path": "assets/XVerseBench/animal/11_heron.jpg",
+            "caption": "a heron"
+          }
+        ],
+        "use_words": [
+          [
+            0,
+            "heron",
+            "heron"
+          ]
+        ]
+      }
+    ]
+  }
+]
