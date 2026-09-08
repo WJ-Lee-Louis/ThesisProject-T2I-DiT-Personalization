@@ -2,9 +2,11 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .modal_jobs/
+.modal_eval_jobs/
 outputs/
 datasets/XVerseBench/
 datasets/XVerseBench_0907/subset_bench/*.jpg
 datasets/XVerseBench_0907/custom_bench/*.jpg
 datasets/XVerseBench_0907/evaluation_references/
 datasets/XVerseBench_0907/metric_outputs/
+datasets/XVerseBench_0907/evaluation_outputs/

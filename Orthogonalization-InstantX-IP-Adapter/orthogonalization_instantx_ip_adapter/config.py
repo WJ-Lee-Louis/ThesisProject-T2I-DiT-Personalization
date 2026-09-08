@@ -9,6 +9,11 @@ BATCH_GPU = "A100-80GB"
 BATCH_MAX_CONTAINERS = 3
 BATCH_SCALEDOWN_WINDOW_SECONDS = 300
 
+EVAL_BATCH_APP_NAME = "orthogonalization-instantx-xverse-eval"
+EVAL_BATCH_CLASS_NAME = "EvaluationBatchGenerator"
+EVAL_BATCH_INPUTS_VOLUME_NAME = "orthogonalization-instantx-xverse-eval-inputs"
+EVAL_BATCH_RESULTS_VOLUME_NAME = "orthogonalization-instantx-xverse-eval-results"
+
 BASE_MODEL_ID = "black-forest-labs/FLUX.1-dev"
 BASE_MODEL_REVISION = "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
 IP_ADAPTER_REPO_ID = "InstantX/FLUX.1-dev-IP-Adapter"

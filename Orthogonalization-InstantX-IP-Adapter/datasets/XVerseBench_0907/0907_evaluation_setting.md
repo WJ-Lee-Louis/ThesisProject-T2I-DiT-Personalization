@@ -83,6 +83,24 @@ python datasets\XVerseBench_0907\build_evaluation_assets.py --check-only
 
 공식 DSG의 DPG 전체 점수를 주 점수로 사용한다. O+A/O+B/O+A+B 분류는 본 연구의 사후 분석 label이며 공식 annotation이 아니다.
 
+### O+attribute projection 처리
+
+공식 prompt와 DSG는 그대로 유지하고, projection 계산에서만 5개의 `O+attribute` 레코드를 독립 factor로 분해한다. Core object prompt는 각 레코드의 `subject_caption`으로 고정하며 attribute direction은 다음과 같다.
+
+$$
+d_{\mathrm{attr}}
+=
+\frac{e(p_{O+\mathrm{attr}})-e(p_O)}
+{\left\lVert e(p_{O+\mathrm{attr}})-e(p_O)\right\rVert_2}
+$$
+
+- `target_projection_ssg`: target attribute direction을 제거한다.
+- `source_projection_ssg`: source caption에 대응 attribute가 없으므로 attribute-only 레코드에서는 projection을 적용하지 않는다.
+- `st_matched_projection_ssg`: source 쪽 matched factor가 없으므로 attribute-only 레코드에서는 target projection과 정확히 동일하다.
+- `st_all_projection_ssg`: target attribute와 source behavior/background direction을 하나의 union-SVD basis로 처리한다.
+
+`target_factor_annotations.json`의 `attribute`는 projection 선택과 metadata 기록에 사용된다. 실제 target image 생성에는 항상 공식 prompt 원문을 사용한다.
+
 ## 4. Custom benchmark
 
 ### Prompt 구성
@@ -198,10 +216,12 @@ $$
 
 1. 원본 reference는 덮어쓰지 않는다.
 2. 공식 Florence2+SAM2로 29개 reference를 분할한다.
-3. 결과를 `evaluation_references/segmented`에 저장한다.
+3. foreground crop은 `evaluation_references/segmented/crops`, 대응하는 binary mask는 `evaluation_references/segmented/masks`에 PNG로 저장한다.
 4. subset과 custom 모두 같은 segmented reference를 공유한다.
 
 `metrics/prepare_segmented_references.py`가 이를 수행한다. GPU와 공식 XVerse checkpoint 환경이 준비된 뒤 실행한다.
+
+Mask는 공식 코드와 같은 방식으로 SAM2가 흰 배경에 합성한 instance에서 흰색이 아닌 픽셀을 foreground로 복원한다. 값은 foreground 255, background 0이다. `segmentation_manifest.json`에는 각 crop/mask 경로, bounding box와 SHA-256이 기록된다.
 
 또한 XVerse 논문과 README는 DINOv2 similarity라고 표현하지만, 공개된 `eval/tools/dino.py` 기본 checkpoint는 `facebook/dino-vits16`이다. 공식 공개 코드와의 수치 재현을 우선할 경우 해당 checkpoint를 고정하고 논문에 정확한 구현을 밝혀야 한다.
 
@@ -294,6 +314,8 @@ IP-Sim에는 segmented reference를 명시한다.
 ```cmd
 python datasets\XVerseBench_0907\metrics\score_ip_similarity.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --generated-manifest generated_custom.json --xverse-root C:\path\to\XVerse --segmented-reference-root datasets\XVerseBench_0907\evaluation_references\segmented --output metric_outputs\custom_ip.json
 ```
+
+위 명령은 생성 이미지에서 검출한 최대 3개 candidate 각각의 foreground crop과 binary mask도 기본적으로 `metric_outputs/custom_ip_artifacts/generated/<condition>/<record_id>/seed_<seed>`에 저장한다. 별도 위치가 필요하면 `--artifact-root <path>`를 지정한다. 점수 JSON에는 모든 candidate의 경로·점수와 실제 IP-Sim에 선택된 최고점 candidate index가 함께 기록된다.
 
 집계 예시는 다음과 같다.
 
