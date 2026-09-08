@@ -223,7 +223,7 @@ Custom:
 for %C in (baseline ssg target_projection_ssg source_projection_ssg st_matched_projection_ssg st_all_projection_ssg) do @python Orthogonalization-InstantX-IP-Adapter\eval_batch_client.py download --batch-id xverse-%RUN%-custom-%C
 ```
 
-다운로드가 끊기면 같은 명령을 다시 실행한다. 기존 PNG는 재사용하고 최신 status와 manifest는 다시 받으며, 각 파일 다운로드는 기본 5회 재시도한다. 손상 가능성이 있어 전부 다시 받아야 할 때만 `--force`를 추가한다.
+다운로드가 끊기면 같은 명령을 다시 실행한다. 기존 PNG는 재사용하고 최신 status와 manifest는 다시 받으며, 각 파일 다운로드는 기본 5회 재시도한다. Windows의 긴 metadata 경로에서도 동작하도록 임시파일명은 짧게 생성된다. 손상 가능성이 있어 전부 다시 받아야 할 때만 `--force`를 추가한다.
 
 로컬 저장 구조는 다음과 같다.
 

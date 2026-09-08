@@ -535,8 +535,14 @@ def _download_file_with_retries(
     if retries < 1:
         raise ValueError("--retries must be at least 1")
     for attempt in range(1, retries + 1):
-        temporary = local_path.parent / f".download-{uuid4().hex}.tmp"
+        # Keep the temporary basename nearly as short as the final basename.
+        # Deep metadata paths plus a long batch ID can otherwise exceed the
+        # classic Windows MAX_PATH limit even though the final path itself is
+        # valid. Twelve random hex digits are sufficient for this sequential
+        # downloader while retaining same-directory atomic replacement.
+        temporary = _download_temporary_path(local_path)
         try:
+            local_path.parent.mkdir(parents=True, exist_ok=True)
             with temporary.open("wb") as stream:
                 for chunk in volume.read_file(remote_path):
                     stream.write(chunk)
@@ -549,6 +555,12 @@ def _download_file_with_retries(
             delay = min(2 ** (attempt - 1), 8)
             print(f"  retry {attempt}/{retries} for {remote_path} in {delay}s")
             time.sleep(delay)
+
+
+def _download_temporary_path(local_path: Path) -> Path:
+    """Return a short same-directory path for an atomic downloaded file."""
+
+    return local_path.parent / f".d-{uuid4().hex[:12]}.tmp"
 
 
 def _relative_remote_path(remote_path: str, batch_id: str) -> PurePosixPath:
