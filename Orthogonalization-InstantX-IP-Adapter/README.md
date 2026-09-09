@@ -114,6 +114,13 @@ submission, status, recovery, and download commands—is documented in
 The earlier batch workflow is retained in
 [BATCH_MODAL_GUIDE.md](BATCH_MODAL_GUIDE.md) for historical reference.
 
+Local submission records are stored by purpose under `run_history/`:
+`generation/`, `evaluation/`, and `metrics/`. Modal profiles remain fields
+inside the JSON provenance records and no longer determine directory names.
+
+The benchmark source ledger is kept at
+[docs/research_sources/standard_benchmark_sources.md](docs/research_sources/standard_benchmark_sources.md).
+
 The class-component condition matrix and its independent lambda sweep are
 documented in [CLASS_PROJECTION_MODAL_GUIDE.md](CLASS_PROJECTION_MODAL_GUIDE.md).
 

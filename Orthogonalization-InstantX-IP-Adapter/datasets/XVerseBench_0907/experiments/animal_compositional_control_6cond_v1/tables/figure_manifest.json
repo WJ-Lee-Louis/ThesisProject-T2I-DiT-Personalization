@@ -1,0 +1,161 @@
+{
+  "generated_at_utc": "2026-09-09T15:02:31.841046+00:00",
+  "sources": {
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\subset\\summary_by_condition.csv": "dea6a360e6fca8cfa1d87169cb0b208edbd5692f5ff0263095daec2192551b10",
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\subset\\paired_delta_vs_baseline.csv": "b9fab7b26a7d184ed5f6d9b79f9bd44f085bc5c7a5d8e2be4636c1cee653ec9c",
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\subset\\per_image_scores.csv": "45db2c04a07b16f92d55c45fc73fcdde297ba895014be84a4acb2dd950207b80",
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\custom\\summary_by_condition.csv": "dfc34f06cb3735c06eb27b19eb98653e10ab73dafb33dc5b00795ca92893b8f3",
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\custom\\paired_delta_vs_baseline.csv": "9e00db732c8f188c803f9ff893fbe9f7d6eac955bcb9514a625a2a110edfbccd",
+    "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\experiments\\animal_compositional_control_6cond_v1\\evaluation\\summaries\\custom\\per_image_scores.csv": "786273284c5d040999196a1d2a68b618e1a9de6ddbf90f4c67155069a06e757e"
+  },
+  "outputs": {
+    "01_main_results_table.png": {
+      "sha256": "ea15dab236b62d5837526ecd25b60c02afb8c490cbe7aa397c9b5d8d13211624",
+      "size_bytes": 190438,
+      "dimensions": [
+        2520,
+        871
+      ]
+    },
+    "02_tradeoff_scatter.png": {
+      "sha256": "34def98b15034b49db795f80f5a7afdc55e56619ec7d5a98ad8149385aa3d826",
+      "size_bytes": 165570,
+      "dimensions": [
+        2544,
+        1137
+      ]
+    },
+    "03_composition_dpg_heatmap.png": {
+      "sha256": "334526a9a2e6e78850a31574d143afb27c789f571505a1217bf957efbc07a75a",
+      "size_bytes": 172856,
+      "dimensions": [
+        2594,
+        1173
+      ]
+    },
+    "04_qualitative_subset.png": {
+      "sha256": "c96339cb7444d806df9dc3856323f8ab40079c7e43d518187956c256bba9462a",
+      "size_bytes": 1911877,
+      "dimensions": [
+        2995,
+        1807
+      ]
+    },
+    "05_qualitative_custom.png": {
+      "sha256": "d06080dc97597fbf3d6fd3cb76313699c67c2092aefb59394ad2ec167da1c14f",
+      "size_bytes": 2145750,
+      "dimensions": [
+        3075,
+        1807
+      ]
+    }
+  },
+  "qualitative_selection": {
+    "subset": [
+      {
+        "case": "Maximum DPG gain",
+        "condition": "st_matched_projection_ssg",
+        "record_id": "official_animal_000",
+        "seed": 42,
+        "prompt": "a polar bear standing on iceberg",
+        "delta_dpg": 60.0,
+        "delta_ip": 2.538067102432251,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\subset_bench\\13_polar bear.jpg",
+          "generation\\subset\\baseline\\images\\official_animal_000\\seed_0042.png",
+          "generation\\subset\\st_matched_projection_ssg\\images\\official_animal_000\\seed_0042.png",
+          "evaluation\\ip\\gen\\subset\\baseline\\official_animal_000\\seed_42\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_matched_projection_ssg\\official_animal_000\\seed_42\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_matched_projection_ssg\\official_animal_000\\seed_42\\candidate_00_crop.png"
+        ]
+      },
+      {
+        "case": "Largest IP-Sim regression",
+        "condition": "st_all_projection_ssg",
+        "record_id": "official_animal_023",
+        "seed": 43,
+        "prompt": "a wolf howling in the forest\n",
+        "delta_dpg": 25.0,
+        "delta_ip": -17.336344718933105,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\subset_bench\\27_wolf.jpg",
+          "generation\\subset\\baseline\\images\\official_animal_023\\seed_0043.png",
+          "generation\\subset\\st_all_projection_ssg\\images\\official_animal_023\\seed_0043.png",
+          "evaluation\\ip\\gen\\subset\\baseline\\official_animal_023\\seed_43\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_all_projection_ssg\\official_animal_023\\seed_43\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_all_projection_ssg\\official_animal_023\\seed_43\\candidate_00_crop.png"
+        ]
+      },
+      {
+        "case": "Median case (median ΔDPG=+0.0)",
+        "condition": "st_matched_projection_ssg",
+        "record_id": "official_animal_000",
+        "seed": 44,
+        "prompt": "a polar bear standing on iceberg",
+        "delta_dpg": 0.0,
+        "delta_ip": 0.9779095649719238,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\subset_bench\\13_polar bear.jpg",
+          "generation\\subset\\baseline\\images\\official_animal_000\\seed_0044.png",
+          "generation\\subset\\st_matched_projection_ssg\\images\\official_animal_000\\seed_0044.png",
+          "evaluation\\ip\\gen\\subset\\baseline\\official_animal_000\\seed_44\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_matched_projection_ssg\\official_animal_000\\seed_44\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\subset\\st_matched_projection_ssg\\official_animal_000\\seed_44\\candidate_00_crop.png"
+        ]
+      }
+    ],
+    "custom": [
+      {
+        "case": "Maximum DPG gain",
+        "condition": "st_matched_projection_ssg",
+        "record_id": "custom_029",
+        "seed": 71,
+        "prompt": "a fox playing the guitar on a sofa",
+        "delta_dpg": 80.0,
+        "delta_ip": -6.3948750495910645,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\custom_bench\\10_fox.jpg",
+          "generation\\custom\\baseline\\images\\custom_029\\seed_0071.png",
+          "generation\\custom\\st_matched_projection_ssg\\images\\custom_029\\seed_0071.png",
+          "evaluation\\ip\\gen\\custom\\baseline\\custom_029\\seed_71\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_matched_projection_ssg\\custom_029\\seed_71\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_matched_projection_ssg\\custom_029\\seed_71\\candidate_00_crop.png"
+        ]
+      },
+      {
+        "case": "Largest IP-Sim regression",
+        "condition": "st_all_projection_ssg",
+        "record_id": "custom_072",
+        "seed": 114,
+        "prompt": "a puppy sleeping",
+        "delta_dpg": 50.0,
+        "delta_ip": -21.10666036605835,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\custom_bench\\42_puppy.jpg",
+          "generation\\custom\\baseline\\images\\custom_072\\seed_0114.png",
+          "generation\\custom\\st_all_projection_ssg\\images\\custom_072\\seed_0114.png",
+          "evaluation\\ip\\gen\\custom\\baseline\\custom_072\\seed_114\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_all_projection_ssg\\custom_072\\seed_114\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_all_projection_ssg\\custom_072\\seed_114\\candidate_00_crop.png"
+        ]
+      },
+      {
+        "case": "Median case (median ΔDPG=+0.0)",
+        "condition": "st_matched_projection_ssg",
+        "record_id": "custom_001",
+        "seed": 43,
+        "prompt": "a kitten playing the guitar",
+        "delta_dpg": 0.0,
+        "delta_ip": -1.4124751091003418,
+        "paths": [
+          "C:\\Users\\82107\\Downloads\\AI_PROJECT\\Orthogonalization-InstantX-IP-Adapter\\datasets\\XVerseBench_0907\\custom_bench\\00_kitten.jpg",
+          "generation\\custom\\baseline\\images\\custom_001\\seed_0043.png",
+          "generation\\custom\\st_matched_projection_ssg\\images\\custom_001\\seed_0043.png",
+          "evaluation\\ip\\gen\\custom\\baseline\\custom_001\\seed_43\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_matched_projection_ssg\\custom_001\\seed_43\\candidate_00_mask.png",
+          "evaluation\\ip\\gen\\custom\\st_matched_projection_ssg\\custom_001\\seed_43\\candidate_00_crop.png"
+        ]
+      }
+    ]
+  }
+}

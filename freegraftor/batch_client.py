@@ -36,7 +36,7 @@ DEFAULT_REFERENCE_ROOT = (
     / "InstantX-IP-Adapter-DreamBench_filtered"
 )
 DEFAULT_OUTPUT_ROOT = EXPERIMENT_ROOT / "outputs"
-JOB_RECORD_ROOT = EXPERIMENT_ROOT / ".modal_jobs"
+JOB_RECORD_ROOT = EXPERIMENT_ROOT / "run_history" / "generation"
 EXPECTED_PNG_COUNT = 10 * len(PROMPT_CATALOG)
 
 

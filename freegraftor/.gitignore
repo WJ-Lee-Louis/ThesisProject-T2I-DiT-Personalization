@@ -1,7 +1,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.modal_jobs/
+run_history/
 outputs/
 image_cache/
 image_info_cache/

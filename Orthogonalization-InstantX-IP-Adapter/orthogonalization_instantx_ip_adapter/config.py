@@ -14,6 +14,24 @@ EVAL_BATCH_CLASS_NAME = "EvaluationBatchGenerator"
 EVAL_BATCH_INPUTS_VOLUME_NAME = "orthogonalization-instantx-xverse-eval-inputs"
 EVAL_BATCH_RESULTS_VOLUME_NAME = "orthogonalization-instantx-xverse-eval-results"
 
+METRIC_APP_NAME = "orthogonalization-instantx-xverse-metrics"
+METRIC_CLASS_NAME = "XVerseMetricEvaluator"
+METRIC_RESULTS_VOLUME_NAME = "orthogonalization-instantx-xverse-metric-results"
+METRIC_GPU = "A10G"
+METRIC_MAX_CONTAINERS = 3
+XVERSE_REPOSITORY = "https://github.com/bytedance/XVerse.git"
+XVERSE_REVISION = "65e2581aac0faffe4607881a10cc486186f6499d"
+SAM2_CHECKPOINT_URL = (
+    "https://dl.fbaipublicfiles.com/segment_anything_2/092824/"
+    "sam2.1_hiera_large.pt"
+)
+AES_PREDICTOR_REVISION = "c0e15567fa61252cbff43d70c49a8bd27202ca9a"
+AES_PREDICTOR_URL = (
+    "https://raw.githubusercontent.com/discus0434/"
+    f"aesthetic-predictor-v2-5/{AES_PREDICTOR_REVISION}/models/"
+    "aesthetic_predictor_v2_5.pth"
+)
+
 BASE_MODEL_ID = "black-forest-labs/FLUX.1-dev"
 BASE_MODEL_REVISION = "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
 IP_ADAPTER_REPO_ID = "InstantX/FLUX.1-dev-IP-Adapter"

@@ -21,6 +21,10 @@ from ip_artifacts import (
     resolve_segmented_mask,
     safe_path_component,
 )
+from florence2_compat import (
+    pin_florence2_checkpoint,
+    repair_xverse_florence2_weight_tying,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -74,38 +78,79 @@ def main() -> int:
             "IP-Sim requires --segmented-reference-root. Use "
             "--allow-raw-reference only for a non-official diagnostic run."
         )
-    import_official_xverse(args.xverse_root)
+    score_benchmark(
+        benchmark_root=args.benchmark_root,
+        benchmark=args.benchmark,
+        generated_manifest=args.generated_manifest,
+        xverse_root=args.xverse_root,
+        device=args.device,
+        output=args.output,
+        artifact_root=args.artifact_root,
+        segmented_reference_root=args.segmented_reference_root,
+        allow_raw_reference=args.allow_raw_reference,
+    )
+    return 0
+
+
+def load_ip_models(xverse_root: Path, device: str):
+    import_official_xverse(xverse_root)
     from eval.tools.dino import DINOScore
     from eval.tools.florence_sam import ObjectDetector
 
-    manifest, _ = load_benchmark(args.benchmark_root, args.benchmark)
-    rows = load_generated_images(args.generated_manifest, manifest)
-    detector = ObjectDetector(args.device)
-    dino = DINOScore(args.device)
-    output_path = args.output.resolve()
+    checkpoint = pin_florence2_checkpoint()
+    detector = ObjectDetector(device)
+    detector._florence2_checkpoint = checkpoint
+    repair_xverse_florence2_weight_tying(detector)
+    return detector, DINOScore(device)
+
+
+def score_benchmark(
+    *,
+    benchmark_root: Path,
+    benchmark: str,
+    generated_manifest: Path,
+    xverse_root: Path,
+    device: str,
+    output: Path,
+    artifact_root: Path | None,
+    segmented_reference_root: Path | None,
+    allow_raw_reference: bool = False,
+    detector=None,
+    dino=None,
+) -> None:
+    if segmented_reference_root is None and not allow_raw_reference:
+        raise ValueError("IP-Sim requires segmented references")
+    if (detector is None) != (dino is None):
+        raise ValueError("detector and dino must be supplied together")
+    if detector is None:
+        detector, dino = load_ip_models(xverse_root, device)
+    manifest, _ = load_benchmark(benchmark_root, benchmark)
+    rows = load_generated_images(generated_manifest, manifest)
+    output_path = output.resolve()
     artifact_root = (
-        args.artifact_root.resolve()
-        if args.artifact_root is not None
+        artifact_root.resolve()
+        if artifact_root is not None
         else output_path.parent / f"{output_path.stem}_artifacts"
     )
     generated_artifact_root = artifact_root / "generated"
     generated_artifact_root.mkdir(parents=True, exist_ok=True)
     scores = []
+    detected_image_count = 0
     reference_cache: dict[str, Image.Image] = {}
     reference_artifacts: dict[str, dict[str, str | None]] = {}
     for row in rows:
         record = row["benchmark_record"]
         filename = record["reference_filename"]
         if filename not in reference_cache:
-            if args.segmented_reference_root is not None:
+            if segmented_reference_root is not None:
                 reference_path = resolve_segmented_crop(
-                    args.segmented_reference_root, filename
+                    segmented_reference_root, filename
                 )
                 reference_mask = resolve_segmented_mask(
-                    args.segmented_reference_root, filename
+                    segmented_reference_root, filename
                 )
             else:
-                reference_path = resolve_reference_path(args.benchmark_root, record)
+                reference_path = resolve_reference_path(benchmark_root, record)
                 reference_mask = None
             with Image.open(reference_path) as opened:
                 reference_cache[filename] = opened.convert("RGB")
@@ -121,6 +166,7 @@ def main() -> int:
             record["subject_label"],
             min_size=max(1, generated.size[0] // 20),
         )[:3]
+        detected_image_count += int(bool(candidates))
         item_root = (
             generated_artifact_root
             / safe_path_component(row["condition"])
@@ -180,19 +226,34 @@ def main() -> int:
     write_json(
         output_path,
         {
-            "schema_version": 2,
+            "schema_version": 3,
             "metric": "IP-Sim",
             "benchmark_id": manifest["benchmark_id"],
             "detector": "official XVerse Florence2+SAM2",
             "embedding_model": "facebook/dino-vits16",
             "implementation_note": (
                 "The released XVerse script uses facebook/dino-vits16 even "
-                "though the paper/README describes the metric as DINOv2."
+                "though the paper/README describes the metric as DINOv2. "
+                "The pinned XVerse Florence-2 implementation is repaired to "
+                "share its checkpoint embedding with the otherwise missing "
+                "language-model output head."
+            ),
+            "florence2_compatibility": getattr(
+                detector, "_florence2_compat_report", None
             ),
             "reference_mode": (
-                "segmented" if args.segmented_reference_root else "raw_diagnostic"
+                "segmented" if segmented_reference_root else "raw_diagnostic"
             ),
             "mask_convention": "255=foreground, 0=background",
+            "quality_control": {
+                "image_count": len(scores),
+                "detected_image_count": detected_image_count,
+                "detection_rate": (
+                    detected_image_count / len(scores) if scores else 0.0
+                ),
+                "valid": bool(scores) and detected_image_count > 0,
+                "failure_stage_when_zero": "florence2_detection_before_sam2",
+            },
             "artifact_root": str(artifact_root),
             "reference_artifacts": reference_artifacts,
             "scores": scores,
@@ -200,7 +261,11 @@ def main() -> int:
     )
     print(f"IP-Sim scoring complete: {len(scores)} images -> {output_path}")
     print(f"Foreground crops and masks -> {artifact_root}")
-    return 0
+    if scores and detected_image_count == 0:
+        raise RuntimeError(
+            "IP-Sim invalid: Florence2 returned zero generated-image candidates "
+            "for every image, so SAM2 and DINO were never reached."
+        )
 
 
 if __name__ == "__main__":

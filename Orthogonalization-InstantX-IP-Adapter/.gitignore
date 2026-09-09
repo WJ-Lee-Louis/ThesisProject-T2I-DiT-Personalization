@@ -1,8 +1,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.modal_jobs/
-.modal_eval_jobs/
+run_history/
 outputs/
 datasets/XVerseBench/
 datasets/XVerseBench_0907/subset_bench/*.jpg
@@ -10,3 +9,5 @@ datasets/XVerseBench_0907/custom_bench/*.jpg
 datasets/XVerseBench_0907/evaluation_references/
 datasets/XVerseBench_0907/metric_outputs/
 datasets/XVerseBench_0907/evaluation_outputs/
+datasets/XVerseBench_0907/experiments/*/generation/
+datasets/XVerseBench_0907/experiments/*/evaluation/

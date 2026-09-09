@@ -44,6 +44,10 @@ from orthogonalization_instantx_ip_adapter.evaluation_manifest import (
 from orthogonalization_instantx_ip_adapter.implementation import (
     compute_evaluation_implementation_digest,
 )
+from orthogonalization_instantx_ip_adapter.evaluation_layout import (
+    DEFAULT_EVALUATION_ID,
+    EvaluationLayout,
+)
 
 
 SOURCE_CONDITIONS = frozenset(
@@ -53,7 +57,7 @@ SOURCE_CONDITIONS = frozenset(
         "st_all_projection_ssg",
     }
 )
-JOB_RECORD_ROOT = EXPERIMENT_ROOT / ".modal_eval_jobs"
+JOB_RECORD_ROOT = EXPERIMENT_ROOT / "run_history" / "evaluation"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -106,6 +110,7 @@ def build_parser() -> argparse.ArgumentParser:
     download.add_argument(
         "--dataset-root", type=Path, default=DEFAULT_EVALUATION_DATASET_ROOT
     )
+    download.add_argument("--evaluation-id", default=DEFAULT_EVALUATION_ID)
     download.add_argument("--force", action="store_true")
     download.add_argument("--allow-partial", action="store_true")
     download.add_argument("--retries", type=int, default=5)
@@ -117,6 +122,7 @@ def build_parser() -> argparse.ArgumentParser:
     assemble.add_argument(
         "--dataset-root", type=Path, default=DEFAULT_EVALUATION_DATASET_ROOT
     )
+    assemble.add_argument("--evaluation-id", default=DEFAULT_EVALUATION_ID)
     assemble.add_argument("--output", type=Path)
     assemble.add_argument("--allow-subset-conditions", action="store_true")
     assemble.set_defaults(handler=command_assemble)
@@ -305,11 +311,11 @@ def command_download(args: argparse.Namespace) -> int:
         )
         return 1
 
-    output_root = Path(args.dataset_root).expanduser().resolve() / "evaluation_outputs"
-    destination_root = _safe_local_child(
-        output_root,
-        f"{_safe_component(profile)}/{args.batch_id}",
-    )
+    evaluation_id = _validate_component(args.evaluation_id, "evaluation-id")
+    layout = EvaluationLayout(Path(args.dataset_root), evaluation_id)
+    benchmark = str(eval_manifest["benchmark"])
+    condition = str(config["condition"])
+    destination_root = layout.generation_condition_root(benchmark, condition)
     print(
         f"Downloading {len(files)} files (PNG {len(png_files)}) to "
         f"{destination_root}"
@@ -342,6 +348,7 @@ def command_download(args: argparse.Namespace) -> int:
         "condition": config["condition"],
     }
     record["download_path"] = str(destination_root)
+    record["evaluation_id"] = evaluation_id
     record["downloaded_at"] = datetime.now().astimezone().isoformat()
     _write_job_record(profile, record)
     print(f"Download complete: {len(local_pngs)} PNGs ({skipped} reused)")
@@ -390,16 +397,12 @@ def command_assemble(args: argparse.Namespace) -> int:
             f"Six-condition assembly mismatch: missing={missing}, extra={extra}"
         )
     _validate_assembled_rows(benchmark_manifest, merged_rows, seen_conditions)
+    evaluation_id = _validate_component(args.evaluation_id, "evaluation-id")
+    layout = EvaluationLayout(Path(args.dataset_root), evaluation_id)
     output = (
         args.output.expanduser().resolve()
         if args.output
-        else (
-            Path(args.dataset_root).expanduser().resolve()
-            / "evaluation_outputs"
-            / _safe_component(profile)
-            / args.benchmark
-            / "generated_images_manifest.json"
-        )
+        else layout.generated_manifest(args.benchmark)
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     for row in merged_rows:
@@ -407,6 +410,8 @@ def command_assemble(args: argparse.Namespace) -> int:
     payload = {
         "schema_version": 1,
         "benchmark_id": benchmark_manifest.benchmark_id,
+        "evaluation_id": evaluation_id,
+        "execution_backend": "modal",
         "modal_profile": profile,
         "conditions": sorted(seen_conditions),
         "batches": batch_records,
@@ -489,9 +494,15 @@ def _safe_component(value: object) -> str:
     return text or "unknown"
 
 
+def _validate_component(value: str, label: str) -> str:
+    if not value or value in {".", ".."} or _safe_component(value) != value:
+        raise ValueError(f"Unsafe {label}: {value!r}")
+    return value
+
+
 def _record_path(profile: str, batch_id: str) -> Path:
     _validate_batch_id(batch_id)
-    return JOB_RECORD_ROOT / _safe_component(profile) / f"{batch_id}.json"
+    return JOB_RECORD_ROOT / f"{batch_id}.json"
 
 
 def _write_job_record(profile: str, record: dict) -> None:
@@ -506,16 +517,18 @@ def _write_job_record(profile: str, record: dict) -> None:
 
 def _read_job_record(profile: str, batch_id: str):
     path = _record_path(profile, batch_id)
-    return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else None
+    if not path.is_file():
+        return None
+    record = json.loads(path.read_text(encoding="utf-8"))
+    return record if record.get("profile") == profile else None
 
 
 def _find_record_by_call_id(profile: str, call_id: str):
-    root = JOB_RECORD_ROOT / _safe_component(profile)
-    if not root.is_dir():
+    if not JOB_RECORD_ROOT.is_dir():
         return None
-    for path in root.glob("*.json"):
+    for path in JOB_RECORD_ROOT.glob("*.json"):
         value = json.loads(path.read_text(encoding="utf-8"))
-        if value.get("call_id") == call_id:
+        if value.get("profile") == profile and value.get("call_id") == call_id:
             return value
     return None
 

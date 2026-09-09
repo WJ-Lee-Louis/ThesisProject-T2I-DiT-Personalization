@@ -50,7 +50,7 @@ from orthogonalization_instantx_ip_adapter.source_captions import (
 
 
 DEFAULT_OUTPUT_ROOT = EXPERIMENT_ROOT / "outputs"
-JOB_RECORD_ROOT = EXPERIMENT_ROOT / ".modal_jobs"
+JOB_RECORD_ROOT = EXPERIMENT_ROOT / "run_history" / "generation"
 
 
 def _selected_prompt_suffixes(condition: str) -> tuple[str, ...]:

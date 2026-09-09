@@ -306,21 +306,21 @@ GPU checkpoint 설치와 Modal 배포는 이미지 생성 결과가 준비된 �
 예시 구조는 다음과 같다.
 
 ```cmd
-python datasets\XVerseBench_0907\metrics\score_dpg.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --generated-manifest generated_custom.json --xverse-root C:\path\to\XVerse --output metric_outputs\custom_dpg.json
+python datasets\XVerseBench_0907\metrics\score_dpg.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --generated-manifest experiments\animal_compositional_control_6cond_v1\generation\custom\generated_images_manifest.json --xverse-root C:\path\to\XVerse --output experiments\animal_compositional_control_6cond_v1\evaluation\scores\custom\dpg.json
 ```
 
 IP-Sim에는 segmented reference를 명시한다.
 
 ```cmd
-python datasets\XVerseBench_0907\metrics\score_ip_similarity.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --generated-manifest generated_custom.json --xverse-root C:\path\to\XVerse --segmented-reference-root datasets\XVerseBench_0907\evaluation_references\segmented --output metric_outputs\custom_ip.json
+python datasets\XVerseBench_0907\metrics\score_ip_similarity.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --generated-manifest experiments\animal_compositional_control_6cond_v1\generation\custom\generated_images_manifest.json --xverse-root C:\path\to\XVerse --segmented-reference-root experiments\animal_compositional_control_6cond_v1\evaluation\ip\references --output experiments\animal_compositional_control_6cond_v1\evaluation\scores\custom\ip.json
 ```
 
-위 명령은 생성 이미지에서 검출한 최대 3개 candidate 각각의 foreground crop과 binary mask도 기본적으로 `metric_outputs/custom_ip_artifacts/generated/<condition>/<record_id>/seed_<seed>`에 저장한다. 별도 위치가 필요하면 `--artifact-root <path>`를 지정한다. 점수 JSON에는 모든 candidate의 경로·점수와 실제 IP-Sim에 선택된 최고점 candidate index가 함께 기록된다.
+위 명령은 생성 이미지에서 검출한 최대 3개 candidate 각각의 foreground crop과 binary mask도 저장한다. 이번 평가의 로컬 표준 위치는 `experiments/animal_compositional_control_6cond_v1/evaluation/ip/gen/<benchmark>/<condition>/<record_id>/seed_<seed>`다. 점수 JSON에는 모든 candidate의 경로·점수와 실제 IP-Sim에 선택된 최고점 candidate index가 함께 기록된다.
 
 집계 예시는 다음과 같다.
 
 ```cmd
-python datasets\XVerseBench_0907\metrics\aggregate_scores.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --dpg metric_outputs\custom_dpg.json --ip metric_outputs\custom_ip.json --aes metric_outputs\custom_aes.json --baseline-condition baseline --output-dir metric_outputs\custom_summary
+python datasets\XVerseBench_0907\metrics\aggregate_scores.py --benchmark-root datasets\XVerseBench_0907 --benchmark custom --dpg experiments\animal_compositional_control_6cond_v1\evaluation\scores\custom\dpg.json --ip experiments\animal_compositional_control_6cond_v1\evaluation\scores\custom\ip.json --aes experiments\animal_compositional_control_6cond_v1\evaluation\scores\custom\aes.json --baseline-condition baseline --output-dir experiments\animal_compositional_control_6cond_v1\evaluation\summaries\custom
 ```
 
 ## 10. 예상 평가 산출물

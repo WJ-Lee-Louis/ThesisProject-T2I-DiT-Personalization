@@ -68,7 +68,41 @@ def compute_evaluation_implementation_digest(
     return digest.hexdigest()
 
 
+def compute_metric_implementation_digest(
+    experiment_root: str | Path | None = None,
+) -> str:
+    """Hash metric runners, their Modal worker/client contract, and config."""
+
+    root = (
+        Path(experiment_root).resolve()
+        if experiment_root is not None
+        else Path(__file__).resolve().parents[1]
+    )
+    paths = [
+        root / "metric_modal.py",
+        root / "orthogonalization_instantx_ip_adapter" / "config.py",
+        *sorted((root / "datasets" / "XVerseBench_0907" / "metrics").glob("*.py")),
+    ]
+    missing = [path for path in paths if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "Cannot fingerprint the metric implementation; missing source: "
+            + ", ".join(str(path) for path in missing)
+        )
+
+    digest = hashlib.sha256()
+    for path in paths:
+        relative_path = path.relative_to(root).as_posix().encode("utf-8")
+        content = path.read_bytes()
+        digest.update(len(relative_path).to_bytes(8, "big"))
+        digest.update(relative_path)
+        digest.update(len(content).to_bytes(8, "big"))
+        digest.update(content)
+    return digest.hexdigest()
+
+
 __all__ = [
     "compute_batch_implementation_digest",
     "compute_evaluation_implementation_digest",
+    "compute_metric_implementation_digest",
 ]

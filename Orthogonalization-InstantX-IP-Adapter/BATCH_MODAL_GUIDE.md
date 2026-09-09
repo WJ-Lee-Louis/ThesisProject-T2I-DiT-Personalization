@@ -136,7 +136,7 @@ python Orthogonalization-InstantX-IP-Adapter\batch_client.py submit --condition 
 `modal app stop`하지 않는다. 이는 로컬 연결 종료와 달리 원격 앱의 실행
 상태를 직접 변경하는 명령이다.
 
-로컬의 `.modal_jobs`에는 Batch ID와 Call ID의 대응 관계가 저장된다. 그래도 복구를 쉽게 하려면 터미널에 출력된 두 ID를 별도로 메모해 두는 것이 좋다.
+로컬의 `run_history/generation`에는 Batch ID와 Call ID의 대응 관계가 저장된다. 그래도 복구를 쉽게 하려면 터미널에 출력된 두 ID를 별도로 메모해 두는 것이 좋다.
 
 PC가 꺼져 있는 동안에는 원격 결과가 Modal Volume에 저장될 뿐 로컬 `outputs`로 자동 복사되지는 않는다. PC를 다시 켠 뒤 7절의 다운로드 명령을 실행해야 한다.
 

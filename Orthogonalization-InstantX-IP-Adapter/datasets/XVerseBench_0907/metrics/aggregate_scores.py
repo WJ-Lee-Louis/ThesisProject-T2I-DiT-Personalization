@@ -55,7 +55,18 @@ def _load_metric(path: Path | None, expected_benchmark_id: str) -> list[dict[str
     payload = load_json(path)
     if payload.get("benchmark_id") != expected_benchmark_id:
         raise ValueError(f"Metric benchmark_id mismatch in {path}")
-    return payload.get("scores", [])
+    scores = payload.get("scores", [])
+    if payload.get("metric") == "IP-Sim" and scores:
+        detected = sum(
+            int(int(row.get("detected_candidate_count", 0)) > 0) for row in scores
+        )
+        if detected == 0:
+            print(
+                f"WARNING: excluding invalid IP-Sim file {path}; "
+                "Florence2 detected no generated-image candidates."
+            )
+            return []
+    return scores
 
 
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:

@@ -139,8 +139,12 @@ def import_official_xverse(xverse_root: str | Path) -> Path:
         raise FileNotFoundError(
             "XVerse checkout lacks official metric files: " + ", ".join(missing)
         )
-    if str(root) not in sys.path:
-        sys.path.insert(0, str(root))
+    # XVerse's vendored SAM2 builder imports ``sam2`` as a top-level package,
+    # although it lives below eval/grounded_sam in the repository.
+    import_roots = (root, root / "eval" / "grounded_sam")
+    for import_root in reversed(import_roots):
+        if str(import_root) not in sys.path:
+            sys.path.insert(0, str(import_root))
     return root
 
 
