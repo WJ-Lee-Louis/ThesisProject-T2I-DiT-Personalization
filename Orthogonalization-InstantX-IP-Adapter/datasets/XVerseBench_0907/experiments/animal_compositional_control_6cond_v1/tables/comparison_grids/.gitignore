@@ -1,0 +1,4 @@
+# Generated comparison-grid images; keep the index and score manifest tracked.
+*.jpg
+*.jpeg
+*.png
