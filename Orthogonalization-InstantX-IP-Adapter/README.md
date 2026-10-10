@@ -1,8 +1,14 @@
 # Orthogonalization InstantX FLUX IP-Adapter
 
-Training-free research overlay for the interventions described in
-`0723_experimental_design_memo.md`, including target-, source-, and
-source-target pooled-space projection variants.
+The explicit-identity/free-text pipeline is available through `--identity-term`
+in `modal_inference.py` and `inference.generate_semantic_png_bytes`. It supports
+optional vision captioning, arbitrary semantic components, source/target/joint
+projection, injectable LLM providers, and cached analyses. See
+[the analysis, design, and usage report](docs/semantic_pipeline.md).
+
+Training-free research overlay for source-, target-, and source-target
+pooled-space projection, now extended to explicit identity concepts and
+arbitrary semantic component lists.
 
 - SigLIP pooled-space content projection
 - FLUX single-stream direct IP-to-text residual gate
@@ -107,13 +113,6 @@ Start with a no-GPU preview:
 python Orthogonalization-InstantX-IP-Adapter\batch_client.py preview
 ```
 
-The final six-condition, lambda-1 experiment—including CMD deployment,
-submission, status, recovery, and download commands—is documented in
-[FINAL_16_PROMPT_MODAL_GUIDE.md](FINAL_16_PROMPT_MODAL_GUIDE.md).
-
-The earlier batch workflow is retained in
-[BATCH_MODAL_GUIDE.md](BATCH_MODAL_GUIDE.md) for historical reference.
-
 Local submission records are stored by purpose under `run_history/`:
 `generation/`, `evaluation/`, and `metrics/`. Modal profiles remain fields
 inside the JSON provenance records and no longer determine directory names.
@@ -123,9 +122,6 @@ The benchmark source ledger is kept at
 
 The class-component condition matrix and its independent lambda sweep are
 documented in [CLASS_PROJECTION_MODAL_GUIDE.md](CLASS_PROJECTION_MODAL_GUIDE.md).
-
-The two concurrent source-aware runs (90 + 90 images) are documented in
-[SOURCE_AWARE_MODAL_GUIDE.md](SOURCE_AWARE_MODAL_GUIDE.md).
 
 ## Final comparison grids and basis diagnostics
 
@@ -152,3 +148,18 @@ python Orthogonalization-InstantX-IP-Adapter\summarize_basis_diagnostics.py <bat
 
 This writes a per-image CSV and grouped JSON summaries by condition, prompt
 category, and semantic factors.
+
+## Documentation and retained research data
+
+Start with [the current semantic pipeline](docs/semantic_pipeline.md) and
+[the shared LLM prompts and input/output contract](docs/prompts/llm_modules_share.md).
+
+Superseded design drafts, obsolete 9/16-prompt batch guides, duplicate LLM
+prompt/schema documents, and Markdown renderings of existing JSONL annotations
+have been removed. Runtime prompts and schemas remain in `semantic_components.py`.
+
+The retained 0903 method and execution guides explain the implemented legacy
+class-projection ablations. The benchmark source ledger, benchmark manifests,
+source captions, annotation JSONL, generated images, per-image diagnostics, metric
+scores, and `run_history/` records remain available for reproducibility and
+comparisons with the new pipeline.

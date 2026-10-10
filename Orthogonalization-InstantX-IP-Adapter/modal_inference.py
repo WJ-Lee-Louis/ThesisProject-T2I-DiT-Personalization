@@ -117,6 +117,7 @@ def generate_experiment(
     include_interaction: bool = False,
     restore_visual_norm: bool = True,
     mask_single_text_rows: bool = DEFAULT_MASK_SINGLE_TEXT_ROWS,
+    component_analysis_payload: dict | None = None,
 ) -> tuple[bytes, dict]:
     from orthogonalization_instantx_ip_adapter.inference import (
         generate_png_bytes,
@@ -143,6 +144,7 @@ def generate_experiment(
         include_interaction=include_interaction,
         restore_visual_norm=restore_visual_norm,
         mask_single_text_rows=mask_single_text_rows,
+        component_analysis_payload=component_analysis_payload,
     )
 
 
@@ -169,7 +171,41 @@ def main(
     restore_visual_norm: bool = True,
     mask_single_text_rows: bool = DEFAULT_MASK_SINGLE_TEXT_ROWS,
     output_path: str = DEFAULT_OUTPUT_PATH,
+    identity_term: str = "",
+    source_caption: str = "",
+    llm_model: str = "",
+    component_origin: str = "source_target",
+    component_strategy: str = "local",
+    component_analysis_path: str = "",
+    component_max_contexts: int = 256,
 ):
+    from orthogonalization_instantx_ip_adapter.semantic_components import (
+        SemanticConditioning, SemanticLLM, identity_spans, prepare_semantic_conditioning,
+    )
+    component_analysis_payload = None
+    if identity_term:
+        identity_spans(prompt, identity_term)
+    if component_analysis_path:
+        if source_caption or llm_model:
+            raise ValueError("cached component analysis cannot mix caption/model options")
+        conditioning = SemanticConditioning.from_dict(json.loads(
+            Path(clean_path_arg(component_analysis_path)).read_text(encoding="utf-8")))
+        if conditioning.target.text != prompt:
+            raise ValueError("cached analysis target does not match prompt")
+        if identity_term and conditioning.target.identity_term != identity_term:
+            raise ValueError("cached analysis identity_term does not match")
+        component_analysis_payload = conditioning.to_dict()
+    elif source_caption and not identity_term:
+        raise ValueError("source_caption requires explicit identity_term")
+    if identity_term or component_analysis_path:
+        if orthogonalization_mode not in {"off", "components"}:
+            raise ValueError("identity pipeline cannot mix legacy projection modes")
+        if any((object_prompt, object_behavior_prompt, object_background_prompt,
+                object_behavior_background_prompt, include_interaction)):
+            raise ValueError("identity pipeline cannot mix legacy prompt settings")
+        orthogonalization_mode = "components"
+    elif orthogonalization_mode == "components":
+        raise ValueError("components mode requires identity_term or cached component analysis")
     reference_image_bytes = None
     if reference_image_path:
         reference_path = Path(clean_path_arg(reference_image_path))
@@ -177,6 +213,22 @@ def main(
         print(f"Using local reference image: {reference_path.resolve()}")
     else:
         print(f"Using reference image URL: {reference_image_url}")
+
+    if identity_term and component_analysis_payload is None:
+        from orthogonalization_instantx_ip_adapter.llm_provider import ResponsesJSONProvider
+        provider = ResponsesJSONProvider.from_env(llm_model or None)
+        if reference_image_bytes is None and not source_caption and component_origin != "target":
+            from io import BytesIO
+            from diffusers.utils import load_image
+            buffer = BytesIO()
+            load_image(reference_image_url).convert("RGB").save(buffer, format="PNG")
+            reference_image_bytes = buffer.getvalue()
+        conditioning = prepare_semantic_conditioning(
+            llm=SemanticLLM(provider), identity_term=identity_term, target_prompt=prompt,
+            reference_image_bytes=reference_image_bytes, source_caption=source_caption or None,
+            origin=component_origin, strategy=component_strategy, max_contexts=component_max_contexts,
+        )
+        component_analysis_payload = conditioning.to_dict()
 
     output_bytes, diagnostics = generate_experiment.remote(
         prompt=prompt,
@@ -199,6 +251,7 @@ def main(
         include_interaction=include_interaction,
         restore_visual_norm=restore_visual_norm,
         mask_single_text_rows=mask_single_text_rows,
+        component_analysis_payload=component_analysis_payload,
     )
 
     path = resolve_output_path(
@@ -207,6 +260,15 @@ def main(
         reference_image_url=reference_image_url,
     )
     path.parent.mkdir(parents=True, exist_ok=True)
+    if component_analysis_payload is not None:
+        path.with_suffix(".components.json").write_text(
+            json.dumps(component_analysis_payload, ensure_ascii=False, indent=2), encoding="utf-8",
+        )
+        diagnostics["llm_analysis"] = {
+            "model": (llm_model or provider.model) if identity_term and not component_analysis_path else None,
+            "cached": bool(component_analysis_path),
+            "max_output_retries": 2,
+        }
     path.write_bytes(output_bytes)
     path.with_suffix(".json").write_text(
         json.dumps(diagnostics, ensure_ascii=False, indent=2),

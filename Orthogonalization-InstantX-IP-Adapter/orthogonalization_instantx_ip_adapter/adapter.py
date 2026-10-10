@@ -11,6 +11,8 @@ import torch
 from PIL import Image
 
 from .attention_processor import IPAFluxAttnProcessor2_0
+from .semantic_components import SemanticConditioning
+from .component_directions import build_component_directions
 from .orthogonalization import (
     ContrastDirections,
     PromptSet,
@@ -25,6 +27,7 @@ from .orthogonalization import (
 
 
 ORTHOGONALIZATION_MODES = {
+    "components",
     "off",
     "local",
     "factorial",
@@ -120,6 +123,7 @@ class OrthogonalizationRequest:
     additional_class_direction_sets: tuple[ClassDirectionSet, ...] = ()
     class_absolute_prompt: Optional[str] = None
     residualize_class_against_nuisance: bool = True
+    semantic_conditioning: Optional[SemanticConditioning] = None
 
     def __post_init__(self) -> None:
         if self.mode not in ORTHOGONALIZATION_MODES:
@@ -132,6 +136,20 @@ class OrthogonalizationRequest:
             or not 0.0 <= self.class_strength <= 1.0
         ):
             raise ValueError("class_strength must be finite and in [0, 1]")
+        if self.mode == "components":
+            if not isinstance(self.semantic_conditioning, SemanticConditioning):
+                raise ValueError("components mode requires SemanticConditioning")
+            if (self.prompts is not None or self.additional_direction_sets or self.comparison_prompts is not None
+                    or self.class_contextual_pairs or self.class_absolute_prompt is not None
+                    or self.class_strength is not None or self.additional_class_direction_sets
+                    or self.primary_label is not None or self.primary_class_label is not None
+                    or self.include_interaction or not self.residualize_class_against_nuisance):
+                raise ValueError("components mode cannot mix legacy contrast/class settings")
+            if not math.isfinite(self.relative_tolerance) or self.relative_tolerance < 0:
+                raise ValueError("relative_tolerance must be finite and non-negative")
+            return
+        if self.semantic_conditioning is not None:
+            raise ValueError("semantic_conditioning is only valid in components mode")
         if not isinstance(self.additional_direction_sets, tuple):
             raise TypeError("additional_direction_sets must be a tuple")
         if not all(
@@ -614,6 +632,14 @@ class OrthogonalizedIPAdapterMixin:
         ).to(self.device)
 
     def _build_text_directions(self, request: OrthogonalizationRequest):
+        if request.mode == "components":
+            conditioning = request.semantic_conditioning
+            self._last_direction_build_diagnostics = {
+                "direction_strategy": "semantic_" + conditioning.strategy,
+                "direction_raw_norm_kind": "pre_row_normalization_contrast_norm",
+                "semantic_conditioning": conditioning.to_dict(),
+            }
+            return build_component_directions(conditioning, self._encode_component_text_pool)
         if request.mode == "class_contextual":
             return self._build_class_direction(request)
 
@@ -673,6 +699,17 @@ class OrthogonalizedIPAdapterMixin:
                 else None
             ),
         )
+
+    def _encode_component_text_pool(self, prompts):
+        # Legacy experiments retain their old truncation behavior. Free-text input
+        # must not silently lose a component beyond the encoder's positional limit.
+        tokenizer = self.clip_image_processor.tokenizer
+        encoder = self._get_siglip_text_encoder()
+        limit = encoder.config.max_position_embeddings
+        token_ids = tokenizer(prompts, truncation=False, padding=False)["input_ids"]
+        if any(len(ids) > limit for ids in token_ids):
+            raise ValueError(f"semantic contrast exceeds SigLIP's {limit}-token limit; shorten input text")
+        return self._encode_siglip_text_pool(prompts)
 
     def _build_class_direction(self, request: OrthogonalizationRequest):
         """Build the single contextual class direction for either use mode."""
@@ -1153,7 +1190,9 @@ class OrthogonalizedIPAdapterMixin:
             "mode": request.mode,
             "strength": request.strength,
             **self._last_direction_build_diagnostics,
-            "direction_set_count": 1 + len(request.additional_direction_sets),
+            "direction_set_count": (len(request.semantic_conditioning.selected)
+                                    if request.mode == "components"
+                                    else 1 + len(request.additional_direction_sets)),
             "direction_names": list(directions.names),
             "direction_normalization": (
                 "normalize_prompts_then_pairs_then_mean"

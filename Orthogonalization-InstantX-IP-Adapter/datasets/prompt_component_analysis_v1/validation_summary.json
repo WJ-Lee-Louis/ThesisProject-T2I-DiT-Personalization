@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "benchmarks": {
+    "dreambench": {
+      "record_count": 750,
+      "category_counts": {
+        "live_subject": 225,
+        "object": 525
+      },
+      "components_per_prompt_distribution": {
+        "1": 636,
+        "2": 114
+      },
+      "annotation_methods": {
+        "verbatim_surface_span_decomposition_v2": 750
+      },
+      "verbatim_span_validation": {
+        "checked_records": 750,
+        "all_components_are_ordered_non_overlapping_prompt_substrings": true,
+        "identity_overlap_count": 0,
+        "lossless_original_offset_reconstruction": true
+      }
+    },
+    "dreambench_plus": {
+      "record_count": 1170,
+      "category_counts": {
+        "animal": 405,
+        "human": 180,
+        "object": 585
+      },
+      "components_per_prompt_distribution": {
+        "1": 30,
+        "2": 301,
+        "3": 554,
+        "4": 254,
+        "5": 29,
+        "6": 2
+      },
+      "annotation_methods": {
+        "verbatim_surface_span_decomposition_v2": 1170
+      },
+      "verbatim_span_validation": {
+        "checked_records": 1170,
+        "all_components_are_ordered_non_overlapping_prompt_substrings": true,
+        "identity_overlap_count": 0,
+        "lossless_original_offset_reconstruction": true
+      }
+    },
+    "xversebench": {
+      "record_count": 60,
+      "category_counts": {
+        "animal": 29,
+        "human": 20,
+        "object": 11
+      },
+      "components_per_prompt_distribution": {
+        "1": 8,
+        "2": 47,
+        "3": 5
+      },
+      "annotation_methods": {
+        "verbatim_surface_span_decomposition_v2": 60
+      },
+      "verbatim_span_validation": {
+        "checked_records": 60,
+        "all_components_are_ordered_non_overlapping_prompt_substrings": true,
+        "identity_overlap_count": 0,
+        "lossless_original_offset_reconstruction": true
+      }
+    }
+  },
+  "total_record_count": 1980
+}
