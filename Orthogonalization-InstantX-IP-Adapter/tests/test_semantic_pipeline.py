@@ -34,6 +34,29 @@ SOURCE_COMPONENTS = ["sleeping", "on the snow"]
 TARGET_COMPONENTS = ["a retro-style digital drawing of", "playing the guitar", "on a sofa"]
 
 
+@pytest.mark.parametrize("explicit, environment, expected", [
+    (None, None, "gpt-6-luna"),
+    (None, "", "gpt-6-luna"),
+    (None, "environment-model", "environment-model"),
+    ("explicit-model", "environment-model", "explicit-model"),
+])
+def test_provider_model_configuration_precedence(monkeypatch, explicit, environment, expected):
+    monkeypatch.setenv("SEMANTIC_LLM_API_KEY", "test-secret")
+    monkeypatch.delenv("SEMANTIC_LLM_ENDPOINT", raising=False)
+    if environment is None:
+        monkeypatch.delenv("SEMANTIC_LLM_MODEL", raising=False)
+    else:
+        monkeypatch.setenv("SEMANTIC_LLM_MODEL", environment)
+    assert ResponsesJSONProvider.from_env(explicit).model == expected
+
+
+def test_default_model_still_requires_api_key(monkeypatch):
+    monkeypatch.delenv("SEMANTIC_LLM_API_KEY", raising=False)
+    monkeypatch.delenv("SEMANTIC_LLM_MODEL", raising=False)
+    with pytest.raises(ValueError, match="API key"):
+        ResponsesJSONProvider.from_env()
+
+
 def output(identity, components):
     return {"identity_term": identity, "components": components}
 
@@ -167,6 +190,52 @@ def test_all_grouped_identity_occurrences_and_exact_whitespace_reconstruction():
 
 def neutral_output(identity, preserved, neutral, groups):
     return {**grouped_output(identity, preserved, groups), "neutral_spans": neutral}
+
+
+@pytest.mark.parametrize("max_retries, status, calls", [(0, "FAIL", 1), (2, "PASS", 2)])
+def test_monitor_can_evaluate_first_response_without_retrying(max_retries, status, calls):
+    from scripts.monitor_dreambench_target_components import run_case
+
+    bad = neutral_output("lamp", ["lamp"], [], [["on a desk"]])
+    good = neutral_output("lamp", ["a lamp"], [], [["on a desk"]])
+    provider = FakeProvider([bad, good])
+    result = run_case({"text": "a lamp on a desk", "identity_term": "lamp"}, provider, max_retries)
+    assert result["status"] == status
+    assert len(result["attempts"]) == len(provider.calls) == calls
+    if max_retries == 0:
+        assert "unassigned lexical content" in result["error"]
+
+
+@pytest.mark.parametrize("strategy", ["local", "factorial"])
+def test_qualified_identity_article_survives_without_false_subword_ambiguity(strategy):
+    text = "a cube shaped <backpack> backpack"
+    response = neutral_output("<backpack> backpack", ["<backpack> backpack"], ["a"], [["cube shaped"]])
+    provider = FakeProvider([response])
+    analysis = SemanticLLM(provider, max_retries=0).analyze(text, "<backpack> backpack")
+    assert len(provider.calls) == 1
+    assert analysis.prompt_for_subset([]) == "a <backpack> backpack"
+    assert component_contrast_plan(SemanticConditioning(analysis, origin="target", strategy=strategy)) == (
+        ("target:component_0", ((text, "a <backpack> backpack"),)),)
+
+
+def test_neutral_article_excludes_positions_owned_by_a_complete_component():
+    text = "a red dog wearing a hat"
+    response = neutral_output("dog", ["dog"], ["a"], [["red"], ["wearing a hat"]])
+    analysis = SemanticLLM(FakeProvider([response]), max_retries=0).analyze(text, "dog")
+    assert analysis.prompt_for_subset([]) == "a dog"
+    assert analysis.prompt_for_subset([1]) == "a dog wearing a hat"
+
+
+def test_genuinely_ambiguous_repeated_neutral_span_still_rejected():
+    response = neutral_output("dog", ["dog"], ["a", "a"], [["red"], ["blue"]])
+    with pytest.raises(ValueError, match="ambiguous span"):
+        SemanticLLM(FakeProvider([response]), max_retries=0).analyze("a red dog a blue", "dog")
+
+
+def test_components_cannot_partition_a_word_into_fragments():
+    response = neutral_output("a dog", ["a dog"], [], [["runn"], ["ing"]])
+    with pytest.raises(ValueError, match="span is absent"):
+        SemanticLLM(FakeProvider([response]), max_retries=0).analyze("a dog running", "a dog")
 
 
 @pytest.mark.parametrize("strategy", ["local", "factorial"])

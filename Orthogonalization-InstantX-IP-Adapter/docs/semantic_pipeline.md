@@ -6,12 +6,12 @@ Reference image에서 보존할 concept을 `identity_term`으로 지정하고, s
 
 ## 1. 입력과 전체 흐름
 
-| 입력 | 설명 |
-|---|---|
-| Reference image | 개인화에 사용할 이미지 |
-| `identity_term` | 사용자가 보존할 concept. 예: `a dog`, `a red backpack`, `watercolor style` |
-| `target_prompt` | 생성할 장면을 설명하는 자유문 |
-| `source_caption` (선택) | 직접 제공하면 이미지 captioning을 생략 |
+| 입력                    | 설명                                                                       |
+| ----------------------- | -------------------------------------------------------------------------- |
+| Reference image         | 개인화에 사용할 이미지                                                     |
+| `identity_term`         | 사용자가 보존할 concept. 예: `a dog`, `a red backpack`, `watercolor style` |
+| `target_prompt`         | 생성할 장면을 설명하는 자유문                                              |
+| `source_caption` (선택) | 직접 제공하면 이미지 captioning을 생략                                     |
 
 `identity_term`은 target prompt에 **대소문자를 포함해 정확한 문자열과 단어 경계로** 존재해야 한다. 예를 들어 `a dog`는 `A dog`나 `a doghouse`와 일치하지 않는다. 사용자 caption에도 같은 조건을 적용하며, 불일치하면 LLM 호출 전에 중단한다.
 
@@ -32,10 +32,10 @@ Component 분석을 위해 만든 부분 문장은 제거 방향 계산에만 �
 
 ## 2. LLM 모듈과 분해 규칙
 
-| 모듈 | 입력 | 출력 |
-|---|---|---|
+| 모듈                          | 입력                     | 출력                                                    |
+| ----------------------------- | ------------------------ | ------------------------------------------------------- |
 | A. Reference Image Captioning | 이미지 + `identity_term` | 지정 identity를 그대로 포함하는 간결한 `source_caption` |
-| B. Prompt Component Analysis | text + `identity_term` | 보존 구간, 중립 구간, 제거할 component 목록 |
+| B. Prompt Component Analysis  | text + `identity_term`   | 보존 구간, 중립 구간, 제거할 component 목록             |
 
 두 모듈의 system prompt 전문과 입출력 예시는 [LLM 모듈 공유 문서](prompts/llm_modules_share.md)에 정리했다. 실행 시 사용하는 원본은 `semantic_components.py`의 prompt 상수이므로, 공유 문서만 편집해도 실행 prompt가 바뀌지는 않는다.
 
@@ -47,8 +47,8 @@ Module B의 출력 예시:
   "preserved_spans": ["a dog"],
   "neutral_spans": ["a photo of"],
   "components": [
-    {"spans": ["playing the guitar"]},
-    {"spans": ["on a sofa"]}
+    { "spans": ["playing the guitar"] },
+    { "spans": ["on a sofa"] }
   ]
 }
 ```
@@ -56,14 +56,14 @@ Module B의 출력 예시:
 위 예시의 원문은 `a photo of a dog playing the guitar on a sofa`다.
 
 - **보존 구간**: identity와 필요한 문법적 연결어를 유지한다. 예: identity가 `sunset`이면 `during sunset`을 보존할 수 있다.
-- **중립 구간**: `a photo of` 같은 일반적인 도입 표현을 유지하되 제거 방향으로 사용하지 않는다. 구체적인 style/medium이나 물리적인 사진까지 중립 처리하지 않는다.
-- **Components**: 제거할 의미 단위다. 개수와 종류를 고정하지 않으며, `playing the guitar`처럼 함께 의미를 이루는 구를 불필요하게 나누지 않는다.
+- **중립 구간**: `a photo of` 같은 일반적인 도입 표현을 유지하되 제거 방향으로 사용하지 않는다. Identity 명사구의 관사가 제거할 수식어와 떨어져 있으면 관사도 중립으로 유지한다. 제거할 다른 사물·장소의 관사까지 중립화하지 않는다.
+- **Components**: 제거할 의미 단위다. 개수와 종류를 고정하지 않으며, `playing the guitar`처럼 함께 의미를 이루는 구를 불필요하게 나누지 않는다. 독립적으로 바꿀 수 있는 배치·환경 관계는 분리하고, 단순한 연속 장소 표현의 모호성도 독립 조건으로 처리한다. Background 대상으로 도입된 사물과 그 관계, 공유 관계를 갖는 병렬 대상, 명시적 관계절의 대상 내부 묘사는 함께 묶는다.
 
 각 span은 원문의 실제 구간이며 서로 겹치지 않는다. 세 종류의 span이 모든 단어를 배정하고, 원래 위치와 구두점·공백을 함께 유지하면 원문을 복원할 수 있어야 한다. Identity가 여러 번 등장하면 모두 보호한다.
 
 Identity가 의미 단위의 중간에 끼면 하나의 component에 여러 span을 묶을 수 있다. 예를 들어 `A tiny dragon perched on a pixel art cloud`에서 identity가 `pixel art`이면 `perched`와 `{"spans":["on a","cloud"]}`를 별도 component로 처리한다. 묶인 span들은 항상 함께 제거하며, component 수는 span 수가 아닌 **그룹 수**다. Style을 보존하는 경우 대상 사물 자체도 제거 component가 될 수 있다.
 
-잘못된 JSON/필드, 빈 span, 원문에 없는 구, identity 침범, 중복·겹침·순서 오류, 미배정 단어를 검증한다. 출력 검증 실패에는 피드백을 포함하여 최대 2회 재시도하고, API·인증·네트워크 오류는 즉시 중단한다.
+잘못된 JSON/필드, 빈 span, 원문에 없는 구, identity 침범, 중복·겹침·순서 오류, 미배정 단어를 검증한다. 현재 span 형식은 단어 경계도 확인하여 단어 내부의 우연한 문자열 일치를 제외한다. 출력 검증 실패에는 피드백을 포함하여 최대 2회 재시도하고, API·인증·네트워크 오류는 즉시 중단한다.
 
 ## 3. Local / factorial과 projection
 
@@ -71,10 +71,10 @@ Identity가 의미 단위의 중간에 끼면 하나의 component에 여러 span
 
 `e(P)`는 **정규화한 SigLIP pooled text embedding**이다. Token span의 embedding을 직접 평균하거나 전체 문장에서 단어 벡터를 단순 차감하는 방식은 아니다.
 
-| 방식 | Component i의 제거 방향 |
-|---|---|
-| `local` (기본) | 전체 문장과 i만 제거한 문장의 embedding 차이 |
-| `factorial` | 다른 component의 모든 부분집합 문맥에서, i의 유무에 따른 embedding 차이의 평균 |
+| 방식           | Component i의 제거 방향                                                        |
+| -------------- | ------------------------------------------------------------------------------ |
+| `local` (기본) | 전체 문장과 i만 제거한 문장의 embedding 차이                                   |
+| `factorial`    | 다른 component의 모든 부분집합 문맥에서, i의 유무에 따른 embedding 차이의 평균 |
 
 ```text
 local:
@@ -93,10 +93,13 @@ Ablation은 `source`, `target`, `source_target`으로 선택한다. Source-only�
 
 ## 4. 실행과 재사용
 
-프로젝트 루트의 PowerShell에서 `SEMANTIC_LLM_API_KEY`를 환경변수로 제공한다. 키는 코드나 결과 파일에 저장하지 않는다. `SEMANTIC_LLM_MODEL`에는 사용할 실제 API model ID를 설정하고, 다른 Responses-compatible endpoint를 쓰면 `SEMANTIC_LLM_ENDPOINT`도 설정한다. Provider는 교체 가능하며, 사용하는 모델은 이미지 입력과 structured output을 지원해야 한다.
+기본 모델은 **`gpt-6-luna`**이며, Module A와 B가 같은 provider 설정을 사용한다. 모델 선택 우선순위는 `--llm-model`(또는 Python의 명시적 model 인자) → `SEMANTIC_LLM_MODEL` 환경변수 → 코드의 `DEFAULT_SEMANTIC_LLM_MODEL`이다. 별도 설정이 없는 새 shell에서도 Luna를 사용하며, 필요하면 환경변수나 CLI로 바꿀 수 있다.
+
+프로젝트 루트의 PowerShell에서 `SEMANTIC_LLM_API_KEY`를 환경변수로 제공한다. 키는 코드나 결과 파일에 저장하지 않는다. 다른 Responses-compatible endpoint를 쓰면 `SEMANTIC_LLM_ENDPOINT`도 설정한다. Provider는 교체 가능하며, 사용하는 모델은 이미지 입력과 structured output을 지원해야 한다.
 
 ```powershell
-$env:SEMANTIC_LLM_MODEL = "<실제 API model ID>"
+# 선택 사항: 생략해도 기본 gpt-6-luna 사용
+$env:SEMANTIC_LLM_MODEL = "gpt-6-luna"
 
 python -m modal run modal_inference.py `
   --reference-image-path "C:/path/reference.png" `
@@ -120,13 +123,11 @@ LLM 분석은 로컬에서 수행하며, Modal GPU에는 검증된 분석 결과
 - Identity 문자열을 유지하는 것과 embedding 공간에서 identity를 완전히 보존하는 것은 다르다. 실제 생성 이미지의 의도 반영 및 disentanglement 성능은 후속 평가가 필요하다.
 - 이전 분석 JSON도 호환성을 위해 읽는다. 현재 보존·중립 규칙을 적용하려면 과거 cache를 재생성한다.
 
-| 파일 | 역할 |
-|---|---|
-| [semantic_components.py](../orthogonalization_instantx_ip_adapter/semantic_components.py) | LLM prompt/schema, span 검증, source/target 분석 연결 |
-| [llm_provider.py](../orthogonalization_instantx_ip_adapter/llm_provider.py) | API provider 및 환경변수 설정 |
-| [component_directions.py](../orthogonalization_instantx_ip_adapter/component_directions.py) | Local/factorial contrast와 방향 계산 |
-| [orthogonalization.py](../orthogonalization_instantx_ip_adapter/orthogonalization.py), [adapter.py](../orthogonalization_instantx_ip_adapter/adapter.py) | SVD, visual projection, IP-Adapter 연결 |
-| [inference.py](../orthogonalization_instantx_ip_adapter/inference.py), [modal_inference.py](../modal_inference.py) | Python / Modal 실행 진입점 |
-| [test_semantic_pipeline.py](../tests/test_semantic_pipeline.py) | Mock LLM, span 검증, component 수·ablation·수학적 계산 검증 |
-
-DreamBench++ style 10개 사례에서 20개 source/target 분석과 local/factorial 계산 계획의 원문 복원·고정 span 유지·차감 쌍·조합 수를 확인했다. 전체 테스트 734개가 통과했으며, 이는 이미지 품질에 대한 평가 결과는 아니다.
+| 파일                                                                                                                                                     | 역할                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [semantic_components.py](../orthogonalization_instantx_ip_adapter/semantic_components.py)                                                                | LLM prompt/schema, span 검증, source/target 분석 연결       |
+| [llm_provider.py](../orthogonalization_instantx_ip_adapter/llm_provider.py)                                                                              | API provider 및 환경변수 설정                               |
+| [component_directions.py](../orthogonalization_instantx_ip_adapter/component_directions.py)                                                              | Local/factorial contrast와 방향 계산                        |
+| [orthogonalization.py](../orthogonalization_instantx_ip_adapter/orthogonalization.py), [adapter.py](../orthogonalization_instantx_ip_adapter/adapter.py) | SVD, visual projection, IP-Adapter 연결                     |
+| [inference.py](../orthogonalization_instantx_ip_adapter/inference.py), [modal_inference.py](../modal_inference.py)                                       | Python / Modal 실행 진입점                                  |
+| [test_semantic_pipeline.py](../tests/test_semantic_pipeline.py)                                                                                          | Mock LLM, span 검증, component 수·ablation·수학적 계산 검증 |

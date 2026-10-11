@@ -13,6 +13,9 @@ from urllib.request import Request, urlopen
 from PIL import Image
 
 
+DEFAULT_SEMANTIC_LLM_MODEL = "gpt-6-luna"
+
+
 class LLMTransportError(RuntimeError):
     """Authentication, networking, refusal or unsupported API capability."""
 
@@ -74,7 +77,8 @@ class ResponsesJSONProvider:
 
     @classmethod
     def from_env(cls, model: str | None = None):
-        return cls(model=model or os.environ.get("SEMANTIC_LLM_MODEL", ""),
+        """Resolve explicit model, environment override, then the project default."""
+        return cls(model=model or os.environ.get("SEMANTIC_LLM_MODEL") or DEFAULT_SEMANTIC_LLM_MODEL,
                    api_key=os.environ.get("SEMANTIC_LLM_API_KEY", ""),
                    endpoint=os.environ.get("SEMANTIC_LLM_ENDPOINT", "https://api.openai.com/v1/responses"))
 
