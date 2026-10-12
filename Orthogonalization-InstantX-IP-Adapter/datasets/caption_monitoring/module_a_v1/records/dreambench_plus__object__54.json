@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/54",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/54",
+  "identity_term": "Poke Ball",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/54.txt",
+  "label_source_sha256": "ef5577e0c4e0a896399267da739444c6b0a966f108897ed4a8f99dc364242157",
+  "target_prompts": [
+    "A photo of a Poke Ball resting on a grassy field under a bright sun",
+    "A photograph of a Poke Ball on a busy city sidewalk, people walking by",
+    "A photo of a Poke Ball half-buried in sandy beach at dusk",
+    "A photograph of a Poke Ball on a wooden desk surrounded by Pokémon trading cards",
+    "A watercolor painting of a Poke Ball, with vivid splashes of red and white",
+    "An anime-style drawing of a Poke Ball being thrown by a trainer's hand",
+    "A retro-style illustration of a Poke Ball on a vintage Pokémon poster",
+    "A Poke Ball transforming into a colorful orb of light in a mystical forest",
+    "A gigantic Poke Ball floating in the sky over a futuristic city"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/54.jpg",
+  "image_sha256": "a6835caba5c64cdcaf829729fe9036f996f8e40b15d29f8c7f00c69779cb68a8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:40+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A Poke Ball with a glossy red upper shell, dark lower half, and a large circular side button stands on a dark floor.\"}",
+  "status": "PASS",
+  "source_caption": "A Poke Ball with a glossy red upper shell, dark lower half, and a large circular side button stands on a dark floor.",
+  "completed_at": "2026-10-12T18:30:45+09:00",
+  "seconds": 5.28
+}

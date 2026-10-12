@@ -1,0 +1,50 @@
+{
+  "case": "scene_content",
+  "reference": "dreambench_plus/style/02",
+  "input": {
+    "source_caption": "A sunset over the ocean reflects orange light across wet sand along a beach beneath pink-purple clouds.",
+    "target_prompt": "a city during sunset",
+    "identity_term": "sunset"
+  },
+  "model": "gpt-6-luna",
+  "started_at": "2026-10-12T19:54:43.531553+09:00",
+  "prompt_sha256": "6e3f0455481968a63e96a6dc00bbeabec820dda3696ed8eadb8a55f172b1596f",
+  "attempts": [
+    {
+      "raw_response": "{\"identity_term\":\"sunset\",\"preserved_spans\":[\"A sunset\"],\"retained_spans\":[\"orange light\",\"beneath pink-purple clouds.\"],\"neutral_spans\":[],\"components\":[{\"spans\":[\"over the ocean\"]},{\"spans\":[\"reflects\"]},{\"spans\":[\"across wet sand along a beach\"]}],\"conflicts\":[]}"
+    }
+  ],
+  "status": "PASS",
+  "output": {
+    "text": "A sunset over the ocean reflects orange light across wet sand along a beach beneath pink-purple clouds.",
+    "identity_term": "sunset",
+    "components": [
+      {
+        "spans": [
+          "over the ocean"
+        ]
+      },
+      {
+        "spans": [
+          "reflects"
+        ]
+      },
+      {
+        "spans": [
+          "across wet sand along a beach"
+        ]
+      }
+    ],
+    "preserved_spans": [
+      "A sunset"
+    ],
+    "neutral_spans": [],
+    "retained_spans": [
+      "orange light",
+      "beneath pink-purple clouds."
+    ],
+    "conditioned_on_target": "a city during sunset",
+    "source_policy": "target_aware_source_v1"
+  },
+  "all_removed": "A sunset orange light beneath pink-purple clouds."
+}

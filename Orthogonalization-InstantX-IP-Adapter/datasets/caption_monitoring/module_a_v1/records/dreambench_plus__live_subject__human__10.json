@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/10",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/10",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/10.txt",
+  "label_source_sha256": "bb61c613398731529ca230bc0e059f1f2bd02af8723345f621cec46b493bc668",
+  "target_prompts": [
+    "A photograph of a man reading a newspaper on a park bench",
+    "A photo of a man hiking through a mountainous landscape",
+    "A photograph of a man teaching in a well-lit classroom",
+    "A photo of a man playing guitar on a city sidewalk at dusk",
+    "A man depicted in anime style, battling a mythical creature with a sword",
+    "A retro-style illustration of a man driving a classic convertible along the coast",
+    "A minimalist sketch of a man sitting at a café, observed through the window",
+    "A man with transparent wings, hovering gently over a vibrant coral reef",
+    "A silhouette of a man casting shadows that morph into various animals on a theater stage"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/10.jpg",
+  "image_sha256": "78c8991b224c8d54dd6043a8cf9a09d5d338048280360fd134c9a764d17f4a08",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:46+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a man with swept-back dark hair and a full beard wearing a black hoodie, facing the camera against a blurred outdoor background\"}",
+  "status": "PASS",
+  "source_caption": "a man with swept-back dark hair and a full beard wearing a black hoodie, facing the camera against a blurred outdoor background",
+  "completed_at": "2026-10-12T18:29:49+09:00",
+  "seconds": 2.94
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/25",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/25",
+  "identity_term": "classical bust",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/25.txt",
+  "label_source_sha256": "08a9f3b262cd5d3ea7fa0daaba45e561bcb1147b33a5d7c0596cccfee0c49fa3",
+  "target_prompts": [
+    "A photo of a classical bust displayed in a dimly lit museum corner",
+    "A photograph of a classical bust covered in ivy, standing in an overgrown garden",
+    "A detailed photo of a classical bust with a faint smile, set against an old stone wall",
+    "A photorealistic image of a classical bust gazing out of a large library window",
+    "A watercolor painting of a classical bust surrounded by abstract shapes and vibrant colors",
+    "A digital illustration of a classical bust in a cyberpunk environment",
+    "A charcoal drawing of a classical bust, focusing on dramatic shadows and light",
+    "A classical bust slowly transforming into a cascade of colorful butterflies",
+    "A classical bust orbiting Earth as a surreal satellite, against a backdrop of a starry sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/25.jpg",
+  "image_sha256": "ae44c2085a73b9fb6abeba90910bd2f54a7fe71d5f3cf2c54d95d7341473524b",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:16+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a classical bust with a pale stone face, short beard, and draped robe displayed against a plain green wall\"}",
+  "status": "PASS",
+  "source_caption": "a classical bust with a pale stone face, short beard, and draped robe displayed against a plain green wall",
+  "completed_at": "2026-10-12T18:30:19+09:00",
+  "seconds": 2.73
+}

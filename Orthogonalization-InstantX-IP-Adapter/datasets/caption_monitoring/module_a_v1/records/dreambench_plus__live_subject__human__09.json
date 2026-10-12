@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/09",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/09",
+  "identity_term": "girl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/09.txt",
+  "label_source_sha256": "b3f24b8a0d0d9a5cddc9ab7485d9a0cc64b569357a5c152ea425f7b9c2243779",
+  "target_prompts": [
+    "A photograph of a girl jumping rope in a sunny park",
+    "A photo of a girl reading a book under a large oak tree",
+    "A photograph of a girl helping her grandmother in the garden",
+    "A photo of a girl playing with a puppy on a grassy field",
+    "An anime-style illustration of a girl flying a kite on a windy hill",
+    "A retro-style painting of a girl riding a classic bicycle through cobbled streets",
+    "A minimalist sketch of a girl gazing at stars through a telescope",
+    "A girl dancing on the petals of a giant sunflower, as butterflies swirl around",
+    "A depiction of a girl drawing the night sky with a piece of chalk, turning the pavement into a star-studded galaxy"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/09.jpg",
+  "image_sha256": "054e2dfaedc4acc6b40b6e67e53108b229299c94388af57744e054fad4274e21",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:46+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a girl with white hair and bright turquoise eyes, wearing a black high-collared outfit with red trim, facing forward against a city skyline at sunset\"}",
+  "status": "PASS",
+  "source_caption": "a girl with white hair and bright turquoise eyes, wearing a black high-collared outfit with red trim, facing forward against a city skyline at sunset",
+  "completed_at": "2026-10-12T18:29:49+09:00",
+  "seconds": 3.58
+}

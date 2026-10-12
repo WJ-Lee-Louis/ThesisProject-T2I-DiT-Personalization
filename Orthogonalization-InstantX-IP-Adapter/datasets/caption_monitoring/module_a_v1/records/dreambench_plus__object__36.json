@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/36",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/36",
+  "identity_term": "ceramic bowl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/36.txt",
+  "label_source_sha256": "405e0d772de9f96448d89dca05a553b7c0b24babc6bf0ebe46b1ac4a8aaba10f",
+  "target_prompts": [
+    "A photograph of a ceramic bowl filled with vibrant citrus fruits on a rustic wooden table",
+    "A photo of a ceramic bowl sitting on a rain-soaked windowsill",
+    "A high-resolution photo of a ceramic bowl holding freshly picked wildflowers in a sunny meadow",
+    "A photorealistic image of a ceramic bowl containing steaming soup on a chilly day",
+    "A watercolor painting of an antique ceramic bowl on a lace tablecloth",
+    "An anime-style illustration of a ceramic bowl filled with glowing magical orbs",
+    "A stylized digital art of a ceramic bowl shattered into pieces, each shard reflecting a different scene",
+    "A ceramic bowl slowly spinning in space, with each rotation revealing a different ancient civilization inside",
+    "A giant ceramic bowl in an enchanted forest, doubling as a home to a family of mythical creatures"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/36.jpg",
+  "image_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:25+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a ceramic bowl with a cream-colored surface decorated in green leafy patterns and three short feet, resting on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a ceramic bowl with a cream-colored surface decorated in green leafy patterns and three short feet, resting on a white surface",
+  "completed_at": "2026-10-12T18:30:27+09:00",
+  "seconds": 2.45
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/63",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/63",
+  "identity_term": "cocktail",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/63.txt",
+  "label_source_sha256": "516e21358321b8db507e36874b119113dd4a7e6c6abc9a7703178cb08c2b2c81",
+  "target_prompts": [
+    "A photograph of a cocktail with a vibrant umbrella on a sunny beachside bar",
+    "A photo of a cocktail being poured dramatically at a high-end nightclub",
+    "A detailed photograph of a cocktail garnished with fresh mint and a twist of lime",
+    "A photorealistic image of a cocktail on a rooftop bar with city lights in the background",
+    "An art deco style illustration of a cocktail at a 1920s themed party",
+    "A watercolor painting of a cocktail surrounded by tropical flowers",
+    "A minimalist digital drawing of a cocktail with bold, geometric shapes",
+    "A cocktail that changes its color and ingredients as classical music plays in the background",
+    "A magical cocktail that glows with an ethereal light, floating above an enchanted forest clearing"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/63.jpg",
+  "image_sha256": "77a4d05a253d73c384a5d2718f591160215b0194e44ba4eec558defffeb39f49",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:48+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A cocktail with an orange-red drink in a cut-glass tumbler, topped with sliced strawberries on a skewer, sits on a white perforated table against a turquoise background\"}",
+  "status": "PASS",
+  "source_caption": "A cocktail with an orange-red drink in a cut-glass tumbler, topped with sliced strawberries on a skewer, sits on a white perforated table against a turquoise background",
+  "completed_at": "2026-10-12T18:30:51+09:00",
+  "seconds": 2.72
+}

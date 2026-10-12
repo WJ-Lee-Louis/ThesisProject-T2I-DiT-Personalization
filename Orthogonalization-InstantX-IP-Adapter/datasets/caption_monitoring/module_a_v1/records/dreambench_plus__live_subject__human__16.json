@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/16",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/16",
+  "identity_term": "woman",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/16.txt",
+  "label_source_sha256": "4e22ab3a3b822bcdda543a7c0539fe6dceb4277780da4ed3eb7b1fc0c46a7600",
+  "target_prompts": [
+    "A photograph of a woman strolling through a vibrant street market",
+    "A photo of a woman gazing at the horizon on a rocky coastal cliff",
+    "A photograph of a woman planting flowers in a sunlit garden",
+    "A photo of a woman sitting at a quaint café terrace, reading a newspaper",
+    "A woman depicted in an abstract expressionist style, with bold, swirling colors",
+    "A retro-style illustration of a woman chatting on a vintage telephone in a mid-century modern living room",
+    "An anime-style drawing of a woman flying with mechanical wings in a futuristic cityscape",
+    "A woman weaving a tapestry that comes to life, depicting scenes as she imagines them",
+    "A depiction of a woman dissolving into a flock of butterflies as she walks through a mystical forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/16.jpg",
+  "image_sha256": "fe57c734ec38d08af9200865e88d6c8073b69368e572e413301ce429c65b976c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:53+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a woman with blue skin dotted with pale markings, large yellow-green eyes, and long dark braids, wearing a necklace and looking slightly to the side\"}",
+  "status": "PASS",
+  "source_caption": "a woman with blue skin dotted with pale markings, large yellow-green eyes, and long dark braids, wearing a necklace and looking slightly to the side",
+  "completed_at": "2026-10-12T18:29:56+09:00",
+  "seconds": 3.58
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/01",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/01",
+  "identity_term": "pixel art",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/01.txt",
+  "label_source_sha256": "ec28bc0775f4bd92fa8fa53d01a0b16ea5626ba493b44d15092fb8fabae58e82",
+  "target_prompts": [
+    "A photo of a bustling cityscape, rendered in pixel art",
+    "A photograph of a quaint cottage surrounded by flowers, in pixel art style",
+    "A painting of a serene lake at dusk, depicted in pixel art",
+    "A simple street scene with pedestrians, captured in pixel art",
+    "A vintage car parked on a cobblestone street, in pixel art style",
+    "A collection of arcade video game machines, in pixel art style",
+    "A playful puppy chasing a ball, illustrated in pixel art",
+    "A tiny dragon perched on a pixel art cloud",
+    "A magical portal opening in a pixel art enchanted forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/01.jpg",
+  "image_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:50+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a retro desktop computer with an orange-and-yellow checkered casing and a blue checkered screen, connected by a cord to a mouse, in pixel art\"}",
+  "status": "PASS",
+  "source_caption": "a retro desktop computer with an orange-and-yellow checkered casing and a blue checkered screen, connected by a cord to a mouse, in pixel art",
+  "completed_at": "2026-10-12T18:30:55+09:00",
+  "seconds": 5.08
+}

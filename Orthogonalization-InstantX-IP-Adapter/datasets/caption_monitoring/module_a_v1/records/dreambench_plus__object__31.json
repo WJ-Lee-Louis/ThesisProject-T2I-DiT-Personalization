@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/31",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/31",
+  "identity_term": "piggy bank",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/31.txt",
+  "label_source_sha256": "e085b88a31edfead29a1834680926c02787861966e5a6d3bf5ab7a79b8349de0",
+  "target_prompts": [
+    "A photograph of a piggy bank on a child’s desk, surrounded by scattered coins and colorful stationery",
+    "A photo of a piggy bank sitting on a sunny windowsill next to a potted plant",
+    "A detailed photograph of a piggy bank on a kitchen counter with grocery receipts and keys around it",
+    "A photo of a piggy bank on an old wooden shelf, partly in shadows, in an attic",
+    "A watercolor painting of a piggy bank in a whimsical style, surrounded by magical floating coins",
+    "An ink sketch of a piggy bank, cracked and repaired, symbolizing resilience",
+    "A retro-style illustration of a piggy bank on a vintage radio, evoking mid-20th-century vibes",
+    "A piggy bank floating in space, with planets and stars reflected in its glossy surface",
+    "A piggy bank transforming into a real pig, coins falling out as it shakes itself joyfully in a meadow"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/31.jpg",
+  "image_sha256": "a2eda27f03efacd55f8f2f16a1582e30362618dcb949d54b49b5c8825ab21475",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:20+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a piggy bank with a rounded pink body, black eyes, and black nostrils standing on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a piggy bank with a rounded pink body, black eyes, and black nostrils standing on a white surface",
+  "completed_at": "2026-10-12T18:30:23+09:00",
+  "seconds": 2.59
+}

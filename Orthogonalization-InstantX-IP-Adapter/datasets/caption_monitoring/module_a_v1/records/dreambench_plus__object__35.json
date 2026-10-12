@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/35",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/35",
+  "identity_term": "vintage computer",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/35.txt",
+  "label_source_sha256": "50f6ee3d305dc41b8defd17dc2c506795692125ad2ed2a72a73b6b74050d612b",
+  "target_prompts": [
+    "A photograph of a vintage computer displayed in a museum",
+    "A photo of a vintage computer set up on an old wooden desk with books around it",
+    "A detailed photograph of a vintage computer in an abandoned office, dust covering its surface",
+    "A photo of a vintage computer with floppy disks scattered next to it",
+    "A cartoon-style illustration of a vintage computer with exaggerated colorful components",
+    "A retro-style painting of a vintage computer in a 1980s styled room",
+    "An anime-style drawing of a vintage computer as a sentient being in a digital world",
+    "A vintage computer with its screen displaying a portal to a neon cyberpunk cityscape",
+    "A vintage computer floating in space, transmitting data streams to distant galaxies"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/35.jpg",
+  "image_sha256": "1441c7bf8e7f2c3d2f5a2384d73e320713e4d964b07c90560f0f03cb5ce4a3a0",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:23+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a vintage computer with a cream-colored case and built-in screen, sitting with its keyboard and wired mouse on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a vintage computer with a cream-colored case and built-in screen, sitting with its keyboard and wired mouse on a white surface",
+  "completed_at": "2026-10-12T18:30:27+09:00",
+  "seconds": 3.84
+}

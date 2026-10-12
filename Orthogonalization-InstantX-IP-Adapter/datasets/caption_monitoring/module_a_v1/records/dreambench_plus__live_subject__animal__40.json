@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/40",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/40",
+  "identity_term": "white tiger",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/40.txt",
+  "label_source_sha256": "e886d9db7be130dfc3830523d6f5f2bf64b6156d0712762dbb05c5f4da46c9ab",
+  "target_prompts": [
+    "A photo of a white tiger prowling through a misty jungle at dawn",
+    "A photograph of a white tiger resting by a serene lake",
+    "A photo capturing a white tiger leaping gracefully over a fallen tree trunk",
+    "A photograph of a white tiger with its cubs in a snowy clearing",
+    "A digital painting of a white tiger glowing under the moonlight in a mystical forest",
+    "An anime-style illustration of a white tiger standing on a cliff",
+    "A retro-style poster of a white tiger in a lush, vibrant jungle environment",
+    "A white tiger walking through an ancient temple",
+    "A white tiger with wings made of shimmering ice crystals, soaring above the northern lights"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/40.jpg",
+  "image_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:33+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A white tiger with pale fur and dark stripes stands among green foliage, its head turned toward the viewer.\"}",
+  "status": "PASS",
+  "source_caption": "A white tiger with pale fur and dark stripes stands among green foliage, its head turned toward the viewer.",
+  "completed_at": "2026-10-12T18:29:36+09:00",
+  "seconds": 3.88
+}

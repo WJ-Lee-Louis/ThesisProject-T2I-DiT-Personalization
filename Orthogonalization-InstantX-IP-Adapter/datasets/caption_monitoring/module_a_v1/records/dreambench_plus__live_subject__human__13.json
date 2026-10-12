@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/13",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/13",
+  "identity_term": "girl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/13.txt",
+  "label_source_sha256": "c2f15c0438930ca58b7e7553e8a186cdb72f670279a1e639a0ffbd0f59afa233",
+  "target_prompts": [
+    "A photo of a girl blowing dandelions in a sunny field",
+    "A photograph of a girl riding a bicycle through a quiet village",
+    "A photo of a girl sitting on a porch swing reading a book",
+    "A photograph of a girl building a sandcastle on a beach",
+    "An anime-style drawing of a girl flying a kite on a windy day",
+    "A minimalist style sketch of a girl sitting cross-legged in a circle of flowers",
+    "A retro-style illustration of a girl with a vintage camera taking photos",
+    "A girl wandering through a forest where the trees are giant colored pencils",
+    "A depiction of a girl holding a lantern that glows with the northern lights, illuminating the snowy path ahead"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/13.jpg",
+  "image_sha256": "72baa304e257a83c802038c4f552a9f70efc07bd7b4ea0d67d3acb5bb13b44a4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:49+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a girl with very long dark hair tipped in orange, wearing a pink patterned kimono and sandals with a green bamboo gag across her mouth, standing with her arms outstretched against a red background dotted with small flowers\"}",
+  "status": "PASS",
+  "source_caption": "a girl with very long dark hair tipped in orange, wearing a pink patterned kimono and sandals with a green bamboo gag across her mouth, standing with her arms outstretched against a red background dotted with small flowers",
+  "completed_at": "2026-10-12T18:29:54+09:00",
+  "seconds": 4.55
+}

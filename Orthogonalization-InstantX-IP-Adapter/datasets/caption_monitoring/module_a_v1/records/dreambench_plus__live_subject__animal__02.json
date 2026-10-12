@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/02",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/02",
+  "identity_term": "kitten",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/02.txt",
+  "label_source_sha256": "cf8b34bb89823395b9a75d2ac1f47d23f70f8d848fcadd07b5f7c0a1ba975811",
+  "target_prompts": [
+    "A photograph of a kitten sleeping curled up in a sunbeam",
+    "A photo of a kitten playfully chasing a fluttering butterfly in a garden",
+    "A detailed photograph of a kitten exploring a stack of books on a quiet afternoon",
+    "A photo of a kitten gazing curiously out of a slightly open window",
+    "An anime-style illustration of a kitten with sparkling eyes",
+    "A watercolor painting of a kitten nestled among colorful autumn leaves",
+    "A retro-style graphic of a kitten wearing a tiny bow tie and perched on an old phonograph",
+    "A kitten made of clouds drifting above a bustling cityscape at sunset",
+    "A tiny kitten navigating a vast, otherworldly landscape on a leaf sailboat"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/02.jpg",
+  "image_sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:28:57+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a kitten with fluffy brown-and-gray striped fur sitting on a gray tiled floor\"}",
+  "status": "PASS",
+  "source_caption": "a kitten with fluffy brown-and-gray striped fur sitting on a gray tiled floor",
+  "completed_at": "2026-10-12T18:29:02+09:00",
+  "seconds": 4.55
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/00",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/00",
+  "identity_term": "pencil sketch",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/00.txt",
+  "label_source_sha256": "beba7456ee23c0beac92e7e72b5deb71f056d4788d61975b4e741de56b2de70e",
+  "target_prompts": [
+    "A photo of a quiet forest path, in pencil sketch style",
+    "A photograph of an old wooden bridge over a stream, in pencil sketch style",
+    "A painting of a bustling street market, captured in pencil sketch style",
+    "A detailed drawing of an antique clock, in pencil sketch style",
+    "A pair of worn leather boots, rendered in pencil sketch style",
+    "A serene landscape with rolling hills and a lone tree, in pencil sketch style",
+    "An expressive portrait of an elderly man with deep wrinkles, in pencil sketch style",
+    "A mythical unicorn resting under an ancient oak tree, in pencil sketch style",
+    "A scene of tiny humans living inside a giant's watch, in pencil sketch style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/00.jpg",
+  "image_sha256": "0ee305167c7e046ad69888dcbb26b236e8d8330cc9866253bb82ea9a01bc1359",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:49+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a pencil sketch of a dog with dark fur, a lighter floppy ear, and its head turned to the side against a plain white background\"}",
+  "status": "PASS",
+  "source_caption": "a pencil sketch of a dog with dark fur, a lighter floppy ear, and its head turned to the side against a plain white background",
+  "completed_at": "2026-10-12T18:30:54+09:00",
+  "seconds": 5.0
+}

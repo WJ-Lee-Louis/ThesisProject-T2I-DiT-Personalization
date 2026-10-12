@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/15",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/15",
+  "identity_term": "monochromatic ink sketch",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/15.txt",
+  "label_source_sha256": "f2b5560b2ef1d02b1e9072554d5f35cf538f21ee20119f745846a1847fe6bddc",
+  "target_prompts": [
+    "A photo of a serene lake bordered by willow trees, depicted in a monochromatic ink sketch style",
+    "A drawing of a bustling city street, with pedestrians and cars, rendered in monochromatic ink sketch",
+    "A painting of an old stone bridge over a quiet stream, in a monochromatic ink sketch style",
+    "An illustration of a quaint cottage surrounded by a flower garden, in monochromatic ink sketch",
+    "A cat perched on a windowsill, monochromatic ink sketch style",
+    "A teapot steaming gently on an old wooden table, in a monochromatic ink sketch style",
+    "A pair of worn leather boots, illustrated in a monochromatic ink sketch style",
+    "A mythical forest with trees that whisper secrets, visualized in a monochromatic ink sketch style",
+    "A city floating in the clouds, depicted as a monochromatic ink sketch"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/15.jpg",
+  "image_sha256": "4b3a83e26079e82ebaf5fe7e220909d4d26538cb5c0a0391f77e6590210f4a5a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:31:07+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a monochromatic ink sketch of a black-and-white dog sitting with its body turned to the side against a plain white background\"}",
+  "status": "PASS",
+  "source_caption": "a monochromatic ink sketch of a black-and-white dog sitting with its body turned to the side against a plain white background",
+  "completed_at": "2026-10-12T18:31:11+09:00",
+  "seconds": 3.84
+}

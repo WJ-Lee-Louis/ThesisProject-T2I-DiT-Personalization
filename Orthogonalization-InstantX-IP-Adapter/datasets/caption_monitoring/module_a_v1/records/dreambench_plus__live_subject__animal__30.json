@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/30",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/30",
+  "identity_term": "lion",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/30.txt",
+  "label_source_sha256": "f98a59a0a16b3be1c99100307da8da6121b8e3392c418703ce030535aadfacb9",
+  "target_prompts": [
+    "A photograph of a lion lounging under the shade of an acacia tree on the savannah",
+    "A photo of a lion roaring majestically atop a rocky outcrop during sunset",
+    "A detailed photograph of a lion grooming its cub in the grasslands",
+    "A photo capturing a lion drinking water from a serene lake",
+    "A stylized watercolor of a lion surrounded by colorful foliage",
+    "An anime-style illustration of a lion with exaggerated, flowing mane under a full moon",
+    "A retro-style digital painting of a lion in a 1950s American wildlife magazine cover design",
+    "A lion with a mane made of golden autumn leaves, standing regally in a forest made of birch trees",
+    "A lion walking through a portal from ancient Egypt into the modern world"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/30.jpg",
+  "image_sha256": "fcf95e7b1c93c5351283115169f5c6a1ddeb46265d8cab740b7df14097aeb50c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:24+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a lion with a golden coat and thick dark brown mane sitting on a rock amid grass beneath a blue, cloudy sky\"}",
+  "status": "PASS",
+  "source_caption": "a lion with a golden coat and thick dark brown mane sitting on a rock amid grass beneath a blue, cloudy sky",
+  "completed_at": "2026-10-12T18:29:27+09:00",
+  "seconds": 3.17
+}

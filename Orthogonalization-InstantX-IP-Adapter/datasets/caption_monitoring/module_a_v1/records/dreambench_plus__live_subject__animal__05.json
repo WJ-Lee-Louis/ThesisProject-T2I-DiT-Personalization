@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/05",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/05",
+  "identity_term": "penguin",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/05.txt",
+  "label_source_sha256": "dfad18f9f9fada895348610ade0e763993ffc70c2a89804f645c6e18df6e945b",
+  "target_prompts": [
+    "A photograph of a penguin waddling on an icy landscape",
+    "A photo of a penguin diving into the Antarctic sea",
+    "A detailed photograph of a penguin feeding its chick",
+    "A photograph of a penguin standing among a group, with a snowy mountain backdrop",
+    "A cartoon-style drawing of a penguin wearing a bow tie and top hat",
+    "A watercolor painting of a penguin sliding on ice, with splashes of icy blue and white",
+    "An anime-style illustration of a penguin superhero flying above the clouds",
+    "A penguin dancing under the aurora borealis, its feathers shimmering with the colors of the light",
+    "A penguin astronaut exploring the surface of Mars, with a tiny flag planted next to it"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/05.jpg",
+  "image_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:01+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a penguin with a black head and white body standing on snow with its flippers held out\"}",
+  "status": "PASS",
+  "source_caption": "a penguin with a black head and white body standing on snow with its flippers held out",
+  "completed_at": "2026-10-12T18:29:04+09:00",
+  "seconds": 2.97
+}

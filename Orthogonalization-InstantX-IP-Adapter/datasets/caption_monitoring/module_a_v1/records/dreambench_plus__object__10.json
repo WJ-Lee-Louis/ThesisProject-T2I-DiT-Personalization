@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/10",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/10",
+  "identity_term": "flamingo float",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/10.txt",
+  "label_source_sha256": "4f31dc3df4882576a77810527ca2a9fecc279a2a40c6d5f644cdb10e495b3190",
+  "target_prompts": [
+    "A photograph of a flamingo float in a bustling pool party scene",
+    "A photo of a child lounging on a flamingo float in a serene backyard pool",
+    "A detailed photo of a flamingo float drifting on a tranquil lake at sunset",
+    "A photograph of a flamingo float surrounded by colorful beach balls in a summer pool",
+    "A watercolor painting of a flamingo float on a reflective pond, with lilies around",
+    "An anime-style illustration of a fantasy character riding a giant flamingo float",
+    "A minimalist sketch of a flamingo float isolated on a stark white background",
+    "A flamingo float transforming into a real flamingo, taking flight above a mystical lagoon",
+    "A scene depicting tiny surreal creatures having a party on a flamingo float in a giant bubble floating through the sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/10.jpg",
+  "image_sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:05+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a flamingo float with a bright pink body and curved neck bobbing on turquoise water, with low hills in the distance\"}",
+  "status": "PASS",
+  "source_caption": "a flamingo float with a bright pink body and curved neck bobbing on turquoise water, with low hills in the distance",
+  "completed_at": "2026-10-12T18:30:08+09:00",
+  "seconds": 3.58
+}

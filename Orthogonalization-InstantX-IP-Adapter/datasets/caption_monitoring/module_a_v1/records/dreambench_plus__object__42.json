@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/42",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/42",
+  "identity_term": "hut",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/42.txt",
+  "label_source_sha256": "ece7f2ea234acd5675fca0ecca378511107b013c600b220fc29131cb43429bf7",
+  "target_prompts": [
+    "A photo of a wooden hut nestled among snow-covered pines",
+    "A photograph of a stilt hut perched over a tranquil tropical lagoon",
+    "A photo of a rustic hut with a thatched roof in a lush green field",
+    "A photograph of a small hut at the edge of a desert, under a blazing sunset",
+    "A watercolor painting of a colorful hut on a beach, with waves crashing nearby",
+    "An ink sketch of an ancient hut hidden deep in a misty forest",
+    "A digital illustration of a futuristic hut on an alien planet, glowing under two moons",
+    "A hut transforming into a bird, its wooden planks sprouting feathers as it takes flight",
+    "An underwater hut made of coral and sea glass, with fish swimming through its open windows"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/42.jpg",
+  "image_sha256": "4e012a57d5edfd529eac639ef298ef9fad0acdfa2b6469d8b97bb8c4e2a8614f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:30+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a hut with rounded reddish walls, a thick gray thatched roof, and a wooden door standing among trees on a dirt clearing\"}",
+  "status": "PASS",
+  "source_caption": "a hut with rounded reddish walls, a thick gray thatched roof, and a wooden door standing among trees on a dirt clearing",
+  "completed_at": "2026-10-12T18:30:34+09:00",
+  "seconds": 4.24
+}

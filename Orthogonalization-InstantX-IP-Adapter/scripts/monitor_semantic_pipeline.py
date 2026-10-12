@@ -75,14 +75,14 @@ def audit(conditioning):
     records = []
     for origin, analysis in conditioning.selected:
         assert analysis.prompt_for_subset(range(len(analysis.components))) == analysis.text
-        fixed = [*analysis.preserved_spans, *(analysis.neutral_spans or ())]
+        fixed = [*analysis.preserved_spans, *(analysis.retained_spans or ()), *(analysis.neutral_spans or ())]
         records.append(dict(origin=origin, component_count=len(analysis.components),
             all_removed_prompt=analysis.prompt_for_subset([]), fixed_spans=fixed))
     plan = component_contrast_plan(conditioning)
     originals = dict(conditioning.selected)
     for name, pairs in plan:
         analysis = originals[name.split(':')[0]]
-        fixed = [*analysis.preserved_spans, *(analysis.neutral_spans or ())]
+        fixed = [*analysis.preserved_spans, *(analysis.retained_spans or ()), *(analysis.neutral_spans or ())]
         for pair in pairs:
             for prompt in pair:
                 for span in fixed:
@@ -103,6 +103,10 @@ def analyze(output, model):
         provider.case_id = case['case_id']
         directory = output / case['case_id']
         if all((directory / f'conditioning_{s}.json').exists() for s in ('local', 'factorial')):
+            for strategy in ('local', 'factorial'):
+                cached = SemanticConditioning.from_dict(json.loads((directory / f'conditioning_{strategy}.json').read_text(encoding='utf-8')))
+                if cached.source is None or cached.source.conditioned_on_target != case['target_prompt']:
+                    raise ValueError('Legacy or mismatched source cache; use a new output directory')
             print(case['case_id'], 'cached analysis', flush=True)
             statuses.append(dict(case_id=case['case_id'], status='cached'))
             continue
@@ -120,11 +124,11 @@ def analyze(output, model):
             save(directory / 'progress.json', record)
             print(case['case_id'], 'source analysis', flush=True)
             provider.stage = 'source_analysis'
-            source = llm.analyze(source_caption, case['identity_term'])
+            source = llm.analyze_source(source_caption, case['target_prompt'], case['identity_term'])
             save(directory / 'source_analysis.json', source.to_dict())
             print(case['case_id'], 'target analysis', flush=True)
             provider.stage = 'target_analysis'
-            target = llm.analyze(case['target_prompt'], case['identity_term'])
+            target = llm.analyze_target(case['target_prompt'], case['identity_term'])
             save(directory / 'target_analysis.json', target.to_dict())
             for strategy in ('local', 'factorial'):
                 conditioning = SemanticConditioning(target, source, 'source_target', strategy)

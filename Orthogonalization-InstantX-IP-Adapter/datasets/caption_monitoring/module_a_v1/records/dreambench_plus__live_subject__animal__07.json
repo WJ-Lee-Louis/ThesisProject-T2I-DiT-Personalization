@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/07",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/07",
+  "identity_term": "dog",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/07.txt",
+  "label_source_sha256": "ab390575f61e59e9e01590a3feac9b7a7b650484a144b093a5419cba89ce2da5",
+  "target_prompts": [
+    "A photograph of a dog lazily sunbathing by a serene lake",
+    "A photo of a dog eagerly fetching a frisbee in a lush green park",
+    "A photograph of a dog sitting attentively at a bustling street market",
+    "A photo of a dog curled up beside a crackling campfire under starlight",
+    "A watercolor painting of a dog wearing a whimsical wizard hat",
+    "An anime-style illustration of a dog heroically standing atop a windswept hill",
+    "A retro-style digital drawing of a dog in a detective's trench coat and fedora",
+    "A dog navigating a tiny sailboat through the swirling mists of a lake",
+    "A dog with butterfly wings fluttering amidst a vibrant field of wildflowers"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/07.jpg",
+  "image_sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:04+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a dog with reddish-brown fur and a white chest standing in shallow surf at the pebbled shoreline with its tongue out\"}",
+  "status": "PASS",
+  "source_caption": "a dog with reddish-brown fur and a white chest standing in shallow surf at the pebbled shoreline with its tongue out",
+  "completed_at": "2026-10-12T18:29:07+09:00",
+  "seconds": 3.55
+}

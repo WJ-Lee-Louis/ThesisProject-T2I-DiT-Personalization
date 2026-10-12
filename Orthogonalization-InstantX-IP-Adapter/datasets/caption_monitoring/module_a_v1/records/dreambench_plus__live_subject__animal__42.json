@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/42",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/42",
+  "identity_term": "puppy",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/42.txt",
+  "label_source_sha256": "7bb66fa6e80212adb9770c07d25cea39643a0c0d9b743c58d0932121952de3b2",
+  "target_prompts": [
+    "A photograph of a puppy playing with a colorful ball in a sunny park",
+    "A photo of a puppy sleeping peacefully in a cozy basket",
+    "A photograph of a puppy splashing in a puddle during a light rain",
+    "A photo of a puppy eagerly following a butterfly in a flower garden",
+    "An anime-style illustration of a puppy with oversized, sparkling eyes, holding a small umbrella",
+    "A watercolor painting of a puppy surrounded by autumn leaves, with soft, blending colors",
+    "A retro-style digital drawing of a puppy wearing a tiny detective hat, looking curiously at a magnifying glass",
+    "A puppy floating gently on a cloud, drifting over a lush, green landscape below",
+    "A tiny puppy with miniature wings, playfully chasing floating dandelions in a magical garden"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/42.jpg",
+  "image_sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:33+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a puppy with fluffy tan fur runs toward the camera with its mouth open on a paved surface in front of stone steps\"}",
+  "status": "PASS",
+  "source_caption": "a puppy with fluffy tan fur runs toward the camera with its mouth open on a paved surface in front of stone steps",
+  "completed_at": "2026-10-12T18:29:36+09:00",
+  "seconds": 2.89
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/23",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/23",
+  "identity_term": "vintage camera",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/23.txt",
+  "label_source_sha256": "6724880e7aeeabe8a3cb34c1119873586ab5b1f304760e2ccb8c9a5fe8a1aa94",
+  "target_prompts": [
+    "A photograph of a vintage camera on a rustic wooden table surrounded by old books",
+    "A photo of a vintage camera hanging from a leather strap against a backdrop of cobblestone streets",
+    "A detailed photograph of a vintage camera positioned on a rock by a mountain stream",
+    "A photo of a vintage camera set beside a window with morning light streaming in",
+    "A watercolor painting of a vintage camera, palette softened to pastel shades, placed on a lace tablecloth",
+    "A digital illustration in retro style featuring a vintage camera with a backdrop of 1950s diner",
+    "An anime-style drawing of a vintage camera with exaggerated shiny lens and colorful straps",
+    "A vintage camera with butterfly wings floating through a surreal, dreamy forest",
+    "A vintage camera transforming into a small, quaint house in an enchanted village"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/23.jpg",
+  "image_sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:15+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A vintage camera with a cream-and-black rectangular body, a prominent round lens, and a black wrist strap resting on a brown tabletop.\"}",
+  "status": "PASS",
+  "source_caption": "A vintage camera with a cream-and-black rectangular body, a prominent round lens, and a black wrist strap resting on a brown tabletop.",
+  "completed_at": "2026-10-12T18:30:18+09:00",
+  "seconds": 2.86
+}

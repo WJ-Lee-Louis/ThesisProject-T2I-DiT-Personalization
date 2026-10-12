@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/07",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/07",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/07.txt",
+  "label_source_sha256": "7a1451b2bbe3ca7a58681b6db8f31b73ba264513590c016b0b97127edd60c6a7",
+  "target_prompts": [
+    "A photograph of a man reading a newspaper on a park bench",
+    "A photo of a man hiking through a mountainous terrain",
+    "A photograph of a man teaching in a bustling classroom",
+    "A photo of a man playing guitar on a city street at night",
+    "A watercolor portrayal of a man meditating by a serene lake",
+    "An anime-style illustration of a man flying with mechanical wings",
+    "A retro-style drawing of a man driving a classic convertible on a coastal road",
+    "A man walking through a mirror into a parallel universe, where the scenery shifts from urban to a lush forest",
+    "A depiction of a man shrinking to the size of an ant, exploring a world hidden within the grass"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/07.jpg",
+  "image_sha256": "041002bb03f887a1ad87990cedb41a226fab9187db3da60c655bc1e352c969b4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:43+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a man with long white hair, thick black glasses, and prominent white sideburns facing the camera in a dark coat against a blurred background\"}",
+  "status": "PASS",
+  "source_caption": "a man with long white hair, thick black glasses, and prominent white sideburns facing the camera in a dark coat against a blurred background",
+  "completed_at": "2026-10-12T18:29:47+09:00",
+  "seconds": 4.09
+}

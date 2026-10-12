@@ -1,0 +1,50 @@
+{
+  "case": "dog_location",
+  "reference": "dreambench/dog",
+  "input": {
+    "source_caption": "a dog with fluffy golden and white fur sitting on a ledge with its tongue out in front of an orange wall",
+    "target_prompt": "a dog standing on a beach",
+    "identity_term": "dog"
+  },
+  "model": "gpt-6-luna",
+  "started_at": "2026-10-12T19:54:33.550181+09:00",
+  "prompt_sha256": "6e3f0455481968a63e96a6dc00bbeabec820dda3696ed8eadb8a55f172b1596f",
+  "attempts": [
+    {
+      "raw_response": "{\"identity_term\":\"dog\",\"preserved_spans\":[\"a dog\"],\"retained_spans\":[\"with fluffy golden and white fur\",\"with its tongue out\"],\"neutral_spans\":[],\"components\":[{\"spans\":[\"sitting\"]},{\"spans\":[\"on a ledge\"]},{\"spans\":[\"in front of an orange wall\"]}],\"conflicts\":[]}"
+    }
+  ],
+  "status": "PASS",
+  "output": {
+    "text": "a dog with fluffy golden and white fur sitting on a ledge with its tongue out in front of an orange wall",
+    "identity_term": "dog",
+    "components": [
+      {
+        "spans": [
+          "sitting"
+        ]
+      },
+      {
+        "spans": [
+          "on a ledge"
+        ]
+      },
+      {
+        "spans": [
+          "in front of an orange wall"
+        ]
+      }
+    ],
+    "preserved_spans": [
+      "a dog"
+    ],
+    "neutral_spans": [],
+    "retained_spans": [
+      "with fluffy golden and white fur",
+      "with its tongue out"
+    ],
+    "conditioned_on_target": "a dog standing on a beach",
+    "source_policy": "target_aware_source_v1"
+  },
+  "all_removed": "a dog with fluffy golden and white fur with its tongue out"
+}

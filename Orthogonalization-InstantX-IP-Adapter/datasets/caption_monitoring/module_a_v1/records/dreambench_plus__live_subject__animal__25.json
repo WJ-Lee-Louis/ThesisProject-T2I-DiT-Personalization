@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/25",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/25",
+  "identity_term": "Sphynx cat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/25.txt",
+  "label_source_sha256": "066c03092312353b1f6f4eddabd47230257ae8fe201c6546f6f973952192689c",
+  "target_prompts": [
+    "A photograph of a Sphynx cat lounging in a sunny windowsill",
+    "A photo of a Sphynx cat perched on a stack of old books",
+    "A detailed photograph of a Sphynx cat exploring a lush garden",
+    "A photo of a Sphynx cat peeking out from behind a curtain",
+    "An anime-style illustration of a Sphynx cat wearing a tiny wizard hat and cape",
+    "A watercolor painting of a Sphynx cat nestled in a colorful quilt",
+    "A retro-style digital drawing of a Sphynx cat sitting beside a gramophone",
+    "A Sphynx cat wandering through an ancient Egyptian temple, its skin patterns glowing with hieroglyphics",
+    "A Sphynx cat gazing into a mirror, and the reflection shows a majestic lion"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/25.jpg",
+  "image_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:20+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a Sphynx cat with pink, wrinkled skin and large ears looking to the left against a dark background\"}",
+  "status": "PASS",
+  "source_caption": "a Sphynx cat with pink, wrinkled skin and large ears looking to the left against a dark background",
+  "completed_at": "2026-10-12T18:29:23+09:00",
+  "seconds": 3.06
+}

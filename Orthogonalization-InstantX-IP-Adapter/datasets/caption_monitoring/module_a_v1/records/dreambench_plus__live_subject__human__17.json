@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/17",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/17",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/17.txt",
+  "label_source_sha256": "5994fdde4059a65276af2ec144757088a25e72ff5510e262cd8af0c27bb85868",
+  "target_prompts": [
+    "A photograph of a man strolling through a vibrant autumn park",
+    "A photo of a man gazing out over a city from a high rooftop at dusk",
+    "A photograph of a man planting flowers in a sunny garden",
+    "A photo of a man browsing through books in an old library",
+    "A watercolor painting of a man sitting by a tranquil lake",
+    "An anime-style drawing of a man exploring a futuristic cityscape",
+    "A retro-style illustration of a man dancing at a 1950s sock hop",
+    "A man ascending a staircase made of falling autumn leaves, each step vanishing into a mist",
+    "A depiction of a man weaving colorful dreams into the night sky, stars twinkling around her fingers"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/17.jpg",
+  "image_sha256": "169fd2f8245fc49996cc45a72de2a760b5a6d7e81933832557535795196e3359",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:54+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A man with swept-back blond hair and curled forelocks, wearing a purple outfit with gold trim, points toward the viewer against a plain white background.\"}",
+  "status": "PASS",
+  "source_caption": "A man with swept-back blond hair and curled forelocks, wearing a purple outfit with gold trim, points toward the viewer against a plain white background.",
+  "completed_at": "2026-10-12T18:29:57+09:00",
+  "seconds": 3.41
+}

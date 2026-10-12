@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/08",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/08",
+  "identity_term": "raccoon",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/08.txt",
+  "label_source_sha256": "5ad71c097ffd931ad66990500d207284e72a6479a28bcbedf6d6a12f3ecc7943",
+  "target_prompts": [
+    "A photo of a raccoon scavenging through a suburban trash can at night",
+    "A photograph of a raccoon perched on a tree branch, looking curiously at the camera",
+    "A photo of a raccoon standing by a stream, washing food with its paws",
+    "A photograph of a raccoon nestled in the fallen leaves of a forest during autumn",
+    "An anime-style illustration of a raccoon wearing a detective's hat, investigating a garden",
+    "A watercolor painting of a raccoon sitting amidst a field of wildflowers",
+    "A minimalist sketch of a raccoon, depicted with sleek, simple lines",
+    "A raccoon piloting a tiny, makeshift raft down a bustling city canal under a starry sky",
+    "A depiction of a raccoon with a backpack, journeying through a mystical forest filled with giant, luminous mushrooms"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/08.jpg",
+  "image_sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:04+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a raccoon with fluffy brown-gray fur and a dark mask across its eyes crouching in green grass with one paw raised\"}",
+  "status": "PASS",
+  "source_caption": "a raccoon with fluffy brown-gray fur and a dark mask across its eyes crouching in green grass with one paw raised",
+  "completed_at": "2026-10-12T18:29:08+09:00",
+  "seconds": 3.83
+}

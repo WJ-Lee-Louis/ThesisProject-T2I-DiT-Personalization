@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/02",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/02",
+  "identity_term": "vintage television",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/02.txt",
+  "label_source_sha256": "762fde7407beddbc6e58afdaeb554569a4c34b42c7ece2596b916d8b94e6123e",
+  "target_prompts": [
+    "A photograph of a vintage television sitting on a rustic wooden table",
+    "A photo of a vintage television in a cozy, dimly lit room",
+    "A vintage television displayed in a museum exhibit about 20th-century technology",
+    "A photograph of a vintage television in an abandoned house, covered in dust",
+    "A watercolor painting of a vintage television with vibrant, abstract colors in the background",
+    "An ink sketch of a vintage television, with exaggerated old-fashioned dials and antennas",
+    "A digital illustration of a vintage television in a retro-futuristic setting",
+    "A vintage television broadcasting a live scene of an alien planet, its screen glowing with strange landscapes",
+    "A vintage television floating through a surreal, dream-like sequence with classic shows spilling out into the surrounding space"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/02.jpg",
+  "image_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:58+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a vintage television with an orange-and-yellow checkered casing and blue checkered screen, connected by a cord to a mouse against a plain white background\"}",
+  "status": "PASS",
+  "source_caption": "a vintage television with an orange-and-yellow checkered casing and blue checkered screen, connected by a cord to a mouse against a plain white background",
+  "completed_at": "2026-10-12T18:30:02+09:00",
+  "seconds": 3.84
+}

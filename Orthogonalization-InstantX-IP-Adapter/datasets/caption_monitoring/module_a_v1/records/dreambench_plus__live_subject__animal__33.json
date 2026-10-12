@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/33",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/33",
+  "identity_term": "panda",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/33.txt",
+  "label_source_sha256": "a068fa87d53bc15ae44ca781b1547a2496f4649cc6932a168e52fe442d716e66",
+  "target_prompts": [
+    "A photo of a panda peacefully napping in a bamboo grove",
+    "A photograph of a panda playfully rolling down a grassy hill",
+    "A detailed photo of a panda munching on bamboo under the shade of tall trees",
+    "A panda captured mid-climb on a robust tree trunk",
+    "A watercolor painting of a panda with exaggerated, whimsical features",
+    "An anime-style illustration of a panda performing martial arts moves",
+    "A retro-style graphic of a panda riding a vintage scooter",
+    "A panda floating on a cloud above a mystical mountain range",
+    "A depiction of a panda with butterfly wings exploring a colorful flower garden"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/33.jpg",
+  "image_sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:27+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a panda with black-and-white fur walking across a leaf-strewn ground in a rocky enclosure\"}",
+  "status": "PASS",
+  "source_caption": "a panda with black-and-white fur walking across a leaf-strewn ground in a rocky enclosure",
+  "completed_at": "2026-10-12T18:29:30+09:00",
+  "seconds": 2.98
+}

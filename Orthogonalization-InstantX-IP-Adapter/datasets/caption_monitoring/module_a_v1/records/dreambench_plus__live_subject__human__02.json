@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/02",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/02",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/02.txt",
+  "label_source_sha256": "ba14be344d7d29504d78f81e654a701e85ebdd422988c6f3f489bca127c14aef",
+  "target_prompts": [
+    "A photograph of a man reading a newspaper on a park bench in autumn",
+    "A photo of a man kayaking on a serene lake during sunrise",
+    "A photograph of a man playing guitar by a campfire at night",
+    "A photo of a man strolling through a bustling city market",
+    "A watercolor painting of a man in a vintage suit, styled in impressionistic strokes",
+    "An anime-style depiction of a man riding a futuristic motorcycle",
+    "A retro-style illustration of a man as a 1920s detective with a magnifying glass",
+    "A man traversing through a surreal landscape made of floating musical notes and vibrant colors",
+    "A depiction of a man walking with a shadow that comes to life, mimicking his every move in an exaggerated, playful manner"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/02.jpg",
+  "image_sha256": "57222fa3132f6a6275a0b611711ea8b704a100064619e9a00a3ef00fbf2ba24d",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:37+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a man with short curly hair, a beard, and glasses, wearing a white shirt with red stripes and resting his chin on his hand in an indoor space\"}",
+  "status": "PASS",
+  "source_caption": "a man with short curly hair, a beard, and glasses, wearing a white shirt with red stripes and resting his chin on his hand in an indoor space",
+  "completed_at": "2026-10-12T18:29:40+09:00",
+  "seconds": 3.3
+}

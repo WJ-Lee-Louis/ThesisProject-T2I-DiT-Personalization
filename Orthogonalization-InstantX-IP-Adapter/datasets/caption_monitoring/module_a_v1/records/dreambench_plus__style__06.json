@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/06",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/06",
+  "identity_term": "volcanic landscape",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/06.txt",
+  "label_source_sha256": "c667d04f256f30d083c7b8df77b2e2c49974da413272309e90a43e938a94b070",
+  "target_prompts": [
+    "A photograph of a smoldering volcano with streams of molten lava, in a volcanic landscape",
+    "A painting of a rugged terrain with ash-covered rocks, in the style of a volcanic landscape",
+    "A photo of a sunset casting an eerie glow over a volcanic crater, in a volcanic landscape",
+    "A close-up photograph of igneous rock formations, characteristic of a volcanic landscape",
+    "A serene lake formed in an ancient volcanic caldera, in the style of a volcanic landscape",
+    "A forest recovering after a volcanic eruption, with new growth sprouting through ash, in the style of a volcanic landscape",
+    "A night-time scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape",
+    "A fantastical city built around the rim of an active volcano, glowing with lava, in the style of a volcanic landscape",
+    "A giant phoenix rising from volcanic ashes under a molten sky, in a volcanic landscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/06.jpg",
+  "image_sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:55+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A volcanic landscape with bright orange lava spilling from a mountain vent and flowing across dark, rough rock beneath a cloudy sky.\"}",
+  "status": "PASS",
+  "source_caption": "A volcanic landscape with bright orange lava spilling from a mountain vent and flowing across dark, rough rock beneath a cloudy sky.",
+  "completed_at": "2026-10-12T18:31:00+09:00",
+  "seconds": 4.55
+}

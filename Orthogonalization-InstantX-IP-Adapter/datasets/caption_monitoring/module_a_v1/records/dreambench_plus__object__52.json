@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/52",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/52",
+  "identity_term": "teapot",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/52.txt",
+  "label_source_sha256": "b19e106029841801fa53d76b80de678cc625fea99342e28044e8613d1979f90d",
+  "target_prompts": [
+    "A photograph of a teapot steaming on a cozy kitchen table",
+    "A photo of a teapot on an old wooden shelf surrounded by antique books",
+    "A detailed photograph of a teapot in a sunlit garden, flowers blooming around",
+    "A photo of a teapot in a rustic cabin, a fire crackling in the background",
+    "A watercolor painting of a whimsical teapot floating among clouds",
+    "An anime-style drawing of a teapot transforming into a magical creature",
+    "A minimalist sketch of a teapot with sleek, modern lines set against a stark, white background",
+    "A teapot brewing a storm inside, with miniature lightning and clouds swirling under its lid",
+    "A teapot as a house, with tiny people living inside and windows glowing warmly at dusk"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/52.jpg",
+  "image_sha256": "e898e815656fd538977b5c0735727fa03e1f4261842ca6eb91c7ae8d43ceb365",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:39+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a teapot with a rounded dark brown body, a loop handle, and a short angled spout resting on a textured black block on a dark table\"}",
+  "status": "PASS",
+  "source_caption": "a teapot with a rounded dark brown body, a loop handle, and a short angled spout resting on a textured black block on a dark table",
+  "completed_at": "2026-10-12T18:30:43+09:00",
+  "seconds": 3.67
+}

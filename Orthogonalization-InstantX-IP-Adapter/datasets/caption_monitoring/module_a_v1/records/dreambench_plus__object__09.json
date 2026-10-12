@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/09",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/09",
+  "identity_term": "hot air balloon",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/09.txt",
+  "label_source_sha256": "8e65b9f5d3caca4dcf9319fb4f1260266729cbafb368342a67b737b5d3b3b74d",
+  "target_prompts": [
+    "A photograph of a hot air balloon soaring above a misty mountain range at sunrise",
+    "A photo of a hot air balloon festival with colorful balloons filling the sky",
+    "A photograph of a hot air balloon drifting over a calm lake, reflecting on the water's surface",
+    "A photo of a hot air balloon being prepared for flight in a grassy field, with people around",
+    "A watercolor painting of a hot air balloon floating over a lavender field",
+    "An abstract digital art piece of a hot air balloon glowing under the moonlight",
+    "A vintage-style illustration of a hot air balloon journey across an old map backdrop",
+    "A hot air balloon crafted entirely of shimmering stained glass, floating in a clear blue sky",
+    "A hot air balloon floating on the surface of the ocean, with a hidden underwater city glowing beneath it"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/09.jpg",
+  "image_sha256": "371351b9c6ec8a072a16bc49932dc3ae896ea3b836dc9d7915be480582ffbb69",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:04+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A hot air balloon with broad dark and tan panels hangs above a small basket carrying passengers, with a burner flame visible beneath it against the sky.\"}",
+  "status": "PASS",
+  "source_caption": "A hot air balloon with broad dark and tan panels hangs above a small basket carrying passengers, with a burner flame visible beneath it against the sky.",
+  "completed_at": "2026-10-12T18:30:08+09:00",
+  "seconds": 4.06
+}

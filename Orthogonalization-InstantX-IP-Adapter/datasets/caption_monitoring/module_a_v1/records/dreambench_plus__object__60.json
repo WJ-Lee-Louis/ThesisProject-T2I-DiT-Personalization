@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/60",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/60",
+  "identity_term": "snare drum",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/60.txt",
+  "label_source_sha256": "56172f7e15ea10c9a34d5298e8fe38c7ad68d6e970e77db3d77e77bb6bf3d94f",
+  "target_prompts": [
+    "A photograph of a snare drum on a dark, empty stage illuminated by a single spotlight",
+    "A photo of a snare drum being played in a high school band during a vibrant parade",
+    "A detailed photograph of a snare drum set against the backdrop of a graffiti-covered wall",
+    "A photo of a snare drum resting beside old vinyl records in a cozy attic music room",
+    "A watercolor painting of a snare drum surrounded by scattered sheet music and autumn leaves",
+    "An anime-style drawing of a snare drum with musical notes floating around it, exuding magical vibes",
+    "A minimalist sketch of a snare drum, captured with bold, black strokes against a stark white background",
+    "A snare drum growing out of a tree trunk as if it is a natural part of the forest",
+    "A snare drum at the center of an ancient coliseum, each beat echoing historical battles"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/60.jpg",
+  "image_sha256": "0aa0582800d4aeb1dd9458a6569db5c1f124a6efaa3568eeb9b10b03c682e4f3",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:45+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a snare drum with a clear head, chrome rim, and visible snare wires resting on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a snare drum with a clear head, chrome rim, and visible snare wires resting on a white surface",
+  "completed_at": "2026-10-12T18:30:48+09:00",
+  "seconds": 2.86
+}

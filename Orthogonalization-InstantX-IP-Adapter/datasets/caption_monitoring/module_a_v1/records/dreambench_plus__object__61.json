@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/61",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/61",
+  "identity_term": "roll of film",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/61.txt",
+  "label_source_sha256": "e001d2221af4b48608a688378c336469287ed5e0fc6beb8952eb54308b4cffb2",
+  "target_prompts": [
+    "A photograph of a roll of film next to an old camera on a wooden table",
+    "A photo of a roll of film illuminated by a single light in a dark room",
+    "A detailed photograph of a roll of film with visible sprocket holes and a strip of negatives",
+    "A photo of a roll of film lying on a stack of vintage photographs",
+    "A watercolor painting of a roll of film unraveled across a painter’s canvas",
+    "An ink sketch of a roll of film intertwined with a ribbon in a classic style",
+    "A retro-style illustration of a roll of film beside an old projector and cinema tickets",
+    "A roll of film forming a loop, floating through space with stars and galaxies visible in its transparent frames",
+    "A magical roll of film where each frame shows a moving scene from different historical events"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/61.jpg",
+  "image_sha256": "3331257f07b95493d91b47b6f18ce38fea3e5eb0fabddb774ed7c8440d572161",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:46+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a roll of film in a black canister with a yellow label standing upright on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a roll of film in a black canister with a yellow label standing upright on a white surface",
+  "completed_at": "2026-10-12T18:30:49+09:00",
+  "seconds": 2.94
+}

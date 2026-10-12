@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/10",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/10",
+  "identity_term": "Ukiyo-e",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/10.txt",
+  "label_source_sha256": "168bf1928d436d3bc799fa5926b781cdd246cf94f7e7744ae5f342b6d08f404b",
+  "target_prompts": [
+    "A painting of Mount Fuji with delicate Ukiyo-e brush strokes",
+    "A photograph of a cherry blossom tree, rendered in the Ukiyo-e style",
+    "A serene river landscape, captured in the traditional Ukiyo-e art form",
+    "A woodblock print of a bustling Edo period marketplace, in Ukiyo-e style",
+    "A geisha in a colorful kimono, depicted in Ukiyo-e style",
+    "A samurai in battle garb, illustrated in the Ukiyo-e technique",
+    "A traditional tea ceremony, portrayed with Ukiyo-e aesthetics",
+    "A mythical dragon coiling around Mount Fuji, depicted in Ukiyo-e style",
+    "A scene of moon jellyfish floating in the sky, imagined in Ukiyo-e brushwork"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/10.jpg",
+  "image_sha256": "7d295fbe01922564c35400b4a2ed0d10f8ae9ba4355b0cf9728b07f2528858c8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:31:00+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"Ukiyo-e of a towering blue wave curling over several boats, with Mount Fuji in the distance\"}",
+  "status": "PASS",
+  "source_caption": "Ukiyo-e of a towering blue wave curling over several boats, with Mount Fuji in the distance",
+  "completed_at": "2026-10-12T18:31:05+09:00",
+  "seconds": 5.02
+}

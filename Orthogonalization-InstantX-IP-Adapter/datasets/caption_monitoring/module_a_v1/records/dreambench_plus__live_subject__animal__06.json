@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/06",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/06",
+  "identity_term": "shark",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/06.txt",
+  "label_source_sha256": "d03aa2234edd7b4d0e7a9582bde8720fccb6cb0eaae4fbc8ef141259119a9b5c",
+  "target_prompts": [
+    "A photo of a shark gliding silently through a deep blue sea",
+    "A photograph of a shark breaching the water's surface at dawn",
+    "A detailed photo of a shark swimming near a coral reef",
+    "A photo of a shark circling a group of fish in a feeding frenzy",
+    "A cartoon-style illustration of a shark wearing a detective's hat and magnifying glass",
+    "An abstract painting of a shark, its form merging fluidly with the ocean waves",
+    "A retro-style poster of a shark at a 1950s beach party",
+    "A shark swimming through an underwater city of crystal and neon lights",
+    "A shark with wings of coral and seaweed, soaring above an ancient sunken pirate ship"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/06.jpg",
+  "image_sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:02+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a shark with a dark gray back and pale underside swimming above a sandy seabed\"}",
+  "status": "PASS",
+  "source_caption": "a shark with a dark gray back and pale underside swimming above a sandy seabed",
+  "completed_at": "2026-10-12T18:29:05+09:00",
+  "seconds": 2.67
+}

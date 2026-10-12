@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/39",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/39",
+  "identity_term": "dolphin",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/39.txt",
+  "label_source_sha256": "292c1cf91f77ea736226b37d6358441e343a25f9b80d184794f70aa7f5a86ff4",
+  "target_prompts": [
+    "A photograph of a dolphin leaping out of the ocean at sunset",
+    "A photo capturing a dolphin swimming alongside a boat",
+    "A detailed photograph of a dolphin in shallow clear waters",
+    "A picture of a dolphin interacting playfully with a diver",
+    "A digital painting of a dolphin glowing with bioluminescent light in deep ocean waters",
+    "An anime-style illustration of a dolphin racing alongside mythical sea creatures",
+    "A stylized sketch of a dolphin as seen from above, swimming in a swirl of colorful coral reefs",
+    "A dolphin weaving through floating islands in the sky, clouds tumbling around it",
+    "An image of a dolphin dancing on the waves"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/39.jpg",
+  "image_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:32+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A dolphin with a gray body is leaping out of turquoise water near a rocky shoreline.\"}",
+  "status": "PASS",
+  "source_caption": "A dolphin with a gray body is leaping out of turquoise water near a rocky shoreline.",
+  "completed_at": "2026-10-12T18:29:34+09:00",
+  "seconds": 2.5
+}

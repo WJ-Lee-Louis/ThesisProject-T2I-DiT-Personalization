@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/00",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/00",
+  "identity_term": "kitten",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/00.txt",
+  "label_source_sha256": "ab4c7950f1951ec7d1cd10df951a2c32d8f2954fe943bf0f32fac3d6d684edb5",
+  "target_prompts": [
+    "A photo of a kitten chasing a fluttering butterfly in a sunny garden",
+    "A photograph of a kitten napping curled up in a cozy basket",
+    "A photo of a kitten playfully pouncing on a ball of yarn",
+    "A photograph of a kitten exploring the grass with cautious curiosity",
+    "A watercolor painting of a kitten with big, expressive eyes in a playful pose",
+    "An anime-style illustration of a kitten with oversized paws and sparkling eyes",
+    "A retro-style digital art of a kitten wearing a tiny bow tie and exploring old books",
+    "A kitten floating on a leaf down a gentle stream, surrounded by magical glowing fireflies",
+    "An illustration of a kitten with tiny angel wings, perched atop a cloud overlooking a sunset"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/00.jpg",
+  "image_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:28:53+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a kitten with fluffy gray-and-white fur sitting upright on a bed among patterned pillows\"}",
+  "status": "PASS",
+  "source_caption": "a kitten with fluffy gray-and-white fur sitting upright on a bed among patterned pillows",
+  "completed_at": "2026-10-12T18:28:57+09:00",
+  "seconds": 4.34
+}

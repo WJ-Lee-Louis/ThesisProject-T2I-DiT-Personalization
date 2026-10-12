@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/38",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/38",
+  "identity_term": "donut",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/38.txt",
+  "label_source_sha256": "7c460ed2b090a6d59d595406b31817b668a033fcdd0457537d3726d05786a729",
+  "target_prompts": [
+    "A photo of a donut topped with colorful sprinkles on a white plate",
+    "A photograph of a donut half-dipped in dark chocolate, resting on a rustic wooden table",
+    "A photo of a freshly glazed donut in a cozy bakery display",
+    "A photograph of a donut with pink icing next to a cup of steaming coffee on a café counter",
+    "A watercolor painting of a donut with pastel-colored frosting, in a whimsical style",
+    "An anime-style drawing of a character holding a giant, sparkling donut",
+    "A minimalist sketch of a donut, focusing on the texture of the icing and sprinkles",
+    "A donut floating in space, orbiting around a planet made of coffee",
+    "A magical donut with wings, flying through a sky filled with fluffy clouds shaped like various sweets"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/38.jpg",
+  "image_sha256": "fe47bdfa1843b58d1a79b7735da8e9a73c28755f7a4fe75201799caa8858ea9d",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:26+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A donut with pink icing and white sprinkles overlaps another donut on a pink surface.\"}",
+  "status": "PASS",
+  "source_caption": "A donut with pink icing and white sprinkles overlaps another donut on a pink surface.",
+  "completed_at": "2026-10-12T18:30:31+09:00",
+  "seconds": 4.69
+}

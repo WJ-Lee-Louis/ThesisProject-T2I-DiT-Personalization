@@ -6,6 +6,12 @@ optional vision captioning, arbitrary semantic components, source/target/joint
 projection, injectable LLM providers, and cached analyses. See
 [the analysis, design, and usage report](docs/semantic_pipeline.md).
 
+Source analysis is now target-aware: additional reference appearance is retained
+unless the target changes that property. Target decomposition keeps its existing
+explicit-identity policy. New source caches record the exact target and policy;
+legacy caches retain their previous removal behavior. Full prompts and examples
+are in [the module prompt reference](docs/prompts/llm_modules_share.md).
+
 Training-free research overlay for source-, target-, and source-target
 pooled-space projection, now extended to explicit identity concepts and
 arbitrary semantic component lists.

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/05",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/05",
+  "identity_term": "minimalist line art",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/05.txt",
+  "label_source_sha256": "7e50025b384bdb29126c5b6ec9f8891c34036fff9aae8eb88c9d53c283030afc",
+  "target_prompts": [
+    "A sketch of a single tree with sparse leaves in minimalist line art",
+    "A photo of a slender vase containing a single flower, rendered in minimalist line art",
+    "A simple drawing of a cat sitting still, in minimalist line art",
+    "A portrait of a woman with her hair in a bun, illustrated in minimalist line art",
+    "A minimalist line art representation of a bicycle leaning against a wall",
+    "A set of geometric shapes, like circles and triangles, composed in minimalist line art",
+    "A minimalist line art drawing of a coffee cup on a saucer",
+    "A minimalist line art depiction of a city floating among clouds",
+    "A creature from a fantasy world where plants and animals merge, illustrated in minimalist line art"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/05.jpg",
+  "image_sha256": "712404d96b98938596371ff25f7a35dbce5d864aa2dcdabd8b404a5791b864af",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:55+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a seated cat with black facial markings and long whiskers, in minimalist line art on a white background\"}",
+  "status": "PASS",
+  "source_caption": "a seated cat with black facial markings and long whiskers, in minimalist line art on a white background",
+  "completed_at": "2026-10-12T18:30:59+09:00",
+  "seconds": 3.62
+}

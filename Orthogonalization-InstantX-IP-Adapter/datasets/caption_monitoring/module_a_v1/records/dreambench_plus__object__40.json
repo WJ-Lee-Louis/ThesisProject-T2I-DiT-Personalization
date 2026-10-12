@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/40",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/40",
+  "identity_term": "Rolls-Royce hood ornament",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/40.txt",
+  "label_source_sha256": "a1e9066408ea0f6b67632c61b6066cae5abff72744b115be61778f240e0ab65a",
+  "target_prompts": [
+    "A photo of a Rolls-Royce hood ornament shining under the streetlights at night",
+    "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+    "A detailed photo of a Rolls-Royce hood ornament against a backdrop of a grand mansion",
+    "A Rolls-Royce hood ornament captured in the early morning light on a foggy day",
+    "A watercolor painting of a Rolls-Royce hood ornament, with soft pastel colors emphasizing its sleek design",
+    "An ink sketch of a Rolls-Royce hood ornament, focusing on intricate shadows and highlights",
+    "A digital illustration in a pop art style featuring a colorful Rolls-Royce hood ornament set against a vibrant background",
+    "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+    "A Rolls-Royce hood ornament growing from the ground in a mystical forest, glowing with an ethereal light"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/40.jpg",
+  "image_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:27+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A Rolls-Royce hood ornament with a polished dark metal figure leaning forward and wings swept back, mounted on the car’s hood above the grille.\"}",
+  "status": "PASS",
+  "source_caption": "A Rolls-Royce hood ornament with a polished dark metal figure leaning forward and wings swept back, mounted on the car’s hood above the grille.",
+  "completed_at": "2026-10-12T18:30:32+09:00",
+  "seconds": 4.3
+}

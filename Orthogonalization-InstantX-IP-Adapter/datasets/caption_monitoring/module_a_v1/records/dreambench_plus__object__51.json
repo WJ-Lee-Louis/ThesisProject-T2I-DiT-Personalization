@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/51",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/51",
+  "identity_term": "stop sign",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/51.txt",
+  "label_source_sha256": "6a30d9d7d4a1900adb554abae368d50f264a51dfc090ce673e09381d9d34f463",
+  "target_prompts": [
+    "A photograph of a stop sign covered in snow with a blurred snowy landscape in the background",
+    "A photo of a stop sign at a busy city intersection during peak traffic hours",
+    "A picture of a stop sign on a desert road with a clear blue sky and distant mountains",
+    "A photograph of a stop sign at a crossroad in a lush green forest",
+    "A watercolor painting of a stop sign with a field of wildflowers around it",
+    "An anime-style illustration of a stop sign with glowing red letters at twilight",
+    "A minimalist black and white sketch of a stop sign in an urban setting with abstract buildings in the background",
+    "A stop sign standing at the edge of the world, overlooking an endless cosmic galaxy, shimmering stars surrounding it",
+    "A fantastical depiction of a stop sign transforming into a tree with leaves made of various street signs"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/51.jpg",
+  "image_sha256": "2684119b3e24f7920775d256fb1b1a4905f775da6a940b671dc1031cb3ed5968",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:39+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a stop sign with a red octagonal face and white lettering mounted on a metal post, with orange foliage at the lower left\"}",
+  "status": "PASS",
+  "source_caption": "a stop sign with a red octagonal face and white lettering mounted on a metal post, with orange foliage at the lower left",
+  "completed_at": "2026-10-12T18:30:41+09:00",
+  "seconds": 2.83
+}

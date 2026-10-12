@@ -66,15 +66,27 @@ def conditioning(strategy="local", origin="source_target"):
                                 ComponentAnalysis(SOURCE, IDENTITY, tuple(SOURCE_COMPONENTS)), origin, strategy)
 
 
+def source_output():
+    return dict(identity_term=IDENTITY, preserved_spans=[IDENTITY], retained_spans=[], neutral_spans=[],
+                components=[{"spans": [c]} for c in SOURCE_COMPONENTS], conflicts=[])
+
+
+def source_conditioning():
+    from orthogonalization_instantx_ip_adapter.semantic_components import ComponentGroup
+    return SemanticConditioning(ComponentAnalysis(TARGET, IDENTITY, tuple(TARGET_COMPONENTS)),
+        ComponentAnalysis(SOURCE, IDENTITY, tuple(ComponentGroup((c,)) for c in SOURCE_COMPONENTS),
+                          (IDENTITY,), (), (), TARGET))
+
+
 def test_case1_zero_shot_and_manual_caption():
-    provider = FakeProvider([{"source_caption": SOURCE}, output(IDENTITY, SOURCE_COMPONENTS), output(IDENTITY, TARGET_COMPONENTS)])
+    provider = FakeProvider([{"source_caption": SOURCE}, source_output(), output(IDENTITY, TARGET_COMPONENTS)])
     result = prepare_semantic_conditioning(llm=SemanticLLM(provider), identity_term=IDENTITY,
                                           target_prompt=TARGET, reference_image_bytes=b"fake image")
-    assert result == conditioning()
+    assert result == source_conditioning()
     assert provider.calls[0]["image_bytes"] == b"fake image"
     assert [call["payload"] for call in provider.calls[1:]] == [
-        {"text": SOURCE, "identity_term": IDENTITY}, {"text": TARGET, "identity_term": IDENTITY}]
-    manual = FakeProvider([output(IDENTITY, SOURCE_COMPONENTS), output(IDENTITY, TARGET_COMPONENTS)])
+        {"source_caption": SOURCE, "target_prompt": TARGET, "identity_term": IDENTITY}, {"text": TARGET, "identity_term": IDENTITY}]
+    manual = FakeProvider([source_output(), output(IDENTITY, TARGET_COMPONENTS)])
     assert prepare_semantic_conditioning(llm=SemanticLLM(manual), identity_term=IDENTITY,
                                         target_prompt=TARGET, source_caption=SOURCE) == result
     assert len(manual.calls) == 2
@@ -472,11 +484,11 @@ def test_python_inference_connects_analysis_to_generation(monkeypatch):
         calls.append(kwargs)
         return b"mock PNG", {"semantic_conditioning": kwargs["component_analysis_payload"]}
     monkeypatch.setattr(inference, "generate_png_bytes", generate)
-    provider = FakeProvider([{"source_caption": SOURCE}, output(IDENTITY, SOURCE_COMPONENTS), output(IDENTITY, TARGET_COMPONENTS)])
+    provider = FakeProvider([{"source_caption": SOURCE}, source_output(), output(IDENTITY, TARGET_COMPONENTS)])
     png, diagnostics = inference.generate_semantic_png_bytes(
         identity_term=IDENTITY, target_prompt=TARGET, reference_image_bytes=b"image", llm=SemanticLLM(provider))
     assert png == b"mock PNG"
-    assert SemanticConditioning.from_dict(diagnostics["semantic_conditioning"]) == conditioning()
+    assert SemanticConditioning.from_dict(diagnostics["semantic_conditioning"]) == source_conditioning()
     assert calls[0]["orthogonalization_mode"] == "components"
     assert calls[0]["prompt"] == TARGET
     assert calls[0]["reference_image_bytes"] == b"image"

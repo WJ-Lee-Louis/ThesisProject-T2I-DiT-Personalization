@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/00",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/00",
+  "identity_term": "space ranger",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/00.txt",
+  "label_source_sha256": "9624490698f4fffab81f7ad06fd394a6786e7a6f32c6f4b278e1baa02b6a1ca4",
+  "target_prompts": [
+    "A photo of a space ranger navigating through a rocky alien terrain",
+    "A photograph of a space ranger examining a luminous extraterrestrial plant",
+    "A photo of a space ranger gazing at a distant galaxy from a spaceship viewport",
+    "A photograph of a space ranger in a high-tech suit standing beside a rover on Mars",
+    "A digital painting of a space ranger in a sleek, silver suit, styled with cosmic elements",
+    "An anime-style illustration of a space ranger engaged in a laser battle with alien creatures",
+    "A retro-style drawing of a space ranger with a classic bubble helmet, exploring a vintage-looking space station",
+    "A space ranger floating through a nebula, with stars reflecting in the visor of his helmet",
+    "A depiction of a space ranger riding a comet, steering it through a field of asteroids"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/00.jpg",
+  "image_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:36+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a space ranger wearing bulky blue-gray armor with a green chest plate stands on pink rocky terrain, with a small orange cat perched on his shoulder\"}",
+  "status": "PASS",
+  "source_caption": "a space ranger wearing bulky blue-gray armor with a green chest plate stands on pink rocky terrain, with a small orange cat perched on his shoulder",
+  "completed_at": "2026-10-12T18:29:41+09:00",
+  "seconds": 4.59
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/15",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/15",
+  "identity_term": "butterfly",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/15.txt",
+  "label_source_sha256": "efd82c652f7ffb28b332fd2f1f434fd54cb38b0a7f435607ae2843380fde5e39",
+  "target_prompts": [
+    "A photograph of a butterfly perched delicately on a vibrant sunflower",
+    "A photo capturing a butterfly emerging from its chrysalis, clinging to a twig",
+    "A photograph of a butterfly fluttering around a lush green garden",
+    "A close-up photo of a butterfly resting on a child's hand",
+    "A watercolor painting of a butterfly with exaggerated, colorful wings",
+    "An anime-style illustration of a butterfly with magical sparkles around it",
+    "A minimalist sketch of a butterfly, using only a few elegant lines to depict its form",
+    "A butterfly with transparent wings reflecting the entire cosmos within them",
+    "A giant butterfly carrying a tiny, enchanted village on its back, flying over an ancient forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/15.jpg",
+  "image_sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:10+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a butterfly with orange-yellow wings, dark veins, and white spots spread flat against a pale gray background\"}",
+  "status": "PASS",
+  "source_caption": "a butterfly with orange-yellow wings, dark veins, and white spots spread flat against a pale gray background",
+  "completed_at": "2026-10-12T18:29:14+09:00",
+  "seconds": 3.89
+}

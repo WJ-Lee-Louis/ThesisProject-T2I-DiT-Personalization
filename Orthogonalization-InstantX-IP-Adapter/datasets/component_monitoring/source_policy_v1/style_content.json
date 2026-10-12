@@ -1,0 +1,52 @@
+{
+  "case": "style_content",
+  "reference": "dreambench_plus/style/16",
+  "input": {
+    "source_caption": "A rocky path winds between boulders and scrub toward distant blue hills in a watercolor sketch.",
+    "target_prompt": "a castle in watercolor sketch style",
+    "identity_term": "watercolor sketch"
+  },
+  "model": "gpt-6-luna",
+  "started_at": "2026-10-12T19:54:39.767678+09:00",
+  "prompt_sha256": "6e3f0455481968a63e96a6dc00bbeabec820dda3696ed8eadb8a55f172b1596f",
+  "attempts": [
+    {
+      "raw_response": "{\"identity_term\":\"watercolor sketch\",\"preserved_spans\":[\"in a watercolor sketch\"],\"retained_spans\":[],\"neutral_spans\":[],\"components\":[{\"spans\":[\"A rocky path\"]},{\"spans\":[\"winds\"]},{\"spans\":[\"between boulders and scrub\"]},{\"spans\":[\"toward distant blue hills\"]}],\"conflicts\":[]}"
+    }
+  ],
+  "status": "PASS",
+  "output": {
+    "text": "A rocky path winds between boulders and scrub toward distant blue hills in a watercolor sketch.",
+    "identity_term": "watercolor sketch",
+    "components": [
+      {
+        "spans": [
+          "A rocky path"
+        ]
+      },
+      {
+        "spans": [
+          "winds"
+        ]
+      },
+      {
+        "spans": [
+          "between boulders and scrub"
+        ]
+      },
+      {
+        "spans": [
+          "toward distant blue hills"
+        ]
+      }
+    ],
+    "preserved_spans": [
+      "in a watercolor sketch"
+    ],
+    "neutral_spans": [],
+    "retained_spans": [],
+    "conditioned_on_target": "a castle in watercolor sketch style",
+    "source_policy": "target_aware_source_v1"
+  },
+  "all_removed": "in a watercolor sketch."
+}

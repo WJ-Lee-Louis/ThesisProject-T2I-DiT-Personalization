@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/34",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/34",
+  "identity_term": "cat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/34.txt",
+  "label_source_sha256": "b9a317a2a5ea47c2d7faad7520ab6605e892ea73010393d4cf0c4b66c4b3fcf8",
+  "target_prompts": [
+    "A photograph of a cat sleeping curled up on a sunny windowsill",
+    "A photo of a cat intently watching birds from behind a garden bush",
+    "A photograph of a cat playing with a ball of yarn on a hardwood floor",
+    "A photo of a cat perched on a stone wall amidst falling autumn leaves",
+    "An anime-style drawing of a cat holding a tiny umbrella",
+    "A watercolor painting capturing a cat lazily stretching on a patch of grass",
+    "A retro-style illustration of a cat wearing a detective's hat and magnifying glass",
+    "A cat walking gracefully on a moonbeam, its fur shimmering with stardust",
+    "A depiction of a cat with butterfly wings, fluttering among lush, oversized flowers"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/34.jpg",
+  "image_sha256": "a35223420e4568c5773b3f2c50fb435b2f2d9b1cfc74c02220010c16d6076e49",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:27+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a cat with black-and-white fur and a pink nose sitting indoors, facing the camera\"}",
+  "status": "PASS",
+  "source_caption": "a cat with black-and-white fur and a pink nose sitting indoors, facing the camera",
+  "completed_at": "2026-10-12T18:29:30+09:00",
+  "seconds": 2.3
+}

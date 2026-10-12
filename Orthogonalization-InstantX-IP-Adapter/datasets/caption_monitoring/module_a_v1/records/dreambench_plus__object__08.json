@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/08",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/08",
+  "identity_term": "tree",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/08.txt",
+  "label_source_sha256": "4b936ed757bbeab011f00d070a1d90174881a9d45c21b4a7729c4978b396b6ed",
+  "target_prompts": [
+    "A photograph of an ancient tree with sprawling roots on a misty morning",
+    "A photo of a tree-lined avenue with sunlight filtering through the leaves",
+    "A detailed photograph of a cherry tree in full blossom against a clear blue sky",
+    "A photo of a lone tree on a hilltop at sunset, casting a long shadow",
+    "An anime-style illustration of a tree with vibrant, multicolored leaves",
+    "A minimalist sketch of a baobab tree in a desert landscape",
+    "A watercolor painting of a willow tree gently swaying over a tranquil lake",
+    "A tree growing with its branches and roots forming the outlines of different continents",
+    "A mystical tree whose leaves are shimmering stars in a night sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/08.jpg",
+  "image_sha256": "7e1ff0b4902008e9a1e70a8354fcae73cd2ca63bb4268307448d706ce0b325ca",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:03+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a tree with a broad green canopy, a thick brown trunk, and exposed roots\"}",
+  "status": "PASS",
+  "source_caption": "a tree with a broad green canopy, a thick brown trunk, and exposed roots",
+  "completed_at": "2026-10-12T18:30:06+09:00",
+  "seconds": 3.19
+}

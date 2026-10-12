@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/00",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/00",
+  "identity_term": "motorcycle",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/00.txt",
+  "label_source_sha256": "757073a59c4d9499038168983a7fff7c41eab955ca58f57405458b509b4e20e2",
+  "target_prompts": [
+    "A photograph of a motorcycle parked beside a bustling city street at night, illuminated by street lights",
+    "A photo of a vintage motorcycle on a lonely desert road, with mountains in the background",
+    "A photograph of a motorcycle rider racing on a track, captured in motion blur",
+    "A photo of a motorcycle covered in mud after a ride through forest trails",
+    "A digital painting of a futuristic motorcycle gliding above a neon-lit cityscape",
+    "A watercolor illustration of a classic motorcycle next to a cozy roadside cafe",
+    "An ink sketch of a motorcycle with detailed mechanical parts, emphasizing its sleek design",
+    "A motorcycle transforming into a robotic creature in the midst of a bustling futuristic city",
+    "A phantom motorcycle cruising above the ocean waves under the moonlight, leaving a trail of sparkling sea foam"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/00.jpg",
+  "image_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:56+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a motorcycle with a pale gray tank, a long brown seat, and exposed metal components parked on a paved surface\"}",
+  "status": "PASS",
+  "source_caption": "a motorcycle with a pale gray tank, a long brown seat, and exposed metal components parked on a paved surface",
+  "completed_at": "2026-10-12T18:29:59+09:00",
+  "seconds": 2.47
+}

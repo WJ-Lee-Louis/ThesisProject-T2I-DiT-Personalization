@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/18",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/18",
+  "identity_term": "basketball player",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/18.txt",
+  "label_source_sha256": "1440d2308b6aa84ea1bc5533bbd00d5ccfbe526a5aff5db7e44f67760d0e5820",
+  "target_prompts": [
+    "A photo of a basketball player shooting a hoop during a sunset game",
+    "A photograph of a basketball player dribbling down a busy urban court",
+    "A photo of a basketball player giving a motivational talk to kids on an outdoor court",
+    "A photograph of a basketball player practicing alone in a dimly lit gym",
+    "A watercolor painting of a basketball player leaping for a slam dunk",
+    "An anime-style drawing of a basketball player performing an acrobatic move with exaggerated effects",
+    "A minimalist sketch of a basketball player preparing for a free throw, focusing on the tension in the posture",
+    "A basketball player bouncing planets in space, dressed in a suit made of stars",
+    "A surreal depiction of a basketball player shooting hoops with a ball glowing like the sun over an ocean horizon"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/18.jpg",
+  "image_sha256": "a20bdcdbadcd6ddf84e0603fc3197fe07b204399f7c22265844df01a2ad6cb4e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:55+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a basketball player with short dark hair and a trimmed beard wearing a white jersey with blue and gold trim, looking upward in front of a seated crowd\"}",
+  "status": "PASS",
+  "source_caption": "a basketball player with short dark hair and a trimmed beard wearing a white jersey with blue and gold trim, looking upward in front of a seated crowd",
+  "completed_at": "2026-10-12T18:29:58+09:00",
+  "seconds": 3.36
+}

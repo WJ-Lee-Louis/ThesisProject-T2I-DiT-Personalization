@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/24",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/24",
+  "identity_term": "llama",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/24.txt",
+  "label_source_sha256": "88bcbf4fba4afa782e452f012bda4139b5a91e34b5f37ad4ddd22292cb4669d8",
+  "target_prompts": [
+    "A photograph of a llama grazing peacefully in a vast, sunny meadow",
+    "A photo of a llama standing by a mountain lake reflecting the clear blue sky",
+    "A photograph of a llama adorned with colorful festival decorations in a bustling village square",
+    "A photo of a llama looking curiously at the camera from behind a rustic wooden fence",
+    "A watercolor painting of a llama with a soft, pastel background",
+    "An anime-style drawing of a llama wearing a whimsical scarf and glasses",
+    "A retro-style illustration of a llama traveling through an exotic desert landscape",
+    "A llama walking through a shimmering portal to an enchanted forest",
+    "A llama wearing a jetpack, soaring above a futuristic cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/24.jpg",
+  "image_sha256": "5c0545a1241324847555920b51d0c5c5334a13c2831b03f4766562ff278a6ae6",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:18+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a llama with shaggy white wool and pink tassels on its ears standing on grassy ground in a rocky mountain landscape\"}",
+  "status": "PASS",
+  "source_caption": "a llama with shaggy white wool and pink tassels on its ears standing on grassy ground in a rocky mountain landscape",
+  "completed_at": "2026-10-12T18:29:23+09:00",
+  "seconds": 5.33
+}

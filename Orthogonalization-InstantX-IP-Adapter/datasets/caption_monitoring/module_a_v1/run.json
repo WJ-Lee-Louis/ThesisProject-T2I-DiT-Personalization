@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-12T18:27:48+09:00",
+  "model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "references_sha256": "592f79620d70b44570bb11ecaf3413395826e43a7cbf05d6b8fb3d68043d6866",
+  "validation_retries": 0,
+  "automatic_transport_retries": 0,
+  "prompt_source": "docs/prompts/module_a_caption_system_prompt.md",
+  "image_transport": "Existing provider RGB PNG conversion; no resize",
+  "completed_at": "2026-10-12T18:31:16+09:00",
+  "completed_count": 180,
+  "status_counts": {
+    "PASS": 179,
+    "INVALID": 1
+  }
+}

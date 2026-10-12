@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/37",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/37",
+  "identity_term": "airplane",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/37.txt",
+  "label_source_sha256": "0cfa00c1d7cc9ecde25289b59137c352039f98bf3327687d5e414af47d453f3b",
+  "target_prompts": [
+    "A photograph of an airplane ascending through cloudy skies",
+    "A photo of an airplane parked on a busy airport tarmac at sunset",
+    "A photograph of an airplane soaring over a lush green mountain range",
+    "A photo of an airplane in mid-flight with city skyline in the background",
+    "A watercolor painting of a vintage airplane against a sky blue backdrop",
+    "An anime-style illustration of an airplane zooming past with speed lines",
+    "A retro-style poster of an airplane with bold, streamlined designs from the 1960s",
+    "An airplane transforming into a giant bird as it flies over the ocean",
+    "An airplane with transparent wings, revealing a miniature city inside bustling with activity"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/37.jpg",
+  "image_sha256": "624e721c740f50012b5d1ad3817ba7f0b4872233caafa136bdb166a9c74175a8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:26+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"an airplane with a gray-and-orange body flying upward across a blue sky, with a large pale moon behind its wing\"}",
+  "status": "PASS",
+  "source_caption": "an airplane with a gray-and-orange body flying upward across a blue sky, with a large pale moon behind its wing",
+  "completed_at": "2026-10-12T18:30:30+09:00",
+  "seconds": 3.75
+}

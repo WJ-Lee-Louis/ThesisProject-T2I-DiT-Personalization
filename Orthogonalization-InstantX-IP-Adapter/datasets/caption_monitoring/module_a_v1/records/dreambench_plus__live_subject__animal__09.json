@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/09",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/09",
+  "identity_term": "rooster",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/09.txt",
+  "label_source_sha256": "85aa0fc5e79f1c8910714e1249e547c03d8d658bc90ec761748b8aec1ecc29f3",
+  "target_prompts": [
+    "A photograph of a rooster crowing at sunrise in a dewy meadow",
+    "A photo of a rooster strutting around a rustic barnyard",
+    "A detailed photograph of a rooster perched on an old wooden fence",
+    "A photo of a rooster surrounded by a flock of hens in a sunny farmyard",
+    "A watercolor painting of a rooster with vibrant, multicolored feathers",
+    "An anime-style illustration of a rooster performing a morning dance",
+    "A minimalist sketch of a rooster",
+    "A rooster with a tail of shimmering peacock feathers",
+    "A rooster flying above a farm, its feathers glowing with the colors of the rainbow under the moonlight"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/09.jpg",
+  "image_sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:04+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a rooster with a red comb, creamy white neck feathers, orange back, and iridescent black tail walking across dirt\"}",
+  "status": "PASS",
+  "source_caption": "a rooster with a red comb, creamy white neck feathers, orange back, and iridescent black tail walking across dirt",
+  "completed_at": "2026-10-12T18:29:10+09:00",
+  "seconds": 6.28
+}

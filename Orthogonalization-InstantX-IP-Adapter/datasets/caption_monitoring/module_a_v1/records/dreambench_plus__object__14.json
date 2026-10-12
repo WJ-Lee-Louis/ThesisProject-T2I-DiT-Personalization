@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/14",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/14",
+  "identity_term": "house",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/14.txt",
+  "label_source_sha256": "168429b7c2670e77423c849b1072bfb69c65bb6a93b3c6ca17ef4cfa04bbe852",
+  "target_prompts": [
+    "A photograph of a house surrounded by lush greenery in spring",
+    "A photo of a house with a snowy rooftop during a serene winter morning",
+    "A photograph of a house at sunset, casting long shadows over a cobblestone street",
+    "A photo of a house perched on a cliff overlooking the ocean",
+    "A watercolor painting of a small house nestled in a colorful autumn forest",
+    "An ink sketch of a house with a whimsical, twisted architecture, in a fairy tale style",
+    "A digital illustration of a house in a futuristic, cyberpunk cityscape",
+    "A house made entirely of glass reflecting the surrounding ancient forest",
+    "A floating house drifting gently over a city, tethered by colorful balloons"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/14.jpg",
+  "image_sha256": "01b89feacd0d949b3ba4c96328a604a80a388085ec736fc08e657d9704ad8390",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:08+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a house with bright red walls, a broad gray roof, pale windows, and a brown door, standing against a white background\"}",
+  "status": "PASS",
+  "source_caption": "a house with bright red walls, a broad gray roof, pale windows, and a brown door, standing against a white background",
+  "completed_at": "2026-10-12T18:30:11+09:00",
+  "seconds": 2.88
+}

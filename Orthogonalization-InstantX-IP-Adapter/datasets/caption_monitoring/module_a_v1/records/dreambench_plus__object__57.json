@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/57",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/57",
+  "identity_term": "leather handbag",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/57.txt",
+  "label_source_sha256": "2e50f94f4e48ef721c06918faed72fb5c3f5154057b75924a5b80f144190fc8b",
+  "target_prompts": [
+    "A photograph of a leather handbag on a polished mahogany desk",
+    "A photo of a leather handbag left on a rustic wooden bench in a park",
+    "A detailed photograph of an elegant leather handbag in the passenger seat of a vintage car",
+    "A photo capturing a leather handbag hanging on the shoulder of a woman walking through a bustling marketplace",
+    "An anime-style illustration of a magical leather handbag glowing with mystical runes",
+    "A watercolor painting of a leather handbag placed beside a vase of bright peonies",
+    "A minimalist sketch of a leather handbag, emphasized with bold, abstract lines against a stark background",
+    "A leather handbag that transforms into a miniature shelter, complete with tiny furniture and ambient lighting",
+    "A whimsical scene where a leather handbag serves as a boat floating gently down a serene river, surrounded by autumn leaves"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/57.jpg",
+  "image_sha256": "4c819ee4a36ab3a419f50cb358cbae4c245ff86311ad1285229faa9fd58158b4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:43+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a leather handbag with a warm brown body, two top handles, and buckled front straps resting on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a leather handbag with a warm brown body, two top handles, and buckled front straps resting on a white surface",
+  "completed_at": "2026-10-12T18:30:46+09:00",
+  "seconds": 3.12
+}

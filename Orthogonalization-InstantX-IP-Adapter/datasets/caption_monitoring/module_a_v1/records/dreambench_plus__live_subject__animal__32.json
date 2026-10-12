@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/32",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/32",
+  "identity_term": "Corgi dog",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/32.txt",
+  "label_source_sha256": "de353ec289e8589286adf9be5028b1354ca133bd07b65dbefa2888a7235de0a0",
+  "target_prompts": [
+    "A photo of a Corgi dog lounging on a sunny park bench",
+    "A photograph of a Corgi dog scampering through a snowy field",
+    "A photo of a Corgi dog patiently waiting outside a quaint coffee shop",
+    "A photograph of a Corgi dog frolicking on a beach at sunset",
+    "A watercolor illustration of a Corgi dog wearing a colorful bandana",
+    "An anime-style drawing of a Corgi dog with oversized glasses reading a book",
+    "A retro-style rendering of a Corgi dog perched in an old-fashioned baby pram",
+    "A Corgi dog navigating a tiny sailboat on a vast, glittering ocean",
+    "A Corgi dog wearing a jetpack, zooming joyfully above a bustling cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/32.jpg",
+  "image_sha256": "40f90c57c399065a8ae8bc1cd980a5d2e2a6f9b250287f34ea7c4e567f24e8b1",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:26+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A Corgi dog with reddish-brown and white fur stands with its front paws on a stone ledge, tongue out, against flowering branches.\"}",
+  "status": "PASS",
+  "source_caption": "A Corgi dog with reddish-brown and white fur stands with its front paws on a stone ledge, tongue out, against flowering branches.",
+  "completed_at": "2026-10-12T18:29:30+09:00",
+  "seconds": 4.19
+}

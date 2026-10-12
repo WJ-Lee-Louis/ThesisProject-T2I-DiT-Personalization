@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/03",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/03",
+  "identity_term": "cyberpunk neon",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/03.txt",
+  "label_source_sha256": "8108ccfbdc702e454e7b3e58036e8893d08f75552c19aae227e2c45e95ccd751",
+  "target_prompts": [
+    "A photo of a bustling city street at night illuminated by neon lights, in a cyberpunk neon style",
+    "A photograph of a rainy urban alley with glowing neon signs, in a cyberpunk neon style",
+    "A painting of a futuristic motorcycle with bright neon accents, in a cyberpunk neon style",
+    "A vivid neon-lit skyline of a high-tech city, in a cyberpunk neon style",
+    "An underground subway station bathed in neon light, cyberpunk neon style",
+    "A hacker's den with multiple screens and neon blue lighting, in a cyberpunk neon style",
+    "A neon-lit bar with eclectic patrons, in a cyberpunk neon style",
+    "A cybernetic owl with glowing neon eyes perched in a neon-lit tree, in a cyberpunk neon style",
+    "A floating market with neon signs hovering above boats, in a cyberpunk neon style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/03.jpg",
+  "image_sha256": "363bf44f75a3807196fd605d1aab1ce7ed48291caf0fb04c03d34ffd1d6444dc",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:52+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A stone path winds between dark rocks and grasses toward traditional pagodas and a distant skyline beneath a huge white sun, in cyberpunk neon.\"}",
+  "status": "PASS",
+  "source_caption": "A stone path winds between dark rocks and grasses toward traditional pagodas and a distant skyline beneath a huge white sun, in cyberpunk neon.",
+  "completed_at": "2026-10-12T18:30:57+09:00",
+  "seconds": 5.22
+}

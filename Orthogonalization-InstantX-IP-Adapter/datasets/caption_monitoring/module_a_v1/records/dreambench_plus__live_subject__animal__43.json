@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/43",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/43",
+  "identity_term": "French bulldog",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/43.txt",
+  "label_source_sha256": "5423ef0ecb0a19699a7d0373707accc31cbae66972627c6ec254412903f1b1b1",
+  "target_prompts": [
+    "A photo of a French bulldog napping on a sunny patio",
+    "A photograph of a French bulldog playing with a ball in a park",
+    "A photo of a French bulldog waiting patiently by a cafe table",
+    "A photograph of a French bulldog with its head tilted curiously in a garden",
+    "A cartoon-style illustration of a French bulldog wearing a detective hat",
+    "A watercolor painting of a French bulldog sitting beside a tranquil lake",
+    "An anime-style drawing of a French bulldog heroically standing atop a city skyscraper",
+    "A French bulldog floating on a leaf down a mystical river",
+    "A French bulldog wearing a tiny jetpack, zooming playfully around the Eiffel Tower"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/43.jpg",
+  "image_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:34+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A French bulldog with fawn fur sits facing away and looks back over its shoulder, wearing a yellow hoodie with a white hood against a blue backdrop.\"}",
+  "status": "PASS",
+  "source_caption": "A French bulldog with fawn fur sits facing away and looks back over its shoulder, wearing a yellow hoodie with a white hood against a blue backdrop.",
+  "completed_at": "2026-10-12T18:29:37+09:00",
+  "seconds": 2.77
+}

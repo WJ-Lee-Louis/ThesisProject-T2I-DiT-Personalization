@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/15",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/15",
+  "identity_term": "street lamp",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/15.txt",
+  "label_source_sha256": "77f80e5e5bb99fe7586d63d943dc3ee5d0c6ace0effd1a392d4b654a7d8fd029",
+  "target_prompts": [
+    "A photo of a street lamp casting a warm glow on a cobblestone street at dusk",
+    "A photograph of a street lamp covered in snow during a quiet winter night",
+    "A detailed photo of a street lamp with intricate patterns in an old European city",
+    "A photo of a street lamp illuminating a foggy park pathway",
+    "A watercolor painting of a street lamp with blooming flowers at its base",
+    "An anime-style illustration of a street lamp glowing softly in a mystical forest",
+    "A minimalist sketch of a street lamp, focusing on its sleek, modern design",
+    "A street lamp that transforms into a rocket, blasting off into a starry sky",
+    "A street lamp with a hidden door, leading to an underground enchanted library"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/15.jpg",
+  "image_sha256": "bb807665e6075d3a1593607544383be5e6f85881be6a6668f3658dde8e83e0c4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:08+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a street lamp with three glowing amber lanterns on curved arms rising against a cloudy dusk sky\"}",
+  "status": "PASS",
+  "source_caption": "a street lamp with three glowing amber lanterns on curved arms rising against a cloudy dusk sky",
+  "completed_at": "2026-10-12T18:30:11+09:00",
+  "seconds": 2.77
+}

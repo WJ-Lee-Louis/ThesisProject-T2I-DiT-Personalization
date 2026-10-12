@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/32",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/32",
+  "identity_term": "cap",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/32.txt",
+  "label_source_sha256": "2168f4c7edffe2097cb18989ded881017dc316490e79887dcc4a6184b3dda1c7",
+  "target_prompts": [
+    "A photograph of a cap left on a bench in a busy city park",
+    "A photo of a cap hanging on a hook beside a rustic wooden door",
+    "A detailed photograph of a worn cap on the dashboard of an old truck",
+    "A photo of a cap floating gently on a calm lake",
+    "An anime-style illustration of a brightly colored cap flying in the wind",
+    "A minimalist sketch of a cap placed on a stack of old books",
+    "A retro-style rendering of a cap from the 1920s on a vintage hat stand",
+    "A cap transforming into a bird, its fabric feathers fluttering against a sunset sky",
+    "A cap as a tiny boat, sailing through the canals of Venice with a mouse as its captain"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/32.jpg",
+  "image_sha256": "a1609f3cae9264b13d1d6b94f2e431ffb5b663f93b0affb0dcf4426a7a7b1d13",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:21+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a cap with a black fabric crown and white embroidered smiley face, held in front of a concrete wall\"}",
+  "status": "PASS",
+  "source_caption": "a cap with a black fabric crown and white embroidered smiley face, held in front of a concrete wall",
+  "completed_at": "2026-10-12T18:30:25+09:00",
+  "seconds": 3.14
+}

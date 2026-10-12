@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/19",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/19",
+  "identity_term": "robin",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/19.txt",
+  "label_source_sha256": "2713c1adb0d5befbfa7a7a53c0c2944260ca3af3bd37b4305308b44476176d5c",
+  "target_prompts": [
+    "A photograph of a robin perched on a frost-covered branch in a wintry landscape",
+    "A photo of a robin building a nest in a blooming apple tree",
+    "A detailed photograph of a robin singing at sunrise with dewdrops in the background",
+    "A photo capturing a robin darting across a garden filled with daisies",
+    "A watercolor painting of a robin resting on a garden spade, with soft pastel backgrounds",
+    "An anime-style illustration of a robin flying through cherry blossoms",
+    "A minimalist sketch of a robin silhouette against a full moon",
+    "A robin with tiny lanterns hanging from its beak, illuminating a dark forest path",
+    "A robin transforming into leaves with each flap of its wings, blending into an autumn landscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/19.jpg",
+  "image_sha256": "e07efd14f998946efb538df93b92b649f5b0c50fadd876aba107cb594356db63",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:14+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a robin with an orange breast and gray-brown feathers standing on a tree stump scattered with seeds\"}",
+  "status": "PASS",
+  "source_caption": "a robin with an orange breast and gray-brown feathers standing on a tree stump scattered with seeds",
+  "completed_at": "2026-10-12T18:29:18+09:00",
+  "seconds": 3.7
+}

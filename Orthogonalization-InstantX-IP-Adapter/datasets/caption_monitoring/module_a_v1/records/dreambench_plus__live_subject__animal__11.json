@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/11",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/11",
+  "identity_term": "heron",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/11.txt",
+  "label_source_sha256": "6feff14c6789e5ed00d3ccc0836c91f27020743530b7cd8b0e84e80528b195cc",
+  "target_prompts": [
+    "A photo of a heron standing stoically in a serene pond at sunrise",
+    "A photograph of a heron in mid-flight over a misty river",
+    "A photo capturing a heron delicately fishing near the reeds",
+    "A photograph of a heron perched on a wetland's weathered wooden fence",
+    "A watercolor painting of a heron with a foggy marshland as background",
+    "An anime-style illustration of a heron gracefully landing on a cherry blossom tree",
+    "A minimalist sketch of a heron, portrayed with sleek, flowing lines against a stark white background",
+    "A heron casting a shadow that morphs into a mythical dragon along the riverside",
+    "A heron standing on a floating leaf, drifting through a surreal landscape of oversized lotus flowers"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/11.jpg",
+  "image_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:07+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a heron with gray and white feathers and a long orange bill flying with its wings spread against a blurred background\"}",
+  "status": "PASS",
+  "source_caption": "a heron with gray and white feathers and a long orange bill flying with its wings spread against a blurred background",
+  "completed_at": "2026-10-12T18:29:11+09:00",
+  "seconds": 3.56
+}

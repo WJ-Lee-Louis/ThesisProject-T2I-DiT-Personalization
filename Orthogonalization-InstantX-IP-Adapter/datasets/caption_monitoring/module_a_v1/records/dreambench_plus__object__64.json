@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/64",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/64",
+  "identity_term": "robot",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/64.txt",
+  "label_source_sha256": "1966ee534d1ead0df61097b212b8318b828bf19aba3737259d0731a41a5cd30c",
+  "target_prompts": [
+    "A photograph of a robot helping an elderly woman cross the street",
+    "A photo of a robot conducting a symphony orchestra",
+    "A detailed photograph of a robot at a construction site, operating machinery",
+    "A photo of a robot sitting quietly in a library, reading books",
+    "A watercolor painting of a robot surrounded by children in a playground",
+    "An anime-style illustration of a robot heroically defending a city",
+    "A retro-style digital artwork of a robot in a 1950s diner serving milkshakes",
+    "A robot planting trees on a barren planet, bringing life to its surface",
+    "A robot and a dolphin dancing under the ocean, surrounded by swirling schools of fish"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/64.jpg",
+  "image_sha256": "f98cc5cfa92e7753235b3535d76934e3d859b68d1f9ced7b997ef4ca3d21e02f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:49+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a robot with a blue metal body, a coiled spring antenna, and red feet standing upright with one arm raised\"}",
+  "status": "PASS",
+  "source_caption": "a robot with a blue metal body, a coiled spring antenna, and red feet standing upright with one arm raised",
+  "completed_at": "2026-10-12T18:30:52+09:00",
+  "seconds": 2.64
+}

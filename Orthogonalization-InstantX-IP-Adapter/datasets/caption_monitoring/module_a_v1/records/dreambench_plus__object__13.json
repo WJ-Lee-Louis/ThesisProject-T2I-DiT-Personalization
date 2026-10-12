@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/13",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/13",
+  "identity_term": "teddy bear",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/13.txt",
+  "label_source_sha256": "0c1817045d0c371b9d6304ec4ba9eeae38123c3badf51bafaead7433abf7c4a7",
+  "target_prompts": [
+    "A photograph of a teddy bear sitting on a park bench surrounded by autumn leaves",
+    "A photo of a teddy bear peeking out of a child's backpack in a crowded school hallway",
+    "A detailed photograph of a teddy bear placed beside a sleeping newborn in a cozy nursery",
+    "A photo of a teddy bear holding a heart-shaped balloon at a festive fairground",
+    "A watercolor painting of a teddy bear dressed as a knight, guarding a castle",
+    "An anime-style illustration of a teddy bear flying with a jetpack through a starry sky",
+    "A retro-style graphic of a teddy bear sitting at an old-fashioned typewriter",
+    "A teddy bear navigating a tiny sailboat on a chocolate river under a candy cane arch",
+    "A teddy bear conducting an orchestra of animated toys in a moonlit toy shop"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/13.jpg",
+  "image_sha256": "094de0502d52ec423daa32895f65d1c9d092133b0ca32737ee4e4fa1be916fd4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:07+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a teddy bear with brown fur, aviator goggles on its head, and a white scarf sitting on a glossy white surface\"}",
+  "status": "PASS",
+  "source_caption": "a teddy bear with brown fur, aviator goggles on its head, and a white scarf sitting on a glossy white surface",
+  "completed_at": "2026-10-12T18:30:10+09:00",
+  "seconds": 3.0
+}

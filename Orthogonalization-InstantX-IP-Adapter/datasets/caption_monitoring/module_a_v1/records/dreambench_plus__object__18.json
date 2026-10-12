@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/18",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/18",
+  "identity_term": "robot",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/18.txt",
+  "label_source_sha256": "0fb2740a74441cb2884e4a6347bb1593afa4fc556a4fc41c2ef2e75c07eee38c",
+  "target_prompts": [
+    "A photograph of a robot assembling a car in a factory",
+    "A photo of a robot gardening in a community park",
+    "A photograph of a robot teaching in a modern classroom",
+    "A photo of a robot serving coffee in a trendy cafe",
+    "A robot depicted in a steampunk style, with intricate bronze gears and steam pipes",
+    "An anime-style illustration of a robot flying with a jetpack over a city",
+    "A minimalist sketch of a robot reading a book beneath a tree",
+    "A robot exploring the ocean depths, surrounded by curious marine life",
+    "A giant robot peacefully playing chess with elderly people in a sunny park"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/18.jpg",
+  "image_sha256": "7f08d2598ace2dbc11a28b6cd2e4f41f8ca863ac438770e6d25d5684ae2f22e5",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:11+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a robot with a yellow box-shaped body, large binocular eyes, and tank treads standing on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a robot with a yellow box-shaped body, large binocular eyes, and tank treads standing on a white surface",
+  "completed_at": "2026-10-12T18:30:14+09:00",
+  "seconds": 3.58
+}

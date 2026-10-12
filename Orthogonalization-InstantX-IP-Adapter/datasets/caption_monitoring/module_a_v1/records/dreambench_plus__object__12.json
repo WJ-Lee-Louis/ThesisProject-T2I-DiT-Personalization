@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/12",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/12",
+  "identity_term": "watch",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/12.txt",
+  "label_source_sha256": "78714595ed0d18eb9da506c0eea320b085b6cd4a20c752289f98dff5c8fab4d8",
+  "target_prompts": [
+    "A photograph of a watch casually left on an old wooden table beside a cup of coffee",
+    "A photo of a watch with a cracked leather strap on the wrist of an elderly man reading a newspaper",
+    "A photograph of a watch entwined with a delicate gold chain on a velvet cushion",
+    "A photo of a watch gleaming under the bright lights of a glass display case in a luxury store",
+    "A digital painting of a watch with glowing neon digits in a dark, cyberpunk setting",
+    "A watercolor of a watch peeking out from under a pile of autumn leaves",
+    "An ink sketch of a watch integrated into a steampunk gear assembly",
+    "A watch growing on a tree as if it were a fruit, with time increments appearing as the leaves around it turn",
+    "A surrealistic depiction of a watch melting over ancient stone ruins, its hands spinning backwards rapidly"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/12.jpg",
+  "image_sha256": "9b96f4c826927fa2efa4e153872449b4e7b75cbb52cd01536b01e032cb9e3315",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:06+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a watch with a dark face, gold-tone case and markers, and a black metal band resting on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a watch with a dark face, gold-tone case and markers, and a black metal band resting on a white surface",
+  "completed_at": "2026-10-12T18:30:09+09:00",
+  "seconds": 2.72
+}

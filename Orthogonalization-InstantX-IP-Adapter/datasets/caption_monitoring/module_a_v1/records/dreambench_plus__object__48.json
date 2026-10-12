@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/48",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/48",
+  "identity_term": "egg",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/48.txt",
+  "label_source_sha256": "ef6b6130b47aac3e6b2413582e630d694c333a16c9469c6e5f30c2c62a68a479",
+  "target_prompts": [
+    "A photograph of an egg broken on a rustic wooden table",
+    "A photo of an egg nestled in a cozy bird's nest",
+    "A detailed photograph of an egg catching the morning sunlight on a windowsill",
+    "A photo of an egg balanced on a stone in a serene garden",
+    "A watercolor painting of an egg in a nest surrounded by spring flowers",
+    "An anime-style drawing of a magical egg glowing with an inner light",
+    "A minimalist sketch of an egg with soft, subtle shadows",
+    "An egg floating in space, casting a shadow over a distant planet",
+    "An egg cracking open to release a tiny, radiant dragon"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/48.jpg",
+  "image_sha256": "5470aed041b156f02a4abf9e3516257ee8750df4ebdccf2f69ea5b7e3f09224f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:36+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"an egg with a pale shell and a black drawn face standing upright on a green surface\"}",
+  "status": "PASS",
+  "source_caption": "an egg with a pale shell and a black drawn face standing upright on a green surface",
+  "completed_at": "2026-10-12T18:30:39+09:00",
+  "seconds": 2.88
+}

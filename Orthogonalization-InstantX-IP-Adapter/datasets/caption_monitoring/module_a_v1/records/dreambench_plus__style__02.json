@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/02",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/02",
+  "identity_term": "sunset",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/02.txt",
+  "label_source_sha256": "9f669a8ac82ec93e2784f05b3303ff709af4af96a936504c31a386e726d0da46",
+  "target_prompts": [
+    "A photo of a serene beach during sunset, capturing the golden horizon",
+    "A photograph of a bustling city skyline illuminated by the fading sunset glow",
+    "A painting of a tranquil lake reflecting the vibrant colors of sunset",
+    "A quiet countryside road basking in the soft light of sunset",
+    "A couple walking hand-in-hand along a shoreline at sunset",
+    "A lone tree silhouetted against a fiery sunset sky",
+    "A sunset view from a mountain peak, bathing the landscape in orange hues",
+    "A fantastical city floating amongst clouds, bathed in eternal sunset",
+    "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/02.jpg",
+  "image_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:51+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A sunset over the ocean reflects orange light across wet sand along a beach beneath pink-purple clouds.\"}",
+  "status": "PASS",
+  "source_caption": "A sunset over the ocean reflects orange light across wet sand along a beach beneath pink-purple clouds.",
+  "completed_at": "2026-10-12T18:30:55+09:00",
+  "seconds": 4.22
+}

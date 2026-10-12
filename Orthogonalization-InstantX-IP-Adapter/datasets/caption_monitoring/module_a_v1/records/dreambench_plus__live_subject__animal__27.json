@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/27",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/27",
+  "identity_term": "wolf",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/27.txt",
+  "label_source_sha256": "43bf616c90caf1cdac7db94a88234b0cafd2f81965c4bfbc93bfa2041d6f1273",
+  "target_prompts": [
+    "A photo of a wolf running through a snowy forest",
+    "A photograph of a wolf sitting beside a crystal blue lake",
+    "A photo of a wolf playing with a colorful ball in a grassy field",
+    "A photograph of a wolf resting under a shady tree on a sunny day",
+    "An anime-style illustration of a wolf with bright blue eyes, sitting under the northern lights",
+    "A watercolor painting of a wolf wearing a cozy scarf, surrounded by autumn leaves",
+    "A minimalist sketch of a wolf howling at the moon",
+    "A wolf navigating through an icy maze, with each wall reflecting a different season",
+    "A wolf with wings made of shimmering snowflakes, gliding over a frozen cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/27.jpg",
+  "image_sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:21+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a wolf with thick gray, black, and white fur walking toward the camera along a path lined with trees\"}",
+  "status": "PASS",
+  "source_caption": "a wolf with thick gray, black, and white fur walking toward the camera along a path lined with trees",
+  "completed_at": "2026-10-12T18:29:26+09:00",
+  "seconds": 4.52
+}

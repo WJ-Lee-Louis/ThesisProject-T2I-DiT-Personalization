@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/17",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/17",
+  "identity_term": "bicycle",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/17.txt",
+  "label_source_sha256": "cb92f123b6df799a55b35862af78994bf863a19d0bb90ed2a76f3028f655d4e9",
+  "target_prompts": [
+    "A photo of a bicycle leaning against a colorful street mural",
+    "A photograph of a bicycle parked beside a serene lake at dawn",
+    "A photo of a bicycle covered in autumn leaves on a cobblestone path",
+    "A photograph of a bicycle with a flower basket in front of an old cafe",
+    "A digital illustration of a bicycle glowing with neon lights in a futuristic cityscape",
+    "A watercolor painting of a bicycle resting against a wooden fence in a meadow",
+    "An ink sketch of a vintage bicycle with a whimsical, twisted frame",
+    "A bicycle with wheels made of spinning sunflowers, traveling down a country lane",
+    "A surreal depiction of a bicycle navigating a tightrope across a city skyline at sunset"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/17.jpg",
+  "image_sha256": "753f4311cb0eec391d566a403d20cd90d694a75ffa07e3438e193099a5f0f5c1",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:10+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a bicycle with a blue-gray frame and bright orange wheels leaning against a white brick wall on a sidewalk\"}",
+  "status": "PASS",
+  "source_caption": "a bicycle with a blue-gray frame and bright orange wheels leaning against a white brick wall on a sidewalk",
+  "completed_at": "2026-10-12T18:30:13+09:00",
+  "seconds": 3.0
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/38",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/38",
+  "identity_term": "elephant",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/38.txt",
+  "label_source_sha256": "18607ae180b350d16f7893782f1ddba5cb43a02746294b31462db8798a6fbd03",
+  "target_prompts": [
+    "A photograph of an elephant splashing water with its trunk in a river at sunset",
+    "A photo of an elephant walking through a lush, green jungle",
+    "A detailed photograph of an elephant interacting with its calf in the savannah",
+    "A photo of an elephant standing majestically on a hilltop with mountains in the background",
+    "An abstract painting of an elephant, using bold, swirling colors to depict its movement",
+    "An anime-style illustration of an elephant performing in a circus under bright lights",
+    "A minimalist black and white sketch of an elephant's silhouette against a full moon",
+    "An elephant painting the sky with different colors",
+    "An elephant walking through a desert oasis"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/38.jpg",
+  "image_sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:30+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"an elephant with reddish-brown skin and long curved tusks standing on grassy ground among shrubs\"}",
+  "status": "PASS",
+  "source_caption": "an elephant with reddish-brown skin and long curved tusks standing on grassy ground among shrubs",
+  "completed_at": "2026-10-12T18:29:33+09:00",
+  "seconds": 3.25
+}

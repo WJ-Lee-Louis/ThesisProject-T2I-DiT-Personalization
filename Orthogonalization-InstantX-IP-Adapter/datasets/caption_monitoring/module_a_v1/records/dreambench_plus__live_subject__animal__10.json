@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/10",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/10",
+  "identity_term": "fox",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/10.txt",
+  "label_source_sha256": "8ad151b08a16f149ff23ad4878b694de51ffb2fbd488051892083cfae6a4a078",
+  "target_prompts": [
+    "A photo of a fox gingerly crossing a frozen creek",
+    "A photograph of a fox peering out from behind autumn leaves",
+    "A photo of a fox basking in the early morning sun on a rocky terrain",
+    "A photograph of a fox crouched in a lush green meadow, alert and watching",
+    "A watercolor painting of a fox with a whimsical, vibrant coat in a snowy forest scene",
+    "An anime-style illustration of a fox with oversized, expressive eyes, resting under a cherry blossom tree",
+    "A stylized graphic design of a fox in a sleek, modern minimalistic black and white outline",
+    "A fox swirling in the wind, blending into a forest at sunset",
+    "A fox navigating a tiny boat through the misty waters of a magical woodland stream"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/10.jpg",
+  "image_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:05+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a fox with orange-red fur, a pale chest, and dark legs standing on a snowy surface\"}",
+  "status": "PASS",
+  "source_caption": "a fox with orange-red fur, a pale chest, and dark legs standing on a snowy surface",
+  "completed_at": "2026-10-12T18:29:07+09:00",
+  "seconds": 2.77
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/14",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/14",
+  "identity_term": "serene desert",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/14.txt",
+  "label_source_sha256": "5a53a18bf5248b67e2757c271227738dd4562d4871c823f9bdd03fc98952258f",
+  "target_prompts": [
+    "A photograph of a tranquil desert landscape at dawn, serene desert style",
+    "A painting of a lone cactus under a vast, clear sky, serene desert style",
+    "A photo of sand dunes softly lit by the setting sun, in a serene desert style",
+    "An image of a desert fox quietly navigating through sparse vegetation, serene desert style",
+    "A serene desert scene featuring an old wooden cart partially buried in sand",
+    "A moonlit desert with gentle winds stirring the sand, serene desert style",
+    "A quiet desert oasis surrounded by palm trees, in a serene desert style",
+    "A mirage of an ancient city appearing over the dunes in a serene desert",
+    "A photo of a floating desert island in the sky, serene desert style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/14.jpg",
+  "image_sha256": "b10ccab4436097beceeaba860ad247ab679fea333869bd9c81f8d259df72e8b2",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:31:05+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A serene desert with rolling orange sand dunes beneath a broad, pale sky\"}",
+  "status": "PASS",
+  "source_caption": "A serene desert with rolling orange sand dunes beneath a broad, pale sky",
+  "completed_at": "2026-10-12T18:31:07+09:00",
+  "seconds": 2.09
+}

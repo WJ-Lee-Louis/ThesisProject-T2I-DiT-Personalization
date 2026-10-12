@@ -1,133 +1,98 @@
-# Identity 보존을 위한 semantic pipeline
+# Target-aware source semantic pipeline
 
-Reference image에서 보존할 concept을 `identity_term`으로 지정하고, source caption과 target prompt의 나머지 의미 성분을 자동으로 분해한다. 이 성분들의 text embedding 방향을 reference visual embedding에서 제거하여 reference의 불필요한 내용과 target의 충돌을 줄이는 것이 목적이다.
-
-연구의 중심은 **projection 기반 disentanglement**다. LLM은 caption과 component 분석을 자동화하며, InstantX의 single-stream gate는 별도의 보조 설정이다.
-
-## 1. 입력과 전체 흐름
-
-| 입력                    | 설명                                                                       |
-| ----------------------- | -------------------------------------------------------------------------- |
-| Reference image         | 개인화에 사용할 이미지                                                     |
-| `identity_term`         | 사용자가 보존할 concept. 예: `a dog`, `a red backpack`, `watercolor style` |
-| `target_prompt`         | 생성할 장면을 설명하는 자유문                                              |
-| `source_caption` (선택) | 직접 제공하면 이미지 captioning을 생략                                     |
-
-`identity_term`은 target prompt에 **대소문자를 포함해 정확한 문자열과 단어 경계로** 존재해야 한다. 예를 들어 `a dog`는 `A dog`나 `a doghouse`와 일치하지 않는다. 사용자 caption에도 같은 조건을 적용하며, 불일치하면 LLM 호출 전에 중단한다.
-
-기본 설정은 source와 target을 모두 사용하는 `source_target`이다.
+Reference의 관찰과 제거 판단을 분리한다. A는 이미지를 caption으로 기록하고, B-source는 target이 요구하는 변경 범위에 따라 source의 보존 영역과 제거 components를 선택한다. B-target은 기존 identity-only 분해를 유지한다. 실제 생성에는 원본 target prompt를 전달한다.
 
 ```text
-reference image + identity_term + target_prompt
- → 입력 검증
- → Module A: reference caption 생성 (사용자 caption이 있으면 생략)
- → Module B: source caption / target prompt 각각 분해
- → JSON 및 원문 span 검증
- → local 또는 factorial로 component 방향 계산
- → source·target 방향을 합쳐 한 번의 SVD / visual projection
- → InstantX IP-Adapter 이미지 생성
+reference image + identity_term → A → source_caption
+source_caption + target_prompt + identity_term → B-source → source partition
+target_prompt + identity_term → B-target → target partition
+origin에 따른 제거 components → local/factorial contrasts → SigLIP pooled directions
+→ 기존 SVD + visual projection + norm restoration → InstantX IP-Adapter
 ```
 
-Component 분석을 위해 만든 부분 문장은 제거 방향 계산에만 사용한다. **실제 이미지 생성의 text conditioning에는 원래 target prompt를 전달한다.**
+## 보존 정책
 
-## 2. LLM 모듈과 분해 규칙
+`identity_term`은 사용자가 명시한 보존 개념이다. Benchmark에서는 자연어 class/label을 기본값으로 사용하되 reference ID와 구분한다. 관사는 있어도 없어도 되지만 source와 target 안에 대소문자를 포함하여 정확한 단어 경계로 등장해야 한다. 임의로 소문자화하거나 label을 축약하지 않는다.
 
-| 모듈                          | 입력                     | 출력                                                    |
-| ----------------------------- | ------------------------ | ------------------------------------------------------- |
-| A. Reference Image Captioning | 이미지 + `identity_term` | 지정 identity를 그대로 포함하는 간결한 `source_caption` |
-| B. Prompt Component Analysis  | text + `identity_term`   | 보존 구간, 중립 구간, 제거할 component 목록             |
+- Subject의 색·무늬·형태·재질 등 외형은 기본 보존한다. Target이 **동일 대상의 동일 속성**을 변경할 때 해당 source 표현만 제거 후보로 만든다. 언급 없음과 동일 속성 재확인은 보존이다.
+- 빨간 모자는 털 색 변경이 아니며, 수채화 표현은 털 색·무늬 전체 변경을 의미하지 않는다.
+- 자세·행동·받침면·배경은 context 전달을 줄이기 위한 기본 제거 후보다. Target에 동일 장소가 있어도 기본 정책을 유지한다. Reference의 자세·배경을 유지하라는 명시적 요청은 예외다.
+- 의상·액세서리·표정은 초기의 보수적 정책으로 유지하며, 해당 속성을 교체/제거하거나 명백히 양립할 수 없는 상태를 요구하면 해제한다. 새 액세서리 추가만으로 다른 액세서리를 제거하지 않는다.
+- Style/scene concept에서는 해당 개념의 실현 정보를 보존한다. 수채화가 identity이면 고양이의 갈색 털은 subject identity가 아니다. Sunset이면 하늘 색이 개념 보존에 기여할 수 있다.
+- Target이 명시적 identity 자체를 모순되게 변경하면 B-source는 원문 evidence와 이유를 담은 `conflicts`를 반환하고, 코드가 `IdentityConflictError`로 중단한다. 의미 판정은 LLM에 의존한다. Target-only는 B-source를 호출하지 않으므로 이 추가 충돌 판정을 하지 않는다.
 
-두 모듈의 system prompt 전문과 입출력 예시는 [LLM 모듈 공유 문서](prompts/llm_modules_share.md)에 정리했다. 실행 시 사용하는 원본은 `semantic_components.py`의 prompt 상수이므로, 공유 문서만 편집해도 실행 prompt가 바뀌지는 않는다.
+## Source JSON과 검증
 
-Module B의 출력 예시:
+입력:
+
+```json
+{"source_caption":"a brown dog with white paws sitting on grass","target_prompt":"a dog wearing a red hat","identity_term":"dog"}
+```
+
+출력:
 
 ```json
 {
-  "identity_term": "a dog",
-  "preserved_spans": ["a dog"],
-  "neutral_spans": ["a photo of"],
-  "components": [
-    { "spans": ["playing the guitar"] },
-    { "spans": ["on a sofa"] }
-  ]
+  "identity_term": "dog",
+  "preserved_spans": ["dog"],
+  "retained_spans": ["brown", "with white paws"],
+  "neutral_spans": ["a"],
+  "components": [{"spans": ["sitting"]}, {"spans": ["on grass"]}],
+  "conflicts": []
 }
 ```
 
-위 예시의 원문은 `a photo of a dog playing the guitar on a sofa`다.
+`preserved_spans`는 identity와 최소 문법적 carrier다. 각 span은 exact identity를 포함하며 모든 identity 출현을 보호한다. `retained_spans`는 추가 의미 보존 구간이며 identity를 포함할 필요도, 인접할 필요도 없다. `neutral_spans`는 고정 문법 요소만 담는다. `components`는 실제 제거 후보만 담고 보존 속성을 중복 출력하지 않는다.
 
-- **보존 구간**: identity와 필요한 문법적 연결어를 유지한다. 예: identity가 `sunset`이면 `during sunset`을 보존할 수 있다.
-- **중립 구간**: `a photo of` 같은 일반적인 도입 표현을 유지하되 제거 방향으로 사용하지 않는다. Identity 명사구의 관사가 제거할 수식어와 떨어져 있으면 관사도 중립으로 유지한다. 제거할 다른 사물·장소의 관사까지 중립화하지 않는다.
-- **Components**: 제거할 의미 단위다. 개수와 종류를 고정하지 않으며, `playing the guitar`처럼 함께 의미를 이루는 구를 불필요하게 나누지 않는다. 독립적으로 바꿀 수 있는 배치·환경 관계는 분리하고, 단순한 연속 장소 표현의 모호성도 독립 조건으로 처리한다. Background 대상으로 도입된 사물과 그 관계, 공유 관계를 갖는 병렬 대상, 명시적 관계절의 대상 내부 묘사는 함께 묶는다.
+Partition spans는 source의 verbatim substring이며 상호 비중첩, 단어 경계, 순서, lexical coverage를 검증한다. 한 component의 여러 spans는 함께 삭제한다. Source에 없는 target 표현을 partition에 넣으면 실패다. Conflict evidence는 target 원문에서 검증하며 conflict 응답의 partition arrays는 모두 비운다.
 
-각 span은 원문의 실제 구간이며 서로 겹치지 않는다. 세 종류의 span이 모든 단어를 배정하고, 원래 위치와 구두점·공백을 함께 유지하면 원문을 복원할 수 있어야 한다. Identity가 여러 번 등장하면 모두 보호한다.
+구조 오류는 기존 제한 재시도(기본 2회)를 사용한다. 검증된 conflict는 재시도로 지우지 않고 중단한다. JSON 검증은 의미적 판단의 정답을 보장하지 않는다.
 
-Identity가 의미 단위의 중간에 끼면 하나의 component에 여러 span을 묶을 수 있다. 예를 들어 `A tiny dragon perched on a pixel art cloud`에서 identity가 `pixel art`이면 `perched`와 `{"spans":["on a","cloud"]}`를 별도 component로 처리한다. 묶인 span들은 항상 함께 제거하며, component 수는 span 수가 아닌 **그룹 수**다. Style을 보존하는 경우 대상 사물 자체도 제거 component가 될 수 있다.
+## Contrast의 고정 문맥
 
-잘못된 JSON/필드, 빈 span, 원문에 없는 구, identity 침범, 중복·겹침·순서 오류, 미배정 단어를 검증한다. 현재 span 형식은 단어 경계도 확인하여 단어 내부의 우연한 문자열 일치를 제외한다. 출력 검증 실패에는 피드백을 포함하여 최대 2회 재시도하고, API·인증·네트워크 오류는 즉시 중단한다.
-
-## 3. Local / factorial과 projection
-
-`P_S`는 선택한 component 집합 `S`만 남긴 부분 문장이다. 보존·중립 구간은 모든 부분 문장에 유지하며, phrase를 identity-first 순서로 재배치하지 않는다. 모든 component를 남기면 원문 그대로다.
-
-`e(P)`는 **정규화한 SigLIP pooled text embedding**이다. Token span의 embedding을 직접 평균하거나 전체 문장에서 단어 벡터를 단순 차감하는 방식은 아니다.
-
-| 방식           | Component i의 제거 방향                                                        |
-| -------------- | ------------------------------------------------------------------------------ |
-| `local` (기본) | 전체 문장과 i만 제거한 문장의 embedding 차이                                   |
-| `factorial`    | 다른 component의 모든 부분집합 문맥에서, i의 유무에 따른 embedding 차이의 평균 |
+`P_S`는 제거 후보 중 S만 남긴 문장이다. 세 종류의 고정 spans는 **모든** P_S에 남는다. 외형 보존 구간은 factorial 조합에서도 꺼지지 않는다. N은 전체 관찰 속성 수가 아닌 제거 후보 그룹 수다. 기존 direction 수식은 그대로 사용한다.
 
 ```text
-local:
-d_i = normalize(e(P_all) - e(P_all_without_i))
-
-factorial:
-d_i = normalize(mean_{S ⊆ components_without_i}
-                (e(P_{S ∪ {i}}) - e(P_S)))
+local:     d_i = normalize(e(P_all) - e(P_all_without_i))
+factorial: d_i = normalize(mean_S(e(P_(S+{i})) - e(P_S)))
 ```
 
-Factorial은 **각 차이를 먼저 정규화하지 않고**, 차이를 평균한 다음 방향을 정규화한다. Component가 하나면 두 방식은 같고, 제거할 component가 없으면 제거 방향도 없다.
+`e`는 정규화된 SigLIP pooled text embedding이다. 삭제 후 공백만 정리하고 문장을 다시 쓰지 않는다. Fragment와 남은 구두점은 가능하다. 모든 components를 유지하면 원문을 정확히 복원한다. Empty component list도 유효하다.
 
-Source/target에서 얻은 방향을 함께 쌓아 SVD로 직교 기저를 만들고, reference visual pooled embedding에서 해당 부분공간의 projection을 제거한다. 이후 norm restoration과 InstantX image projection을 거친다. 기존 projection 수학은 유지한다.
+Target B의 prompt/schema/분해/direction 선택은 변경하지 않았다. Target 방향이 source의 추가 보존 속성과 겹치는 효과는 별도 실험 대상이다. Text span 보존이 embedding에서의 완전한 속성 보존이나 생성 품질을 보장하지 않는다.
 
-Ablation은 `source`, `target`, `source_target`으로 선택한다. Source-only는 target 분석을 생략하고, target-only는 caption/source 분석을 생략한다. 기본 경로는 caption 1회와 분석 2회이며, 사용자 caption이 있으면 분석 2회다(재시도 제외).
+## API와 저장 형식
 
-## 4. 실행과 재사용
+- `caption(image_bytes, identity_term)`: 검토한 최신 A prompt 사용.
+- `analyze_source(source_caption, target_prompt, identity_term)`: 새 B-source.
+- `analyze_target(text, identity_term)`: 기존 B-target. `analyze()`도 target API로 유지.
+- `prepare_semantic_conditioning(...)`: origin에 따라 자동 연결.
 
-기본 모델은 **`gpt-6-luna`**이며, Module A와 B가 같은 provider 설정을 사용한다. 모델 선택 우선순위는 `--llm-model`(또는 Python의 명시적 model 인자) → `SEMANTIC_LLM_MODEL` 환경변수 → 코드의 `DEFAULT_SEMANTIC_LLM_MODEL`이다. 별도 설정이 없는 새 shell에서도 Luna를 사용하며, 필요하면 환경변수나 CLI로 바꿀 수 있다.
+`source_target`: A + B-source + B-target 각 1회. 수동 caption이면 A 생략.
+`source`: A와 B-source만 호출하지만 B-source는 target을 읽는다.
+`target`: B-target만 호출하며 caption이 필요 없다. 재시도는 이 횟수에 포함하지 않는다.
 
-프로젝트 루트의 PowerShell에서 `SEMANTIC_LLM_API_KEY`를 환경변수로 제공한다. 키는 코드나 결과 파일에 저장하지 않는다. 다른 Responses-compatible endpoint를 쓰면 `SEMANTIC_LLM_ENDPOINT`도 설정한다. Provider는 교체 가능하며, 사용하는 모델은 이미지 입력과 structured output을 지원해야 한다.
+저장 envelope는 `schema_version: 2`다. 새 source에는 `retained_spans`, `conditioned_on_target`(정확한 target 원문), `source_policy: target_aware_source_v1`가 함께 저장된다. Target이 다르거나 source metadata 일부가 누락되거나 미지원 policy이면 재사용을 거부한다. 같은 reference라도 target이 바뀌면 B-source를 새로 실행한다. A caption은 재사용할 수 있다.
+
+이전 unversioned JSON은 기존 의미 그대로 읽는다. Retention metadata가 없는 legacy source는 새 정책으로 자동 승격하지 않으며 기존 components를 그대로 제거한다. 새로운 연구 결과에는 새로 분석한 source를 사용한다. 모니터링 스크립트는 legacy cache를 조용히 재사용하지 않는다. 캐시의 reference image 연결은 원본 reference와 함께 관리해야 한다(이번 변경에 image fingerprint 바인딩은 포함되지 않는다).
+
+## 실행
 
 ```powershell
-# 선택 사항: 생략해도 기본 gpt-6-luna 사용
-$env:SEMANTIC_LLM_MODEL = "gpt-6-luna"
-
 python -m modal run modal_inference.py `
   --reference-image-path "C:/path/reference.png" `
-  --identity-term "a dog" `
-  --prompt "a dog playing the guitar on a sofa" `
+  --identity-term "dog" `
+  --prompt "a dog wearing a red hat" `
+  --source-caption "a brown dog with white paws sitting on grass" `
   --component-origin source_target `
-  --component-strategy local `
-  --orthogonalization-strength 1.0 `
-  --mask-single-text-rows
+  --component-strategy local
 ```
 
-`--source-caption "a dog sleeping on the snow"`를 추가하면 captioning을 생략한다. `--component-strategy factorial`로 계산 방식을 바꾸고, `--component-origin source` 또는 `target`으로 ablation한다. 위 예시는 single-stream gate를 활성화한다.
+기존 CLI/Python 인자는 그대로다. `.components.json` 재사용 시 원본 target과 identity도 확인한다. 기본 모델은 `gpt-6-luna`; 환경변수는 `SEMANTIC_LLM_API_KEY`, 선택적으로 `SEMANTIC_LLM_MODEL`, `SEMANTIC_LLM_ENDPOINT`를 사용한다. 기존 SigLIP 길이 제한과 factorial `max_contexts=256`을 유지한다.
 
-LLM 분석은 로컬에서 수행하며, Modal GPU에는 검증된 분석 결과를 전달한다. 생성 결과 옆의 `.components.json`을 `--component-analysis-path`로 재사용하면 LLM 호출과 API key가 필요 없다. 재사용 시 target prompt가 정확히 일치해야 하며, origin/strategy는 저장 JSON의 설정을 따른다. Source 분석은 원래 reference image와 함께 관리한다.
-
-## 5. 제한과 구현 위치
-
-- Factorial은 분석 문장별 component N개에 대해 `2^N`개의 부분집합 문맥을 사용한다. 기본 예산 `max_contexts=256`을 초과하면 중단한다.
-- SigLIP의 text 길이 제한을 넘으면 오류를 내며 자동으로 잘라내지 않는다.
-- Span 검증은 구조를 보장하지만, LLM의 의미 단위 분해 일관성이나 caption의 시각적 정확성까지 보장하지 않는다. 삭제 후 생기는 불완전한 문장과 구두점도 embedding에 영향을 줄 수 있다.
-- Identity 문자열을 유지하는 것과 embedding 공간에서 identity를 완전히 보존하는 것은 다르다. 실제 생성 이미지의 의도 반영 및 disentanglement 성능은 후속 평가가 필요하다.
-- 이전 분석 JSON도 호환성을 위해 읽는다. 현재 보존·중립 규칙을 적용하려면 과거 cache를 재생성한다.
-
-| 파일                                                                                                                                                     | 역할                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| [semantic_components.py](../orthogonalization_instantx_ip_adapter/semantic_components.py)                                                                | LLM prompt/schema, span 검증, source/target 분석 연결       |
-| [llm_provider.py](../orthogonalization_instantx_ip_adapter/llm_provider.py)                                                                              | API provider 및 환경변수 설정                               |
-| [component_directions.py](../orthogonalization_instantx_ip_adapter/component_directions.py)                                                              | Local/factorial contrast와 방향 계산                        |
-| [orthogonalization.py](../orthogonalization_instantx_ip_adapter/orthogonalization.py), [adapter.py](../orthogonalization_instantx_ip_adapter/adapter.py) | SVD, visual projection, IP-Adapter 연결                     |
-| [inference.py](../orthogonalization_instantx_ip_adapter/inference.py), [modal_inference.py](../modal_inference.py)                                       | Python / Modal 실행 진입점                                  |
-| [test_semantic_pipeline.py](../tests/test_semantic_pipeline.py)                                                                                          | Mock LLM, span 검증, component 수·ablation·수학적 계산 검증 |
+- [전체 runtime prompt와 source schema](prompts/llm_modules_share.md)
+- [A prompt와 번역](prompts/module_a_caption_system_prompt.md)
+- [B-source prompt·16개 executable few-shot](../orthogonalization_instantx_ip_adapter/source_component_prompt.py)
+- [분석·검증·직렬화](../orthogonalization_instantx_ip_adapter/semantic_components.py)
+- [Source 정책 테스트](../tests/test_source_semantic_analysis.py)
+- [실제 caption 8건 API audit](source_component_policy_api_audit.md)

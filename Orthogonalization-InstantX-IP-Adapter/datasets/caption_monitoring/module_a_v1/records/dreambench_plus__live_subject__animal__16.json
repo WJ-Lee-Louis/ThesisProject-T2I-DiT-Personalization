@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/16",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/16",
+  "identity_term": "jellyfish",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/16.txt",
+  "label_source_sha256": "2ca7ef2f8642c61972dea7264d5ab142bae789bc4a7ab27784e8c3fd2307beee",
+  "target_prompts": [
+    "A photograph of a jellyfish gliding gracefully in the deep blue sea",
+    "A photo of a jellyfish illuminated by the sun's rays near the ocean surface",
+    "A detailed photograph of a jellyfish with its tentacles trailing behind in clear water",
+    "A photo of a group of jellyfish drifting near a coral reef",
+    "A watercolor painting depicting a jellyfish with a semi-transparent, shimmering body",
+    "An abstract illustration of a jellyfish, stylized with vibrant colors",
+    "A cartoon-style drawing of a jellyfish with exaggerated, cute features and bright colors",
+    "A jellyfish made of liquid light, floating in the night sky among the stars",
+    "A surreal depiction of a jellyfish gently hovering over a misty forest, glowing softly in the twilight"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/16.jpg",
+  "image_sha256": "b29daaca843a484ac2bd503f395f53587c0d372d40e3dd550db8e4af1452f844",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:11+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a jellyfish with a bright yellow bell and long translucent purple tentacles floating in dark water\"}",
+  "status": "PASS",
+  "source_caption": "a jellyfish with a bright yellow bell and long translucent purple tentacles floating in dark water",
+  "completed_at": "2026-10-12T18:29:13+09:00",
+  "seconds": 2.11
+}

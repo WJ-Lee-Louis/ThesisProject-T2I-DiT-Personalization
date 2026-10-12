@@ -1,0 +1,52 @@
+{
+  "case": "backpack_same_color",
+  "reference": "dreambench/backpack",
+  "input": {
+    "source_caption": "A magenta backpack with gold zippers and colorful pins stands on a rocky ledge against a green, mountainous background.",
+    "target_prompt": "a magenta backpack on a table",
+    "identity_term": "backpack"
+  },
+  "model": "gpt-6-luna",
+  "started_at": "2026-10-12T19:54:39.743317+09:00",
+  "prompt_sha256": "6e3f0455481968a63e96a6dc00bbeabec820dda3696ed8eadb8a55f172b1596f",
+  "attempts": [
+    {
+      "raw_response": "{\"identity_term\":\"backpack\",\"preserved_spans\":[\"backpack\"],\"retained_spans\":[\"magenta\",\"with gold zippers and colorful pins\"],\"neutral_spans\":[\"A\"],\"components\":[{\"spans\":[\"stands\"]},{\"spans\":[\"on a rocky ledge\"]},{\"spans\":[\"against a green, mountainous background.\"]}],\"conflicts\":[]}"
+    }
+  ],
+  "status": "PASS",
+  "output": {
+    "text": "A magenta backpack with gold zippers and colorful pins stands on a rocky ledge against a green, mountainous background.",
+    "identity_term": "backpack",
+    "components": [
+      {
+        "spans": [
+          "stands"
+        ]
+      },
+      {
+        "spans": [
+          "on a rocky ledge"
+        ]
+      },
+      {
+        "spans": [
+          "against a green, mountainous background."
+        ]
+      }
+    ],
+    "preserved_spans": [
+      "backpack"
+    ],
+    "neutral_spans": [
+      "A"
+    ],
+    "retained_spans": [
+      "magenta",
+      "with gold zippers and colorful pins"
+    ],
+    "conditioned_on_target": "a magenta backpack on a table",
+    "source_policy": "target_aware_source_v1"
+  },
+  "all_removed": "A magenta backpack with gold zippers and colorful pins"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/11",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/11",
+  "identity_term": "basketball player",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/11.txt",
+  "label_source_sha256": "57360dbbc2bcbb13936f8ca08363db5163406d12f6bcb9796ebdf61f9a3fb714",
+  "target_prompts": [
+    "A photo of a basketball player shooting a basket during a sunset game",
+    "A photograph of a basketball player dribbling on an urban street court",
+    "A photo of a basketball player sitting on the bench, looking thoughtful during a game pause",
+    "A photograph of a basketball player in mid-air, about to dunk in a crowded stadium",
+    "A watercolor painting of a basketball player in action, with exaggerated motion blur",
+    "An anime-style illustration of a basketball player executing a perfect three-point shot",
+    "A retro-style digital art of a basketball player in a classic 80s basketball uniform",
+    "A basketball player leaping over a high-rise building to score a basket among the clouds",
+    "A depiction of a basketball player balancing on a giant basketball floating on the ocean"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/11.jpg",
+  "image_sha256": "438e8569d63cea47e5ec2f821022c20cf2ce6dab6775b3e3d0d9af140d27cb91",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:47+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a basketball player wearing a dark sleeveless jersey and white leg sleeves, crouching as he dribbles a ball against a dark background\"}",
+  "status": "PASS",
+  "source_caption": "a basketball player wearing a dark sleeveless jersey and white leg sleeves, crouching as he dribbles a ball against a dark background",
+  "completed_at": "2026-10-12T18:29:51+09:00",
+  "seconds": 3.34
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/17",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/17",
+  "identity_term": "frog",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/17.txt",
+  "label_source_sha256": "0cde1e8050db7bac51c59f0709fa5c6cbaae735e77af863bd0fb8c3c185fbb48",
+  "target_prompts": [
+    "A photo of a frog perched on a lily pad in a serene pond",
+    "A photograph of a frog leaping through the air, capturing the motion",
+    "A photo of a frog blending into its rainforest environment, camouflaged among leaves",
+    "A photograph of a frog during a rain shower, water droplets visible on its skin",
+    "A cartoon-style drawing of a frog wearing a tiny crown and sitting on a throne of leaves",
+    "A watercolor painting of a frog with exaggerated large eyes, vibrant green colors dominating",
+    "An ink sketch of a frog peacefully sleeping under a mushroom",
+    "A frog with transparent wings fluttering above a field of wildflowers, reflecting the colors below",
+    "A depiction of a frog playing a tiny guitar by a moonlit pond, with other animals gathered around listening"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/17.jpg",
+  "image_sha256": "76d9d226a527f86df01c738b07319e59992732fb1eeb28b5c9981f5381d509b8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:13+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a frog with a bright orange body, black speckles, and deep blue legs crouching on a rough rock\"}",
+  "status": "PASS",
+  "source_caption": "a frog with a bright orange body, black speckles, and deep blue legs crouching on a rough rock",
+  "completed_at": "2026-10-12T18:29:17+09:00",
+  "seconds": 3.75
+}

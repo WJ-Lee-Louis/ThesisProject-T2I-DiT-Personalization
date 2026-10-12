@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/14",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/14",
+  "identity_term": "eagle",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/14.txt",
+  "label_source_sha256": "6be705b28f5b2f905cd250c1fc28972c3e50e069d63ba7308248a9e4676524eb",
+  "target_prompts": [
+    "A photograph of an eagle soaring high above a mountain range",
+    "A photo of an eagle perched stoically on a cliff overlooking the ocean",
+    "A photograph of an eagle swooping down to catch its prey in a lush forest",
+    "A photo of an eagle resting on a tree branch during a foggy morning",
+    "A watercolor painting of an eagle taking flight, with broad, sweeping brush strokes capturing its powerful wings",
+    "An ink sketch of an eagle, depicted in a traditional Japanese art style with meticulous line work",
+    "A digital illustration of an eagle, styled in a bold, graphic novel format",
+    "An eagle gliding through an aurora-filled sky, its wings shimmering with the colors of the Northern Lights",
+    "A giant eagle flying over a mystical landscape dotted with mythical creatures"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/14.jpg",
+  "image_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:29:10+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"an eagle with dark brown feathers, a white head and tail, and a yellow beak gliding with its wings spread against a pale blue sky\"}",
+  "status": "PASS",
+  "source_caption": "an eagle with dark brown feathers, a white head and tail, and a yellow beak gliding with its wings spread against a pale blue sky",
+  "completed_at": "2026-10-12T18:29:14+09:00",
+  "seconds": 3.53
+}

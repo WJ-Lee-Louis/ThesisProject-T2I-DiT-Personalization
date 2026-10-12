@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/16",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/16",
+  "identity_term": "ring",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/16.txt",
+  "label_source_sha256": "6ea293be4a9f1c589ea2b607a1ba0a8d87111164897124877e8a8188755c613a",
+  "target_prompts": [
+    "A photograph of a ring nestled on a soft, red rose petal",
+    "A photo of a ring glistening under the soft glow of candlelight during a romantic dinner",
+    "A detailed photograph of a ring being crafted by a jeweler, tools in view",
+    "A photograph of a ring lying on an aged wooden table next to an old book",
+    "A watercolor painting of a ring surrounded by a swirl of autumn leaves",
+    "An art deco style illustration of a ring with intricate geometric patterns",
+    "A minimalist line drawing of a ring casting a long shadow under a bright light",
+    "A ring that controls the weather, shown with clouds and lightning emanating from it",
+    "A ring made of liquid mercury, constantly shifting and reforming on a reflective surface"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/16.jpg",
+  "image_sha256": "ee6dd3f1dbf8805e21521c83229c0c6831dbe8149603b62db9b2765dbfbb5a75",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:09+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a ring with a gold band, small stones along the shoulders, and a large rectangular clear stone resting on a white surface\"}",
+  "status": "PASS",
+  "source_caption": "a ring with a gold band, small stones along the shoulders, and a large rectangular clear stone resting on a white surface",
+  "completed_at": "2026-10-12T18:30:11+09:00",
+  "seconds": 2.44
+}

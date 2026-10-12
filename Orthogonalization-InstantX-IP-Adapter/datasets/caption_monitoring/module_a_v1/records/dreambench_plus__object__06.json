@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/06",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/06",
+  "identity_term": "avocado",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/06.txt",
+  "label_source_sha256": "54191cffa1bc5ff99b3f7f7baf7a9026207344769df81438bf5a9571c9f23b00",
+  "target_prompts": [
+    "A photograph of a ripe avocado split open, revealing the creamy green inside",
+    "A photo of a freshly sliced avocado on a wooden cutting board",
+    "A detailed photograph of an avocado half with the pit still in place, set against a dark background",
+    "A photo capturing a bowl of guacamole, made from mashed avocado, beside a sunny window",
+    "An anime-style illustration of a cute avocado character with big, expressive eyes",
+    "A minimalist sketch of a simple avocado outline, emphasizing sleek and elegant lines",
+    "A retro-style advertisement poster featuring an avocado as part of a healthy breakfast",
+    "An avocado with tiny legs and arms planting a small tree, symbolizing growth and environment",
+    "A surreal depiction of an avocado floating in space, orbiting around a planet made of cheese"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/06.jpg",
+  "image_sha256": "fba2aebb6714c8e36df24d697a3604b552cf108c3f7dbda2ba703f4a19c99b75",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:02+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"An avocado cut in half, with bright green flesh and a large brown pit, resting cut-side up on a pink surface\"}",
+  "status": "PASS",
+  "source_caption": "An avocado cut in half, with bright green flesh and a large brown pit, resting cut-side up on a pink surface",
+  "completed_at": "2026-10-12T18:30:04+09:00",
+  "seconds": 2.02
+}

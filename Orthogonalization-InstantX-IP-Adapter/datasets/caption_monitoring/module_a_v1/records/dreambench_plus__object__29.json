@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/29",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/29",
+  "identity_term": "maple leaf",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/29.txt",
+  "label_source_sha256": "dc6648571525e9676c784b743dc522ae71ad3706fb2b4694e63b0fa325137ce1",
+  "target_prompts": [
+    "A photograph of a maple leaf floating on a quiet forest pond",
+    "A close-up photo of a dew-covered maple leaf at dawn",
+    "A photograph of a maple leaf caught in a spider's web, glistening with morning dew",
+    "A photo of a maple leaf changing colors amidst a pile of autumn leaves",
+    "A watercolor painting of a maple leaf gently falling through a misty air",
+    "An anime-style illustration of a maple leaf transforming into a magical creature",
+    "A minimalist sketch of a maple leaf with intricate vein patterns",
+    "A maple leaf serving as a tiny, vibrant sail on a paper boat navigating a puddle",
+    "A maple leaf growing from a fantastical tree whose branches stretch into the clouds"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/29.jpg",
+  "image_sha256": "8a0c84dd7625531467c68fabfcdae3e0b25ab0511d6057434c9669e291b9ae81",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:19+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a maple leaf with orange pointed lobes and a slender stem lying on dark, rough stone\"}",
+  "status": "PASS",
+  "source_caption": "a maple leaf with orange pointed lobes and a slender stem lying on dark, rough stone",
+  "completed_at": "2026-10-12T18:30:23+09:00",
+  "seconds": 3.83
+}

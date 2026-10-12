@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/04",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/04",
+  "identity_term": "Impressionist swirls",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/04.txt",
+  "label_source_sha256": "37b501857d8496cf8dce138aa118a2c578f5e758efc15469c88789f96a05bc7f",
+  "target_prompts": [
+    "A photo of a quiet garden with blooming flowers, brushed in Impressionist swirls",
+    "A painting of a bustling city street, captured in dynamic Impressionist swirls",
+    "A photograph of an old wooden bridge over a tranquil pond, rendered in Impressionist swirls",
+    "A serene lakeside at sunset, depicted with vibrant Impressionist swirls",
+    "A tree-lined pathway, shaded and mysterious, in the style of Impressionist swirls",
+    "A cozy cafe corner with patrons chatting, illustrated in Impressionist swirls",
+    "An old man reading a newspaper on a park bench, enveloped in Impressionist swirls",
+    "A mystical forest where trees have leaves of shimmering gold, envisioned in Impressionist swirls",
+    "A night sky where stars dance in patterns of bright, swirling colors, depicted in Impressionist swirls"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/04.jpg",
+  "image_sha256": "3b52f47779ff3329c6fc5fd928f94c6b7a0068a6931920ce965b0afbc760f4cd",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:54+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A village with dark rooftops and a tall cypress sits beneath a deep blue sky filled with curling bands and glowing yellow stars, in Impressionist swirls\"}",
+  "status": "PASS",
+  "source_caption": "A village with dark rooftops and a tall cypress sits beneath a deep blue sky filled with curling bands and glowing yellow stars, in Impressionist swirls",
+  "completed_at": "2026-10-12T18:31:00+09:00",
+  "seconds": 5.77
+}

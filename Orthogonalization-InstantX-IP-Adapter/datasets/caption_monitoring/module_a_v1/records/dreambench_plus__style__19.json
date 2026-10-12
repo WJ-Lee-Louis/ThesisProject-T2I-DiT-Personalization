@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/19",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/19",
+  "identity_term": "traditional Chinese painting",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/19.txt",
+  "label_source_sha256": "b04d5adf63530a711233201f4787cfeecb4fff86b20fd5617ed734d6852ba550",
+  "target_prompts": [
+    "A mountain landscape shrouded in mist, in traditional Chinese painting style",
+    "A delicate bamboo grove with slender leaves, depicted in traditional Chinese painting",
+    "A serene koi pond reflecting the sky, captured in the style of traditional Chinese painting",
+    "A scholar sitting under a willow tree, in traditional Chinese painting style",
+    "An ancient pagoda amidst rolling hills, in the style of traditional Chinese painting",
+    "A pair of cranes standing in a marshy reed bed, rendered in traditional Chinese painting style",
+    "A bustling ancient market scene with vendors and shoppers, traditional Chinese painting style",
+    "A dragon coiling around a moonlit pagoda, envisioned in traditional Chinese painting style",
+    "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/19.jpg",
+  "image_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:31:11+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A traditional Chinese painting of red-and-green-roofed pavilions nestled among dark pine trees on a mountain slope, with a winding stream and stone paths below.\"}",
+  "status": "PASS",
+  "source_caption": "A traditional Chinese painting of red-and-green-roofed pavilions nestled among dark pine trees on a mountain slope, with a winding stream and stone paths below.",
+  "completed_at": "2026-10-12T18:31:16+09:00",
+  "seconds": 5.31
+}

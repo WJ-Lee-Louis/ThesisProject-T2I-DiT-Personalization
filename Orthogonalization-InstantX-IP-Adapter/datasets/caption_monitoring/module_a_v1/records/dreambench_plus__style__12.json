@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/12",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/12",
+  "identity_term": "pixel art",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/12.txt",
+  "label_source_sha256": "9a9961ac7ae1c893d75f18f21b4c46549ec4bf4225e8d144c7055d9f2c998d13",
+  "target_prompts": [
+    "A photo of a bustling cityscape at night, rendered in pixel art",
+    "A painting of a serene mountain landscape, depicted in pixel art",
+    "A photograph of a colorful coral reef, stylized in pixel art",
+    "An image of a quaint village street, visualized in pixel art",
+    "A vintage car parked on an urban street, in pixel art style",
+    "A cup of steaming coffee on a saucer, pixel art representation",
+    "A houseplant with lush green leaves, illustrated in pixel art",
+    "A scene of tiny astronauts exploring a cheese moon, in pixel art",
+    "An enchanted forest with trees casting spells, visualized in pixel art"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/12.jpg",
+  "image_sha256": "c50c0e93b272ad2dc44abc4ae2a6efed4abf405898e975cae7fffa32324a8a4c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:31:02+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"pixel art made of rounded colored tiles on a dark blue grid, with a large yellow blocky shape across the upper center\"}",
+  "status": "PASS",
+  "source_caption": "pixel art made of rounded colored tiles on a dark blue grid, with a large yellow blocky shape across the upper center",
+  "completed_at": "2026-10-12T18:31:11+09:00",
+  "seconds": 8.72
+}

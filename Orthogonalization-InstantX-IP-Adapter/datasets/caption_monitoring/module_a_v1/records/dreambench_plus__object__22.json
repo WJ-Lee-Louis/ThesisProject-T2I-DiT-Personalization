@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/22",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/22",
+  "identity_term": "sneaker",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/22.txt",
+  "label_source_sha256": "0d8c9abf7d9626bdd1af79456645832575191df542bbcb596e32584dd7c06fa9",
+  "target_prompts": [
+    "A photo of a sneaker left on a basketball court as the sun sets",
+    "A photograph of a sneaker hanging by its laces from a power line",
+    "A detailed photograph of a sneaker splashing through a puddle on a rainy street",
+    "A sneaker positioned neatly beside a school backpack in a hallway",
+    "A cartoon drawing of a sneaker with wings flying across the sky",
+    "A stylized digital illustration of a sneaker glowing neon in a dark room",
+    "An abstract painting of a sneaker bursting with vibrant, psychedelic colors",
+    "A sneaker growing tiny legs and embarking on a mountain hiking adventure",
+    "A sneaker expanding and transforming into a futuristic vehicle zooming through a sci-fi cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/22.jpg",
+  "image_sha256": "38935584952815df8ee07777880f9b9fe8eb8ab1613b95a152980955f4377db0",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "8b114e3740a5cf32015ae65809abf1406587cedc5fddc6e635d7bcce6a8413c0",
+  "started_at": "2026-10-12T18:30:14+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"a sneaker with red and black panels and a white sole, held horizontally in a person's hand\"}",
+  "status": "PASS",
+  "source_caption": "a sneaker with red and black panels and a white sole, held horizontally in a person's hand",
+  "completed_at": "2026-10-12T18:30:17+09:00",
+  "seconds": 2.81
+}
