@@ -8,7 +8,7 @@ The identity input is the original DreamBench class name or the first-line Engli
 - `run.json`: prompt/input hashes, requested model, start time and retry policy.
 - `records/*.json`: independently saved first responses, raw JSON text, caption, validation status, image provenance and elapsed time.
 - `captions.json` / `captions.jsonl`: ordered aggregate results, refreshed after each completed call.
-- [Monitoring report](../../../docs/module_a_caption_monitoring_v1.md): all reference images and unedited captions, with manual review checklists.
+- [Retained implementation issues](../../../docs/llm_component_issues.md): caption identity failure and review limitations. The duplicate Markdown report was consolidated; original images and unedited captions remain in the files above.
 
 The requested API model is `gpt-6-luna`. This monitor uses the project's `ResponsesJSONProvider` with strict `CAPTION_SCHEMA`; it reads the reviewed prompt document directly rather than the older runtime caption prompt. Images use the existing provider's RGB PNG conversion without resizing. API credentials are read from `SEMANTIC_LLM_API_KEY` and are not persisted.
 

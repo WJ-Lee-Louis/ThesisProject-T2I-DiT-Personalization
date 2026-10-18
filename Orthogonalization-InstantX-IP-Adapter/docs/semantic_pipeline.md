@@ -59,7 +59,7 @@ factorial: d_i = normalize(mean_S(e(P_(S+{i})) - e(P_S)))
 
 `e`는 정규화된 SigLIP pooled text embedding이다. 삭제 후 공백만 정리하고 문장을 다시 쓰지 않는다. Fragment와 남은 구두점은 가능하다. 모든 components를 유지하면 원문을 정확히 복원한다. Empty component list도 유효하다.
 
-Target B의 prompt/schema/분해/direction 선택은 변경하지 않았다. Target 방향이 source의 추가 보존 속성과 겹치는 효과는 별도 실험 대상이다. Text span 보존이 embedding에서의 완전한 속성 보존이나 생성 품질을 보장하지 않는다.
+Target B는 identity-only 정책과 기존 schema/direction 선택을 유지한다. DreamBench++ 개발 집합 검토에 따라 관사·carrier·관계절·병렬 구문 처리를 보완했다([LLM 분석 문제와 현재 대응](llm_component_issues.md)). Target 방향이 source의 추가 보존 속성과 겹치는 효과는 별도 실험 대상이다. Text span 보존이 embedding에서의 완전한 속성 보존이나 생성 품질을 보장하지 않는다. 삭제 조합의 연결·수식 관계 위험과 대표 snapshot은 [projection 문제 기록](projection_issues.md)에 남긴다.
 
 ## API와 저장 형식
 
@@ -95,4 +95,5 @@ python -m modal run modal_inference.py `
 - [B-source prompt·16개 executable few-shot](../orthogonalization_instantx_ip_adapter/source_component_prompt.py)
 - [분석·검증·직렬화](../orthogonalization_instantx_ip_adapter/semantic_components.py)
 - [Source 정책 테스트](../tests/test_source_semantic_analysis.py)
-- [실제 caption 8건 API audit](source_component_policy_api_audit.md)
+- [LLM component 분석의 기존 문제·현재 대응·남은 판단](llm_component_issues.md)
+- [Projection의 삭제 조합 문제·재현 snapshot](projection_issues.md)

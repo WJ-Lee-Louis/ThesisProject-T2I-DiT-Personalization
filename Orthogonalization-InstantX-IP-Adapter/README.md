@@ -160,9 +160,18 @@ category, and semantic factors.
 Start with [the current semantic pipeline](docs/semantic_pipeline.md) and
 [the shared LLM prompts and input/output contract](docs/prompts/llm_modules_share.md).
 
+For future implementation work, read
+[LLM component analysis issues](docs/llm_component_issues.md) and
+[projection issues and reproducible snapshots](docs/projection_issues.md).
+These consolidate the historical monitoring reports, development reviews, and
+contrast casebooks. They distinguish implemented responses, unresolved questions,
+actual model outputs, and manually constructed stress cases. Duplicate reports,
+intermediate response tables, and verification-summary JSON files were removed.
+
 Superseded design drafts, obsolete 9/16-prompt batch guides, duplicate LLM
 prompt/schema documents, and Markdown renderings of existing JSONL annotations
-have been removed. Runtime prompts and schemas remain in `semantic_components.py`.
+have been removed. Runtime prompts and schemas remain in `semantic_components.py`
+and `source_component_prompt.py`.
 
 The retained 0903 method and execution guides explain the implemented legacy
 class-projection ablations. The benchmark source ledger, benchmark manifests,
