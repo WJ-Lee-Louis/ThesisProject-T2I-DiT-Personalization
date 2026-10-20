@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/45",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/45",
+  "identity_term": "wooden house",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/45.txt",
+  "label_source_sha256": "9b14b85e5efc2e6f03d69457dcdc43c8d55f5b965ba9b377b792d1406ce8fdb4",
+  "target_prompts": [
+    "A photograph of a wooden house nestled among autumn-colored trees",
+    "A photo of a small wooden house by a frozen lake in winter",
+    "A photograph of a wooden house with a cozy front porch during a sunny day",
+    "A photo of an old wooden house with ivy climbing its walls",
+    "A watercolor painting of a wooden house surrounded by wildflowers",
+    "A minimalist ink sketch of a wooden house on a hillside",
+    "An anime-style illustration of a magical wooden house in an enchanted forest",
+    "A wooden house transforming into a treehouse with branches growing through the walls",
+    "A wooden house floating on a cloud, tethered to the ground by a long, winding staircase"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/45.jpg",
+  "image_sha256": "a8d66cc4e4cc3909b335a5778f2633fd73d10472b72fdf9ab8bf5726868f3ac8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:21+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A weathered wooden house with a steep A-frame section joined to a low rectangular wing, small windows, and an open doorway, standing on a grassy shore beside a lake with mountain slopes beyond\"}",
+  "source_caption": "A weathered wooden house with a steep A-frame section joined to a low rectangular wing, small windows, and an open doorway, standing on a grassy shore beside a lake with mountain slopes beyond",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:26+09:00",
+  "seconds": 4.36
+}

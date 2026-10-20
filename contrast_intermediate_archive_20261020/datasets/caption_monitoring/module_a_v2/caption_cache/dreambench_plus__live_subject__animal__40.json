@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A white tiger with pale fur, faint dark stripes, and blue eyes, its mouth slightly open amid dark green foliage",
+  "identity_term": "white tiger",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d86308489abad409d54abcbfacb4f5c7f38b59611cac0c10a6cbf6d930f473f7",
+    "bytes_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631"
+  },
+  "input_sha256": "2dfef73e6d9cf001b4b8c68b949425ffba8f0bd8fe41e654f94f778a1e5f1723",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "2dfef73e6d9cf001b4b8c68b949425ffba8f0bd8fe41e654f94f778a1e5f1723",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A white tiger with pale fur, faint dark stripes, and blue eyes, its mouth slightly open amid dark green foliage\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

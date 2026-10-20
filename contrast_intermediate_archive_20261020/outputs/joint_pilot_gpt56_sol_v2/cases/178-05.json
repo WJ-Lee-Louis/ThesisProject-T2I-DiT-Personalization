@@ -1,0 +1,129 @@
+{
+  "case_id": "178-05",
+  "reference_index": 178,
+  "target_index": 5,
+  "identity_term": "pastel",
+  "target_prompt": "A cup of tea on a pastel tablecloth, inviting a moment of relaxation",
+  "reference_id": "dreambench_plus/style/18",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a faint moon",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a faint moon",
+      "target_prompt": "A cup of tea on a pastel tablecloth, inviting a moment of relaxation",
+      "identity_term": "pastel"
+    },
+    "input_sha256": "075717c71ebccdb1a93498840c10f1e2742c3ad26ed78ddb5dc7143ebaf8c1f2",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+      "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a faint moon",
+      "identity_term": "pastel",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+        "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+      },
+      "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a faint moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "pastel",
+      "source_preserved": [
+        "pastel",
+        "landscape",
+        "pale blue and pink dunes",
+        "hazy pink sky"
+      ],
+      "source": [
+        {
+          "unit": "softly rolling dune form",
+          "negative": "pastel landscape of pale blue and pink dunes beneath a hazy pink sky with a faint moon"
+        },
+        {
+          "unit": "faint moon quality",
+          "negative": "pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a moon"
+        },
+        {
+          "unit": "moon",
+          "negative": "pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky"
+        }
+      ],
+      "target": [
+        {
+          "unit": "cup of tea and its placement",
+          "negative": "A pastel tablecloth, inviting a moment of relaxation"
+        },
+        {
+          "unit": "invitation to relaxation",
+          "negative": "A cup of tea on a pastel tablecloth"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a faint moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "075717c71ebccdb1a93498840c10f1e2742c3ad26ed78ddb5dc7143ebaf8c1f2",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"pastel\",\"source_preserved\":[\"pastel\",\"landscape\",\"pale blue and pink dunes\",\"hazy pink sky\"],\"source\":[{\"unit\":\"softly rolling dune form\",\"negative\":\"pastel landscape of pale blue and pink dunes beneath a hazy pink sky with a faint moon\"},{\"unit\":\"faint moon quality\",\"negative\":\"pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky with a moon\"},{\"unit\":\"moon\",\"negative\":\"pastel landscape of softly rolling pale blue and pink dunes beneath a hazy pink sky\"}],\"target\":[{\"unit\":\"cup of tea and its placement\",\"negative\":\"A pastel tablecloth, inviting a moment of relaxation\"},{\"unit\":\"invitation to relaxation\",\"negative\":\"A cup of tea on a pastel tablecloth\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:59:41.385053+00:00"
+  }
+}

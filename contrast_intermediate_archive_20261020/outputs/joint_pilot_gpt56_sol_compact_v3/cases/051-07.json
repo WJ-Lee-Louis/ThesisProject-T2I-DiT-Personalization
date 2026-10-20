@@ -1,0 +1,129 @@
+{
+  "case_id": "051-07",
+  "reference_index": 51,
+  "target_index": 7,
+  "identity_term": "Siamese cat",
+  "target_prompt": "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+  "reference_id": "dreambench_plus/live_subject/animal/21",
+  "known_case": "T16",
+  "selection_role": "known development",
+  "source_caption": "A cream-colored Siamese cat with blue eyes and dark facial markings sitting on a wooden countertop",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v3",
+    "inputs": {
+      "source_caption": "A cream-colored Siamese cat with blue eyes and dark facial markings sitting on a wooden countertop",
+      "target_prompt": "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+      "identity_term": "Siamese cat"
+    },
+    "input_sha256": "015e78e79b03c04bdc2b4c5f0718f3b16858bbb1832065664fde9b7d966f2b97",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "fb07ca8416c1c8e91367edc9dd83bd66704eac7458688b757d4b489f2785e218",
+      "bytes_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "A cream-colored Siamese cat with blue eyes and dark facial markings sitting on a wooden countertop",
+      "identity_term": "Siamese cat",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "fb07ca8416c1c8e91367edc9dd83bd66704eac7458688b757d4b489f2785e218",
+        "bytes_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+      },
+      "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A cream-colored Siamese cat with blue eyes and dark facial markings sitting on a wooden countertop\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Siamese cat",
+      "source_preserved": [
+        "Siamese cat",
+        "cream-colored",
+        "blue eyes",
+        "dark facial markings"
+      ],
+      "source": [
+        {
+          "unit": "sitting pose",
+          "negative": "A cream-colored Siamese cat with blue eyes and dark facial markings on a wooden countertop"
+        },
+        {
+          "unit": "wooden countertop placement",
+          "negative": "A cream-colored Siamese cat with blue eyes and dark facial markings sitting"
+        }
+      ],
+      "target": [
+        {
+          "unit": "walking gracefully",
+          "negative": "A Siamese cat along the rim of a giant teacup floating in the sky"
+        },
+        {
+          "unit": "giant teacup rim placement",
+          "negative": "A Siamese cat walking gracefully"
+        },
+        {
+          "unit": "floating in the sky",
+          "negative": "A Siamese cat walking gracefully along the rim of a giant teacup"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A cream-colored Siamese cat with blue eyes and dark facial markings sitting on a wooden countertop\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "015e78e79b03c04bdc2b4c5f0718f3b16858bbb1832065664fde9b7d966f2b97",
+        "prompt_version": "joint_contrast_v3",
+        "prompt_sha256": "8107e3eb6c4e65a013a7d17ab44b33d7a464d7fbce756fced93dbc1545520e91",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Siamese cat\",\"source_preserved\":[\"Siamese cat\",\"cream-colored\",\"blue eyes\",\"dark facial markings\"],\"source\":[{\"unit\":\"sitting pose\",\"negative\":\"A cream-colored Siamese cat with blue eyes and dark facial markings on a wooden countertop\"},{\"unit\":\"wooden countertop placement\",\"negative\":\"A cream-colored Siamese cat with blue eyes and dark facial markings sitting\"}],\"target\":[{\"unit\":\"walking gracefully\",\"negative\":\"A Siamese cat along the rim of a giant teacup floating in the sky\"},{\"unit\":\"giant teacup rim placement\",\"negative\":\"A Siamese cat walking gracefully\"},{\"unit\":\"floating in the sky\",\"negative\":\"A Siamese cat walking gracefully along the rim of a giant teacup\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:21:31.968442+00:00"
+  }
+}

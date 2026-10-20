@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/37",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/37",
+  "identity_term": "toucan",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/37.txt",
+  "label_source_sha256": "0d3b700195bbf6bc53619824ca393f7a194e2d6c7549e75f5648279467c9774f",
+  "target_prompts": [
+    "A photo of a toucan perched on a vibrant, tropical tree branch",
+    "A photograph of a toucan flying across a clear blue sky",
+    "A detailed photo of a toucan feeding on fruits in the rainforest",
+    "A toucan resting beside a waterfall in a lush jungle",
+    "A watercolor painting of a toucan with its bright beak contrasting against deep green foliage",
+    "An anime-style illustration of a toucan soaring with exaggerated colorful feathers",
+    "A minimalist sketch of a toucan focusing on its iconic beak",
+    "A toucan weaving through multi-colored raindrops, each reflecting a spectrum of jungle hues",
+    "A toucan speaking with other exotic birds in a forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/37.jpg",
+  "image_sha256": "7c63760cecbd1aa432a67dd7bce5633e5a0db482cfe4b1cec3f4c8be3c8421fd",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:08+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A toucan with a large multicolored bill, a bright yellow throat, and black plumage perched on a moss-covered branch among green plants in the rain\"}",
+  "source_caption": "A toucan with a large multicolored bill, a bright yellow throat, and black plumage perched on a moss-covered branch among green plants in the rain",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:12+09:00",
+  "seconds": 3.5
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/04",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/04",
+  "identity_term": "girl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/04.txt",
+  "label_source_sha256": "ce5e176fa5050c15b9550f72a50f836af1fb4daa8e0d1d99ca35734f96581325",
+  "target_prompts": [
+    "A photograph of a girl strolling through a vibrant marketplace",
+    "A photo of a girl watching the sunset from a mountain peak",
+    "A photograph of a girl teaching in a brightly lit classroom",
+    "A photo of a girl gardening in her lush backyard",
+    "A watercolor painting of a girl sitting by a tranquil lake, reflecting the serene surroundings",
+    "An anime-style illustration of a girl flying with colorful balloons in a clear blue sky",
+    "A retro-style depiction of a girl at a 1950s diner, sipping a milkshake",
+    "A girl weaving the northern lights into a cloak around her shoulders",
+    "A depiction of a girl stepping through a mirror into a parallel universe filled with vibrant flora"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/04.jpg",
+  "image_sha256": "9f0befb26354d910e2fc281c0670d9969b26ce9664a9fbdac1fc8acdd63e9fd3",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:20+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A girl with long brown hair and black glasses, wearing a lavender top and posing beside a large dark dragon statue in a stone building\"}",
+  "source_caption": "A girl with long brown hair and black glasses, wearing a lavender top and posing beside a large dark dragon statue in a stone building",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:25+09:00",
+  "seconds": 5.19
+}

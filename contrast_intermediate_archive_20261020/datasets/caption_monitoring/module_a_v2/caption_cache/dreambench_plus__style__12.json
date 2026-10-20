@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "pixel art composed of a dense grid of rounded blue, cyan, white, red, yellow, pink, and green tiles on a dark navy background",
+  "identity_term": "pixel art",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "cfae6f7669c84226b927b23ce5b6d3628ef53cccc959471c2580a8a84236fe5b",
+    "bytes_sha256": "c50c0e93b272ad2dc44abc4ae2a6efed4abf405898e975cae7fffa32324a8a4c"
+  },
+  "input_sha256": "ce71f0e68a8f8802fe8ac30ff2119131a049297b6ee5d72f2ceede8120e65eec",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "ce71f0e68a8f8802fe8ac30ff2119131a049297b6ee5d72f2ceede8120e65eec",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"pixel art composed of a dense grid of rounded blue, cyan, white, red, yellow, pink, and green tiles on a dark navy background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

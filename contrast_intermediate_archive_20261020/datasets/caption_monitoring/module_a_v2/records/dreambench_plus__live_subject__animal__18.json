@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/18",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/18",
+  "identity_term": "sea turtle",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/18.txt",
+  "label_source_sha256": "f416a5f588b6baefd8cbd4e60dd87be2e8149c87b02e635a337df9ef081aea56",
+  "target_prompts": [
+    "A photograph of a sea turtle gliding gracefully through coral reefs",
+    "A photo of a sea turtle resting on a sandy beach under the moonlight",
+    "A detailed photograph of a sea turtle surfacing to breathe near a rocky coastline",
+    "A photo capturing a sea turtle swimming alongside colorful fish in clear blue waters",
+    "A watercolor painting of a sea turtle with a whimsically patterned shell",
+    "An anime-style illustration of a sea turtle with vibrant, glowing markings on its shell",
+    "A minimalist sketch of a sea turtle against a stark white background",
+    "A sea turtle with a shell made of shimmering glass, floating above an ancient sunken city",
+    "A sea turtle navigating through an underwater forest of seaweed that glows in the dark"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/18.jpg",
+  "image_sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:50+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A sea turtle with a reddish-brown, pale-edged shell and dark patterned flippers, gliding through blue water\"}",
+  "source_caption": "A sea turtle with a reddish-brown, pale-edged shell and dark patterned flippers, gliding through blue water",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:53+09:00",
+  "seconds": 3.17
+}

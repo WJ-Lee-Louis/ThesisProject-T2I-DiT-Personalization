@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/44",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/44",
+  "identity_term": "yellow taxi",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/44.txt",
+  "label_source_sha256": "580648f63eb566fea5674b0c94ca2e8455f580d1a449db3c02538e94d0e69774",
+  "target_prompts": [
+    "A photograph of a yellow taxi parked in front of a bustling cityscape at night",
+    "A photo of a yellow taxi caught in a rain shower, headlights reflecting on wet streets",
+    "A photo of a yellow taxi driving past a historic monument during daylight",
+    "A photograph of a yellow taxi waiting at a traffic light with pedestrians crossing",
+    "A digital painting of a yellow taxi transforming into a robot in a sci-fi setting",
+    "A watercolor of a yellow taxi on a quaint cobblestone street in a European village",
+    "A retro-style illustration of a yellow taxi from the 1950s with classic rounded edges",
+    "A yellow taxi flying above the city skyline with balloon-like tires",
+    "A yellow taxi navigating through a surreal landscape made of musical instruments"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/44.jpg",
+  "image_sha256": "1723b67e922e2d097279b745fdaa4017b52a25863049815cab17f2bd1a6fa82f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:21+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A yellow taxi with a black checker stripe, a roof sign, and a broad chrome grille and bumper, parked facing forward on a city street\"}",
+  "source_caption": "A yellow taxi with a black checker stripe, a roof sign, and a broad chrome grille and bumper, parked facing forward on a city street",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:25+09:00",
+  "seconds": 4.51
+}

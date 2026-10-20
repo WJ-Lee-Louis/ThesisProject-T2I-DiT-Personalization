@@ -1,0 +1,127 @@
+{
+  "case_id": "162-01",
+  "reference_index": 162,
+  "target_index": 1,
+  "identity_term": "sunset",
+  "target_prompt": "A photograph of a bustling city skyline illuminated by the fading sunset glow",
+  "reference_id": "dreambench_plus/style/02",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "sunset with an orange and purple clouded sky over ocean waves and a sandy beach",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "sunset with an orange and purple clouded sky over ocean waves and a sandy beach",
+      "target_prompt": "A photograph of a bustling city skyline illuminated by the fading sunset glow",
+      "identity_term": "sunset"
+    },
+    "input_sha256": "1059cd2bf16278d82bd8b4723f1294926179c0d1aaf23fa583bd39acfaee1263",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+      "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "sunset with an orange and purple clouded sky over ocean waves and a sandy beach",
+      "identity_term": "sunset",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+        "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+      },
+      "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with an orange and purple clouded sky over ocean waves and a sandy beach\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "sunset",
+      "source_preserved": [
+        "sunset",
+        "with an orange and purple clouded sky"
+      ],
+      "source": [
+        {
+          "unit": "ocean waves setting",
+          "negative": "sunset with an orange and purple clouded sky over a sandy beach"
+        },
+        {
+          "unit": "sandy beach setting",
+          "negative": "sunset with an orange and purple clouded sky over ocean waves"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photograph representation",
+          "negative": "A bustling city skyline illuminated by the fading sunset glow"
+        },
+        {
+          "unit": "bustling city skyline and illumination",
+          "negative": "A photograph of the fading sunset glow"
+        },
+        {
+          "unit": "fading quality",
+          "negative": "A photograph of a bustling city skyline illuminated by the sunset glow"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with an orange and purple clouded sky over ocean waves and a sandy beach\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "1059cd2bf16278d82bd8b4723f1294926179c0d1aaf23fa583bd39acfaee1263",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"sunset\",\"source_preserved\":[\"sunset\",\"with an orange and purple clouded sky\"],\"source\":[{\"unit\":\"ocean waves setting\",\"negative\":\"sunset with an orange and purple clouded sky over a sandy beach\"},{\"unit\":\"sandy beach setting\",\"negative\":\"sunset with an orange and purple clouded sky over ocean waves\"}],\"target\":[{\"unit\":\"photograph representation\",\"negative\":\"A bustling city skyline illuminated by the fading sunset glow\"},{\"unit\":\"bustling city skyline and illumination\",\"negative\":\"A photograph of the fading sunset glow\"},{\"unit\":\"fading quality\",\"negative\":\"A photograph of a bustling city skyline illuminated by the sunset glow\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:25:40.822050+00:00"
+  }
+}

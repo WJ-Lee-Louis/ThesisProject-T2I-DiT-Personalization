@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/18",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/18",
+  "identity_term": "pastel",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/18.txt",
+  "label_source_sha256": "d3ea564c6afb404a59beb4f2f68d2e1e7c2022688a84bf2087863d2397eba0ec",
+  "target_prompts": [
+    "A photograph of a serene beach at dusk, rendered in soft pastel tones",
+    "A painting of a tranquil garden with blooming flowers in a pastel palette",
+    "A photo of a gentle sunrise over a calm lake, captured in pastel colors",
+    "A pastoral landscape with rolling hills and a clear sky, depicted in pastel hues",
+    "A kitten sleeping in a sunny window, bathed in light pastel colors",
+    "A cup of tea on a pastel tablecloth, inviting a moment of relaxation",
+    "A close-up of a pastel-colored macaron, delicate and sweet",
+    "A whimsical forest where the trees have pastel-colored leaves",
+    "A dreamy pastel planet with rings made of stardust and light"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/18.jpg",
+  "image_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:58+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon\"}",
+  "source_caption": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:30:02+09:00",
+  "seconds": 4.19
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A girl with short, flowing white hair and bright turquoise eyes, wearing a dark high-collared outfit with red trim, against a city skyline at sunset",
+  "identity_term": "girl",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fde067e2f81c3709339bbf0580818530e3fe6caf09f100d941da0b3731bf0068",
+    "bytes_sha256": "054e2dfaedc4acc6b40b6e67e53108b229299c94388af57744e054fad4274e21"
+  },
+  "input_sha256": "f898f3826b320c025f6dca68ffb1ebb8f61bef4bac819862c514c9608b91fc2b",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f898f3826b320c025f6dca68ffb1ebb8f61bef4bac819862c514c9608b91fc2b",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A girl with short, flowing white hair and bright turquoise eyes, wearing a dark high-collared outfit with red trim, against a city skyline at sunset\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

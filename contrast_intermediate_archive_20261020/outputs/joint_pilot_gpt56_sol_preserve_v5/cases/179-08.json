@@ -1,0 +1,134 @@
+{
+  "case_id": "179-08",
+  "reference_index": 179,
+  "target_index": 8,
+  "identity_term": "traditional Chinese painting",
+  "target_prompt": "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style",
+  "reference_id": "dreambench_plus/style/19",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "traditional Chinese painting of a pavilion garden among tall pine trees and misty mountains, rendered with fine lines and muted colors",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "traditional Chinese painting of a pavilion garden among tall pine trees and misty mountains, rendered with fine lines and muted colors",
+      "target_prompt": "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style",
+      "identity_term": "traditional Chinese painting",
+      "preserve": [
+        "with fine lines and muted colors"
+      ]
+    },
+    "input_sha256": "0fbbd036c5aed1e63f64becd8c799cc128a258bf3fdc3d2dac57991ec8fc1d04",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "bb9e70999298862e419d53dce87138c32e7e5777cd7b6e6a3f17196adc6ffdbb",
+      "bytes_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "traditional Chinese painting of a pavilion garden among tall pine trees and misty mountains, rendered with fine lines and muted colors",
+      "preserve": [
+        "with fine lines and muted colors"
+      ],
+      "identity_term": "traditional Chinese painting",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "bb9e70999298862e419d53dce87138c32e7e5777cd7b6e6a3f17196adc6ffdbb",
+        "bytes_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050"
+      },
+      "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"traditional Chinese painting of a pavilion garden among tall pine trees and misty mountains, rendered with fine lines and muted colors\",\"preserve\":[\"with fine lines and muted colors\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "traditional Chinese painting",
+      "source_preserved": [
+        "traditional Chinese painting",
+        "fine lines",
+        "muted colors"
+      ],
+      "source": [
+        {
+          "unit": "pavilion garden",
+          "negative": "traditional Chinese painting of tall pine trees and misty mountains, rendered with fine lines and muted colors"
+        },
+        {
+          "unit": "tall pine trees",
+          "negative": "traditional Chinese painting of a pavilion garden among misty mountains, rendered with fine lines and muted colors"
+        },
+        {
+          "unit": "misty mountains",
+          "negative": "traditional Chinese painting of a pavilion garden among tall pine trees, rendered with fine lines and muted colors"
+        }
+      ],
+      "target": [
+        {
+          "unit": "mythical phoenix and its soaring relation",
+          "negative": "A blooming cherry orchard, in traditional Chinese painting style"
+        },
+        {
+          "unit": "blooming cherry orchard placement",
+          "negative": "A mythical phoenix soaring, in traditional Chinese painting style"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"traditional Chinese painting of a pavilion garden among tall pine trees and misty mountains, rendered with fine lines and muted colors\",\"preserve\":[\"with fine lines and muted colors\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "0fbbd036c5aed1e63f64becd8c799cc128a258bf3fdc3d2dac57991ec8fc1d04",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"traditional Chinese painting\",\"source_preserved\":[\"traditional Chinese painting\",\"fine lines\",\"muted colors\"],\"source\":[{\"unit\":\"pavilion garden\",\"negative\":\"traditional Chinese painting of tall pine trees and misty mountains, rendered with fine lines and muted colors\"},{\"unit\":\"tall pine trees\",\"negative\":\"traditional Chinese painting of a pavilion garden among misty mountains, rendered with fine lines and muted colors\"},{\"unit\":\"misty mountains\",\"negative\":\"traditional Chinese painting of a pavilion garden among tall pine trees, rendered with fine lines and muted colors\"}],\"target\":[{\"unit\":\"mythical phoenix and its soaring relation\",\"negative\":\"A blooming cherry orchard, in traditional Chinese painting style\"},{\"unit\":\"blooming cherry orchard placement\",\"negative\":\"A mythical phoenix soaring, in traditional Chinese painting style\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:12:58.120500+00:00"
+  }
+}

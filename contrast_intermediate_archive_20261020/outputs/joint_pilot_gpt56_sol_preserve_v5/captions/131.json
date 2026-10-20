@@ -1,0 +1,33 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "A cream ceramic bowl with a green botanical pattern and short rounded feet",
+  "preserve": [
+    "cream",
+    "with a green botanical pattern and short rounded feet"
+  ],
+  "identity_term": "ceramic bowl",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "4a7d45a2024efd8f2fc6789dde69058f8ee06d2b598ade7af5e4e701248ef4a7",
+    "bytes_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e"
+  },
+  "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cream ceramic bowl with a green botanical pattern and short rounded feet\",\"preserve\":[\"cream\",\"with a green botanical pattern and short rounded feet\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

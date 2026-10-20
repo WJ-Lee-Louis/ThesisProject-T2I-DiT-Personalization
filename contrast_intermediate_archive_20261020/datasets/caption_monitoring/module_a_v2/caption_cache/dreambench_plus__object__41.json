@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A beige t-shirt with a large blue graphic of a cat inside a frame, Japanese lettering, and the word “ORIGINAL,” displayed against a light gray background",
+  "identity_term": "t-shirt",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e361314e99c456d123cd888d244e624ac202374b0fab023621911491e4d55191",
+    "bytes_sha256": "cf34b50348fd3f2bde31e2de36265e11a3806b2fc3efb2fae84f78e93e53d15f"
+  },
+  "input_sha256": "41e16df5bcf9575f0fa3541ae3dcb2f85da93e2ea2c73be1358dd99665245dec",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "41e16df5bcf9575f0fa3541ae3dcb2f85da93e2ea2c73be1358dd99665245dec",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A beige t-shirt with a large blue graphic of a cat inside a frame, Japanese lettering, and the word “ORIGINAL,” displayed against a light gray background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

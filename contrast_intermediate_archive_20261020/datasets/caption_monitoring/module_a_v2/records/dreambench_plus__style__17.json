@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/17",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/17",
+  "identity_term": "cosmic nebula",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/17.txt",
+  "label_source_sha256": "3a919e3bb9195afeeb0a251de8ba5f01e88b7ed58d263ed09c684f9e88563b2f",
+  "target_prompts": [
+    "A photograph of a distant galaxy swirling in hues of blue and pink, in a cosmic nebula style",
+    "A photo of a star cluster emitting radiant light, rendered in cosmic nebula aesthetics",
+    "A painting of a newly forming star within a cloud of cosmic dust, in cosmic nebula style",
+    "An image of the aurora borealis with vibrant cosmic nebula colors",
+    "A telescope pointed towards a starry sky, painted in a cosmic nebula style",
+    "A night sky filled with constellations, depicted in cosmic nebula aesthetics",
+    "An astronaut floating in space surrounded by nebula-like colors, in a cosmic nebula style",
+    "A mythical phoenix reborn from cosmic nebula dust",
+    "A ancient sailboat navigating through a sea of stars and nebulae in cosmic nebula style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/17.jpg",
+  "image_sha256": "c1139e8f8e061be3be09bed6c56c9c78ca453e639683a71fb185cbc313ad748a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:57+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"cosmic nebula with billowing orange, brown, and teal clouds, dark branching edges, and scattered bright stars\"}",
+  "source_caption": "cosmic nebula with billowing orange, brown, and teal clouds, dark branching edges, and scattered bright stars",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:30:02+09:00",
+  "seconds": 4.47
+}

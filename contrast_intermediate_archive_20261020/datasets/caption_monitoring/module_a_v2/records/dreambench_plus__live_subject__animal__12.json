@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/12",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/12",
+  "identity_term": "dog",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/12.txt",
+  "label_source_sha256": "e61e9991386aed58b06f725ebdfdf11b71ce025a080dc5b9bec05d3158254f0d",
+  "target_prompts": [
+    "A photograph of a dog playing fetch on a sunny beach",
+    "A photo of a dog curled up beside a cozy fireplace",
+    "A photograph of a dog leaping through a field of tall grass",
+    "A photo of a dog sitting patiently at a busy city crosswalk",
+    "A cartoon-style illustration of a dog dressed as a superhero",
+    "An ink sketch of a dog with exaggerated facial expressions, in a comic book style",
+    "A retro-style painting of a dog sitting beside an old gramophone",
+    "A dog navigating a tiny sailboat on a vast, glittering ocean",
+    "A dog wearing a detective hat, solving mysteries in an enchanted forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/12.jpg",
+  "image_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:45+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A dog with white and reddish-brown fur and long, silky ears, wearing a pink hoodie and lying beside a white plush toy on a pale floor\"}",
+  "source_caption": "A dog with white and reddish-brown fur and long, silky ears, wearing a pink hoodie and lying beside a white plush toy on a pale floor",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:48+09:00",
+  "seconds": 2.99
+}

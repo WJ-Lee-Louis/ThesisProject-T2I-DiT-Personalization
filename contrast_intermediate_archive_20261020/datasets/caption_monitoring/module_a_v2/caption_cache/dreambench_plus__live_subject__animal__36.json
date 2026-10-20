@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A lizard with an orange head and blue-green scaly body, standing with its legs spread and head raised on a flat stone surface",
+  "identity_term": "lizard",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "796202b97cb80485d9229030010c2d0139293ed124a5745faa7f1e015b68b886",
+    "bytes_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a"
+  },
+  "input_sha256": "d100fb800c33c0a4b884a7c98e5826421f1b22fa333951209cb4ddb777a09148",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "d100fb800c33c0a4b884a7c98e5826421f1b22fa333951209cb4ddb777a09148",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A lizard with an orange head and blue-green scaly body, standing with its legs spread and head raised on a flat stone surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

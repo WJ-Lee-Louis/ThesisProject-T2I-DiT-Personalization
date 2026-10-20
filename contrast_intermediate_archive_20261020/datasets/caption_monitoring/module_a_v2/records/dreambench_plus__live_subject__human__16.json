@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/16",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/16",
+  "identity_term": "woman",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/16.txt",
+  "label_source_sha256": "4e22ab3a3b822bcdda543a7c0539fe6dceb4277780da4ed3eb7b1fc0c46a7600",
+  "target_prompts": [
+    "A photograph of a woman strolling through a vibrant street market",
+    "A photo of a woman gazing at the horizon on a rocky coastal cliff",
+    "A photograph of a woman planting flowers in a sunlit garden",
+    "A photo of a woman sitting at a quaint café terrace, reading a newspaper",
+    "A woman depicted in an abstract expressionist style, with bold, swirling colors",
+    "A retro-style illustration of a woman chatting on a vintage telephone in a mid-century modern living room",
+    "An anime-style drawing of a woman flying with mechanical wings in a futuristic cityscape",
+    "A woman weaving a tapestry that comes to life, depicting scenes as she imagines them",
+    "A depiction of a woman dissolving into a flock of butterflies as she walks through a mystical forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/16.jpg",
+  "image_sha256": "fe57c734ec38d08af9200865e88d6c8073b69368e572e413301ce429c65b976c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:34+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A woman with blue skin, large yellow-green eyes, pale speckles across her face, pointed ears, and long dark braids, wearing a simple necklace in a close-up against a dark blue background\"}",
+  "source_caption": "A woman with blue skin, large yellow-green eyes, pale speckles across her face, pointed ears, and long dark braids, wearing a simple necklace in a close-up against a dark blue background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:39+09:00",
+  "seconds": 5.36
+}

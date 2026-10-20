@@ -1,0 +1,124 @@
+{
+  "case_id": "098-00",
+  "reference_index": 98,
+  "target_index": 0,
+  "identity_term": "cherry blossoms",
+  "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+  "reference_id": "dreambench_plus/object/03",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky",
+      "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+      "identity_term": "cherry blossoms"
+    },
+    "input_sha256": "848b1958671bc43791cc6f2c4cd9454cbfcd3e4b618379a4dd9a13aa13fe2044",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+      "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky",
+      "identity_term": "cherry blossoms",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+        "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+      },
+      "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "cherry blossoms",
+      "source_preserved": [
+        "cherry blossoms",
+        "creamy white petals",
+        "pink centers",
+        "long stamens"
+      ],
+      "source": [
+        {
+          "unit": "branch clustering",
+          "negative": "cherry blossoms with creamy white petals, pink centers, and long stamens against a blue sky"
+        },
+        {
+          "unit": "blue sky setting",
+          "negative": "cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photo representation",
+          "negative": "cherry blossoms gently falling on a serene lake surface"
+        },
+        {
+          "unit": "falling onto the lake",
+          "negative": "A photo of cherry blossoms"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "848b1958671bc43791cc6f2c4cd9454cbfcd3e4b618379a4dd9a13aa13fe2044",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"cherry blossoms\",\"source_preserved\":[\"cherry blossoms\",\"creamy white petals\",\"pink centers\",\"long stamens\"],\"source\":[{\"unit\":\"branch clustering\",\"negative\":\"cherry blossoms with creamy white petals, pink centers, and long stamens against a blue sky\"},{\"unit\":\"blue sky setting\",\"negative\":\"cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch\"}],\"target\":[{\"unit\":\"photo representation\",\"negative\":\"cherry blossoms gently falling on a serene lake surface\"},{\"unit\":\"falling onto the lake\",\"negative\":\"A photo of cherry blossoms\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:00.214115+00:00"
+  }
+}

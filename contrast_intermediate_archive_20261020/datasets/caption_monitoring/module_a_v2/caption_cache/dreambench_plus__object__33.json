@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A bouquet of flowers with blue hydrangeas, pink and white blooms, bright yellow daisies, and a bird-of-paradise flower arranged in a pale pink vase on a green tabletop",
+  "identity_term": "bouquet of flowers",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "79f0654d63a74ffb390dd71bcf4620bfd1b0c659d7a3809be55bd359fa7c7e82",
+    "bytes_sha256": "4a8fe2e15b53ed8fbed521a4247ec32cc6014a3ab0c570573c7fb949f9af232e"
+  },
+  "input_sha256": "a14c577214e181742cc5eaac4ac667c58a4e1205d419b930aaff1269eff3402d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "a14c577214e181742cc5eaac4ac667c58a4e1205d419b930aaff1269eff3402d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A bouquet of flowers with blue hydrangeas, pink and white blooms, bright yellow daisies, and a bird-of-paradise flower arranged in a pale pink vase on a green tabletop\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

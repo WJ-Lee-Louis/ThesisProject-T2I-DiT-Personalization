@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/30",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/30",
+  "identity_term": "vase",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/30.txt",
+  "label_source_sha256": "d235a8c4e0a287e29433ef0d1a381beb363eaade0542daecf027822096544030",
+  "target_prompts": [
+    "A photograph of a vase sitting on a rustic wooden table in morning sunlight",
+    "A photo of a vase filled with wildflowers on a windowsill overlooking a garden",
+    "A detailed photograph of an antique vase displayed in a dimly lit museum",
+    "A photorealistic image of a cracked ceramic vase on an artist’s workbench",
+    "A digital painting of a vase in a futuristic style, glowing with neon lights",
+    "A watercolor of a vase surrounded by scattered petals and soft pastel hues",
+    "A minimalist sketch of a vase, captured in bold, black lines against a white background",
+    "A vase slowly melting into a puddle of vibrant, swirling colors on a gallery floor",
+    "A vase transforming into a tree, with branches growing upwards and blossoms sprouting where flowers once were"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/30.jpg",
+  "image_sha256": "bc2feed10538e2df787b4554eaa56db3c59f580ccc1f65a874cde2e15c77b790",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:08+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A tall vase with a glossy, mottled burgundy body, a rounded base, and a long narrow neck with a pale rim, standing on a light surface\"}",
+  "source_caption": "A tall vase with a glossy, mottled burgundy body, a rounded base, and a long narrow neck with a pale rim, standing on a light surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:11+09:00",
+  "seconds": 3.58
+}

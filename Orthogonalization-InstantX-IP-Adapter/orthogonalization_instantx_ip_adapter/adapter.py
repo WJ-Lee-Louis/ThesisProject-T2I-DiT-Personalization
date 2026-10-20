@@ -12,6 +12,8 @@ from PIL import Image
 
 from .attention_processor import IPAFluxAttnProcessor2_0
 from .semantic_components import SemanticConditioning
+from .semantic_contrasts import SemanticContrastConditioning
+from .contrast_directions import build_contrast_directions, contrast_diagnostics
 from .component_directions import build_component_directions
 from .orthogonalization import (
     ContrastDirections,
@@ -27,6 +29,7 @@ from .orthogonalization import (
 
 
 ORTHOGONALIZATION_MODES = {
+    "semantic_local",
     "components",
     "off",
     "local",
@@ -123,7 +126,7 @@ class OrthogonalizationRequest:
     additional_class_direction_sets: tuple[ClassDirectionSet, ...] = ()
     class_absolute_prompt: Optional[str] = None
     residualize_class_against_nuisance: bool = True
-    semantic_conditioning: Optional[SemanticConditioning] = None
+    semantic_conditioning: Optional[SemanticConditioning | SemanticContrastConditioning] = None
 
     def __post_init__(self) -> None:
         if self.mode not in ORTHOGONALIZATION_MODES:
@@ -136,9 +139,12 @@ class OrthogonalizationRequest:
             or not 0.0 <= self.class_strength <= 1.0
         ):
             raise ValueError("class_strength must be finite and in [0, 1]")
-        if self.mode == "components":
-            if not isinstance(self.semantic_conditioning, SemanticConditioning):
-                raise ValueError("components mode requires SemanticConditioning")
+        if self.mode in {"components", "semantic_local"}:
+            expected = SemanticConditioning if self.mode == "components" else SemanticContrastConditioning
+            if not isinstance(self.semantic_conditioning, expected):
+                raise ValueError(f"{self.mode} mode requires {expected.__name__}")
+            if self.mode == "semantic_local" and (not self.include_behavior or not self.include_background):
+                raise ValueError("semantic_local uses origin; cannot mix behavior/background selection")
             if (self.prompts is not None or self.additional_direction_sets or self.comparison_prompts is not None
                     or self.class_contextual_pairs or self.class_absolute_prompt is not None
                     or self.class_strength is not None or self.additional_class_direction_sets
@@ -149,7 +155,7 @@ class OrthogonalizationRequest:
                 raise ValueError("relative_tolerance must be finite and non-negative")
             return
         if self.semantic_conditioning is not None:
-            raise ValueError("semantic_conditioning is only valid in components mode")
+            raise ValueError("semantic_conditioning is only valid in components or semantic_local mode")
         if not isinstance(self.additional_direction_sets, tuple):
             raise TypeError("additional_direction_sets must be a tuple")
         if not all(
@@ -632,6 +638,17 @@ class OrthogonalizedIPAdapterMixin:
         ).to(self.device)
 
     def _build_text_directions(self, request: OrthogonalizationRequest):
+        if request.mode == "semantic_local":
+            conditioning = request.semantic_conditioning
+            directions = build_contrast_directions(conditioning, self._encode_component_text_pool)
+            self._last_direction_build_diagnostics = contrast_diagnostics(conditioning)
+            self._last_direction_build_diagnostics.update(
+                zero_direction_count=int((directions.raw_norms <= 1e-12).sum().item()),
+                zero_direction_flags=(directions.raw_norms <= 1e-12).cpu().tolist(),
+                encoding_unique_count=self._last_direction_build_diagnostics["unique_text_context_count"]
+                    or 1,
+            )
+            return directions
         if request.mode == "components":
             conditioning = request.semantic_conditioning
             self._last_direction_build_diagnostics = {
@@ -1191,7 +1208,7 @@ class OrthogonalizedIPAdapterMixin:
             "strength": request.strength,
             **self._last_direction_build_diagnostics,
             "direction_set_count": (len(request.semantic_conditioning.selected)
-                                    if request.mode == "components"
+                                    if request.mode in {"components", "semantic_local"}
                                     else 1 + len(request.additional_direction_sets)),
             "direction_names": list(directions.names),
             "direction_normalization": (

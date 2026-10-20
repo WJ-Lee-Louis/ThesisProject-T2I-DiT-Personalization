@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/03",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/03",
+  "identity_term": "horse",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/03.txt",
+  "label_source_sha256": "943bd71499cb2aadd6b48715b3572500870168a97291df3dd7774f281316e3ba",
+  "target_prompts": [
+    "A photograph of a horse galloping across a misty field at dawn",
+    "A photo of a horse standing majestically on a rocky hillside",
+    "A detailed photograph of a horse interacting with its foal in a lush meadow",
+    "A photo capturing a horse being groomed by its keeper in a stable",
+    "A watercolor painting of a horse with a flowing mane in a vibrant abstract style",
+    "An anime-style illustration of a horse leaping over a fantastical crescent moon",
+    "A minimalist sketch of a horse, captured in simple, flowing strokes with a hint of Art Nouveau style",
+    "A depiction of a horse made of swirling autumn leaves, galloping through a forest",
+    "A horse racing against a high-speed train, its mane and tail blurring into streaks of light"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/03.jpg",
+  "image_sha256": "4e48caaa82f5239626e09867987af12fa886104e71e8c7af4f542d03c03f7df1",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:36+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A horse with a chestnut coat, a long light tan mane, and a broad white blaze, shown in close-up against a pale blue sky\"}",
+  "source_caption": "A horse with a chestnut coat, a long light tan mane, and a broad white blaze, shown in close-up against a pale blue sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:41+09:00",
+  "seconds": 5.23
+}

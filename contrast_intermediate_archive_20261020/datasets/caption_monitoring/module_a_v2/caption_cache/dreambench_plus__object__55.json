@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "Black over-ear headphones with a padded headband and large cushioned earcups resting on a white desk",
+  "identity_term": "headphones",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "6379cb9649d8c3fa596a2712372d5e5560e1172985460a138c72f2079a269364",
+    "bytes_sha256": "1ad82c7271bffbbbf25dab6e0d7d43921c313b950ecfe2eba4e30ce771cbf024"
+  },
+  "input_sha256": "9c84a80a3fe135d65584bdd8b129e8a6914dc740a80a1e3b4fc109a8b6d035ed",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "9c84a80a3fe135d65584bdd8b129e8a6914dc740a80a1e3b4fc109a8b6d035ed",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"Black over-ear headphones with a padded headband and large cushioned earcups resting on a white desk\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A vintage computer with a beige all-in-one case, a small CRT screen displaying a desktop, and a keyboard in front, beside a wired mouse on a pad",
+  "identity_term": "vintage computer",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e9d103e4d0f42a1900fa334d29823390ff074f1a25832122c4a5587263184ec5",
+    "bytes_sha256": "1441c7bf8e7f2c3d2f5a2384d73e320713e4d964b07c90560f0f03cb5ce4a3a0"
+  },
+  "input_sha256": "57458758661a10b0d1203f49c166d14b437a3098cc290ca5be34303ed4dd31b8",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "57458758661a10b0d1203f49c166d14b437a3098cc290ca5be34303ed4dd31b8",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A vintage computer with a beige all-in-one case, a small CRT screen displaying a desktop, and a keyboard in front, beside a wired mouse on a pad\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

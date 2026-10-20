@@ -1,0 +1,33 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "A fluffy orange-and-white dog with upright ears and a broad white facial stripe sitting outdoors",
+  "preserve": [
+    "fluffy orange-and-white",
+    "with upright ears and a broad white facial stripe"
+  ],
+  "identity_term": "dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 780,
+    "height": 780,
+    "rgb_sha256": "32237cd40d20d145fe21d2b52d2ba0a489b29b8a175eeea5cfb859095678ff26",
+    "bytes_sha256": "daad1959b4754734000bcb3699d616876f49797960a2c2b36915503fd5a1c1e5"
+  },
+  "input_sha256": "124b2eea74c0b2f33ad9a8e7d69140f94320bd7b5f5dc07aaf3907632624f80a",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "124b2eea74c0b2f33ad9a8e7d69140f94320bd7b5f5dc07aaf3907632624f80a",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A fluffy orange-and-white dog with upright ears and a broad white facial stripe sitting outdoors\",\"preserve\":[\"fluffy orange-and-white\",\"with upright ears and a broad white facial stripe\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

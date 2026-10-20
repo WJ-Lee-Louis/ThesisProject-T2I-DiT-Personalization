@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A cream-colored knee-high boot with long fringe around the shaft and ankle, standing on an asphalt street",
+  "identity_term": "boot",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 2048,
+    "height": 2048,
+    "rgb_sha256": "89e042ca0e5b69b14bf1fdbc8020174032cab78a35933b1050a78020e767cf93",
+    "bytes_sha256": "906e947c111602a955caeed0544f8e1352fc6b37063e55df4a3af605ab36680d"
+  },
+  "input_sha256": "803f00bf4364b0c8de3e6e9e645a6ffb0de5a3ec0fb111cd187ffe703443ecf9",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "803f00bf4364b0c8de3e6e9e645a6ffb0de5a3ec0fb111cd187ffe703443ecf9",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cream-colored knee-high boot with long fringe around the shaft and ankle, standing on an asphalt street\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

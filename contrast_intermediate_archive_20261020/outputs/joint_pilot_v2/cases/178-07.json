@@ -1,0 +1,123 @@
+{
+  "case_id": "178-07",
+  "reference_index": 178,
+  "target_index": 7,
+  "identity_term": "pastel",
+  "target_prompt": "A whimsical forest where the trees have pastel-colored leaves",
+  "reference_id": "dreambench_plus/style/18",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon",
+      "target_prompt": "A whimsical forest where the trees have pastel-colored leaves",
+      "identity_term": "pastel"
+    },
+    "input_sha256": "558ce9bda82d97e9850fbeceef3ec7417b5355704bdb41034b21e333ee54d892",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+      "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon",
+      "identity_term": "pastel",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+        "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+      },
+      "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "pastel",
+      "source_preserved": [
+        "pastel",
+        "landscape",
+        "pale pink and blue rolling dunes"
+      ],
+      "source": [
+        {
+          "unit": "hazy pink sky",
+          "negative": "A pastel landscape of pale pink and blue rolling dunes with a pale moon"
+        },
+        {
+          "unit": "pale moon",
+          "negative": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky"
+        }
+      ],
+      "target": [
+        {
+          "unit": "whimsical forest setting",
+          "negative": "Trees have pastel-colored leaves."
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "558ce9bda82d97e9850fbeceef3ec7417b5355704bdb41034b21e333ee54d892",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"pastel\",\"source_preserved\":[\"pastel landscape\"],\"source\":[{\"unit\":\"pink and blue rolling dunes\",\"negative\":\"A pastel landscape beneath a hazy pink sky with a pale moon\"},{\"unit\":\"hazy pink sky\",\"negative\":\"A pastel landscape of pale pink and blue rolling dunes with a pale moon\"},{\"unit\":\"pale moon\",\"negative\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky\"}],\"target\":[{\"unit\":\"whimsical forest and tree setting\",\"negative\":\"pastel-colored leaves\"}],\"issues\":[]}",
+            "validation_error": "source_preserved must include exact identity_term"
+          },
+          {
+            "raw_response": "{\"identity_term\":\"pastel\",\"source_preserved\":[\"pastel\",\"landscape\",\"pale pink and blue rolling dunes\"],\"source\":[{\"unit\":\"hazy pink sky\",\"negative\":\"A pastel landscape of pale pink and blue rolling dunes with a pale moon\"},{\"unit\":\"pale moon\",\"negative\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky\"}],\"target\":[{\"unit\":\"whimsical forest setting\",\"negative\":\"Trees have pastel-colored leaves.\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:25.040559+00:00"
+  }
+}

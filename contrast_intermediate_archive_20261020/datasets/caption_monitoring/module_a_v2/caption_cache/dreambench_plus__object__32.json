@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A black cap with a white embroidered smiling face and curved brim, held up by a hand against a pale concrete wall",
+  "identity_term": "cap",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "2e06b4e0ce87ed5d5cb7d3604f741b4fd9723071815ae21fb3252aa8c478b596",
+    "bytes_sha256": "a1609f3cae9264b13d1d6b94f2e431ffb5b663f93b0affb0dcf4426a7a7b1d13"
+  },
+  "input_sha256": "83cc95b66557a236cbaae19bb8d6c9f23760d0d59c3f2a8a198c2339e01d18bb",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "83cc95b66557a236cbaae19bb8d6c9f23760d0d59c3f2a8a198c2339e01d18bb",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A black cap with a white embroidered smiling face and curved brim, held up by a hand against a pale concrete wall\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

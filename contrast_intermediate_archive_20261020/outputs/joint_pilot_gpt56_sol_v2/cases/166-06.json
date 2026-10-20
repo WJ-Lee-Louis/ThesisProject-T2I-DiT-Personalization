@@ -1,0 +1,124 @@
+{
+  "case_id": "166-06",
+  "reference_index": 166,
+  "target_index": 6,
+  "identity_term": "volcanic landscape",
+  "target_prompt": "A night-time scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape",
+  "reference_id": "dreambench_plus/style/06",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "a volcanic landscape with a broad orange lava flow winding through jagged black rock beneath dense gray clouds",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "a volcanic landscape with a broad orange lava flow winding through jagged black rock beneath dense gray clouds",
+      "target_prompt": "A night-time scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape",
+      "identity_term": "volcanic landscape"
+    },
+    "input_sha256": "76ec2459723e25801ee6bc6113045654ddf47dcbb0284cb7cee39a190469d223",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "568b7e457f78f68e3e89a06a4ec2aed2a7da2e28d8eab5a7a33fda811198d8ca",
+      "bytes_sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "a volcanic landscape with a broad orange lava flow winding through jagged black rock beneath dense gray clouds",
+      "identity_term": "volcanic landscape",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "568b7e457f78f68e3e89a06a4ec2aed2a7da2e28d8eab5a7a33fda811198d8ca",
+        "bytes_sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c"
+      },
+      "input_sha256": "077bc98df91c4196a50d0c59980763671c21ee26497e576c56c1bfab40ca9e65",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "077bc98df91c4196a50d0c59980763671c21ee26497e576c56c1bfab40ca9e65",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a volcanic landscape with a broad orange lava flow winding through jagged black rock beneath dense gray clouds\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "volcanic landscape",
+      "source_preserved": [
+        "volcanic landscape",
+        "broad orange lava flow",
+        "winding through jagged black rock"
+      ],
+      "source": [
+        {
+          "unit": "dense gray clouds",
+          "negative": "a volcanic landscape with a broad orange lava flow winding through jagged black rock"
+        }
+      ],
+      "target": [
+        {
+          "unit": "night-time condition",
+          "negative": "A scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape"
+        },
+        {
+          "unit": "starlit sky",
+          "negative": "A night-time scene of a silhouette of a volcanic mountain, in a volcanic landscape"
+        },
+        {
+          "unit": "volcanic mountain silhouette",
+          "negative": "A night-time scene of a starlit sky in a volcanic landscape"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "077bc98df91c4196a50d0c59980763671c21ee26497e576c56c1bfab40ca9e65",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a volcanic landscape with a broad orange lava flow winding through jagged black rock beneath dense gray clouds\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "76ec2459723e25801ee6bc6113045654ddf47dcbb0284cb7cee39a190469d223",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"volcanic landscape\",\"source_preserved\":[\"volcanic landscape\",\"broad orange lava flow\",\"winding through jagged black rock\"],\"source\":[{\"unit\":\"dense gray clouds\",\"negative\":\"a volcanic landscape with a broad orange lava flow winding through jagged black rock\"}],\"target\":[{\"unit\":\"night-time condition\",\"negative\":\"A scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape\"},{\"unit\":\"starlit sky\",\"negative\":\"A night-time scene of a silhouette of a volcanic mountain, in a volcanic landscape\"},{\"unit\":\"volcanic mountain silhouette\",\"negative\":\"A night-time scene of a starlit sky in a volcanic landscape\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:00:04.333506+00:00"
+  }
+}

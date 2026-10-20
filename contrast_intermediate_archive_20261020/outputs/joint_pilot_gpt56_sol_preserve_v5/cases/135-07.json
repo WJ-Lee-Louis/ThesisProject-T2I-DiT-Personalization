@@ -1,0 +1,143 @@
+{
+  "case_id": "135-07",
+  "reference_index": 135,
+  "target_index": 7,
+  "identity_term": "Rolls-Royce hood ornament",
+  "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+  "reference_id": "dreambench_plus/object/40",
+  "known_case": "T23",
+  "selection_role": "known development",
+  "source_caption": "A polished silver Rolls-Royce hood ornament depicting a winged female figure mounted above the car grille",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "A polished silver Rolls-Royce hood ornament depicting a winged female figure mounted above the car grille",
+      "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+      "identity_term": "Rolls-Royce hood ornament",
+      "preserve": [
+        "polished silver",
+        "depicting a winged female figure"
+      ]
+    },
+    "input_sha256": "e81394a87cc0fa71c61ca731ccfd7359085728a66c57bc2861df86e2fae50c72",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+      "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "A polished silver Rolls-Royce hood ornament depicting a winged female figure mounted above the car grille",
+      "preserve": [
+        "polished silver",
+        "depicting a winged female figure"
+      ],
+      "identity_term": "Rolls-Royce hood ornament",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+        "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+      },
+      "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A polished silver Rolls-Royce hood ornament depicting a winged female figure mounted above the car grille\",\"preserve\":[\"polished silver\",\"depicting a winged female figure\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Rolls-Royce hood ornament",
+      "source_preserved": [
+        "Rolls-Royce hood ornament",
+        "polished silver"
+      ],
+      "source": [
+        {
+          "unit": "winged female figure depiction",
+          "negative": "A polished silver Rolls-Royce hood ornament mounted above the car grille"
+        },
+        {
+          "unit": "mounting above the car grille",
+          "negative": "A polished silver Rolls-Royce hood ornament depicting a winged female figure"
+        }
+      ],
+      "target": [
+        {
+          "unit": "spaceship transformation and subsequent caravan-leading action",
+          "negative": "A Rolls-Royce hood ornament"
+        },
+        {
+          "unit": "sleek appearance",
+          "negative": "A Rolls-Royce hood ornament transformed into a spaceship leading a caravan of vintage cars across a galaxy"
+        },
+        {
+          "unit": "leading a caravan across a galaxy",
+          "negative": "A Rolls-Royce hood ornament transformed into a sleek spaceship"
+        },
+        {
+          "unit": "vintage car age",
+          "negative": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of cars across a galaxy"
+        },
+        {
+          "unit": "galaxy setting",
+          "negative": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A polished silver Rolls-Royce hood ornament depicting a winged female figure mounted above the car grille\",\"preserve\":[\"polished silver\",\"depicting a winged female figure\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "e81394a87cc0fa71c61ca731ccfd7359085728a66c57bc2861df86e2fae50c72",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Rolls-Royce hood ornament\",\"source_preserved\":[\"Rolls-Royce hood ornament\",\"polished silver\"],\"source\":[{\"unit\":\"winged female figure depiction\",\"negative\":\"A polished silver Rolls-Royce hood ornament mounted above the car grille\"},{\"unit\":\"mounting above the car grille\",\"negative\":\"A polished silver Rolls-Royce hood ornament depicting a winged female figure\"}],\"target\":[{\"unit\":\"spaceship transformation and subsequent caravan-leading action\",\"negative\":\"A Rolls-Royce hood ornament\"},{\"unit\":\"sleek appearance\",\"negative\":\"A Rolls-Royce hood ornament transformed into a spaceship leading a caravan of vintage cars across a galaxy\"},{\"unit\":\"leading a caravan across a galaxy\",\"negative\":\"A Rolls-Royce hood ornament transformed into a sleek spaceship\"},{\"unit\":\"vintage car age\",\"negative\":\"A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of cars across a galaxy\"},{\"unit\":\"galaxy setting\",\"negative\":\"A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:10:46.170435+00:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/33",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/33",
+  "identity_term": "bouquet of flowers",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/33.txt",
+  "label_source_sha256": "e842b5f3d8f1e6b30b3e8b70cf268e906c1fe7a7037a4aee4df3d39424a080f0",
+  "target_prompts": [
+    "A photograph of a bouquet of flowers placed on a rustic wooden table in soft morning light",
+    "A photo of a bouquet of flowers being held by a bride on her wedding day",
+    "A detailed photograph of a vibrant bouquet of flowers resting beside an open window",
+    "A photo capturing a bouquet of flowers on a bench in a lush garden setting",
+    "An anime-style illustration of a magical bouquet of flowers glowing under moonlight",
+    "A watercolor painting of a delicate bouquet of flowers in a vintage vase",
+    "A minimalist sketch of a bouquet of flowers, using soft, flowing lines and pastel shades",
+    "A bouquet of flowers slowly turning into a flock of colorful butterflies",
+    "A bouquet of flowers as planets orbiting in a miniature solar system, each flower a different glowing planet"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/33.jpg",
+  "image_sha256": "4a8fe2e15b53ed8fbed521a4247ec32cc6014a3ab0c570573c7fb949f9af232e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:11+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A bouquet of flowers with blue hydrangeas, pink and white blooms, bright yellow daisies, and a bird-of-paradise flower arranged in a pale pink vase on a green tabletop\"}",
+  "source_caption": "A bouquet of flowers with blue hydrangeas, pink and white blooms, bright yellow daisies, and a bird-of-paradise flower arranged in a pale pink vase on a green tabletop",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:16+09:00",
+  "seconds": 5.33
+}

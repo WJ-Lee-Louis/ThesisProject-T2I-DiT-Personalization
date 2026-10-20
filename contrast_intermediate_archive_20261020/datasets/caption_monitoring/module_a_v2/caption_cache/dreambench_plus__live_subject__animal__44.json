@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A cat with pale blue fur and dark blue stripes, oversized round eyes, pink inner ears and nose, and a white muzzle, chest, and tail tip, sitting with its large tail curled across its paws against a plain white background",
+  "identity_term": "cat",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "983269daac2cceea370dccfa6db5d34723223f13af6dfd5f4088000b7936fd45",
+    "bytes_sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938"
+  },
+  "input_sha256": "58be92beeb81eef2f7de461b3773d6d534fa9c06dd9d9ce0743b220bdb7eb3d4",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "58be92beeb81eef2f7de461b3773d6d534fa9c06dd9d9ce0743b220bdb7eb3d4",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cat with pale blue fur and dark blue stripes, oversized round eyes, pink inner ears and nose, and a white muzzle, chest, and tail tip, sitting with its large tail curled across its paws against a plain white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/23",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/23",
+  "identity_term": "vintage camera",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/23.txt",
+  "label_source_sha256": "6724880e7aeeabe8a3cb34c1119873586ab5b1f304760e2ccb8c9a5fe8a1aa94",
+  "target_prompts": [
+    "A photograph of a vintage camera on a rustic wooden table surrounded by old books",
+    "A photo of a vintage camera hanging from a leather strap against a backdrop of cobblestone streets",
+    "A detailed photograph of a vintage camera positioned on a rock by a mountain stream",
+    "A photo of a vintage camera set beside a window with morning light streaming in",
+    "A watercolor painting of a vintage camera, palette softened to pastel shades, placed on a lace tablecloth",
+    "A digital illustration in retro style featuring a vintage camera with a backdrop of 1950s diner",
+    "An anime-style drawing of a vintage camera with exaggerated shiny lens and colorful straps",
+    "A vintage camera with butterfly wings floating through a surreal, dreamy forest",
+    "A vintage camera transforming into a small, quaint house in an enchanted village"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/23.jpg",
+  "image_sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:01+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A vintage camera with a cream-colored body, black textured panels, a round lens and a wrist strap, resting on a brown surface\"}",
+  "source_caption": "A vintage camera with a cream-colored body, black textured panels, a round lens and a wrist strap, resting on a brown surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:05+09:00",
+  "seconds": 3.84
+}

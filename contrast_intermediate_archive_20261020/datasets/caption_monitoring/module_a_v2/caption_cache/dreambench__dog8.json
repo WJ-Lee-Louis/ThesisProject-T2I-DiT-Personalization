@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A black, gray, and white dog with long fur and upright ears, lying with its front paws extended on a patterned blanket",
+  "identity_term": "dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1280,
+    "height": 1280,
+    "rgb_sha256": "78cf6dd4edd1fbee95baf85856f616845faf8f648969a7809519c378da60c591",
+    "bytes_sha256": "1994030da6d469b983f04c3e0161f49fb5b3b0a261d5f7dc56aefaed1ae74d8f"
+  },
+  "input_sha256": "05795c113d972ac670f56169155eb48ca829883b8ed1952c5fdd700d3d894f47",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "05795c113d972ac670f56169155eb48ca829883b8ed1952c5fdd700d3d894f47",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A black, gray, and white dog with long fur and upright ears, lying with its front paws extended on a patterned blanket\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

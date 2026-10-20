@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A samurai with tousled red hair and a facial scar, seated on the floor in a pink kimono and gray trousers with a sheathed sword at his side, inside a tatami room beside a snow-covered branch",
+  "identity_term": "samurai",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "abdea3bf91eb81e48ee1e0baca765f9ea510ad82341b60afb6b462f6912bdc4c",
+    "bytes_sha256": "74f755e96ea9543b0212fb03dc6f5c98021898f56753d2efbaba200bc50a6bce"
+  },
+  "input_sha256": "a9a7871c6aafaf2a562f38ba9fc03a3c3ad367b9e138868bba52263c2a630a20",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "a9a7871c6aafaf2a562f38ba9fc03a3c3ad367b9e138868bba52263c2a630a20",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A samurai with tousled red hair and a facial scar, seated on the floor in a pink kimono and gray trousers with a sheathed sword at his side, inside a tatami room beside a snow-covered branch\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

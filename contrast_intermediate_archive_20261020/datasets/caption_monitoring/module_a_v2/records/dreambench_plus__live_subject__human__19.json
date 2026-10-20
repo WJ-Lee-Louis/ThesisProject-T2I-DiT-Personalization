@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/19",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/19",
+  "identity_term": "girl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/19.txt",
+  "label_source_sha256": "bad9fc2ad6eede5207e0d11fbf401f55b2d20c1424dc23bdfb3228838b8f8e79",
+  "target_prompts": [
+    "A photograph of a girl blowing bubbles in a sunny park",
+    "A photo of a girl reading a book under a large oak tree",
+    "A photograph of a girl playing with a puppy on a grassy hill",
+    "A photo of a girl helping her grandmother in a flower garden",
+    "An anime-style depiction of a girl flying a kite on a windy day",
+    "A watercolor painting of a girl wearing a raincoat and jumping in puddles",
+    "A retro-style illustration of a girl riding a scooter down a cobblestone street",
+    "A girl painting stars in the night sky, each brushstroke releasing real twinkling stars",
+    "A depiction of a girl swinging over a city, the swing's ropes attached to the clouds"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/19.jpg",
+  "image_sha256": "e9f9d74fb8c46a6f73cf29709399846235165edaf797663ebb664b5deef903df",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:37+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A girl with a chin-length auburn bob and a dark navy top, facing the camera with a lake and hills behind her\"}",
+  "source_caption": "A girl with a chin-length auburn bob and a dark navy top, facing the camera with a lake and hills behind her",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:40+09:00",
+  "seconds": 2.8
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/04",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/04",
+  "identity_term": "crab",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/04.txt",
+  "label_source_sha256": "6105d4517cc80b5abc181c1652aecca2ac196faec4ad0e35e39e6b19301672fe",
+  "target_prompts": [
+    "A photograph of a crab scuttling across a sandy beach",
+    "A close-up photo of a crab perched on a rocky shoreline",
+    "A detailed photograph of a crab hiding among seaweed at low tide",
+    "A photo capturing a crab during a sunset on a coastal beach",
+    "A watercolor painting of a crab in a vibrant, abstract style",
+    "A cartoon-style drawing of a crab wearing a pirate hat",
+    "An ink sketch of a crab amidst coral reefs, in a minimalist style",
+    "A crab constructing a sandcastle, complete with tiny flags and moats",
+    "A crab piloting a tiny submarine exploring underwater shipwrecks"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/04.jpg",
+  "image_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:36+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A crab with a dark, banded shell and orange-red legs standing on sandy ground\"}",
+  "source_caption": "A crab with a dark, banded shell and orange-red legs standing on sandy ground",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:41+09:00",
+  "seconds": 4.17
+}

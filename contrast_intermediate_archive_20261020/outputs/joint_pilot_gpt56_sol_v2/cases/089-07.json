@@ -1,0 +1,160 @@
+{
+  "case_id": "089-07",
+  "reference_index": 89,
+  "target_index": 7,
+  "identity_term": "Spider-Man",
+  "target_prompt": "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+  "reference_id": "dreambench_plus/live_subject/human/14",
+  "known_case": "T20",
+  "selection_role": "known development",
+  "source_caption": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral",
+      "target_prompt": "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+      "identity_term": "Spider-Man"
+    },
+    "input_sha256": "accc1d064393b3a2c22d2d478d7dfded29351edde87abaa4d972e8e798061fd5",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "a737b41318825538a281205c679294362712cec7ded2a0bef450e3dfbb097bb8",
+      "bytes_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral",
+      "identity_term": "Spider-Man",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "a737b41318825538a281205c679294362712cec7ded2a0bef450e3dfbb097bb8",
+        "bytes_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859"
+      },
+      "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Spider-Man",
+      "source_preserved": [
+        "Spider-Man",
+        "red and dark teal",
+        "web-patterned suit"
+      ],
+      "source": [
+        {
+          "unit": "suspended crouching pose",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral"
+        },
+        {
+          "unit": "webbing around an outstretched hand",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose above a colorful city street lined with banners, rooftops, and a twin-towered cathedral"
+        },
+        {
+          "unit": "city street placement and setting",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand"
+        },
+        {
+          "unit": "colorful street quality",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a city street lined with banners, rooftops, and a twin-towered cathedral"
+        },
+        {
+          "unit": "banners",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with rooftops and a twin-towered cathedral"
+        },
+        {
+          "unit": "rooftops",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners and a twin-towered cathedral"
+        },
+        {
+          "unit": "twin-towered cathedral design",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a cathedral"
+        },
+        {
+          "unit": "cathedral",
+          "negative": "Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners and rooftops"
+        }
+      ],
+      "target": [
+        {
+          "unit": "weaving a web",
+          "negative": "Spider-Man, silhouetted against a cosmic backdrop"
+        },
+        {
+          "unit": "giant web scale",
+          "negative": "Spider-Man weaving a web between the moon and Earth, silhouetted against a cosmic backdrop"
+        },
+        {
+          "unit": "web spanning the moon and Earth",
+          "negative": "Spider-Man weaving a giant web, silhouetted against a cosmic backdrop"
+        },
+        {
+          "unit": "silhouetted appearance",
+          "negative": "Spider-Man weaving a giant web between the moon and Earth against a cosmic backdrop"
+        },
+        {
+          "unit": "cosmic backdrop",
+          "negative": "Spider-Man weaving a giant web between the moon and Earth, silhouetted"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "accc1d064393b3a2c22d2d478d7dfded29351edde87abaa4d972e8e798061fd5",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Spider-Man\",\"source_preserved\":[\"Spider-Man\",\"red and dark teal\",\"web-patterned suit\"],\"source\":[{\"unit\":\"suspended crouching pose\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a twin-towered cathedral\"},{\"unit\":\"webbing around an outstretched hand\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose above a colorful city street lined with banners, rooftops, and a twin-towered cathedral\"},{\"unit\":\"city street placement and setting\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand\"},{\"unit\":\"colorful street quality\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a city street lined with banners, rooftops, and a twin-towered cathedral\"},{\"unit\":\"banners\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with rooftops and a twin-towered cathedral\"},{\"unit\":\"rooftops\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners and a twin-towered cathedral\"},{\"unit\":\"twin-towered cathedral design\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners, rooftops, and a cathedral\"},{\"unit\":\"cathedral\",\"negative\":\"Spider-Man in a red and dark teal web-patterned suit, suspended in a crouching pose with webbing around one outstretched hand above a colorful city street lined with banners and rooftops\"}],\"target\":[{\"unit\":\"weaving a web\",\"negative\":\"Spider-Man, silhouetted against a cosmic backdrop\"},{\"unit\":\"giant web scale\",\"negative\":\"Spider-Man weaving a web between the moon and Earth, silhouetted against a cosmic backdrop\"},{\"unit\":\"web spanning the moon and Earth\",\"negative\":\"Spider-Man weaving a giant web, silhouetted against a cosmic backdrop\"},{\"unit\":\"silhouetted appearance\",\"negative\":\"Spider-Man weaving a giant web between the moon and Earth against a cosmic backdrop\"},{\"unit\":\"cosmic backdrop\",\"negative\":\"Spider-Man weaving a giant web between the moon and Earth, silhouetted\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:58:10.085785+00:00"
+  }
+}

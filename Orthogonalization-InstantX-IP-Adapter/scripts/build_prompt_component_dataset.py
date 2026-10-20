@@ -1,3 +1,4 @@
+# Legacy partition research tool; not used by the joint local generation path.
 """Build minimal prompt-component datasets for three personalization benchmarks.
 
 Each generated record stores the input metadata and only the ordered component strings

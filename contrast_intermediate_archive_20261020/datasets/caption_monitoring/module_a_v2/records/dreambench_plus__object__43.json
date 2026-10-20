@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/43",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/43",
+  "identity_term": "pineapple",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/43.txt",
+  "label_source_sha256": "5a04bc639107f316cde9398c5cb23040e753efca917277b0c24bdb1fc3f7223f",
+  "target_prompts": [
+    "A photograph of a pineapple lying on a sunlit tropical beach",
+    "A photo of a pineapple on a wooden kitchen table surrounded by various fruits",
+    "A detailed photograph of a pineapple being harvested in a lush field",
+    "A photo capturing a pineapple displayed in a bustling market stall",
+    "A watercolor painting of a pineapple half-sliced, showcasing its vibrant interior",
+    "A minimalist digital illustration of a pineapple with geometric patterns",
+    "An anime-style drawing of a pineapple character with cute eyes and a cheerful smile",
+    "A pineapple transforming into a house with tiny windows and doors in a fantasy world",
+    "A surreal image of a pineapple floating in the sky, casting shadows over a serene ocean"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/43.jpg",
+  "image_sha256": "961ee20225d8c67c2ebde0a3d7505edb61207ee75490d4113f2fa9cfbb53edab",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:20+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A pale blue pineapple with a textured, scaly body and a tall peach-colored spiky crown, its lower side partly covered in peach-colored material pooled at the base, against a blue background\"}",
+  "source_caption": "A pale blue pineapple with a textured, scaly body and a tall peach-colored spiky crown, its lower side partly covered in peach-colored material pooled at the base, against a blue background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:26+09:00",
+  "seconds": 5.05
+}

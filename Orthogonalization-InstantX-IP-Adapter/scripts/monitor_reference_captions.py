@@ -22,17 +22,16 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from orthogonalization_instantx_ip_adapter.llm_provider import ResponsesJSONProvider
-from orthogonalization_instantx_ip_adapter.semantic_components import (
-    CAPTION_SCHEMA, identity_spans, parse_json_object,
-)
+from orthogonalization_instantx_ip_adapter.contrast_prompt import CAPTION_SCHEMA, CAPTION_SYSTEM_PROMPT
+from orthogonalization_instantx_ip_adapter.semantic_contrasts import identity_occurrences, parse_json_object
 
 UNO_COMMIT = "a563432dcfb4caf98df4368facb8102bf97d376c"
 DB_COMMIT = "4f887af7970a06fc0cd3adaa1d0b368547d6a1d0"
 SELECTED = ROOT / "datasets/dreambench_uno"
-OUT = ROOT / "datasets/caption_monitoring/module_a_v1"
+OUT = ROOT / "datasets/caption_monitoring/module_a_v2"
 DBPLUS = ROOT / "datasets/XVerseBench/dreambench_plus_raw/extracted/data"
 PROMPT_DOC = ROOT / "docs/prompts/module_a_caption_system_prompt.md"
-REPORT = ROOT / "docs/module_a_caption_monitoring_v1.md"
+REPORT = ROOT / "docs/module_a_caption_monitoring_v2.md"
 
 
 def now():
@@ -166,9 +165,9 @@ def report(cases, metadata, results):
              f"- 진행: {len(ordered)}/180; 구조 검증 결과: `{dict(statuses)}`",
              f"- System prompt SHA-256: `{metadata['prompt_sha256']}`",
              "- [프롬프트 원본](prompts/module_a_caption_system_prompt.md) / "
-             "[실행 프롬프트 snapshot](../datasets/caption_monitoring/module_a_v1/system_prompt.txt)",
-             "- [전체 JSON](../datasets/caption_monitoring/module_a_v1/captions.json) / "
-             "[JSONL](../datasets/caption_monitoring/module_a_v1/captions.jsonl) / "
+             "[실행 프롬프트 snapshot](../datasets/caption_monitoring/module_a_v2/system_prompt.txt)",
+             "- [전체 JSON](../datasets/caption_monitoring/module_a_v2/captions.json) / "
+             "[JSONL](../datasets/caption_monitoring/module_a_v2/captions.jsonl) / "
              "[UNO reference manifest](../datasets/dreambench_uno/manifest.json)",
              "", "PASS는 JSON 키·문자열·identity exact-match 검증 통과입니다. "
              "시각적 정확성, 누락, 상세도, 후치 수식, 불필요한 style 표현은 아래 이미지와 비교하여 검토해야 합니다. "
@@ -213,12 +212,16 @@ def run_case(case, provider, prompt, metadata):
                                 schema=CAPTION_SCHEMA, image_bytes=data)
         result['raw_response'] = raw
         parsed = parse_json_object(raw)
-        if set(parsed) != {'source_caption'}:
-            raise ValueError('Expected source_caption only')
+        if set(parsed) != {'source_caption', 'preserve'}:
+            raise ValueError('Expected source_caption and preserve')
         if isinstance(parsed['source_caption'], str):
             result['source_caption'] = parsed['source_caption']
-        identity_spans(parsed['source_caption'], case['identity_term'])
-        result.update(status='PASS', source_caption=parsed['source_caption'])
+        identity_occurrences(parsed['source_caption'], case['identity_term'])
+        from orthogonalization_instantx_ip_adapter.semantic_contrasts import preservation_phrases
+        if not isinstance(parsed['preserve'], list):
+            raise ValueError('preserve must be a JSON array')
+        preservation_phrases(parsed['preserve'], parsed['source_caption'], case['identity_term'])
+        result.update(status='PASS', source_caption=parsed['source_caption'], preserve=parsed['preserve'])
     except Exception as error:
         result.update(status='INVALID' if 'raw_response' in result else 'ERROR',
                       error=f'{type(error).__name__}: {error}')
@@ -234,13 +237,24 @@ def main():
     args = parser.parse_args()
     if not 1 <= args.workers <= 8 or not 1 <= args.limit <= 180:
         parser.error('workers must be 1..8, limit 1..180')
-    cases = prepare()
-    prompt = PROMPT_DOC.read_text(encoding='utf-8').split('```text\n', 1)[1].split('\n```', 1)[0]
+    # Use the existing reference ledger; a new caption run must not regenerate
+    # benchmark manifests or overwrite the original 180-reference audit.
+    ledger = ROOT / 'datasets/caption_monitoring/module_a_v1/references.json'
+    if not ledger.exists():
+        raise ValueError('Existing reference ledger required; prepare benchmark assets separately')
+    cases = json.loads(ledger.read_text(encoding='utf-8'))
+    reference_path = OUT / 'references.json'
+    if reference_path.exists():
+        if json.loads(reference_path.read_text(encoding='utf-8')) != cases:
+            raise ValueError('Cannot mix reference ledgers; use a new run directory')
+    else:
+        write_json(reference_path, cases)
+    prompt = CAPTION_SYSTEM_PROMPT
     metadata_path = OUT / 'run.json'
     metadata = dict(schema_version=1, started_at=now(), model='gpt-6-luna',
                     prompt_sha256=sha(prompt.encode()), references_sha256=sha((OUT/'references.json').read_bytes()),
                     validation_retries=0, automatic_transport_retries=0,
-                    prompt_source=rel(PROMPT_DOC), image_transport='Existing provider RGB PNG conversion; no resize')
+                    prompt_source='orthogonalization_instantx_ip_adapter/contrast_prompt.py', image_transport='Existing provider RGB PNG conversion; no resize')
     if metadata_path.exists():
         old = json.loads(metadata_path.read_text(encoding='utf-8'))
         for key in ['model', 'prompt_sha256', 'references_sha256']:

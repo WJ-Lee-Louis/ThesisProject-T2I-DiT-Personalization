@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with short dark hair, wearing a brown tweed jacket over a white shirt and red patterned tie, facing forward with his arms extended to the sides against a white background",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "9a532944c96ee3d3eb3f932bbd33d87e3999715719d3a2ec80adb909141d8a8d",
+    "bytes_sha256": "5c316b87bab11b7b3bf8b60da5c06812c3b13406ca292d1c359df626dc990b99"
+  },
+  "input_sha256": "f065618e629840d111800995e443efb05b2e04aa93b440b4f4d395bde96d3a7d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f065618e629840d111800995e443efb05b2e04aa93b440b4f4d395bde96d3a7d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with short dark hair, wearing a brown tweed jacket over a white shirt and red patterned tie, facing forward with his arms extended to the sides against a white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down",
+  "identity_term": "backpack",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1280,
+    "height": 1280,
+    "rgb_sha256": "115eb3e9835af71ccfaa13c79d8548629efcd7baaf5eea8b2c2e775380e96f9a",
+    "bytes_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c"
+  },
+  "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

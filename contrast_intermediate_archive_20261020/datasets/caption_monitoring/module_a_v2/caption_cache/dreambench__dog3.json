@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A dog with fluffy white curly fur, a dark collar and hanging tags, resting with its front paws forward on a blue-and-white patterned blanket",
+  "identity_term": "dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 820,
+    "height": 820,
+    "rgb_sha256": "c1daf67d6157e299a4191ca3027b4cfd142af1d2bae2816efac7f7d2b7127184",
+    "bytes_sha256": "f91476780363cec20e3324745d1ecce2b53573d9506d6dd245ee0b2e5acb062e"
+  },
+  "input_sha256": "171ad208023de44ab011a81f27a13c67825ac31da49e027bb7932f714d208ac7",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "171ad208023de44ab011a81f27a13c67825ac31da49e027bb7932f714d208ac7",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A dog with fluffy white curly fur, a dark collar and hanging tags, resting with its front paws forward on a blue-and-white patterned blanket\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

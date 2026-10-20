@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A motorcycle with a pale gray tank, exposed engine, spoked wheels, and a narrow brown seat, standing on its kickstand on a paved outdoor surface",
+  "identity_term": "motorcycle",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e59909f8e3e594558a44777ab4963140d3ea709ce8b324aceb8cabd7f7eb3d20",
+    "bytes_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30"
+  },
+  "input_sha256": "0e114b2ff2dfaa89e7d37bf2b331bda8fb3d7b92b5747339f0e7fb1f3de8c437",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "0e114b2ff2dfaa89e7d37bf2b331bda8fb3d7b92b5747339f0e7fb1f3de8c437",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A motorcycle with a pale gray tank, exposed engine, spoked wheels, and a narrow brown seat, standing on its kickstand on a paved outdoor surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

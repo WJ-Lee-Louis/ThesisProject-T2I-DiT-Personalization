@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "An Eevee figurine with tan-brown coloring, oversized dark-centered ears, a fluffy cream collar and pale-tipped tail, standing on leaf-strewn ground amid greenery",
+  "identity_term": "Eevee figurine",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "a3a84e6229c6226cd65f73ef800ce28f881eb6e3d59b0193488ab7aeefa24c45",
+    "bytes_sha256": "6c15c3862168e72177e10c36c22c1a386121202b7818b24cf075d711890ce92c"
+  },
+  "input_sha256": "864bef1098f17f22db834d0c253aee0e906061d1c006c9b44c8cd97fe998a68d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "864bef1098f17f22db834d0c253aee0e906061d1c006c9b44c8cd97fe998a68d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"An Eevee figurine with tan-brown coloring, oversized dark-centered ears, a fluffy cream collar and pale-tipped tail, standing on leaf-strewn ground amid greenery\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

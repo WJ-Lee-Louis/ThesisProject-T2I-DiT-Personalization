@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A glossy ceramic mug with a cylindrical body fading from off-white at the rim to deep red at the base and a matching handle, resting on a light-colored surface",
+  "identity_term": "mug",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e16dc6de468fc87792b254122bcddc116eb78d1b20e9f1a911ef1db6483e6fd3",
+    "bytes_sha256": "6db5fcc1cdbf6bb141093adaebaa1b29d1a40bc7e3ebe823022ca962c1a7d1d4"
+  },
+  "input_sha256": "bbbafaf66000dc795249f627c24a8f3591907324c53a635d044fdb08d40841e2",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "bbbafaf66000dc795249f627c24a8f3591907324c53a635d044fdb08d40841e2",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A glossy ceramic mug with a cylindrical body fading from off-white at the rim to deep red at the base and a matching handle, resting on a light-colored surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

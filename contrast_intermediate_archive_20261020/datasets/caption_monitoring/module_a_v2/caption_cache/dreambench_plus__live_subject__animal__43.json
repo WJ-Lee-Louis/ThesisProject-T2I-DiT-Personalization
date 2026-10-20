@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A French bulldog with a short tan coat, sitting turned away and looking over its shoulder, wearing a yellow hoodie with a white hood against a blue background",
+  "identity_term": "French bulldog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "8484ba4dae215c629131662214c58889922c3b1f411ce9194141e12a4eefa7b9",
+    "bytes_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92"
+  },
+  "input_sha256": "e3307b8db2aaa27330f57456d96c42f389618f617a49f92611bd74ce34e5bf46",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "e3307b8db2aaa27330f57456d96c42f389618f617a49f92611bd74ce34e5bf46",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A French bulldog with a short tan coat, sitting turned away and looking over its shoulder, wearing a yellow hoodie with a white hood against a blue background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

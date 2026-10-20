@@ -1,0 +1,33 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style",
+  "preserve": [
+    "forested cliff island",
+    "with stylized trees, a stream, and a waterfall"
+  ],
+  "identity_term": "low-poly geometric",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+    "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+  },
+  "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style\",\"preserve\":[\"forested cliff island\",\"with stylized trees, a stream, and a waterfall\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,133 @@
+{
+  "case_id": "179-08",
+  "reference_index": 179,
+  "target_index": 8,
+  "identity_term": "traditional Chinese painting",
+  "target_prompt": "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style",
+  "reference_id": "dreambench_plus/style/19",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures",
+      "target_prompt": "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style",
+      "identity_term": "traditional Chinese painting"
+    },
+    "input_sha256": "95fa90a3dd3eb46c9d0c89313e7cf4551402c6802aa7a75addbfc426234a3fd4",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "bb9e70999298862e419d53dce87138c32e7e5777cd7b6e6a3f17196adc6ffdbb",
+      "bytes_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures",
+      "identity_term": "traditional Chinese painting",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "bb9e70999298862e419d53dce87138c32e7e5777cd7b6e6a3f17196adc6ffdbb",
+        "bytes_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050"
+      },
+      "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "traditional Chinese painting",
+      "source_preserved": [
+        "traditional Chinese painting"
+      ],
+      "source": [
+        {
+          "unit": "mountain retreat",
+          "negative": "traditional Chinese painting depicting tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures"
+        },
+        {
+          "unit": "pavilions among tall pines",
+          "negative": "traditional Chinese painting depicting a mountain retreat with winding paths and water, rocky slopes, a red bridge, and small figures"
+        },
+        {
+          "unit": "winding paths and water",
+          "negative": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, rocky slopes, a red bridge, and small figures"
+        },
+        {
+          "unit": "rocky slopes",
+          "negative": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, a red bridge, and small figures"
+        },
+        {
+          "unit": "red bridge",
+          "negative": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, and small figures"
+        },
+        {
+          "unit": "small figures",
+          "negative": "traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, and a red bridge"
+        }
+      ],
+      "target": [
+        {
+          "unit": "phoenix soaring above cherry orchard",
+          "negative": "in traditional Chinese painting style"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "bd383e62fa34dc7fa7fc535234f20a4a693623d793182aa65870fe44eb3d564d",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "95fa90a3dd3eb46c9d0c89313e7cf4551402c6802aa7a75addbfc426234a3fd4",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"traditional Chinese painting\",\"source_preserved\":[\"traditional Chinese painting\"],\"source\":[{\"unit\":\"mountain retreat\",\"negative\":\"traditional Chinese painting depicting tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, a red bridge, and small figures\"},{\"unit\":\"pavilions among tall pines\",\"negative\":\"traditional Chinese painting depicting a mountain retreat with winding paths and water, rocky slopes, a red bridge, and small figures\"},{\"unit\":\"winding paths and water\",\"negative\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, rocky slopes, a red bridge, and small figures\"},{\"unit\":\"rocky slopes\",\"negative\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, a red bridge, and small figures\"},{\"unit\":\"red bridge\",\"negative\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, and small figures\"},{\"unit\":\"small figures\",\"negative\":\"traditional Chinese painting depicting a mountain retreat with tiled-roof pavilions among tall pines, winding paths and water, rocky slopes, and a red bridge\"}],\"target\":[{\"unit\":\"phoenix soaring above cherry orchard\",\"negative\":\"in traditional Chinese painting style\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:16.223548+00:00"
+  }
+}

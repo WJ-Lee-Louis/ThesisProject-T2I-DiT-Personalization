@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/50",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/50",
+  "identity_term": "rubber duck",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/50.txt",
+  "label_source_sha256": "8f6c0367bbad9a3664f87b45ad4f9e7a35cd1feb2751918c291b94dce894f459",
+  "target_prompts": [
+    "A photograph of a rubber duck floating in a serene pond",
+    "A photo of a rubber duck amongst colorful bath toys",
+    "A detailed photograph of a rubber duck under a gently running tap",
+    "A photo of a rubber duck sitting on a sunny poolside",
+    "An anime-style illustration of a rubber duck on a magical pool",
+    "A minimalist sketch of a rubber duck, captured with bold, simple strokes",
+    "A retro-style painting of a rubber duck in a vintage bathtub",
+    "A rubber duck leading a parade of mythical water creatures",
+    "A rubber duck floating in space, orbiting a miniature planet"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/50.jpg",
+  "image_sha256": "db2435017749fee683483b0aba1ea4cd872bf44f08d5bedd0955bbd31224b3fd",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:27+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A bright yellow rubber duck with a rounded body, black eye, and red-orange bill, resting on a white surface\"}",
+  "source_caption": "A bright yellow rubber duck with a rounded body, black eye, and red-orange bill, resting on a white surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:29+09:00",
+  "seconds": 1.76
+}

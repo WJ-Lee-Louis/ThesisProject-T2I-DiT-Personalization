@@ -1,6 +1,8 @@
 # Projection: component 처리에서 남은 문제와 재현 사례
 
-2026-10-18 정리. LLM partition을 받은 뒤 부분집합 문장과 local/factorial 차분을 만드는 과정의 문제를 기록한다. [LLM 분석 문제](llm_component_issues.md)와 연결되지만, 올바른 JSON·단어 coverage만으로 해결되지 않는다. 현재 수식·고정 문맥의 정의는 [semantic pipeline](semantic_pipeline.md)을 따른다.
+> **과거 component 경로의 이력 (2026-10-18 snapshot).** 아래의 “현재”, “반영”, partition/span/subset 정책은 당시 legacy 구현을 가리킨다. 새 공동 B의 지시나 정답이 아니다. 후속 승인된 style head 보존·의존 묶음 정책은 [설계 §16](contrast_refactor_design.md)을 따른다. 현재 실행은 [semantic pipeline](semantic_pipeline.md), 사례별 새 수동 기대값과 미해결 scope는 [설계 §7](contrast_refactor_design.md#7-projection-문제-사례의-재분류와-새-기대-출력)을 따른다. 원본 응답과 expected_subset은 비교 이력으로 보존하며 새 API 관측으로 취급하지 않는다.
+
+2026-10-18 정리. LLM partition을 받은 뒤 부분집합 문장과 local/factorial 차분을 만드는 과정의 문제를 기록한다. [LLM 분석 문제](llm_component_issues.md)와 연결되지만, 올바른 JSON·단어 coverage만으로 해결되지 않는다. 당시 고정 문맥은 legacy component 구현의 정의이며 새 local 계약과 다르다.
 
 ## 관찰과 미확인 사항
 
@@ -33,7 +35,7 @@ Fragment, 남은 쉼표, 주어가 없는 명사구 자체를 모두 오류로 �
 - N: 사람이 만든 stress partition. LLM이 실제로 이렇게 출력했다는 주장이나 권장 정답이 아니다.
 - AND011: 최종 보완 이전 연결사 조사 snapshot. local/factorial 문맥 차이를 보존하기 위한 사례다.
 
-현재 재현은 `SemanticLLM`의 `analyze_target` / `analyze_source`에 응답을 반환하는 mock provider를 연결한 뒤 `prompt_for_subset(kept_components)`를 호출하면 된다. 미래 정책 변경 시 `expected_subset`은 보존해야 할 정답이 아니라 **이전 동작과 비교할 문자열**이다. 실패하거나 통과한 snapshot을 조용히 수정해서 새 정책의 정답으로 만들지 않는다.
+이력 재현은 `semantic_components.SemanticLLM`의 `analyze_target` / `analyze_source`에 응답을 반환하는 mock provider를 연결한 뒤 `prompt_for_subset(kept_components)`를 호출하면 된다. 미래 정책 변경 시 `expected_subset`은 보존해야 할 정답이 아니라 **이전 동작과 비교할 문자열**이다. 실패하거나 통과한 snapshot을 조용히 수정해서 새 정책의 정답으로 만들지 않는다.
 
 ### T01 — 보존 style이 수식하던 forest와 장소 carrier를 제거하면 opening pixel art가 남는 문제.
 

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A kitten with fluffy brown and gray tabby fur, blue eyes, and a white muzzle and chest, sitting on a tiled floor",
+  "identity_term": "kitten",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "9ae1fc8845025a6fd53038c8f0ec2e82b95e82250cb460f7b589e5db23ecab25",
+    "bytes_sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5"
+  },
+  "input_sha256": "d8d04677065ce4490f07c7f13d2000ec027b46e569787ecb7c48344f799b8b12",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "d8d04677065ce4490f07c7f13d2000ec027b46e569787ecb7c48344f799b8b12",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A kitten with fluffy brown and gray tabby fur, blue eyes, and a white muzzle and chest, sitting on a tiled floor\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "pixel art depicting a boxy orange-and-cream desktop computer with a blue-and-white checkerboard screen and a wired mouse to its right on a plain light background",
+  "identity_term": "pixel art",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+    "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+  },
+  "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"pixel art depicting a boxy orange-and-cream desktop computer with a blue-and-white checkerboard screen and a wired mouse to its right on a plain light background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

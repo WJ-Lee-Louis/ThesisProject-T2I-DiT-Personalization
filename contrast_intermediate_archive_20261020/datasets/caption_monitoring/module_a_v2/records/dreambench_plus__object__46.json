@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/46",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/46",
+  "identity_term": "teddy bear",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/46.txt",
+  "label_source_sha256": "e7b80f7d1fc4f1311b9ff6c6b3261484f175a7932f40162b654d78c8d1b3fe43",
+  "target_prompts": [
+    "A photograph of a teddy bear sitting on a wooden bench in the park",
+    "A photo of a teddy bear tucked into a child's bed, surrounded by storybooks",
+    "A photograph of a teddy bear placed among autumn leaves",
+    "A photo of a teddy bear at a child's birthday party table",
+    "A watercolor painting of a teddy bear with a colorful bow tie",
+    "An anime-style illustration of a teddy bear holding a heart-shaped balloon",
+    "A retro-style drawing of a teddy bear riding a tiny tricycle",
+    "A teddy bear casting shadows on the wall, each shadow transforming into a different wild animal",
+    "A teddy bear navigating a tiny sailboat through a sea of blue satin sheets"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/46.jpg",
+  "image_sha256": "ab5644459d8777b20a9154f6dc701ee2b1bb2ff0345b97ed2b3ff8e166784bc3",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:24+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A teddy bear with fluffy beige fur, a light muzzle, a brown nose, and a red plaid bow tie, sitting against a pink background\"}",
+  "source_caption": "A teddy bear with fluffy beige fur, a light muzzle, a brown nose, and a red plaid bow tie, sitting against a pink background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:27+09:00",
+  "seconds": 3.02
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A gray backpack with a dog’s face, floppy ears, blue trim, and blue straps, resting on a wooden table in a lounge",
+  "identity_term": "backpack",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1440,
+    "height": 1440,
+    "rgb_sha256": "539adad1e6ab2e0f685d53a52c2246fafa6b3ffeda38349f115976bd9c0d5ef7",
+    "bytes_sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a"
+  },
+  "input_sha256": "1ba1d08029c6d709716ab321e462473a7fa32618db0ba7b927b91f3311520246",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "1ba1d08029c6d709716ab321e462473a7fa32618db0ba7b927b91f3311520246",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A gray backpack with a dog’s face, floppy ears, blue trim, and blue straps, resting on a wooden table in a lounge\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

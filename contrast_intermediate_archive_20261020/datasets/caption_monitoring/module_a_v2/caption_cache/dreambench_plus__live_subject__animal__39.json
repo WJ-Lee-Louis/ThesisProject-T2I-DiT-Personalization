@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A dolphin with a gray body leaping out of turquoise water amid splashing spray, with rocky outcrops and open sea behind it",
+  "identity_term": "dolphin",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "6c2d04568dca4665780e90e05a96e296bc60a7b49820b5ab45780014675da91e",
+    "bytes_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f"
+  },
+  "input_sha256": "dfaa238bf1fa3b052dbce07d9e68b93d3bac894b5bfb8b651ca29c42b2fc6cc4",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "dfaa238bf1fa3b052dbce07d9e68b93d3bac894b5bfb8b651ca29c42b2fc6cc4",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A dolphin with a gray body leaping out of turquoise water amid splashing spray, with rocky outcrops and open sea behind it\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

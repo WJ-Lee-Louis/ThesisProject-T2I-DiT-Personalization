@@ -1,0 +1,120 @@
+{
+  "case_id": "178-08",
+  "reference_index": 178,
+  "target_index": 8,
+  "identity_term": "pastel",
+  "target_prompt": "A dreamy pastel planet with rings made of stardust and light",
+  "reference_id": "dreambench_plus/style/18",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon",
+      "target_prompt": "A dreamy pastel planet with rings made of stardust and light",
+      "identity_term": "pastel"
+    },
+    "input_sha256": "6a10cd2116cba3275a653ef5c6add81988caedf0dae179596989ad4a9581708f",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+      "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon",
+      "identity_term": "pastel",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+        "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+      },
+      "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "pastel",
+      "source_preserved": [
+        "pastel",
+        "landscape",
+        "pale pink and blue rolling dunes",
+        "hazy pink sky"
+      ],
+      "source": [
+        {
+          "unit": "pale moon",
+          "negative": "A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky"
+        }
+      ],
+      "target": [
+        {
+          "unit": "dreamy quality",
+          "negative": "A pastel planet with rings made of stardust and light"
+        },
+        {
+          "unit": "stardust and light rings",
+          "negative": "A dreamy pastel planet"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky with a pale moon\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "6a10cd2116cba3275a653ef5c6add81988caedf0dae179596989ad4a9581708f",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"pastel\",\"source_preserved\":[\"pastel\",\"landscape\",\"pale pink and blue rolling dunes\",\"hazy pink sky\"],\"source\":[{\"unit\":\"pale moon\",\"negative\":\"A pastel landscape of pale pink and blue rolling dunes beneath a hazy pink sky\"}],\"target\":[{\"unit\":\"dreamy quality\",\"negative\":\"A pastel planet with rings made of stardust and light\"},{\"unit\":\"stardust and light rings\",\"negative\":\"A dreamy pastel planet\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:01.951725+00:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/11",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/11",
+  "identity_term": "Impressionist",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/11.txt",
+  "label_source_sha256": "abe7a714d56fcf62e7285510579bf11d5096f47f9e03cde31ce2a248151547df",
+  "target_prompts": [
+    "A photo of a blossoming garden in the Impressionist style",
+    "A painting of a bustling street cafe in the Impressionist style",
+    "A photograph of a serene lakeside at dusk, captured in the Impressionist style",
+    "A vibrant market scene depicted in the Impressionist style",
+    "A woman holding a parasol, painted in the Impressionist style",
+    "A small boat floating on a gentle river, in the Impressionist style",
+    "A child playing in a sunlit field, captured in the Impressionist style",
+    "A mythical forest with trees that glow in the Impressionist style",
+    "A dreamlike cityscape where the buildings softly blur into the sky, in the Impressionist style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/11.jpg",
+  "image_sha256": "3fd3ad1c9368c524b911f3231932503dfc2f6c429b5d6fc9c593b89ae007f593",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:52+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"An Impressionist painting of a pond with broad green lily pads, pink and white water lilies, and blue-green water\"}",
+  "source_caption": "An Impressionist painting of a pond with broad green lily pads, pink and white water lilies, and blue-green water",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:56+09:00",
+  "seconds": 4.91
+}

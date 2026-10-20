@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/29",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/29",
+  "identity_term": "grasshopper",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/29.txt",
+  "label_source_sha256": "692d96b5eb087ea352f4eff918c26b79f28587761f189237e262bbcc510997f1",
+  "target_prompts": [
+    "A photograph of a grasshopper perched on a vibrant green leaf",
+    "A photo of a grasshopper leaping from one blade of grass to another",
+    "A detailed photograph of a grasshopper blending into a field of wildflowers",
+    "A photo capturing a grasshopper bathed in the golden light of sunset",
+    "A watercolor painting of a grasshopper in mid-jump, with a splash of different greens",
+    "An anime-style illustration of a grasshopper on a dewy leaf",
+    "A minimalist ink sketch of a grasshopper, focusing on its delicate legs and antennae",
+    "A grasshopper playing a tiny violin made from a leaf, under the moonlight",
+    "A grasshopper with crystal wings reflecting the colors of a rainbow as it flies through a misty morning"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/29.jpg",
+  "image_sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:00+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A brown, mottled grasshopper with long antennae and prominent bent hind legs resting on weathered gray wood\"}",
+  "source_caption": "A brown, mottled grasshopper with long antennae and prominent bent hind legs resting on weathered gray wood",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:05+09:00",
+  "seconds": 5.08
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with long, wispy gray hair, thick black rectangular glasses, and white sideburns, wearing a dark coat in a close-up against a blurred background",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e1267b7bc4feb4c4bbd8db5e27f499c19a87a9094887be7544087a6df2954aa3",
+    "bytes_sha256": "041002bb03f887a1ad87990cedb41a226fab9187db3da60c655bc1e352c969b4"
+  },
+  "input_sha256": "b68f006c9c3cca128d3f9ec7dbe2a33051e7b3990f1b55ba0d8294fd0ef689d5",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "b68f006c9c3cca128d3f9ec7dbe2a33051e7b3990f1b55ba0d8294fd0ef689d5",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with long, wispy gray hair, thick black rectangular glasses, and white sideburns, wearing a dark coat in a close-up against a blurred background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

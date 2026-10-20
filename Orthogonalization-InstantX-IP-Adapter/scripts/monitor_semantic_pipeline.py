@@ -1,4 +1,4 @@
-"""Run ten real DreamBench++ style cases, saving each LLM attempt and contrast."""
+"""Explicit analysis/GPU monitor for joint local contrasts; preserves legacy run directories."""
 from __future__ import annotations
 
 import argparse
@@ -13,8 +13,9 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT.parent))
 
 from orthogonalization_instantx_ip_adapter.llm_provider import ResponsesJSONProvider
-from orthogonalization_instantx_ip_adapter.semantic_components import SemanticLLM, SemanticConditioning, identity_spans
-from orthogonalization_instantx_ip_adapter.component_directions import component_contrast_plan
+from orthogonalization_instantx_ip_adapter.semantic_contrasts import (SemanticLLM, SemanticContrastConditioning,
+    ReferenceFingerprint, identity_occurrences as identity_spans, prepare_semantic_conditioning, parse_json_object)
+from orthogonalization_instantx_ip_adapter.contrast_directions import contrast_diagnostics
 
 SELECTION = [
     ('01', 8, 'Style inserted inside a location noun phrase'),
@@ -51,11 +52,12 @@ def cases():
 class RecordingProvider:
     def __init__(self, provider, output):
         self.provider, self.output = provider, output
-        self.case_id = self.stage = ''
+        self.case_id = ''
+        self.model = provider.model
 
     def complete(self, **kwargs):
         start = time.monotonic()
-        record = dict(case_id=self.case_id, stage=self.stage,
+        record = dict(case_id=self.case_id, stage='caption' if kwargs.get('image_bytes') else 'contrast',
             timestamp=datetime.now(timezone.utc).isoformat(), payload=kwargs['payload'],
             feedback=kwargs.get('feedback'), model=self.provider.model)
         try:
@@ -72,90 +74,68 @@ class RecordingProvider:
 
 
 def audit(conditioning):
-    records = []
-    for origin, analysis in conditioning.selected:
-        assert analysis.prompt_for_subset(range(len(analysis.components))) == analysis.text
-        fixed = [*analysis.preserved_spans, *(analysis.retained_spans or ()), *(analysis.neutral_spans or ())]
-        records.append(dict(origin=origin, component_count=len(analysis.components),
-            all_removed_prompt=analysis.prompt_for_subset([]), fixed_spans=fixed))
-    plan = component_contrast_plan(conditioning)
-    originals = dict(conditioning.selected)
-    for name, pairs in plan:
-        analysis = originals[name.split(':')[0]]
-        fixed = [*analysis.preserved_spans, *(analysis.retained_spans or ()), *(analysis.neutral_spans or ())]
-        for pair in pairs:
-            for prompt in pair:
-                for span in fixed:
-                    assert ' '.join(span.split()) in prompt, (name, span, prompt)
-    prompts = list(dict.fromkeys(prompt for _, pairs in plan for pair in pairs for prompt in pair))
-    return dict(strategy=conditioning.strategy, input_direction_count=len(plan),
-        unique_text_context_count=len(prompts), contrast_pair_count=sum(len(p) for _, p in plan),
-        analyses=records, contrasts=[dict(direction=name, pairs=pairs) for name, pairs in plan])
+    return contrast_diagnostics(conditioning)
+
+
+def check_run(output):
+    marker = output / 'joint_local_run.json'
+    if output.exists() and any(output.iterdir()) and not marker.exists():
+        raise ValueError('Use a new output directory; legacy runs must not be overwritten')
+    if marker.exists() and parse_json_object(marker.read_text(encoding='utf-8')) != {"schema_version": 4}:
+        raise ValueError('Unsupported monitor run')
+    save(marker, {"schema_version": 4})
 
 
 def analyze(output, model):
+    check_run(output)
     selected = cases()
     save(output / 'selection.json', selected)
-    provider = RecordingProvider(ResponsesJSONProvider.from_env(model), output)
-    llm = SemanticLLM(provider)
+    provider = None
     statuses = []
     for case in selected:
-        provider.case_id = case['case_id']
         directory = output / case['case_id']
-        if all((directory / f'conditioning_{s}.json').exists() for s in ('local', 'factorial')):
-            for strategy in ('local', 'factorial'):
-                cached = SemanticConditioning.from_dict(json.loads((directory / f'conditioning_{strategy}.json').read_text(encoding='utf-8')))
-                if cached.source is None or cached.source.conditioned_on_target != case['target_prompt']:
-                    raise ValueError('Legacy or mismatched source cache; use a new output directory')
-            print(case['case_id'], 'cached analysis', flush=True)
+        cache = directory / 'conditioning.contrasts.json'
+        image_bytes = Path(case['reference_image']).read_bytes()
+        if cache.exists():
+            cached = SemanticContrastConditioning.from_dict(parse_json_object(cache.read_text(encoding='utf-8')))
+            cached.validate_reuse(identity_term=case['identity_term'], target_prompt=case['target_prompt'],
+                                  reference=ReferenceFingerprint.from_image(image_bytes), model=model)
             statuses.append(dict(case_id=case['case_id'], status='cached'))
             continue
         record = dict(case)
         try:
-            print(case['case_id'], 'caption', flush=True)
-            provider.stage = 'caption'
-            probe = output / 'probe_caption.txt'
-            if case['case_id'] == '01-08' and probe.exists():
-                source_caption = probe.read_text(encoding='utf-8')
-                record['caption_from_probe'] = True
-            else:
-                source_caption = llm.caption(Path(case['reference_image']).read_bytes(), case['identity_term'])
-            record['source_caption'] = source_caption
-            save(directory / 'progress.json', record)
-            print(case['case_id'], 'source analysis', flush=True)
-            provider.stage = 'source_analysis'
-            source = llm.analyze_source(source_caption, case['target_prompt'], case['identity_term'])
-            save(directory / 'source_analysis.json', source.to_dict())
-            print(case['case_id'], 'target analysis', flush=True)
-            provider.stage = 'target_analysis'
-            target = llm.analyze_target(case['target_prompt'], case['identity_term'])
-            save(directory / 'target_analysis.json', target.to_dict())
-            for strategy in ('local', 'factorial'):
-                conditioning = SemanticConditioning(target, source, 'source_target', strategy)
-                save(directory / f'conditioning_{strategy}.json', conditioning.to_dict())
-                save(directory / f'audit_{strategy}.json', audit(conditioning))
-            record['status'] = 'analysis_passed'
-            print(case['case_id'], 'PASS', len(source.components), len(target.components), flush=True)
+            if provider is None:
+                provider = RecordingProvider(ResponsesJSONProvider.from_env(model), output)
+            provider.case_id = case['case_id']
+            conditioning = prepare_semantic_conditioning(llm=SemanticLLM(provider),
+                identity_term=case['identity_term'], target_prompt=case['target_prompt'],
+                reference_image_bytes=image_bytes)
+            save(cache, conditioning.to_dict())
+            save(directory / 'audit_local.json', audit(conditioning))
+            record.update(status='analysis_passed', source_caption=conditioning.caption.text, preserve=list(conditioning.caption.preserve))
         except Exception as error:
-            record['status'] = 'analysis_failed'
-            record['error'] = f'{type(error).__name__}: {error}'
-            print(case['case_id'], record['error'], flush=True)
+            record.update(status='analysis_failed', error=f'{type(error).__name__}: {error}')
+            if getattr(error, 'trace', None) is not None:
+                record['failure_trace'] = error.trace.to_dict()
         save(directory / 'status.json', record)
         statuses.append(record)
-        save(output / 'analysis_summary.json', statuses)
+    save(output / 'analysis_summary.json', statuses)
     return statuses
 
 
 def generate(output):
     from semantic_monitor_modal import app, run_cases
+    check_run(output)
     requests = []
     for case in cases():
-        directory = output / case['case_id']
-        if all((directory / f'conditioning_{s}.json').exists() for s in ('local', 'factorial')):
-            requests.append(dict(case_id=case['case_id'],
-                image_bytes=Path(case['reference_image']).read_bytes(),
-                local=json.loads((directory / 'conditioning_local.json').read_text(encoding='utf-8')),
-                factorial=json.loads((directory / 'conditioning_factorial.json').read_text(encoding='utf-8'))))
+        cache = output / case['case_id'] / 'conditioning.contrasts.json'
+        if cache.exists():
+            conditioning = SemanticContrastConditioning.from_dict(parse_json_object(cache.read_text(encoding='utf-8')))
+            image_bytes = Path(case['reference_image']).read_bytes()
+            conditioning.validate_reuse(identity_term=case['identity_term'], target_prompt=case['target_prompt'],
+                                        reference=ReferenceFingerprint.from_image(image_bytes))
+            requests.append(dict(case_id=case['case_id'], image_bytes=image_bytes,
+                                 contrast_analysis_payload=conditioning.to_dict()))
     events = []
     if not requests:
         raise ValueError('No successfully analyzed cases to generate')
@@ -176,7 +156,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--stage', choices=('analysis', 'gpu', 'all'), default='all')
     parser.add_argument('--model', default=None)
-    parser.add_argument('--output-dir', type=Path, default=ROOT / 'outputs/semantic_monitor_20261010')
+    parser.add_argument('--output-dir', type=Path, default=ROOT / 'outputs/semantic_local_v3')
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     if args.stage in ('analysis', 'all'):

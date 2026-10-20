@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with neatly parted dark brown hair, wearing a gray checked blazer over a gray collared shirt and a small pendant necklace, looking slightly to the side against a dark wall with large pink lettering",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "cc4c31e251a3c65aba300f9fd9eff199a077631645e9d3bd646e20989672f291",
+    "bytes_sha256": "f2fb011113530393a1924702bd30395d18c8a9498327e964277816720fb8cca8"
+  },
+  "input_sha256": "c946cf03517a014677f7667e5835db8365501792b9c23c00e69b34969c7e6f64",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "c946cf03517a014677f7667e5835db8365501792b9c23c00e69b34969c7e6f64",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with neatly parted dark brown hair, wearing a gray checked blazer over a gray collared shirt and a small pendant necklace, looking slightly to the side against a dark wall with large pink lettering\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

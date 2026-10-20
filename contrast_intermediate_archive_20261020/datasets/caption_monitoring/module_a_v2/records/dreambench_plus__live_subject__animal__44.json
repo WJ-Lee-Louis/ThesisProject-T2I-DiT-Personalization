@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/44",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/44",
+  "identity_term": "cat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/44.txt",
+  "label_source_sha256": "c878f4a217f52b27270333f1f299617cde5030882f12567d3c615604527d7f19",
+  "target_prompts": [
+    "A photograph of a cat lounging in a sunny window",
+    "A photo of a cat playfully chasing a butterfly in a garden",
+    "A detailed photograph of a cat perched on a rustic fence at dusk",
+    "A photo of a cat curled up next to a sleeping child",
+    "A watercolor painting of a cat with vibrant colors",
+    "An anime-style illustration of a cat dressed as a knight",
+    "A retro-style poster of a cat sipping coffee in a cozy café",
+    "A cat prowling through a miniature city at night, its eyes glowing like street lamps",
+    "A depiction of a cat sailing the ocean on a leaf, guided by fireflies"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/44.jpg",
+  "image_sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:14+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A cat with pale blue fur and dark blue stripes, oversized round eyes, pink inner ears and nose, and a white muzzle, chest, and tail tip, sitting with its large tail curled across its paws against a plain white background\"}",
+  "source_caption": "A cat with pale blue fur and dark blue stripes, oversized round eyes, pink inner ears and nose, and a white muzzle, chest, and tail tip, sitting with its large tail curled across its paws against a plain white background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:19+09:00",
+  "seconds": 4.33
+}

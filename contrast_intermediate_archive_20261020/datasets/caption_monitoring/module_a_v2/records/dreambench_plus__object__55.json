@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/55",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/55",
+  "identity_term": "headphones",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/55.txt",
+  "label_source_sha256": "071303f8a12913a0edc03524fb2f14a7fc8450573a3e4e0a253b744b1215075f",
+  "target_prompts": [
+    "A photograph of headphones lying on a wooden desk next to an open laptop",
+    "A photo of headphones hanging on a hook in a modern, sleek recording studio",
+    "A detailed photograph of headphones resting on a stack of vinyl records",
+    "A photo of headphones draped over a cozy, plush armchair in a sunlit room",
+    "A minimalist drawing of headphones with simple, clean lines in black and white",
+    "A digital painting of colorful headphones floating in a zero-gravity space environment",
+    "A cartoon-style illustration of headphones with musical notes emanating from them",
+    "Headphones growing out of a tree like fruits, with music notes fluttering around as leaves",
+    "Headphones as portals to different musical worlds, each earpiece opening to a different genre landscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/55.jpg",
+  "image_sha256": "1ad82c7271bffbbbf25dab6e0d7d43921c313b950ecfe2eba4e30ce771cbf024",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:31+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"Black over-ear headphones with a padded headband and large cushioned earcups resting on a white desk\"}",
+  "source_caption": "Black over-ear headphones with a padded headband and large cushioned earcups resting on a white desk",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:33+09:00",
+  "seconds": 2.12
+}

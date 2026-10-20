@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/56",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/56",
+  "identity_term": "clock",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/56.txt",
+  "label_source_sha256": "67b7831372d16c77e456feddbb3b3c2feae89748e3bd4c219d8b23a5e8dff4cc",
+  "target_prompts": [
+    "A photograph of a clock hanging on the weathered wall of an old train station",
+    "A photo of a clock set against the backdrop of a busy modern office",
+    "A detailed photograph of an antique clock displayed in a museum",
+    "A photo of a clock integrated into the architecture of a grand cathedral",
+    "A digital painting of a clock melting over surreal, dreamlike landscapes",
+    "A watercolor painting of a clock entwined with vibrant spring flowers",
+    "An ink sketch of a clock with its gears exposed, in a steampunk style",
+    "A clock whose hands move backwards, each tick restoring an ancient ruin back to its original glory",
+    "A gigantic clock submerged under the ocean, with marine life interacting with its hands and numerals"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/56.jpg",
+  "image_sha256": "4617746bfc0c5039b5e688aaaf0429adb283093fe342cda125c8c23660c0d1f0",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:32+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A clock with a bright yellow casing and twin bells, a white numbered face, resting on rumpled white fabric\"}",
+  "source_caption": "A clock with a bright yellow casing and twin bells, a white numbered face, resting on rumpled white fabric",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:34+09:00",
+  "seconds": 2.8
+}

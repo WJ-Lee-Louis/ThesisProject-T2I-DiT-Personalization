@@ -1,0 +1,9 @@
+{
+  "model": "gpt-5.6-sol",
+  "captions": 19,
+  "total": 40,
+  "passed": 40,
+  "errors": [],
+  "caption_attempts": 19,
+  "contrast_attempts": 40
+}

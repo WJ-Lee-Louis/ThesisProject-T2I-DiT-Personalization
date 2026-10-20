@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A UFO with a broad green oval hull, a cyan domed cockpit, an orange underside, and a short antenna with a yellow tip",
+  "identity_term": "UFO",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "be5b6933e44293871c2d23efca058919509937e892344f167757e77fd13e5607",
+    "bytes_sha256": "971f938f3c7eb876bd3db85575db08842f4575927199e4eeea7e7964fa4915df"
+  },
+  "input_sha256": "128d1e735863b89e681143740717329ab6307a0f1654816be14b66c3322b1f27",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "128d1e735863b89e681143740717329ab6307a0f1654816be14b66c3322b1f27",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A UFO with a broad green oval hull, a cyan domed cockpit, an orange underside, and a short antenna with a yellow tip\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A dark brown teapot with a rounded body, domed lid, loop handle, and short angled spout, resting on a textured black rectangular block",
+  "identity_term": "teapot",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "60a4c9accff72646a9464bf551457a754fb8226b0b3ac73de029302b4a081d7c",
+    "bytes_sha256": "e898e815656fd538977b5c0735727fa03e1f4261842ca6eb91c7ae8d43ceb365"
+  },
+  "input_sha256": "c98fa13e8ae85daebd305876e1ca9a300a939360b5ff486addd89556cab3106e",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "c98fa13e8ae85daebd305876e1ca9a300a939360b5ff486addd89556cab3106e",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A dark brown teapot with a rounded body, domed lid, loop handle, and short angled spout, resting on a textured black rectangular block\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/24",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/24",
+  "identity_term": "vintage camera",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/24.txt",
+  "label_source_sha256": "0016b9998b4ff37970617bb87fd1b0920bb15e7a3c7fd6540266f1d5dfddc725",
+  "target_prompts": [
+    "A photograph of a vintage camera placed on an old wooden desk surrounded by scattered photographs",
+    "A photo of a vintage camera hanging from a worn leather strap against a rustic brick wall",
+    "A detailed photograph of a vintage camera with a cracked lens, set against a backdrop of faded curtains",
+    "A vintage camera resting on a stack of antique books in a dimly lit study",
+    "A minimalist sketch of a vintage camera with elegant, clean lines, emphasizing its classic design",
+    "An anime-style drawing of a vintage camera with exaggerated, colorful features, floating amidst clouds",
+    "A watercolor painting of a vintage camera surrounded by blooming wildflowers in a serene meadow",
+    "A vintage camera with a lens that projects cosmic scenes, capturing stars and galaxies instead of ordinary photos",
+    "A vintage camera transforming into a small, mechanical bird capable of flying and taking aerial photographs"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/24.jpg",
+  "image_sha256": "fe4d1e623a6b8cb47365bb9c67bfc854c93c050eada21e77466e6623961cf3b8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:01+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A vintage camera with a cream-colored body, large black lens, red button, and vertical rainbow stripe, standing against a bright blue background\"}",
+  "source_caption": "A vintage camera with a cream-colored body, large black lens, red button, and vertical rainbow stripe, standing against a bright blue background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:06+09:00",
+  "seconds": 4.11
+}

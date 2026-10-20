@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "An armchair with taupe upholstered cushions, a high curved back, and ornate dark wooden arms and legs, standing on a pale wood floor beside flower arrangements",
+  "identity_term": "armchair",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "45bc45568fe5f64b5bc913e121d75e62d278143371d859e69717bc8ce99a1973",
+    "bytes_sha256": "d628cc78b91b97aeccbdab8f4f162bf474bce1f7d9eb84973b96684c9418d8c7"
+  },
+  "input_sha256": "c43f71c7743558f3a82ea1422b1a6fca091b1b457b38ee407eb2105e59ec5655",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "c43f71c7743558f3a82ea1422b1a6fca091b1b457b38ee407eb2105e59ec5655",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"An armchair with taupe upholstered cushions, a high curved back, and ornate dark wooden arms and legs, standing on a pale wood floor beside flower arrangements\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

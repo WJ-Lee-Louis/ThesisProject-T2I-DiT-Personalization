@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A weathered wooden house with a steep A-frame section joined to a low rectangular wing, small windows, and an open doorway, standing on a grassy shore beside a lake with mountain slopes beyond",
+  "identity_term": "wooden house",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "eff78c9b5615d45e2524d2fdf106ba2d83598aa9e4921f4e8a1c58e84c3f01af",
+    "bytes_sha256": "a8d66cc4e4cc3909b335a5778f2633fd73d10472b72fdf9ab8bf5726868f3ac8"
+  },
+  "input_sha256": "73c7f5c73ecbb39000aaee4bcaa35335ec73900ebd4eec12815d15ed8b7c0e41",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "73c7f5c73ecbb39000aaee4bcaa35335ec73900ebd4eec12815d15ed8b7c0e41",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A weathered wooden house with a steep A-frame section joined to a low rectangular wing, small windows, and an open doorway, standing on a grassy shore beside a lake with mountain slopes beyond\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

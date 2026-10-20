@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/16",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/16",
+  "identity_term": "watercolor sketch",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/16.txt",
+  "label_source_sha256": "82fff1e3f3ea1672099c57a5ba51fb7de47c1a8c694eefe8460d9304c77fcafd",
+  "target_prompts": [
+    "A cottage surrounded by blooming flowers, depicted in watercolor sketch",
+    "A serene riverside scene with fishermen in boats, painted in watercolor sketch",
+    "A bustling city street with pedestrians and vintage cars, illustrated in watercolor sketch",
+    "A peaceful meadow under a clear blue sky, rendered in watercolor sketch",
+    "A cat napping by a sunny window, in watercolor sketch style",
+    "A row of old books on a wooden shelf, depicted in watercolor sketch style",
+    "A woman reading under a tree, illustrated in watercolor sketch style",
+    "An ancient tree with glowing leaves in a watercolor sketch style",
+    "A city floating on clouds, illustrated in watercolor sketch style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/16.jpg",
+  "image_sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:57+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A watercolor sketch of a tan rocky path winding between boulders and sparse green shrubs, with blue mountain ridges beneath a pale sky\"}",
+  "source_caption": "A watercolor sketch of a tan rocky path winding between boulders and sparse green shrubs, with blue mountain ridges beneath a pale sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:30:01+09:00",
+  "seconds": 4.58
+}

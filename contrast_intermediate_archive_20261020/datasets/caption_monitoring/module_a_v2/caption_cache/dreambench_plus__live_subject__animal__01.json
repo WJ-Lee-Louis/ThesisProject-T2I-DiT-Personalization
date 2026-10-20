@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A stork with white plumage, black wings, a long red bill, and long red legs standing on the edge of a terracotta-tiled rooftop against a clear blue sky",
+  "identity_term": "stork",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "b71dc4b4f8bea0c8f5e84c27af2b6fb65671fbd5197c659a66e1a1082e91580a",
+    "bytes_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf"
+  },
+  "input_sha256": "922387ea96b6006afe9fefe83364cb59594cb746a89bd31f57809cfa13a715e1",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "922387ea96b6006afe9fefe83364cb59594cb746a89bd31f57809cfa13a715e1",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A stork with white plumage, black wings, a long red bill, and long red legs standing on the edge of a terracotta-tiled rooftop against a clear blue sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

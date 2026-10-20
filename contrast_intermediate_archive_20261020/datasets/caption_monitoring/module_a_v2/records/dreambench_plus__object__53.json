@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/53",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/53",
+  "identity_term": "cactus",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/53.txt",
+  "label_source_sha256": "630dc526f7a1a079c5c8cb4cf5f7570655e5b962daf0c54a9fe3b9511957e532",
+  "target_prompts": [
+    "A photograph of a cactus thriving under the harsh sunlight in the desert",
+    "A photo of a cactus garden showcasing various species and sizes",
+    "A detailed photograph of a flowering cactus with vibrant pink blooms",
+    "A photorealistic image of a cactus casting a long shadow at sunset",
+    "A watercolor painting of a cactus in a small, colorful ceramic pot",
+    "An abstract digital art piece featuring a cactus with geometric patterns",
+    "A minimalist ink sketch of a tall, slender cactus against a plain background",
+    "A cactus growing on a small planet, orbiting in a miniature solar system",
+    "A fantasy scene of a cactus forest glowing with bioluminescent flowers under a moonlit sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/53.jpg",
+  "image_sha256": "c4e9374b3de01094b73c41f909863cb8b6aab3c3b916e14178ed49f9e873a656",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:29+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A blue-green ribbed cactus with long pale spines growing in an orange terracotta pot\"}",
+  "source_caption": "A blue-green ribbed cactus with long pale spines growing in an orange terracotta pot",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:32+09:00",
+  "seconds": 2.41
+}

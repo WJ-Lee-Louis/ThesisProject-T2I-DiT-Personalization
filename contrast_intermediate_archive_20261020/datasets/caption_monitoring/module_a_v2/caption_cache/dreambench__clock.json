@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A bright yellow twin-bell clock with a white face, black numerals, and an oversized yellow 3, resting on white fabric",
+  "identity_term": "clock",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1280,
+    "height": 1280,
+    "rgb_sha256": "10e855f0296307307a6ec219d48b00b3a4f628f1fc42d4fd6b8f2dba52052888",
+    "bytes_sha256": "0e1eb6ca2c944f3bfaed3ace56f5f186ed073a477e0333e0237253d98f0c9267"
+  },
+  "input_sha256": "60bc5600138865824c0be6a367b04a415bd4bf84e8a171acb54c102dd32bab6d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "60bc5600138865824c0be6a367b04a415bd4bf84e8a171acb54c102dd32bab6d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A bright yellow twin-bell clock with a white face, black numerals, and an oversized yellow 3, resting on white fabric\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A white plastic toy robot with blue chest panels, a black visor and hands, and bent arms, standing on a black-and-blue wheeled base against gray textured fabric",
+  "identity_term": "toy",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1440,
+    "height": 1440,
+    "rgb_sha256": "699832371b0136a6b8794a791ef6e6bdf9d265aab4b265e5217031860303e698",
+    "bytes_sha256": "c7b87b86a58fc702b1245498abbc02e5297bad03c657d089675ef6467f91f6cb"
+  },
+  "input_sha256": "d71f8b0fd2b386c4691bd3a00f6f0f16270a51d3615a965f862483524d78a1d8",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "d71f8b0fd2b386c4691bd3a00f6f0f16270a51d3615a965f862483524d78a1d8",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A white plastic toy robot with blue chest panels, a black visor and hands, and bent arms, standing on a black-and-blue wheeled base against gray textured fabric\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

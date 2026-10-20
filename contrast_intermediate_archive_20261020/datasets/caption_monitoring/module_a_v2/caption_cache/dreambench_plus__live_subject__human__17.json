@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with swept-up blond hair, green eyes, and round goggles resting on his head, wearing a purple outfit with gold trim and extending a pointing hand toward the viewer against a plain white background",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "f68d06e4af7b127ba024a6f17226c5dbcb189ddf04c49b948d97dd0a94303f8d",
+    "bytes_sha256": "169fd2f8245fc49996cc45a72de2a760b5a6d7e81933832557535795196e3359"
+  },
+  "input_sha256": "0ab7debb627541c38e680c6b3f9325fb1ff04b4cbe251ec6a96854a420458bd5",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "0ab7debb627541c38e680c6b3f9325fb1ff04b4cbe251ec6a96854a420458bd5",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with swept-up blond hair, green eyes, and round goggles resting on his head, wearing a purple outfit with gold trim and extending a pointing hand toward the viewer against a plain white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/20",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/20",
+  "identity_term": "Magic Cube",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/20.txt",
+  "label_source_sha256": "2a0dcda432d4815125935ce801c6bb2c9895bae236b2260267efbe728dea743c",
+  "target_prompts": [
+    "A photograph of a Magic Cube partially solved on a wooden desk",
+    "A photo of a Magic Cube held in a child's hands under bright daylight",
+    "A detailed photo of a Magic Cube with reflective stickers beside a window with raindrops",
+    "A Magic Cube sitting on an old, dusty bookshelf in natural light",
+    "A cartoon of a Magic Cube with animated, expressive eyes trying to solve itself",
+    "A watercolor painting of a Magic Cube floating above a colorful abstract landscape",
+    "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+    "A Magic Cube morphing into different geometric shapes, each block displaying a different scene from nature",
+    "A giant Magic Cube floating in space, each turn altering the color of distant stars"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/20.jpg",
+  "image_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:57+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A Magic Cube with black grid divisions and red, blue, green, yellow, orange, and white square faces, its layers turned out of alignment on a white surface\"}",
+  "source_caption": "A Magic Cube with black grid divisions and red, blue, green, yellow, orange, and white square faces, its layers turned out of alignment on a white surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:01+09:00",
+  "seconds": 4.03
+}

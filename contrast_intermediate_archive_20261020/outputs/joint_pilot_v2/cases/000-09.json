@@ -1,0 +1,132 @@
+{
+  "case_id": "000-09",
+  "reference_index": 0,
+  "target_index": 9,
+  "identity_term": "backpack",
+  "target_prompt": "a backpack on top of a purple rug in a forest",
+  "reference_id": "dreambench/backpack",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down",
+      "target_prompt": "a backpack on top of a purple rug in a forest",
+      "identity_term": "backpack"
+    },
+    "input_sha256": "b04219e4bb66a3d5a51448a6f9aac79e044e344e083857880ecb3231253f36ca",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1280,
+      "height": 1280,
+      "rgb_sha256": "115eb3e9835af71ccfaa13c79d8548629efcd7baaf5eea8b2c2e775380e96f9a",
+      "bytes_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down",
+      "identity_term": "backpack",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1280,
+        "height": 1280,
+        "rgb_sha256": "115eb3e9835af71ccfaa13c79d8548629efcd7baaf5eea8b2c2e775380e96f9a",
+        "bytes_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c"
+      },
+      "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "backpack",
+      "source_preserved": [
+        "backpack",
+        "gold-tone zippers",
+        "colorful pins",
+        "a rectangular label"
+      ],
+      "source": [
+        {
+          "unit": "magenta body color",
+          "negative": "A backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down"
+        },
+        {
+          "unit": "resting upright pose",
+          "negative": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, on a rocky ledge with one shoulder strap hanging down"
+        },
+        {
+          "unit": "rocky ledge placement",
+          "negative": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright with one shoulder strap hanging down"
+        },
+        {
+          "unit": "hanging shoulder strap",
+          "negative": "A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge"
+        }
+      ],
+      "target": [
+        {
+          "unit": "purple rug placement",
+          "negative": "a backpack in a forest"
+        },
+        {
+          "unit": "forest setting",
+          "negative": "a backpack on top of a purple rug"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "b04219e4bb66a3d5a51448a6f9aac79e044e344e083857880ecb3231253f36ca",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"backpack\",\"source_preserved\":[\"backpack\",\"gold-tone zippers\",\"colorful pins\",\"a rectangular label\"],\"source\":[{\"unit\":\"magenta body color\",\"negative\":\"A backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge with one shoulder strap hanging down\"},{\"unit\":\"resting upright pose\",\"negative\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, on a rocky ledge with one shoulder strap hanging down\"},{\"unit\":\"rocky ledge placement\",\"negative\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright with one shoulder strap hanging down\"},{\"unit\":\"hanging shoulder strap\",\"negative\":\"A magenta backpack with gold-tone zippers, colorful pins and a rectangular label, resting upright on a rocky ledge\"}],\"target\":[{\"unit\":\"purple rug placement\",\"negative\":\"a backpack in a forest\"},{\"unit\":\"forest setting\",\"negative\":\"a backpack on top of a purple rug\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:30:37.764203+00:00"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "case_id": "003-21",
+  "reference_index": 3,
+  "target_index": 21,
+  "identity_term": "bowl",
+  "target_prompt": "a purple bowl",
+  "reference_id": "dreambench/berry_bowl",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "A white patterned bowl filled with blueberries on white fabric",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "A white patterned bowl filled with blueberries on white fabric",
+      "target_prompt": "a purple bowl",
+      "identity_term": "bowl"
+    },
+    "input_sha256": "c3d2713f4ca14e1330d71adeec4496d06f81b0f01fda4d16f34fd6bc8ce70e81",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1280,
+      "height": 1280,
+      "rgb_sha256": "0b81d8905f67b87da36f72a28f038fb7f5726789312483ea987ead6ac09da543",
+      "bytes_sha256": "3ca2f510ca6b9d3b1dd0cb25b3358195d098fe31a8aa2b7d9b370c8a3fdb4246"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "A white patterned bowl filled with blueberries on white fabric",
+      "identity_term": "bowl",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1280,
+        "height": 1280,
+        "rgb_sha256": "0b81d8905f67b87da36f72a28f038fb7f5726789312483ea987ead6ac09da543",
+        "bytes_sha256": "3ca2f510ca6b9d3b1dd0cb25b3358195d098fe31a8aa2b7d9b370c8a3fdb4246"
+      },
+      "input_sha256": "fe4c0a52da1921e5f7fb7fc4e7fea4b5f5ba51ff2609be5c458aa726609dbf37",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fe4c0a52da1921e5f7fb7fc4e7fea4b5f5ba51ff2609be5c458aa726609dbf37",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A white patterned bowl filled with blueberries on white fabric\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "bowl",
+      "source_preserved": [
+        "bowl",
+        "patterned",
+        "filled with blueberries"
+      ],
+      "source": [
+        {
+          "unit": "white bowl color",
+          "negative": "A patterned bowl filled with blueberries on white fabric"
+        },
+        {
+          "unit": "white fabric placement",
+          "negative": "A white patterned bowl filled with blueberries"
+        }
+      ],
+      "target": [
+        {
+          "unit": "purple bowl color",
+          "negative": "a bowl"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fe4c0a52da1921e5f7fb7fc4e7fea4b5f5ba51ff2609be5c458aa726609dbf37",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A white patterned bowl filled with blueberries on white fabric\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c3d2713f4ca14e1330d71adeec4496d06f81b0f01fda4d16f34fd6bc8ce70e81",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"bowl\",\"source_preserved\":[\"bowl\",\"patterned\",\"filled with blueberries\"],\"source\":[{\"unit\":\"white bowl color\",\"negative\":\"A patterned bowl filled with blueberries on white fabric\"},{\"unit\":\"white fabric placement\",\"negative\":\"A white patterned bowl filled with blueberries\"}],\"target\":[{\"unit\":\"purple bowl color\",\"negative\":\"a bowl\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:24:32.800126+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A toucan with a large multicolored bill, a bright yellow throat, and black plumage perched on a moss-covered branch among green plants in the rain",
+  "identity_term": "toucan",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "db2d9b6e3bdbd6667017bf01d454ce1ddb57ea8cba816afbfb8102850da82137",
+    "bytes_sha256": "7c63760cecbd1aa432a67dd7bce5633e5a0db482cfe4b1cec3f4c8be3c8421fd"
+  },
+  "input_sha256": "65ebeb6367170c615d1556933b17d74ef25d46e67c46a163aa162a972b68a597",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "65ebeb6367170c615d1556933b17d74ef25d46e67c46a163aa162a972b68a597",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A toucan with a large multicolored bill, a bright yellow throat, and black plumage perched on a moss-covered branch among green plants in the rain\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

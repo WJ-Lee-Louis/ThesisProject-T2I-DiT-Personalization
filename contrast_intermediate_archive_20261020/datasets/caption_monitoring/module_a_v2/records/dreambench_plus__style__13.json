@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/13",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/13",
+  "identity_term": "cosmic nebula",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/13.txt",
+  "label_source_sha256": "9ae194d35c67bd28c842ae79d21605f90dd661e0d4b5772dbe3e9957cd2d942a",
+  "target_prompts": [
+    "A photo of a serene galaxy with swirling cosmic nebula colors",
+    "A painting of a star being born within a vibrant cosmic nebula",
+    "A photograph of an interstellar cloud in the style of cosmic nebula",
+    "An illustration of a distant universe filled with cosmic nebula patterns",
+    "A telescope view capturing the intricate movement of a cosmic nebula",
+    "A star cluster surrounded by a luminous cosmic nebula",
+    "A cosmic nebula enveloping a newly forming solar system",
+    "A mythical phoenix rising from a cosmic nebula",
+    "A grand castle floating amidst a colorful cosmic nebula"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/13.jpg",
+  "image_sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:53+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars\"}",
+  "source_caption": "cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:57+09:00",
+  "seconds": 3.88
+}

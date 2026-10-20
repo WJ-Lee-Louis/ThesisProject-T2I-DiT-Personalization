@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/01",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/01",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/01.txt",
+  "label_source_sha256": "5737d5308cbdd8bf95a7236ec08cc679062d02ac839e7337bbb840a15f24b461",
+  "target_prompts": [
+    "A photograph of a man reading a newspaper in a cozy coffee shop",
+    "A photo of a man hiking through a lush green forest",
+    "A photograph of a man playing violin in a dimly lit room",
+    "A photo of a man teaching in a vibrant classroom filled with students",
+    "A watercolor painting of a man sailing a boat on a tranquil lake",
+    "An anime-style illustration of a man flying with jetpack wings above a city skyline",
+    "A retro-style drawing of a man driving a classic convertible on a seaside highway",
+    "A man climbing a staircase made of floating books in an endless sky",
+    "A depiction of a man walking through a portal on a city street into a medieval marketplace"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/01.jpg",
+  "image_sha256": "5c316b87bab11b7b3bf8b60da5c06812c3b13406ca292d1c359df626dc990b99",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:17+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A man with short dark hair, wearing a brown tweed jacket over a white shirt and red patterned tie, facing forward with his arms extended to the sides against a white background\"}",
+  "source_caption": "A man with short dark hair, wearing a brown tweed jacket over a white shirt and red patterned tie, facing forward with his arms extended to the sides against a white background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:22+09:00",
+  "seconds": 5.02
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/59",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/59",
+  "identity_term": "Eevee figurine",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/59.txt",
+  "label_source_sha256": "ed2c84207a455fe583f19d8ea1e7b46d2e2fd1bcaa774bc6328507aae05ee7bb",
+  "target_prompts": [
+    "A photograph of an Eevee figurine placed on a grassy field",
+    "A photo of an Eevee figurine next to a collection of Pokémon trading cards",
+    "A photograph of an Eevee figurine on a windowsill basking in the sunset",
+    "A photo of an Eevee figurine surrounded by colorful autumn leaves",
+    "An anime-style illustration of an Eevee figurine with sparkling eyes",
+    "A minimalist sketch of an Eevee figurine, focusing on its fluffy features",
+    "A retro-style digital painting of an Eevee figurine on an old gaming console",
+    "An Eevee figurine transforming into a real Eevee under a magical, starry sky",
+    "An Eevee figurine leading a parade of miniature Pokémon through a miniature cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/59.jpg",
+  "image_sha256": "6c15c3862168e72177e10c36c22c1a386121202b7818b24cf075d711890ce92c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:33+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"An Eevee figurine with tan-brown coloring, oversized dark-centered ears, a fluffy cream collar and pale-tipped tail, standing on leaf-strewn ground amid greenery\"}",
+  "source_caption": "An Eevee figurine with tan-brown coloring, oversized dark-centered ears, a fluffy cream collar and pale-tipped tail, standing on leaf-strewn ground amid greenery",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:38+09:00",
+  "seconds": 4.39
+}

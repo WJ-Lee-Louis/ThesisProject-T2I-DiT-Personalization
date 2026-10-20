@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A crab with a dark, banded shell and orange-red legs standing on sandy ground",
+  "identity_term": "crab",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "2bc415dd8f200dbdd748f606ab0ab891c6ddfa2d5c252f81a73fe1ca0f6797be",
+    "bytes_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611"
+  },
+  "input_sha256": "41a24b75d4aa5b2112c3a4a9fd4c6f7a051a06ccc3e64715ec03e29a10c3a85a",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "41a24b75d4aa5b2112c3a4a9fd4c6f7a051a06ccc3e64715ec03e29a10c3a85a",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A crab with a dark, banded shell and orange-red legs standing on sandy ground\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

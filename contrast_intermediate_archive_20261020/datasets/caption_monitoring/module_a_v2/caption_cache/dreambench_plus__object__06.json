@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "An avocado half with yellow-green flesh, a large brown pit, and dark green skin resting cut-side up on a pink surface",
+  "identity_term": "avocado",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "61bd87d4e78d66ec3717c0e8f73d437939c77af4a91a6ca6c622c41e3a599fc3",
+    "bytes_sha256": "fba2aebb6714c8e36df24d697a3604b552cf108c3f7dbda2ba703f4a19c99b75"
+  },
+  "input_sha256": "f7b0079547f66f04a256331bbbda198ec6b4bb4a874df7c15bb2884a3e881317",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f7b0079547f66f04a256331bbbda198ec6b4bb4a874df7c15bb2884a3e881317",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"An avocado half with yellow-green flesh, a large brown pit, and dark green skin resting cut-side up on a pink surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

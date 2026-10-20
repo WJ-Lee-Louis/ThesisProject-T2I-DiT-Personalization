@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/10",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/10",
+  "identity_term": "flamingo float",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/10.txt",
+  "label_source_sha256": "4f31dc3df4882576a77810527ca2a9fecc279a2a40c6d5f644cdb10e495b3190",
+  "target_prompts": [
+    "A photograph of a flamingo float in a bustling pool party scene",
+    "A photo of a child lounging on a flamingo float in a serene backyard pool",
+    "A detailed photo of a flamingo float drifting on a tranquil lake at sunset",
+    "A photograph of a flamingo float surrounded by colorful beach balls in a summer pool",
+    "A watercolor painting of a flamingo float on a reflective pond, with lilies around",
+    "An anime-style illustration of a fantasy character riding a giant flamingo float",
+    "A minimalist sketch of a flamingo float isolated on a stark white background",
+    "A flamingo float transforming into a real flamingo, taking flight above a mystical lagoon",
+    "A scene depicting tiny surreal creatures having a party on a flamingo float in a giant bubble floating through the sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/10.jpg",
+  "image_sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:48+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A flamingo float with a bright pink ring-shaped body, raised neck, and black-tipped beak floating on turquoise water with low hills in the distance\"}",
+  "source_caption": "A flamingo float with a bright pink ring-shaped body, raised neck, and black-tipped beak floating on turquoise water with low hills in the distance",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:53+09:00",
+  "seconds": 4.34
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/07",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/07",
+  "identity_term": "Impressionist pointillism",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/07.txt",
+  "label_source_sha256": "cfc425a0adecd9d106f95d4b52ce27bc217a63a6919b1c42d005f6213bd0786d",
+  "target_prompts": [
+    "A painting of a garden with blooming flowers, in Impressionist pointillism",
+    "A photo of a bustling street market, captured in Impressionist pointillism",
+    "A photograph of a serene lakeside at dusk, rendered in Impressionist pointillism",
+    "A painting of a busy café terrace at night, in the style of Impressionist pointillism",
+    "A child playing with a colorful kite, Impressionist pointillism style",
+    "A woman reading under a tree, depicted in Impressionist pointillism",
+    "A streetscape with old-fashioned lampposts, in Impressionist pointillism style",
+    "A mythical phoenix soaring above a misty forest, in Impressionist pointillism",
+    "A scene of tiny, illuminated fairies dancing around a moonlit pond, in Impressionist pointillism"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/07.jpg",
+  "image_sha256": "03120c17725b5d69f11a5b2793930c02bb6a893cb36af1f3adffb3a785b3a651",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:47+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"Impressionist pointillism depicting two women among vivid shrubs on a coastal path, with trees, a turquoise sea, and a pale pink sky\"}",
+  "source_caption": "Impressionist pointillism depicting two women among vivid shrubs on a coastal path, with trees, a turquoise sea, and a pale pink sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:52+09:00",
+  "seconds": 5.28
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A blue beer can with large white “BUD LIGHT” lettering standing upright on a weathered gray surface against a green background",
+  "identity_term": "beer can",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "838a4a7cb753dce65b1d0f84ba6a617bc17f2a83f0809a8ffe8395e81eb12ae7",
+    "bytes_sha256": "be4cd162f6db231c1c78cc58cabec3126d57f5732604f0fe87c7f5e9665f348b"
+  },
+  "input_sha256": "f42bbca3b9ff8d2caf8ae0cd719d07fa32bd38078625b7b86cfaf5a96a6af37f",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f42bbca3b9ff8d2caf8ae0cd719d07fa32bd38078625b7b86cfaf5a96a6af37f",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A blue beer can with large white “BUD LIGHT” lettering standing upright on a weathered gray surface against a green background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

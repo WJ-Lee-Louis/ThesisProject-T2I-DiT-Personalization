@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with short curly black hair, a trimmed beard, round glasses, and a nose ring, wearing a white shirt with muted pink stripes and leaning forward with his chin resting on one hand in a bright indoor setting",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "aef5e45c93789520deb29229b018d3820aab068eef7d58d39305e9936ff36305",
+    "bytes_sha256": "57222fa3132f6a6275a0b611711ea8b704a100064619e9a00a3ef00fbf2ba24d"
+  },
+  "input_sha256": "364dcc25acbb9b58ac00b8d375a9b40e344c329fb8a15e9d8b3fe1a0cdaf148f",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "364dcc25acbb9b58ac00b8d375a9b40e344c329fb8a15e9d8b3fe1a0cdaf148f",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with short curly black hair, a trimmed beard, round glasses, and a nose ring, wearing a white shirt with muted pink stripes and leaning forward with his chin resting on one hand in a bright indoor setting\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,136 @@
+{
+  "case_id": "098-00",
+  "reference_index": 98,
+  "target_index": 0,
+  "identity_term": "cherry blossoms",
+  "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+  "reference_id": "dreambench_plus/object/03",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky",
+      "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+      "identity_term": "cherry blossoms"
+    },
+    "input_sha256": "28613ad0e3e8cccb070299c3a13ff126e6dd4038547fc63db6ea427dbdcee45c",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+      "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky",
+      "identity_term": "cherry blossoms",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+        "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+      },
+      "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "cherry blossoms",
+      "source_preserved": [
+        "cherry blossoms",
+        "pale pink and white",
+        "with long stamens"
+      ],
+      "source": [
+        {
+          "unit": "clustered branch attachment",
+          "negative": "pale pink and white cherry blossoms with long stamens against a clear blue sky"
+        },
+        {
+          "unit": "clear blue sky setting",
+          "negative": "pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photo representation",
+          "negative": "cherry blossoms gently falling on a serene lake surface"
+        },
+        {
+          "unit": "gentle manner",
+          "negative": "A photo of cherry blossoms falling on a serene lake surface"
+        },
+        {
+          "unit": "falling action",
+          "negative": "A photo of cherry blossoms on a serene lake surface"
+        },
+        {
+          "unit": "lake surface placement",
+          "negative": "A photo of cherry blossoms gently falling"
+        },
+        {
+          "unit": "serene lake quality",
+          "negative": "A photo of cherry blossoms gently falling on a lake surface"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "28613ad0e3e8cccb070299c3a13ff126e6dd4038547fc63db6ea427dbdcee45c",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"cherry blossoms\",\"source_preserved\":[\"cherry blossoms\",\"pale pink and white\",\"with long stamens\"],\"source\":[{\"unit\":\"clustered branch attachment\",\"negative\":\"pale pink and white cherry blossoms with long stamens against a clear blue sky\"},{\"unit\":\"clear blue sky setting\",\"negative\":\"pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch\"}],\"target\":[{\"unit\":\"photo representation\",\"negative\":\"cherry blossoms gently falling on a serene lake surface\"},{\"unit\":\"gentle manner\",\"negative\":\"A photo of cherry blossoms falling on a serene lake surface\"},{\"unit\":\"falling action\",\"negative\":\"A photo of cherry blossoms on a serene lake surface\"},{\"unit\":\"lake surface placement\",\"negative\":\"A photo of cherry blossoms gently falling\"},{\"unit\":\"serene lake quality\",\"negative\":\"A photo of cherry blossoms gently falling on a lake surface\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:00:05.009344+00:00"
+  }
+}

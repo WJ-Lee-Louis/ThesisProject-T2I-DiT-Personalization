@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A blue-green ribbed cactus with long pale spines growing in an orange terracotta pot",
+  "identity_term": "cactus",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "c65491ac8e677b131c764c5978dafa3457d645966ba23a309c68059bd51cb18f",
+    "bytes_sha256": "c4e9374b3de01094b73c41f909863cb8b6aab3c3b916e14178ed49f9e873a656"
+  },
+  "input_sha256": "a161132aa0e35051062d537c7c449fda7bef5f6ee66d024d5010897e2ed8375f",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "a161132aa0e35051062d537c7c449fda7bef5f6ee66d024d5010897e2ed8375f",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A blue-green ribbed cactus with long pale spines growing in an orange terracotta pot\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

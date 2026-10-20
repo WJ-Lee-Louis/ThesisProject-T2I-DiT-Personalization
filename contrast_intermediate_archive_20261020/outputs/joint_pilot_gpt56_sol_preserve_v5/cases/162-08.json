@@ -1,0 +1,127 @@
+{
+  "case_id": "162-08",
+  "reference_index": 162,
+  "target_index": 8,
+  "identity_term": "sunset",
+  "target_prompt": "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset",
+  "reference_id": "dreambench_plus/style/02",
+  "known_case": "T03",
+  "selection_role": "known development",
+  "source_caption": "sunset with an orange-pink cloudy sky over ocean waves and a sandy beach",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "sunset with an orange-pink cloudy sky over ocean waves and a sandy beach",
+      "target_prompt": "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset",
+      "identity_term": "sunset",
+      "preserve": [
+        "with an orange-pink cloudy sky",
+        "over ocean waves and a sandy beach"
+      ]
+    },
+    "input_sha256": "5c8e32591f58d4590577f8509f9f8ee949d2260f5c301aced734eaa7c948f650",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+      "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "sunset with an orange-pink cloudy sky over ocean waves and a sandy beach",
+      "preserve": [
+        "with an orange-pink cloudy sky",
+        "over ocean waves and a sandy beach"
+      ],
+      "identity_term": "sunset",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+        "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+      },
+      "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with an orange-pink cloudy sky over ocean waves and a sandy beach\",\"preserve\":[\"with an orange-pink cloudy sky\",\"over ocean waves and a sandy beach\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "sunset",
+      "source_preserved": [
+        "sunset",
+        "with an orange-pink cloudy sky",
+        "over ocean waves and a sandy beach"
+      ],
+      "source": [],
+      "target": [
+        {
+          "unit": "giant size",
+          "negative": "A phoenix soaring across the sky, its feathers echoing the colors of the sunset"
+        },
+        {
+          "unit": "depicted phoenix and its dependent features",
+          "negative": "the sunset"
+        },
+        {
+          "unit": "soaring across the sky",
+          "negative": "A giant phoenix, its feathers echoing the colors of the sunset"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with an orange-pink cloudy sky over ocean waves and a sandy beach\",\"preserve\":[\"with an orange-pink cloudy sky\",\"over ocean waves and a sandy beach\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "5c8e32591f58d4590577f8509f9f8ee949d2260f5c301aced734eaa7c948f650",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"sunset\",\"source_preserved\":[\"sunset\",\"with an orange-pink cloudy sky\",\"over ocean waves and a sandy beach\"],\"source\":[],\"target\":[{\"unit\":\"giant size\",\"negative\":\"A phoenix soaring across the sky, its feathers echoing the colors of the sunset\"},{\"unit\":\"depicted phoenix and its dependent features\",\"negative\":\"the sunset\"},{\"unit\":\"soaring across the sky\",\"negative\":\"A giant phoenix, its feathers echoing the colors of the sunset\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:11:12.896266+00:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/15",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/15",
+  "identity_term": "woman",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/15.txt",
+  "label_source_sha256": "539d7be8ac06f5f744790ceaf85e2b6966d92d529b45343181ef2420d7026f3b",
+  "target_prompts": [
+    "A photograph of a woman walking through a vibrant city market",
+    "A photo of a woman sitting quietly by a serene lake, reading a book",
+    "A photograph of a woman gardening in her backyard on a sunny afternoon",
+    "A photo of a woman navigating a cobblestone street in a historic European city",
+    "A watercolor painting of a woman wearing a flowing dress at a beach sunset",
+    "An anime-style drawing of a woman astronaut floating in space with Earth in the background",
+    "A retro-style illustration of a woman operating an antique radio in a 1940s setting",
+    "A woman transforming into a tree, her limbs sprawling out into branches covered in blossoms",
+    "A depiction of a woman with wings of glass reflecting the changing skies as she soars above a metropolis"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/15.jpg",
+  "image_sha256": "29870e8a31271ce975170d9044d16c865e29ffda6e2160e496d7eb145b8acd24",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:32+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A woman with dark locs, round black glasses, and colorful dangling earrings, wearing a bright orange-red top and smiling outdoors against green foliage\"}",
+  "source_caption": "A woman with dark locs, round black glasses, and colorful dangling earrings, wearing a bright orange-red top and smiling outdoors against green foliage",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:36+09:00",
+  "seconds": 3.98
+}

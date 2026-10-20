@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/08",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/08",
+  "identity_term": "man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/08.txt",
+  "label_source_sha256": "ff5493e17dfba6985468da1d2191ae36832139870c6d0e5d02acb23be10d6eb2",
+  "target_prompts": [
+    "A photograph of a man reading a newspaper on a park bench",
+    "A photo of a man teaching a child to ride a bike in a suburban neighborhood",
+    "A photograph of a man hiking through a mountainous landscape",
+    "A photo of a man playing guitar beside a campfire at night",
+    "A man depicted in a vintage comic book style, flying a kite on a windy day",
+    "A chalk drawing of a man performing street magic in an urban setting",
+    "An anime-style illustration of a man piloting a futuristic robot",
+    "A man walking through a giant clockwork, gears and cogs looming around him",
+    "A depiction of a man balancing on a tightrope above an ancient city, with the skyline silhouetted against the setting sun"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/08.jpg",
+  "image_sha256": "f2fb011113530393a1924702bd30395d18c8a9498327e964277816720fb8cca8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:25+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A man with neatly parted dark brown hair, wearing a gray checked blazer over a gray collared shirt and a small pendant necklace, looking slightly to the side against a dark wall with large pink lettering\"}",
+  "source_caption": "A man with neatly parted dark brown hair, wearing a gray checked blazer over a gray collared shirt and a small pendant necklace, looking slightly to the side against a dark wall with large pink lettering",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:30+09:00",
+  "seconds": 5.3
+}

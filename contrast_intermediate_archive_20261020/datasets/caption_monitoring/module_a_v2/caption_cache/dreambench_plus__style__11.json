@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "An Impressionist painting of a pond with broad green lily pads, pink and white water lilies, and blue-green water",
+  "identity_term": "Impressionist",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d3a7621a03d188197933d46e40b87e04e45e8b96003ddf5d800a261128822f51",
+    "bytes_sha256": "3fd3ad1c9368c524b911f3231932503dfc2f6c429b5d6fc9c593b89ae007f593"
+  },
+  "input_sha256": "2d40e79bdd102e83bc709d360148b2b8699c6274ca63b80938c6da8628566455",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "2d40e79bdd102e83bc709d360148b2b8699c6274ca63b80938c6da8628566455",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"An Impressionist painting of a pond with broad green lily pads, pink and white water lilies, and blue-green water\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

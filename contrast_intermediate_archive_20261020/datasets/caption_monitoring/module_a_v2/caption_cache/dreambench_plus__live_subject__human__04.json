@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A girl with long brown hair and black glasses, wearing a lavender top and posing beside a large dark dragon statue in a stone building",
+  "identity_term": "girl",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "430999561b535312f7841f51bd31ab4fba0242cea8b6347bf850b0e7709d1014",
+    "bytes_sha256": "9f0befb26354d910e2fc281c0670d9969b26ce9664a9fbdac1fc8acdd63e9fd3"
+  },
+  "input_sha256": "193103431bef4947fa5e0162c7c1cef1aa519275cca1173660edd34a6d486436",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "193103431bef4947fa5e0162c7c1cef1aa519275cca1173660edd34a6d486436",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A girl with long brown hair and black glasses, wearing a lavender top and posing beside a large dark dragon statue in a stone building\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

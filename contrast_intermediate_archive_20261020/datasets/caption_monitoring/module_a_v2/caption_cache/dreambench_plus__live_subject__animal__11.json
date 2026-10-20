@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A heron with blue-gray wings spread in flight, a white head with a dark stripe, a yellow eye, and a long orange bill against a blurred natural background",
+  "identity_term": "heron",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "693ad06416c9b12109cec06ec6618a6ec2823a8bded18e0fae3d7f4af41598d4",
+    "bytes_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5"
+  },
+  "input_sha256": "4db373308be9c188cffb32cfec10605ab0add983ac95fdb8f36f8269d5b823a1",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "4db373308be9c188cffb32cfec10605ab0add983ac95fdb8f36f8269d5b823a1",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A heron with blue-gray wings spread in flight, a white head with a dark stripe, a yellow eye, and a long orange bill against a blurred natural background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

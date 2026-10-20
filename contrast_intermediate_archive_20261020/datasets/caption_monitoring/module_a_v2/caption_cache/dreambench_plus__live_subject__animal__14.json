@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "An eagle with a white head and tail, dark brown body, and broad outstretched wings soaring against a pale blue sky",
+  "identity_term": "eagle",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "e0df4dc8b4ba9bcde012dd381d60e38a490d1469fb3b9b70ae7361c9bfdcf5ca",
+    "bytes_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37"
+  },
+  "input_sha256": "9a5017a522b30e890e8db050d95077ed13c2b78c4d2a45f90ccdb8cf73acce77",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "9a5017a522b30e890e8db050d95077ed13c2b78c4d2a45f90ccdb8cf73acce77",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"An eagle with a white head and tail, dark brown body, and broad outstretched wings soaring against a pale blue sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -79,7 +79,7 @@ def source_conditioning():
 
 
 def test_case1_zero_shot_and_manual_caption():
-    provider = FakeProvider([{"source_caption": SOURCE}, source_output(), output(IDENTITY, TARGET_COMPONENTS)])
+    provider = FakeProvider([{"source_caption": SOURCE, "preserve": []}, source_output(), output(IDENTITY, TARGET_COMPONENTS)])
     result = prepare_semantic_conditioning(llm=SemanticLLM(provider), identity_term=IDENTITY,
                                           target_prompt=TARGET, reference_image_bytes=b"fake image")
     assert result == source_conditioning()
@@ -401,7 +401,7 @@ def test_http_transport_request_mock(monkeypatch):
     def urlopen(request, timeout):
         calls.append(json.loads(request.data))
         return Response(json.dumps({"status": "completed", "output": [{"type": "message", "content": [
-            {"type": "output_text", "text": json.dumps({"source_caption": SOURCE})}]}]}).encode())
+            {"type": "output_text", "text": json.dumps({"source_caption": SOURCE, "preserve": []})}]}]}).encode())
     monkeypatch.setattr("orthogonalization_instantx_ip_adapter.llm_provider.urlopen", urlopen)
     provider = ResponsesJSONProvider("test-model", "test-secret")
     assert SemanticLLM(provider).caption(buffer.getvalue(), IDENTITY) == SOURCE
@@ -479,19 +479,27 @@ def test_modes_do_not_mix_legacy_settings():
 
 def test_python_inference_connects_analysis_to_generation(monkeypatch):
     from orthogonalization_instantx_ip_adapter import inference
+    from orthogonalization_instantx_ip_adapter.semantic_contrasts import SemanticLLM as JointLLM, SemanticContrastConditioning
+    from orthogonalization_instantx_ip_adapter.contrast_prompt import CONTRAST_EXAMPLES
+    inp, response = CONTRAST_EXAMPLES[0]
     calls = []
     def generate(**kwargs):
         calls.append(kwargs)
-        return b"mock PNG", {"semantic_conditioning": kwargs["component_analysis_payload"]}
+        return b"mock PNG", {"semantic_conditioning": kwargs["contrast_analysis_payload"]}
     monkeypatch.setattr(inference, "generate_png_bytes", generate)
-    provider = FakeProvider([{"source_caption": SOURCE}, source_output(), output(IDENTITY, TARGET_COMPONENTS)])
+    buffer = BytesIO()
+    Image.new("RGB", (2, 2)).save(buffer, format="PNG")
+    raw = buffer.getvalue()
+    provider = FakeProvider([{"source_caption": inp['source_caption'], "preserve": inp["preserve"]}, response])
     png, diagnostics = inference.generate_semantic_png_bytes(
-        identity_term=IDENTITY, target_prompt=TARGET, reference_image_bytes=b"image", llm=SemanticLLM(provider))
+        identity_term=inp['identity_term'], target_prompt=inp['target_prompt'],
+        reference_image_bytes=raw, llm=JointLLM(provider))
     assert png == b"mock PNG"
-    assert SemanticConditioning.from_dict(diagnostics["semantic_conditioning"]) == source_conditioning()
-    assert calls[0]["orthogonalization_mode"] == "components"
-    assert calls[0]["prompt"] == TARGET
-    assert calls[0]["reference_image_bytes"] == b"image"
+    assert SemanticContrastConditioning.from_dict(diagnostics["semantic_conditioning"]).analysis.response_dict() == response
+    assert len(provider.calls) == 2
+    assert calls[0]["orthogonalization_mode"] == "semantic_local"
+    assert calls[0]["prompt"] == inp['target_prompt']
+    assert calls[0]["reference_image_bytes"] == raw
     assert calls[0]["mask_single_text_rows"] is True
 
 

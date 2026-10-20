@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A dog with white and reddish-brown fur and long, silky ears, wearing a pink hoodie and lying beside a white plush toy on a pale floor",
+  "identity_term": "dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "146bcea9ae2945383db0218020aecfb7f588617171509b109d40563144403530",
+    "bytes_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc"
+  },
+  "input_sha256": "807954b31454a69aef2bf01ecb83e3bcdaef7f9487a3dd148c76eb0dbaa6ee8d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "807954b31454a69aef2bf01ecb83e3bcdaef7f9487a3dd148c76eb0dbaa6ee8d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A dog with white and reddish-brown fur and long, silky ears, wearing a pink hoodie and lying beside a white plush toy on a pale floor\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

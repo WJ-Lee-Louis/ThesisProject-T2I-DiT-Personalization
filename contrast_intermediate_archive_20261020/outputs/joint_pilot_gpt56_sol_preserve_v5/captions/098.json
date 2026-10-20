@@ -1,0 +1,33 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "pale pink cherry blossoms clustered on a reddish-brown branch",
+  "preserve": [
+    "pale pink",
+    "clustered on a reddish-brown branch"
+  ],
+  "identity_term": "cherry blossoms",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+    "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+  },
+  "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"pale pink cherry blossoms clustered on a reddish-brown branch\",\"preserve\":[\"pale pink\",\"clustered on a reddish-brown branch\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

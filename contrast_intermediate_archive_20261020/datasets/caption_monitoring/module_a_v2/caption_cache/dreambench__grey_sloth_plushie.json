@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A stuffed animal with soft brown fur, a white face, dark eye patches, a brown nose, and pale claws, sitting on rough asphalt",
+  "identity_term": "stuffed animal",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 2048,
+    "height": 2048,
+    "rgb_sha256": "e6d9e29a051608b383510d761284b0de8c30cadd8ebb3eab3f3a05ea05796ed7",
+    "bytes_sha256": "01cd945206f96e3bb04967ca59c0a82a1ab3f0c1e2bd334ce4a1147de96542fc"
+  },
+  "input_sha256": "33aa1477dcda71a14d3054ab74adb905ae65000cf6487ece4a5993e7c3dcee8d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "33aa1477dcda71a14d3054ab74adb905ae65000cf6487ece4a5993e7c3dcee8d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A stuffed animal with soft brown fur, a white face, dark eye patches, a brown nose, and pale claws, sitting on rough asphalt\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

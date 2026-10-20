@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A girl with pale skin, short dark hair, and bright pink eyes, wearing a black strappy top, dark trousers, gloves, and boots, posed with one knee raised while holding an oversized black mechanical weapon with glowing orange cylinders and blue accents against a dark, ember-speckled background",
+  "identity_term": "girl",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "a2f4526d5b6ff5d796237b78891deec962ec8f0114e0e1f39c7928ad9cc5d857",
+    "bytes_sha256": "da781bf6d35107afde9bab3410c62a0a8f235fecd95a16a6dc45d6ea2cf881a8"
+  },
+  "input_sha256": "8adf1f27247cd8961b8d56097fdfae26c355ff974546ae98cbad256e154c8788",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "8adf1f27247cd8961b8d56097fdfae26c355ff974546ae98cbad256e154c8788",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A girl with pale skin, short dark hair, and bright pink eyes, wearing a black strappy top, dark trousers, gloves, and boots, posed with one knee raised while holding an oversized black mechanical weapon with glowing orange cylinders and blue accents against a dark, ember-speckled background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

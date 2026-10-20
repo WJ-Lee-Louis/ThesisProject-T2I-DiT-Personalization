@@ -1,0 +1,125 @@
+{
+  "case_id": "169-05",
+  "reference_index": 169,
+  "target_index": 5,
+  "identity_term": "low-poly geometric",
+  "target_prompt": "A fox crafted from sharp, low-poly geometric lines",
+  "reference_id": "dreambench_plus/style/09",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style",
+      "target_prompt": "A fox crafted from sharp, low-poly geometric lines",
+      "identity_term": "low-poly geometric",
+      "preserve": [
+        "forested cliff island",
+        "with stylized trees, a stream, and a waterfall"
+      ]
+    },
+    "input_sha256": "1ed32215fb5561519002ebc228b1c12074bf37c9984d0fe5da6e172df3a336d5",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+      "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style",
+      "preserve": [
+        "forested cliff island",
+        "with stylized trees, a stream, and a waterfall"
+      ],
+      "identity_term": "low-poly geometric",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+        "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+      },
+      "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style\",\"preserve\":[\"forested cliff island\",\"with stylized trees, a stream, and a waterfall\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "low-poly geometric",
+      "source_preserved": [
+        "low-poly geometric",
+        "forested cliff island",
+        "stylized trees",
+        "a stream",
+        "a waterfall"
+      ],
+      "source": [],
+      "target": [
+        {
+          "unit": "depicted fox and crafted-from relation",
+          "negative": "sharp, low-poly geometric lines"
+        },
+        {
+          "unit": "sharp line quality",
+          "negative": "A fox crafted from low-poly geometric lines"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a forested cliff island with stylized trees, a stream, and a waterfall in low-poly geometric style\",\"preserve\":[\"forested cliff island\",\"with stylized trees, a stream, and a waterfall\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "1ed32215fb5561519002ebc228b1c12074bf37c9984d0fe5da6e172df3a336d5",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"low-poly geometric\",\"source_preserved\":[\"low-poly geometric\",\"forested cliff island\",\"stylized trees\",\"a stream\",\"a waterfall\"],\"source\":[],\"target\":[{\"unit\":\"depicted fox and crafted-from relation\",\"negative\":\"sharp, low-poly geometric lines\"},{\"unit\":\"sharp line quality\",\"negative\":\"A fox crafted from low-poly geometric lines\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:11:17.857209+00:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/41",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/41",
+  "identity_term": "parrot",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/41.txt",
+  "label_source_sha256": "b0c8fe1ab06ff06f1710a11c3cbbb75ed45be4e17ca404c8284830cdcc2902ec",
+  "target_prompts": [
+    "A photograph of a parrot perched on a vibrant tropical tree",
+    "A photo of a parrot in flight against a clear blue sky",
+    "A detailed photograph of a parrot interacting with various fruits in a lush garden",
+    "A photo of a parrot resting on a wooden perch inside a brightly colored cage",
+    "A watercolor painting of a parrot with exaggerated, vivid plumage",
+    "An ink sketch of a parrot, captured in bold, expressive strokes",
+    "An anime-style illustration of a parrot chatting animatedly with other forest creatures",
+    "A parrot reflecting the colors of a rainbow as it flies through a crystal forest",
+    "A parrot whispering secrets to a lost traveler in an ancient, forgotten city"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/41.jpg",
+  "image_sha256": "7f6428464a00770435313692554c95b2b923577017096e4c6574ce72f44ca3ee",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:12+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A parrot with vivid orange and yellow feathers, green wing edges, and a long dark tail perched on a branch against a dark background\"}",
+  "source_caption": "A parrot with vivid orange and yellow feathers, green wing edges, and a long dark tail perched on a branch against a dark background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:14+09:00",
+  "seconds": 2.55
+}

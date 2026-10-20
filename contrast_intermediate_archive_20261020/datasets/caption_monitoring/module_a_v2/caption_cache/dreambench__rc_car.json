@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A colorful plastic toy race car with a helmeted driver seated inside, an orange antenna, black wheels, and red, yellow, and green bodywork, resting on a carpeted floor",
+  "identity_term": "toy",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1440,
+    "height": 1440,
+    "rgb_sha256": "f22236e3bb263558433e3ac1f490ef8be6d6e9247b61f67117e91766948f708b",
+    "bytes_sha256": "ed3f563a4ec793e34be5ce3810d8c8da3e42c5d4f2fa3e3f4159f6b05ab4307a"
+  },
+  "input_sha256": "b468bb091b16456548f03a70339079ef7e283ec400faf5bf19b865e66533a84d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "b468bb091b16456548f03a70339079ef7e283ec400faf5bf19b865e66533a84d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A colorful plastic toy race car with a helmeted driver seated inside, an orange antenna, black wheels, and red, yellow, and green bodywork, resting on a carpeted floor\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

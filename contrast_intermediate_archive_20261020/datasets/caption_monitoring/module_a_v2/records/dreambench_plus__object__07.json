@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/07",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/07",
+  "identity_term": "basketball shoe",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/07.txt",
+  "label_source_sha256": "ed116c3f0116e47c855ce6f0802c2bc0f708a851e958768896aafe33b82e629a",
+  "target_prompts": [
+    "A photograph of a basketball shoe left on a wooden gym floor",
+    "A photo of a basketball shoe hanging off a fence with a cityscape background",
+    "A detailed photograph of a basketball shoe with vibrant, multicolored laces on a reflective surface",
+    "A photo capturing a basketball shoe mid-air during a jump shot at an outdoor court",
+    "A watercolor painting of a basketball shoe surrounded by splashes of bright orange and blue",
+    "An anime-style illustration of a basketball shoe with exaggerated features and dynamic shading",
+    "A minimalist sketch of a basketball shoe, focusing on the unique tread pattern",
+    "A basketball shoe transforming into a rocket, blasting off from the free-throw line towards the hoop",
+    "A giant basketball shoe serving as a shelter on a rainy day, with tiny figures taking refuge under its arch"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/07.jpg",
+  "image_sha256": "455653b9dd0d46dffb4cdd5da0a038af26132ce1c6eaa309b661c3e7b530abd3",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:45+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A black basketball shoe with black laces, white side details, and red accents, resting on a gray surface beneath a red curved shape\"}",
+  "source_caption": "A black basketball shoe with black laces, white side details, and red accents, resting on a gray surface beneath a red curved shape",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:49+09:00",
+  "seconds": 4.12
+}

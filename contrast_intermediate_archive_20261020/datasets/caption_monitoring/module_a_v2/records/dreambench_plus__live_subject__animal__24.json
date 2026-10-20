@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/24",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/24",
+  "identity_term": "llama",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/24.txt",
+  "label_source_sha256": "88bcbf4fba4afa782e452f012bda4139b5a91e34b5f37ad4ddd22292cb4669d8",
+  "target_prompts": [
+    "A photograph of a llama grazing peacefully in a vast, sunny meadow",
+    "A photo of a llama standing by a mountain lake reflecting the clear blue sky",
+    "A photograph of a llama adorned with colorful festival decorations in a bustling village square",
+    "A photo of a llama looking curiously at the camera from behind a rustic wooden fence",
+    "A watercolor painting of a llama with a soft, pastel background",
+    "An anime-style drawing of a llama wearing a whimsical scarf and glasses",
+    "A retro-style illustration of a llama traveling through an exotic desert landscape",
+    "A llama walking through a shimmering portal to an enchanted forest",
+    "A llama wearing a jetpack, soaring above a futuristic cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/24.jpg",
+  "image_sha256": "5c0545a1241324847555920b51d0c5c5334a13c2831b03f4766562ff278a6ae6",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:56+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A llama with shaggy white fleece and bright pink tassels tied to its ears, standing in a rocky, grass-covered highland with other llamas in the distance\"}",
+  "source_caption": "A llama with shaggy white fleece and bright pink tassels tied to its ears, standing in a rocky, grass-covered highland with other llamas in the distance",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:00+09:00",
+  "seconds": 3.81
+}

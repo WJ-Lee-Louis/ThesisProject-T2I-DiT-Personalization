@@ -1,0 +1,116 @@
+{
+  "case_id": "162-08",
+  "reference_index": 162,
+  "target_index": 8,
+  "identity_term": "sunset",
+  "target_prompt": "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset",
+  "reference_id": "dreambench_plus/style/02",
+  "known_case": "T03",
+  "selection_role": "known development",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds",
+      "target_prompt": "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset",
+      "identity_term": "sunset"
+    },
+    "input_sha256": "2e5ebb50e616af4b6e32f6f7be795ee02accf6f8b97a3aba7dfb05b021b701b3",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+      "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds",
+      "identity_term": "sunset",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+        "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+      },
+      "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "sunset",
+      "source_preserved": [
+        "sunset",
+        "a bright sun at the ocean horizon",
+        "casting an orange reflection across the waves and wet sand",
+        "pink and purple clouds"
+      ],
+      "source": [
+        {
+          "unit": "tree-lined headland",
+          "negative": "sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beneath pink and purple clouds"
+        }
+      ],
+      "target": [
+        {
+          "unit": "phoenix and its soaring and feather details",
+          "negative": "the colors of the sunset"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "2e5ebb50e616af4b6e32f6f7be795ee02accf6f8b97a3aba7dfb05b021b701b3",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"sunset\",\"source_preserved\":[\"sunset\",\"a bright sun at the ocean horizon\",\"casting an orange reflection across the waves and wet sand\",\"pink and purple clouds\"],\"source\":[{\"unit\":\"tree-lined headland\",\"negative\":\"sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beneath pink and purple clouds\"}],\"target\":[{\"unit\":\"phoenix and its soaring and feather details\",\"negative\":\"the colors of the sunset\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:31:37.673925+00:00"
+  }
+}

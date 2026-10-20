@@ -1,0 +1,118 @@
+{
+  "case_id": "135-01",
+  "reference_index": 135,
+  "target_index": 1,
+  "identity_term": "Rolls-Royce hood ornament",
+  "target_prompt": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+  "reference_id": "dreambench_plus/object/40",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge",
+      "target_prompt": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+      "identity_term": "Rolls-Royce hood ornament"
+    },
+    "input_sha256": "8677abc112c22122cb6a95581d05e45ffd454f4b9131600ce54ee6b123039353",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+      "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge",
+      "identity_term": "Rolls-Royce hood ornament",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+        "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+      },
+      "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Rolls-Royce hood ornament",
+      "source_preserved": [
+        "Rolls-Royce hood ornament",
+        "a polished metal winged figure"
+      ],
+      "source": [
+        {
+          "unit": "hood and grille placement",
+          "negative": "A Rolls-Royce hood ornament, a polished metal winged figure"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photograph medium",
+          "negative": "A Rolls-Royce hood ornament with raindrops beading on its polished surface"
+        },
+        {
+          "unit": "raindrops on polished surface",
+          "negative": "A photograph of a Rolls-Royce hood ornament"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "8677abc112c22122cb6a95581d05e45ffd454f4b9131600ce54ee6b123039353",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Rolls-Royce hood ornament\",\"source_preserved\":[\"Rolls-Royce hood ornament\",\"a polished metal winged figure\"],\"source\":[{\"unit\":\"hood and grille placement\",\"negative\":\"A Rolls-Royce hood ornament, a polished metal winged figure\"}],\"target\":[{\"unit\":\"photograph medium\",\"negative\":\"A Rolls-Royce hood ornament with raindrops beading on its polished surface\"},{\"unit\":\"raindrops on polished surface\",\"negative\":\"A photograph of a Rolls-Royce hood ornament\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:31:11.909290+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A vintage television with a bulky orange-and-cream checkerboard casing, a blue checkerboard screen, and a red-patterned lower panel, connected by an orange cord to a small matching mouse on a plain white background",
+  "identity_term": "vintage television",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+    "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+  },
+  "input_sha256": "e1c1004636b53b5cf4ea9fb8e473adc17d462361ee2e3d9b8f605d6ffbf39196",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "e1c1004636b53b5cf4ea9fb8e473adc17d462361ee2e3d9b8f605d6ffbf39196",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A vintage television with a bulky orange-and-cream checkerboard casing, a blue checkerboard screen, and a red-patterned lower panel, connected by an orange cord to a small matching mouse on a plain white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A cat with black-and-white fur, large round eyes and a pink nose, facing forward indoors",
+  "identity_term": "cat",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "58110dc9bf9fea74a4b623a5c41e23b30822148fbd9921c68175f7b5a8eaf96e",
+    "bytes_sha256": "a35223420e4568c5773b3f2c50fb435b2f2d9b1cfc74c02220010c16d6076e49"
+  },
+  "input_sha256": "d4f0c82ece23d8a88e8fcfe791ff0230b97e887d955a8d5b3ffaca040a7b0b45",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "d4f0c82ece23d8a88e8fcfe791ff0230b97e887d955a8d5b3ffaca040a7b0b45",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cat with black-and-white fur, large round eyes and a pink nose, facing forward indoors\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

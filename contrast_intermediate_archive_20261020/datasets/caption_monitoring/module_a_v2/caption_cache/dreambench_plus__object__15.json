@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A street lamp with an ornate dark metal post and three glowing amber lanterns against a cloudy dusk sky",
+  "identity_term": "street lamp",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "f5dfcfa8f0c2dec7723633460aea6c20fc3537b1002737d55d31bc44005dcb06",
+    "bytes_sha256": "bb807665e6075d3a1593607544383be5e6f85881be6a6668f3658dde8e83e0c4"
+  },
+  "input_sha256": "43123fa19540133f64847c0964f18745f6c8a6b54cc4a1aa34871ba395b9eea7",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "43123fa19540133f64847c0964f18745f6c8a6b54cc4a1aa34871ba395b9eea7",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A street lamp with an ornate dark metal post and three glowing amber lanterns against a cloudy dusk sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

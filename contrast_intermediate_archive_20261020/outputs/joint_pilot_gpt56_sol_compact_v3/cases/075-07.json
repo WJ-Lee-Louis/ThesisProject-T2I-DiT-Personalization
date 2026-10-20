@@ -1,0 +1,128 @@
+{
+  "case_id": "075-07",
+  "reference_index": 75,
+  "target_index": 7,
+  "identity_term": "space ranger",
+  "target_prompt": "A space ranger floating through a nebula, with stars reflecting in the visor of his helmet",
+  "reference_id": "dreambench_plus/live_subject/human/00",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v3",
+    "inputs": {
+      "source_caption": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape",
+      "target_prompt": "A space ranger floating through a nebula, with stars reflecting in the visor of his helmet",
+      "identity_term": "space ranger"
+    },
+    "input_sha256": "95c0cff337ca17017559585ce5abd9306922c697ec5a191d39855512e7678bec",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "a78ef89abcb9d461bdbbfcc48bfa2f75adf8388ab47a5c34c0c62a02be0a0047",
+      "bytes_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape",
+      "identity_term": "space ranger",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "a78ef89abcb9d461bdbbfcc48bfa2f75adf8388ab47a5c34c0c62a02be0a0047",
+        "bytes_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+      },
+      "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "space ranger",
+      "source_preserved": [
+        "space ranger",
+        "white and green armored suit",
+        "orange cat perched on his shoulder"
+      ],
+      "source": [
+        {
+          "unit": "standing pose",
+          "negative": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, on an alien landscape"
+        },
+        {
+          "unit": "alien landscape setting",
+          "negative": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing"
+        }
+      ],
+      "target": [
+        {
+          "unit": "floating action",
+          "negative": "A space ranger in a nebula, with stars reflecting in the visor of his helmet"
+        },
+        {
+          "unit": "nebula setting",
+          "negative": "A space ranger floating, with stars reflecting in the visor of his helmet"
+        },
+        {
+          "unit": "stars reflected in helmet visor",
+          "negative": "A space ranger floating through a nebula"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "95c0cff337ca17017559585ce5abd9306922c697ec5a191d39855512e7678bec",
+        "prompt_version": "joint_contrast_v3",
+        "prompt_sha256": "8107e3eb6c4e65a013a7d17ab44b33d7a464d7fbce756fced93dbc1545520e91",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"space ranger\",\"source_preserved\":[\"space ranger\",\"white and green armored suit\",\"orange cat perched on his shoulder\"],\"source\":[{\"unit\":\"standing pose\",\"negative\":\"A space ranger in a white and green armored suit with an orange cat perched on his shoulder, on an alien landscape\"},{\"unit\":\"alien landscape setting\",\"negative\":\"A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing\"}],\"target\":[{\"unit\":\"floating action\",\"negative\":\"A space ranger in a nebula, with stars reflecting in the visor of his helmet\"},{\"unit\":\"nebula setting\",\"negative\":\"A space ranger floating, with stars reflecting in the visor of his helmet\"},{\"unit\":\"stars reflected in helmet visor\",\"negative\":\"A space ranger floating through a nebula\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:21:34.645172+00:00"
+  }
+}

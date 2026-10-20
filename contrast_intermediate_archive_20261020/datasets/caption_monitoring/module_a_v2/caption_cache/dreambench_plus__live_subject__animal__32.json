@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A Corgi dog with reddish-brown and white fur, sitting on a stone ledge with its tongue hanging out, against flowering branches",
+  "identity_term": "Corgi dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d4cc6d8bbbaeaa34ecd50e83e2d5d31a66d7bb6b76a09a573973ddfd522997d2",
+    "bytes_sha256": "40f90c57c399065a8ae8bc1cd980a5d2e2a6f9b250287f34ea7c4e567f24e8b1"
+  },
+  "input_sha256": "c7d8b4199aa1795df5e4f48f7fa1a9b0939a4480ccf4967dfab6a20e1b90910c",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "c7d8b4199aa1795df5e4f48f7fa1a9b0939a4480ccf4967dfab6a20e1b90910c",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A Corgi dog with reddish-brown and white fur, sitting on a stone ledge with its tongue hanging out, against flowering branches\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

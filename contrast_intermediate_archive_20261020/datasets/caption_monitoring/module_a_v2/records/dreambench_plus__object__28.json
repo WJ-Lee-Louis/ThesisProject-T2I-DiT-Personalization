@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/28",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/28",
+  "identity_term": "backpack",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/28.txt",
+  "label_source_sha256": "9082a14c3186ff290cd3611ac0e1f574314fb1ae9d00dc6f54a4435cfc74fbd5",
+  "target_prompts": [
+    "A photograph of a backpack left on a rocky trail in the mountains",
+    "A photo of a backpack hanging on a fence beside a rural barn",
+    "A photograph of a backpack sitting on a park bench in an urban setting",
+    "A photo of a backpack on a sandy beach at sunrise",
+    "A watercolor painting of a colorful backpack surrounded by autumn leaves",
+    "An anime-style illustration of a magical backpack glowing with mysterious powers",
+    "A minimalist sketch of a backpack draped over a classroom chair",
+    "A backpack floating gently in a bubble above a bustling cityscape",
+    "A sentient backpack leading a group of hikers through a mystical forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/28.jpg",
+  "image_sha256": "2fd1a4d1e0a703de79cbd4a8b148ebc2ecf795e960199435c24d788d0f901ba9",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:06+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A charcoal backpack with tan leather straps, trim, and a top handle, resting on rocks amid foliage\"}",
+  "source_caption": "A charcoal backpack with tan leather straps, trim, and a top handle, resting on rocks amid foliage",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:10+09:00",
+  "seconds": 4.69
+}

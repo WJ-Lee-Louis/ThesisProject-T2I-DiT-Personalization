@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A brown woven hat with a dark navy band and thin white stripe, floating among pale stones in clear shallow water",
+  "identity_term": "hat",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "48cc4fe16dcd86ed88f622ff16a881a7b31ee6c6f358566664a944e102f6d9b6",
+    "bytes_sha256": "947f961adf0b6715aeb3bebf2067b0ae729b41c26722d81779e7f54ea585b202"
+  },
+  "input_sha256": "80ac53e70a49cfb53d0101b713d9b124a6c8099a6e14ccfdc8d761aaab0390ce",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "80ac53e70a49cfb53d0101b713d9b124a6c8099a6e14ccfdc8d761aaab0390ce",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A brown woven hat with a dark navy band and thin white stripe, floating among pale stones in clear shallow water\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

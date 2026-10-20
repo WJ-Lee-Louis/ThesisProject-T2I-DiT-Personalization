@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A roll of film in a yellow-and-black canister with a short strip exposed, standing upright on a white reflective surface",
+  "identity_term": "roll of film",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "0f1f4cb576466319b746e743919a4d62c9ebe5086b703ce21399cd100be980f5",
+    "bytes_sha256": "3331257f07b95493d91b47b6f18ce38fea3e5eb0fabddb774ed7c8440d572161"
+  },
+  "input_sha256": "272f6657bbd1a93510a82779e54a212133de67fbddfe1b9c050c7d3b171760db",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "272f6657bbd1a93510a82779e54a212133de67fbddfe1b9c050c7d3b171760db",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A roll of film in a yellow-and-black canister with a short strip exposed, standing upright on a white reflective surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/28",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/28",
+  "identity_term": "flamingo",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/28.txt",
+  "label_source_sha256": "b7e5eb1e64d459a34637269d08839cc5654769888d8551a18ca76460eea59574",
+  "target_prompts": [
+    "A photograph of a flamingo wading in a shimmering lagoon at dawn",
+    "A photo capturing a flamingo in mid-flight against a clear blue sky",
+    "A detailed photograph of a flamingo preening its feathers by the lakeside",
+    "A photo of a flamingo standing in a lush green marsh",
+    "A watercolor painting of a flamingo in a stylized, abstract form",
+    "An anime-style illustration of a flamingo dancing gracefully on water",
+    "A vintage-style sketch of a flamingo resting under a palm tree",
+    "A flamingo made of swirling clouds drifting above a cityscape at sunset",
+    "A flamingo transforming was standing in a surreal garden"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/28.jpg",
+  "image_sha256": "209d6a67939a4c8817e4cc9f78d785d785259be7dbf0deca79b1e6d83a8d6f83",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:59+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A flamingo with coral-pink feathers, black wing tips, and long pink legs standing in shallow blue water\"}",
+  "source_caption": "A flamingo with coral-pink feathers, black wing tips, and long pink legs standing in shallow blue water",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:01+09:00",
+  "seconds": 1.88
+}

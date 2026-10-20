@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "a floating rocky island with angular green and orange trees, a pale blue stream and waterfall, winding paths, scattered rocks, mushrooms, and a small campsite in low-poly geometric style",
+  "identity_term": "low-poly geometric",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+    "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+  },
+  "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"a floating rocky island with angular green and orange trees, a pale blue stream and waterfall, winding paths, scattered rocks, mushrooms, and a small campsite in low-poly geometric style\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

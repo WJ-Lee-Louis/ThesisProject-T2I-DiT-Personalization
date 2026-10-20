@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_compact_v2",
+  "text": "A cosmic nebula with luminous turquoise and blue clouds, dark dust formations, and golden edges amid a dense star field",
+  "identity_term": "cosmic nebula",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d70aa32d7863c7849132d2fb4ee697dac479ab76d42fe6e5cd364eeafaf77247",
+    "bytes_sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d"
+  },
+  "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+    "prompt_version": "caption_np_v3",
+    "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cosmic nebula with luminous turquoise and blue clouds, dark dust formations, and golden edges amid a dense star field\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

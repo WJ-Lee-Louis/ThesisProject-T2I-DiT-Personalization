@@ -1,0 +1,30 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "rolling blue and pink dunes beneath a pale moon in pastel",
+  "preserve": [],
+  "identity_term": "pastel",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "b19e4d63f6b7ef678e3abbcd84957c5a70dd6e21f409e191ffec20c0276f7c09",
+    "bytes_sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+  },
+  "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "de1331454e11b02aeabc12abcb3ce172ac406a3c414d4bca852afd7be44202a3",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"rolling blue and pink dunes beneath a pale moon in pastel\",\"preserve\":[]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

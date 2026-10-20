@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/03",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/03",
+  "identity_term": "cherry blossoms",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/03.txt",
+  "label_source_sha256": "3b86f3869ea0ee7cd7892d7358b759128c842883d9fa7c02815aaa012f38fd0e",
+  "target_prompts": [
+    "A photo of cherry blossoms gently falling on a serene lake surface",
+    "A photograph of a pathway lined with vibrant cherry blossoms under a clear blue sky",
+    "A photo capturing cherry blossoms in full bloom with a distant mountain backdrop",
+    "A photograph of a picnic under the cherry blossoms in a bustling city park",
+    "A watercolor painting of cherry blossoms drifting past an ancient temple",
+    "An abstract illustration of cherry blossoms swirling in the wind, in bold pastel strokes",
+    "A digital artwork of cherry blossoms glowing under the moonlight in a surreal style",
+    "Cherry blossoms forming a pink river flowing through an otherworldly forest",
+    "Cherry blossoms transforming into delicate butterflies fluttering around a mystical orb"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/03.jpg",
+  "image_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:40+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky\"}",
+  "source_caption": "cherry blossoms with creamy white petals, pink centers, and long stamens clustered along a reddish-brown branch against a blue sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:44+09:00",
+  "seconds": 4.3
+}

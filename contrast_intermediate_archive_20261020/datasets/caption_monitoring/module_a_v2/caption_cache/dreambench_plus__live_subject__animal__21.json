@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants",
+  "identity_term": "Siamese cat",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fb07ca8416c1c8e91367edc9dd83bd66704eac7458688b757d4b489f2785e218",
+    "bytes_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+  },
+  "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

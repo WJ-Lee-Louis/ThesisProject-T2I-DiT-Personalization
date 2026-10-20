@@ -1,0 +1,409 @@
+{
+  "caption_prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+  "contrast_prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+  "selection": [
+    {
+      "case_id": "000-00",
+      "reference_index": 0,
+      "target_index": 0,
+      "identity_term": "backpack",
+      "target_prompt": "a backpack in the jungle",
+      "reference_id": "dreambench/backpack",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "000-09",
+      "reference_index": 0,
+      "target_index": 9,
+      "identity_term": "backpack",
+      "target_prompt": "a backpack on top of a purple rug in a forest",
+      "reference_id": "dreambench/backpack",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "000-21",
+      "reference_index": 0,
+      "target_index": 21,
+      "identity_term": "backpack",
+      "target_prompt": "a purple backpack",
+      "reference_id": "dreambench/backpack",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "000-24",
+      "reference_index": 0,
+      "target_index": 24,
+      "identity_term": "backpack",
+      "target_prompt": "a cube shaped backpack",
+      "reference_id": "dreambench/backpack",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "003-02",
+      "reference_index": 3,
+      "target_index": 2,
+      "identity_term": "bowl",
+      "target_prompt": "a bowl on the beach",
+      "reference_id": "dreambench/berry_bowl",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "003-14",
+      "reference_index": 3,
+      "target_index": 14,
+      "identity_term": "bowl",
+      "target_prompt": "a bowl floating in an ocean of milk",
+      "reference_id": "dreambench/berry_bowl",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "003-21",
+      "reference_index": 3,
+      "target_index": 21,
+      "identity_term": "bowl",
+      "target_prompt": "a purple bowl",
+      "reference_id": "dreambench/berry_bowl",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "003-24",
+      "reference_index": 3,
+      "target_index": 24,
+      "identity_term": "bowl",
+      "target_prompt": "a cube shaped bowl",
+      "reference_id": "dreambench/berry_bowl",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "010-10",
+      "reference_index": 10,
+      "target_index": 10,
+      "identity_term": "dog",
+      "target_prompt": "a dog wearing a red hat",
+      "reference_id": "dreambench/dog",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "010-13",
+      "reference_index": 10,
+      "target_index": 13,
+      "identity_term": "dog",
+      "target_prompt": "a dog wearing a black top hat and a monocle",
+      "reference_id": "dreambench/dog",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "010-21",
+      "reference_index": 10,
+      "target_index": 21,
+      "identity_term": "dog",
+      "target_prompt": "a purple dog",
+      "reference_id": "dreambench/dog",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "030-06",
+      "reference_index": 30,
+      "target_index": 6,
+      "identity_term": "kitten",
+      "target_prompt": "A retro-style digital art of a kitten wearing a tiny bow tie and exploring old books",
+      "reference_id": "dreambench_plus/live_subject/animal/00",
+      "known_case": "T13",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "030-07",
+      "reference_index": 30,
+      "target_index": 7,
+      "identity_term": "kitten",
+      "target_prompt": "A kitten floating on a leaf down a gentle stream, surrounded by magical glowing fireflies",
+      "reference_id": "dreambench_plus/live_subject/animal/00",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "051-07",
+      "reference_index": 51,
+      "target_index": 7,
+      "identity_term": "Siamese cat",
+      "target_prompt": "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+      "reference_id": "dreambench_plus/live_subject/animal/21",
+      "known_case": "T16",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "075-06",
+      "reference_index": 75,
+      "target_index": 6,
+      "identity_term": "space ranger",
+      "target_prompt": "A retro-style drawing of a space ranger with a classic bubble helmet, exploring a vintage-looking space station",
+      "reference_id": "dreambench_plus/live_subject/human/00",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "075-07",
+      "reference_index": 75,
+      "target_index": 7,
+      "identity_term": "space ranger",
+      "target_prompt": "A space ranger floating through a nebula, with stars reflecting in the visor of his helmet",
+      "reference_id": "dreambench_plus/live_subject/human/00",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "075-08",
+      "reference_index": 75,
+      "target_index": 8,
+      "identity_term": "space ranger",
+      "target_prompt": "A depiction of a space ranger riding a comet, steering it through a field of asteroids",
+      "reference_id": "dreambench_plus/live_subject/human/00",
+      "known_case": "T17",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "089-07",
+      "reference_index": 89,
+      "target_index": 7,
+      "identity_term": "Spider-Man",
+      "target_prompt": "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+      "reference_id": "dreambench_plus/live_subject/human/14",
+      "known_case": "T20",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "115-04",
+      "reference_index": 115,
+      "target_index": 4,
+      "identity_term": "Magic Cube",
+      "target_prompt": "A cartoon of a Magic Cube with animated, expressive eyes trying to solve itself",
+      "reference_id": "dreambench_plus/object/20",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "115-06",
+      "reference_index": 115,
+      "target_index": 6,
+      "identity_term": "Magic Cube",
+      "target_prompt": "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+      "reference_id": "dreambench_plus/object/20",
+      "known_case": "T22",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "115-07",
+      "reference_index": 115,
+      "target_index": 7,
+      "identity_term": "Magic Cube",
+      "target_prompt": "A Magic Cube morphing into different geometric shapes, each block displaying a different scene from nature",
+      "reference_id": "dreambench_plus/object/20",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "135-01",
+      "reference_index": 135,
+      "target_index": 1,
+      "identity_term": "Rolls-Royce hood ornament",
+      "target_prompt": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+      "reference_id": "dreambench_plus/object/40",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "135-07",
+      "reference_index": 135,
+      "target_index": 7,
+      "identity_term": "Rolls-Royce hood ornament",
+      "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+      "reference_id": "dreambench_plus/object/40",
+      "known_case": "T23",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "161-00",
+      "reference_index": 161,
+      "target_index": 0,
+      "identity_term": "pixel art",
+      "target_prompt": "A photo of a bustling cityscape, rendered in pixel art",
+      "reference_id": "dreambench_plus/style/01",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "161-07",
+      "reference_index": 161,
+      "target_index": 7,
+      "identity_term": "pixel art",
+      "target_prompt": "A tiny dragon perched on a pixel art cloud",
+      "reference_id": "dreambench_plus/style/01",
+      "known_case": "cloud development",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "161-08",
+      "reference_index": 161,
+      "target_index": 8,
+      "identity_term": "pixel art",
+      "target_prompt": "A magical portal opening in a pixel art enchanted forest",
+      "reference_id": "dreambench_plus/style/01",
+      "known_case": "T01",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "162-01",
+      "reference_index": 162,
+      "target_index": 1,
+      "identity_term": "sunset",
+      "target_prompt": "A photograph of a bustling city skyline illuminated by the fading sunset glow",
+      "reference_id": "dreambench_plus/style/02",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "162-08",
+      "reference_index": 162,
+      "target_index": 8,
+      "identity_term": "sunset",
+      "target_prompt": "A giant phoenix soaring across the sky, its feathers echoing the colors of the sunset",
+      "reference_id": "dreambench_plus/style/02",
+      "known_case": "T03",
+      "selection_role": "known development"
+    },
+    {
+      "case_id": "169-03",
+      "reference_index": 169,
+      "target_index": 3,
+      "identity_term": "low-poly geometric",
+      "target_prompt": "A digital illustration of a cat, composed of low-poly geometric patterns",
+      "reference_id": "dreambench_plus/style/09",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "169-05",
+      "reference_index": 169,
+      "target_index": 5,
+      "identity_term": "low-poly geometric",
+      "target_prompt": "A fox crafted from sharp, low-poly geometric lines",
+      "reference_id": "dreambench_plus/style/09",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "178-00",
+      "reference_index": 178,
+      "target_index": 0,
+      "identity_term": "pastel",
+      "target_prompt": "A photograph of a serene beach at dusk, rendered in soft pastel tones",
+      "reference_id": "dreambench_plus/style/18",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "178-05",
+      "reference_index": 178,
+      "target_index": 5,
+      "identity_term": "pastel",
+      "target_prompt": "A cup of tea on a pastel tablecloth, inviting a moment of relaxation",
+      "reference_id": "dreambench_plus/style/18",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "178-07",
+      "reference_index": 178,
+      "target_index": 7,
+      "identity_term": "pastel",
+      "target_prompt": "A whimsical forest where the trees have pastel-colored leaves",
+      "reference_id": "dreambench_plus/style/18",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "178-08",
+      "reference_index": 178,
+      "target_index": 8,
+      "identity_term": "pastel",
+      "target_prompt": "A dreamy pastel planet with rings made of stardust and light",
+      "reference_id": "dreambench_plus/style/18",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "098-00",
+      "reference_index": 98,
+      "target_index": 0,
+      "identity_term": "cherry blossoms",
+      "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+      "reference_id": "dreambench_plus/object/03",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "131-00",
+      "reference_index": 131,
+      "target_index": 0,
+      "identity_term": "ceramic bowl",
+      "target_prompt": "A photograph of a ceramic bowl filled with vibrant citrus fruits on a rustic wooden table",
+      "reference_id": "dreambench_plus/object/36",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "166-06",
+      "reference_index": 166,
+      "target_index": 6,
+      "identity_term": "volcanic landscape",
+      "target_prompt": "A night-time scene of a starlit sky above a silhouette of a volcanic mountain, in a volcanic landscape",
+      "reference_id": "dreambench_plus/style/06",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "173-07",
+      "reference_index": 173,
+      "target_index": 7,
+      "identity_term": "cosmic nebula",
+      "target_prompt": "A mythical phoenix rising from a cosmic nebula",
+      "reference_id": "dreambench_plus/style/13",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "176-07",
+      "reference_index": 176,
+      "target_index": 7,
+      "identity_term": "watercolor sketch",
+      "target_prompt": "An ancient tree with glowing leaves in a watercolor sketch style",
+      "reference_id": "dreambench_plus/style/16",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    },
+    {
+      "case_id": "179-08",
+      "reference_index": 179,
+      "target_index": 8,
+      "identity_term": "traditional Chinese painting",
+      "target_prompt": "A mythical phoenix soaring above a blooming cherry orchard, in traditional Chinese painting style",
+      "reference_id": "dreambench_plus/style/19",
+      "known_case": null,
+      "selection_role": "additional benchmark probe"
+    }
+  ],
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "provider default (medium)",
+  "caption_source": "reuse reference-bound compact Sol A from joint_pilot_gpt56_sol_compact_v3"
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A cyberpunk neon landscape with a magenta and violet garden path leading toward a large white sun, flanked by dark trees, rocks, grasses, and tiered pavilion roofs",
+  "identity_term": "cyberpunk neon",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "94425ca8a29c80142b95e9489a39428c85e366a898f7671028d0f5e034a7157a",
+    "bytes_sha256": "363bf44f75a3807196fd605d1aab1ce7ed48291caf0fb04c03d34ffd1d6444dc"
+  },
+  "input_sha256": "405827c1eef3814c4778bf35f5092d1509a5d1fedc8150109e943822b9afff80",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "405827c1eef3814c4778bf35f5092d1509a5d1fedc8150109e943822b9afff80",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cyberpunk neon landscape with a magenta and violet garden path leading toward a large white sun, flanked by dark trees, rocks, grasses, and tiered pavilion roofs\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

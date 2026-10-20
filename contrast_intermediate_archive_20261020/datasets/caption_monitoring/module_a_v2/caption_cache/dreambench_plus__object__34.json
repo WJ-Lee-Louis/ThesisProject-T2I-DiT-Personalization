@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A tree-like character figurine with an oversized pale wood-grained head, bright green growths at the top, large black eyes and a small smile, standing with its arms outstretched",
+  "identity_term": "tree-like character",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "ade78f88c0db0c86fc45c083581badc548f8c1b786d3f51c052d1e0bac1974d9",
+    "bytes_sha256": "b862285097d9b81dcf586909d7fd20874787e3b00dd4ea76924b5a03358f6a57"
+  },
+  "input_sha256": "5be4a110ee990529b02fd18a2b55e4ddd0563751f309f027c8d1228982be7e1e",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "5be4a110ee990529b02fd18a2b55e4ddd0563751f309f027c8d1228982be7e1e",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A tree-like character figurine with an oversized pale wood-grained head, bright green growths at the top, large black eyes and a small smile, standing with its arms outstretched\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

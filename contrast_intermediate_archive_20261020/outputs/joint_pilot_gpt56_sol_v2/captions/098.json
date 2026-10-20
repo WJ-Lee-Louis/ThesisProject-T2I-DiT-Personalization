@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky",
+  "identity_term": "cherry blossoms",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+    "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+  },
+  "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"pale pink and white cherry blossoms with long stamens clustered along a slender reddish-brown branch against a clear blue sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

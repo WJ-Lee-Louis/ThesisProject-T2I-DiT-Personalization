@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A rounded pink piggy bank with upright ears, black eyes and nostrils, standing on a white surface",
+  "identity_term": "piggy bank",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "3196632e86d30f31a9a96c31bc4c508bc811f0a82c141313f34cce465538e052",
+    "bytes_sha256": "a2eda27f03efacd55f8f2f16a1582e30362618dcb949d54b49b5c8825ab21475"
+  },
+  "input_sha256": "987fc3b1f98cd5f22e53657e54f99a38d86014e225debe83b7eff21b78375862",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "987fc3b1f98cd5f22e53657e54f99a38d86014e225debe83b7eff21b78375862",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A rounded pink piggy bank with upright ears, black eyes and nostrils, standing on a white surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

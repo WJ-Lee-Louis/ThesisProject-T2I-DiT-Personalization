@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A pink-iced donut with white sprinkles overlapping a second donut, both with golden-brown dough, against a solid pink background",
+  "identity_term": "donut",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fc3affa7f7fabb35d1261e5f988cc61f1f2b7f6d0cd6b639c51710172f326377",
+    "bytes_sha256": "fe47bdfa1843b58d1a79b7735da8e9a73c28755f7a4fe75201799caa8858ea9d"
+  },
+  "input_sha256": "41369c21f227c630be9f851bbe9d161308d02ac97b8ff35bbcd3d6244f6ff0bb",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "41369c21f227c630be9f851bbe9d161308d02ac97b8ff35bbcd3d6244f6ff0bb",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A pink-iced donut with white sprinkles overlapping a second donut, both with golden-brown dough, against a solid pink background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

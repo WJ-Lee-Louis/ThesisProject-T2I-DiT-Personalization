@@ -1,0 +1,10 @@
+{
+  "total": 40,
+  "passed": 39,
+  "errors": [
+    {
+      "case_id": "135-07",
+      "error": "IdentityConflictError: identity_conflict (target): The target transforms the Rolls-Royce hood ornament into a spaceship, contradicting the protected identity."
+    }
+  ]
+}

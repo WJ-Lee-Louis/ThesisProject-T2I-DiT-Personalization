@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/39",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/39",
+  "identity_term": "guitar",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/39.txt",
+  "label_source_sha256": "99938751b0765dcaccc2d01d62ef7e48b0ff59a4845610163151043f1ed1fece",
+  "target_prompts": [
+    "A photograph of a guitar leaning against a wooden stool in a cozy, dimly lit room",
+    "A photo of a guitar placed on a sandy beach with the sunset in the background",
+    "A photograph of a guitar hanging on a brick wall adorned with vintage posters",
+    "A photo of a guitar resting beside an open fireplace in a rustic cabin",
+    "A watercolor painting of a guitar surrounded by scattered music sheets and a violin",
+    "An anime-style illustration of a guitar with sparkling, colorful musical notes floating around it",
+    "A minimalist sketch of a guitar with sharp, clean lines against a plain white background",
+    "A guitar transforming into a tree with music notes as leaves, set in a mystical forest",
+    "A guitar floating in space, casting musical waves that form constellations in the starry sky"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/39.jpg",
+  "image_sha256": "7fd1b3a4481e5fd70e1428992c5209cd1812129e4c3ba792339656e76bf9b877",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:16+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A natural wood acoustic guitar with a dark pickguard leaning against a gray sofa beside a window\"}",
+  "source_caption": "A natural wood acoustic guitar with a dark pickguard leaning against a gray sofa beside a window",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:20+09:00",
+  "seconds": 4.08
+}

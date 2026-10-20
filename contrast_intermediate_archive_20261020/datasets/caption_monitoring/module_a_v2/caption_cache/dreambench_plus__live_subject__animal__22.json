@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A corgi with tan fur, a cream muzzle and chest, and large upright ears, facing forward with its mouth open and pink tongue out against a pale lavender background with pink flowers along the bottom",
+  "identity_term": "corgi",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "09d56457038f1859f82880e250955b6270e45f66f73b708417d45a8a21aec213",
+    "bytes_sha256": "015c9d3fa79095a1c8d13b102cba5fd1079f26ce71827369c12c9e60bfdaab1c"
+  },
+  "input_sha256": "a7c797beb8c4f5a029e298be62d8011a4c55b49928124770dc5b92a88b896bde",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "a7c797beb8c4f5a029e298be62d8011a4c55b49928124770dc5b92a88b896bde",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A corgi with tan fur, a cream muzzle and chest, and large upright ears, facing forward with its mouth open and pink tongue out against a pale lavender background with pink flowers along the bottom\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

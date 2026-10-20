@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_compact_v2",
+  "text": "A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape",
+  "identity_term": "space ranger",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "a78ef89abcb9d461bdbbfcc48bfa2f75adf8388ab47a5c34c0c62a02be0a0047",
+    "bytes_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+  },
+  "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+    "prompt_version": "caption_np_v3",
+    "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A space ranger in a white and green armored suit with an orange cat perched on his shoulder, standing on an alien landscape\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

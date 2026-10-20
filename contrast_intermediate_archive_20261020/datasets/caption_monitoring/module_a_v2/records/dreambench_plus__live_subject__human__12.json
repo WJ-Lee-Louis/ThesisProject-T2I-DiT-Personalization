@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/12",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/12",
+  "identity_term": "samurai",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/12.txt",
+  "label_source_sha256": "9697a0173a8e9ffe67026fc5c944a3bf79c39092d1f7043056a6861a3634858b",
+  "target_prompts": [
+    "A photograph of a samurai in full armor standing solemnly beside a tranquil lake",
+    "A photo of a samurai practicing sword strikes in a misty forest at sunrise",
+    "A detailed photograph of a samurai with his katana drawn, poised under a cherry blossom tree",
+    "A photo of a samurai meditating in a serene temple garden",
+    "An anime-style illustration of a young samurai in vibrant armor facing a mythical creature",
+    "A watercolor painting of an elderly samurai gazing at a setting sun, reflecting on his life",
+    "A minimalist sketch of a samurai helmet placed on a rustic wooden table",
+    "A samurai battling a dragon made of fire and smoke in a sky filled with dark clouds",
+    "A samurai walking through a portal that leads to a futuristic cityscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/12.jpg",
+  "image_sha256": "74f755e96ea9543b0212fb03dc6f5c98021898f56753d2efbaba200bc50a6bce",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:30+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A samurai with tousled red hair and a facial scar, seated on the floor in a pink kimono and gray trousers with a sheathed sword at his side, inside a tatami room beside a snow-covered branch\"}",
+  "source_caption": "A samurai with tousled red hair and a facial scar, seated on the floor in a pink kimono and gray trousers with a sheathed sword at his side, inside a tatami room beside a snow-covered branch",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:35+09:00",
+  "seconds": 5.39
+}

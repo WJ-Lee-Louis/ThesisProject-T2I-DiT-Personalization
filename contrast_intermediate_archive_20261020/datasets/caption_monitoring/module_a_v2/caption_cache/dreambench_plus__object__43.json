@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A pale blue pineapple with a textured, scaly body and a tall peach-colored spiky crown, its lower side partly covered in peach-colored material pooled at the base, against a blue background",
+  "identity_term": "pineapple",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "bbaf560178444d30bd1f7ff9615c27401682da83651cc1205bbeb5caaaa8261c",
+    "bytes_sha256": "961ee20225d8c67c2ebde0a3d7505edb61207ee75490d4113f2fa9cfbb53edab"
+  },
+  "input_sha256": "6c8669bcb80be296a82295b56d9b84b6185b553338391a6065cb9c04fc163b0f",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "6c8669bcb80be296a82295b56d9b84b6185b553338391a6065cb9c04fc163b0f",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A pale blue pineapple with a textured, scaly body and a tall peach-colored spiky crown, its lower side partly covered in peach-colored material pooled at the base, against a blue background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

@@ -1,3 +1,4 @@
+# Legacy partition research tool; not used by the joint local generation path.
 """Small first-response integration audit using previously generated captions."""
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime

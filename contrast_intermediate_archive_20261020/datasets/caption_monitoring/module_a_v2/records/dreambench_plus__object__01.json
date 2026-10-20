@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/01",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/01",
+  "identity_term": "hat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/01.txt",
+  "label_source_sha256": "e04eac3a74c541aa1e2649d6c1dac883ae183f182727fe49b3b6733ff0befd5b",
+  "target_prompts": [
+    "A photograph of a hat left on a sunlit park bench",
+    "A photo of a hat resting on a stack of old books in a library",
+    "A detailed photograph of a hat on a wooden table beside a cup of coffee",
+    "A hat perched on a fence post in a snowy landscape",
+    "An anime-style illustration of a magical hat glowing with mystical symbols",
+    "A watercolor painting of a hat floating down a gentle river",
+    "A minimalist sketch of a hat, captured with bold, stark lines against a white background",
+    "A hat transforming into a flock of birds as it flies over a bustling cityscape",
+    "A hat serving as a boat, sailing on a chocolate river in a fantasy land"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/01.jpg",
+  "image_sha256": "947f961adf0b6715aeb3bebf2067b0ae729b41c26722d81779e7f54ea585b202",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:39+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A brown woven hat with a dark navy band and thin white stripe, floating among pale stones in clear shallow water\"}",
+  "source_caption": "A brown woven hat with a dark navy band and thin white stripe, floating among pale stones in clear shallow water",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:45+09:00",
+  "seconds": 5.44
+}

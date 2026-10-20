@@ -1,0 +1,34 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "A cosmic nebula with bright turquoise and blue gas clouds, dark dust lanes, and glowing golden edges amid a dense star field",
+  "preserve": [
+    "with bright turquoise and blue gas clouds",
+    "dark dust lanes",
+    "glowing golden edges"
+  ],
+  "identity_term": "cosmic nebula",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d70aa32d7863c7849132d2fb4ee697dac479ab76d42fe6e5cd364eeafaf77247",
+    "bytes_sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d"
+  },
+  "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A cosmic nebula with bright turquoise and blue gas clouds, dark dust lanes, and glowing golden edges amid a dense star field\",\"preserve\":[\"with bright turquoise and blue gas clouds\",\"dark dust lanes\",\"glowing golden edges\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

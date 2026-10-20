@@ -1,0 +1,116 @@
+{
+  "case_id": "176-07",
+  "reference_index": 176,
+  "target_index": 7,
+  "identity_term": "watercolor sketch",
+  "target_prompt": "An ancient tree with glowing leaves in a watercolor sketch style",
+  "reference_id": "dreambench_plus/style/16",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "a rocky mountain landscape with sparse shrubs in watercolor sketch",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "a rocky mountain landscape with sparse shrubs in watercolor sketch",
+      "target_prompt": "An ancient tree with glowing leaves in a watercolor sketch style",
+      "identity_term": "watercolor sketch",
+      "preserve": []
+    },
+    "input_sha256": "4976bc02cded57ad5abe544d3c90a77e93940f180fcbb6f946299cca215d06f0",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "61d02b201c0ea76545c822309a66a0787b0af72b15bff7e2669d4c17e4812340",
+      "bytes_sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "a rocky mountain landscape with sparse shrubs in watercolor sketch",
+      "preserve": [],
+      "identity_term": "watercolor sketch",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "61d02b201c0ea76545c822309a66a0787b0af72b15bff7e2669d4c17e4812340",
+        "bytes_sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f"
+      },
+      "input_sha256": "310fb726d91734b49e509d759bd4f22bba9d2e842b76541399fb1a6f0333afaf",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "310fb726d91734b49e509d759bd4f22bba9d2e842b76541399fb1a6f0333afaf",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a rocky mountain landscape with sparse shrubs in watercolor sketch\",\"preserve\":[]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "watercolor sketch",
+      "source_preserved": [
+        "watercolor sketch"
+      ],
+      "source": [
+        {
+          "unit": "rocky mountain landscape and sparse shrubs",
+          "negative": "watercolor sketch"
+        }
+      ],
+      "target": [
+        {
+          "unit": "ancient tree and glowing leaves",
+          "negative": "watercolor sketch style"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "310fb726d91734b49e509d759bd4f22bba9d2e842b76541399fb1a6f0333afaf",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a rocky mountain landscape with sparse shrubs in watercolor sketch\",\"preserve\":[]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4976bc02cded57ad5abe544d3c90a77e93940f180fcbb6f946299cca215d06f0",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"watercolor sketch\",\"source_preserved\":[\"watercolor sketch\"],\"source\":[{\"unit\":\"rocky mountain landscape and sparse shrubs\",\"negative\":\"watercolor sketch\"}],\"target\":[{\"unit\":\"ancient tree and glowing leaves\",\"negative\":\"watercolor sketch style\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:12:33.039066+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A red-and-black leather high-top sneaker with a red side swoosh, white midsole, and red outsole, held horizontally on an outstretched hand",
+  "identity_term": "sneaker",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "51a6d433c69c731d887f0a28fbee22b5010b928f205fd63a47f6a341ef4f5935",
+    "bytes_sha256": "38935584952815df8ee07777880f9b9fe8eb8ab1613b95a152980955f4377db0"
+  },
+  "input_sha256": "d28b1858237c98c335f6c74d9b4002e59fa15e83d8641287ae75d02dc86fbe12",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "d28b1858237c98c335f6c74d9b4002e59fa15e83d8641287ae75d02dc86fbe12",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A red-and-black leather high-top sneaker with a red side swoosh, white midsole, and red outsole, held horizontally on an outstretched hand\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

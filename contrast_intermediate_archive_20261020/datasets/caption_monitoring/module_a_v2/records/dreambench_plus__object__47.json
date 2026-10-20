@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/47",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/47",
+  "identity_term": "UFO",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/47.txt",
+  "label_source_sha256": "ee0de05c9801b31521fd3dda3b0eccb26ecfb832370c82b34807b74b02ccb9a4",
+  "target_prompts": [
+    "A photograph of a UFO hovering over a bustling city at night",
+    "A photo of a UFO descending in a remote, misty forest",
+    "A detailed photograph of a UFO captured during a dramatic sunset",
+    "A photo of a UFO casting shadows on ancient pyramids",
+    "A digital painting of a UFO illuminated by neon lights in a cyberpunk cityscape",
+    "A watercolor of a UFO amidst a flock of startled birds",
+    "An ink sketch of a UFO landing on a tranquil lake",
+    "A UFO creating intricate crop circles in a golden wheat field as farmers watch in awe",
+    "A UFO radiating beams of light that transform the desert landscape into a lush, alien garden"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/47.jpg",
+  "image_sha256": "971f938f3c7eb876bd3db85575db08842f4575927199e4eeea7e7964fa4915df",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:25+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A UFO with a broad green oval hull, a cyan domed cockpit, an orange underside, and a short antenna with a yellow tip\"}",
+  "source_caption": "A UFO with a broad green oval hull, a cyan domed cockpit, an orange underside, and a short antenna with a yellow tip",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:28+09:00",
+  "seconds": 3.0
+}

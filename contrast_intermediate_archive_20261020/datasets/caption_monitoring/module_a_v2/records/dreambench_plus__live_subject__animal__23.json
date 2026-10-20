@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/23",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/23",
+  "identity_term": "lion",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/23.txt",
+  "label_source_sha256": "60bd00b285b34ca264e3cf58c296727c3e3efbe7a6022c2c6d338d5c88aefcee",
+  "target_prompts": [
+    "A photograph of a lion lounging under the shade of an acacia tree in the savannah",
+    "A photo of a lion roaring at sunset on a rocky outcrop",
+    "A detailed photograph of a lion stalking its prey in tall grass",
+    "A photo capturing a lion and its cubs playing near a waterhole",
+    "A stylized watercolor painting of a lion with a majestic mane flowing in the wind",
+    "An anime-style illustration of a lion standing regally on a cliff overlooking a valley",
+    "A retro-style drawing of a lion resting in a circus",
+    "A lion made of liquid gold, shimmering and flowing through an ancient, mystical forest",
+    "A depiction of a lion with wings of light, soaring above the clouds illuminated by the moon"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/23.jpg",
+  "image_sha256": "f78ade71d3154c46dcbeb1329cfa0dbe7a1f566c369cd5f6f1193c5cad4cd166",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:54+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A lion with a thick reddish-gold mane and tawny coat walking through grass\"}",
+  "source_caption": "A lion with a thick reddish-gold mane and tawny coat walking through grass",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:58+09:00",
+  "seconds": 3.98
+}

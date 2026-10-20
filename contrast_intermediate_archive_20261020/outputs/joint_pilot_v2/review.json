@@ -1,0 +1,371 @@
+{
+  "reviewer": "Codex direct text review, no judge API",
+  "scope": "40 final outcomes, all 167 final negatives, plus both structurally retried first responses",
+  "counts": {
+    "no_major_issue_observed": 20,
+    "error": 6,
+    "review": 14
+  },
+  "records": [
+    {
+      "case_id": "000-00",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/000-00.json"
+    },
+    {
+      "case_id": "000-09",
+      "judgment": "error",
+      "category": "다른 대상의 색을 source 충돌로 해석",
+      "note": "target의 purple은 rug를 수식하지만 source magenta가 해제됐다. source[0]은 만들면 안 된다.",
+      "source_negatives_reviewed": 4,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/000-09.json"
+    },
+    {
+      "case_id": "000-21",
+      "judgment": "review",
+      "category": "부착물 상태 보존 편차",
+      "note": "같은 S의 hanging strap이 000-00/24에서는 보존되고 여기서는 제거된다. 실제 색 충돌과 무관한 차이이며 strap 물체/상태를 분리해 판단할 필요가 있다.",
+      "source_negatives_reviewed": 4,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/000-21.json"
+    },
+    {
+      "case_id": "000-24",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/000-24.json"
+    },
+    {
+      "case_id": "003-02",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/003-02.json"
+    },
+    {
+      "case_id": "003-14",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/003-14.json"
+    },
+    {
+      "case_id": "003-21",
+      "judgment": "review",
+      "category": "삭제 후 위치 부착 모호성",
+      "note": "source[1]의 filled with dark blueberries on white fabric는 fabric이 bowl 대신 berries를 수식할 여지가 있다. 쉼표/구조 보정 또는 resting+placement 묶음을 검토.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/003-21.json"
+    },
+    {
+      "case_id": "003-24",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/003-24.json"
+    },
+    {
+      "case_id": "010-10",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 4,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/010-10.json"
+    },
+    {
+      "case_id": "010-13",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 4,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/010-13.json"
+    },
+    {
+      "case_id": "010-21",
+      "judgment": "review",
+      "category": "recolor 범위",
+      "note": "orange-and-white는 해제하면서 white facial stripe and chest는 보존했다. purple dog가 전체 색 변경인지 기본색만인지 정책의 일관성을 점검해야 한다. 확정 문법 오류로 집계하지 않음.",
+      "source_negatives_reviewed": 5,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/010-21.json"
+    },
+    {
+      "case_id": "030-06",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/030-06.json"
+    },
+    {
+      "case_id": "030-07",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/030-07.json"
+    },
+    {
+      "case_id": "051-07",
+      "judgment": "review",
+      "category": "중첩 제거 단위",
+      "note": "target[0]은 teacup 관련 전부를 제거하는데 giant와 floating도 별도 제거 방향이다. 문법은 자연스럽지만 보수적 묶음과 부분 속성 방향의 중첩/필요성을 검토.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/051-07.json"
+    },
+    {
+      "case_id": "075-06",
+      "judgment": "review",
+      "category": "동반 대상 보존 편차",
+      "note": "small orange cat을 source 특징으로 보존하지만 075-07/08에서는 context로 제거. target의 명시적 cat 변경은 없다. 동반 개체의 구성 관계 판단을 점검.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/075-06.json"
+    },
+    {
+      "case_id": "075-07",
+      "judgment": "review",
+      "category": "동반 대상 보존 편차",
+      "note": "075-06에서 보존한 cat을 제거한다. 원문상 동반 구성인지 context인지 애매하므로 해석의 일관성 검토.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/075-07.json"
+    },
+    {
+      "case_id": "075-08",
+      "judgment": "review",
+      "category": "동반 대상 보존 편차",
+      "note": "target comet/it 묶음은 기대대로다. source cat 보존은 075-06과 다르다.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/075-08.json"
+    },
+    {
+      "case_id": "089-07",
+      "judgment": "review",
+      "category": "source 중첩 단위",
+      "note": "target web+위치는 기대대로 묶였다. source crowded/street placement/buildings+banners는 중첩되고 crowded street 단위가 실제로는 crowded만 제거한다.",
+      "source_negatives_reviewed": 5,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/089-07.json"
+    },
+    {
+      "case_id": "098-00",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/098-00.json"
+    },
+    {
+      "case_id": "115-04",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/115-04.json"
+    },
+    {
+      "case_id": "115-06",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/115-06.json"
+    },
+    {
+      "case_id": "115-07",
+      "judgment": "review",
+      "category": "source 변형 충돌 판단",
+      "note": "different geometric shapes/각 block 자연 장면 요구에도 square faces와 기존 색을 전부 보존했다. 변형이 외형 변경인지 판단을 추가 검토.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/115-07.json"
+    },
+    {
+      "case_id": "131-00",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/131-00.json"
+    },
+    {
+      "case_id": "135-01",
+      "judgment": "review",
+      "category": "독립 surface 특징까지 묶음",
+      "note": "raindrops 제거가 polished surface도 없앤다. source와 같은 속성도 target 제거 후보라는 정책상 polished를 별도 분리할 수 있는지 검토.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/135-01.json"
+    },
+    {
+      "case_id": "135-07",
+      "judgment": "error",
+      "category": "변형을 identity 모순으로 과잉 거절",
+      "note": "사용자 승인한 transformed spaceship+leading 묶음 대신 IdentityConflictError로 중단. 실제 API 응답이며 최우선 보완 대상.",
+      "source_negatives_reviewed": 0,
+      "target_negatives_reviewed": 0,
+      "result_path": "cases/135-07.json"
+    },
+    {
+      "case_id": "161-00",
+      "judgment": "error",
+      "category": "target 제거 후보 누락",
+      "note": "photo와 bustling만 제거하고 cityscape 제거 방향이 없다. rendered in pixel art는 B5처럼 depicted content를 제거할 수 있는 rendering 관계이며 직접 수식 head 보호를 과잉 적용한 것으로 보인다.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/161-00.json"
+    },
+    {
+      "case_id": "161-07",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/161-07.json"
+    },
+    {
+      "case_id": "161-08",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/161-08.json"
+    },
+    {
+      "case_id": "162-01",
+      "judgment": "review",
+      "category": "보호된 carrier의 qualifier 누락",
+      "note": "fading sunset glow에서 fading 별도 제거가 없다. sunset 실현에 불가분인지 추가 qualifier인지 점검.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/162-01.json"
+    },
+    {
+      "case_id": "162-08",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/162-08.json"
+    },
+    {
+      "case_id": "166-06",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 3,
+      "result_path": "cases/166-06.json"
+    },
+    {
+      "case_id": "169-03",
+      "judgment": "error",
+      "category": "target 제거 후보 누락",
+      "note": "digital illustration만 제거하고 depicted cat 제거가 없다. low-poly geometric patterns를 남기는 후보를 검토해야 한다. 형식 재시도는 이 의미 누락을 고치지 못했다.",
+      "source_negatives_reviewed": 5,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/169-03.json"
+    },
+    {
+      "case_id": "169-05",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 5,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/169-05.json"
+    },
+    {
+      "case_id": "173-07",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 0,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/173-07.json"
+    },
+    {
+      "case_id": "176-07",
+      "judgment": "error",
+      "category": "전치사 잔존",
+      "note": "negative가 in a watercolor sketch style. 원문 NP의 대상은 제거됐는데 in만 남았다. watercolor sketch style 등 최소 기능어 보정이 필요하다.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/176-07.json"
+    },
+    {
+      "case_id": "178-00",
+      "judgment": "review",
+      "category": "source style 표현 부착 이동",
+      "note": "dunes 제거 후 landscape of pale pink and blue로 바뀌며 dunes의 색이 전체 landscape로 확대된다. 최소 head 보존/묶음 정책과 비교 필요.",
+      "source_negatives_reviewed": 3,
+      "target_negatives_reviewed": 4,
+      "result_path": "cases/178-00.json"
+    },
+    {
+      "case_id": "178-05",
+      "judgment": "review",
+      "category": "relaxation 부착과 source 보존 편차",
+      "note": "cup 제거 후 tablecloth가 inviting의 주체가 될 수 있다. 원문의 scene 전체 수식 가능성도 있어 확정 오류로 보지 않았다. source의 pink/blue 보존도 178-00/07/08과 다름.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/178-05.json"
+    },
+    {
+      "case_id": "178-07",
+      "judgment": "review",
+      "category": "형식 재시도 중 의미 정책 변동",
+      "note": "첫 응답 pastel-colored leaves에서 retry 후 Trees have pastel-colored leaves.로 변화. 구조 수정 요청이 source 보존도 바꿨다. 성공 JSON을 동일 의미라고 간주하면 안 된다.",
+      "source_negatives_reviewed": 2,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/178-07.json"
+    },
+    {
+      "case_id": "178-08",
+      "judgment": "no_major_issue_observed",
+      "category": "검토 완료",
+      "note": "원문과 최종 source/target negative를 모두 대조했으며 이번 검토에서 중대한 문제를 식별하지 못했다. 무오류 보장은 아님.",
+      "source_negatives_reviewed": 1,
+      "target_negatives_reviewed": 2,
+      "result_path": "cases/178-08.json"
+    },
+    {
+      "case_id": "179-08",
+      "judgment": "error",
+      "category": "전치사 잔존",
+      "note": "negative가 in traditional Chinese painting style. 원문 NP의 대상 제거 후 in이 잔존. 176-07과 같은 기능어 보정 누락.",
+      "source_negatives_reviewed": 6,
+      "target_negatives_reviewed": 1,
+      "result_path": "cases/179-08.json"
+    }
+  ]
+}

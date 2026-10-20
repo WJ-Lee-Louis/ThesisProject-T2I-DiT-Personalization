@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/62",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/62",
+  "identity_term": "boat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/62.txt",
+  "label_source_sha256": "5a78db3a66a88a8bf75aa4daa7126bf7ef728a885deda244b3df7b2b2e20e306",
+  "target_prompts": [
+    "A photograph of a boat anchored near a rocky coastline under a clear blue sky",
+    "A photo of a boat gliding through a misty lake at sunrise",
+    "A photograph of a colorful boat surrounded by floating market stalls",
+    "A detailed photo of a boat adorned with lanterns during a nighttime festival",
+    "A watercolor painting of a small boat bobbing on serene, turquoise waters",
+    "An ink sketch of a rustic boat tied to an old wooden dock",
+    "A digital illustration of a futuristic boat speeding through neon-lit waterways",
+    "A boat floating in the air, carried by a cluster of vibrant balloons against a sunset backdrop",
+    "A depiction of a tiny boat navigating the rings of Saturn, surrounded by glittering space dust"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/62.jpg",
+  "image_sha256": "24884d4a8ab80d7939554add436ce49dcc9332b80d5d78fd91359d642b143cf8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:36+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A weathered white boat with blue bench seats and an oar, tethered by a rope and floating in clear turquoise water beneath a cloudy sky\"}",
+  "source_caption": "A weathered white boat with blue bench seats and an oar, tethered by a rope and floating in clear turquoise water beneath a cloudy sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:40+09:00",
+  "seconds": 4.05
+}

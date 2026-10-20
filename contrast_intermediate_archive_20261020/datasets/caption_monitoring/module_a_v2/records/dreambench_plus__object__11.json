@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/11",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/11",
+  "identity_term": "armchair",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/11.txt",
+  "label_source_sha256": "3ba8ee645f14c4d2cea243f37709db9b4d1b8b718dc86ecca3c2af406c3bc8c8",
+  "target_prompts": [
+    "A photograph of a plush armchair by a roaring fireplace in a cozy room",
+    "A photo of a sleek modern armchair in a minimalist apartment setting",
+    "A detailed photograph of a vintage armchair in an old library surrounded by books",
+    "A photo of a rustic armchair on a porch overlooking a misty mountain view",
+    "A watercolor painting of a colorful armchair under a blossoming tree in spring",
+    "An anime-style illustration of a magical armchair that glows in the dark forest",
+    "A retro-style drawing of an armchair in a 1950s living room with a vinyl record player",
+    "An armchair growing out of the ground in a whimsical garden, with vines and flowers entwining its legs and arms",
+    "An armchair floating amidst clouds, softly drifting over a vivid sunset landscape"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/11.jpg",
+  "image_sha256": "d628cc78b91b97aeccbdab8f4f162bf474bce1f7d9eb84973b96684c9418d8c7",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:49+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"An armchair with taupe upholstered cushions, a high curved back, and ornate dark wooden arms and legs, standing on a pale wood floor beside flower arrangements\"}",
+  "source_caption": "An armchair with taupe upholstered cushions, a high curved back, and ornate dark wooden arms and legs, standing on a pale wood floor beside flower arrangements",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:52+09:00",
+  "seconds": 3.66
+}

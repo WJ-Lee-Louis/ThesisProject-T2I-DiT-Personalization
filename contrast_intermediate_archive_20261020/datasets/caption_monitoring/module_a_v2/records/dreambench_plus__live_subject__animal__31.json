@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/31",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/31",
+  "identity_term": "deer",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/31.txt",
+  "label_source_sha256": "815a158477dce17d3746b5d9e0f04d64880d4aa7797276e53db568947b7a5c45",
+  "target_prompts": [
+    "A photograph of a deer grazing peacefully in a misty forest clearing",
+    "A photo of a deer leaping over a fallen tree trunk in a dense woodland",
+    "A detailed photograph of a deer standing beside a mountain stream at sunrise",
+    "A photo capturing a deer as it looks up, alert, in a snowy field",
+    "A watercolor painting of a deer with soft, blurred edges suggesting a gentle presence",
+    "An anime-style illustration of a magical deer with glowing antlers under the moonlight",
+    "A vintage-style sketch of a deer poised elegantly in an old forest landscape",
+    "A deer made of living branches walking through a forest, leaves sprouting from its antlers",
+    "A deer with a coat of autumn leaves, blending seamlessly into a forest during fall"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/31.jpg",
+  "image_sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:01+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A deer with tan-brown fur and large branching antlers standing on grass, with trees and another deer in the background\"}",
+  "source_caption": "A deer with tan-brown fur and large branching antlers standing on grass, with trees and another deer in the background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:05+09:00",
+  "seconds": 3.66
+}

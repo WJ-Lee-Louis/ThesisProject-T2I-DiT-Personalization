@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A clock with a bright yellow casing and twin bells, a white numbered face, resting on rumpled white fabric",
+  "identity_term": "clock",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "f9e2735a6ee24b0ebd63b76174271407ae90bda05536800419105e87b2e16a12",
+    "bytes_sha256": "4617746bfc0c5039b5e688aaaf0429adb283093fe342cda125c8c23660c0d1f0"
+  },
+  "input_sha256": "7c2abfe068553244948a692fee178fcffca5e4e6a2a3020b6dc586b316d1a03d",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "7c2abfe068553244948a692fee178fcffca5e4e6a2a3020b6dc586b316d1a03d",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A clock with a bright yellow casing and twin bells, a white numbered face, resting on rumpled white fabric\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

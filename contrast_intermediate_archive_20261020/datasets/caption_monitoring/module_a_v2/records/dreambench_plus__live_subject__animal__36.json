@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/36",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/36",
+  "identity_term": "lizard",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/36.txt",
+  "label_source_sha256": "38e233963d503f7017a51ad69162b288277b361df412db9949c52002ff9db689",
+  "target_prompts": [
+    "A photo of a lizard basking on a sunlit rock",
+    "A photograph of a lizard camouflaged among green leaves",
+    "A photo of a lizard catching insects in a desert setting",
+    "A photograph of a lizard clinging to a rough tree bark",
+    "A watercolor painting of a vibrant blue lizard on a branch",
+    "An anime-style illustration of a lizard with exaggerated colors",
+    "A stylized sketch of a lizard in a minimalist black and white design",
+    "A lizard with translucent wings delicately perched on a crystal",
+    "A depiction of a lizard changing colors"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/36.jpg",
+  "image_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:07+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A lizard with an orange head and blue-green scaly body, standing with its legs spread and head raised on a flat stone surface\"}",
+  "source_caption": "A lizard with an orange head and blue-green scaly body, standing with its legs spread and head raised on a flat stone surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:12+09:00",
+  "seconds": 4.81
+}

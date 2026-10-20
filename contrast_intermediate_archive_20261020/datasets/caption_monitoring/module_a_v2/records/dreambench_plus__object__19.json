@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/19",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/19",
+  "identity_term": "steam locomotive",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/19.txt",
+  "label_source_sha256": "1f2d9f8bb21cb84588f860b5f37b03440e5a6916583571ed7ee989e282f7204a",
+  "target_prompts": [
+    "A photograph of a steam locomotive chugging through a dense forest",
+    "A photo of a steam locomotive parked at an old-timey railway station during sunset",
+    "A photograph of a steam locomotive passing over a towering steel bridge",
+    "A photo of a steam locomotive releasing billowy steam clouds in a snowy landscape",
+    "An ink sketch of a steam locomotive, detailed with old-fashioned textured strokes",
+    "A retro-style illustration of a steam locomotive adorned with colorful graffiti",
+    "A digital painting of a steam locomotive in a bustling urban setting, depicted in a neon-lit, cyberpunk style",
+    "A steam locomotive flying through the sky, trailing clouds of colorful smoke",
+    "A transformed steam locomotive, now a mobile forest with trees and wildlife on its carriages"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/19.jpg",
+  "image_sha256": "e8357b9a62508824631e2e315974c43c0d7a26b03c28b1fbc6b3e17636367627",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:57+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A steam locomotive with a dark green body, black front and red buffer beam, billowing white steam as it stands on railway tracks beside a brick station platform\"}",
+  "source_caption": "A steam locomotive with a dark green body, black front and red buffer beam, billowing white steam as it stands on railway tracks beside a brick station platform",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:01+09:00",
+  "seconds": 4.39
+}

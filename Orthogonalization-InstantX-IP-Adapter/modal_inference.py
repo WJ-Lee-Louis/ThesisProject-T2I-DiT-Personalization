@@ -63,7 +63,7 @@ def clean_path_arg(value: str) -> str:
 def next_available_path(path: Path) -> Path:
     for index in range(1000):
         candidate = path.with_name(f"{path.stem}_{index:03d}{path.suffix}")
-        if not candidate.exists() and not candidate.with_suffix(".json").exists():
+        if not any(candidate.with_suffix(suffix).exists() for suffix in (candidate.suffix, ".json", ".contrasts.json", ".components.json")):
             return candidate
     raise RuntimeError(f"Could not find an available output path for {path}")
 
@@ -118,6 +118,7 @@ def generate_experiment(
     restore_visual_norm: bool = True,
     mask_single_text_rows: bool = DEFAULT_MASK_SINGLE_TEXT_ROWS,
     component_analysis_payload: dict | None = None,
+    contrast_analysis_payload: dict | None = None,
 ) -> tuple[bytes, dict]:
     from orthogonalization_instantx_ip_adapter.inference import (
         generate_png_bytes,
@@ -145,6 +146,7 @@ def generate_experiment(
         restore_visual_norm=restore_visual_norm,
         mask_single_text_rows=mask_single_text_rows,
         component_analysis_payload=component_analysis_payload,
+        contrast_analysis_payload=contrast_analysis_payload,
     )
 
 
@@ -173,62 +175,57 @@ def main(
     output_path: str = DEFAULT_OUTPUT_PATH,
     identity_term: str = "",
     source_caption: str = "",
+    preserve_json: str = "",
     llm_model: str = "",
-    component_origin: str = "source_target",
-    component_strategy: str = "local",
+    contrast_origin: str = "",
+    contrast_analysis_path: str = "",
+    caption_cache_path: str = "",
+    import_legacy_caption: str = "",
+    component_origin: str = "",
+    component_strategy: str = "",
     component_analysis_path: str = "",
-    component_max_contexts: int = 256,
+    component_max_contexts: int | None = None,
 ):
-    from orthogonalization_instantx_ip_adapter.semantic_components import (
-        SemanticConditioning, SemanticLLM, identity_spans, prepare_semantic_conditioning,
+    from orthogonalization_instantx_ip_adapter.semantic_cli import (
+        resolve_contrast_options, validate_caption_options, prepare_cli_conditioning,
     )
-    component_analysis_payload = None
+    from orthogonalization_instantx_ip_adapter.adapter import OrthogonalizationRequest
+    from orthogonalization_instantx_ip_adapter.semantic_contrasts import identity_occurrences
+    origin, analysis_path = resolve_contrast_options(
+        contrast_origin=contrast_origin, component_origin=component_origin,
+        contrast_analysis_path=contrast_analysis_path, component_analysis_path=component_analysis_path,
+        component_strategy=component_strategy, component_max_contexts=component_max_contexts)
+    validate_caption_options(identity_term=identity_term, source_caption=source_caption, preserve_json=preserve_json,
+        caption_cache_path=caption_cache_path, import_legacy_caption=import_legacy_caption, analysis_path=analysis_path)
+    semantic = bool(identity_term or analysis_path)
+    OrthogonalizationRequest(mode="off", strength=orthogonalization_strength)
     if identity_term:
-        identity_spans(prompt, identity_term)
-    if component_analysis_path:
-        if source_caption or llm_model:
-            raise ValueError("cached component analysis cannot mix caption/model options")
-        conditioning = SemanticConditioning.from_dict(json.loads(
-            Path(clean_path_arg(component_analysis_path)).read_text(encoding="utf-8")))
-        if conditioning.target.text != prompt:
-            raise ValueError("cached analysis target does not match prompt")
-        if identity_term and conditioning.target.identity_term != identity_term:
-            raise ValueError("cached analysis identity_term does not match")
-        component_analysis_payload = conditioning.to_dict()
-    elif source_caption and not identity_term:
-        raise ValueError("source_caption requires explicit identity_term")
-    if identity_term or component_analysis_path:
-        if orthogonalization_mode not in {"off", "components"}:
+        identity_occurrences(prompt, identity_term)
+    if semantic:
+        if orthogonalization_mode not in {"off", "components", "semantic_local"}:
             raise ValueError("identity pipeline cannot mix legacy projection modes")
         if any((object_prompt, object_behavior_prompt, object_background_prompt,
-                object_behavior_background_prompt, include_interaction)):
+                object_behavior_background_prompt, include_interaction, not remove_behavior, not remove_background)):
             raise ValueError("identity pipeline cannot mix legacy prompt settings")
-        orthogonalization_mode = "components"
-    elif orthogonalization_mode == "components":
-        raise ValueError("components mode requires identity_term or cached component analysis")
+        orthogonalization_mode = "semantic_local"
+    elif orthogonalization_mode in {"components", "semantic_local"} or origin or llm_model:
+        raise ValueError("semantic options require identity_term or a new contrast cache")
     reference_image_bytes = None
     if reference_image_path:
-        reference_path = Path(clean_path_arg(reference_image_path))
-        reference_image_bytes = reference_path.read_bytes()
-        print(f"Using local reference image: {reference_path.resolve()}")
-    else:
-        print(f"Using reference image URL: {reference_image_url}")
-
-    if identity_term and component_analysis_payload is None:
-        from orthogonalization_instantx_ip_adapter.llm_provider import ResponsesJSONProvider
-        provider = ResponsesJSONProvider.from_env(llm_model or None)
-        if reference_image_bytes is None and not source_caption and component_origin != "target":
-            from io import BytesIO
-            from diffusers.utils import load_image
-            buffer = BytesIO()
-            load_image(reference_image_url).convert("RGB").save(buffer, format="PNG")
-            reference_image_bytes = buffer.getvalue()
-        conditioning = prepare_semantic_conditioning(
-            llm=SemanticLLM(provider), identity_term=identity_term, target_prompt=prompt,
-            reference_image_bytes=reference_image_bytes, source_caption=source_caption or None,
-            origin=component_origin, strategy=component_strategy, max_contexts=component_max_contexts,
-        )
-        component_analysis_payload = conditioning.to_dict()
+        reference_image_bytes = Path(clean_path_arg(reference_image_path)).read_bytes()
+    elif semantic:
+        # Fetch once. A, fingerprint validation and remote generation receive identical bytes.
+        from urllib.request import urlopen
+        with urlopen(reference_image_url, timeout=60) as response:
+            reference_image_bytes = response.read()
+    contrast_analysis_payload = None
+    if semantic:
+        conditioning = prepare_cli_conditioning(
+            image_bytes=reference_image_bytes, target_prompt=prompt, identity_term=identity_term,
+            source_caption=source_caption, preserve_json=preserve_json, caption_cache_path=clean_path_arg(caption_cache_path),
+            import_legacy_caption=clean_path_arg(import_legacy_caption),
+            analysis_path=clean_path_arg(analysis_path), origin=origin, model=llm_model or None)
+        contrast_analysis_payload = conditioning.to_dict()
 
     output_bytes, diagnostics = generate_experiment.remote(
         prompt=prompt,
@@ -251,7 +248,7 @@ def main(
         include_interaction=include_interaction,
         restore_visual_norm=restore_visual_norm,
         mask_single_text_rows=mask_single_text_rows,
-        component_analysis_payload=component_analysis_payload,
+        contrast_analysis_payload=contrast_analysis_payload,
     )
 
     path = resolve_output_path(
@@ -260,15 +257,14 @@ def main(
         reference_image_url=reference_image_url,
     )
     path.parent.mkdir(parents=True, exist_ok=True)
-    if component_analysis_payload is not None:
-        path.with_suffix(".components.json").write_text(
-            json.dumps(component_analysis_payload, ensure_ascii=False, indent=2), encoding="utf-8",
-        )
-        diagnostics["llm_analysis"] = {
-            "model": (llm_model or provider.model) if identity_term and not component_analysis_path else None,
-            "cached": bool(component_analysis_path),
-            "max_output_retries": 2,
-        }
+    if contrast_analysis_payload is not None:
+        path.with_suffix(".contrasts.json").write_text(
+            json.dumps(contrast_analysis_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        diagnostics["llm_analysis"] = {"cached": bool(analysis_path),
+            "caption_origin": conditioning.caption.origin,
+            "caption_attempts_this_run": 0 if analysis_path or caption_cache_path or source_caption or import_legacy_caption
+                else len(conditioning.caption.trace.attempts),
+            "contrast_attempts_this_run": 0 if analysis_path else len(conditioning.analysis.trace.attempts)}
     path.write_bytes(output_bytes)
     path.with_suffix(".json").write_text(
         json.dumps(diagnostics, ensure_ascii=False, indent=2),

@@ -1,0 +1,124 @@
+{
+  "case_id": "115-07",
+  "reference_index": 115,
+  "target_index": 7,
+  "identity_term": "Magic Cube",
+  "target_prompt": "A Magic Cube morphing into different geometric shapes, each block displaying a different scene from nature",
+  "reference_id": "dreambench_plus/object/20",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "A partially twisted Magic Cube with black borders and multicolored square tiles on a white surface",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A partially twisted Magic Cube with black borders and multicolored square tiles on a white surface",
+      "target_prompt": "A Magic Cube morphing into different geometric shapes, each block displaying a different scene from nature",
+      "identity_term": "Magic Cube"
+    },
+    "input_sha256": "4d9f4b9182b423292d4803d7b91b86f03a0be14511d3cf0f3380290674b01cef",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+      "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A partially twisted Magic Cube with black borders and multicolored square tiles on a white surface",
+      "identity_term": "Magic Cube",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+        "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+      },
+      "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A partially twisted Magic Cube with black borders and multicolored square tiles on a white surface\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Magic Cube",
+      "source_preserved": [
+        "Magic Cube",
+        "black borders",
+        "multicolored square tiles"
+      ],
+      "source": [
+        {
+          "unit": "partially twisted configuration",
+          "negative": "A Magic Cube with black borders and multicolored square tiles on a white surface"
+        },
+        {
+          "unit": "white surface placement",
+          "negative": "A partially twisted Magic Cube with black borders and multicolored square tiles"
+        }
+      ],
+      "target": [
+        {
+          "unit": "morphing into different geometric shapes",
+          "negative": "A Magic Cube, each block displaying a different scene from nature"
+        },
+        {
+          "unit": "nature scenes displayed on each block",
+          "negative": "A Magic Cube morphing into different geometric shapes"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A partially twisted Magic Cube with black borders and multicolored square tiles on a white surface\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4d9f4b9182b423292d4803d7b91b86f03a0be14511d3cf0f3380290674b01cef",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Magic Cube\",\"source_preserved\":[\"Magic Cube\",\"black borders\",\"multicolored square tiles\"],\"source\":[{\"unit\":\"partially twisted configuration\",\"negative\":\"A Magic Cube with black borders and multicolored square tiles on a white surface\"},{\"unit\":\"white surface placement\",\"negative\":\"A partially twisted Magic Cube with black borders and multicolored square tiles\"}],\"target\":[{\"unit\":\"morphing into different geometric shapes\",\"negative\":\"A Magic Cube, each block displaying a different scene from nature\"},{\"unit\":\"nature scenes displayed on each block\",\"negative\":\"A Magic Cube morphing into different geometric shapes\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:58:01.935895+00:00"
+  }
+}

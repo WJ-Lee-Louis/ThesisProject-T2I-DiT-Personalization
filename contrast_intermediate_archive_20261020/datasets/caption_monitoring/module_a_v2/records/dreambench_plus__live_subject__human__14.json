@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/14",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/14",
+  "identity_term": "Spider-Man",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/14.txt",
+  "label_source_sha256": "76b72be1db979ec92c929d9c6a054af6545f1a85b0f53657a124e1a3e769d38c",
+  "target_prompts": [
+    "A photograph of Spider-Man swinging between skyscrapers at sunset",
+    "A photo of Spider-Man in a classic crouched pose on top of a city building",
+    "A photograph of Spider-Man rescuing a cat from a tall tree",
+    "A photo of Spider-Man sitting on a rooftop, overlooking the cityscape at night",
+    "A minimalist style drawing of Spider-Man using only bold red and blue strokes",
+    "An anime-style illustration of Spider-Man engaged in a rooftop battle against a villain",
+    "A retro comic book style depiction of Spider-Man swinging through a 1960s New York City",
+    "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+    "Spider-Man dancing ballet on a web, with city lights blurred in the background"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/14.jpg",
+  "image_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:31+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"Spider-Man in a red-and-blue web-patterned suit, crouched in midair above a crowded street lined with colorful buildings and festive banners\"}",
+  "source_caption": "Spider-Man in a red-and-blue web-patterned suit, crouched in midair above a crowded street lined with colorful buildings and festive banners",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:37+09:00",
+  "seconds": 6.06
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/34",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/34",
+  "identity_term": "tree-like character",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/34.txt",
+  "label_source_sha256": "6ff0100a2e8671ff2eeada15f3c14f436d3a0dc3d70b0fcf7a7aa98dffbf240e",
+  "target_prompts": [
+    "A photo of a tree-like character standing tall in a misty forest, branches stretching towards the sky",
+    "A photograph of a tree-like character with colorful leaves during autumn, amidst a park",
+    "A photo of a tree-like character with intricate roots sprawling across a lush green meadow",
+    "A photograph of a tree-like character under starlight, glowing softly in the moonlit night",
+    "A watercolor painting of a whimsical tree-like character with a face and limbs, nestled in a fantasy forest",
+    "An anime-style illustration of a tree-like character with eyes and a gentle smile, surrounded by magical creatures",
+    "A minimalist sketch of a tree-like character, depicted with clean, flowing lines as it bends with the wind",
+    "A tree-like character with branches holding up small lanterns, each glowing with fireflies, set in an enchanted evening scenario",
+    "A tree-like character transforming seasonally from spring blossoms to winter snow in a timelapse style visualization, embodying the essence of change"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/34.jpg",
+  "image_sha256": "b862285097d9b81dcf586909d7fd20874787e3b00dd4ea76924b5a03358f6a57",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:11+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A tree-like character figurine with an oversized pale wood-grained head, bright green growths at the top, large black eyes and a small smile, standing with its arms outstretched\"}",
+  "source_caption": "A tree-like character figurine with an oversized pale wood-grained head, bright green growths at the top, large black eyes and a small smile, standing with its arms outstretched",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:15+09:00",
+  "seconds": 3.97
+}

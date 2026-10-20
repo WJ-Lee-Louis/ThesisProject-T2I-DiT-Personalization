@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A man with thick swept-back dark hair and a full dark beard, wearing a black hooded top and facing forward against a softly blurred outdoor backdrop",
+  "identity_term": "man",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "651720792891b682869b6d422817b7a19ac9c5eb8659004768f90de46b5391e2",
+    "bytes_sha256": "78c8991b224c8d54dd6043a8cf9a09d5d338048280360fd134c9a764d17f4a08"
+  },
+  "input_sha256": "44fad495d1b6d3a37300415e7f21f71294f050590d4910383e1522c6182fefb0",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "44fad495d1b6d3a37300415e7f21f71294f050590d4910383e1522c6182fefb0",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A man with thick swept-back dark hair and a full dark beard, wearing a black hooded top and facing forward against a softly blurred outdoor backdrop\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

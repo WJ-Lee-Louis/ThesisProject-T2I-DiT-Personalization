@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "serene desert of rolling reddish-orange sand dunes beneath a broad pale beige sky",
+  "identity_term": "serene desert",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "3563f5d28c8671708dbda26446b632c7fac404b4ddaea3096dc51563ee0bb20d",
+    "bytes_sha256": "b10ccab4436097beceeaba860ad247ab679fea333869bd9c81f8d259df72e8b2"
+  },
+  "input_sha256": "9d4579bc7533a853d0fbca2d48610ec4d232cfccc26560bebb6509b7e45166fd",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "9d4579bc7533a853d0fbca2d48610ec4d232cfccc26560bebb6509b7e45166fd",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"serene desert of rolling reddish-orange sand dunes beneath a broad pale beige sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

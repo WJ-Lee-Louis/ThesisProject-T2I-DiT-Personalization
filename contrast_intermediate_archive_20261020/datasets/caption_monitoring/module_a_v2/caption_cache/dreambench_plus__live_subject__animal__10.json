@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A fox with a rust-orange coat, pale chest and muzzle, dark lower legs and ear tips, standing on snow with its bushy tail behind it",
+  "identity_term": "fox",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "66dd44536016f93904cea42511a676b86761057cc2fbb5502ea47a451798eb69",
+    "bytes_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1"
+  },
+  "input_sha256": "ec37388b940413f04c08415ff3db806d4bc6350e4f72954f6fc2bce344837108",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "ec37388b940413f04c08415ff3db806d4bc6350e4f72954f6fc2bce344837108",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A fox with a rust-orange coat, pale chest and muzzle, dark lower legs and ear tips, standing on snow with its bushy tail behind it\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

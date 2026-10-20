@@ -1,0 +1,130 @@
+{
+  "case_id": "115-06",
+  "reference_index": 115,
+  "target_index": 6,
+  "identity_term": "Magic Cube",
+  "target_prompt": "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+  "reference_id": "dreambench_plus/object/20",
+  "known_case": "T22",
+  "selection_role": "known development",
+  "source_caption": "A partially twisted Magic Cube with multicolored square tiles and black borders",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "A partially twisted Magic Cube with multicolored square tiles and black borders",
+      "target_prompt": "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+      "identity_term": "Magic Cube",
+      "preserve": [
+        "with multicolored square tiles and black borders"
+      ]
+    },
+    "input_sha256": "a91eba671994abe0ddcab3dcecb7231f76f84fa0bb3f5ba92b5e7d73d82ba7aa",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+      "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "A partially twisted Magic Cube with multicolored square tiles and black borders",
+      "preserve": [
+        "with multicolored square tiles and black borders"
+      ],
+      "identity_term": "Magic Cube",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+        "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+      },
+      "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A partially twisted Magic Cube with multicolored square tiles and black borders\",\"preserve\":[\"with multicolored square tiles and black borders\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Magic Cube",
+      "source_preserved": [
+        "Magic Cube",
+        "multicolored square tiles",
+        "black borders"
+      ],
+      "source": [
+        {
+          "unit": "partially twisted state",
+          "negative": "A Magic Cube with multicolored square tiles and black borders"
+        }
+      ],
+      "target": [
+        {
+          "unit": "anime-style drawing representation",
+          "negative": "A character intensely focusing on solving a glowing Magic Cube"
+        },
+        {
+          "unit": "character focusing on solving",
+          "negative": "An anime-style drawing of a glowing Magic Cube"
+        },
+        {
+          "unit": "glowing appearance",
+          "negative": "An anime-style drawing of a character intensely focusing on solving a Magic Cube"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A partially twisted Magic Cube with multicolored square tiles and black borders\",\"preserve\":[\"with multicolored square tiles and black borders\"]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "a91eba671994abe0ddcab3dcecb7231f76f84fa0bb3f5ba92b5e7d73d82ba7aa",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Magic Cube\",\"source_preserved\":[\"Magic Cube\",\"multicolored square tiles\",\"black borders\"],\"source\":[{\"unit\":\"partially twisted state\",\"negative\":\"A Magic Cube with multicolored square tiles and black borders\"}],\"target\":[{\"unit\":\"anime-style drawing representation\",\"negative\":\"A character intensely focusing on solving a glowing Magic Cube\"},{\"unit\":\"character focusing on solving\",\"negative\":\"An anime-style drawing of a glowing Magic Cube\"},{\"unit\":\"glowing appearance\",\"negative\":\"An anime-style drawing of a character intensely focusing on solving a Magic Cube\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:10:06.133327+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A parrot with vivid orange and yellow feathers, green wing edges, and a long dark tail perched on a branch against a dark background",
+  "identity_term": "parrot",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "91f04d64a354e8c3044f0bb19fc907cb39df0b4e564cd311d45c8fe82e694d35",
+    "bytes_sha256": "7f6428464a00770435313692554c95b2b923577017096e4c6574ce72f44ca3ee"
+  },
+  "input_sha256": "6ba7695afb1c1fc8e4dfe7fb008f9cde595706942d43a35baabcaf5349362263",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "6ba7695afb1c1fc8e4dfe7fb008f9cde595706942d43a35baabcaf5349362263",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A parrot with vivid orange and yellow feathers, green wing edges, and a long dark tail perched on a branch against a dark background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

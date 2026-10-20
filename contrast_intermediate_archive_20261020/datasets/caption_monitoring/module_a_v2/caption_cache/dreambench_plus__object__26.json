@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A silver hair dryer with a dark blue button, held by its handle with the cord hanging down, against a pink background",
+  "identity_term": "hair dryer",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "d2bf5da1df8695eb69ce21ee1c4b212ecefc22a93d8c82691c8f84b9e9307c93",
+    "bytes_sha256": "fd9e0212e883b9c9a3f7b435dc50c95320daccf4a0469e6b93f3518c29e80b1f"
+  },
+  "input_sha256": "b546a7e5168bfff5540de810f6a0b91f4f70306f818f75d45b328fbd0c72ebbd",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "b546a7e5168bfff5540de810f6a0b91f4f70306f818f75d45b328fbd0c72ebbd",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A silver hair dryer with a dark blue button, held by its handle with the cord hanging down, against a pink background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

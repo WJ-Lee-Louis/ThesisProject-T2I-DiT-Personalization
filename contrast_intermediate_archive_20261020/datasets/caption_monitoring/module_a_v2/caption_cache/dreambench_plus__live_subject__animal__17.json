@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A frog with a bright orange, black-speckled body and blue legs crouching on a rough rock",
+  "identity_term": "frog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "ac9248b7e19ee58b59e33402840397121a37a8bba727fe671269c000e2060ab7",
+    "bytes_sha256": "76d9d226a527f86df01c738b07319e59992732fb1eeb28b5c9981f5381d509b8"
+  },
+  "input_sha256": "f8adec726c807a1f59b3d9aaec73b5c2f4b21c464bea5c3b96d6b8522871efef",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "f8adec726c807a1f59b3d9aaec73b5c2f4b21c464bea5c3b96d6b8522871efef",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A frog with a bright orange, black-speckled body and blue legs crouching on a rough rock\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

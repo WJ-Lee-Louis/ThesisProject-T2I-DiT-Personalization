@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/49",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/49",
+  "identity_term": "vintage television",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/49.txt",
+  "label_source_sha256": "75a0ad740e53ebba3f5f1ff3d5a03e4dabf75e98a687f8d7b904c8e563a85fbf",
+  "target_prompts": [
+    "A photo of a vintage television on a classic wooden stand in a cozy living room",
+    "A photograph of a vintage television set in a retro-style diner with neon lights",
+    "A photo of a vintage television in an antique shop surrounded by various old objects",
+    "A photograph of a vintage television outdoors, part of a quirky garden installation",
+    "A digital painting of a vintage television with a vibrant, neon abstract background",
+    "An ink sketch of a vintage television with old-fashioned decorative elements",
+    "A cartoon of a vintage television broadcasting an old black and white movie",
+    "A vintage television floating in space, displaying scenes of different galaxies",
+    "A vintage television growing on a tree like a fruit, with birds perched on top watching"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/49.jpg",
+  "image_sha256": "a0f521ccb308c25835a4ffb37a253f3db6e2c7e11944d72c2a6578e6a2c20d8c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:26+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A vintage television with a cream-colored frame, dark front, convex screen, and two side knobs, standing on a wooden stool against a brown plaid wall\"}",
+  "source_caption": "A vintage television with a cream-colored frame, dark front, convex screen, and two side knobs, standing on a wooden stool against a brown plaid wall",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:29+09:00",
+  "seconds": 3.62
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "135-07",
+  "reference_index": 135,
+  "target_index": 7,
+  "identity_term": "Rolls-Royce hood ornament",
+  "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+  "reference_id": "dreambench_plus/object/40",
+  "known_case": "T23",
+  "selection_role": "known development",
+  "status": "ERROR",
+  "error": "IdentityConflictError: identity_conflict (target): The target transforms the Rolls-Royce hood ornament into a spaceship, contradicting the protected identity.",
+  "trace": {
+    "stage": "contrast",
+    "model": "gpt-6-luna",
+    "input_sha256": "e04e514126b39136b76a56089a09444e25916f09a01dd4a6f4c7344c68e23ec8",
+    "prompt_version": "joint_contrast_v2",
+    "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+    "attempts": [
+      {
+        "raw_response": "{\"identity_term\":\"Rolls-Royce hood ornament\",\"source_preserved\":[],\"source\":[],\"target\":[],\"issues\":[{\"kind\":\"identity_conflict\",\"side\":\"target\",\"evidence\":\"transformed into a sleek spaceship\",\"reason\":\"The target transforms the Rolls-Royce hood ornament into a spaceship, contradicting the protected identity.\"}]}",
+        "validation_error": null
+      }
+    ]
+  }
+}

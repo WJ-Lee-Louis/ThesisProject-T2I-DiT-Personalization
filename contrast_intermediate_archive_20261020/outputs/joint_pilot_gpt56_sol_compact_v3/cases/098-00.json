@@ -1,0 +1,128 @@
+{
+  "case_id": "098-00",
+  "reference_index": 98,
+  "target_index": 0,
+  "identity_term": "cherry blossoms",
+  "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+  "reference_id": "dreambench_plus/object/03",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "pale pink cherry blossoms clustered on a dark reddish branch against a blue sky",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v3",
+    "inputs": {
+      "source_caption": "pale pink cherry blossoms clustered on a dark reddish branch against a blue sky",
+      "target_prompt": "A photo of cherry blossoms gently falling on a serene lake surface",
+      "identity_term": "cherry blossoms"
+    },
+    "input_sha256": "b4fad06ec3d5213e8bf327946083d9d8eedd2002375f6e3d6c4eaa1d08f8fa5d",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+      "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "pale pink cherry blossoms clustered on a dark reddish branch against a blue sky",
+      "identity_term": "cherry blossoms",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "3c3ec7208fbdc895c76caa3149f3c8fb045f06afdb16efab73bba2cd9dea9e35",
+        "bytes_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+      },
+      "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pale pink cherry blossoms clustered on a dark reddish branch against a blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "cherry blossoms",
+      "source_preserved": [
+        "cherry blossoms",
+        "pale pink",
+        "clustered"
+      ],
+      "source": [
+        {
+          "unit": "dark reddish branch placement",
+          "negative": "pale pink cherry blossoms clustered against a blue sky"
+        },
+        {
+          "unit": "blue sky background",
+          "negative": "pale pink cherry blossoms clustered on a dark reddish branch"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photo representation",
+          "negative": "cherry blossoms gently falling on a serene lake surface"
+        },
+        {
+          "unit": "gently falling action",
+          "negative": "A photo of cherry blossoms on a serene lake surface"
+        },
+        {
+          "unit": "serene lake surface placement",
+          "negative": "A photo of cherry blossoms gently falling"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4d03420aa781d65221303123cc2115958aa5e4d54536d51c100e0172288fcff9",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pale pink cherry blossoms clustered on a dark reddish branch against a blue sky\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "b4fad06ec3d5213e8bf327946083d9d8eedd2002375f6e3d6c4eaa1d08f8fa5d",
+        "prompt_version": "joint_contrast_v3",
+        "prompt_sha256": "8107e3eb6c4e65a013a7d17ab44b33d7a464d7fbce756fced93dbc1545520e91",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"cherry blossoms\",\"source_preserved\":[\"cherry blossoms\",\"pale pink\",\"clustered\"],\"source\":[{\"unit\":\"dark reddish branch placement\",\"negative\":\"pale pink cherry blossoms clustered against a blue sky\"},{\"unit\":\"blue sky background\",\"negative\":\"pale pink cherry blossoms clustered on a dark reddish branch\"}],\"target\":[{\"unit\":\"photo representation\",\"negative\":\"cherry blossoms gently falling on a serene lake surface\"},{\"unit\":\"gently falling action\",\"negative\":\"A photo of cherry blossoms on a serene lake surface\"},{\"unit\":\"serene lake surface placement\",\"negative\":\"A photo of cherry blossoms gently falling\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:23:21.736640+00:00"
+  }
+}

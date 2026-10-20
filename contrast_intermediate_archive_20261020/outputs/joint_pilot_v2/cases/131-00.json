@@ -1,0 +1,128 @@
+{
+  "case_id": "131-00",
+  "reference_index": 131,
+  "target_index": 0,
+  "identity_term": "ceramic bowl",
+  "target_prompt": "A photograph of a ceramic bowl filled with vibrant citrus fruits on a rustic wooden table",
+  "reference_id": "dreambench_plus/object/36",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface",
+      "target_prompt": "A photograph of a ceramic bowl filled with vibrant citrus fruits on a rustic wooden table",
+      "identity_term": "ceramic bowl"
+    },
+    "input_sha256": "d4c83b689d42fa8e5b3d57dc8d12fede640584737c2ac24a789b858141cea6a6",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "4a7d45a2024efd8f2fc6789dde69058f8ee06d2b598ade7af5e4e701248ef4a7",
+      "bytes_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface",
+      "identity_term": "ceramic bowl",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "4a7d45a2024efd8f2fc6789dde69058f8ee06d2b598ade7af5e4e701248ef4a7",
+        "bytes_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e"
+      },
+      "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "ceramic bowl",
+      "source_preserved": [
+        "ceramic bowl",
+        "cream-colored surface",
+        "painted with green leafy branches",
+        "short feet"
+      ],
+      "source": [
+        {
+          "unit": "standing pose",
+          "negative": "A ceramic bowl with a cream-colored surface painted with green leafy branches, on short feet on a white surface"
+        },
+        {
+          "unit": "white surface placement",
+          "negative": "A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photograph medium",
+          "negative": "A ceramic bowl filled with vibrant citrus fruits on a rustic wooden table"
+        },
+        {
+          "unit": "citrus fruit contents",
+          "negative": "A photograph of a ceramic bowl on a rustic wooden table"
+        },
+        {
+          "unit": "rustic wooden table placement",
+          "negative": "A photograph of a ceramic bowl filled with vibrant citrus fruits"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "d4c83b689d42fa8e5b3d57dc8d12fede640584737c2ac24a789b858141cea6a6",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"ceramic bowl\",\"source_preserved\":[\"ceramic bowl\",\"cream-colored surface\",\"painted with green leafy branches\",\"short feet\"],\"source\":[{\"unit\":\"standing pose\",\"negative\":\"A ceramic bowl with a cream-colored surface painted with green leafy branches, on short feet on a white surface\"},{\"unit\":\"white surface placement\",\"negative\":\"A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet\"}],\"target\":[{\"unit\":\"photograph medium\",\"negative\":\"A ceramic bowl filled with vibrant citrus fruits on a rustic wooden table\"},{\"unit\":\"citrus fruit contents\",\"negative\":\"A photograph of a ceramic bowl on a rustic wooden table\"},{\"unit\":\"rustic wooden table placement\",\"negative\":\"A photograph of a ceramic bowl filled with vibrant citrus fruits\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:02.316336+00:00"
+  }
+}

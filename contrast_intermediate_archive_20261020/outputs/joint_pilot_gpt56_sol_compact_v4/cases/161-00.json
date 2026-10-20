@@ -1,0 +1,134 @@
+{
+  "case_id": "161-00",
+  "reference_index": 161,
+  "target_index": 0,
+  "identity_term": "pixel art",
+  "target_prompt": "A photo of a bustling cityscape, rendered in pixel art",
+  "reference_id": "dreambench_plus/style/01",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "a vintage desktop computer with a blue screen and wired mouse in pixel art",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "a vintage desktop computer with a blue screen and wired mouse in pixel art",
+      "target_prompt": "A photo of a bustling cityscape, rendered in pixel art",
+      "identity_term": "pixel art"
+    },
+    "input_sha256": "dc74e19f3b726daf47dae7a352ff1daaf833faafdf0f32abb7fd12ad3a8dd03d",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+      "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "a vintage desktop computer with a blue screen and wired mouse in pixel art",
+      "identity_term": "pixel art",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+        "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+      },
+      "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a vintage desktop computer with a blue screen and wired mouse in pixel art\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "pixel art",
+      "source_preserved": [
+        "pixel art"
+      ],
+      "source": [
+        {
+          "unit": "vintage appearance",
+          "negative": "a desktop computer with a blue screen and wired mouse in pixel art"
+        },
+        {
+          "unit": "depicted desktop computer and attached details",
+          "negative": "pixel art"
+        },
+        {
+          "unit": "blue screen",
+          "negative": "a vintage desktop computer with a wired mouse in pixel art"
+        },
+        {
+          "unit": "wired mouse",
+          "negative": "a vintage desktop computer with a blue screen in pixel art"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photo representation",
+          "negative": "A bustling cityscape, rendered in pixel art"
+        },
+        {
+          "unit": "bustling quality",
+          "negative": "A photo of a cityscape, rendered in pixel art"
+        },
+        {
+          "unit": "depicted bustling cityscape",
+          "negative": "A photo rendered in pixel art"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a vintage desktop computer with a blue screen and wired mouse in pixel art\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "dc74e19f3b726daf47dae7a352ff1daaf833faafdf0f32abb7fd12ad3a8dd03d",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"pixel art\",\"source_preserved\":[\"pixel art\"],\"source\":[{\"unit\":\"vintage appearance\",\"negative\":\"a desktop computer with a blue screen and wired mouse in pixel art\"},{\"unit\":\"depicted desktop computer and attached details\",\"negative\":\"pixel art\"},{\"unit\":\"blue screen\",\"negative\":\"a vintage desktop computer with a wired mouse in pixel art\"},{\"unit\":\"wired mouse\",\"negative\":\"a vintage desktop computer with a blue screen in pixel art\"}],\"target\":[{\"unit\":\"photo representation\",\"negative\":\"A bustling cityscape, rendered in pixel art\"},{\"unit\":\"bustling quality\",\"negative\":\"A photo of a cityscape, rendered in pixel art\"},{\"unit\":\"depicted bustling cityscape\",\"negative\":\"A photo rendered in pixel art\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:25:29.073321+00:00"
+  }
+}

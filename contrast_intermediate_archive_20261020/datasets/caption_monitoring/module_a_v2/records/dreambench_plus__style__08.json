@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/08",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/08",
+  "identity_term": "desert moonscape",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/08.txt",
+  "label_source_sha256": "cc4689c67673aebdee2dae42e0150715baebe547e7721b87a9b72cba3e9cf51c",
+  "target_prompts": [
+    "A photograph of a barren desert under the soft glow of the moon, showcasing a desert moonscape",
+    "A picture of sand dunes illuminated by moonlight, captured in a desert moonscape style",
+    "An image of a lone cactus silhouetted against a nocturnal desert backdrop, in the style of a desert moonscape",
+    "A painting of a weathered rock formation under a starry sky, depicted in a desert moonscape",
+    "A desert fox prowling silently, bathed in moonlight, in desert moonscape style",
+    "An oasis reflecting the moon's image, surrounded by the quiet desert, in a desert moonscape style",
+    "A caravan of camels trekking through a moonlit desert landscape, captured in desert moonscape style",
+    "An ancient temple rising from the desert sands, bathed in otherworldly moonlight, in a desert moonscape style",
+    "A surreal scene of floating desert islands under a gigantic moon, depicted in desert moonscape style"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/08.jpg",
+  "image_sha256": "b48700bc86719a622b50707642618c55ec8097e499f19a0cfb702d3c0bab1da2",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:48+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A desert moonscape of pale sandy dunes with yucca plants beneath a large full moon rising above blue clouds in a pink sky\"}",
+  "source_caption": "A desert moonscape of pale sandy dunes with yucca plants beneath a large full moon rising above blue clouds in a pink sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:52+09:00",
+  "seconds": 3.58
+}

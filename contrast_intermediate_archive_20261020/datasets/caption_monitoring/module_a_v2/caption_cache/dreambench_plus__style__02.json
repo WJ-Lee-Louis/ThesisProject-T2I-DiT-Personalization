@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds",
+  "identity_term": "sunset",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "eb23fe9e37139759ebbbd32fd479433951d413b87b89b0df14ca02261d110887",
+    "bytes_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+  },
+  "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "fc8ec6600279e083de0a6ed7f6068214f2f76f85536e8e7ccfdd6385140ecca2",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"sunset with a bright sun at the ocean horizon, casting an orange reflection across the waves and wet sand beside a tree-lined headland beneath pink and purple clouds\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

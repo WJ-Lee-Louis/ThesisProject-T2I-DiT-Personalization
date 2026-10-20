@@ -1,0 +1,119 @@
+{
+  "case_id": "169-03",
+  "reference_index": 169,
+  "target_index": 3,
+  "identity_term": "low-poly geometric",
+  "target_prompt": "A digital illustration of a cat, composed of low-poly geometric patterns",
+  "reference_id": "dreambench_plus/style/09",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "a floating forested island with angular trees, rocky cliffs, tents, and a waterfall in low-poly geometric style",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v3",
+    "inputs": {
+      "source_caption": "a floating forested island with angular trees, rocky cliffs, tents, and a waterfall in low-poly geometric style",
+      "target_prompt": "A digital illustration of a cat, composed of low-poly geometric patterns",
+      "identity_term": "low-poly geometric"
+    },
+    "input_sha256": "4dff18bf12d5fd62028aaff3b1c0e81380cf9e5c554d49d63be6b758349b8a98",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+      "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "a floating forested island with angular trees, rocky cliffs, tents, and a waterfall in low-poly geometric style",
+      "identity_term": "low-poly geometric",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+        "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+      },
+      "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a floating forested island with angular trees, rocky cliffs, tents, and a waterfall in low-poly geometric style\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "low-poly geometric",
+      "source_preserved": [
+        "low-poly geometric",
+        "style"
+      ],
+      "source": [
+        {
+          "unit": "depicted floating island and its features",
+          "negative": "low-poly geometric style"
+        }
+      ],
+      "target": [
+        {
+          "unit": "digital illustration representation",
+          "negative": "A cat composed of low-poly geometric patterns"
+        },
+        {
+          "unit": "depicted cat",
+          "negative": "A digital illustration composed of low-poly geometric patterns"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"a floating forested island with angular trees, rocky cliffs, tents, and a waterfall in low-poly geometric style\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "4dff18bf12d5fd62028aaff3b1c0e81380cf9e5c554d49d63be6b758349b8a98",
+        "prompt_version": "joint_contrast_v3",
+        "prompt_sha256": "8107e3eb6c4e65a013a7d17ab44b33d7a464d7fbce756fced93dbc1545520e91",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"low-poly geometric\",\"source_preserved\":[\"low-poly geometric\",\"style\"],\"source\":[{\"unit\":\"depicted floating island and its features\",\"negative\":\"low-poly geometric style\"}],\"target\":[{\"unit\":\"digital illustration representation\",\"negative\":\"A cat composed of low-poly geometric patterns\"},{\"unit\":\"depicted cat\",\"negative\":\"A digital illustration composed of low-poly geometric patterns\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:22:13.875993+00:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/style/09",
+  "benchmark": "dreambench_plus",
+  "category": "style",
+  "subject_id": "style/09",
+  "identity_term": "low-poly geometric",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/09.txt",
+  "label_source_sha256": "a0967a79cc9bc9a5ca5be36cef91a6d9e55cfeb1e26c9e7382e3b3d0c65da934",
+  "target_prompts": [
+    "A photograph of a mountain landscape in a low-poly geometric style",
+    "A painting of a bustling city skyline, rendered in low-poly geometric shapes",
+    "A photo of a serene lake, depicted with crisp low-poly geometric contours",
+    "A digital illustration of a cat, composed of low-poly geometric patterns",
+    "A pine tree depicted with angular, low-poly geometric shapes",
+    "A fox crafted from sharp, low-poly geometric lines",
+    "A portrait of a woman, stylized with low-poly geometric facets",
+    "A mythical phoenix reborn in flames, designed in vibrant low-poly geometric style",
+    "An alien landscape with floating islands, visualized in low-poly geometric form"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/09.jpg",
+  "image_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:49+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs\"}",
+  "source_caption": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:53+09:00",
+  "seconds": 4.19
+}

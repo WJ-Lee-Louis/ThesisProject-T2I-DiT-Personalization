@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface",
+  "identity_term": "ceramic bowl",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "4a7d45a2024efd8f2fc6789dde69058f8ee06d2b598ade7af5e4e701248ef4a7",
+    "bytes_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e"
+  },
+  "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "e72e43e25c9e17f659a0f37f6b32d950b0ee170fac19890fdfd03ea196faad5c",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A ceramic bowl with a cream-colored surface painted with green leafy branches, standing on short feet on a white surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

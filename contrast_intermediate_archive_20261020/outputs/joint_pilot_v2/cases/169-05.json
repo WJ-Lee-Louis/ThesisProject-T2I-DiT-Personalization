@@ -1,0 +1,134 @@
+{
+  "case_id": "169-05",
+  "reference_index": 169,
+  "target_index": 5,
+  "identity_term": "low-poly geometric",
+  "target_prompt": "A fox crafted from sharp, low-poly geometric lines",
+  "reference_id": "dreambench_plus/style/09",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs",
+      "target_prompt": "A fox crafted from sharp, low-poly geometric lines",
+      "identity_term": "low-poly geometric"
+    },
+    "input_sha256": "580a338bf6cb8b97c40de2337de4621c6acdd425c57982393870e234ed339f08",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+      "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs",
+      "identity_term": "low-poly geometric",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "fcfcaa4052938ffe2c4fdb6b67e598d29319763594f4db1a542184f59590cea0",
+        "bytes_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+      },
+      "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "low-poly geometric",
+      "source_preserved": [
+        "low-poly geometric",
+        "landscape"
+      ],
+      "source": [
+        {
+          "unit": "floating forested island",
+          "negative": "low-poly geometric landscape, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs"
+        },
+        {
+          "unit": "angular green and ochre trees",
+          "negative": "low-poly geometric landscape of a floating forested island, with a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs"
+        },
+        {
+          "unit": "small tent",
+          "negative": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, scattered rocks, and a turquoise stream spilling over pale cliffs"
+        },
+        {
+          "unit": "scattered rocks",
+          "negative": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, and a turquoise stream spilling over pale cliffs"
+        },
+        {
+          "unit": "turquoise stream spilling over pale cliffs",
+          "negative": "low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, and scattered rocks"
+        }
+      ],
+      "target": [
+        {
+          "unit": "sharp lines",
+          "negative": "A fox crafted from low-poly geometric lines"
+        },
+        {
+          "unit": "fox crafted from lines",
+          "negative": "sharp, low-poly geometric lines"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "4ac530c7d852bd5da71c30689c4440bfb07096cc028c875b85bcd85135bdbf4a",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "580a338bf6cb8b97c40de2337de4621c6acdd425c57982393870e234ed339f08",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"low-poly geometric\",\"source_preserved\":[\"low-poly geometric\",\"landscape\"],\"source\":[{\"unit\":\"floating forested island\",\"negative\":\"low-poly geometric landscape, with angular green and ochre trees, a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs\"},{\"unit\":\"angular green and ochre trees\",\"negative\":\"low-poly geometric landscape of a floating forested island, with a small tent, scattered rocks, and a turquoise stream spilling over pale cliffs\"},{\"unit\":\"small tent\",\"negative\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, scattered rocks, and a turquoise stream spilling over pale cliffs\"},{\"unit\":\"scattered rocks\",\"negative\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, and a turquoise stream spilling over pale cliffs\"},{\"unit\":\"turquoise stream spilling over pale cliffs\",\"negative\":\"low-poly geometric landscape of a floating forested island, with angular green and ochre trees, a small tent, and scattered rocks\"}],\"target\":[{\"unit\":\"sharp lines\",\"negative\":\"A fox crafted from low-poly geometric lines\"},{\"unit\":\"fox crafted from lines\",\"negative\":\"sharp, low-poly geometric lines\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:31:39.138445+00:00"
+  }
+}

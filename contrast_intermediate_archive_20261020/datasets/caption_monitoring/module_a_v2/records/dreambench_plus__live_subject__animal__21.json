@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/21",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/21",
+  "identity_term": "Siamese cat",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/21.txt",
+  "label_source_sha256": "6175f8a2f58474fb4c3dcf1ba88054530a6ba60a812c839e2240428559bf1207",
+  "target_prompts": [
+    "A photo of a Siamese cat lounging in a sunlit window",
+    "A photograph of a Siamese cat playing with a ball of yarn",
+    "A photo of a Siamese cat perched on a high shelf, gazing curiously down",
+    "A photograph of a Siamese cat napping in a cozy basket",
+    "A watercolor painting of a Siamese cat with bright blue eyes in a tranquil garden",
+    "An anime-style drawing of a Siamese cat engaging in a playful chase with butterflies",
+    "A retro comic strip featuring a mischievous Siamese cat",
+    "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+    "A depiction of a Siamese cat as a mythical guardian, with a shimmering aura and eyes that glow like sapphires under the moonlight"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/21.jpg",
+  "image_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:53+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants\"}",
+  "source_caption": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:58+09:00",
+  "seconds": 4.84
+}

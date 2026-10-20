@@ -1,0 +1,127 @@
+{
+  "case_id": "075-08",
+  "reference_index": 75,
+  "target_index": 8,
+  "identity_term": "space ranger",
+  "target_prompt": "A depiction of a space ranger riding a comet, steering it through a field of asteroids",
+  "reference_id": "dreambench_plus/live_subject/human/00",
+  "known_case": "T17",
+  "selection_role": "known development",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A space ranger in a blue-gray armored suit with green chest armor, standing on a pink rocky landscape with a small orange cat perched behind his shoulder",
+      "target_prompt": "A depiction of a space ranger riding a comet, steering it through a field of asteroids",
+      "identity_term": "space ranger"
+    },
+    "input_sha256": "a467fac7a84eeae5ab46288f8c032139ad11a58a25f186f150491f6a4e4a8617",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "a78ef89abcb9d461bdbbfcc48bfa2f75adf8388ab47a5c34c0c62a02be0a0047",
+      "bytes_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A space ranger in a blue-gray armored suit with green chest armor, standing on a pink rocky landscape with a small orange cat perched behind his shoulder",
+      "identity_term": "space ranger",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "a78ef89abcb9d461bdbbfcc48bfa2f75adf8388ab47a5c34c0c62a02be0a0047",
+        "bytes_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+      },
+      "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A space ranger in a blue-gray armored suit with green chest armor, standing on a pink rocky landscape with a small orange cat perched behind his shoulder\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "space ranger",
+      "source_preserved": [
+        "space ranger",
+        "in a blue-gray armored suit",
+        "with green chest armor"
+      ],
+      "source": [
+        {
+          "unit": "standing pose",
+          "negative": "A space ranger in a blue-gray armored suit with green chest armor on a pink rocky landscape with a small orange cat perched behind his shoulder"
+        },
+        {
+          "unit": "pink rocky landscape placement",
+          "negative": "A space ranger in a blue-gray armored suit with green chest armor standing with a small orange cat perched behind his shoulder"
+        },
+        {
+          "unit": "cat perched behind his shoulder",
+          "negative": "A space ranger in a blue-gray armored suit with green chest armor standing on a pink rocky landscape"
+        }
+      ],
+      "target": [
+        {
+          "unit": "depiction framing",
+          "negative": "A space ranger riding a comet, steering it through a field of asteroids"
+        },
+        {
+          "unit": "comet-riding and steering interaction",
+          "negative": "A depiction of a space ranger"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "450c38ea9c5b5a1272e4b1784802641c6e8ad50f15e0fdcf3449b4f05289f230",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A space ranger in a blue-gray armored suit with green chest armor, standing on a pink rocky landscape with a small orange cat perched behind his shoulder\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "a467fac7a84eeae5ab46288f8c032139ad11a58a25f186f150491f6a4e4a8617",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"space ranger\",\"source_preserved\":[\"space ranger\",\"in a blue-gray armored suit\",\"with green chest armor\"],\"source\":[{\"unit\":\"standing pose\",\"negative\":\"A space ranger in a blue-gray armored suit with green chest armor on a pink rocky landscape with a small orange cat perched behind his shoulder\"},{\"unit\":\"pink rocky landscape placement\",\"negative\":\"A space ranger in a blue-gray armored suit with green chest armor standing with a small orange cat perched behind his shoulder\"},{\"unit\":\"cat perched behind his shoulder\",\"negative\":\"A space ranger in a blue-gray armored suit with green chest armor standing on a pink rocky landscape\"}],\"target\":[{\"unit\":\"depiction framing\",\"negative\":\"A space ranger riding a comet, steering it through a field of asteroids\"},{\"unit\":\"comet-riding and steering interaction\",\"negative\":\"A depiction of a space ranger\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:31:05.398049+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A close-up pencil sketch of a dog with a dark face and lighter floppy ears and coat, facing left against a plain white background",
+  "identity_term": "pencil sketch",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "2d07c4ecda75f3a1d73492a987f70fe1e9464d828d15250454dec257c3a7988c",
+    "bytes_sha256": "0ee305167c7e046ad69888dcbb26b236e8d8330cc9866253bb82ea9a01bc1359"
+  },
+  "input_sha256": "120dbbb96fe0ebf819bdf02d468e7d01735943dbe2fc3017ea8a8bc81dc02bb6",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "120dbbb96fe0ebf819bdf02d468e7d01735943dbe2fc3017ea8a8bc81dc02bb6",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A close-up pencil sketch of a dog with a dark face and lighter floppy ears and coat, facing left against a plain white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

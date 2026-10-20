@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/13",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/13",
+  "identity_term": "polar bear",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/13.txt",
+  "label_source_sha256": "45ab09598e445005c671931e41554de9a47da34d466f16fe8c0ea49bcd2849b5",
+  "target_prompts": [
+    "A photograph of a polar bear lounging on a drifting ice floe in the Arctic sunlight",
+    "A photo of a polar bear playfully tumbling in the fresh snow",
+    "A detailed photograph of a polar bear standing at the edge of an ice cliff, scanning the horizon",
+    "A photo capturing a polar bear swimming underwater, surrounded by bubbles",
+    "An anime-style illustration of a polar bear wearing a scarf and sipping hot chocolate",
+    "A minimalist sketch of a polar bear, outlined against a stark white background",
+    "A vibrant watercolor painting of a polar bear with its cub, nestled in wild arctic flowers",
+    "A polar bear balancing on a thin iceberg, with the Northern Lights shimmering above in the night sky",
+    "A depiction of a polar bear with frosty wings soaring above a frozen landscape dotted with pine trees"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/13.jpg",
+  "image_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:47+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A polar bear with creamy white fur standing upright on snow, one paw raised with its dark pads visible\"}",
+  "source_caption": "A polar bear with creamy white fur standing upright on snow, one paw raised with its dark pads visible",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:50+09:00",
+  "seconds": 2.34
+}

@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A pair of glasses with oversized pink-tinted lenses, gold-colored frames edged with small beads, resting on pale satin fabric",
+  "identity_term": "glasses",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1545,
+    "height": 1545,
+    "rgb_sha256": "2c3822748fea7bbe572d84a7e587d441dde4ca27e2c968d3e305c92b7967bbe4",
+    "bytes_sha256": "0f4ca83b161dbdbcc642235dedfc3c95a3d78f9ad994e2a493b94f4339f6942d"
+  },
+  "input_sha256": "5934700f85232381574f9d861f8b7bc9ec927bb88e1bc0b3a509f68537d94363",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "5934700f85232381574f9d861f8b7bc9ec927bb88e1bc0b3a509f68537d94363",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A pair of glasses with oversized pink-tinted lenses, gold-colored frames edged with small beads, resting on pale satin fabric\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

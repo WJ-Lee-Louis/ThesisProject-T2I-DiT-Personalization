@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A natural wood acoustic guitar with a dark pickguard leaning against a gray sofa beside a window",
+  "identity_term": "guitar",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "f704bab3db947d05aa07b2df50a45fc7f733788f5372b940f438e2228b230705",
+    "bytes_sha256": "7fd1b3a4481e5fd70e1428992c5209cd1812129e4c3ba792339656e76bf9b877"
+  },
+  "input_sha256": "1fb5e94f6892c2effc98dc5811f104de708672bdac0e0ef2606d005b21ef2b5b",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "1fb5e94f6892c2effc98dc5811f104de708672bdac0e0ef2606d005b21ef2b5b",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A natural wood acoustic guitar with a dark pickguard leaning against a gray sofa beside a window\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

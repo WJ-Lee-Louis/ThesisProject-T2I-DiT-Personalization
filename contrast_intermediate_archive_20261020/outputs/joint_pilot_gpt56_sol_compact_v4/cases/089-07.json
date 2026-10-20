@@ -1,0 +1,128 @@
+{
+  "case_id": "089-07",
+  "reference_index": 89,
+  "target_index": 7,
+  "identity_term": "Spider-Man",
+  "target_prompt": "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+  "reference_id": "dreambench_plus/live_subject/human/14",
+  "known_case": "T20",
+  "selection_role": "known development",
+  "source_caption": "Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street with a cathedral in the background",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street with a cathedral in the background",
+      "target_prompt": "Spider-Man weaving a giant web between the moon and Earth, silhouetted against a cosmic backdrop",
+      "identity_term": "Spider-Man"
+    },
+    "input_sha256": "3f51d4181b560ff33a1996efae0da158d78cabbe24a2aa5ca52671f7b973b05c",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "a737b41318825538a281205c679294362712cec7ded2a0bef450e3dfbb097bb8",
+      "bytes_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street with a cathedral in the background",
+      "identity_term": "Spider-Man",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "a737b41318825538a281205c679294362712cec7ded2a0bef450e3dfbb097bb8",
+        "bytes_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859"
+      },
+      "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street with a cathedral in the background\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Spider-Man",
+      "source_preserved": [
+        "Spider-Man",
+        "red and dark blue",
+        "web-patterned suit"
+      ],
+      "source": [
+        {
+          "unit": "swinging action",
+          "negative": "Spider-Man in a red and dark blue web-patterned suit, above a colorful city street with a cathedral in the background"
+        },
+        {
+          "unit": "colorful city street placement",
+          "negative": "Spider-Man in a red and dark blue web-patterned suit, swinging with a cathedral in the background"
+        },
+        {
+          "unit": "cathedral background",
+          "negative": "Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street"
+        }
+      ],
+      "target": [
+        {
+          "unit": "weaving a giant web between the moon and Earth",
+          "negative": "Spider-Man silhouetted against a cosmic backdrop"
+        },
+        {
+          "unit": "cosmic silhouette and backdrop",
+          "negative": "Spider-Man weaving a giant web between the moon and Earth"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "07d047f4b4a60e8c598f10120b3f203d2e0ff0064ef29d0e5b82a74e9e8370dd",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street with a cathedral in the background\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "3f51d4181b560ff33a1996efae0da158d78cabbe24a2aa5ca52671f7b973b05c",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Spider-Man\",\"source_preserved\":[\"Spider-Man\",\"red and dark blue\",\"web-patterned suit\"],\"source\":[{\"unit\":\"swinging action\",\"negative\":\"Spider-Man in a red and dark blue web-patterned suit, above a colorful city street with a cathedral in the background\"},{\"unit\":\"colorful city street placement\",\"negative\":\"Spider-Man in a red and dark blue web-patterned suit, swinging with a cathedral in the background\"},{\"unit\":\"cathedral background\",\"negative\":\"Spider-Man in a red and dark blue web-patterned suit, swinging above a colorful city street\"}],\"target\":[{\"unit\":\"weaving a giant web between the moon and Earth\",\"negative\":\"Spider-Man silhouetted against a cosmic backdrop\"},{\"unit\":\"cosmic silhouette and backdrop\",\"negative\":\"Spider-Man weaving a giant web between the moon and Earth\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:25:03.541347+00:00"
+  }
+}

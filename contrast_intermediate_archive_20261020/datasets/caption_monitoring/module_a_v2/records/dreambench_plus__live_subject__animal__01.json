@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/01",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/01",
+  "identity_term": "stork",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/01.txt",
+  "label_source_sha256": "267f41aa491b142d8f6f8edab93a38db733bf6eff5769e5ce111298ed72d2fd3",
+  "target_prompts": [
+    "A photo of a stork gracefully landing on a serene lake",
+    "A photograph of a stork nesting atop an ancient bell tower",
+    "A photo of a stork flying against a clear blue sky",
+    "A photograph of a stork standing still in a lush, green meadow",
+    "A watercolor painting of a stork in mid-flight, wings spread wide",
+    "An anime-style drawing of a stork under moonlight",
+    "A minimalist sketch of a stork standing on one leg by a riverbank",
+    "A stork carrying a colorful tapestry in its beak, weaving through an enchanted forest",
+    "A stork with glowing wings dancing on the waves of the northern lights"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/01.jpg",
+  "image_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:32+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A stork with white plumage, black wings, a long red bill, and long red legs standing on the edge of a terracotta-tiled rooftop against a clear blue sky\"}",
+  "source_caption": "A stork with white plumage, black wings, a long red bill, and long red legs standing on the edge of a terracotta-tiled rooftop against a clear blue sky",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:36+09:00",
+  "seconds": 4.14
+}

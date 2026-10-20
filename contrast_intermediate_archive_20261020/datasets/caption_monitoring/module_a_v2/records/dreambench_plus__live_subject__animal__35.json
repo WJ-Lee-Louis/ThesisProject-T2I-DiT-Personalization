@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/35",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/35",
+  "identity_term": "tiger",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/35.txt",
+  "label_source_sha256": "c3e5fe9113e75b7599fc710bd5a71f17f5aa45bac26a7de5a121646b8f855d87",
+  "target_prompts": [
+    "A photo of a tiger stalking its prey in a dense jungle",
+    "A photograph of a tiger resting by a serene lake at sunrise",
+    "A photo of a tiger playing with its cubs on a grassy meadow",
+    "A photograph of a tiger leaping over a fallen tree during a chase",
+    "A watercolor painting of a tiger with a backdrop of autumn leaves in a stylized brush stroke",
+    "An anime-style illustration of a tiger prowling under a full moon",
+    "A retro-style comic depiction of a tiger lounging in a lavish palace garden",
+    "A tiger with a coat of luminous stars against a twilight sky",
+    "A tiger pacing the decks of an ancient pirate ship as it sails through misty waters"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/35.jpg",
+  "image_sha256": "ebe9e985a0ac51823bd2e83b189e315ed288737e883fc9f73a109200be8a4b5b",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:05+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A tiger with orange fur, black stripes, and a white underside walking through dry grass in a wooded area\"}",
+  "source_caption": "A tiger with orange fur, black stripes, and a white underside walking through dry grass in a wooded area",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:11+09:00",
+  "seconds": 5.8
+}

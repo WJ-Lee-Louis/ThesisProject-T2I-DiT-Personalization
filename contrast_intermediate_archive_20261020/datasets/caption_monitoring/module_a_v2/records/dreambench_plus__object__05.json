@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/05",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/05",
+  "identity_term": "minion",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/05.txt",
+  "label_source_sha256": "1f6aa65dcea83b46fcb4db616393edb0eacacac58c1b7c9fd599bd55d6fbdd5b",
+  "target_prompts": [
+    "A photo of a minion in a bustling city street, trying to hail a taxi",
+    "A photograph of a minion gardening, wearing a large sunhat",
+    "A minion at a beach building a sandcastle, captured in a sunny photo",
+    "A photo of a minion reading a giant book, surrounded by autumn leaves",
+    "An anime-style illustration of a minion dressed as a samurai",
+    "A minimalist drawing of a minion sitting on a moonlit bench",
+    "A retro-style depiction of a minion operating an old-fashioned film camera",
+    "A minion floating with a cluster of colorful balloons over a carnival",
+    "A depiction of a minion riding a bicycle on a tightrope above a city skyline"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/05.jpg",
+  "image_sha256": "0269cded348e8d7119b4047cd49d8ce2f5b3978c2c0ce8f7849c438e4a573a7b",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:44+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A yellow minion figurine with one eye in a silver goggle, wearing a black-and-gray striped outfit and black gloves, standing on a black container with a yellow label\"}",
+  "source_caption": "A yellow minion figurine with one eye in a silver goggle, wearing a black-and-gray striped outfit and black gloves, standing on a black container with a yellow label",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:48+09:00",
+  "seconds": 3.94
+}

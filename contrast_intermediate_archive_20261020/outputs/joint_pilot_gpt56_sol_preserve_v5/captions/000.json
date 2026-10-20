@@ -1,0 +1,35 @@
+{
+  "caption_schema_version": 2,
+  "caption_policy_version": "identity_np_preserve_v3",
+  "text": "A magenta backpack with a large zippered front pocket, gold-toned zippers, and two character pins on a rocky ledge",
+  "preserve": [
+    "magenta",
+    "with a large zippered front pocket",
+    "gold-toned zippers",
+    "two character pins"
+  ],
+  "identity_term": "backpack",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1280,
+    "height": 1280,
+    "rgb_sha256": "115eb3e9835af71ccfaa13c79d8548629efcd7baaf5eea8b2c2e775380e96f9a",
+    "bytes_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c"
+  },
+  "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "1ef682d577937f86d00e09a73b62958951203ad2dfaf1a86baf631f43dbdddb3",
+    "prompt_version": "caption_np_v4",
+    "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A magenta backpack with a large zippered front pocket, gold-toned zippers, and two character pins on a rocky ledge\",\"preserve\":[\"magenta\",\"with a large zippered front pocket\",\"gold-toned zippers\",\"two character pins\"]}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

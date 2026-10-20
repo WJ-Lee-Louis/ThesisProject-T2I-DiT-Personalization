@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/22",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/22",
+  "identity_term": "corgi",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/22.txt",
+  "label_source_sha256": "8a4d20dd077bbc339444edf3b1e8e7065118760d3405ffdc5db9a75c8764538a",
+  "target_prompts": [
+    "A photograph of a corgi playing fetch in a sunny park",
+    "A photo of a corgi napping on a cozy blanket indoors",
+    "A photograph of a corgi splashing through a puddle on a rainy day",
+    "A photo of a corgi sitting patiently in a basket full of wildflowers",
+    "A cartoon style illustration of a corgi dressed as a superhero",
+    "An anime-style drawing of a corgi with oversized glasses reading a book",
+    "A retro-style depiction of a corgi in a classic car during a road trip",
+    "A corgi flying with tiny wings over a vibrant rainbow",
+    "A corgi navigating a tiny sailboat in a teacup sea"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/22.jpg",
+  "image_sha256": "015c9d3fa79095a1c8d13b102cba5fd1079f26ce71827369c12c9e60bfdaab1c",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:53+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A corgi with tan fur, a cream muzzle and chest, and large upright ears, facing forward with its mouth open and pink tongue out against a pale lavender background with pink flowers along the bottom\"}",
+  "source_caption": "A corgi with tan fur, a cream muzzle and chest, and large upright ears, facing forward with its mouth open and pink tongue out against a pale lavender background with pink flowers along the bottom",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:57+09:00",
+  "seconds": 3.62
+}

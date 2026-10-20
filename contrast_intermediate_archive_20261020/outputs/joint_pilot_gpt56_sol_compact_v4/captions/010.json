@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_compact_v2",
+  "text": "A fluffy orange-and-white dog with upright ears, sitting with its mouth open and tongue out",
+  "identity_term": "dog",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 780,
+    "height": 780,
+    "rgb_sha256": "32237cd40d20d145fe21d2b52d2ba0a489b29b8a175eeea5cfb859095678ff26",
+    "bytes_sha256": "daad1959b4754734000bcb3699d616876f49797960a2c2b36915503fd5a1c1e5"
+  },
+  "input_sha256": "124b2eea74c0b2f33ad9a8e7d69140f94320bd7b5f5dc07aaf3907632624f80a",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "124b2eea74c0b2f33ad9a8e7d69140f94320bd7b5f5dc07aaf3907632624f80a",
+    "prompt_version": "caption_np_v3",
+    "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A fluffy orange-and-white dog with upright ears, sitting with its mouth open and tongue out\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

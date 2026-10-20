@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/26",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/26",
+  "identity_term": "cotton-top tamarin",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/26.txt",
+  "label_source_sha256": "1414d552b1a600a7d854c277a81907d5f9ba6c4258cd997193565d9d2a32b022",
+  "target_prompts": [
+    "A photograph of a cotton-top tamarin perched delicately on a leafy branch in a dense forest",
+    "A photo of a cotton-top tamarin grooming its mate in the dappled sunlight of the jungle",
+    "A photograph of a playful cotton-top tamarin leaping between tree trunks",
+    "A photo of a cotton-top tamarin nibbling on a piece of fruit while sitting on a moss-covered log",
+    "A watercolor painting of a cotton-top tamarin with its striking white mane fluffed up",
+    "An anime-style illustration of a cotton-top tamarin swinging from a vine",
+    "A minimalist sketch of a cotton-top tamarin, captured in simple, elegant lines",
+    "A cotton-top tamarin wearing a tiny astronaut helmet, floating in space beside the International Space Station",
+    "A scene depicting a cotton-top tamarin with luminescent fur, guiding lost travelers in a mystical forest at night"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/26.jpg",
+  "image_sha256": "a15947217a9064cae231f93d3bbc6db0e5cc594e4345309504d012cf65467370",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:58+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A cotton-top tamarin with a fluffy white crest and chest, a dark face, and reddish-brown fur, perched on a branch against green foliage\"}",
+  "source_caption": "A cotton-top tamarin with a fluffy white crest and chest, a dark face, and reddish-brown fur, perched on a branch against green foliage",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:01+09:00",
+  "seconds": 3.47
+}

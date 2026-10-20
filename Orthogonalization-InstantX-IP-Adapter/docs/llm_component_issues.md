@@ -1,5 +1,7 @@
 # LLM component 분석: 구현에 남길 문제와 판단 근거
 
+> **과거 component 경로의 이력 (2026-10-18 snapshot).** 아래의 “현재”, “반영”, partition/span/subset 정책은 당시 legacy 구현을 가리킨다. 새 공동 B의 지시나 정답이 아니다. 후속 승인된 style head 보존·의존 묶음 정책은 [설계 §16](contrast_refactor_design.md)을 따른다. 현재 실행은 [semantic pipeline](semantic_pipeline.md), 사례별 새 수동 기대값과 미해결 scope는 [설계 §7](contrast_refactor_design.md#7-projection-문제-사례의-재분류와-새-기대-출력)을 따른다. 원본 응답과 expected_subset은 비교 이력으로 보존하며 새 API 관측으로 취급하지 않는다.
+
 2026-10-18 정리. 2026-10-10~14의 caption·source/target 분석 기록에서 이후 구현에 필요한 사항만 통합했다. 실행별 전체 응답과 성공률 표는 생략했다. 현재 구현은 [semantic pipeline](semantic_pipeline.md), 정확한 system prompt와 few-shot은 [공유 프롬프트](prompts/llm_modules_share.md)를 기준으로 읽는다.
 
 ## 현재 반영된 대응과 회귀를 막아야 할 문제

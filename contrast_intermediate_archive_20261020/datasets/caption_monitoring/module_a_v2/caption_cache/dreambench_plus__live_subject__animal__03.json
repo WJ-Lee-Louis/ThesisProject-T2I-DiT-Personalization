@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A horse with a chestnut coat, a long light tan mane, and a broad white blaze, shown in close-up against a pale blue sky",
+  "identity_term": "horse",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "f4f9e1a33bcf888197e880456bb091d14abd067c1b0fe38065d97fd6df9ae672",
+    "bytes_sha256": "4e48caaa82f5239626e09867987af12fa886104e71e8c7af4f542d03c03f7df1"
+  },
+  "input_sha256": "75f175dd0735ff13ec66cc648f550b589e0e09291c971f7e0dc4f9f501abf103",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "75f175dd0735ff13ec66cc648f550b589e0e09291c971f7e0dc4f9f501abf103",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A horse with a chestnut coat, a long light tan mane, and a broad white blaze, shown in close-up against a pale blue sky\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

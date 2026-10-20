@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A penguin with a black head and white body, standing with its flippers spread on snow-covered ice",
+  "identity_term": "penguin",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "ecdce8e04328c1f090d41549bb1c0ce30ec65805561f2ee56c4dca7037228b71",
+    "bytes_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152"
+  },
+  "input_sha256": "ce1043d9c2576ab078a4b0fe342151e97edac5dc15b193fe2c727c54c2e852c0",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "ce1043d9c2576ab078a4b0fe342151e97edac5dc15b193fe2c727c54c2e852c0",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A penguin with a black head and white body, standing with its flippers spread on snow-covered ice\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

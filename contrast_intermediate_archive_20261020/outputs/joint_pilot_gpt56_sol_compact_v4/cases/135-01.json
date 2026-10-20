@@ -1,0 +1,124 @@
+{
+  "case_id": "135-01",
+  "reference_index": 135,
+  "target_index": 1,
+  "identity_term": "Rolls-Royce hood ornament",
+  "target_prompt": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+  "reference_id": "dreambench_plus/object/40",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "source_caption": "A polished silver Rolls-Royce hood ornament with swept-back wings mounted above the front grille",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "A polished silver Rolls-Royce hood ornament with swept-back wings mounted above the front grille",
+      "target_prompt": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its polished surface",
+      "identity_term": "Rolls-Royce hood ornament"
+    },
+    "input_sha256": "8160ffe5e0c725edc7ab709237b68b504aa3741f7cc5ed81a28d3de40a907d79",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+      "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "A polished silver Rolls-Royce hood ornament with swept-back wings mounted above the front grille",
+      "identity_term": "Rolls-Royce hood ornament",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+        "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+      },
+      "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A polished silver Rolls-Royce hood ornament with swept-back wings mounted above the front grille\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Rolls-Royce hood ornament",
+      "source_preserved": [
+        "Rolls-Royce hood ornament",
+        "polished silver",
+        "swept-back wings"
+      ],
+      "source": [
+        {
+          "unit": "mounting above the front grille",
+          "negative": "A polished silver Rolls-Royce hood ornament with swept-back wings"
+        }
+      ],
+      "target": [
+        {
+          "unit": "photograph representation",
+          "negative": "A Rolls-Royce hood ornament with raindrops beading on its polished surface"
+        },
+        {
+          "unit": "raindrops beading on the surface",
+          "negative": "A photograph of a Rolls-Royce hood ornament with a polished surface"
+        },
+        {
+          "unit": "polished surface",
+          "negative": "A photograph of a Rolls-Royce hood ornament with raindrops beading on its surface"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A polished silver Rolls-Royce hood ornament with swept-back wings mounted above the front grille\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "8160ffe5e0c725edc7ab709237b68b504aa3741f7cc5ed81a28d3de40a907d79",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Rolls-Royce hood ornament\",\"source_preserved\":[\"Rolls-Royce hood ornament\",\"polished silver\",\"swept-back wings\"],\"source\":[{\"unit\":\"mounting above the front grille\",\"negative\":\"A polished silver Rolls-Royce hood ornament with swept-back wings\"}],\"target\":[{\"unit\":\"photograph representation\",\"negative\":\"A Rolls-Royce hood ornament with raindrops beading on its polished surface\"},{\"unit\":\"raindrops beading on the surface\",\"negative\":\"A photograph of a Rolls-Royce hood ornament with a polished surface\"},{\"unit\":\"polished surface\",\"negative\":\"A photograph of a Rolls-Royce hood ornament with raindrops beading on its surface\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:25:13.649351+00:00"
+  }
+}

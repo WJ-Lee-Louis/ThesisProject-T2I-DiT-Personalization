@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A blue tin robot with a box-shaped head, spring antenna, round eyes, red feet, and raised claw-like arms, standing against a plain light background",
+  "identity_term": "robot",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "3bfa19fc3c1ba6de909e8d54049d182bfbdc72f928d55ca2445081c786bd23bd",
+    "bytes_sha256": "f98cc5cfa92e7753235b3535d76934e3d859b68d1f9ced7b997ef4ca3d21e02f"
+  },
+  "input_sha256": "90795503dd59ffdb5173672b253d51448c9e189d222203dcbeac68c8b507f07c",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "90795503dd59ffdb5173672b253d51448c9e189d222203dcbeac68c8b507f07c",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A blue tin robot with a box-shaped head, spring antenna, round eyes, red feet, and raised claw-like arms, standing against a plain light background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

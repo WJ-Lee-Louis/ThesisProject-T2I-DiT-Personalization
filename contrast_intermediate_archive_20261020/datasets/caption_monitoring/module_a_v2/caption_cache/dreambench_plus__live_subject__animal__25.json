@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A Sphynx cat with pinkish hairless skin, prominent wrinkles, and large upright ears, shown in close-up against a dark indoor background",
+  "identity_term": "Sphynx cat",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "af4bfdfa28926c5b6bc0d930b943d6fd9b5c764866ae6a4ade172b31750d4dcd",
+    "bytes_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897"
+  },
+  "input_sha256": "6bc7de9f3defdbda8ca415e6dbcc26219890ce8d3f7f6245c743907543b2f3ba",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "6bc7de9f3defdbda8ca415e6dbcc26219890ce8d3f7f6245c743907543b2f3ba",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A Sphynx cat with pinkish hairless skin, prominent wrinkles, and large upright ears, shown in close-up against a dark indoor background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

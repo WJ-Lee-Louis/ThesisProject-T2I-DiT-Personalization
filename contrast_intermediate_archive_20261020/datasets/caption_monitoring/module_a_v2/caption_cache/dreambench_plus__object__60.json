@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A snare drum with a clear head and shell, chrome rims and hardware, and diagonal snare wires, resting on a white surface",
+  "identity_term": "snare drum",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "bbb2a4ff4e3a1576f9a1d3b06c41c2418ab84db0d5302fd0112ca823abf1e56d",
+    "bytes_sha256": "0aa0582800d4aeb1dd9458a6569db5c1f124a6efaa3568eeb9b10b03c682e4f3"
+  },
+  "input_sha256": "a0d7cc8670971e3bd85cffaf6de296472794700c068883c3d8d5fd7a5d5b7cf8",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "a0d7cc8670971e3bd85cffaf6de296472794700c068883c3d8d5fd7a5d5b7cf8",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A snare drum with a clear head and shell, chrome rims and hardware, and diagonal snare wires, resting on a white surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

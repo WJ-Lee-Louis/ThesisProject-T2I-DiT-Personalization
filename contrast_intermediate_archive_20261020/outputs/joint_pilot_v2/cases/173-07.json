@@ -1,0 +1,112 @@
+{
+  "case_id": "173-07",
+  "reference_index": 173,
+  "target_index": 7,
+  "identity_term": "cosmic nebula",
+  "target_prompt": "A mythical phoenix rising from a cosmic nebula",
+  "reference_id": "dreambench_plus/style/13",
+  "known_case": null,
+  "selection_role": "additional benchmark probe",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars",
+      "target_prompt": "A mythical phoenix rising from a cosmic nebula",
+      "identity_term": "cosmic nebula"
+    },
+    "input_sha256": "70a0410e9824ebd69ed4abebb8da1e8afbf83b2977e584cd294774a90d4f2c30",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "d70aa32d7863c7849132d2fb4ee697dac479ab76d42fe6e5cd364eeafaf77247",
+      "bytes_sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars",
+      "identity_term": "cosmic nebula",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "d70aa32d7863c7849132d2fb4ee697dac479ab76d42fe6e5cd364eeafaf77247",
+        "bytes_sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d"
+      },
+      "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "cosmic nebula",
+      "source_preserved": [
+        "cosmic nebula",
+        "vivid blue and teal clouds",
+        "dark dust lanes",
+        "orange-yellow edges",
+        "scattered stars"
+      ],
+      "source": [],
+      "target": [
+        {
+          "unit": "phoenix rising from the nebula",
+          "negative": "A cosmic nebula"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "44bcd8e8e40a23ca489603dd8837c3b79df5bf723284259bfa36165b725c5a84",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"cosmic nebula with vivid blue and teal clouds, dark dust lanes, orange-yellow edges, and scattered stars\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "70a0410e9824ebd69ed4abebb8da1e8afbf83b2977e584cd294774a90d4f2c30",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"cosmic nebula\",\"source_preserved\":[\"cosmic nebula\",\"vivid blue and teal clouds\",\"dark dust lanes\",\"orange-yellow edges\",\"scattered stars\"],\"source\":[],\"target\":[{\"unit\":\"phoenix rising from the nebula\",\"negative\":\"A cosmic nebula\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:32:05.379179+00:00"
+  }
+}

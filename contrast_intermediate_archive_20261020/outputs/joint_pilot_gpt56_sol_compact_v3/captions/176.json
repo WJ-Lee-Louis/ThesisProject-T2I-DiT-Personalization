@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_compact_v2",
+  "text": "a rocky mountain landscape with sparse shrubs and distant blue ridges in watercolor sketch",
+  "identity_term": "watercolor sketch",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "61d02b201c0ea76545c822309a66a0787b0af72b15bff7e2669d4c17e4812340",
+    "bytes_sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f"
+  },
+  "input_sha256": "310fb726d91734b49e509d759bd4f22bba9d2e842b76541399fb1a6f0333afaf",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-5.6-sol",
+    "input_sha256": "310fb726d91734b49e509d759bd4f22bba9d2e842b76541399fb1a6f0333afaf",
+    "prompt_version": "caption_np_v3",
+    "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"a rocky mountain landscape with sparse shrubs and distant blue ridges in watercolor sketch\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

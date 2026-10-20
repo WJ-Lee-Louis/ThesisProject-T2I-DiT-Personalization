@@ -2,19 +2,19 @@
 
 The explicit-identity/free-text pipeline is available through `--identity-term`
 in `modal_inference.py` and `inference.generate_semantic_png_bytes`. It supports
-optional vision captioning, arbitrary semantic components, source/target/joint
-projection, injectable LLM providers, and cached analyses. See
-[the analysis, design, and usage report](docs/semantic_pipeline.md).
+optional vision captioning, one joint source/target contrast call, local-only
+projection, injectable LLM providers, and reference-bound schema-3 caches. See
+[the pipeline and migration guide](docs/semantic_pipeline.md).
 
-Source analysis is now target-aware: additional reference appearance is retained
-unless the target changes that property. Target decomposition keeps its existing
-explicit-identity policy. New source caches record the exact target and policy;
-legacy caches retain their previous removal behavior. Full prompts and examples
-are in [the module prompt reference](docs/prompts/llm_modules_share.md).
+Source appearance and characteristic contents are retained unless the target
+explicitly changes that property. Each original text is contrasted against B's
+individual negative; generation still receives the original target. New runtime
+prompts and examples are in `contrast_prompt.py`; analysis contracts are in
+`semantic_contrasts.py`. Old component caches are not silently upgraded.
 
 Training-free research overlay for source-, target-, and source-target
 pooled-space projection, now extended to explicit identity concepts and
-arbitrary semantic component lists.
+joint local contrast lists.
 
 - SigLIP pooled-space content projection
 - FLUX single-stream direct IP-to-text residual gate
@@ -159,6 +159,8 @@ category, and semantic factors.
 
 Start with [the current semantic pipeline](docs/semantic_pipeline.md) and
 [the shared LLM prompts and input/output contract](docs/prompts/llm_modules_share.md).
+English runtime prompts with Korean translations: [Module A](docs/prompts/module_a_caption_system_prompt.md) / [Module B](docs/prompts/module_b_contrast_system_prompt.md).
+Full GPT-5.6 Sol preparation: `python scripts/run_full_semantic_benchmark.py --run`. See [the benchmark preparation contract](datasets/semantic_benchmark/README.md). Intermediate pilots have been removed from the active project; original benchmark and baseline research data remain.
 
 For future implementation work, read
 [LLM component analysis issues](docs/llm_component_issues.md) and
@@ -170,11 +172,15 @@ intermediate response tables, and verification-summary JSON files were removed.
 
 Superseded design drafts, obsolete 9/16-prompt batch guides, duplicate LLM
 prompt/schema documents, and Markdown renderings of existing JSONL annotations
-have been removed. Runtime prompts and schemas remain in `semantic_components.py`
-and `source_component_prompt.py`.
+have been removed. Current prompts and schemas are in `contrast_prompt.py`.
+`semantic_components.py` and `source_component_prompt.py` retain legacy partition APIs.
 
 The retained 0903 method and execution guides explain the implemented legacy
 class-projection ablations. The benchmark source ledger, benchmark manifests,
 source captions, annotation JSONL, generated images, per-image diagnostics, metric
 scores, and `run_history/` records remain available for reproducibility and
 comparisons with the new pipeline.
+
+The current caption API returns `source_caption` and `preserve` (additional source phrases, excluding identity). Manual captions require `preserve` in Python or `--preserve-json` in Modal; `[]` explicitly protects identity only. Caption schema 2 and contrast schema 4 reject older caches. See [the current semantic pipeline](docs/semantic_pipeline.md).
+
+For a non-subject style/medium/scene concept, A now returns `preserve: []`; identity remains separately protected. Caption details are not automatically protected. Subject identities retain the appearance/content policy.

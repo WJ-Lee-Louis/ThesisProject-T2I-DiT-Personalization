@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/04",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/04",
+  "identity_term": "beer can",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/04.txt",
+  "label_source_sha256": "e673c2fcdfc260a8a2f5fea0f6427159fdf67969ef4deeb4a0a8b20456064f3c",
+  "target_prompts": [
+    "A photograph of a beer can left on a rustic wooden table in a dimly lit tavern",
+    "A photo of a beer can on a sunny beach with sunglasses resting beside it",
+    "A detailed photo of a beer can with condensation beads against a colorful sunset backdrop",
+    "A photo of a beer can surrounded by a circle of international currency, depicting global influence",
+    "An anime-style illustration of a beer can with vibrant, glowing colors under neon lights",
+    "A watercolor painting of a beer can nestled in a bed of wildflowers",
+    "A retro-style drawing of a classic beer can on a vintage car dashboard",
+    "A beer can transforming into a rocket, blasting off into a starry night sky",
+    "A magical beer can that pours an endless stream of golden liquid, forming a river through a mystical forest"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/04.jpg",
+  "image_sha256": "be4cd162f6db231c1c78cc58cabec3126d57f5732604f0fe87c7f5e9665f348b",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:42+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A blue beer can with large white “BUD LIGHT” lettering standing upright on a weathered gray surface against a green background\"}",
+  "source_caption": "A blue beer can with large white “BUD LIGHT” lettering standing upright on a weathered gray surface against a green background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:45+09:00",
+  "seconds": 2.8
+}

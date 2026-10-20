@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge",
+  "identity_term": "Rolls-Royce hood ornament",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "b15f63f4b2983e8870866b840ab959dc5834e699b04cbfd6777fd24e1a0951aa",
+    "bytes_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+  },
+  "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "77db70f9d76966ca77dc984fd73a3e1af7d38a088bbc1608529275a6f28c7915",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A Rolls-Royce hood ornament, a polished metal winged figure mounted on the reflective hood above the grille and badge\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

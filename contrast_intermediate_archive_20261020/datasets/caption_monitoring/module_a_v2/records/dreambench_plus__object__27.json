@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/27",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/27",
+  "identity_term": "mug",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/27.txt",
+  "label_source_sha256": "8aa525c5c7dfbe8219689313f04e95b72945cb903dd6ff3671d596f8ef0e1e5c",
+  "target_prompts": [
+    "A photograph of a mug steaming on a rainy window sill",
+    "A photo of a mug filled with hot chocolate, topped with whipped cream",
+    "A detailed photograph of a mug on an old wooden desk surrounded by books",
+    "A photo of a mug held by hands wrapped in a cozy knitted sweater",
+    "A watercolor painting of a mug sitting beside a blooming cactus",
+    "An anime-style drawing of a mug with a cute, smiling face",
+    "A retro-style illustration of a mug on a patterned tablecloth in a 1950s kitchen",
+    "A mug transforming into a portal to a miniature fantasy world inside it",
+    "A mug orbiting around a planet in space, filled with swirling galaxy colors"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/27.jpg",
+  "image_sha256": "6db5fcc1cdbf6bb141093adaebaa1b29d1a40bc7e3ebe823022ca962c1a7d1d4",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:05+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A glossy ceramic mug with a cylindrical body fading from off-white at the rim to deep red at the base and a matching handle, resting on a light-colored surface\"}",
+  "source_caption": "A glossy ceramic mug with a cylindrical body fading from off-white at the rim to deep red at the base and a matching handle, resting on a light-colored surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:09+09:00",
+  "seconds": 3.55
+}

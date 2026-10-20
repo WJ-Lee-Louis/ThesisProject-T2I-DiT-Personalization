@@ -1,3 +1,4 @@
+# Legacy partition research tool; not used by the joint local generation path.
 """Analyze all 25 DreamBench templates for two subjects; write Markdown only."""
 from __future__ import annotations
 

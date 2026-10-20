@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A tree with a broad, rounded green canopy and a thick brown trunk spreading into exposed roots",
+  "identity_term": "tree",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "2a01e67022709e1d2bb5de74755ff8ce42a34af81c442c135f56fd6c8a450375",
+    "bytes_sha256": "7e1ff0b4902008e9a1e70a8354fcae73cd2ca63bb4268307448d706ce0b325ca"
+  },
+  "input_sha256": "832f73bd4a540ff1d8f8f01a78006db27a5f8b32fd4ae5bea4e9b1d37dae7fe4",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "832f73bd4a540ff1d8f8f01a78006db27a5f8b32fd4ae5bea4e9b1d37dae7fe4",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A tree with a broad, rounded green canopy and a thick brown trunk spreading into exposed roots\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

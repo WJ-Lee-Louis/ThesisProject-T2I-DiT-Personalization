@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/11",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/11",
+  "identity_term": "basketball player",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/11.txt",
+  "label_source_sha256": "57360dbbc2bcbb13936f8ca08363db5163406d12f6bcb9796ebdf61f9a3fb714",
+  "target_prompts": [
+    "A photo of a basketball player shooting a basket during a sunset game",
+    "A photograph of a basketball player dribbling on an urban street court",
+    "A photo of a basketball player sitting on the bench, looking thoughtful during a game pause",
+    "A photograph of a basketball player in mid-air, about to dunk in a crowded stadium",
+    "A watercolor painting of a basketball player in action, with exaggerated motion blur",
+    "An anime-style illustration of a basketball player executing a perfect three-point shot",
+    "A retro-style digital art of a basketball player in a classic 80s basketball uniform",
+    "A basketball player leaping over a high-rise building to score a basket among the clouds",
+    "A depiction of a basketball player balancing on a giant basketball floating on the ocean"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/11.jpg",
+  "image_sha256": "438e8569d63cea47e5ec2f821022c20cf2ce6dab6775b3e3d0d9af140d27cb91",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:27+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A basketball player in a dark Cavaliers jersey with red and gold trim and white leg sleeves, crouched low while controlling a basketball against a dark background\"}",
+  "source_caption": "A basketball player in a dark Cavaliers jersey with red and gold trim and white leg sleeves, crouched low while controlling a basketball against a dark background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:32+09:00",
+  "seconds": 4.31
+}

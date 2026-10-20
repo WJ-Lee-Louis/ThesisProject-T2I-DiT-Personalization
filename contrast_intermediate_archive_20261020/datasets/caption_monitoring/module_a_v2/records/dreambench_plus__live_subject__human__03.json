@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/human/03",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/human",
+  "subject_id": "live_subject/human/03",
+  "identity_term": "girl",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/human/03.txt",
+  "label_source_sha256": "cb7537991d6150e62b83a271dd0b69a8d5fdb16d8c43235f3885e6ad8ead60b6",
+  "target_prompts": [
+    "A photograph of a girl walking through a bustling market street, carrying a basket of fresh fruit",
+    "A photo of a girl reading a newspaper in a cozy, sunlit corner of a cafe",
+    "A photograph of a girl planting flowers in a vibrant garden",
+    "A photo of a girl gazing at a starry sky from a mountain viewpoint",
+    "A stylized ink drawing of a girl dressed in 1920s attire, complete with a flapper dress and headband",
+    "An anime-style depiction of a girl flying with a pair of glowing wings in a fantasy sky",
+    "A retro-style digital illustration of a girl driving a classic convertible along a coastal road",
+    "A girl weaving a tapestry that depicts the seasons changing, each thread shimmering with its own light",
+    "A surreal image of a girl balancing on a tightrope between two skyscrapers, with the city bustling below her"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/03.jpg",
+  "image_sha256": "da781bf6d35107afde9bab3410c62a0a8f235fecd95a16a6dc45d6ea2cf881a8",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:28:19+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A girl with pale skin, short dark hair, and bright pink eyes, wearing a black strappy top, dark trousers, gloves, and boots, posed with one knee raised while holding an oversized black mechanical weapon with glowing orange cylinders and blue accents against a dark, ember-speckled background\"}",
+  "source_caption": "A girl with pale skin, short dark hair, and bright pink eyes, wearing a black strappy top, dark trousers, gloves, and boots, posed with one knee raised while holding an oversized black mechanical weapon with glowing orange cylinders and blue accents against a dark, ember-speckled background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:28:23+09:00",
+  "seconds": 4.05
+}

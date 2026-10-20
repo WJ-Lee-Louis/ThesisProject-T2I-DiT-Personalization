@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A vintage camera with a cream-colored body, black textured panels, a round lens and a wrist strap, resting on a brown surface",
+  "identity_term": "vintage camera",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "5aaee3680e661860ec0cdf2e69db436c57ec90930f7aab59add24ed43cd96d47",
+    "bytes_sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29"
+  },
+  "input_sha256": "004c589d6b79e8920b9490c11f961d1e055ab0d9be7cc1f80246f489ece0e585",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "004c589d6b79e8920b9490c11f961d1e055ab0d9be7cc1f80246f489ece0e585",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A vintage camera with a cream-colored body, black textured panels, a round lens and a wrist strap, resting on a brown surface\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

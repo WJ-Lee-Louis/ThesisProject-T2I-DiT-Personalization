@@ -1,0 +1,12 @@
+{
+  "model": "gpt-5.6-sol",
+  "captions": 19,
+  "total": 40,
+  "passed": 40,
+  "errors": [],
+  "contrast_attempts": 40,
+  "caption_trace_attempts": 19,
+  "new_caption_attempts": 0,
+  "new_contrast_attempts": 40,
+  "caption_reused_from": "joint_pilot_gpt56_sol_compact_v3"
+}

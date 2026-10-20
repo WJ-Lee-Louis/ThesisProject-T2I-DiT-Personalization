@@ -1,0 +1,124 @@
+{
+  "case_id": "115-06",
+  "reference_index": 115,
+  "target_index": 6,
+  "identity_term": "Magic Cube",
+  "target_prompt": "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+  "reference_id": "dreambench_plus/object/20",
+  "known_case": "T22",
+  "selection_role": "known development",
+  "source_caption": "A scrambled Magic Cube with multicolored square tiles and several rotated layers",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v4",
+    "inputs": {
+      "source_caption": "A scrambled Magic Cube with multicolored square tiles and several rotated layers",
+      "target_prompt": "An anime-style drawing of a character intensely focusing on solving a glowing Magic Cube",
+      "identity_term": "Magic Cube"
+    },
+    "input_sha256": "ddbe94a9f74158a3dea82e6bf383189b272805a3cd6ebc5c3ff64a53ecb94461",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+      "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_compact_v2",
+      "text": "A scrambled Magic Cube with multicolored square tiles and several rotated layers",
+      "identity_term": "Magic Cube",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "1a62852e6cc2e55b62dbc2ae5dac90b289e8be89144f011dbc6240df2f8542e6",
+        "bytes_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+      },
+      "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A scrambled Magic Cube with multicolored square tiles and several rotated layers\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Magic Cube",
+      "source_preserved": [
+        "Magic Cube",
+        "scrambled",
+        "multicolored square tiles"
+      ],
+      "source": [
+        {
+          "unit": "rotated-layer configuration",
+          "negative": "A scrambled Magic Cube with multicolored square tiles"
+        }
+      ],
+      "target": [
+        {
+          "unit": "anime-style drawing representation",
+          "negative": "a character intensely focusing on solving a glowing Magic Cube"
+        },
+        {
+          "unit": "character solving interaction",
+          "negative": "An anime-style drawing of a glowing Magic Cube"
+        },
+        {
+          "unit": "glowing effect",
+          "negative": "An anime-style drawing of a character intensely focusing on solving a Magic Cube"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "c2ea7b16f691cb5e60ee4dc130553cedbbdda36b1dee3e210d772066ccb6f699",
+        "prompt_version": "caption_np_v3",
+        "prompt_sha256": "96f61ed7130bb089bd1a6bb950186226741f0ccc426902e6ca478d57e5b03095",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A scrambled Magic Cube with multicolored square tiles and several rotated layers\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "ddbe94a9f74158a3dea82e6bf383189b272805a3cd6ebc5c3ff64a53ecb94461",
+        "prompt_version": "joint_contrast_v4",
+        "prompt_sha256": "98e01370a86a14553c0350a46191ba04ad4ca83c81f39b2373f944e4f771f2a3",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Magic Cube\",\"source_preserved\":[\"Magic Cube\",\"scrambled\",\"multicolored square tiles\"],\"source\":[{\"unit\":\"rotated-layer configuration\",\"negative\":\"A scrambled Magic Cube with multicolored square tiles\"}],\"target\":[{\"unit\":\"anime-style drawing representation\",\"negative\":\"a character intensely focusing on solving a glowing Magic Cube\"},{\"unit\":\"character solving interaction\",\"negative\":\"An anime-style drawing of a glowing Magic Cube\"},{\"unit\":\"glowing effect\",\"negative\":\"An anime-style drawing of a character intensely focusing on solving a Magic Cube\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T11:25:11.618882+00:00"
+  }
+}

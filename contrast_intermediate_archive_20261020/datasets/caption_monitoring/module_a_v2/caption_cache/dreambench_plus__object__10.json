@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A flamingo float with a bright pink ring-shaped body, raised neck, and black-tipped beak floating on turquoise water with low hills in the distance",
+  "identity_term": "flamingo float",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "fbcb7323f1450f7cc64646edbc170078a82898e7f762c786859667e599846b0c",
+    "bytes_sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a"
+  },
+  "input_sha256": "c449d32b365cb3ebedaa04e004521b15bb4f9d21f253fdaf8dde97657361a29b",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "c449d32b365cb3ebedaa04e004521b15bb4f9d21f253fdaf8dde97657361a29b",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A flamingo float with a bright pink ring-shaped body, raised neck, and black-tipped beak floating on turquoise water with low hills in the distance\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

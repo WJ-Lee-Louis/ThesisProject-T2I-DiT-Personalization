@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A tiger with orange fur, black stripes, and a white underside walking through dry grass in a wooded area",
+  "identity_term": "tiger",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 1024,
+    "height": 1024,
+    "rgb_sha256": "b3ceefd50a94655e409d0b92b9f27069fe269ef72f99da8da0060521e8be52cb",
+    "bytes_sha256": "ebe9e985a0ac51823bd2e83b189e315ed288737e883fc9f73a109200be8a4b5b"
+  },
+  "input_sha256": "51431c8ce1cfa2c596c61b5fb6b3231d4483ba91782d06b6af2f020ce6efb7ef",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "51431c8ce1cfa2c596c61b5fb6b3231d4483ba91782d06b6af2f020ce6efb7ef",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A tiger with orange fur, black stripes, and a white underside walking through dry grass in a wooded area\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

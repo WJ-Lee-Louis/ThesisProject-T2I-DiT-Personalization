@@ -1,0 +1,29 @@
+{
+  "caption_schema_version": 1,
+  "caption_policy_version": "identity_np_v1",
+  "text": "A bright red, round-bodied cartoon creature with small pointed horns, large white eyes, and short limbs, standing upright against a plain white background",
+  "identity_term": "cartoon",
+  "origin": "generated_v2",
+  "reference": {
+    "algorithm": "sha256_rgb_v1",
+    "width": 2048,
+    "height": 2048,
+    "rgb_sha256": "384dd53ea7f1b06b6c8913fbeba469034f2d96a881cbfcdcd5df597370c643c6",
+    "bytes_sha256": "509d4adff91c58058a3a92affffe4fb0d0b019c4ac5302064e3cfb8ddfc665eb"
+  },
+  "input_sha256": "78131f479b7f76fd740bd8341096de1794c5f3ca50a0c607b4e9022dd7cafcd9",
+  "trace": {
+    "stage": "caption",
+    "model": "gpt-6-luna",
+    "input_sha256": "78131f479b7f76fd740bd8341096de1794c5f3ca50a0c607b4e9022dd7cafcd9",
+    "prompt_version": "caption_np_v2",
+    "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+    "attempts": [
+      {
+        "raw_response": "{\"source_caption\":\"A bright red, round-bodied cartoon creature with small pointed horns, large white eyes, and short limbs, standing upright against a plain white background\"}",
+        "validation_error": null
+      }
+    ]
+  },
+  "imported_from": null
+}

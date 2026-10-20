@@ -19,7 +19,10 @@ from .config import (
 )
 from .model_loader import load_ip_adapter_model
 from .orthogonalization import PromptSet
-from .semantic_components import SemanticConditioning, SemanticLLM, prepare_semantic_conditioning
+from .semantic_components import SemanticConditioning
+from .semantic_contrasts import (SemanticContrastConditioning, SemanticLLM, CaptionRecord,
+    ReferenceFingerprint, identity_occurrences, prepare_semantic_conditioning)
+from dataclasses import replace
 
 
 def load_reference_image(
@@ -93,8 +96,22 @@ def generate_png_bytes(
     restore_visual_norm: bool,
     mask_single_text_rows: bool,
     component_analysis_payload: dict | None = None,
+    contrast_analysis_payload: dict | None = None,
 ) -> tuple[bytes, dict]:
-    if component_analysis_payload is not None:
+    if contrast_analysis_payload is not None and component_analysis_payload is not None:
+        raise ValueError("cannot mix legacy component and joint contrast payloads")
+    if contrast_analysis_payload is not None:
+        conditioning = SemanticContrastConditioning.from_dict(contrast_analysis_payload)
+        if orthogonalization_mode != "semantic_local":
+            raise ValueError("contrast payload requires semantic_local mode")
+        if any((object_prompt, object_behavior_prompt, object_background_prompt,
+                object_behavior_background_prompt, include_interaction, not remove_behavior, not remove_background)):
+            raise ValueError("semantic_local cannot mix legacy prompt settings")
+        conditioning.validate_reuse(identity_term=conditioning.analysis.identity_term, target_prompt=prompt,
+                                    reference=ReferenceFingerprint.from_image(reference_image_bytes))
+        request = OrthogonalizationRequest(mode="semantic_local", strength=orthogonalization_strength,
+                                          restore_norm=restore_visual_norm, semantic_conditioning=conditioning)
+    elif component_analysis_payload is not None:
         conditioning = SemanticConditioning.from_dict(component_analysis_payload)
         if conditioning.target.text != prompt:
             raise ValueError("component analysis target does not match generation prompt")
@@ -166,7 +183,7 @@ def generate_png_bytes(
             "object_background": object_background_prompt,
             "object_behavior_background": object_behavior_background_prompt,
         },
-        "semantic_conditioning": component_analysis_payload,
+        "semantic_conditioning": contrast_analysis_payload if contrast_analysis_payload is not None else component_analysis_payload,
         "checkpoint_load": ip_model.checkpoint_load_diagnostics,
         "orthogonalization": ip_model.last_orthogonalization_diagnostics,
         "mask_single_text_rows": mask_single_text_rows,
@@ -177,8 +194,9 @@ def generate_png_bytes(
 
 def generate_semantic_png_bytes(
     *, identity_term: str, target_prompt: str, reference_image_bytes: bytes,
-    llm: SemanticLLM, source_caption: str | None = None,
-    origin: str = "source_target", strategy: str = "local", max_contexts: int = 256,
+    llm: SemanticLLM | None = None, source_caption: str | None = None,
+    caption_record: CaptionRecord | None = None, preserve=None, contrast_analysis_payload: dict | None = None,
+    origin: str | None = None, strategy: str = "local",
     strength: float = 1.0, restore_visual_norm: bool = True,
     mask_single_text_rows: bool = True, ip_adapter_scale: float = 0.7,
     guidance_scale: float = 3.5, num_inference_steps: int = 24, seed: int = 42,
@@ -187,20 +205,37 @@ def generate_semantic_png_bytes(
     """Zero-shot/free-text Python entry point with injectable (or mock) LLM."""
     # Validate projection settings before paid analysis as well as GPU allocation.
     OrthogonalizationRequest(mode="off", strength=strength)
-    conditioning = prepare_semantic_conditioning(
-        llm=llm, identity_term=identity_term, target_prompt=target_prompt,
-        reference_image_bytes=reference_image_bytes, source_caption=source_caption,
-        origin=origin, strategy=strategy, max_contexts=max_contexts,
-    )
+    identity_occurrences(target_prompt, identity_term, allow_initial_capital=True)
+    if strategy != "local":
+        raise ValueError("semantic generation supports local only")
+    if origin is not None and origin not in {"source", "target", "source_target"}:
+        raise ValueError("invalid contrast origin")
+    reference = ReferenceFingerprint.from_image(reference_image_bytes)
+    if contrast_analysis_payload is not None:
+        if source_caption is not None or caption_record is not None or preserve is not None:
+            raise ValueError("cached analysis cannot mix caption options")
+        conditioning = SemanticContrastConditioning.from_dict(contrast_analysis_payload)
+        conditioning.validate_reuse(identity_term=identity_term, target_prompt=target_prompt,
+                                    reference=reference, model=llm.model if llm is not None else None)
+        if origin is not None:
+            conditioning = replace(conditioning, origin=origin)
+    else:
+        if not isinstance(llm, SemanticLLM):
+            raise ValueError("new semantic generation requires semantic_contrasts.SemanticLLM")
+        conditioning = prepare_semantic_conditioning(
+            llm=llm, identity_term=identity_term, target_prompt=target_prompt,
+            reference_image_bytes=reference_image_bytes, source_caption=source_caption,
+            caption_record=caption_record, preserve=preserve, origin=origin or "source_target", strategy=strategy,
+        )
     return generate_png_bytes(
         prompt=target_prompt, reference_image_url="", reference_image_bytes=reference_image_bytes,
         ip_adapter_scale=ip_adapter_scale, guidance_scale=guidance_scale,
         num_inference_steps=num_inference_steps, seed=seed, width=width, height=height,
-        orthogonalization_mode="components", orthogonalization_strength=strength,
+        orthogonalization_mode="semantic_local", orthogonalization_strength=strength,
         object_prompt="", object_behavior_prompt="", object_background_prompt="",
         object_behavior_background_prompt="", remove_behavior=True, remove_background=True,
         include_interaction=False, restore_visual_norm=restore_visual_norm,
-        mask_single_text_rows=mask_single_text_rows, component_analysis_payload=conditioning.to_dict(),
+        mask_single_text_rows=mask_single_text_rows, contrast_analysis_payload=conditioning.to_dict(),
     )
 
 

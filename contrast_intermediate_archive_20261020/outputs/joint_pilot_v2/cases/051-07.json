@@ -1,0 +1,132 @@
+{
+  "case_id": "051-07",
+  "reference_index": 51,
+  "target_index": 7,
+  "identity_term": "Siamese cat",
+  "target_prompt": "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+  "reference_id": "dreambench_plus/live_subject/animal/21",
+  "known_case": "T16",
+  "selection_role": "known development",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 3,
+    "policy_version": "joint_local_v2",
+    "inputs": {
+      "source_caption": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants",
+      "target_prompt": "A Siamese cat walking gracefully along the rim of a giant teacup floating in the sky",
+      "identity_term": "Siamese cat"
+    },
+    "input_sha256": "307de09afd0df3b9c4814b744100ac90ee3333a97b0ff2824da54e46d9c00cdd",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "fb07ca8416c1c8e91367edc9dd83bd66704eac7458688b757d4b489f2785e218",
+      "bytes_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+    },
+    "caption": {
+      "caption_schema_version": 1,
+      "caption_policy_version": "identity_np_v1",
+      "text": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants",
+      "identity_term": "Siamese cat",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "fb07ca8416c1c8e91367edc9dd83bd66704eac7458688b757d4b489f2785e218",
+        "bytes_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+      },
+      "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "Siamese cat",
+      "source_preserved": [
+        "Siamese cat",
+        "cream-colored fur",
+        "dark markings on its face, ears, and tail",
+        "blue eyes"
+      ],
+      "source": [
+        {
+          "unit": "sitting pose",
+          "negative": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, on a wooden countertop beside leafy plants"
+        },
+        {
+          "unit": "wooden countertop placement",
+          "negative": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting beside leafy plants"
+        },
+        {
+          "unit": "leafy plants beside the cat",
+          "negative": "A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop"
+        }
+      ],
+      "target": [
+        {
+          "unit": "walking along the teacup rim",
+          "negative": "A Siamese cat"
+        },
+        {
+          "unit": "giant teacup size",
+          "negative": "A Siamese cat walking gracefully along the rim of a teacup floating in the sky"
+        },
+        {
+          "unit": "teacup floating in the sky",
+          "negative": "A Siamese cat walking gracefully along the rim of a giant teacup"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-6-luna",
+        "input_sha256": "f49ea27b076da25591cef175b0e62142cc750ed7ddbc3c3a3d17469ba0ead486",
+        "prompt_version": "caption_np_v2",
+        "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop beside leafy plants\"}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-6-luna",
+        "input_sha256": "307de09afd0df3b9c4814b744100ac90ee3333a97b0ff2824da54e46d9c00cdd",
+        "prompt_version": "joint_contrast_v2",
+        "prompt_sha256": "fdc441a7b55ea05c3593bc571613afab1d9d42dafbdb88868970a749832cd08f",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"Siamese cat\",\"source_preserved\":[\"Siamese cat\",\"cream-colored fur\",\"dark markings on its face, ears, and tail\",\"blue eyes\"],\"source\":[{\"unit\":\"sitting pose\",\"negative\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, on a wooden countertop beside leafy plants\"},{\"unit\":\"wooden countertop placement\",\"negative\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting beside leafy plants\"},{\"unit\":\"leafy plants beside the cat\",\"negative\":\"A Siamese cat with cream-colored fur, dark markings on its face, ears, and tail, and blue eyes, sitting on a wooden countertop\"}],\"target\":[{\"unit\":\"walking along the teacup rim\",\"negative\":\"A Siamese cat\"},{\"unit\":\"giant teacup size\",\"negative\":\"A Siamese cat walking gracefully along the rim of a teacup floating in the sky\"},{\"unit\":\"teacup floating in the sky\",\"negative\":\"A Siamese cat walking gracefully along the rim of a giant teacup\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-19T10:31:04.404048+00:00"
+  }
+}

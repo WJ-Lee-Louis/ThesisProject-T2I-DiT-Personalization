@@ -1,0 +1,140 @@
+{
+  "case_id": "161-08",
+  "reference_index": 161,
+  "target_index": 8,
+  "identity_term": "pixel art",
+  "target_prompt": "A magical portal opening in a pixel art enchanted forest",
+  "reference_id": "dreambench_plus/style/01",
+  "known_case": "T01",
+  "selection_role": "known development",
+  "source_caption": "pixel art of a beige desktop computer with a blue screen and wired mouse",
+  "status": "PASS",
+  "conditioning": {
+    "kind": "semantic_local_contrast",
+    "schema_version": 4,
+    "policy_version": "joint_local_v5",
+    "inputs": {
+      "source_caption": "pixel art of a beige desktop computer with a blue screen and wired mouse",
+      "target_prompt": "A magical portal opening in a pixel art enchanted forest",
+      "identity_term": "pixel art",
+      "preserve": []
+    },
+    "input_sha256": "ec6f66c6af386aa95e8a13e0fbca9200999f7a7dd203e0518eb6f34b26b6d6a6",
+    "reference": {
+      "algorithm": "sha256_rgb_v1",
+      "width": 1024,
+      "height": 1024,
+      "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+      "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+    },
+    "caption": {
+      "caption_schema_version": 2,
+      "caption_policy_version": "identity_np_preserve_v3",
+      "text": "pixel art of a beige desktop computer with a blue screen and wired mouse",
+      "preserve": [],
+      "identity_term": "pixel art",
+      "origin": "generated_v2",
+      "reference": {
+        "algorithm": "sha256_rgb_v1",
+        "width": 1024,
+        "height": 1024,
+        "rgb_sha256": "13e6cd376b542ecd0a457a0d3819151ac83f27670b25760d12057498cd0ee861",
+        "bytes_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+      },
+      "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+      "trace": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pixel art of a beige desktop computer with a blue screen and wired mouse\",\"preserve\":[]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "imported_from": null
+    },
+    "analysis": {
+      "identity_term": "pixel art",
+      "source_preserved": [
+        "pixel art"
+      ],
+      "source": [
+        {
+          "unit": "depicted desktop computer and accessories",
+          "negative": "pixel art"
+        },
+        {
+          "unit": "beige computer color",
+          "negative": "pixel art of a desktop computer with a blue screen and wired mouse"
+        },
+        {
+          "unit": "blue screen",
+          "negative": "pixel art of a beige desktop computer with a wired mouse"
+        },
+        {
+          "unit": "wired mouse",
+          "negative": "pixel art of a beige desktop computer with a blue screen"
+        }
+      ],
+      "target": [
+        {
+          "unit": "magical portal quality",
+          "negative": "A portal opening in a pixel art enchanted forest"
+        },
+        {
+          "unit": "portal and opening event",
+          "negative": "A pixel art enchanted forest"
+        },
+        {
+          "unit": "portal opening state",
+          "negative": "A magical portal in a pixel art enchanted forest"
+        },
+        {
+          "unit": "enchanted forest quality",
+          "negative": "A magical portal opening in a pixel art forest"
+        }
+      ],
+      "issues": []
+    },
+    "llm": {
+      "caption": {
+        "stage": "caption",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "6ec70cd64bdfd08883069a8c89bfb7bae490536643dbc4b5bf529bed4e6bd4cc",
+        "prompt_version": "caption_np_v4",
+        "prompt_sha256": "a2ba2447028e8c4a1803fb8531b9e14358c30218cc7a792983e0c7253abb4e9d",
+        "attempts": [
+          {
+            "raw_response": "{\"source_caption\":\"pixel art of a beige desktop computer with a blue screen and wired mouse\",\"preserve\":[]}",
+            "validation_error": null
+          }
+        ]
+      },
+      "contrast": {
+        "stage": "contrast",
+        "model": "gpt-5.6-sol",
+        "input_sha256": "ec6f66c6af386aa95e8a13e0fbca9200999f7a7dd203e0518eb6f34b26b6d6a6",
+        "prompt_version": "joint_contrast_v5",
+        "prompt_sha256": "ff00a3054145df6fd05f6ffdf2d47b70715a92eabe19da5f6568d86740ebb869",
+        "attempts": [
+          {
+            "raw_response": "{\"identity_term\":\"pixel art\",\"source_preserved\":[\"pixel art\"],\"source\":[{\"unit\":\"depicted desktop computer and accessories\",\"negative\":\"pixel art\"},{\"unit\":\"beige computer color\",\"negative\":\"pixel art of a desktop computer with a blue screen and wired mouse\"},{\"unit\":\"blue screen\",\"negative\":\"pixel art of a beige desktop computer with a wired mouse\"},{\"unit\":\"wired mouse\",\"negative\":\"pixel art of a beige desktop computer with a blue screen\"}],\"target\":[{\"unit\":\"magical portal quality\",\"negative\":\"A portal opening in a pixel art enchanted forest\"},{\"unit\":\"portal and opening event\",\"negative\":\"A pixel art enchanted forest\"},{\"unit\":\"portal opening state\",\"negative\":\"A magical portal in a pixel art enchanted forest\"},{\"unit\":\"enchanted forest quality\",\"negative\":\"A magical portal opening in a pixel art forest\"}],\"issues\":[]}",
+            "validation_error": null
+          }
+        ]
+      }
+    },
+    "selection": {
+      "origin": "source_target",
+      "strategy": "local"
+    },
+    "limits": {
+      "max_removals_per_side": 64
+    },
+    "created_at": "2026-10-20T00:11:06.809686+00:00"
+  }
+}

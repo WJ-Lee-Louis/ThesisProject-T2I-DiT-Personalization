@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/live_subject/animal/20",
+  "benchmark": "dreambench_plus",
+  "category": "live_subject/animal",
+  "subject_id": "live_subject/animal/20",
+  "identity_term": "hamster",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/20.txt",
+  "label_source_sha256": "01322a15ac9e468ac9a20c4501b25b859fe35286ffd078166f034f74cdcfd03a",
+  "target_prompts": [
+    "A photograph of a hamster nibbling on a tiny piece of carrot",
+    "A photo of a hamster peering out from a colorful plastic tunnel",
+    "A detailed photograph of a hamster grooming itself in soft bedding",
+    "A photo of a hamster running energetically on a wheel",
+    "A watercolor painting of a hamster curled up in a cozy, knitted sock",
+    "An anime-style illustration of a hamster holding a tiny umbrella",
+    "A retro-style drawing of a hamster in a miniature race car",
+    "A hamster navigating a miniature spaceship through an asteroid field",
+    "A hamster wearing a tiny cape, heroically standing atop a pencil like a skyscraper"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/20.jpg",
+  "image_sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:27:52+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A golden-brown hamster with a pale belly, black eyes, and pink paws, sitting upright with its front paws held together on a light-colored surface\"}",
+  "source_caption": "A golden-brown hamster with a pale belly, black eyes, and pink paws, sitting upright with its front paws held together on a light-colored surface",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:27:54+09:00",
+  "seconds": 2.25
+}

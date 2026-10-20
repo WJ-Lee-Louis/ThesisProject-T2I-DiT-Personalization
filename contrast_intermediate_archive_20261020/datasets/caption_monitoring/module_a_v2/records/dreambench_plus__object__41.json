@@ -1,0 +1,33 @@
+{
+  "id": "dreambench_plus/object/41",
+  "benchmark": "dreambench_plus",
+  "category": "object",
+  "subject_id": "object/41",
+  "identity_term": "t-shirt",
+  "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/41.txt",
+  "label_source_sha256": "6470bbcfcaa4e66fcb26ba71e58e7c4711422611182c035642164a1ed953d89d",
+  "target_prompts": [
+    "A photograph of a t-shirt laid out on a sunny rock by a hiking trail",
+    "A photo of a t-shirt hanging on a clothesline in a suburban backyard",
+    "A photo of a t-shirt draped over a chair in a cozy reading nook",
+    "A photograph of a t-shirt on a mannequin in a bustling street market",
+    "A watercolor painting of a t-shirt with a complex, abstract design",
+    "An anime-style illustration of a colorful t-shirt on a character at a music festival",
+    "A retro-style graphic of a vintage band t-shirt from the 1980s",
+    "A t-shirt transforming into a butterfly, its fabric wings fluttering in a meadow",
+    "A t-shirt caught in a breeze, floating high above a cityscape as if exploring the urban heights"
+  ],
+  "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/41.jpg",
+  "image_sha256": "cf34b50348fd3f2bde31e2de36265e11a3806b2fc3efb2fae84f78e93e53d15f",
+  "width": 1024,
+  "height": 1024,
+  "requested_model": "gpt-6-luna",
+  "prompt_sha256": "5546bd158907ef50e5489e8fd03830fdbc5bf0e265c267351c0b5d9001fa006e",
+  "started_at": "2026-10-19T19:29:19+09:00",
+  "attempt": 1,
+  "raw_response": "{\"source_caption\":\"A beige t-shirt with a large blue graphic of a cat inside a frame, Japanese lettering, and the word “ORIGINAL,” displayed against a light gray background\"}",
+  "source_caption": "A beige t-shirt with a large blue graphic of a cat inside a frame, Japanese lettering, and the word “ORIGINAL,” displayed against a light gray background",
+  "status": "PASS",
+  "completed_at": "2026-10-19T19:29:21+09:00",
+  "seconds": 2.47
+}
