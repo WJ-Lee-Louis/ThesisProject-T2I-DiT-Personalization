@@ -47,7 +47,7 @@ git --version
 df -h /workspace
 mkdir -p /workspace/instantx-0807
 cd /workspace/instantx-0807
-git clone --depth 1 https://github.com/WJ-Lee-Louis/AI_PROJECT.git
+git clone --depth 1 https://github.com/WJ-Lee-Louis/ThesisProject-T2I-DiT-Personalization.git AI_PROJECT
 cd AI_PROJECT/Orthogonalization-InstantX-IP-Adapter
 git rev-parse HEAD
 ```

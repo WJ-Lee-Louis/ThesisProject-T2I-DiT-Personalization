@@ -14,7 +14,7 @@
 
 ## 파일 관리
 
-- 코드·설치 스크립트·가이드: GitHub `WJ-Lee-Louis/AI_PROJECT`.
+- 코드·설치 스크립트·가이드: GitHub `WJ-Lee-Louis/ThesisProject-T2I-DiT-Personalization` (원격 폴더명은 `AI_PROJECT`).
 - 입력: `outputs/runpod_delivery/runpod_inputs.tar.gz`를 팀 볼륨에 한 번 업로드하고 SHA256 검증 후 복원한다.
 - 팀 볼륨의 실험 경로: `/workspace/instantx-0807`. 코드·가상환경·모델·결과를 이 경로 안에 보관한다.
 - 기존 `runpod_bundle.tar.gz`는 코드까지 포함한 이전 전달 방식이다. GitHub 방식에서는 새 **입력 전용 번들**을 사용한다.
