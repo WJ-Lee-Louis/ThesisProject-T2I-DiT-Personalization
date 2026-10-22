@@ -1,6 +1,8 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.venv*/
+venv/
 run_history/
 outputs/
 datasets/XVerseBench/
