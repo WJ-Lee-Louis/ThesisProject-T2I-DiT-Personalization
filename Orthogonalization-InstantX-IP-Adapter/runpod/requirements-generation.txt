@@ -1,0 +1,11 @@
+accelerate==1.10.0
+diffusers==0.35.2
+hf_transfer==0.1.9
+huggingface_hub==0.34.3
+pillow==11.3.0
+protobuf==6.31.1
+safetensors==0.6.2
+sentencepiece==0.2.0
+torch==2.7.1
+transformers==4.54.0
+numpy==1.26.4

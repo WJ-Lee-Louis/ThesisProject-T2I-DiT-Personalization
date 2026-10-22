@@ -1,0 +1,3 @@
+# Keep scripts executable by Bash and code hashes portable across checkouts.
+*.sh text eol=lf
+*.py text eol=lf
