@@ -1,0 +1,22 @@
+{
+  "flux": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "transformer/diffusion_pytorch_model.safetensors.index.json": 23802816640,
+    "text_encoder_2/model.safetensors.index.json": 9524621312
+  },
+  "qwen_vl": {
+    "repo": "Qwen/Qwen2-VL-7B-Instruct",
+    "revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+    "model.safetensors.index.json": 16582751232
+  },
+  "qwen_llm": {
+    "repo": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "model.safetensors.index.json": 15231233024
+  },
+  "birefnet": {
+    "repo": "ZhengPeng7/BiRefNet",
+    "revision": "e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4"
+  }
+}

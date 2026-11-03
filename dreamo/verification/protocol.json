@@ -1,0 +1,16 @@
+{
+  "dreambench": {
+    "cases": 750,
+    "references": 30,
+    "source_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+    "manifest_sha256": "1793deb8f180ab01e2dd9b70e63c6f5b72d75bd322fe4124c22622e327ad26fb",
+    "excluded_category": null
+  },
+  "dreambench_plus": {
+    "cases": 1350,
+    "references": 150,
+    "source_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+    "manifest_sha256": "34577cb7d9886261abe08c4def72d5ce5b3216281f8bbe83a05f50ad8213c49b",
+    "excluded_category": null
+  }
+}

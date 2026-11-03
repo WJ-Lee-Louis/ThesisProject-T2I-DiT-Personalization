@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "evaluations": {
+    "dreamo/dreambench": {
+      "method": "dreamo",
+      "benchmark": "dreambench",
+      "cases": 750,
+      "references": 30,
+      "selection": "all",
+      "CLIP-T": 0.30911751302083335,
+      "CLIP-I": 0.8179531250000001,
+      "DINO-I": 0.7436247057914734,
+      "source": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\dreamo\\outputs\\metrics\\dreambench_scores.json",
+      "sha256": "dba2d205ba5c5b446af97b473b025d00e4d0fba4836acfb06cb480da3789a301",
+      "generation_fingerprint": "6d566a486c8c7631ef5efc7b47d189a23ea7cd741e7a20125b8b5d39ee18342e",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      },
+      "device_name": "Tesla T4"
+    },
+    "uno/dreambench": {
+      "method": "uno",
+      "benchmark": "dreambench",
+      "cases": 750,
+      "references": 30,
+      "selection": "all",
+      "CLIP-T": 0.30881282552083333,
+      "CLIP-I": 0.80693359375,
+      "DINO-I": 0.7178054170807203,
+      "source": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\uno\\outputs\\metrics\\dreambench_scores.json",
+      "sha256": "4a64c63c6b48fbb453f1352589ba90182d7d5b5cf8d7799630f20ae24402af46",
+      "generation_fingerprint": "bbc35e6ac4a47fed443de47289e1ff5ac51a8e961773e8f29984e6a3e909f40b",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      },
+      "device_name": "Tesla T4"
+    },
+    "dreamo/dreambench_plus": {
+      "method": "dreamo",
+      "benchmark": "dreambench_plus",
+      "cases": 1350,
+      "references": 150,
+      "selection": "all",
+      "CLIP-T": 0.335882251880787,
+      "CLIP-I": 0.7902325665509259,
+      "DINO-I": 0.6292904380653743,
+      "source": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\dreamo\\outputs\\metrics\\dreambench_plus_scores.json",
+      "sha256": "7c1c1305a0a6973970856bedc93f02c93c0ffee01b83a8996e8c1b7c317e9396",
+      "generation_fingerprint": "5ede585856f25b1d4e1ed8d0a6a0cc4ae7beee7c9080764a6c8d052a00e02f2f",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      },
+      "device_name": "Tesla T4"
+    },
+    "uno/dreambench_plus": {
+      "method": "uno",
+      "benchmark": "dreambench_plus",
+      "cases": 1350,
+      "references": 150,
+      "selection": "all",
+      "CLIP-T": 0.32957356770833335,
+      "CLIP-I": 0.7767974175347222,
+      "DINO-I": 0.5900723126668621,
+      "source": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\uno\\outputs\\metrics\\dreambench_plus_scores.json",
+      "sha256": "129693dde2854c6650c809681eda01963db49404f446827ba03520c1df4133f2",
+      "generation_fingerprint": "6bd911a74da4c6e102d8b7fc3fe50277f5dbdfe7f1737a0ba2d2f9c698927665",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      },
+      "device_name": "Tesla T4"
+    }
+  },
+  "same_canonical_inputs": true,
+  "same_evaluator_protocol_and_environment": true,
+  "macro_recomputed": true,
+  "png_created": false
+}

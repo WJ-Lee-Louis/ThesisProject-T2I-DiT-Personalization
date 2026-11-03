@@ -1,0 +1,83 @@
+{
+  "config": {
+    "model_type": "flux-dev",
+    "width": 1024,
+    "height": 1024,
+    "seed": 42,
+    "steps": 25,
+    "guidance": 4.0,
+    "reference_resolution": 512,
+    "reference_task": "single_image_all_categories",
+    "only_lora": true,
+    "lora_rank": 512,
+    "pe": "d",
+    "quantization": "none",
+    "cpu_offload": false,
+    "seeds": [
+      42
+    ]
+  },
+  "manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+  "models": {
+    "flux": {
+      "repo": "black-forest-labs/FLUX.1-dev",
+      "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+    },
+    "t5": {
+      "repo": "xlabs-ai/xflux_text_encoders",
+      "revision": "5ce032c6b9bfe31a4ffb220c8afa147e8de6acea"
+    },
+    "clip": {
+      "repo": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41"
+    },
+    "lora": {
+      "repo": "bytedance-research/UNO",
+      "revision": "cd4a5a8896243db22aaf4a2d3d2a9511c437fb12"
+    }
+  },
+  "code": {
+    "freecus/evaluate.py": "eb1c1114f3d655c5bfdb36d4d07725c89285bec13e7192d3142d6d8fe1366022",
+    "freecus/manifest.py": "f2cf92a0ecd1a136491c2e6baa106c88d1270999e8e92f20f55961e532adceff",
+    "freecus/project_metrics/benchmark_metrics.py": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+    "freecus/run.py": "d461ed707e503a087b175210cd59daaa56dfc016234f67ceb2f8e29799531079",
+    "uno/__init__.py": "cef8ae8a9c7286db0a79fc27bc47f0beae9abfcc22278c813d1828552d071676",
+    "uno/assemble.py": "cf3263b606c83c7c723bc7fcc90803cc6b92a4eb54cbcfcb2e2fc0c90ba4e324",
+    "uno/constraints.txt": "92a9bd9d6c9e38c02d3c86f58ff209e17491d4f6d85c19d0c6a345006a7640da",
+    "uno/efficiency.py": "00d190fcd6650de4539ef99c23358e5180c1ef91d0d0ec0592e13395f0c7b7c1",
+    "uno/evaluate.py": "9385c5869e9685141c93ee963cb96fdfeb9ae19fc56cea452c4b88e2081af07a",
+    "uno/modal_app.py": "3887944bc7040d522973ac7a6a13602087e137d48d183e5d05d0108dd3a192a2",
+    "uno/modal_client.py": "286f4bb888b1264613aee91bdce8cc95d48e434bbbef1e0a715f9020df830610",
+    "uno/models.py": "ffa0037f09271e6f4d37bacecb11b83558ef2173e8cf99266ed312f1442277a7",
+    "uno/protocol.py": "ecdf5e8f5a734076db33b4b78b3466748228ec5b3dddc9afa3172ec0ae380d9e",
+    "uno/requirements-eval.txt": "201fac44672ab5be3a66fc90254565e1dbf7493b42f21854138625d7a21dab90",
+    "uno/requirements-gpu.txt": "4ecfbcd427fb4cda7adddf6839c5d30355a2bb7cf55fd9be18cebd8cbb5c9f44",
+    "uno/requirements.txt": "13f5995d614a4940e8c6848a1ce012595552bef0ef1e1f281396952d821e63cd",
+    "uno/run.py": "1dc28d34bbc4f49441e71082f5e892993bc60750c378d23ae2d02fa2470d91e6",
+    "uno/runtime.py": "2b8e4b8745b097a8b8ae5ad87ae6cbc837f34070fe2bb6b7878b280e43269a8b",
+    "uno/upstream/eval/evaluate_clip_dino_score_single_subject.py": "16792f3341adf09d44522ef4cd67a780b818e67a96693d1b7f8ac43ee515e5bf",
+    "uno/upstream/inference.py": "36b38f607b7d69890131eab4b6ae974a9e5425b86dfb15e648653f5d4bf87b8c",
+    "uno/upstream/uno/flux/math.py": "d94bae455e0d88e605bb746fe6336ea2ee3cf503b746151a1fdcda44933012b7",
+    "uno/upstream/uno/flux/model.py": "3a9a411092e7a871ee2804530a5311da1a03c3db5d5bf8124e006fa515bc2b1c",
+    "uno/upstream/uno/flux/modules/autoencoder.py": "30492e52b2e4157b631e10493b373b86a8eae5074b4db64f0a090df417959235",
+    "uno/upstream/uno/flux/modules/conditioner.py": "78859f79ea1975282e853bee127f417bf0ecb673db669416878a97dcdd01d725",
+    "uno/upstream/uno/flux/modules/layers.py": "c9723fcfc801ff18ce80ad2e55d6d01e93d116169efff0fa0547bde75d8a0fb8",
+    "uno/upstream/uno/flux/pipeline.py": "cc4c20112b84d163ffffc712ca8bf9d484f675538275464fdbea6a784dde1cba",
+    "uno/upstream/uno/flux/sampling.py": "c72cafd6721a66449db11f6871e17ba753e53df1c067dc884af790cb6541aba3",
+    "uno/upstream/uno/flux/util.py": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e"
+  },
+  "fingerprint": "6bd911a74da4c6e102d8b7fc3fe50277f5dbdfe7f1737a0ba2d2f9c698927665",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.45.2",
+    "numpy": "1.26.4",
+    "Pillow": "11.1.0",
+    "einops": "0.8.1",
+    "safetensors": "0.5.3",
+    "tokenizers": "0.20.3",
+    "sentencepiece": "0.2.0"
+  },
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "cuda": "12.4"
+}

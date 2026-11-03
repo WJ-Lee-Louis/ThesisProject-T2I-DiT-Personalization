@@ -1,0 +1,19 @@
+{
+  "freecus_source": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\freecus\\outputs\\metrics\\dreambench_scores.json",
+  "freecus_source_sha256": "aef7bd9f5b1c7338f48da63b1c48660e86a84b6b2e518387a4a972031b64727b",
+  "aggregation": "subject_macro",
+  "freecus_full_precision": {
+    "CLIP-T": 0.27886881510416667,
+    "CLIP-I": 0.8183795572916667,
+    "DINO-I": 0.7156239940722784
+  },
+  "other_rows_source": "Values transcribed unchanged from the user-supplied figure; not recomputed",
+  "preserved_scale_best_note": "scale 0.8; provisional, not optimized",
+  "notes": [
+    "Subject macro average; single selected reference; higher is better.",
+    "FreeCus: newly evaluated; 1024 × 1024; seed 42; 750 images / 30 subjects.",
+    "Baseline and Ours scale 0.7: historical screenshot values (4-decimal precision).",
+    "* best row uses scale 0.8 as requested; this is a provisional choice, not an optimized scale.",
+    "[T] tuning-based (UNO, USO). External values copied from the supplied comparison PNG."
+  ]
+}

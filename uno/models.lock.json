@@ -1,0 +1,18 @@
+{
+  "flux": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+  },
+  "t5": {
+    "repo": "xlabs-ai/xflux_text_encoders",
+    "revision": "5ce032c6b9bfe31a4ffb220c8afa147e8de6acea"
+  },
+  "clip": {
+    "repo": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41"
+  },
+  "lora": {
+    "repo": "bytedance-research/UNO",
+    "revision": "cd4a5a8896243db22aaf4a2d3d2a9511c437fb12"
+  }
+}

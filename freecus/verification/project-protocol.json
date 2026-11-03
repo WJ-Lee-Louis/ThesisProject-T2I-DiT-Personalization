@@ -1,0 +1,60 @@
+{
+  "generation_manifest": "Orthogonalization-InstantX-IP-Adapter/outputs/semantic_benchmark_gpt56_sol/generation_manifest.json",
+  "generation_manifest_sha256": "2ce8931bb3aadd056fe9bf991d35b8b79a1dc536fb0dc096662cba1405124936",
+  "seed": 42,
+  "generation_resolution": [
+    1024,
+    1024
+  ],
+  "caption_seed": 42,
+  "counts": {
+    "dreambench": 750,
+    "dreambench_plus": 1350
+  },
+  "references": {
+    "dreambench": 30,
+    "dreambench_plus": 150
+  },
+  "target_prompt_audit": {
+    "dreambench": {
+      "same_as_official": 750,
+      "different": 0
+    },
+    "dreambench_plus": {
+      "same_as_official": 1350,
+      "different": 0
+    }
+  },
+  "reference_policy": "selected_one",
+  "metric_protocol": "uno-selected-reference-v1",
+  "dino_model": "dino_vits16",
+  "freecus_steps": 30,
+  "existing_instantx_steps": 24,
+  "verification_sources": [
+    "Orthogonalization-InstantX-IP-Adapter/scripts/benchmark_remote.py",
+    "Orthogonalization-InstantX-IP-Adapter/scripts/benchmark_metrics.py",
+    "Orthogonalization-InstantX-IP-Adapter/docs/RUNPOD_EXPERIMENT_GUIDE_KO.md"
+  ],
+  "remote_plan_settings_audit": {
+    "A": {
+      "job_count": 2100,
+      "all_job_seeds": [
+        42
+      ],
+      "steps": 24,
+      "width": 1024,
+      "height": 1024,
+      "guidance_scale": 3.5
+    },
+    "B": {
+      "job_count": 2100,
+      "all_job_seeds": [
+        42
+      ],
+      "steps": 24,
+      "width": 1024,
+      "height": 1024,
+      "guidance_scale": 3.5
+    }
+  }
+}

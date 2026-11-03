@@ -1,0 +1,274 @@
+{
+  "dreambench": {
+    "profile": "method-comparison",
+    "workflow_id": "b0cc75f6ccb948d88a436abc0971328b",
+    "pilot_images": 8,
+    "projection": {
+      "samples": 750,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 10.29912287000002,
+      "total_worker_seconds": 8325.244993192015,
+      "wall_seconds": 4162.622496596007,
+      "compute_usd": 7.17869225272961,
+      "compute_usd_with_margin": 8.973365315912012,
+      "marginal_usd_per_image": 0.008880727668343616,
+      "safety_factor": 1.25,
+      "peak_vram_gib": 36.05078125
+    },
+    "phase": {
+      "mode": "pilot",
+      "gpu": "A100-80GB",
+      "invocation_id": "c79d9ce7fc45498494a10048617c31ea",
+      "budget_usd": 3.0,
+      "calls": [
+        {
+          "id": "fc-01M6DGQHTX49MCRXGM4D8Z89ND",
+          "lane": 0,
+          "cases": 4,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 337.37089240399996,
+            "lane": 0,
+            "gpu": "A100-80GB",
+            "estimated_compute_usd": 0.3098783331021211,
+            "requested_cases": 4,
+            "generated_total": 4,
+            "output": "/work/results/80f168f66963c39103d3a528/A100-80GB/lane-0",
+            "timings": [
+              {
+                "seconds": 10.29912287000002,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 9.112523244999977,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 8.908352717000014,
+                "peak_allocated_gib": 34.22504758834839,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.599473225999986,
+                "peak_allocated_gib": 34.22504758834839,
+                "peak_reserved_gib": 36.05078125
+              }
+            ],
+            "host_peak_gib": 41.37298583984375,
+            "initialization": {
+              "phase": "models_loaded",
+              "seconds": 267.610427627,
+              "peak_allocated_gib": 31.79836940765381,
+              "peak_reserved_gib": 31.8203125
+            }
+          }
+        },
+        {
+          "id": "fc-01M6DGQJ5YYGGDMEZBAV3NNRTM",
+          "lane": 1,
+          "cases": 4,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 336.912464177,
+            "lane": 1,
+            "gpu": "A100-80GB",
+            "estimated_compute_usd": 0.3094830396105436,
+            "requested_cases": 4,
+            "generated_total": 4,
+            "output": "/work/results/80f168f66963c39103d3a528/A100-80GB/lane-1",
+            "timings": [
+              {
+                "seconds": 10.519890679000014,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 9.156921790000013,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 8.60505264699998,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.574974950000012,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              }
+            ],
+            "host_peak_gib": 41.38711166381836,
+            "initialization": {
+              "phase": "models_loaded",
+              "seconds": 269.28601055499996,
+              "peak_allocated_gib": 31.79836940765381,
+              "peak_reserved_gib": 31.8203125
+            }
+          }
+        }
+      ]
+    }
+  },
+  "dreambench_plus": {
+    "profile": "method-comparison-dbpp",
+    "workflow_id": "64597b472fce4931b954c12377de913f",
+    "pilot_images": 16,
+    "projection": {
+      "samples": 1350,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 9.467497022000003,
+      "total_worker_seconds": 13123.022007898006,
+      "wall_seconds": 6561.511003949003,
+      "compute_usd": 11.315719416970293,
+      "compute_usd_with_margin": 14.144649271212867,
+      "marginal_usd_per_image": 0.008163633332130164,
+      "safety_factor": 1.25,
+      "peak_vram_gib": 36.05078125
+    },
+    "phase": {
+      "mode": "pilot",
+      "gpu": "A100-80GB",
+      "invocation_id": "7cc2a7d3cfdf4db698bd677e35d4af26",
+      "budget_usd": 3.0,
+      "calls": [
+        {
+          "id": "fc-01M6DGQN8WYW33J66Z42NYKY13",
+          "lane": 0,
+          "cases": 8,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 245.33584982899998,
+            "lane": 0,
+            "gpu": "A100-80GB",
+            "estimated_compute_usd": 0.23051835659055012,
+            "requested_cases": 8,
+            "generated_total": 8,
+            "output": "/work/results/0d879ac6888dff2965d416b6/A100-80GB/lane-0",
+            "timings": [
+              {
+                "seconds": 9.929996082999992,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 8.899792706,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 9.024315948999998,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 9.012921972999976,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 9.467497022000003,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 9.440936089000019,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 9.321093109999993,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 9.288782798,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              }
+            ],
+            "host_peak_gib": 57.93394088745117,
+            "initialization": {
+              "phase": "models_loaded",
+              "seconds": 152.066078285,
+              "peak_allocated_gib": 31.79836940765381,
+              "peak_reserved_gib": 31.8203125
+            }
+          }
+        },
+        {
+          "id": "fc-01M6DGQNR7JK5FEQ9H7QN1FRT3",
+          "lane": 1,
+          "cases": 8,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 226.76667081000002,
+            "lane": 1,
+            "gpu": "A100-80GB",
+            "estimated_compute_usd": 0.21450652490604682,
+            "requested_cases": 8,
+            "generated_total": 8,
+            "output": "/work/results/0d879ac6888dff2965d416b6/A100-80GB/lane-1",
+            "timings": [
+              {
+                "seconds": 9.778735823999995,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 8.64921486999998,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.048828125
+              },
+              {
+                "seconds": 9.001907714999987,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.894165326999996,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.999623237999998,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.978805545,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.66764573399999,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              },
+              {
+                "seconds": 8.729118473,
+                "peak_allocated_gib": 34.22578287124634,
+                "peak_reserved_gib": 36.05078125
+              }
+            ],
+            "host_peak_gib": 47.38871383666992,
+            "initialization": {
+              "phase": "models_loaded",
+              "seconds": 133.705959489,
+              "peak_allocated_gib": 31.79836940765381,
+              "peak_reserved_gib": 31.8203125
+            }
+          }
+        }
+      ]
+    }
+  }
+}

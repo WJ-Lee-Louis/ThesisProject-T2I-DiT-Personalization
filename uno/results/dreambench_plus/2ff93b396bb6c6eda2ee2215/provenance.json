@@ -1,0 +1,11 @@
+{
+  "method": "uno",
+  "benchmark": "dreambench_plus",
+  "bundle_id": "2ff93b396bb6c6eda2ee2215",
+  "source_archive_sha256": "70abba704b85fa4f435e78a430fbea7978e123e4f4bc00f45954596b929e6ff0",
+  "metrics_sha256": "129693dde2854c6650c809681eda01963db49404f446827ba03520c1df4133f2",
+  "manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+  "metric_selection": "all",
+  "metric_cases": 1350,
+  "layout": "ZIP shards in method/artifacts/benchmark/bundle_id; original bytes verified; restore script rebuilds src_image"
+}

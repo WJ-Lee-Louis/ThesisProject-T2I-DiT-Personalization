@@ -1,0 +1,20 @@
+{
+  "phase": "models_loaded",
+  "seconds": 34.590033603,
+  "peak_allocated_gib": 33.4095721244812,
+  "peak_reserved_gib": 33.5703125,
+  "model_dtypes": {
+    "transformer": [
+      "torch.bfloat16"
+    ],
+    "clip": [
+      "torch.bfloat16"
+    ],
+    "t5": [
+      "torch.bfloat16"
+    ],
+    "autoencoder": [
+      "torch.float32"
+    ]
+  }
+}

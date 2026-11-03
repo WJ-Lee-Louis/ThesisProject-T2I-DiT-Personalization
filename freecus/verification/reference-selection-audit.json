@@ -1,0 +1,741 @@
+{
+  "status": "passed",
+  "uno_commit": "a563432dcfb4caf98df4368facb8102bf97d376c",
+  "uno_selection_sha256": "920055b106f8522199f4f163c84ccc8fbcf583d20490ed57628040a37d559e86",
+  "uno_reference_count": 30,
+  "freecus_cases": 2100,
+  "unique_references": 180,
+  "reference_mismatches": 0,
+  "previous_inference_sidecars": {
+    "baseline/dreambench": 750,
+    "baseline/dreambench_plus": 1350,
+    "source_target_ssg/dreambench": 750,
+    "source_target_ssg/dreambench_plus": 1350
+  },
+  "previous_metric_pairs": 4200,
+  "best_of_n_selection": false,
+  "audit_scope": "reference selection/bytes and metadata signatures; generated PNG contents were not rehashed",
+  "per_reference": {
+    "dreambench/backpack": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/backpack/02.jpg",
+      "sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c"
+    },
+    "dreambench/backpack_dog": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/backpack_dog/02.jpg",
+      "sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a"
+    },
+    "dreambench/bear_plushie": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/bear_plushie/03.jpg",
+      "sha256": "9cfc394fa5dc971740938216c2a9e14e8a3729ae42c1562474f9248d4aa53c52"
+    },
+    "dreambench/berry_bowl": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/berry_bowl/02.jpg",
+      "sha256": "3ca2f510ca6b9d3b1dd0cb25b3358195d098fe31a8aa2b7d9b370c8a3fdb4246"
+    },
+    "dreambench/can": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/can/01.jpg",
+      "sha256": "0be6499890c9f125f84bb94c3570838892c3caf27527ec7f5e342d2e17480808"
+    },
+    "dreambench/candle": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/candle/02.jpg",
+      "sha256": "e502da38cb2fd364a6fbb27ff1140ffec233431223a6508b645efb1888459d97"
+    },
+    "dreambench/cat": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/cat/04.jpg",
+      "sha256": "62afd15fe7205e514044bb5846299e3b7ef4769ad95a667eb246ae57416d69eb"
+    },
+    "dreambench/cat2": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/cat2/02.jpg",
+      "sha256": "d6d81497562ff39a58d749a85078fa7fe9734f9c4113e45816f4973697749038"
+    },
+    "dreambench/clock": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/clock/03.jpg",
+      "sha256": "0e1eb6ca2c944f3bfaed3ace56f5f186ed073a477e0333e0237253d98f0c9267"
+    },
+    "dreambench/colorful_sneaker": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/colorful_sneaker/01.jpg",
+      "sha256": "4a6b167131472609ac531a80ed389f4072f7e393ab6faafb7b967df4f04dd917"
+    },
+    "dreambench/dog": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog/02.jpg",
+      "sha256": "daad1959b4754734000bcb3699d616876f49797960a2c2b36915503fd5a1c1e5"
+    },
+    "dreambench/dog2": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog2/02.jpg",
+      "sha256": "5548b9f76ba808793ff3c9bc73525810f442ba9284dcaa95894a51dda1890879"
+    },
+    "dreambench/dog3": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog3/05.jpg",
+      "sha256": "f91476780363cec20e3324745d1ecce2b53573d9506d6dd245ee0b2e5acb062e"
+    },
+    "dreambench/dog5": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog5/00.jpg",
+      "sha256": "42e96a78608ec2644115b964f5f97ddc48d099f5c458863a7070f4c83aab1a90"
+    },
+    "dreambench/dog6": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog6/02.jpg",
+      "sha256": "ff206a9787229e33e6fdc0810ed902531f7a18b0ddb42e9529d8a605895bcb9e"
+    },
+    "dreambench/dog7": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog7/01.jpg",
+      "sha256": "c8dc22728777cf4be26f5f527b6d96a26a61d5c35dbccb1e0ef9fceb6d107fe8"
+    },
+    "dreambench/dog8": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/dog8/04.jpg",
+      "sha256": "1994030da6d469b983f04c3e0161f49fb5b3b0a261d5f7dc56aefaed1ae74d8f"
+    },
+    "dreambench/duck_toy": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/duck_toy/01.jpg",
+      "sha256": "028d9cef79640084382f3c6a62a103095f1b33f017f80dca183a841d199e1bea"
+    },
+    "dreambench/fancy_boot": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/fancy_boot/02.jpg",
+      "sha256": "906e947c111602a955caeed0544f8e1352fc6b37063e55df4a3af605ab36680d"
+    },
+    "dreambench/grey_sloth_plushie": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/grey_sloth_plushie/04.jpg",
+      "sha256": "01cd945206f96e3bb04967ca59c0a82a1ab3f0c1e2bd334ce4a1147de96542fc"
+    },
+    "dreambench/monster_toy": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/monster_toy/04.jpg",
+      "sha256": "0acdcfe19e422bac159b2b90eb8702f669175d22761ce6faf21b4b621911824b"
+    },
+    "dreambench/pink_sunglasses": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/pink_sunglasses/04.jpg",
+      "sha256": "0f4ca83b161dbdbcc642235dedfc3c95a3d78f9ad994e2a493b94f4339f6942d"
+    },
+    "dreambench/poop_emoji": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/poop_emoji/00.jpg",
+      "sha256": "4ad04ad35c2503b8a68265731e0172edba3f62dc7f43b424421349583684660d"
+    },
+    "dreambench/rc_car": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/rc_car/03.jpg",
+      "sha256": "ed3f563a4ec793e34be5ce3810d8c8da3e42c5d4f2fa3e3f4159f6b05ab4307a"
+    },
+    "dreambench/red_cartoon": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/red_cartoon/00.jpg",
+      "sha256": "509d4adff91c58058a3a92affffe4fb0d0b019c4ac5302064e3cfb8ddfc665eb"
+    },
+    "dreambench/robot_toy": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/robot_toy/00.jpg",
+      "sha256": "c7b87b86a58fc702b1245498abbc02e5297bad03c657d089675ef6467f91f6cb"
+    },
+    "dreambench/shiny_sneaker": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/shiny_sneaker/01.jpg",
+      "sha256": "5c1024358a1f840a40590f87ff14f530249c09d8bf1ef0379a8ef45fc1d36797"
+    },
+    "dreambench/teapot": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/teapot/04.jpg",
+      "sha256": "db6ae25c7689495cb9650023ea7b2029da3abf8dbfff64ae7caadb4a602e1cff"
+    },
+    "dreambench/vase": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/vase/02.jpg",
+      "sha256": "26048d2ea6da0328bb011527793cde0084f6efb029825ce0638554e6b3fcf21c"
+    },
+    "dreambench/wolf_plushie": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/wolf_plushie/04.jpg",
+      "sha256": "e88eb5df08f7dfe7c878c8836456cceb55816e93f04b60498a9a6159d6eb8946"
+    },
+    "dreambench_plus/live_subject/animal/00": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/00.jpg",
+      "sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9"
+    },
+    "dreambench_plus/live_subject/animal/01": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/01.jpg",
+      "sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf"
+    },
+    "dreambench_plus/live_subject/animal/02": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/02.jpg",
+      "sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5"
+    },
+    "dreambench_plus/live_subject/animal/03": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/03.jpg",
+      "sha256": "4e48caaa82f5239626e09867987af12fa886104e71e8c7af4f542d03c03f7df1"
+    },
+    "dreambench_plus/live_subject/animal/04": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/04.jpg",
+      "sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611"
+    },
+    "dreambench_plus/live_subject/animal/05": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/05.jpg",
+      "sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152"
+    },
+    "dreambench_plus/live_subject/animal/06": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/06.jpg",
+      "sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7"
+    },
+    "dreambench_plus/live_subject/animal/07": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/07.jpg",
+      "sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d"
+    },
+    "dreambench_plus/live_subject/animal/08": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/08.jpg",
+      "sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374"
+    },
+    "dreambench_plus/live_subject/animal/09": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/09.jpg",
+      "sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e"
+    },
+    "dreambench_plus/live_subject/animal/10": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/10.jpg",
+      "sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1"
+    },
+    "dreambench_plus/live_subject/animal/11": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/11.jpg",
+      "sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5"
+    },
+    "dreambench_plus/live_subject/animal/12": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/12.jpg",
+      "sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc"
+    },
+    "dreambench_plus/live_subject/animal/13": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/13.jpg",
+      "sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4"
+    },
+    "dreambench_plus/live_subject/animal/14": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/14.jpg",
+      "sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37"
+    },
+    "dreambench_plus/live_subject/animal/15": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/15.jpg",
+      "sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5"
+    },
+    "dreambench_plus/live_subject/animal/16": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/16.jpg",
+      "sha256": "b29daaca843a484ac2bd503f395f53587c0d372d40e3dd550db8e4af1452f844"
+    },
+    "dreambench_plus/live_subject/animal/17": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/17.jpg",
+      "sha256": "76d9d226a527f86df01c738b07319e59992732fb1eeb28b5c9981f5381d509b8"
+    },
+    "dreambench_plus/live_subject/animal/18": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/18.jpg",
+      "sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124"
+    },
+    "dreambench_plus/live_subject/animal/19": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/19.jpg",
+      "sha256": "e07efd14f998946efb538df93b92b649f5b0c50fadd876aba107cb594356db63"
+    },
+    "dreambench_plus/live_subject/animal/20": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/20.jpg",
+      "sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e"
+    },
+    "dreambench_plus/live_subject/animal/21": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/21.jpg",
+      "sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4"
+    },
+    "dreambench_plus/live_subject/animal/22": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/22.jpg",
+      "sha256": "015c9d3fa79095a1c8d13b102cba5fd1079f26ce71827369c12c9e60bfdaab1c"
+    },
+    "dreambench_plus/live_subject/animal/23": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/23.jpg",
+      "sha256": "f78ade71d3154c46dcbeb1329cfa0dbe7a1f566c369cd5f6f1193c5cad4cd166"
+    },
+    "dreambench_plus/live_subject/animal/24": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/24.jpg",
+      "sha256": "5c0545a1241324847555920b51d0c5c5334a13c2831b03f4766562ff278a6ae6"
+    },
+    "dreambench_plus/live_subject/animal/25": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/25.jpg",
+      "sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897"
+    },
+    "dreambench_plus/live_subject/animal/26": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/26.jpg",
+      "sha256": "a15947217a9064cae231f93d3bbc6db0e5cc594e4345309504d012cf65467370"
+    },
+    "dreambench_plus/live_subject/animal/27": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/27.jpg",
+      "sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2"
+    },
+    "dreambench_plus/live_subject/animal/28": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/28.jpg",
+      "sha256": "209d6a67939a4c8817e4cc9f78d785d785259be7dbf0deca79b1e6d83a8d6f83"
+    },
+    "dreambench_plus/live_subject/animal/29": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/29.jpg",
+      "sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43"
+    },
+    "dreambench_plus/live_subject/animal/30": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/30.jpg",
+      "sha256": "fcf95e7b1c93c5351283115169f5c6a1ddeb46265d8cab740b7df14097aeb50c"
+    },
+    "dreambench_plus/live_subject/animal/31": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/31.jpg",
+      "sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6"
+    },
+    "dreambench_plus/live_subject/animal/32": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/32.jpg",
+      "sha256": "40f90c57c399065a8ae8bc1cd980a5d2e2a6f9b250287f34ea7c4e567f24e8b1"
+    },
+    "dreambench_plus/live_subject/animal/33": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/33.jpg",
+      "sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09"
+    },
+    "dreambench_plus/live_subject/animal/34": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/34.jpg",
+      "sha256": "a35223420e4568c5773b3f2c50fb435b2f2d9b1cfc74c02220010c16d6076e49"
+    },
+    "dreambench_plus/live_subject/animal/35": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/35.jpg",
+      "sha256": "ebe9e985a0ac51823bd2e83b189e315ed288737e883fc9f73a109200be8a4b5b"
+    },
+    "dreambench_plus/live_subject/animal/36": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/36.jpg",
+      "sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a"
+    },
+    "dreambench_plus/live_subject/animal/37": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/37.jpg",
+      "sha256": "7c63760cecbd1aa432a67dd7bce5633e5a0db482cfe4b1cec3f4c8be3c8421fd"
+    },
+    "dreambench_plus/live_subject/animal/38": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/38.jpg",
+      "sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e"
+    },
+    "dreambench_plus/live_subject/animal/39": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/39.jpg",
+      "sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f"
+    },
+    "dreambench_plus/live_subject/animal/40": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/40.jpg",
+      "sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631"
+    },
+    "dreambench_plus/live_subject/animal/41": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/41.jpg",
+      "sha256": "7f6428464a00770435313692554c95b2b923577017096e4c6574ce72f44ca3ee"
+    },
+    "dreambench_plus/live_subject/animal/42": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/42.jpg",
+      "sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2"
+    },
+    "dreambench_plus/live_subject/animal/43": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/43.jpg",
+      "sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92"
+    },
+    "dreambench_plus/live_subject/animal/44": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/44.jpg",
+      "sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938"
+    },
+    "dreambench_plus/live_subject/human/00": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/00.jpg",
+      "sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9"
+    },
+    "dreambench_plus/live_subject/human/01": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/01.jpg",
+      "sha256": "5c316b87bab11b7b3bf8b60da5c06812c3b13406ca292d1c359df626dc990b99"
+    },
+    "dreambench_plus/live_subject/human/02": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/02.jpg",
+      "sha256": "57222fa3132f6a6275a0b611711ea8b704a100064619e9a00a3ef00fbf2ba24d"
+    },
+    "dreambench_plus/live_subject/human/03": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/03.jpg",
+      "sha256": "da781bf6d35107afde9bab3410c62a0a8f235fecd95a16a6dc45d6ea2cf881a8"
+    },
+    "dreambench_plus/live_subject/human/04": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/04.jpg",
+      "sha256": "9f0befb26354d910e2fc281c0670d9969b26ce9664a9fbdac1fc8acdd63e9fd3"
+    },
+    "dreambench_plus/live_subject/human/05": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/05.jpg",
+      "sha256": "85aec5b5fffd6d2b0fcef16cc4f91cd9bc10afd3b605fb0d5dc19f56b5aa356e"
+    },
+    "dreambench_plus/live_subject/human/06": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/06.jpg",
+      "sha256": "2acbd6037b057bec75446b19ad012086ff33a909fc04ae0219d431ca2ab04b79"
+    },
+    "dreambench_plus/live_subject/human/07": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/07.jpg",
+      "sha256": "041002bb03f887a1ad87990cedb41a226fab9187db3da60c655bc1e352c969b4"
+    },
+    "dreambench_plus/live_subject/human/08": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/08.jpg",
+      "sha256": "f2fb011113530393a1924702bd30395d18c8a9498327e964277816720fb8cca8"
+    },
+    "dreambench_plus/live_subject/human/09": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/09.jpg",
+      "sha256": "054e2dfaedc4acc6b40b6e67e53108b229299c94388af57744e054fad4274e21"
+    },
+    "dreambench_plus/live_subject/human/10": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/10.jpg",
+      "sha256": "78c8991b224c8d54dd6043a8cf9a09d5d338048280360fd134c9a764d17f4a08"
+    },
+    "dreambench_plus/live_subject/human/11": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/11.jpg",
+      "sha256": "438e8569d63cea47e5ec2f821022c20cf2ce6dab6775b3e3d0d9af140d27cb91"
+    },
+    "dreambench_plus/live_subject/human/12": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/12.jpg",
+      "sha256": "74f755e96ea9543b0212fb03dc6f5c98021898f56753d2efbaba200bc50a6bce"
+    },
+    "dreambench_plus/live_subject/human/13": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/13.jpg",
+      "sha256": "72baa304e257a83c802038c4f552a9f70efc07bd7b4ea0d67d3acb5bb13b44a4"
+    },
+    "dreambench_plus/live_subject/human/14": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/14.jpg",
+      "sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859"
+    },
+    "dreambench_plus/live_subject/human/15": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/15.jpg",
+      "sha256": "29870e8a31271ce975170d9044d16c865e29ffda6e2160e496d7eb145b8acd24"
+    },
+    "dreambench_plus/live_subject/human/16": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/16.jpg",
+      "sha256": "fe57c734ec38d08af9200865e88d6c8073b69368e572e413301ce429c65b976c"
+    },
+    "dreambench_plus/live_subject/human/17": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/17.jpg",
+      "sha256": "169fd2f8245fc49996cc45a72de2a760b5a6d7e81933832557535795196e3359"
+    },
+    "dreambench_plus/live_subject/human/18": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/18.jpg",
+      "sha256": "a20bdcdbadcd6ddf84e0603fc3197fe07b204399f7c22265844df01a2ad6cb4e"
+    },
+    "dreambench_plus/live_subject/human/19": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/19.jpg",
+      "sha256": "e9f9d74fb8c46a6f73cf29709399846235165edaf797663ebb664b5deef903df"
+    },
+    "dreambench_plus/object/00": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/00.jpg",
+      "sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30"
+    },
+    "dreambench_plus/object/01": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/01.jpg",
+      "sha256": "947f961adf0b6715aeb3bebf2067b0ae729b41c26722d81779e7f54ea585b202"
+    },
+    "dreambench_plus/object/02": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/02.jpg",
+      "sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+    },
+    "dreambench_plus/object/03": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/03.jpg",
+      "sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18"
+    },
+    "dreambench_plus/object/04": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/04.jpg",
+      "sha256": "be4cd162f6db231c1c78cc58cabec3126d57f5732604f0fe87c7f5e9665f348b"
+    },
+    "dreambench_plus/object/05": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/05.jpg",
+      "sha256": "0269cded348e8d7119b4047cd49d8ce2f5b3978c2c0ce8f7849c438e4a573a7b"
+    },
+    "dreambench_plus/object/06": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/06.jpg",
+      "sha256": "fba2aebb6714c8e36df24d697a3604b552cf108c3f7dbda2ba703f4a19c99b75"
+    },
+    "dreambench_plus/object/07": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/07.jpg",
+      "sha256": "455653b9dd0d46dffb4cdd5da0a038af26132ce1c6eaa309b661c3e7b530abd3"
+    },
+    "dreambench_plus/object/08": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/08.jpg",
+      "sha256": "7e1ff0b4902008e9a1e70a8354fcae73cd2ca63bb4268307448d706ce0b325ca"
+    },
+    "dreambench_plus/object/09": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/09.jpg",
+      "sha256": "371351b9c6ec8a072a16bc49932dc3ae896ea3b836dc9d7915be480582ffbb69"
+    },
+    "dreambench_plus/object/10": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/10.jpg",
+      "sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a"
+    },
+    "dreambench_plus/object/11": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/11.jpg",
+      "sha256": "d628cc78b91b97aeccbdab8f4f162bf474bce1f7d9eb84973b96684c9418d8c7"
+    },
+    "dreambench_plus/object/12": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/12.jpg",
+      "sha256": "9b96f4c826927fa2efa4e153872449b4e7b75cbb52cd01536b01e032cb9e3315"
+    },
+    "dreambench_plus/object/13": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/13.jpg",
+      "sha256": "094de0502d52ec423daa32895f65d1c9d092133b0ca32737ee4e4fa1be916fd4"
+    },
+    "dreambench_plus/object/14": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/14.jpg",
+      "sha256": "01b89feacd0d949b3ba4c96328a604a80a388085ec736fc08e657d9704ad8390"
+    },
+    "dreambench_plus/object/15": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/15.jpg",
+      "sha256": "bb807665e6075d3a1593607544383be5e6f85881be6a6668f3658dde8e83e0c4"
+    },
+    "dreambench_plus/object/16": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/16.jpg",
+      "sha256": "ee6dd3f1dbf8805e21521c83229c0c6831dbe8149603b62db9b2765dbfbb5a75"
+    },
+    "dreambench_plus/object/17": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/17.jpg",
+      "sha256": "753f4311cb0eec391d566a403d20cd90d694a75ffa07e3438e193099a5f0f5c1"
+    },
+    "dreambench_plus/object/18": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/18.jpg",
+      "sha256": "7f08d2598ace2dbc11a28b6cd2e4f41f8ca863ac438770e6d25d5684ae2f22e5"
+    },
+    "dreambench_plus/object/19": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/19.jpg",
+      "sha256": "e8357b9a62508824631e2e315974c43c0d7a26b03c28b1fbc6b3e17636367627"
+    },
+    "dreambench_plus/object/20": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/20.jpg",
+      "sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea"
+    },
+    "dreambench_plus/object/21": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/21.jpg",
+      "sha256": "d1a2f8566b08b810dcc630396e0c57e47155f7f797d7b6625074e6d6dcb3d086"
+    },
+    "dreambench_plus/object/22": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/22.jpg",
+      "sha256": "38935584952815df8ee07777880f9b9fe8eb8ab1613b95a152980955f4377db0"
+    },
+    "dreambench_plus/object/23": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/23.jpg",
+      "sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29"
+    },
+    "dreambench_plus/object/24": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/24.jpg",
+      "sha256": "fe4d1e623a6b8cb47365bb9c67bfc854c93c050eada21e77466e6623961cf3b8"
+    },
+    "dreambench_plus/object/25": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/25.jpg",
+      "sha256": "ae44c2085a73b9fb6abeba90910bd2f54a7fe71d5f3cf2c54d95d7341473524b"
+    },
+    "dreambench_plus/object/26": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/26.jpg",
+      "sha256": "fd9e0212e883b9c9a3f7b435dc50c95320daccf4a0469e6b93f3518c29e80b1f"
+    },
+    "dreambench_plus/object/27": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/27.jpg",
+      "sha256": "6db5fcc1cdbf6bb141093adaebaa1b29d1a40bc7e3ebe823022ca962c1a7d1d4"
+    },
+    "dreambench_plus/object/28": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/28.jpg",
+      "sha256": "2fd1a4d1e0a703de79cbd4a8b148ebc2ecf795e960199435c24d788d0f901ba9"
+    },
+    "dreambench_plus/object/29": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/29.jpg",
+      "sha256": "8a0c84dd7625531467c68fabfcdae3e0b25ab0511d6057434c9669e291b9ae81"
+    },
+    "dreambench_plus/object/30": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/30.jpg",
+      "sha256": "bc2feed10538e2df787b4554eaa56db3c59f580ccc1f65a874cde2e15c77b790"
+    },
+    "dreambench_plus/object/31": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/31.jpg",
+      "sha256": "a2eda27f03efacd55f8f2f16a1582e30362618dcb949d54b49b5c8825ab21475"
+    },
+    "dreambench_plus/object/32": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/32.jpg",
+      "sha256": "a1609f3cae9264b13d1d6b94f2e431ffb5b663f93b0affb0dcf4426a7a7b1d13"
+    },
+    "dreambench_plus/object/33": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/33.jpg",
+      "sha256": "4a8fe2e15b53ed8fbed521a4247ec32cc6014a3ab0c570573c7fb949f9af232e"
+    },
+    "dreambench_plus/object/34": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/34.jpg",
+      "sha256": "b862285097d9b81dcf586909d7fd20874787e3b00dd4ea76924b5a03358f6a57"
+    },
+    "dreambench_plus/object/35": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/35.jpg",
+      "sha256": "1441c7bf8e7f2c3d2f5a2384d73e320713e4d964b07c90560f0f03cb5ce4a3a0"
+    },
+    "dreambench_plus/object/36": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/36.jpg",
+      "sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e"
+    },
+    "dreambench_plus/object/37": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/37.jpg",
+      "sha256": "624e721c740f50012b5d1ad3817ba7f0b4872233caafa136bdb166a9c74175a8"
+    },
+    "dreambench_plus/object/38": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/38.jpg",
+      "sha256": "fe47bdfa1843b58d1a79b7735da8e9a73c28755f7a4fe75201799caa8858ea9d"
+    },
+    "dreambench_plus/object/39": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/39.jpg",
+      "sha256": "7fd1b3a4481e5fd70e1428992c5209cd1812129e4c3ba792339656e76bf9b877"
+    },
+    "dreambench_plus/object/40": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/40.jpg",
+      "sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27"
+    },
+    "dreambench_plus/object/41": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/41.jpg",
+      "sha256": "cf34b50348fd3f2bde31e2de36265e11a3806b2fc3efb2fae84f78e93e53d15f"
+    },
+    "dreambench_plus/object/42": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/42.jpg",
+      "sha256": "4e012a57d5edfd529eac639ef298ef9fad0acdfa2b6469d8b97bb8c4e2a8614f"
+    },
+    "dreambench_plus/object/43": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/43.jpg",
+      "sha256": "961ee20225d8c67c2ebde0a3d7505edb61207ee75490d4113f2fa9cfbb53edab"
+    },
+    "dreambench_plus/object/44": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/44.jpg",
+      "sha256": "1723b67e922e2d097279b745fdaa4017b52a25863049815cab17f2bd1a6fa82f"
+    },
+    "dreambench_plus/object/45": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/45.jpg",
+      "sha256": "a8d66cc4e4cc3909b335a5778f2633fd73d10472b72fdf9ab8bf5726868f3ac8"
+    },
+    "dreambench_plus/object/46": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/46.jpg",
+      "sha256": "ab5644459d8777b20a9154f6dc701ee2b1bb2ff0345b97ed2b3ff8e166784bc3"
+    },
+    "dreambench_plus/object/47": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/47.jpg",
+      "sha256": "971f938f3c7eb876bd3db85575db08842f4575927199e4eeea7e7964fa4915df"
+    },
+    "dreambench_plus/object/48": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/48.jpg",
+      "sha256": "5470aed041b156f02a4abf9e3516257ee8750df4ebdccf2f69ea5b7e3f09224f"
+    },
+    "dreambench_plus/object/49": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/49.jpg",
+      "sha256": "a0f521ccb308c25835a4ffb37a253f3db6e2c7e11944d72c2a6578e6a2c20d8c"
+    },
+    "dreambench_plus/object/50": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/50.jpg",
+      "sha256": "db2435017749fee683483b0aba1ea4cd872bf44f08d5bedd0955bbd31224b3fd"
+    },
+    "dreambench_plus/object/51": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/51.jpg",
+      "sha256": "2684119b3e24f7920775d256fb1b1a4905f775da6a940b671dc1031cb3ed5968"
+    },
+    "dreambench_plus/object/52": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/52.jpg",
+      "sha256": "e898e815656fd538977b5c0735727fa03e1f4261842ca6eb91c7ae8d43ceb365"
+    },
+    "dreambench_plus/object/53": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/53.jpg",
+      "sha256": "c4e9374b3de01094b73c41f909863cb8b6aab3c3b916e14178ed49f9e873a656"
+    },
+    "dreambench_plus/object/54": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/54.jpg",
+      "sha256": "a6835caba5c64cdcaf829729fe9036f996f8e40b15d29f8c7f00c69779cb68a8"
+    },
+    "dreambench_plus/object/55": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/55.jpg",
+      "sha256": "1ad82c7271bffbbbf25dab6e0d7d43921c313b950ecfe2eba4e30ce771cbf024"
+    },
+    "dreambench_plus/object/56": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/56.jpg",
+      "sha256": "4617746bfc0c5039b5e688aaaf0429adb283093fe342cda125c8c23660c0d1f0"
+    },
+    "dreambench_plus/object/57": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/57.jpg",
+      "sha256": "4c819ee4a36ab3a419f50cb358cbae4c245ff86311ad1285229faa9fd58158b4"
+    },
+    "dreambench_plus/object/58": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/58.jpg",
+      "sha256": "ee489052afca91859bbab61be7f8f565bb087463e0d894fc0b6f08b820e318c6"
+    },
+    "dreambench_plus/object/59": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/59.jpg",
+      "sha256": "6c15c3862168e72177e10c36c22c1a386121202b7818b24cf075d711890ce92c"
+    },
+    "dreambench_plus/object/60": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/60.jpg",
+      "sha256": "0aa0582800d4aeb1dd9458a6569db5c1f124a6efaa3568eeb9b10b03c682e4f3"
+    },
+    "dreambench_plus/object/61": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/61.jpg",
+      "sha256": "3331257f07b95493d91b47b6f18ce38fea3e5eb0fabddb774ed7c8440d572161"
+    },
+    "dreambench_plus/object/62": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/62.jpg",
+      "sha256": "24884d4a8ab80d7939554add436ce49dcc9332b80d5d78fd91359d642b143cf8"
+    },
+    "dreambench_plus/object/63": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/63.jpg",
+      "sha256": "77a4d05a253d73c384a5d2718f591160215b0194e44ba4eec558defffeb39f49"
+    },
+    "dreambench_plus/object/64": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/64.jpg",
+      "sha256": "f98cc5cfa92e7753235b3535d76934e3d859b68d1f9ced7b997ef4ca3d21e02f"
+    },
+    "dreambench_plus/style/00": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/00.jpg",
+      "sha256": "0ee305167c7e046ad69888dcbb26b236e8d8330cc9866253bb82ea9a01bc1359"
+    },
+    "dreambench_plus/style/01": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/01.jpg",
+      "sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c"
+    },
+    "dreambench_plus/style/02": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/02.jpg",
+      "sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e"
+    },
+    "dreambench_plus/style/03": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/03.jpg",
+      "sha256": "363bf44f75a3807196fd605d1aab1ce7ed48291caf0fb04c03d34ffd1d6444dc"
+    },
+    "dreambench_plus/style/04": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/04.jpg",
+      "sha256": "3b52f47779ff3329c6fc5fd928f94c6b7a0068a6931920ce965b0afbc760f4cd"
+    },
+    "dreambench_plus/style/05": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/05.jpg",
+      "sha256": "712404d96b98938596371ff25f7a35dbce5d864aa2dcdabd8b404a5791b864af"
+    },
+    "dreambench_plus/style/06": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/06.jpg",
+      "sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c"
+    },
+    "dreambench_plus/style/07": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/07.jpg",
+      "sha256": "03120c17725b5d69f11a5b2793930c02bb6a893cb36af1f3adffb3a785b3a651"
+    },
+    "dreambench_plus/style/08": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/08.jpg",
+      "sha256": "b48700bc86719a622b50707642618c55ec8097e499f19a0cfb702d3c0bab1da2"
+    },
+    "dreambench_plus/style/09": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/09.jpg",
+      "sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b"
+    },
+    "dreambench_plus/style/10": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/10.jpg",
+      "sha256": "7d295fbe01922564c35400b4a2ed0d10f8ae9ba4355b0cf9728b07f2528858c8"
+    },
+    "dreambench_plus/style/11": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/11.jpg",
+      "sha256": "3fd3ad1c9368c524b911f3231932503dfc2f6c429b5d6fc9c593b89ae007f593"
+    },
+    "dreambench_plus/style/12": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/12.jpg",
+      "sha256": "c50c0e93b272ad2dc44abc4ae2a6efed4abf405898e975cae7fffa32324a8a4c"
+    },
+    "dreambench_plus/style/13": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/13.jpg",
+      "sha256": "aa1afb4a0e27a0368eaf580b4c24e03e1929918e445b0c178d1be1f4b84a271d"
+    },
+    "dreambench_plus/style/14": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/14.jpg",
+      "sha256": "b10ccab4436097beceeaba860ad247ab679fea333869bd9c81f8d259df72e8b2"
+    },
+    "dreambench_plus/style/15": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/15.jpg",
+      "sha256": "4b3a83e26079e82ebaf5fe7e220909d4d26538cb5c0a0391f77e6590210f4a5a"
+    },
+    "dreambench_plus/style/16": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/16.jpg",
+      "sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f"
+    },
+    "dreambench_plus/style/17": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/17.jpg",
+      "sha256": "c1139e8f8e061be3be09bed6c56c9c78ca453e639683a71fb185cbc313ad748a"
+    },
+    "dreambench_plus/style/18": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/18.jpg",
+      "sha256": "e3480d5f031737aed8d7624a45f6bea00e40146799c46979c717e3f4bff1633a"
+    },
+    "dreambench_plus/style/19": {
+      "path": "Orthogonalization-InstantX-IP-Adapter/datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/19.jpg",
+      "sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050"
+    }
+  },
+  "scope": "latest full benchmark: baseline and source_target_ssg only"
+}

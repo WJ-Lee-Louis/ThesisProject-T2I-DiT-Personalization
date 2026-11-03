@@ -1,0 +1,11 @@
+{
+  "method": "dreamo",
+  "benchmark": "dreambench",
+  "bundle_id": "80f168f66963c39103d3a528",
+  "source_archive_sha256": "a537f3d38fda4db988c02588e960f174249cda17cbe84f52c3de02a7aebd81bd",
+  "metrics_sha256": "dba2d205ba5c5b446af97b473b025d00e4d0fba4836acfb06cb480da3789a301",
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "metric_selection": "all",
+  "metric_cases": 750,
+  "layout": "ZIP shards in method/artifacts/benchmark/bundle_id; original bytes verified; restore script rebuilds src_image"
+}

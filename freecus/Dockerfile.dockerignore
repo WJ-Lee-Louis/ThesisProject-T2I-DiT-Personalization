@@ -1,0 +1,9 @@
+**
+!freecus/
+!freecus/**
+freecus/.venv/
+freecus/data/
+freecus/models/
+freecus/manifests/
+freecus/outputs/
+**/__pycache__/

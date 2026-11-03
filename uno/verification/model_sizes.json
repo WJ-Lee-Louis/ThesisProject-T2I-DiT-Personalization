@@ -1,0 +1,40 @@
+{
+  "flux": {
+    "bytes": 24138236940,
+    "files": {
+      "flux1-dev.safetensors": 23802932552,
+      "ae.safetensors": 335304388
+    }
+  },
+  "t5": {
+    "bytes": 9525486681,
+    "files": {
+      "config.json": 782,
+      "model-00001-of-00002.safetensors": 4994582224,
+      "model-00002-of-00002.safetensors": 4530066360,
+      "model.safetensors.index.json": 19885,
+      "added_tokens.json": 2593,
+      "special_tokens_map.json": 2543,
+      "spiece.model": 791656,
+      "tokenizer_config.json": 20638
+    }
+  },
+  "clip": {
+    "bytes": 1714256158,
+    "files": {
+      "config.json": 4519,
+      "model.safetensors": 1710540580,
+      "merges.txt": 524619,
+      "vocab.json": 961143,
+      "tokenizer.json": 2224003,
+      "tokenizer_config.json": 905,
+      "special_tokens_map.json": 389
+    }
+  },
+  "lora": {
+    "bytes": 1912640152,
+    "files": {
+      "dit_lora.safetensors": 1912640152
+    }
+  }
+}

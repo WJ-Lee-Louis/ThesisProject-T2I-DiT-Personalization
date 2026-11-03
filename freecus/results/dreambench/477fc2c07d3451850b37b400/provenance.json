@@ -1,0 +1,11 @@
+{
+  "method": "freecus",
+  "benchmark": "dreambench",
+  "bundle_id": "477fc2c07d3451850b37b400",
+  "source_archive_sha256": "56d6d4dc38287a078be389ea3e3a6aec1ae3777cef9a5970ccb5262c0ead57ec",
+  "metrics_sha256": "aef7bd9f5b1c7338f48da63b1c48660e86a84b6b2e518387a4a972031b64727b",
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "metric_selection": "all",
+  "metric_cases": 750,
+  "layout": "ZIP shards in method/artifacts/benchmark/bundle_id; original bytes verified; restore script rebuilds src_image"
+}

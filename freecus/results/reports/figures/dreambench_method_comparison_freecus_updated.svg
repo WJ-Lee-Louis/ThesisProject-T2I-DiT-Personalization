@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="463.68pt" viewBox="0 0 1080 463.68" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-01T22:30:40.523689</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 463.68 
+L 1080 463.68 
+L 1080 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 47.52 89.28 
+L 1032.48 89.28 
+" clip-path="url(#pca2c6109fd)" style="fill: none; stroke: #000000; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 47.52 128.52 
+L 1032.48 128.52 
+" clip-path="url(#pca2c6109fd)" style="fill: none; stroke: #000000; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 47.52 336.24 
+L 1032.48 336.24 
+" clip-path="url(#pca2c6109fd)" style="fill: none; stroke: #000000; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 25px; font-family: 'DejaVu Serif'; text-anchor: start" x="47.52" y="35.338438" transform="rotate(-0 47.52 35.338438)">DreamBench</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="47.52" y="60.299063" transform="rotate(-0 47.52 60.299063)">Method comparison</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="113.579063" transform="rotate(-0 57.6 113.579063)">Method</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="113.579063" transform="rotate(-0 640.8 113.579063)">CLIP-I ↑</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="113.579063" transform="rotate(-0 811.44 113.579063)">CLIP-T ↑</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="113.579063" transform="rotate(-0 982.08 113.579063)">DINO-I ↑</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 14px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="153.883594" transform="rotate(-0 57.6 153.883594)">Overall (750 images / method)</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="181.259063" transform="rotate(-0 57.6 181.259063)">InstantX-IP-Adapter (baseline)</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="181.259063" transform="rotate(-0 640.8 181.259063)">0.8319</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="181.259063" transform="rotate(-0 811.44 181.259063)">0.2939</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="181.259063" transform="rotate(-0 982.08 181.259063)">0.6900</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="209.339063" transform="rotate(-0 57.6 209.339063)">Ours (scale 0.7)</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="209.339063" transform="rotate(-0 640.8 209.339063)">0.8022</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="209.339063" transform="rotate(-0 811.44 209.339063)">0.3123</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="209.339063" transform="rotate(-0 982.08 209.339063)">0.6548</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="237.419063" transform="rotate(-0 57.6 237.419063)">Ours (scale best*)</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="237.419063" transform="rotate(-0 640.8 237.419063)">0.8144</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="237.419063" transform="rotate(-0 811.44 237.419063)">0.3078</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="237.419063" transform="rotate(-0 982.08 237.419063)">0.6726</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="265.499063" transform="rotate(-0 57.6 265.499063)">FreeCus</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="265.499063" transform="rotate(-0 640.8 265.499063)">0.8184</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="265.499063" transform="rotate(-0 811.44 265.499063)">0.2789</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="265.499063" transform="rotate(-0 982.08 265.499063)">0.7156</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="293.579063" transform="rotate(-0 57.6 293.579063)">UNO [T]</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="293.579063" transform="rotate(-0 640.8 293.579063)">0.8356</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="293.579063" transform="rotate(-0 811.44 293.579063)">0.3039</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="293.579063" transform="rotate(-0 982.08 293.579063)">0.7604</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: start" x="57.6" y="321.659063" transform="rotate(-0 57.6 321.659063)">USO [T]</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="640.8" y="321.659063" transform="rotate(-0 640.8 321.659063)">0.8301</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="811.44" y="321.659063" transform="rotate(-0 811.44 321.659063)">0.3178</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 15px; font-family: 'DejaVu Serif'; text-anchor: middle" x="982.08" y="321.659063" transform="rotate(-0 982.08 321.659063)">0.7686</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="57.6" y="364.316461" transform="rotate(-0 57.6 364.316461)">Subject macro average; single selected reference; higher is better.</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="57.6" y="382.676461" transform="rotate(-0 57.6 382.676461)">FreeCus: newly evaluated; 1024 × 1024; seed 42; 750 images / 30 subjects.</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="57.6" y="401.112531" transform="rotate(-0 57.6 401.112531)">Baseline and Ours scale 0.7: historical screenshot values (4-decimal precision).</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="57.6" y="419.472531" transform="rotate(-0 57.6 419.472531)">* best row uses scale 0.8 as requested; this is a provisional choice, not an optimized scale.</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Serif'; text-anchor: start; fill: #4a4a4a" x="57.6" y="437.756461" transform="rotate(-0 57.6 437.756461)">[T] tuning-based (UNO, USO). External values copied from the supplied comparison PNG.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pca2c6109fd">
+   <rect x="0" y="0" width="1080" height="463.68"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "repo": "https://github.com/bytedance/UNO",
+  "commit": "a563432dcfb4caf98df4368facb8102bf97d376c",
+  "files": {
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "README.md": "01acf0c1ae27a9ab97c650f023d5c052f9a1331051e97492701b4edd10372b55",
+    "datasets/dreambench_singleip.json": "920055b106f8522199f4f163c84ccc8fbcf583d20490ed57628040a37d559e86",
+    "eval/evaluate_clip_dino_score_single_subject.py": "16792f3341adf09d44522ef4cd67a780b818e67a96693d1b7f8ac43ee515e5bf",
+    "inference.py": "36b38f607b7d69890131eab4b6ae974a9e5425b86dfb15e648653f5d4bf87b8c",
+    "pyproject.toml": "96e29e529985f6e3ac27d3c4cad6a731cc1f7f167ffa23a2e446b84df41cfb22",
+    "requirements.txt": "b8f7831184863fba2f96da872d2882fc21e8d8b2d12238446396251166529071",
+    "uno/flux/math.py": "d94bae455e0d88e605bb746fe6336ea2ee3cf503b746151a1fdcda44933012b7",
+    "uno/flux/model.py": "3a9a411092e7a871ee2804530a5311da1a03c3db5d5bf8124e006fa515bc2b1c",
+    "uno/flux/modules/autoencoder.py": "30492e52b2e4157b631e10493b373b86a8eae5074b4db64f0a090df417959235",
+    "uno/flux/modules/conditioner.py": "78859f79ea1975282e853bee127f417bf0ecb673db669416878a97dcdd01d725",
+    "uno/flux/modules/layers.py": "c9723fcfc801ff18ce80ad2e55d6d01e93d116169efff0fa0547bde75d8a0fb8",
+    "uno/flux/pipeline.py": "cc4c20112b84d163ffffc712ca8bf9d484f675538275464fdbea6a784dde1cba",
+    "uno/flux/sampling.py": "c72cafd6721a66449db11f6871e17ba753e53df1c067dc884af790cb6541aba3",
+    "uno/flux/util.py": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e"
+  }
+}

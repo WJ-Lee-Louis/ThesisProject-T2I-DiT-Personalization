@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-02",
+  "status": "generation_and_full_benchmark_metrics_complete",
+  "upstream_repo": "https://github.com/bytedance/DreamO",
+  "upstream_commit": "461e35ba6b068f42ca53b43f289b3d91b7f911cd",
+  "upstream_bytes_verified": true,
+  "model_revisions_locked": true,
+  "local_environment": "Python 3.11, CPU torch 2.6.0, diffusers 0.33.1, transformers 4.45.2, peft 0.15.2, accelerate 0.32.0",
+  "pip_check": "passed",
+  "tests_passed": 10,
+  "tests_cover": [
+    "Original upstream Git blob hashes",
+    "750 + 1350 original case IDs/reference IDs/prompts/seeds",
+    "All 180 style cases retained for generation",
+    "Official style activation prefix affects generation prompt only",
+    "Full 1350 evaluation default; optional 1170 non-style selection",
+    "Reject silent quantization/resolution/task changes",
+    "Reject unpinned model download requests",
+    "Real tiny official transformer forward with reference embeddings",
+    "Real tiny official pipeline LoRA load/fuse/unload with pinned PEFT",
+    "Official aspect-preserving resize",
+    "Cost-based GPU choice and initialization/per-image VRAM guard"
+  ],
+  "local_bundles_verified": {
+    "dreambench": {
+      "cases": 750,
+      "references": 30,
+      "lanes": [
+        375,
+        375
+      ]
+    },
+    "dreambench_plus": {
+      "cases": 1350,
+      "references": 150,
+      "style_cases": 180,
+      "lanes": [
+        675,
+        675
+      ]
+    }
+  },
+  "generation_and_evaluation_dry_runs": "passed",
+  "large_model_weights_downloaded": true,
+  "modal_account_changed": false,
+  "modal_deployed": true,
+  "gpu_inference_started": true,
+  "gpu_vram_measured": true,
+  "memory_plan": "A100 pilots measured 36.05078125 GiB peak reserved; see a100_pilot.json and current workflow status.",
+  "limits": "Full-model A100 inference verified on 8 DreamBench and 16 DreamBench++ cases. Full generation and final metric scores remain pending. Modal default profile unchanged.",
+  "modal_profiles": {
+    "dreambench": "method-comparison",
+    "dreambench_plus": "method-comparison-dbpp"
+  },
+  "selected_gpu": "L40S",
+  "gpu_comparison": "gpu_comparison.json",
+  "metrics_computed": true,
+  "metric_files": {
+    "dreambench": "outputs\\metrics\\dreambench_scores.json",
+    "dreambench_plus": "outputs\\metrics\\dreambench_plus_scores.json"
+  }
+}

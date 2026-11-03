@@ -1,0 +1,19 @@
+{
+  "dreambench": {
+    "data_root": "dreambooth_reference_dataset",
+    "subjects": 30,
+    "samples": 3000,
+    "manifest": "freecus/manifests/dreambench_1024.jsonl"
+  },
+  "dreambench_plus": {
+    "repo": "yuangpeng/dreambench_plus",
+    "revision": "459b06499fad3dac842c4b1f7a053fb3328d91c7",
+    "archive_sha256": "fabdaac1cbff6826c226e874902193ac7965e29b6c1644e983551c980ec82a33",
+    "data_root": "freecus/data/dreambench_plus/data",
+    "subjects": 150,
+    "samples": 5400,
+    "manifest": "freecus/manifests/dreambench_plus_1024.jsonl"
+  },
+  "status": "superseded_initial_four_seed_setup",
+  "active_protocol": "project-protocol.json"
+}

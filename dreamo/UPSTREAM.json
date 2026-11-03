@@ -1,0 +1,22 @@
+{
+  "repo": "https://github.com/bytedance/DreamO",
+  "commit": "461e35ba6b068f42ca53b43f289b3d91b7f911cd",
+  "files": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "README.md": "2fe06eb9eba3b4fd858ae1585a63e2578d8863d8656bac42236e33f452ddd21e",
+    "dreamo_v1.1.md": "de3b71c51ea07d6d98820f0d5b58a8a235a72b29ca25724fdeb558498f5eb3e9",
+    "requirements.txt": "33283141a66227655c8cc8c5396cd9a5983ab639fee1252cf6b40c129ece0ded",
+    "pyproject.toml": "750b6e24257f0726bd6b932bf0a966e4471e97aa0f54a2c8929f1d7b110c8fc4",
+    "app.py": "5f1fe2a978c5198ee192c29a1a53ff47c3d6c07330f939176c8d48cf8752e8f0",
+    "dreamo_generator.py": "caef72f110f70ca5881d18e77bd1c6371c414ab4fd49e8bd951fbd7cf9684882",
+    "dreamo/dreamo_pipeline.py": "c51010c960dddff9af552b4f32d1a1fd8f301e4dc59646d7154462cbe41012c5",
+    "dreamo/transformer.py": "c78c654524a5a7c482cb8a77975a7762f3313bd7db2075b09c83f5705d3a35ef",
+    "dreamo/utils.py": "a31a54cc5c083edf2d99a3485a80bfea4cbd19f2eae8d8c8c76d5dd26ec13985",
+    "tools/BEN2.py": "f4d6d4f61b33019768c71c4bcd4cb419a78bac184b135145146615a96c845f69"
+  },
+  "excluded": [
+    "example_inputs",
+    "models weights",
+    "git history"
+  ]
+}
