@@ -1,0 +1,9 @@
+# Preserve exact upstream Git blob bytes, including licenses and README.
+upstream/* -text
+project_metrics/benchmark_metrics.py -text
+*.json text eol=lf
+*.txt text eol=lf
+# Byte-preserving benchmark data takes precedence over generic text rules.
+upstream/** -text
+results/** -text
+manifests/** -text

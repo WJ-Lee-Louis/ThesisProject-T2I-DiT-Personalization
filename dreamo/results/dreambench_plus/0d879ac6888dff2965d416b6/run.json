@@ -1,0 +1,90 @@
+{
+  "config": {
+    "version": "v1.1",
+    "width": 1024,
+    "height": 1024,
+    "seed": 42,
+    "steps": 12,
+    "guidance": 4.5,
+    "true_cfg": 1.0,
+    "negative_prompt": "",
+    "negative_guidance": 3.5,
+    "turbo": true,
+    "reference_resolution": 512,
+    "reference_task": "ip_with_native_style",
+    "quantization": "none",
+    "cpu_offload": false,
+    "models": {
+      "flux": "black-forest-labs/FLUX.1-dev",
+      "dreamo": "ByteDance/DreamO",
+      "turbo": "alimama-creative/FLUX.1-Turbo-Alpha",
+      "ben2": "PramaLLC/BEN2"
+    },
+    "seeds": [
+      42
+    ]
+  },
+  "manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+  "models": {
+    "flux": {
+      "repo": "black-forest-labs/FLUX.1-dev",
+      "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+    },
+    "dreamo": {
+      "repo": "ByteDance/DreamO",
+      "revision": "eb693ac03bc364d17ec4fe04a3c6ffcad038ac0c"
+    },
+    "turbo": {
+      "repo": "alimama-creative/FLUX.1-Turbo-Alpha",
+      "revision": "7b29bf041b413949089d78b826a5c9726e3c8e50"
+    },
+    "ben2": {
+      "repo": "PramaLLC/BEN2",
+      "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f"
+    }
+  },
+  "code": {
+    "dreamo/__init__.py": "5feada856a3c684fe3ef6532593921e9898510b76b1c40011f63c04b3982228a",
+    "dreamo/assemble.py": "6c8bd097e46c152fb5a895ebb3fb26c1ab670f03cbcb7d83b3ad97cb3f71258d",
+    "dreamo/constraints.txt": "92a9bd9d6c9e38c02d3c86f58ff209e17491d4f6d85c19d0c6a345006a7640da",
+    "dreamo/efficiency.py": "c3bc400d095744ae9c5af9343fff047ff1229af732b7742d2572ae170abf20c4",
+    "dreamo/evaluate.py": "094d582216d3686424feb419b5297d40d33a8d777da0a8f1f03f1964353b8471",
+    "dreamo/modal_app.py": "08b2304b2d2aed41ef3d9905008bf96031a8d93c5b30717db542de7c3b540472",
+    "dreamo/modal_client.py": "821b7062eff30efbce82d66212a244b3e740705c702ff171de9b8da65df370ff",
+    "dreamo/models.py": "2354a085f0fb1971ba3480b29fd6500fde2c10f4eebbf8e77a42322c76085b69",
+    "dreamo/protocol.py": "75c4452bdc6a9a4056971172d153b1460ed7c2ef430a8a9b405608396b10f690",
+    "dreamo/requirements-eval.txt": "1cffef0e6f6b947aa0270083cd7119610693209015e523a73a2b128897640b7b",
+    "dreamo/requirements-gpu.txt": "63593c8b302841dae1dedd365715ef5db64f79984ab90401974e5ae011552759",
+    "dreamo/requirements.txt": "55241c9d835be08371c99ac050a0fa6afaa1c12437999ca4fc5723795908d63b",
+    "dreamo/run.py": "568ecb3db317768af409d7a3593bf7a2e5bfd12c6a97ded69443c139df2e3a22",
+    "dreamo/runtime.py": "300d13f0923c50ac27719d619fcb34876b07b168dbc14723b85a07f16d954521",
+    "dreamo/upstream/app.py": "5f1fe2a978c5198ee192c29a1a53ff47c3d6c07330f939176c8d48cf8752e8f0",
+    "dreamo/upstream/dreamo/dreamo_pipeline.py": "c51010c960dddff9af552b4f32d1a1fd8f301e4dc59646d7154462cbe41012c5",
+    "dreamo/upstream/dreamo/transformer.py": "c78c654524a5a7c482cb8a77975a7762f3313bd7db2075b09c83f5705d3a35ef",
+    "dreamo/upstream/dreamo/utils.py": "a31a54cc5c083edf2d99a3485a80bfea4cbd19f2eae8d8c8c76d5dd26ec13985",
+    "dreamo/upstream/dreamo_generator.py": "caef72f110f70ca5881d18e77bd1c6371c414ab4fd49e8bd951fbd7cf9684882",
+    "dreamo/upstream/tools/BEN2.py": "f4d6d4f61b33019768c71c4bcd4cb419a78bac184b135145146615a96c845f69",
+    "freecus/evaluate.py": "eb1c1114f3d655c5bfdb36d4d07725c89285bec13e7192d3142d6d8fe1366022",
+    "freecus/manifest.py": "f2cf92a0ecd1a136491c2e6baa106c88d1270999e8e92f20f55961e532adceff",
+    "freecus/project_metrics/benchmark_metrics.py": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+    "freecus/run.py": "d461ed707e503a087b175210cd59daaa56dfc016234f67ceb2f8e29799531079"
+  },
+  "fingerprint": "5ede585856f25b1d4e1ed8d0a6a0cc4ae7beee7c9080764a6c8d052a00e02f2f",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "diffusers": "0.33.1",
+    "transformers": "4.45.2",
+    "peft": "0.15.2",
+    "accelerate": "0.32.0",
+    "numpy": "1.26.4",
+    "Pillow": "11.1.0",
+    "timm": "1.0.15",
+    "einops": "0.8.1",
+    "safetensors": "0.5.3",
+    "tokenizers": "0.20.3",
+    "opencv-python-headless": "4.11.0.86"
+  },
+  "gpu": "NVIDIA L40S",
+  "cuda": "12.4"
+}

@@ -1,0 +1,7 @@
+.venv*/
+outputs/
+models/
+__pycache__/
+*.pyc
+artifacts/**/*.json
+artifacts/**/*.download

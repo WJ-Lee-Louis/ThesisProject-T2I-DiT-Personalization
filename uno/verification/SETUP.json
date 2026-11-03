@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-02",
+  "status": "generation_and_full_benchmark_metrics_complete",
+  "upstream": {
+    "repo": "https://github.com/bytedance/UNO",
+    "commit": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "files": {
+      "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "README.md": "01acf0c1ae27a9ab97c650f023d5c052f9a1331051e97492701b4edd10372b55",
+      "datasets/dreambench_singleip.json": "920055b106f8522199f4f163c84ccc8fbcf583d20490ed57628040a37d559e86",
+      "eval/evaluate_clip_dino_score_single_subject.py": "16792f3341adf09d44522ef4cd67a780b818e67a96693d1b7f8ac43ee515e5bf",
+      "inference.py": "36b38f607b7d69890131eab4b6ae974a9e5425b86dfb15e648653f5d4bf87b8c",
+      "pyproject.toml": "96e29e529985f6e3ac27d3c4cad6a731cc1f7f167ffa23a2e446b84df41cfb22",
+      "requirements.txt": "b8f7831184863fba2f96da872d2882fc21e8d8b2d12238446396251166529071",
+      "uno/flux/math.py": "d94bae455e0d88e605bb746fe6336ea2ee3cf503b746151a1fdcda44933012b7",
+      "uno/flux/model.py": "3a9a411092e7a871ee2804530a5311da1a03c3db5d5bf8124e006fa515bc2b1c",
+      "uno/flux/modules/autoencoder.py": "30492e52b2e4157b631e10493b373b86a8eae5074b4db64f0a090df417959235",
+      "uno/flux/modules/conditioner.py": "78859f79ea1975282e853bee127f417bf0ecb673db669416878a97dcdd01d725",
+      "uno/flux/modules/layers.py": "c9723fcfc801ff18ce80ad2e55d6d01e93d116169efff0fa0547bde75d8a0fb8",
+      "uno/flux/pipeline.py": "cc4c20112b84d163ffffc712ca8bf9d484f675538275464fdbea6a784dde1cba",
+      "uno/flux/sampling.py": "c72cafd6721a66449db11f6871e17ba753e53df1c067dc884af790cb6541aba3",
+      "uno/flux/util.py": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e"
+    }
+  },
+  "tests_passed": 7,
+  "cpu_validation_environment": "existing dreamo/.venv (unchanged)",
+  "gpu_environment": "Python3.11 torch2.6.0+cu124 torchvision0.21.0+cu124 transformers4.45.2",
+  "model_revisions_locked": true,
+  "model_files": "model_sizes.json",
+  "dry_run_generation_and_evaluation": "passed",
+  "archives_verified": true,
+  "profiles": {
+    "dreambench": "wj-lee-louis",
+    "dreambench_plus": "woojin716"
+  },
+  "generation_counts": {
+    "dreambench": 750,
+    "dreambench_plus": 1350
+  },
+  "style_excluded": false,
+  "metric_protocol": "uno-selected-reference-v1; original shared evaluator SHA256 0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+  "gpu_vram_measured": true,
+  "metrics_computed": true,
+  "modal_deployed": true,
+  "workflows": {
+    "dreambench": {
+      "workflow_id": "c961a26586b5470da259eb79d1b8c531",
+      "call_id": "fc-01M6DKK8ERAB38RPK1GQQ5GWH4",
+      "bundle_id": "98bf99baf41eb1b758fceb23",
+      "profile": "wj-lee-louis",
+      "benchmark": "dreambench",
+      "compute_admission_usd": 38,
+      "workspace_budget_usd": 40,
+      "app": "uno-method-comparison"
+    },
+    "dreambench_plus": {
+      "workflow_id": "563e9df070984928896410ca0d6133bf",
+      "call_id": "fc-01M6DKKDMKRXT7TWNCWW9R05K6",
+      "bundle_id": "2ff93b396bb6c6eda2ee2215",
+      "profile": "woojin716",
+      "benchmark": "dreambench_plus",
+      "compute_admission_usd": 38,
+      "workspace_budget_usd": 40,
+      "app": "uno-method-comparison"
+    }
+  },
+  "selected_gpu": "A100-80GB",
+  "peak_reserved_gib": 42.2578125,
+  "pilot_images": {
+    "dreambench": 8,
+    "dreambench_plus": 16
+  },
+  "gpu_measurements": "gpu_pilots.json",
+  "sample_image": "outputs/verification/a100-sample.png",
+  "metric_files": {
+    "dreambench": "outputs\\metrics\\dreambench_scores.json",
+    "dreambench_plus": "outputs\\metrics\\dreambench_plus_scores.json"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "black-forest-labs/FLUX.1-dev": {
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "files": {
+      ".gitattributes": 1655,
+      "LICENSE.md": 18621,
+      "README.md": 4394,
+      "ae.safetensors": 335304388,
+      "dev_grid.jpg": 1301528,
+      "flux1-dev.safetensors": 23802932552,
+      "model_index.json": 536,
+      "scheduler/scheduler_config.json": 273,
+      "text_encoder/config.json": 613,
+      "text_encoder/model.safetensors": 246144352,
+      "text_encoder_2/config.json": 782,
+      "text_encoder_2/model-00001-of-00002.safetensors": 4994582224,
+      "text_encoder_2/model-00002-of-00002.safetensors": 4530066360,
+      "text_encoder_2/model.safetensors.index.json": 19885,
+      "tokenizer/merges.txt": 524619,
+      "tokenizer/special_tokens_map.json": 588,
+      "tokenizer/tokenizer_config.json": 705,
+      "tokenizer/vocab.json": 1059962,
+      "tokenizer_2/special_tokens_map.json": 2543,
+      "tokenizer_2/spiece.model": 791656,
+      "tokenizer_2/tokenizer.json": 2424235,
+      "tokenizer_2/tokenizer_config.json": 20817,
+      "transformer/config.json": 378,
+      "transformer/diffusion_pytorch_model-00001-of-00003.safetensors": 9983040304,
+      "transformer/diffusion_pytorch_model-00002-of-00003.safetensors": 9949328904,
+      "transformer/diffusion_pytorch_model-00003-of-00003.safetensors": 3870584832,
+      "transformer/diffusion_pytorch_model.safetensors.index.json": 121262,
+      "vae/config.json": 820,
+      "vae/diffusion_pytorch_model.safetensors": 167666902
+    }
+  },
+  "xlabs-ai/xflux_text_encoders": {
+    "revision": "5ce032c6b9bfe31a4ffb220c8afa147e8de6acea",
+    "files": {
+      ".gitattributes": 1519,
+      "README.md": 213,
+      "added_tokens.json": 2593,
+      "config.json": 782,
+      "model-00001-of-00002.safetensors": 4994582224,
+      "model-00002-of-00002.safetensors": 4530066360,
+      "model.safetensors.index.json": 19885,
+      "special_tokens_map.json": 2543,
+      "spiece.model": 791656,
+      "tokenizer_config.json": 20638
+    }
+  },
+  "openai/clip-vit-large-patch14": {
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "files": {
+      ".gitattributes": 1229,
+      "README.md": 7947,
+      "config.json": 4519,
+      "flax_model.msgpack": 1710486359,
+      "merges.txt": 524619,
+      "model.safetensors": 1710540580,
+      "preprocessor_config.json": 316,
+      "pytorch_model.bin": 1710671599,
+      "special_tokens_map.json": 389,
+      "tf_model.h5": 1711114176,
+      "tokenizer.json": 2224003,
+      "tokenizer_config.json": 905,
+      "vocab.json": 961143
+    }
+  },
+  "bytedance-research/UNO": {
+    "revision": "cd4a5a8896243db22aaf4a2d3d2a9511c437fb12",
+    "files": {
+      ".gitattributes": 1618,
+      "README.md": 5678,
+      "assets/logo.png": 57492,
+      "assets/simplecase.jpeg": 622320,
+      "assets/teaser.jpg": 708037,
+      "dit_lora.safetensors": 1912640152
+    }
+  }
+}

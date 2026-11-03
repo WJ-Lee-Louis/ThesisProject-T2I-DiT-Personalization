@@ -1,0 +1,43 @@
+{
+  "flux": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "files": {
+      "text_encoder/model.safetensors": 246144352,
+      "text_encoder_2/model-00001-of-00002.safetensors": 4994582224,
+      "text_encoder_2/model-00002-of-00002.safetensors": 4530066360,
+      "transformer/diffusion_pytorch_model-00001-of-00003.safetensors": 9983040304,
+      "transformer/diffusion_pytorch_model-00002-of-00003.safetensors": 9949328904,
+      "transformer/diffusion_pytorch_model-00003-of-00003.safetensors": 3870584832,
+      "vae/diffusion_pytorch_model.safetensors": 167666902
+    },
+    "total_bytes": 33741413878
+  },
+  "dreamo": {
+    "repo": "ByteDance/DreamO",
+    "revision": "eb693ac03bc364d17ec4fe04a3c6ffcad038ac0c",
+    "files": {
+      "dreamo.safetensors": 478347376,
+      "dreamo_cfg_distill.safetensors": 478195080,
+      "v1.1/dreamo_sft_lora.safetensors": 597771912,
+      "v1.1/dreamo_dpo_lora.safetensors": 597771912
+    },
+    "total_bytes": 2152086280
+  },
+  "turbo": {
+    "repo": "alimama-creative/FLUX.1-Turbo-Alpha",
+    "revision": "7b29bf041b413949089d78b826a5c9726e3c8e50",
+    "files": {
+      "diffusion_pytorch_model.safetensors": 694082424
+    },
+    "total_bytes": 694082424
+  },
+  "ben2": {
+    "repo": "PramaLLC/BEN2",
+    "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f",
+    "files": {
+      "BEN2_Base.pth": 1134584206
+    },
+    "total_bytes": 1134584206
+  }
+}

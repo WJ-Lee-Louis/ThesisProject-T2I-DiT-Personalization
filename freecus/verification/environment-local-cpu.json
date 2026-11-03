@@ -1,0 +1,22 @@
+{
+  "python": "3.10.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.6.0+cpu",
+    "torchvision": "0.21.0+cpu",
+    "diffusers": "0.32.2",
+    "transformers": "4.49.0",
+    "accelerate": "1.4.0",
+    "numpy": "1.26.4",
+    "Pillow": "11.1.0",
+    "timm": "1.0.15",
+    "kornia": "0.8.0",
+    "clip": "1.0"
+  },
+  "cuda_available": false,
+  "cuda_runtime": null,
+  "upstream_commit": "1f33f7111c1536b72de8775fd2b478f3d31d19ac",
+  "imports": "passed",
+  "model_inference": "not_run",
+  "metric_protocol": "uno-selected-reference-v1"
+}

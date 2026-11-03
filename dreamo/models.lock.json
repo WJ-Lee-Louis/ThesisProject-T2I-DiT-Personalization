@@ -1,0 +1,18 @@
+{
+  "flux": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+  },
+  "dreamo": {
+    "repo": "ByteDance/DreamO",
+    "revision": "eb693ac03bc364d17ec4fe04a3c6ffcad038ac0c"
+  },
+  "turbo": {
+    "repo": "alimama-creative/FLUX.1-Turbo-Alpha",
+    "revision": "7b29bf041b413949089d78b826a5c9726e3c8e50"
+  },
+  "ben2": {
+    "repo": "PramaLLC/BEN2",
+    "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f"
+  }
+}

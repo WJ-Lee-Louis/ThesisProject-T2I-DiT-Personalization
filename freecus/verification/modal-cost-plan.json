@@ -1,0 +1,171 @@
+{
+  "price_date": "2026-10-30",
+  "source": "https://modal.com/pricing",
+  "cpu_cores": 2,
+  "host_memory_gib": 64,
+  "hourly_worker_usd": 3.104208,
+  "budget_usd": 30,
+  "reserve_usd": 5,
+  "optimistic_seconds_per_image_limit_25usd": {
+    "dreambench": 38.65720338327844,
+    "both": 13.806144065456586
+  },
+  "scenarios": [
+    {
+      "samples": 750,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 20,
+      "total_worker_seconds": 15240,
+      "wall_seconds": 7620.0,
+      "compute_usd": 13.1411472,
+      "compute_usd_with_margin": 16.426434,
+      "marginal_usd_per_image": 0.0172456,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 1350,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 20,
+      "total_worker_seconds": 27240,
+      "wall_seconds": 13620.0,
+      "compute_usd": 23.4885072,
+      "compute_usd_with_margin": 29.360634,
+      "marginal_usd_per_image": 0.0172456,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 2100,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 20,
+      "total_worker_seconds": 42240,
+      "wall_seconds": 21120.0,
+      "compute_usd": 36.4227072,
+      "compute_usd_with_margin": 45.528383999999996,
+      "marginal_usd_per_image": 0.0172456,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 750,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 30,
+      "total_worker_seconds": 22740,
+      "wall_seconds": 11370.0,
+      "compute_usd": 19.6082472,
+      "compute_usd_with_margin": 24.510309,
+      "marginal_usd_per_image": 0.0258684,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 1350,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 30,
+      "total_worker_seconds": 40740,
+      "wall_seconds": 20370.0,
+      "compute_usd": 35.1292872,
+      "compute_usd_with_margin": 43.911609,
+      "marginal_usd_per_image": 0.0258684,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 2100,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 30,
+      "total_worker_seconds": 63240,
+      "wall_seconds": 31620.0,
+      "compute_usd": 54.5305872,
+      "compute_usd_with_margin": 68.163234,
+      "marginal_usd_per_image": 0.0258684,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 750,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 45,
+      "total_worker_seconds": 33990,
+      "wall_seconds": 16995.0,
+      "compute_usd": 29.3088972,
+      "compute_usd_with_margin": 36.6361215,
+      "marginal_usd_per_image": 0.0388026,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 1350,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 45,
+      "total_worker_seconds": 60990,
+      "wall_seconds": 30495.0,
+      "compute_usd": 52.590457199999996,
+      "compute_usd_with_margin": 65.73807149999999,
+      "marginal_usd_per_image": 0.0388026,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 2100,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 45,
+      "total_worker_seconds": 94740,
+      "wall_seconds": 47370.0,
+      "compute_usd": 81.6924072,
+      "compute_usd_with_margin": 102.115509,
+      "marginal_usd_per_image": 0.0388026,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 750,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 60,
+      "total_worker_seconds": 45240,
+      "wall_seconds": 22620.0,
+      "compute_usd": 39.0095472,
+      "compute_usd_with_margin": 48.761934,
+      "marginal_usd_per_image": 0.0517368,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 1350,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 60,
+      "total_worker_seconds": 81240,
+      "wall_seconds": 40620.0,
+      "compute_usd": 70.0516272,
+      "compute_usd_with_margin": 87.564534,
+      "marginal_usd_per_image": 0.0517368,
+      "safety_factor": 1.25
+    },
+    {
+      "samples": 2100,
+      "workers": 2,
+      "gpu": "A100-80GB",
+      "seconds_per_image": 60,
+      "total_worker_seconds": 126240,
+      "wall_seconds": 63120.0,
+      "compute_usd": 108.8542272,
+      "compute_usd_with_margin": 136.067784,
+      "marginal_usd_per_image": 0.0517368,
+      "safety_factor": 1.25
+    }
+  ],
+  "note": "Runtime scenarios are estimates, not measured speed. CPU/RAM actual usage above requests, builds, retries and other workspace jobs can add charges.",
+  "weight_gib": {
+    "qwen_vl": 15.443890571594238,
+    "qwen_llm": 14.18519115447998,
+    "flux_transformer": 22.168100476264954,
+    "flux_t5": 8.870494842529297
+  },
+  "max_host_kv_gib": 14.0625,
+  "execution_profile": "method-comparison",
+  "workspace": "louislee-85468",
+  "modal_sdk": "1.6.3",
+  "remote_python": "3.11"
+}

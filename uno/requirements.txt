@@ -1,0 +1,10 @@
+-c constraints.txt
+transformers==4.45.2
+huggingface-hub==0.29.3
+einops==0.8.1
+safetensors==0.5.3
+numpy==1.26.4
+Pillow==11.1.0
+sentencepiece==0.2.0
+protobuf==5.29.3
+tqdm==4.70.1

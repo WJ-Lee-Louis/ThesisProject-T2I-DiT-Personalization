@@ -1,0 +1,58 @@
+[
+  {
+    "workspace": "louislee-85468",
+    "method": "dreamo",
+    "benchmark": "dreambench",
+    "status": "complete",
+    "generated": 750,
+    "gpu": "L40S",
+    "completed_kst": "2026-11-02T17:12:01.300821+09:00",
+    "estimated_compute_usd": 6.344456687994719,
+    "profile": "method-comparison",
+    "metric_status": "complete",
+    "evaluated_cases": 750,
+    "metric_file": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\dreamo\\outputs\\metrics\\dreambench_scores.json"
+  },
+  {
+    "workspace": "louislee",
+    "method": "dreamo",
+    "benchmark": "dreambench_plus",
+    "status": "complete",
+    "generated": 1350,
+    "gpu": "L40S",
+    "completed_kst": "2026-11-02T18:02:35.187649+09:00",
+    "estimated_compute_usd": 10.321376979048352,
+    "profile": "method-comparison-dbpp",
+    "metric_status": "complete",
+    "evaluated_cases": 1350,
+    "metric_file": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\dreamo\\outputs\\metrics\\dreambench_plus_scores.json"
+  },
+  {
+    "workspace": "wj-lee-louis",
+    "method": "uno",
+    "benchmark": "dreambench",
+    "status": "complete",
+    "generated": 750,
+    "gpu": "A100-80GB",
+    "completed_kst": "2026-11-02T19:02:57.485939+09:00",
+    "estimated_compute_usd": 13.16799352737079,
+    "profile": "wj-lee-louis",
+    "metric_status": "complete",
+    "evaluated_cases": 750,
+    "metric_file": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\uno\\outputs\\metrics\\dreambench_scores.json"
+  },
+  {
+    "workspace": "woojin716",
+    "method": "uno",
+    "benchmark": "dreambench_plus",
+    "status": "complete",
+    "generated": 1350,
+    "gpu": "A100-80GB",
+    "completed_kst": "2026-11-02T20:26:40.304356+09:00",
+    "estimated_compute_usd": 21.677314419455527,
+    "profile": "woojin716",
+    "metric_status": "complete",
+    "evaluated_cases": 1350,
+    "metric_file": "C:\\Users\\82107\\Downloads\\AI_PROJECT\\uno\\outputs\\metrics\\dreambench_plus_scores.json"
+  }
+]

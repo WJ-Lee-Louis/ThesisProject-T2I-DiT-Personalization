@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02",
+  "measurement": "Original metadata estimate retained below; A100 pilot now measured in a100_pilot.json",
+  "precision": "FLUX BF16; BEN2 official FP32 weights; no quantization; no CPU offload",
+  "output_resolution": [
+    1024,
+    1024
+  ],
+  "reference_target_area": 262144,
+  "batch_size": 1,
+  "model_file_gib": {
+    "flux": 31.424140444025397,
+    "dreamo": 2.0042865350842476,
+    "turbo": 0.6464146301150322,
+    "ben2": 1.0566638838499784
+  },
+  "resident_weight_lower_bound_gib": 32.480804327875376,
+  "planning_peak_vram_gib": [
+    40,
+    48
+  ],
+  "planning_peak_is_not_measured": true,
+  "primary_gpu": "A100-80GB",
+  "faster_candidate": "H100-80GB",
+  "conditional_lower_cost_candidate": "L40S-48GB, only after worst-case pilot confirms headroom",
+  "host_memory_gib": 64,
+  "cpu_cores": 2,
+  "gpus_per_process": 1,
+  "parallel_workers_per_benchmark": 2,
+  "weight_loading": "DreamO/CFG/SFT/DPO/Turbo LoRAs fused on CPU before pipeline GPU transfer; adapters unloaded after fusion; do not simply sum all LoRA file sizes into persistent VRAM",
+  "extra_caption_language_models": false,
+  "notes": [
+    "The ~32.5 GiB weight floor alone rules out 24 GiB full-resident BF16. Official low-memory modes require offload and/or quantization.",
+    "T5 and CLIP text encoders are native FLUX components and included in the base weight sum.",
+    "1024 output + ~512 reference adds roughly 4096+1024 visual tokens, plus text tokens. Actual shapes follow official aspect-preserving resize.",
+    "First pilot must include human, animal, object, style and high-resolution source images; record initialization as well as per-image peak VRAM."
+  ],
+  "measured_a100_peak_reserved_gib": 36.05078125,
+  "measured_a100_initialization_peak_reserved_gib": 31.8203125
+}

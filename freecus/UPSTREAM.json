@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/Monalissaa/FreeCus",
+  "commit": "1f33f7111c1536b72de8775fd2b478f3d31d19ac",
+  "files": {
+    "flux_utils.py": "c90b91a7f6b6d8a6f8276694618069828918ce71d0263f59ba756f72a6480349",
+    "infer.py": "8ec805dcc5b0e89475ea013e7ec4fb55ca1253df18b43e6d71442c599a6a92fd",
+    "LICENSE": "37f1a1fa8acc66e469848ac2a9601014bfda53af0f62faa69c93af10006e3080",
+    "qwen_for_subject.py": "283f04859c0304e1a45fd55509030085e87de02a454cae3cf8bda9e71ef7fb3b",
+    "README.md": "b6cc3ff1778268ac1dc636d6f13404d637d719fa3ea05e1c49584c0e8c2af8b5",
+    "requirements.txt": "0dddcbd8f82ff09d3abf0ec46f412bd287a3438e6073b9975c72461d14fd0ae9",
+    "sa_handler_for_flux_clean.py": "6c3a4c934207053cf3560246e908fa6cc0484487e57cbd4afcafb9424655fd15",
+    "seg_birefnet.py": "f85c28363e73e60c8cb82a4ac933d7bb4d398fa6637004bb3c63a2639096ffcb"
+  }
+}

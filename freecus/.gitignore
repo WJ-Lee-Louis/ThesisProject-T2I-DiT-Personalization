@@ -1,0 +1,7 @@
+.venv/
+outputs/
+manifests/previous-four-seed/
+models/
+data/
+artifacts/**/*.json
+artifacts/**/*.download
