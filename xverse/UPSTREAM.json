@@ -1,0 +1,24 @@
+{
+  "repo": "https://github.com/bytedance/XVerse",
+  "commit": "65e2581aac0faffe4607881a10cc486186f6499d",
+  "files": {
+    "LICENCE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "README.md": "cac697e9fe6167f7aa307a281fb57cf46857bf9b0bcbb85ba15fccbc7d8b200e",
+    "checkpoints/download_ckpts.sh": "1a20fa1caed51c84136bce04449e40042837bd53a9a3dc78297c48acd8615aa7",
+    "inference_single_sample.py": "8c58b7abd248017937a4576972fe5fcd49a83224e4ce36b26abade622facad43",
+    "requirements.txt": "b513593802619d66c6ca864092d8763870227e13e24c2d8a43946d246c7b517b",
+    "src/adapters/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/adapters/mod_adapters.py": "f2a753f0c5314d85553013e3335aaac56f9d03bfe0ac7ad2333d0570e9b993ea",
+    "src/flux/block.py": "361397fa6d9a2ddeac668b66a6e7fd11d1a9c7d304df322bf7d163dcedac2670",
+    "src/flux/condition.py": "0bd96b24dd8102d6652215424b7f965f2cd8fae07256484c1c4dad5d0a8f59e7",
+    "src/flux/generate.py": "d541a6ccffcdfbea32d1cf659a9ab49a81eefabdd699f8f6b16ead9ee2be3342",
+    "src/flux/lora_controller.py": "62d1068acc20d8ac85789c3bc7f9a087fd8e3873e0a42f0b00bffeb71608db78",
+    "src/flux/pipeline_tools.py": "9760a15e1c41f9527dc3bc623abdd1b3cdfe53f434431a47a1cbbb043e4ddb73",
+    "src/flux/transformer.py": "a35bd14ed5bd7f09433ec4b3b30d149f9c734cfa651fbc7812a58d534f9a3bb4",
+    "src/utils/data_utils.py": "8f43748516cad78124e4e95a0bd429ab071728668ade19061815218017db0e45",
+    "src/utils/gpu_momory_utils.py": "7b30f650d679956f51f7a114d9a6dba4054cf59f8e1157fe911de1986ce3ae81",
+    "src/utils/modulation_utils.py": "11b5a577ea1d4f72ec6470ebade5226a85ab4e531c3531142fc4fd4f071a44c9",
+    "train/config/XVerse_config_INF.yaml": "e28b2ae9f519b031329e2fe98811db22965b98f689c3ef8a598526b9f83de2eb",
+    "train/config/XVerse_config_demo.yaml": "80b6df1c8bc6ee292ba975dfde8c72727959ab13890704c861d796e60d5f9906"
+  }
+}

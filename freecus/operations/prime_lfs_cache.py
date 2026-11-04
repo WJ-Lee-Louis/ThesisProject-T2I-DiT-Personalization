@@ -14,7 +14,7 @@ def main():
     for path in args.paths:
         path = path.resolve()
         relative = path.relative_to(root)
-        if relative.parts[0] not in {"freecus", "dreamo", "uno"} or relative.parts[1] != "artifacts" or path.suffix != ".zip":
+        if relative.parts[0] not in {"freecus", "dreamo", "uno", "xverse"} or relative.parts[1] != "artifacts" or path.suffix != ".zip":
             raise ValueError("Only immutable comparison image ZIPs are eligible")
         sha = digest(path)
         cached = git_dir / "lfs/objects" / sha[:2] / sha[2:4] / sha

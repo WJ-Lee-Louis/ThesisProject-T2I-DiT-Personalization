@@ -1,0 +1,43 @@
+{
+  "status": "verified",
+  "evaluations": [
+    {
+      "method": "xverse",
+      "benchmark": "dreambench",
+      "cases": 750,
+      "references": 30,
+      "canonical_cases": 750,
+      "missing_cases": 0,
+      "selection": "all",
+      "CLIP-T": 0.30164420572916667,
+      "CLIP-I": 0.7969755859375,
+      "DINO-I": 0.644430628289779
+    },
+    {
+      "method": "xverse",
+      "benchmark": "dreambench_plus",
+      "cases": 1350,
+      "references": 150,
+      "canonical_cases": 1350,
+      "missing_cases": 0,
+      "selection": "all",
+      "CLIP-T": 0.32577537254050926,
+      "CLIP-I": 0.7925728804976852,
+      "DINO-I": 0.6038922082908728
+    }
+  ],
+  "metric_definition": "Selected conditioning reference; subject macro of raw similarities",
+  "generation_resolution": [
+    768,
+    768
+  ],
+  "louislee_remote_compute_launched": false,
+  "notes": [
+    "DreamBench originally had 733 complete cases; 17 cases were recovered on louislee-85468 with the original generation source.",
+    "DreamBench++ includes all 180 style cases; non_style aggregate is in scores JSON.",
+    "Prior methods generated at 1024x1024; XVerse uses official native 768x768."
+  ],
+  "scoring_source_sha256": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+  "saved_evaluation_source_sha256": "0be3726adf034aad0e066b4b11d5e5b611c2d2b5bac7da40da975ea5e490a283",
+  "validation_source_sha256": "bcfcab2114943344bd1495f04b23feafbff6266f3d7df5790d1f74cd57b33328"
+}

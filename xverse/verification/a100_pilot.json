@@ -1,0 +1,68 @@
+{
+  "gpu": "A100-80GB",
+  "seconds_per_image": 31.8072766215,
+  "peak_vram_reserved_gib": 48.64453125,
+  "status": "generating",
+  "phases": [
+    {
+      "label": "pilot",
+      "invocation": "08dce0aa80a1472988c0a0e7c93d36d1",
+      "calls": [
+        {
+          "id": "fc-01M6FW10EFX1VX4QT5FTD3S2R5",
+          "lane": 0,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 16.20478362,
+            "generated_total": 1,
+            "timings": [
+              {
+                "seconds": 32.383057253000004,
+                "peak_allocated_gib": 42.24212312698364,
+                "peak_reserved_gib": 48.64453125
+              }
+            ],
+            "requested_cases": 1,
+            "initialization": {
+              "seconds": 59.648176275,
+              "peak_allocated_gib": 35.409634590148926,
+              "peak_reserved_gib": 36.52734375
+            },
+            "error_tail": null
+          }
+        },
+        {
+          "id": "fc-01M6FW10Y6JDC8GKDXF2306XR4",
+          "lane": 2,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 120.981700452,
+            "generated_total": 1,
+            "timings": [
+              {
+                "seconds": 31.23149599,
+                "peak_allocated_gib": 42.24212312698364,
+                "peak_reserved_gib": 48.64453125
+              }
+            ],
+            "requested_cases": 1,
+            "initialization": {
+              "seconds": 61.43506205099999,
+              "peak_allocated_gib": 35.409634590148926,
+              "peak_reserved_gib": 36.52734375
+            },
+            "error_tail": null
+          }
+        }
+      ]
+    },
+    {
+      "label": "full",
+      "invocation": "294d80fea94445079dae9f817d07103a",
+      "calls": []
+    }
+  ],
+  "note": "Original pilot is preserved; H100 comparison is a new independent bundle."
+}

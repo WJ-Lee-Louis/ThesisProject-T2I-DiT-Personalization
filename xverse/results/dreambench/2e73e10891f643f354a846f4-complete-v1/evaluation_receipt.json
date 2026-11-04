@@ -1,0 +1,9 @@
+{
+  "call_id": "fc-01M6G9PEDQDS96DTY5GDMXR5S2",
+  "workspace": "louislee-85468",
+  "gpu": "T4",
+  "timeout_seconds": 1800,
+  "bundle_id": "2e73e10891f643f354a846f4-complete-v1",
+  "cases": 750,
+  "app": "xverse-complete-dreambench-metrics"
+}

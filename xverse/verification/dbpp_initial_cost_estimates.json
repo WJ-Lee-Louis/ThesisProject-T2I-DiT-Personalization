@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-03",
+  "reports": {
+    "wj-lee-louis": {
+      "workspace": "wj-lee-louis",
+      "status": "generating",
+      "assigned": 459,
+      "budget_usd": 21,
+      "observed_images": 5,
+      "lanes": [
+        {
+          "lane": 0,
+          "status": "running",
+          "elapsed_seconds": 109.28147604,
+          "observed_generated": 2,
+          "mean_seconds": 25.227403794
+        },
+        {
+          "lane": 1,
+          "status": "running",
+          "elapsed_seconds": 124.379065914,
+          "observed_generated": 3,
+          "mean_seconds": 24.663992009666657
+        }
+      ],
+      "mean_seconds_per_image": 24.889356723399995,
+      "generation_compute_usd_range": [
+        9.039295667744762,
+        9.850871882593086
+      ],
+      "total_with_setup_scoring_allowance_usd": [
+        10.239295667744761,
+        11.050871882593086
+      ],
+      "total_with_15pct_generation_margin_usd": 12.528502664982048,
+      "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+    },
+    "woojin716": {
+      "workspace": "woojin716",
+      "status": "generating",
+      "assigned": 216,
+      "budget_usd": 13,
+      "observed_images": 1,
+      "lanes": [
+        {
+          "lane": 0,
+          "status": "running",
+          "elapsed_seconds": 141.510006277,
+          "observed_generated": 1,
+          "mean_seconds": 33.551518039
+        }
+      ],
+      "mean_seconds_per_image": 33.551518039,
+      "generation_compute_usd_range": [
+        5.734217476766525,
+        6.249053442528487
+      ],
+      "total_with_setup_scoring_allowance_usd": [
+        6.934217476766525,
+        7.449053442528487
+      ],
+      "total_with_15pct_generation_margin_usd": 8.386411458907759,
+      "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+    },
+    "louislee-85468": {
+      "workspace": "louislee-85468",
+      "status": "generating",
+      "assigned": 675,
+      "budget_usd": 28,
+      "observed_images": 54,
+      "lanes": [
+        {
+          "lane": 0,
+          "status": "running",
+          "elapsed_seconds": 543.101469827,
+          "observed_generated": 18,
+          "mean_seconds": 26.341463342722218
+        },
+        {
+          "lane": 1,
+          "status": "running",
+          "elapsed_seconds": 550.132735915,
+          "observed_generated": 17,
+          "mean_seconds": 27.697688031176476
+        },
+        {
+          "lane": 2,
+          "status": "running",
+          "elapsed_seconds": 555.817171179,
+          "observed_generated": 19,
+          "mean_seconds": 25.910098997894746
+        }
+      ],
+      "mean_seconds_per_image": 26.616646623314818,
+      "generation_compute_usd_range": [
+        14.215604945106339,
+        15.491926383987533
+      ],
+      "total_with_setup_scoring_allowance_usd": [
+        15.415604945106338,
+        16.691926383987532
+      ],
+      "total_with_15pct_generation_margin_usd": 19.01571534158566,
+      "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+    }
+  }
+}

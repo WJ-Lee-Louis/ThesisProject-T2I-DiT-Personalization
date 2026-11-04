@@ -1,0 +1,60 @@
+{
+  "workspace": "woojin716",
+  "old_receipt": {
+    "call_id": "fc-01M6FYR8S4T8RE6SZDFTHRGZXP",
+    "workspace": "woojin716",
+    "bundle_id": "f811b3fa80a9700e30dd8115",
+    "budget_usd": 13,
+    "cases": 216
+  },
+  "new_receipt": {
+    "call_id": "fc-01M6G109MSSDJ0688C65E68M4D",
+    "workspace": "woojin716",
+    "bundle_id": "f811b3fa80a9700e30dd8115",
+    "budget_usd": 13,
+    "cases": 216,
+    "replaces_supervisor_call": "fc-01M6FYR8S4T8RE6SZDFTHRGZXP",
+    "recovery": "resume_existing_gpu_call_without_respawn"
+  },
+  "old_state": {
+    "status": "failed",
+    "workspace": "woojin716",
+    "budget_usd": 13,
+    "generation_cap_usd": 11.8,
+    "calls": [
+      {
+        "lane": 0,
+        "id": "fc-01M6FZAX59C6TVN64JBMJ8H6Y2"
+      }
+    ],
+    "invocation": "dafe90b2bb6c4b80a376eb0f6bca3a44",
+    "bundle_id": "f811b3fa80a9700e30dd8115",
+    "requested_cases": 216,
+    "started_at": 1793684421.4990041,
+    "updated_at": 1793685263.8455799,
+    "stage_call": "fc-01M6FYRFZZJC9V48RMPW5AKPSH",
+    "error": "KeyboardInterrupt()"
+  },
+  "supervisor_source_sha256": "40681f15f25823e58c8522188f30e4292eb7af748de3ff8f9b2aaafade50d77d",
+  "recovered_status": {
+    "status": "generating",
+    "workspace": "woojin716",
+    "budget_usd": 13,
+    "generation_cap_usd": 11.8,
+    "calls": [
+      {
+        "lane": 0,
+        "id": "fc-01M6FZAX59C6TVN64JBMJ8H6Y2"
+      }
+    ],
+    "invocation": "dafe90b2bb6c4b80a376eb0f6bca3a44",
+    "bundle_id": "f811b3fa80a9700e30dd8115",
+    "requested_cases": 216,
+    "started_at": 1793684421.4990041,
+    "updated_at": 1793686781.666948,
+    "stage_call": "fc-01M6FYRFZZJC9V48RMPW5AKPSH",
+    "recovered_supervisor_interruption": "KeyboardInterrupt()"
+  },
+  "gpu_respawned": false,
+  "note": "KeyboardInterrupt was recorded by supervisor; existing GPU continued. Only supervisor redeployed and reattached."
+}

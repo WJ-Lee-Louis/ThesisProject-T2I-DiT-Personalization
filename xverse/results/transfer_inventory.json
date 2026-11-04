@@ -1,0 +1,96 @@
+{
+  "bundles": [
+    {
+      "method": "xverse",
+      "benchmark": "dreambench",
+      "bundle_id": "2e73e10891f643f354a846f4-complete-v1",
+      "status": "verified",
+      "generated_images": 750,
+      "zip_files": 1,
+      "total_archive_bytes": 570439577,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 750,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 570439577,
+          "sha256": "868976811fe6d93c21a365cdd9da51141348244c25d90c5bc1e77e1209be0b3d",
+          "path": "xverse/artifacts/dreambench/2e73e10891f643f354a846f4-complete-v1/images-000.zip"
+        }
+      ]
+    },
+    {
+      "method": "xverse",
+      "benchmark": "dreambench_plus",
+      "bundle_id": "f811b3fa80a9700e30dd8115",
+      "status": "verified",
+      "generated_images": 1350,
+      "zip_files": 1,
+      "total_archive_bytes": 1048529244,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 1350,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 1048529244,
+          "sha256": "a5662c515847841b38455b6c5fde064758fffe8b1e624bd9f5922e5fe26f3a08",
+          "path": "xverse/artifacts/dreambench_plus/f811b3fa80a9700e30dd8115/images-000.zip"
+        }
+      ]
+    }
+  ],
+  "historical_bundles": [
+    {
+      "benchmark": "dreambench",
+      "bundle_id": "2e73e10891f643f354a846f4",
+      "status": "superseded-partial",
+      "superseded_by": "2e73e10891f643f354a846f4-complete-v1",
+      "generated_images": 733,
+      "missing_case_ids": [
+        "026-11",
+        "026-12",
+        "026-13",
+        "026-14",
+        "026-15",
+        "026-16",
+        "026-17",
+        "026-18",
+        "026-19",
+        "026-20",
+        "026-21",
+        "026-22",
+        "026-23",
+        "026-24",
+        "029-22",
+        "029-23",
+        "029-24"
+      ],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 559529344,
+          "sha256": "aac9bc46456bd270470f2200a44737c661e3ee8d075cf9d731599f126351c660"
+        }
+      ],
+      "incomplete_artifacts": {
+        "status": "excluded-from-metrics",
+        "archive_sha256": "859d70f336a430706f41637ff00d04bc716e3106f5f739c3e6d244d17bdb213a",
+        "files": [
+          {
+            "path": "louislee-lane-2/tgt_image/dreambench__shiny_sneaker/11_0.png",
+            "sha256": "51499df17662d9f3371db533424d22754d2f12bef7594b1774efc2c3350f4daf",
+            "bytes": 655509
+          }
+        ]
+      }
+    }
+  ]
+}

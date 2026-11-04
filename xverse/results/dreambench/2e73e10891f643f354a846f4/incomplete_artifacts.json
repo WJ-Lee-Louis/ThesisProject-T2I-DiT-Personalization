@@ -1,0 +1,11 @@
+{
+  "status": "excluded-from-metrics",
+  "archive_sha256": "859d70f336a430706f41637ff00d04bc716e3106f5f739c3e6d244d17bdb213a",
+  "files": [
+    {
+      "path": "louislee-lane-2/tgt_image/dreambench__shiny_sneaker/11_0.png",
+      "sha256": "51499df17662d9f3371db533424d22754d2f12bef7594b1774efc2c3350f4daf",
+      "bytes": 655509
+    }
+  ]
+}

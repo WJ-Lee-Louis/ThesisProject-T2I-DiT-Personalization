@@ -1,0 +1,162 @@
+{
+  "original_complete_cases": 733,
+  "recovered_cases": 17,
+  "receipt": {
+    "call_id": "fc-01M6G8XW4VBATTRZD0NNKN2N72",
+    "workspace": "louislee-85468",
+    "profile": "method-comparison",
+    "app": "xverse-dreambench-recovery",
+    "bundle_id": "2e73e10891f643f354a846f4",
+    "case_ids": [
+      "026-11",
+      "026-12",
+      "026-13",
+      "026-14",
+      "026-15",
+      "026-16",
+      "026-17",
+      "026-18",
+      "026-19",
+      "026-20",
+      "026-21",
+      "026-22",
+      "026-23",
+      "026-24",
+      "029-22",
+      "029-23",
+      "029-24"
+    ],
+    "gpu": "A100-80GB",
+    "gpu_seconds_cap": 1800,
+    "generation_source_sha256": "0a09a640b89213655f0a4882601d4fa79d7f8c2dbd344a08815f186a4c58d7e7",
+    "generation_fingerprint": "d2b25dc3a20d020f43a62302f9836dabadc4bef7a02e765b9061bde2926b0732"
+  },
+  "result": {
+    "status": "complete",
+    "workspace": "louislee-85468",
+    "bundle_id": "2e73e10891f643f354a846f4",
+    "case_ids": [
+      "026-11",
+      "026-12",
+      "026-13",
+      "026-14",
+      "026-15",
+      "026-16",
+      "026-17",
+      "026-18",
+      "026-19",
+      "026-20",
+      "026-21",
+      "026-22",
+      "026-23",
+      "026-24",
+      "029-22",
+      "029-23",
+      "029-24"
+    ],
+    "invocation": "d947be0afacc4b779b29163c13c7e23d",
+    "started_at": 1793695089.9389024,
+    "gpu_seconds_cap": 1800,
+    "generation_call_id": "fc-01M6G8Y3ZBV0A6EZGVR066VTV3",
+    "generation": {
+      "status": "complete",
+      "exit_code": 0,
+      "elapsed_seconds": 749.924103983,
+      "generated_total": 17,
+      "timings": [
+        {
+          "seconds": 44.987389723,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.273384957999994,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.329317041999985,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.344787685,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 39.98555040399998,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 42.25575465200001,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 39.76947905499998,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 39.18784521699996,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.40375824299997,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 39.66613939599995,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.38768838599998,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.42098932400006,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.09151930100006,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.45078520599998,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.265245112,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 39.807581906999985,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        },
+        {
+          "seconds": 40.901397567000004,
+          "peak_allocated_gib": 42.24355745315552,
+          "peak_reserved_gib": 48.64453125
+        }
+      ],
+      "requested_cases": 17,
+      "initialization": {
+        "seconds": 44.604053333,
+        "peak_allocated_gib": 35.409634590148926,
+        "peak_reserved_gib": 36.52734375
+      },
+      "error_tail": null
+    }
+  }
+}

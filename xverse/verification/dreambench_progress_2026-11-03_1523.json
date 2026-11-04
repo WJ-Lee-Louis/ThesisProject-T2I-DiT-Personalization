@@ -1,0 +1,59 @@
+{
+  "workspace": "louislee",
+  "benchmark": "dreambench",
+  "observed_at_kst": "2026-11-03T15:22:56.025744+09:00",
+  "generated": 427,
+  "total": 750,
+  "lanes": [
+    {
+      "lane": 0,
+      "status": "running",
+      "assigned": 200,
+      "generated": 125,
+      "mean_seconds": 34.31368563849999,
+      "recent_mean_seconds": 35.20360655289987,
+      "elapsed_seconds": 4351.328015001,
+      "error_tail": null,
+      "remaining_seconds": 2640.2704914674905
+    },
+    {
+      "lane": 1,
+      "status": "running",
+      "assigned": 200,
+      "generated": 91,
+      "mean_seconds": 46.71093151135165,
+      "recent_mean_seconds": 38.14963318580003,
+      "elapsed_seconds": 4365.254397103,
+      "error_tail": null,
+      "remaining_seconds": 5091.49153473733
+    },
+    {
+      "lane": 2,
+      "status": "running",
+      "assigned": 175,
+      "generated": 101,
+      "mean_seconds": 38.71164920843997,
+      "recent_mean_seconds": 37.52339960269997,
+      "elapsed_seconds": 3986.392299925,
+      "error_tail": null,
+      "remaining_seconds": 2864.662041424558
+    },
+    {
+      "lane": 3,
+      "status": "running",
+      "assigned": 175,
+      "generated": 110,
+      "mean_seconds": 38.76558536028183,
+      "recent_mean_seconds": 54.639379926400125,
+      "elapsed_seconds": 4364.286109533001,
+      "error_tail": null,
+      "remaining_seconds": 3551.559695216008
+    }
+  ],
+  "generation_eta_kst": "2026-11-03T16:47:47.517279+09:00",
+  "generation_eta_margin_kst": "2026-11-03T17:00:31.241009+09:00",
+  "metric_eta_range_kst": [
+    "2026-11-03T16:52:47.517279+09:00",
+    "2026-11-03T17:15:31.241009+09:00"
+  ]
+}

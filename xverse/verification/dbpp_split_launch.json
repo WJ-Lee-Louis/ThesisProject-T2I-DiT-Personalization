@@ -1,0 +1,42 @@
+{
+  "bundle_id": "f811b3fa80a9700e30dd8115",
+  "code_sha256": "3d9468cc1990ebc9326673d64ad4fd61b46097bebfdf997bf26ae4acd2c09011",
+  "workspaces": {
+    "wj-lee-louis": {
+      "receipt": {
+        "call_id": "fc-01M6FYSC53BEPCD9S3QYHFX2H2",
+        "workspace": "wj-lee-louis",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "budget_usd": 21,
+        "cases": 459
+      },
+      "status": "staging",
+      "workers": 2,
+      "budget_usd": 21
+    },
+    "woojin716": {
+      "receipt": {
+        "call_id": "fc-01M6FYR8S4T8RE6SZDFTHRGZXP",
+        "workspace": "woojin716",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "budget_usd": 13,
+        "cases": 216
+      },
+      "status": "staging",
+      "workers": 1,
+      "budget_usd": 13
+    },
+    "louislee-85468": {
+      "receipt": {
+        "call_id": "fc-01M6FYRAC7QR7QEMVX71BJSJH9",
+        "workspace": "louislee-85468",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "budget_usd": 28,
+        "cases": 675
+      },
+      "status": "staging",
+      "workers": 3,
+      "budget_usd": 28
+    }
+  }
+}
