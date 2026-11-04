@@ -1,0 +1,27 @@
+{
+  "method": "diptych",
+  "width": 768,
+  "height": 768,
+  "seeds": [
+    42
+  ],
+  "seed": 42,
+  "steps": 30,
+  "guidance": 3.5,
+  "quantization": "none",
+  "reference_policy": "selected_one",
+  "evaluation_selection": "all",
+  "attn_enforce": 1.3,
+  "controlnet_scale": 0.95,
+  "pixel_offset": 8,
+  "internal_canvas": [
+    1568,
+    784
+  ],
+  "paper_panel_size": 768,
+  "resolution_status": "paper_panel",
+  "style_policy": "paper_appendix_G_full_reference_attention_1.0",
+  "gpu": "H100",
+  "admission_usd": 39.5,
+  "prior_a100_pilot_compute_usd": 0.3642363130513109
+}

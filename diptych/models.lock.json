@@ -1,0 +1,18 @@
+{
+  "flux": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+  },
+  "controlnet": {
+    "repo": "alimama-creative/FLUX.1-dev-Controlnet-Inpainting-Beta",
+    "revision": "4c71e88b32ab247b3c2518803224c7c6473dbeb9"
+  },
+  "detector": {
+    "repo": "IDEA-Research/grounding-dino-tiny",
+    "revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71"
+  },
+  "sam": {
+    "repo": "facebook/sam-vit-base",
+    "revision": "70c1a07f894ebb5b307fd9eaaee97b9dfc16068f"
+  }
+}
