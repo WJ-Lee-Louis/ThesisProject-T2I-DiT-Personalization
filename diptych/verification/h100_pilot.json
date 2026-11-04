@@ -1,0 +1,64 @@
+{
+  "gpu": "H100",
+  "seconds_per_image": 42.412390170500004,
+  "peak_reserved_gib": 44.66015625,
+  "projected_dreambench_usd_with_margin": 48.733766385705835,
+  "generation_compute_usd": 0.3166021989475104,
+  "status": "budget_review_required",
+  "phases": [
+    {
+      "label": "pilot",
+      "invocation": "2850d192c17949e7a7b7721a8bba5b7c",
+      "calls": [
+        {
+          "id": "fc-01M6FWGAM50VT76NGR2HTK9CE3",
+          "lane": 0,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 93.89898586,
+            "generated_total": 1,
+            "timings": [
+              {
+                "seconds": 42.623802614999995,
+                "peak_allocated_gib": 42.410114765167236,
+                "peak_reserved_gib": 44.66015625
+              }
+            ],
+            "requested_cases": 1,
+            "initialization": {
+              "seconds": 29.796477596000003,
+              "peak_allocated_gib": 36.41926145553589,
+              "peak_reserved_gib": 36.455078125
+            },
+            "error_tail": null
+          }
+        },
+        {
+          "id": "fc-01M6FWGCK1WH120ZW5QMAMR06Q",
+          "lane": 2,
+          "result": {
+            "status": "complete",
+            "exit_code": 0,
+            "elapsed_seconds": 96.32404694499999,
+            "generated_total": 1,
+            "timings": [
+              {
+                "seconds": 42.200977726000005,
+                "peak_allocated_gib": 42.410114765167236,
+                "peak_reserved_gib": 44.66015625
+              }
+            ],
+            "requested_cases": 1,
+            "initialization": {
+              "seconds": 33.089535510000005,
+              "peak_allocated_gib": 36.41926145553589,
+              "peak_reserved_gib": 36.455078125
+            },
+            "error_tail": null
+          }
+        }
+      ]
+    }
+  ]
+}

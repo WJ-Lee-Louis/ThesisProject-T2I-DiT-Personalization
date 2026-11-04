@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-04",
+  "archive": "tables_for_paper/archive/before_refresh_2026-11-04.zip",
+  "archive_sha256": "e6681e27b69d14c637e4107f3157a243fb5f65ef48f68af904a27cdecb0790c1",
+  "archived_files": [
+    {
+      "path": "tables_for_paper/dreambench_method_comparison.png",
+      "bytes": 208926,
+      "sha256": "4da2e8ce790482cfef50f3e804bcb0b09007806dbdb63f698998a88877451121",
+      "action": "snapshot-before-overwrite"
+    },
+    {
+      "path": "tables_for_paper/dreambench_method_comparison_classes.png",
+      "bytes": 276621,
+      "sha256": "cd7c0adfe0b3376dbfe9552e0e34ba8133fa02b5d4d6c4f12a8caf0d5b5c70e9",
+      "action": "snapshot-before-overwrite"
+    },
+    {
+      "path": "tables_for_paper/dreambench_plus_method_comparison.png",
+      "bytes": 149358,
+      "sha256": "0c592823d3f9822257d30d5c4cb402d99674f4e95179e10dc9a5dad6d7507a3c",
+      "action": "snapshot-before-overwrite"
+    },
+    {
+      "path": "tables_for_paper/dreambench_plus_method_comparison_classes.png",
+      "bytes": 449641,
+      "sha256": "4d965858c65b9391a8ebca7ec8a84ea870b2b245b0eace5da69364a268492f82",
+      "action": "snapshot-before-overwrite"
+    },
+    {
+      "path": "freecus/operations/render_dreambench_table.py",
+      "bytes": 4016,
+      "sha256": "525b0c0ae21bbe7a4e12dfaac5c678a65a4ae289e088a64eaaf672cf4ba326af",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/figures/dreambench_method_comparison_freecus_updated.csv",
+      "bytes": 255,
+      "sha256": "8c11bf11466f971788f0e124e09edf5b117a267e00584ced9a97b4b8ee541a6e",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/figures/dreambench_method_comparison_freecus_updated.json",
+      "bytes": 1029,
+      "sha256": "8a2bdc503e23af2a9a6a19f24554bc700c91d4ca6739757f1573b960c235f03f",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/figures/dreambench_method_comparison_freecus_updated.pdf",
+      "bytes": 17769,
+      "sha256": "327f4895b0b05f438ee8f31ca14c44566b2ea183e38dd7ce7f05b416b46a3b61",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/figures/dreambench_method_comparison_freecus_updated.png",
+      "bytes": 220340,
+      "sha256": "9a258b8f50f615709bc8ca562ceb02932e0e4c5dd9b685b4172aea5c21fc65cd",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/figures/dreambench_method_comparison_freecus_updated.svg",
+      "bytes": 9355,
+      "sha256": "3b8540c35d62d21111d50a036afc4c58973e314306a513c665d27ce11fdd79ef",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/figures/dreambench_method_comparison_freecus_updated.csv",
+      "bytes": 255,
+      "sha256": "8c11bf11466f971788f0e124e09edf5b117a267e00584ced9a97b4b8ee541a6e",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/figures/dreambench_method_comparison_freecus_updated.json",
+      "bytes": 1029,
+      "sha256": "8a2bdc503e23af2a9a6a19f24554bc700c91d4ca6739757f1573b960c235f03f",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/figures/dreambench_method_comparison_freecus_updated.pdf",
+      "bytes": 17769,
+      "sha256": "327f4895b0b05f438ee8f31ca14c44566b2ea183e38dd7ce7f05b416b46a3b61",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/figures/dreambench_method_comparison_freecus_updated.png",
+      "bytes": 220340,
+      "sha256": "9a258b8f50f615709bc8ca562ceb02932e0e4c5dd9b685b4172aea5c21fc65cd",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/figures/dreambench_method_comparison_freecus_updated.svg",
+      "bytes": 9355,
+      "sha256": "3b8540c35d62d21111d50a036afc4c58973e314306a513c665d27ce11fdd79ef",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/metrics/dreambench_comparison_review.csv",
+      "bytes": 387,
+      "sha256": "2bd020573280f10e2555fcc2155e830192da36bfb11f537b79058b09e7720f19",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/outputs/metrics/dreambench_comparison_review.json",
+      "bytes": 2380,
+      "sha256": "46d1db1d820c1b63ca08552b6ab99ce45c0812d312ed94800b722722655db367",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/dreambench_comparison_review.csv",
+      "bytes": 387,
+      "sha256": "2bd020573280f10e2555fcc2155e830192da36bfb11f537b79058b09e7720f19",
+      "action": "archive-and-remove-superseded-table-file"
+    },
+    {
+      "path": "freecus/results/reports/dreambench_comparison_review.json",
+      "bytes": 2380,
+      "sha256": "46d1db1d820c1b63ca08552b6ab99ce45c0812d312ed94800b722722655db367",
+      "action": "archive-and-remove-superseded-table-file"
+    }
+  ],
+  "removed_files": 15,
+  "removed_regenerable_caches": [
+    "freecus/operations/__pycache__/render_dreambench_table.cpython-310.pyc"
+  ],
+  "retained": "All benchmark images, manifests, source snapshots, score JSON/CSV, evaluation and aggregation code, provenance and verification records remain in their method directories."
+}

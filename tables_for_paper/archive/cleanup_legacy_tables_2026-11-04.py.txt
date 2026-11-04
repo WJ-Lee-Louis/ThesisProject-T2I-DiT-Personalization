@@ -1,0 +1,56 @@
+"""Archive verified table history, then remove superseded table-only working files."""
+import hashlib
+import json
+from pathlib import Path
+import zipfile
+
+ROOT=Path(__file__).resolve().parents[1]
+HERE=Path(__file__).resolve().parent
+
+
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main():
+    archive=HERE/'archive/before_refresh_2026-11-04.zip'
+    manifest=HERE/'archive/cleanup_2026-11-04.json'
+    if manifest.exists():
+        print('Cleanup already recorded:',manifest);return
+    originals=[HERE/(bench+'_method_comparison'+suffix+'.png') for bench in ['dreambench','dreambench_plus'] for suffix in ['', '_classes']]
+    remove=[ROOT/'freecus/operations/render_dreambench_table.py']
+    for folder in ['freecus/outputs/figures','freecus/results/reports/figures']:
+        remove+=sorted((ROOT/folder).glob('dreambench_method_comparison_freecus_updated.*'))
+    for folder in ['freecus/outputs/metrics','freecus/results/reports']:
+        remove += [ROOT/folder/('dreambench_comparison_review'+ext) for ext in ['.csv','.json']]
+    remove=[p for p in remove if p.is_file()]
+    records=[]
+    for p in originals+remove:
+        resolved=p.resolve()
+        if not resolved.is_relative_to(ROOT.resolve()):raise ValueError('Path outside workspace')
+        records.append(dict(path=p.relative_to(ROOT).as_posix(),bytes=p.stat().st_size,sha256=sha(p),
+            action='snapshot-before-overwrite' if p in originals else 'archive-and-remove-superseded-table-file'))
+    archive.parent.mkdir(parents=True,exist_ok=True)
+    with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED) as z:
+        for row in records:z.write(ROOT/row['path'],row['path'])
+    with zipfile.ZipFile(archive) as z:
+        for row in records:
+            if hashlib.sha256(z.read(row['path'])).hexdigest()!=row['sha256']:raise ValueError('Archive mismatch')
+    for p in remove:
+        record=next(r for r in records if r['path']==p.relative_to(ROOT).as_posix())
+        if sha(p)!=record['sha256']:raise ValueError('File changed after archival')
+        p.unlink()
+    caches=[]
+    for p in (ROOT/'freecus/operations/__pycache__').glob('render_dreambench_table.*.pyc'):
+        if not p.resolve().is_relative_to(ROOT.resolve()):raise ValueError('Cache outside workspace')
+        caches.append(p.relative_to(ROOT).as_posix());p.unlink()
+    for folder in ['freecus/outputs/figures','freecus/results/reports/figures']:
+        p=ROOT/folder
+        if p.is_dir() and not any(p.iterdir()):p.rmdir()
+    data=dict(date='2026-11-04',archive=archive.relative_to(ROOT).as_posix(),archive_sha256=sha(archive),
+        archived_files=records,removed_files=len(remove),removed_regenerable_caches=caches,
+        retained='All benchmark images, manifests, source snapshots, score JSON/CSV, evaluation and aggregation code, provenance and verification records remain in their method directories.')
+    manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print('Archived',len(records),'files; removed',len(remove),'superseded table files and',len(caches),'cache files')
+
+
+if __name__=='__main__':main()

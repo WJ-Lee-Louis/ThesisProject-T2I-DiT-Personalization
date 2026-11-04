@@ -1,0 +1,12 @@
+{
+  "repo": "https://github.com/chaehunshin/DiptychPrompting",
+  "commit": "7a5099b3e0faeff19dcb8f83f1c7cdb52a7e82e3",
+  "files": {
+    "README.md": "14ef7465f549635051a8aeaa25d97be0bacc235e7070c20a2e0b6c4c80d4da35",
+    "controlnet_flux.py": "9e66b2b747d810e627421d3d364741179ec8bba9d1c8477274fd9854e0d38b7a",
+    "diptych_prompting_inference.py": "be161265ab6505d20f36841d322845ba91bd1211ae65db4d99f12f85de48a1b1",
+    "pipeline_flux_controlnet_inpaint.py": "6656d25e34ce0809de623fcf7b7584f5e2fbc050d9fb9af90bade3b3c92b9361",
+    "requirements.txt": "f0c5f5c926c2d95d5537d72d90859ca2bb755a2e42d588f635ab0b372ac0e45f",
+    "transformer_flux.py": "d7da90bb30db77216f761f5b6cabc32b6f841f71d2cc440f6df1d28978920585"
+  }
+}
