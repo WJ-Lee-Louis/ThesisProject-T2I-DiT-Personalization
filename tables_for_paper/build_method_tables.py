@@ -1,9 +1,10 @@
-"""Audit immutable benchmark scores and render the four paper comparison tables.
+"""Audit immutable scores and render original or class-balanced paper tables.
 
 Run from any directory: python tables_for_paper/build_method_tables.py
 Requires matplotlib and Pillow; does not launch generation, metrics or remote jobs.
 """
 import csv
+import argparse
 import hashlib
 import json
 import math
@@ -201,6 +202,11 @@ def render(data,historical,bench,classes):
 
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--balanced-only',action='store_true',help='Create the two additional class-balanced DreamBench++ PNGs')
+    args=parser.parse_args()
+    if args.balanced_only:
+        build_balanced_tables();return
     untouched={p.name:digest(p) for p in HERE.glob('*.png') if 'method_comparison' not in p.name}
     data,rows,audit=audit_sources()
     historical=read(HERE/'historical_rows.json')
@@ -216,6 +222,139 @@ def main():
     write(HERE/'aggregation_audit.json',audit)
     print(json.dumps(dict(status='verified',evaluations=len(audit['evaluations']),scored_cases=audit['total_scored_cases'],
         figures=[p['path'] for p in audit['figures']],overall=[r for r in rows if r['group']=='overall']),indent=2))
+
+
+def balanced_records(data,historical):
+    bench='dreambench_plus';methods=[]
+    for i,label in enumerate(historical['methods']):
+        methods.append(dict(key='historical_'+str(i),label=label,resolution=None,historical=True,
+            groups={g:{m:v for m,v in zip(METRICS,historical[bench][g][i])} for g in ['overall',*COUNTS[bench]]}))
+    for key in SOURCES:
+        methods.append(dict(key=key,label=f"{LABELS[key]} ({data[key,bench]['overall']['resolution']} × {data[key,bench]['overall']['resolution']})"+(' †' if key=='freecus' else ''),
+            resolution=data[key,bench]['overall']['resolution'],historical=False,
+            groups={g:{m:r[m] for m in METRICS} for g,r in data[key,bench].items()}))
+    records=[]
+    for cohort,classes in [('four_class',['animal','human','object','style']),('non_style',['animal','human','object'])]:
+        k=len(classes)
+        baseline={m:statistics.fmean(methods[0]['groups'][c][m] for c in classes) for m in METRICS}
+        for method in methods:
+            eligible=not(cohort=='four_class' and method['key']=='freecus')
+            values={m:statistics.fmean(method['groups'][c][m] for c in classes) if eligible else None for m in METRICS}
+            original_group='overall' if cohort=='four_class' else 'non_style'
+            original=method['groups'][original_group]
+            # Independent per-image weighting check for measured methods: each class sums to 1/K.
+            verified=False
+            if eligible and not method['historical']:
+                scores=read(ROOT/method['key']/'results'/bench/SOURCES[method['key']][bench]/'metrics.json')['scores']
+                selected=[s for s in scores if s['category'] in classes]
+                for metric in METRICS:
+                    direct=math.fsum(s[metric]/(k*COUNTS[bench][s['category']][0]) for s in selected)
+                    if not math.isclose(direct,values[metric],abs_tol=1e-12,rel_tol=0):raise ValueError('Balanced per-image weighting check failed')
+                if not math.isclose(math.fsum(1/(k*COUNTS[bench][s['category']][0]) for s in selected),1,abs_tol=1e-12):raise ValueError('Weights do not sum to one')
+                verified=True
+            records.append(dict(method=method['key'],label=method['label'],cohort=cohort,
+                cases=1170 if method['key']=='freecus' or cohort=='non_style' else 1350,
+                eligible=eligible,classes=classes,weights={c:1/k for c in classes},
+                original_cohort='non_style' if method['key']=='freecus' else original_group,
+                original=original,balanced=values,
+                delta_vs_baseline={m:values[m]-baseline[m] if eligible else None for m in METRICS},
+                class_means={c:method['groups'][c] for c in classes},
+                weighted_contributions={c:{m:method['groups'][c][m]/k if eligible else None for m in METRICS} for c in classes},
+                per_image_weighting_verified=verified,
+                precision='historical rounded class means (4 decimals)' if method['historical'] else 'full precision measured class means',
+                delta_baseline_precision='historical rounded class means (4 decimals)'))
+    return methods,records
+
+
+def render_balanced(methods,records,classes):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({'font.family':'DejaVu Serif'})
+    width=4200 if classes else 4600
+    row_h=72;group_h=115;header=390
+    groups=['animal','human','object','style','non_style'] if classes else ['four_class','non_style']
+    notes=['Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.',
+        'Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.',
+        '† FreeCus excludes style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.',
+        'Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.',
+        '* Ours best is provisional scale 0.8. FreeCus / DreamO / UNO: 1024 × 1024; XVerse: 768 × 768.']
+    notes += ['Class score stays unchanged. Contribution = 0.25 × class score; sum four contributions for the Balanced Overall.',
+        'FreeCus contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes.'] if classes else [
+        'Original = existing reference-weighted aggregate; Balanced = mean of class means; Δ = Balanced(method) − Balanced(baseline).',
+        'FreeCus Original in the full-cohort block is its 1,170-image non-style score, not a 1,350-image score.']
+    height=header+len(groups)*(group_h+row_h*len(methods))+80+43*len(notes)+70
+    fig=plt.figure(figsize=(width/200,height/200),dpi=200,facecolor='white');ax=fig.add_axes([0,0,1,1])
+    ax.set_xlim(0,width);ax.set_ylim(height,0);ax.axis('off');texts=[]
+    def text(x,y,value,size=14,color='black',align='left'):
+        texts.append(ax.text(x,y,value,fontsize=size,color=color,ha=align,va='center'))
+    def rule(y,lw=1):ax.plot([130,width-130],[y,y],color='black',lw=lw)
+    text(140,80,'DreamBench++',25)
+    text(140,158,'Method comparison — class-balanced contributions' if classes else 'Method comparison — class-balanced metrics',17,'#444444')
+    rule(235,1.7);text(160,306,'Method',15);text(1530,306,'N',15,align='center')
+    cols=[[1900+900*i+300*j for j in range(3)] for i in range(3)] if not classes else [[1900+850*i+330*j for j in range(2)] for i in range(3)]
+    for metric,xs in zip(METRICS,cols):text(statistics.fmean(xs),274,metric+' ↑',16,align='center')
+    # The classes table gives each panel its own subheading for raw vs weighted scores.
+    if not classes:
+        for xs in cols:
+            for x,label in zip(xs,['Original','Balanced','Δ baseline']):text(x,335,label,12,align='center')
+    rule(380,.9);y=380
+    for group in groups:
+        if y!=380:rule(y,.8)
+        if group=='four_class':label='4-class comparison — equal class weights (25% each)'
+        elif group=='non_style':label='Non-Style comparison — equal class weights (1/3 each; 1,170 images)'
+        else:label=f"{group.title()} — 25% weight ({COUNTS['dreambench_plus'][group][0]:,} images)"
+        text(160,y+44,label,15)
+        if classes:
+            for xs in cols:
+                for x,sub in zip(xs,['Original','Balanced'] if group=='non_style' else ['Class score','Contribution']):text(x,y+84,sub,12,align='center')
+        y+=group_h
+        for method in methods:
+            cohort='non_style' if group=='non_style' else 'four_class'
+            r=next(r for r in records if r['method']==method['key'] and r['cohort']==cohort)
+            n=r['cases'] if group in ['four_class','non_style'] else (0 if group=='style' and method['key']=='freecus' else COUNTS['dreambench_plus'][group][0])
+            text(160,y+row_h/2,method['label'],14);text(1530,y+row_h/2,f'{n:,}',14,align='center')
+            for metric,xs in zip(METRICS,cols):
+                if not classes:values=[r['original'][metric],r['balanced'][metric],r['delta_vs_baseline'][metric]]
+                elif group=='non_style':values=[r['original'][metric],r['balanced'][metric]]
+                else:values=[method['groups'][group][metric],r['weighted_contributions'][group][metric]]
+                for j,(x,value) in enumerate(zip(xs,values)):
+                    formatted='—' if value is None else f'{value:+.4f}' if not classes and j==2 else f'{value:.4f}'
+                    text(x,y+row_h/2,formatted,14,align='center')
+            y+=row_h
+    rule(y+8,1.7)
+    for i,note in enumerate(notes):text(160,y+75+43*i,note,11,'#444444')
+    fig.canvas.draw();renderer=fig.canvas.get_renderer()
+    for t in texts:
+        box=t.get_window_extent(renderer)
+        if box.x0<0 or box.x1>fig.bbox.x1 or box.y0<0 or box.y1>fig.bbox.y1:raise ValueError('Balanced text clipped: '+t.get_text())
+    name='dreambench_plus_method_comparison'+('_classes' if classes else '')+'_balanced.png'
+    target=HERE/name;fig.savefig(target,dpi=200,facecolor='white');plt.close(fig)
+    return dict(path=name,sha256=digest(target),width=width,height=height,notes=notes)
+
+
+def build_balanced_tables():
+    # Existing tables stay available with their original aggregation.
+    unchanged={p.name:digest(p) for p in HERE.glob('*.png') if not p.stem.endswith('_balanced')}
+    data,_,audit=audit_sources();historical=read(HERE/'historical_rows.json')
+    methods,records=balanced_records(data,historical)
+    audit.update(aggregation='equal-class macro after within-class subject macro',
+        historical_source_sha256=digest(HERE/'historical_rows.json'),
+        class_weights=dict(four_class={c:.25 for c in ['animal','human','object','style']},non_style={c:1/3 for c in ['animal','human','object']}),
+        baseline='historical_0',freecus_policy='No four-class balanced metric; equal-weight three-class Non-Style only',
+        figures=[render_balanced(methods,records,c) for c in [False,True]])
+    for name,value in unchanged.items():
+        if digest(HERE/name)!=value:raise ValueError('Existing PNG changed')
+    audit['unchanged_existing_pngs']=unchanged
+    write(HERE/'class_balanced_metrics.json',dict(records=records))
+    write(HERE/'class_balanced_audit.json',audit)
+    with (HERE/'class_balanced_metrics.csv').open('w',encoding='utf-8-sig',newline='') as f:
+        fields=['method','cohort','cases','eligible','metric','original','balanced','delta_vs_baseline','precision']
+        writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
+        for r in records:
+            for metric in METRICS:writer.writerow(dict(method=r['method'],cohort=r['cohort'],cases=r['cases'],eligible=r['eligible'],
+                metric=metric,original=r['original'][metric],balanced=r['balanced'][metric],delta_vs_baseline=r['delta_vs_baseline'][metric],precision=r['precision']))
+    print(json.dumps(dict(status='verified',figures=audit['figures'],balanced=[dict(method=r['label'],cohort=r['cohort'],metrics=r['balanced']) for r in records]),indent=2))
 
 
 if __name__=='__main__':main()

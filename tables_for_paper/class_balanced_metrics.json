@@ -1,0 +1,1068 @@
+{
+  "records": [
+    {
+      "method": "historical_0",
+      "label": "InstantX-IP-Adapter (baseline)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.8534,
+        "CLIP-T": 0.2994,
+        "DINO-I": 0.682
+      },
+      "balanced": {
+        "CLIP-I": 0.844275,
+        "CLIP-T": 0.29285,
+        "DINO-I": 0.6706
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": 0.0,
+        "CLIP-T": 0.0,
+        "DINO-I": 0.0
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8902,
+          "CLIP-T": 0.3117,
+          "DINO-I": 0.7609
+        },
+        "human": {
+          "CLIP-I": 0.7941,
+          "CLIP-T": 0.261,
+          "DINO-I": 0.6424
+        },
+        "object": {
+          "CLIP-I": 0.8492,
+          "CLIP-T": 0.3042,
+          "DINO-I": 0.6584
+        },
+        "style": {
+          "CLIP-I": 0.8436,
+          "CLIP-T": 0.2945,
+          "DINO-I": 0.6207
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.22255,
+          "CLIP-T": 0.077925,
+          "DINO-I": 0.190225
+        },
+        "human": {
+          "CLIP-I": 0.198525,
+          "CLIP-T": 0.06525,
+          "DINO-I": 0.1606
+        },
+        "object": {
+          "CLIP-I": 0.2123,
+          "CLIP-T": 0.07605,
+          "DINO-I": 0.1646
+        },
+        "style": {
+          "CLIP-I": 0.2109,
+          "CLIP-T": 0.073625,
+          "DINO-I": 0.155175
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "historical_1",
+      "label": "Ours (scale 0.7)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.8115,
+        "CLIP-T": 0.328,
+        "DINO-I": 0.6154
+      },
+      "balanced": {
+        "CLIP-I": 0.7979499999999999,
+        "CLIP-T": 0.32465,
+        "DINO-I": 0.5903
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.04632500000000006,
+        "CLIP-T": 0.031799999999999995,
+        "DINO-I": -0.08029999999999993
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8548,
+          "CLIP-T": 0.3352,
+          "DINO-I": 0.7226
+        },
+        "human": {
+          "CLIP-I": 0.7389,
+          "CLIP-T": 0.301,
+          "DINO-I": 0.5466
+        },
+        "object": {
+          "CLIP-I": 0.8116,
+          "CLIP-T": 0.3299,
+          "DINO-I": 0.6004
+        },
+        "style": {
+          "CLIP-I": 0.7865,
+          "CLIP-T": 0.3325,
+          "DINO-I": 0.4916
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2137,
+          "CLIP-T": 0.0838,
+          "DINO-I": 0.18065
+        },
+        "human": {
+          "CLIP-I": 0.184725,
+          "CLIP-T": 0.07525,
+          "DINO-I": 0.13665
+        },
+        "object": {
+          "CLIP-I": 0.2029,
+          "CLIP-T": 0.082475,
+          "DINO-I": 0.1501
+        },
+        "style": {
+          "CLIP-I": 0.196625,
+          "CLIP-T": 0.083125,
+          "DINO-I": 0.1229
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "historical_2",
+      "label": "Ours (scale best*)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.8273,
+        "CLIP-T": 0.3208,
+        "DINO-I": 0.6413
+      },
+      "balanced": {
+        "CLIP-I": 0.8164750000000001,
+        "CLIP-T": 0.316425,
+        "DINO-I": 0.6212249999999999
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.027799999999999936,
+        "CLIP-T": 0.023575000000000013,
+        "DINO-I": -0.04937500000000006
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8667,
+          "CLIP-T": 0.3289,
+          "DINO-I": 0.7404
+        },
+        "human": {
+          "CLIP-I": 0.7668,
+          "CLIP-T": 0.2898,
+          "DINO-I": 0.5848
+        },
+        "object": {
+          "CLIP-I": 0.8247,
+          "CLIP-T": 0.324,
+          "DINO-I": 0.622
+        },
+        "style": {
+          "CLIP-I": 0.8077,
+          "CLIP-T": 0.323,
+          "DINO-I": 0.5377
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.216675,
+          "CLIP-T": 0.082225,
+          "DINO-I": 0.1851
+        },
+        "human": {
+          "CLIP-I": 0.1917,
+          "CLIP-T": 0.07245,
+          "DINO-I": 0.1462
+        },
+        "object": {
+          "CLIP-I": 0.206175,
+          "CLIP-T": 0.081,
+          "DINO-I": 0.1555
+        },
+        "style": {
+          "CLIP-I": 0.201925,
+          "CLIP-T": 0.08075,
+          "DINO-I": 0.134425
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "freecus",
+      "label": "FreeCus (1024 × 1024) †",
+      "cohort": "four_class",
+      "cases": 1170,
+      "eligible": false,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.8209768963675214,
+        "CLIP-T": 0.2899658203125,
+        "DINO-I": 0.7036308562653696
+      },
+      "balanced": {
+        "CLIP-I": null,
+        "CLIP-T": null,
+        "DINO-I": null
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": null,
+        "CLIP-T": null,
+        "DINO-I": null
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8270893614969137,
+          "CLIP-T": 0.30143982687114196,
+          "DINO-I": 0.7336980791003617
+        },
+        "human": {
+          "CLIP-I": 0.80556640625,
+          "CLIP-T": 0.23166029188368054,
+          "DINO-I": 0.6559172367056211
+        },
+        "object": {
+          "CLIP-I": 0.8214868790064103,
+          "CLIP-T": 0.29996243990384613,
+          "DINO-I": 0.6974962003210671
+        },
+        "style": {
+          "CLIP-I": null,
+          "CLIP-T": null,
+          "DINO-I": null
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": null,
+          "CLIP-T": null,
+          "DINO-I": null
+        },
+        "human": {
+          "CLIP-I": null,
+          "CLIP-T": null,
+          "DINO-I": null
+        },
+        "object": {
+          "CLIP-I": null,
+          "CLIP-T": null,
+          "DINO-I": null
+        },
+        "style": {
+          "CLIP-I": null,
+          "CLIP-T": null,
+          "DINO-I": null
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "dreamo",
+      "label": "DreamO (1024 × 1024)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.7902325665509259,
+        "CLIP-T": 0.3358822518807871,
+        "DINO-I": 0.6292904380653743
+      },
+      "balanced": {
+        "CLIP-I": 0.7723520451008651,
+        "CLIP-T": 0.3333093409524684,
+        "DINO-I": 0.583027008022708
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.07192295489913492,
+        "CLIP-T": 0.04045934095246839,
+        "DINO-I": -0.08757299197729196
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8299852912808642,
+          "CLIP-T": 0.3414451316550926,
+          "DINO-I": 0.7441049980528561
+        },
+        "human": {
+          "CLIP-I": 0.7299424913194444,
+          "CLIP-T": 0.3168246799045139,
+          "DINO-I": 0.5134034566167328
+        },
+        "object": {
+          "CLIP-I": 0.799935313167735,
+          "CLIP-T": 0.33736582698985046,
+          "DINO-I": 0.6477506692592915
+        },
+        "style": {
+          "CLIP-I": 0.7295450846354167,
+          "CLIP-T": 0.33760172526041665,
+          "DINO-I": 0.4268489081619514
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.20749632282021604,
+          "CLIP-T": 0.08536128291377315,
+          "DINO-I": 0.18602624951321403
+        },
+        "human": {
+          "CLIP-I": 0.1824856228298611,
+          "CLIP-T": 0.07920616997612848,
+          "DINO-I": 0.1283508641541832
+        },
+        "object": {
+          "CLIP-I": 0.19998382829193376,
+          "CLIP-T": 0.08434145674746261,
+          "DINO-I": 0.16193766731482287
+        },
+        "style": {
+          "CLIP-I": 0.18238627115885417,
+          "CLIP-T": 0.08440043131510416,
+          "DINO-I": 0.10671222704048786
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "uno",
+      "label": "UNO (1024 × 1024)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.7767974175347222,
+        "CLIP-T": 0.32957356770833335,
+        "DINO-I": 0.5900723126668621
+      },
+      "balanced": {
+        "CLIP-I": 0.7473857767335144,
+        "CLIP-T": 0.3273951763214662,
+        "DINO-I": 0.523239020329342
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.09688922326648564,
+        "CLIP-T": 0.0345451763214662,
+        "DINO-I": -0.14736097967065798
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8232192804783951,
+          "CLIP-T": 0.3383135006751543,
+          "DINO-I": 0.7104602760002937
+        },
+        "human": {
+          "CLIP-I": 0.6588948567708333,
+          "CLIP-T": 0.31807725694444444,
+          "DINO-I": 0.4175078031089571
+        },
+        "object": {
+          "CLIP-I": 0.8032948551014957,
+          "CLIP-T": 0.3285907451923077,
+          "DINO-I": 0.6420048527483248
+        },
+        "style": {
+          "CLIP-I": 0.7041341145833333,
+          "CLIP-T": 0.32459920247395835,
+          "DINO-I": 0.3229831494597925
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.20580482011959877,
+          "CLIP-T": 0.08457837516878858,
+          "DINO-I": 0.17761506900007343
+        },
+        "human": {
+          "CLIP-I": 0.16472371419270831,
+          "CLIP-T": 0.07951931423611111,
+          "DINO-I": 0.10437695077723927
+        },
+        "object": {
+          "CLIP-I": 0.20082371377537392,
+          "CLIP-T": 0.08214768629807692,
+          "DINO-I": 0.1605012131870812
+        },
+        "style": {
+          "CLIP-I": 0.17603352864583333,
+          "CLIP-T": 0.08114980061848959,
+          "DINO-I": 0.08074578736494813
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "xverse",
+      "label": "XVerse (768 × 768)",
+      "cohort": "four_class",
+      "cases": 1350,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object",
+        "style"
+      ],
+      "weights": {
+        "animal": 0.25,
+        "human": 0.25,
+        "object": 0.25,
+        "style": 0.25
+      },
+      "original_cohort": "overall",
+      "original": {
+        "CLIP-I": 0.7925728804976852,
+        "CLIP-T": 0.32577537254050926,
+        "DINO-I": 0.6038922082908728
+      },
+      "balanced": {
+        "CLIP-I": 0.7782671342434933,
+        "CLIP-T": 0.3230743871908016,
+        "DINO-I": 0.5754435228798556
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.06600786575650675,
+        "CLIP-T": 0.030224387190801616,
+        "DINO-I": -0.09515647712014441
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8344340760030864,
+          "CLIP-T": 0.3339252989969136,
+          "DINO-I": 0.7059343564657518
+        },
+        "human": {
+          "CLIP-I": 0.7191975911458333,
+          "CLIP-T": 0.3039638943142361,
+          "DINO-I": 0.506064867766367
+        },
+        "object": {
+          "CLIP-I": 0.7947490985576923,
+          "CLIP-T": 0.3260493873530983,
+          "DINO-I": 0.5977775667021927
+        },
+        "style": {
+          "CLIP-I": 0.7646877712673611,
+          "CLIP-T": 0.32835896809895837,
+          "DINO-I": 0.49199730058511093
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2086085190007716,
+          "CLIP-T": 0.0834813247492284,
+          "DINO-I": 0.17648358911643794
+        },
+        "human": {
+          "CLIP-I": 0.17979939778645831,
+          "CLIP-T": 0.07599097357855902,
+          "DINO-I": 0.12651621694159176
+        },
+        "object": {
+          "CLIP-I": 0.19868727463942307,
+          "CLIP-T": 0.08151234683827457,
+          "DINO-I": 0.14944439167554818
+        },
+        "style": {
+          "CLIP-I": 0.19117194281684027,
+          "CLIP-T": 0.08208974202473959,
+          "DINO-I": 0.12299932514627773
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "historical_0",
+      "label": "InstantX-IP-Adapter (baseline)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.8549,
+        "CLIP-T": 0.3001,
+        "DINO-I": 0.6914
+      },
+      "balanced": {
+        "CLIP-I": 0.8445,
+        "CLIP-T": 0.2923,
+        "DINO-I": 0.6872333333333334
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": 0.0,
+        "CLIP-T": 0.0,
+        "DINO-I": 0.0
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8902,
+          "CLIP-T": 0.3117,
+          "DINO-I": 0.7609
+        },
+        "human": {
+          "CLIP-I": 0.7941,
+          "CLIP-T": 0.261,
+          "DINO-I": 0.6424
+        },
+        "object": {
+          "CLIP-I": 0.8492,
+          "CLIP-T": 0.3042,
+          "DINO-I": 0.6584
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.29673333333333335,
+          "CLIP-T": 0.10389999999999999,
+          "DINO-I": 0.2536333333333333
+        },
+        "human": {
+          "CLIP-I": 0.2647,
+          "CLIP-T": 0.08700000000000001,
+          "DINO-I": 0.21413333333333331
+        },
+        "object": {
+          "CLIP-I": 0.28306666666666663,
+          "CLIP-T": 0.1014,
+          "DINO-I": 0.21946666666666667
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "historical_1",
+      "label": "Ours (scale 0.7)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.8153,
+        "CLIP-T": 0.3273,
+        "DINO-I": 0.6345
+      },
+      "balanced": {
+        "CLIP-I": 0.8017666666666666,
+        "CLIP-T": 0.32203333333333334,
+        "DINO-I": 0.6232000000000001
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.0427333333333334,
+        "CLIP-T": 0.029733333333333334,
+        "DINO-I": -0.06403333333333328
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8548,
+          "CLIP-T": 0.3352,
+          "DINO-I": 0.7226
+        },
+        "human": {
+          "CLIP-I": 0.7389,
+          "CLIP-T": 0.301,
+          "DINO-I": 0.5466
+        },
+        "object": {
+          "CLIP-I": 0.8116,
+          "CLIP-T": 0.3299,
+          "DINO-I": 0.6004
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2849333333333333,
+          "CLIP-T": 0.11173333333333334,
+          "DINO-I": 0.24086666666666667
+        },
+        "human": {
+          "CLIP-I": 0.2463,
+          "CLIP-T": 0.10033333333333333,
+          "DINO-I": 0.1822
+        },
+        "object": {
+          "CLIP-I": 0.27053333333333335,
+          "CLIP-T": 0.10996666666666667,
+          "DINO-I": 0.20013333333333336
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "historical_2",
+      "label": "Ours (scale best*)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.8303,
+        "CLIP-T": 0.3204,
+        "DINO-I": 0.6573
+      },
+      "balanced": {
+        "CLIP-I": 0.8194,
+        "CLIP-T": 0.31423333333333336,
+        "DINO-I": 0.6490666666666667
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.02510000000000001,
+        "CLIP-T": 0.02193333333333336,
+        "DINO-I": -0.03816666666666668
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8667,
+          "CLIP-T": 0.3289,
+          "DINO-I": 0.7404
+        },
+        "human": {
+          "CLIP-I": 0.7668,
+          "CLIP-T": 0.2898,
+          "DINO-I": 0.5848
+        },
+        "object": {
+          "CLIP-I": 0.8247,
+          "CLIP-T": 0.324,
+          "DINO-I": 0.622
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2889,
+          "CLIP-T": 0.10963333333333335,
+          "DINO-I": 0.2468
+        },
+        "human": {
+          "CLIP-I": 0.2556,
+          "CLIP-T": 0.0966,
+          "DINO-I": 0.19493333333333332
+        },
+        "object": {
+          "CLIP-I": 0.2749,
+          "CLIP-T": 0.108,
+          "DINO-I": 0.20733333333333334
+        }
+      },
+      "per_image_weighting_verified": false,
+      "precision": "historical rounded class means (4 decimals)",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "freecus",
+      "label": "FreeCus (1024 × 1024) †",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.8209768963675214,
+        "CLIP-T": 0.2899658203125,
+        "DINO-I": 0.7036308562653696
+      },
+      "balanced": {
+        "CLIP-I": 0.8180475489177746,
+        "CLIP-T": 0.27768751955288956,
+        "DINO-I": 0.6957038387090165
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.02645245108222538,
+        "CLIP-T": -0.014612480447110443,
+        "DINO-I": 0.008470505375683168
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8270893614969137,
+          "CLIP-T": 0.30143982687114196,
+          "DINO-I": 0.7336980791003617
+        },
+        "human": {
+          "CLIP-I": 0.80556640625,
+          "CLIP-T": 0.23166029188368054,
+          "DINO-I": 0.6559172367056211
+        },
+        "object": {
+          "CLIP-I": 0.8214868790064103,
+          "CLIP-T": 0.29996243990384613,
+          "DINO-I": 0.6974962003210671
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.27569645383230457,
+          "CLIP-T": 0.10047994229038065,
+          "DINO-I": 0.24456602636678723
+        },
+        "human": {
+          "CLIP-I": 0.26852213541666664,
+          "CLIP-T": 0.07722009729456018,
+          "DINO-I": 0.2186390789018737
+        },
+        "object": {
+          "CLIP-I": 0.27382895966880344,
+          "CLIP-T": 0.09998747996794871,
+          "DINO-I": 0.23249873344035568
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "dreamo",
+      "label": "DreamO (1024 × 1024)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.799569102230235,
+        "CLIP-T": 0.33561771751469016,
+        "DINO-I": 0.6604352888197471
+      },
+      "balanced": {
+        "CLIP-I": 0.7866210319226812,
+        "CLIP-T": 0.3318785461831523,
+        "DINO-I": 0.6350863746429601
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.05787896807731885,
+        "CLIP-T": 0.03957854618315232,
+        "DINO-I": -0.052146958690373224
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8299852912808642,
+          "CLIP-T": 0.3414451316550926,
+          "DINO-I": 0.7441049980528561
+        },
+        "human": {
+          "CLIP-I": 0.7299424913194444,
+          "CLIP-T": 0.3168246799045139,
+          "DINO-I": 0.5134034566167328
+        },
+        "object": {
+          "CLIP-I": 0.799935313167735,
+          "CLIP-T": 0.33736582698985046,
+          "DINO-I": 0.6477506692592915
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.27666176376028806,
+          "CLIP-T": 0.11381504388503087,
+          "DINO-I": 0.24803499935095205
+        },
+        "human": {
+          "CLIP-I": 0.24331416377314816,
+          "CLIP-T": 0.10560822663483797,
+          "DINO-I": 0.17113448553891095
+        },
+        "object": {
+          "CLIP-I": 0.266645104389245,
+          "CLIP-T": 0.11245527566328349,
+          "DINO-I": 0.21591688975309717
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "uno",
+      "label": "UNO (1024 × 1024)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.7879763872195513,
+        "CLIP-T": 0.330338854667468,
+        "DINO-I": 0.6311629531602574
+      },
+      "balanced": {
+        "CLIP-I": 0.7618029974502414,
+        "CLIP-T": 0.3283271676039688,
+        "DINO-I": 0.5899909772858586
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.08269700254975865,
+        "CLIP-T": 0.03602716760396879,
+        "DINO-I": -0.09724235604747478
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8232192804783951,
+          "CLIP-T": 0.3383135006751543,
+          "DINO-I": 0.7104602760002937
+        },
+        "human": {
+          "CLIP-I": 0.6588948567708333,
+          "CLIP-T": 0.31807725694444444,
+          "DINO-I": 0.4175078031089571
+        },
+        "object": {
+          "CLIP-I": 0.8032948551014957,
+          "CLIP-T": 0.3285907451923077,
+          "DINO-I": 0.6420048527483248
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2744064268261317,
+          "CLIP-T": 0.11277116689171811,
+          "DINO-I": 0.2368200920000979
+        },
+        "human": {
+          "CLIP-I": 0.21963161892361108,
+          "CLIP-T": 0.10602575231481481,
+          "DINO-I": 0.13916926770298568
+        },
+        "object": {
+          "CLIP-I": 0.2677649517004986,
+          "CLIP-T": 0.1095302483974359,
+          "DINO-I": 0.21400161758277492
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    },
+    {
+      "method": "xverse",
+      "label": "XVerse (768 × 768)",
+      "cohort": "non_style",
+      "cases": 1170,
+      "eligible": true,
+      "classes": [
+        "animal",
+        "human",
+        "object"
+      ],
+      "weights": {
+        "animal": 0.3333333333333333,
+        "human": 0.3333333333333333,
+        "object": 0.3333333333333333
+      },
+      "original_cohort": "non_style",
+      "original": {
+        "CLIP-I": 0.7968628973023505,
+        "CLIP-T": 0.32537789630074787,
+        "DINO-I": 0.6211068094763745
+      },
+      "balanced": {
+        "CLIP-I": 0.7827935885688707,
+        "CLIP-T": 0.321312860221416,
+        "DINO-I": 0.6032589303114372
+      },
+      "delta_vs_baseline": {
+        "CLIP-I": -0.061706411431129315,
+        "CLIP-T": 0.02901286022141597,
+        "DINO-I": -0.08397440302189618
+      },
+      "class_means": {
+        "animal": {
+          "CLIP-I": 0.8344340760030864,
+          "CLIP-T": 0.3339252989969136,
+          "DINO-I": 0.7059343564657518
+        },
+        "human": {
+          "CLIP-I": 0.7191975911458333,
+          "CLIP-T": 0.3039638943142361,
+          "DINO-I": 0.506064867766367
+        },
+        "object": {
+          "CLIP-I": 0.7947490985576923,
+          "CLIP-T": 0.3260493873530983,
+          "DINO-I": 0.5977775667021927
+        }
+      },
+      "weighted_contributions": {
+        "animal": {
+          "CLIP-I": 0.2781446920010288,
+          "CLIP-T": 0.1113084329989712,
+          "DINO-I": 0.2353114521552506
+        },
+        "human": {
+          "CLIP-I": 0.23973253038194442,
+          "CLIP-T": 0.10132129810474537,
+          "DINO-I": 0.16868828925545568
+        },
+        "object": {
+          "CLIP-I": 0.2649163661858974,
+          "CLIP-T": 0.10868312911769944,
+          "DINO-I": 0.1992591889007309
+        }
+      },
+      "per_image_weighting_verified": true,
+      "precision": "full precision measured class means",
+      "delta_baseline_precision": "historical rounded class means (4 decimals)"
+    }
+  ]
+}

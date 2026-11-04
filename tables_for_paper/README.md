@@ -49,3 +49,24 @@ Baseline/Ours는 현재 요청의 갱신 대상이 아니므로 기존 PNG의 4�
 `archive/before_refresh_2026-11-04.zip`에는 갱신 전 표 PNG 4개와 과거 FreeCus 표 생성 코드·PNG/PDF/SVG/CSV/JSON 등 15개 파일을 원래 상대 경로로 보존했다. ZIP 멤버의 SHA256을 검증한 뒤 해당 15개 구형 작업 파일과 재생성 가능한 pyc 캐시 1개를 기존 위치에서 제거했다. `archive/cleanup_2026-11-04.json`에 경로·크기·SHA256·처리를 기록했다. 정리 과정의 일회성 코드도 archive에 텍스트로 보존한다.
 
 벤치마크 생성 이미지, 모델·평가 코드, 원본 score와 비교 실험 기록, 입력 manifest와 provenance/verification은 삭제하지 않았다. DreamO/UNO의 GPU 검증용 sample PNG도 연구 검증 기록으로 보존했다. 새 PDF/SVG나 방법론 폴더별 임시 표는 만들지 않는다.
+
+## DreamBench++ class-balanced 표
+
+기존 표를 유지하면서 추가로 생성한 파일:
+
+- `dreambench_plus_method_comparison_balanced.png`: CLIP-I/CLIP-T/DINO-I 각각 기존 Original, Balanced, Balanced baseline 대비 절대 차이(Δ)를 표시한다. 네 class 전체와 Non-Style을 별도 구간으로 나눈다.
+- `dreambench_plus_method_comparison_classes_balanced.png`: 각 class의 기존 평균과 `0.25 × class 평균`인 전체 balanced 점수 기여도를 함께 표시한다. 마지막에는 Non-Style Balanced 집계를 제공한다.
+
+네 class의 균등 평균은 `(Animal + Human + Object + Style) / 4`, Non-Style 균등 평균은 `(Animal + Human + Object) / 3`이다. class 내부의 참조별 평균 방식은 그대로 유지한다. class 점수 자체가 변하는 것은 아니며, 각 class가 최종 점수에 기여하는 비중이 달라진다. 각 class의 평균에 참조 수 역수를 추가로 곱하지 않는다.
+
+FreeCus는 style 결과가 없어 4-class Balanced/Δ/기여도를 `—`로 표시한다. Original은 기존 1,170장 non-style 점수임을 `†`와 각주로 명시한다. Non-Style Balanced에서는 다른 방법론과 동일한 세 class 및 동일한 1,170장 범위로 비교한다.
+
+새 표 재생성:
+
+```powershell
+& freecus/.venv/Scripts/python.exe -X utf8 tables_for_paper/build_method_tables.py --balanced-only
+```
+
+`class_balanced_metrics.csv`와 `.json`에 반올림 전 집계, class 평균·가중치·기여도와 baseline 차이를 저장한다. `class_balanced_audit.json`에는 원본 검토, PNG SHA256, 기존 PNG 보존 확인을 기록한다. 로컬 측정값은 각 class 평균을 균등 평균한 결과와 이미지별 `1 / (class 수 × 해당 class 이미지 수)` 가중합을 독립 대조하고, 전체 가중치 합이 1임을 확인한다.
+
+Baseline/Ours의 balanced 값은 보존된 소수점 4자리 class 평균으로 계산하므로 근사값이다. 이 baseline을 사용하는 Δ도 근사값이며 PNG와 JSON에 이를 명시한다. 네 비교군의 Balanced 값은 반올림 전 이미지별 점수에서 계산한다. 원본 이미지를 생성하거나 metric 모델을 다시 실행하지 않는다.
