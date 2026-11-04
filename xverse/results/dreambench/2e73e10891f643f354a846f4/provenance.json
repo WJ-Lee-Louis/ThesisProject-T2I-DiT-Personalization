@@ -1,0 +1,34 @@
+{
+  "method": "xverse",
+  "benchmark": "dreambench",
+  "bundle_id": "2e73e10891f643f354a846f4",
+  "workspaces": [
+    "louislee"
+  ],
+  "generation_resolution": [
+    768,
+    768
+  ],
+  "source_archive_sha256": "e3c035382e8a2ae810de3fb34b7833efb671e9140ded965488864fc9619a1df4",
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "generated_images": 733,
+  "missing_case_ids": [
+    "026-11",
+    "026-12",
+    "026-13",
+    "026-14",
+    "026-15",
+    "026-16",
+    "026-17",
+    "026-18",
+    "026-19",
+    "026-20",
+    "026-21",
+    "026-22",
+    "026-23",
+    "026-24",
+    "029-22",
+    "029-23",
+    "029-24"
+  ]
+}

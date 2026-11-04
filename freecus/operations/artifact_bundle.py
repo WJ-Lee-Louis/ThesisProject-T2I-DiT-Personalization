@@ -33,7 +33,7 @@ def safe_path(root, relative):
     return target
 
 
-def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id, expected):
+def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id, expected, resolution=(1024, 1024), allow_gpu_variants=False):
     """Archive all completed cases, original references and provenance; never model weights."""
     lanes = [Path(p) for p in lanes]
     manifest, input_root, destination = Path(manifest), Path(input_root), Path(destination)
@@ -42,6 +42,8 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
         info = json.loads(receipt.read_text(encoding="utf-8"))
         if (info["method"], info["benchmark"], info["bundle_id"], info["generated_images"]) != (method, benchmark, bundle_id, expected):
             raise ValueError("Existing bundle identity differs")
+        if info.get('generation_resolution', [1024, 1024]) != list(resolution):
+            raise ValueError('Existing bundle resolution differs')
         if all((destination / p["file"]).is_file() and digest(destination / p["file"]) == p["sha256"] for p in info["parts"]):
             return info
         raise ValueError("Existing bundle is incomplete/corrupt; preserve it for investigation")
@@ -54,6 +56,8 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
         raise ValueError("Incomplete canonical manifest")
     infos = [json.loads((lane / "run.json").read_text(encoding="utf-8")) for lane in lanes]
     for key in ["fingerprint", "config", "manifest_sha256", "code", "versions", "gpu", "cuda"]:
+        if key == "gpu" and allow_gpu_variants:
+            continue
         if any(i[key] != infos[0][key] for i in infos[1:]):
             raise ValueError("Generation lane identities differ: " + key)
     if digest(manifest) != infos[0]["manifest_sha256"]:
@@ -76,6 +80,7 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
     add(lanes[0] / "run.json", "run.json")
     add(manifest, "manifest.jsonl")
     for lane in lanes:
+        add(lane / "run.json", "lanes/" + lane.name + "/run.json")
         init = lane / "initialization.json"
         if init.exists():
             add(init, "lanes/" + lane.name + "/initialization.json")
@@ -105,7 +110,7 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
                     if kind == "tgt_image":
                         with original.open("rb") as f:
                             header = f.read(24)
-                        if header[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", header[16:24]) != (1024, 1024):
+                        if header[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", header[16:24]) != tuple(resolution):
                             raise ValueError("Unexpected image dimensions")
             if (lane / "text" / (row["id"] + ".txt")).read_text(encoding="utf-8") != row["prompt"]:
                 raise ValueError("Target prompt differs")
@@ -138,6 +143,7 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
         if part["size_bytes"] > LIMIT:
             raise ValueError("ZIP exceeds 1 GiB")
     info = dict(schema=1, method=method, benchmark=benchmark, bundle_id=bundle_id,
+                generation_resolution=list(resolution), generation_devices=sorted({i['gpu'] for i in infos}),
                 generated_images=len(seen), manifest_cases=len(rows),
                 missing_case_ids=sorted(set(canonical) - seen),
                 generation_fingerprint=infos[0]["fingerprint"], manifest_sha256=digest(manifest),

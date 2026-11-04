@@ -1,0 +1,45 @@
+{
+  "method": "xverse",
+  "benchmark": "dreambench",
+  "bundle_id": "2e73e10891f643f354a846f4-complete-v1",
+  "workspaces": [
+    "louislee",
+    "louislee-85468"
+  ],
+  "generation_resolution": [
+    768,
+    768
+  ],
+  "source_archive_sha256": "e3c035382e8a2ae810de3fb34b7833efb671e9140ded965488864fc9619a1df4",
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "generated_images": 750,
+  "missing_case_ids": [],
+  "metrics_sha256": "6f17b08ff8ce946b6eabd769681fa30c2ff4b9e4bca46d28117e97549c16a38c",
+  "metric_cases": 750,
+  "metric_versions": {
+    "torch": "2.7.1",
+    "torchvision": "0.22.1",
+    "numpy": "1.26.4",
+    "Pillow": "11.3.0",
+    "clip": "1.0"
+  },
+  "metric_device": "Tesla T4",
+  "metric_protocol": {
+    "name": "uno-selected-reference-v1",
+    "uno_revision": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "clip_model": "ViT-B/32",
+    "clip_revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "dino_model": "dino_vits16",
+    "dino_revision": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "reference_policy": "exact manifest image_path; one reference per generated image",
+    "clip_preprocess": "RGB; bicubic resize shorter edge 224; center crop 224; CLIP normalization",
+    "dino_preprocess": "RGB; bicubic resize shorter edge 256; center crop 224; ImageNet normalization",
+    "clip_t": "max(0, cosine(generated, original target_prompt)); weight=1; no prefix; truncate=True",
+    "image_metrics": "cosine(generated, selected reference); no clipping; no logit scale",
+    "score_scale": 1,
+    "aggregation": "per benchmark, condition and class: reference macro and case micro; class macro separately",
+    "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
+    "generated_format": "original PNG; no JPEG export"
+  },
+  "generation_fingerprint": "d2b25dc3a20d020f43a62302f9836dabadc4bef7a02e765b9061bde2926b0732"
+}

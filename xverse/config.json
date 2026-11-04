@@ -1,0 +1,31 @@
+{
+  "method": "xverse",
+  "width": 768,
+  "height": 768,
+  "seeds": [
+    42
+  ],
+  "seed": 42,
+  "steps": 28,
+  "guidance": 3.5,
+  "quantization": "none",
+  "reference_policy": "selected_one",
+  "evaluation_selection": "all",
+  "cond_size": 256,
+  "weight_id": 3,
+  "weight_ip": 5,
+  "latent_lora_scale": 0.85,
+  "vae_lora_scale": 1.3,
+  "vae_skip_iter": [
+    0.05,
+    0.8
+  ],
+  "default_cli_resolution": 768,
+  "default_cli_quantization": "int8-quanto",
+  "human_id_policy": "human_category_only",
+  "resolution_status": "official_cli_default",
+  "gpu": "A100-80GB",
+  "admission_usd": 37.5,
+  "prior_a100_reserved_usd": 2,
+  "prior_pilots_reserved_usd": 2.5
+}

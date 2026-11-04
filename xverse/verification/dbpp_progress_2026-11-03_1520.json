@@ -1,0 +1,222 @@
+{
+  "observed_timezone": "Asia/Seoul",
+  "workspaces": {
+    "wj-lee-louis": {
+      "status": {
+        "status": "generating",
+        "workspace": "wj-lee-louis",
+        "budget_usd": 21,
+        "generation_cap_usd": 19.8,
+        "calls": [
+          {
+            "lane": 0,
+            "id": "fc-01M6FZ7704VTYSTRTE4EEHQZCZ"
+          },
+          {
+            "lane": 1,
+            "id": "fc-01M6FZ785J952W48AYGT9MHQTJ"
+          }
+        ],
+        "invocation": "e9c4303f472b460ab4977f0889a7b185",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "requested_cases": 459,
+        "started_at": 1793684458.6893833,
+        "updated_at": 1793684906.2430713,
+        "stage_call": "fc-01M6FYSNMEVPMY5868F9Q1RZQ3"
+      },
+      "progress": {
+        "workspace": "wj-lee-louis",
+        "status": "generating",
+        "assigned": 459,
+        "budget_usd": 21,
+        "observed_images": 151,
+        "lanes": [
+          {
+            "lane": 0,
+            "status": "running",
+            "elapsed_seconds": 1897.203274803,
+            "observed_generated": 75,
+            "mean_seconds": 24.63684814222666,
+            "recent_mean_seconds": 24.60532808779999,
+            "assigned": 234,
+            "error_tail": null
+          },
+          {
+            "lane": 1,
+            "status": "running",
+            "elapsed_seconds": 1898.888840434,
+            "observed_generated": 76,
+            "mean_seconds": 24.2757744123158,
+            "recent_mean_seconds": 24.312012607200018,
+            "assigned": 225,
+            "error_tail": null
+          }
+        ],
+        "observed_at_kst": "2026-11-03T15:20:21.795352+09:00",
+        "generation_remaining_seconds": 3917.258854614039,
+        "generation_eta_kst": "2026-11-03T16:25:39.054207+09:00",
+        "generation_eta_with_15pct_margin_kst": "2026-11-03T16:35:26.643035+09:00",
+        "metric_completion_range_kst": [
+          "2026-11-03T16:30:39.054207+09:00",
+          "2026-11-03T16:50:26.643035+09:00"
+        ],
+        "mean_seconds_per_image": 24.45511566889404,
+        "generation_compute_usd_range": [
+          8.881588366331776,
+          9.679005126789045
+        ],
+        "total_with_setup_scoring_allowance_usd": [
+          10.081588366331776,
+          10.879005126789044
+        ],
+        "total_with_15pct_generation_margin_usd": 12.3308558958074,
+        "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+      }
+    },
+    "woojin716": {
+      "status": {
+        "status": "generating",
+        "workspace": "woojin716",
+        "budget_usd": 13,
+        "generation_cap_usd": 11.8,
+        "calls": [
+          {
+            "lane": 0,
+            "id": "fc-01M6FZAX59C6TVN64JBMJ8H6Y2"
+          }
+        ],
+        "invocation": "dafe90b2bb6c4b80a376eb0f6bca3a44",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "requested_cases": 216,
+        "started_at": 1793684421.4990041,
+        "updated_at": 1793686781.666948,
+        "stage_call": "fc-01M6FYRFZZJC9V48RMPW5AKPSH",
+        "recovered_supervisor_interruption": "KeyboardInterrupt()"
+      },
+      "progress": {
+        "workspace": "woojin716",
+        "status": "generating",
+        "assigned": 216,
+        "budget_usd": 13,
+        "observed_images": 54,
+        "lanes": [
+          {
+            "lane": 0,
+            "status": "running",
+            "elapsed_seconds": 1782.432493157,
+            "observed_generated": 54,
+            "mean_seconds": 30.803203667518517,
+            "recent_mean_seconds": 30.617193450899983,
+            "assigned": 216,
+            "error_tail": null
+          }
+        ],
+        "observed_at_kst": "2026-11-03T15:20:18.525887+09:00",
+        "generation_remaining_seconds": 4990.118994138,
+        "generation_eta_kst": "2026-11-03T16:43:28.644881+09:00",
+        "generation_eta_with_15pct_margin_kst": "2026-11-03T16:55:57.162730+09:00",
+        "metric_completion_range_kst": [
+          "2026-11-03T16:48:28.644881+09:00",
+          "2026-11-03T17:10:57.162730+09:00"
+        ],
+        "mean_seconds_per_image": 30.803203667518517,
+        "generation_compute_usd_range": [
+          5.264509003895667,
+          5.737173075020419
+        ],
+        "total_with_setup_scoring_allowance_usd": [
+          6.464509003895667,
+          6.937173075020419
+        ],
+        "total_with_15pct_generation_margin_usd": 7.797749036273481,
+        "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+      }
+    },
+    "louislee-85468": {
+      "status": {
+        "status": "generating",
+        "workspace": "louislee-85468",
+        "budget_usd": 28,
+        "generation_cap_usd": 26.8,
+        "calls": [
+          {
+            "lane": 0,
+            "id": "fc-01M6FYXNBK772X3SEYFH0SQBEK"
+          },
+          {
+            "lane": 1,
+            "id": "fc-01M6FYXPES8FP9TT2GM45GN79F"
+          },
+          {
+            "lane": 2,
+            "id": "fc-01M6FYXQKTP7HEAPXFXTQR6NJ0"
+          }
+        ],
+        "invocation": "6d8d47e5fe974516a40754c2559a41e7",
+        "bundle_id": "f811b3fa80a9700e30dd8115",
+        "requested_cases": 675,
+        "started_at": 1793684425.5226293,
+        "updated_at": 1793684594.369285,
+        "stage_call": "fc-01M6FYRN8H876MG8R8308A80HV"
+      },
+      "progress": {
+        "workspace": "louislee-85468",
+        "status": "generating",
+        "assigned": 675,
+        "budget_usd": 28,
+        "observed_images": 241,
+        "lanes": [
+          {
+            "lane": 0,
+            "status": "running",
+            "elapsed_seconds": 2217.025521248,
+            "observed_generated": 81,
+            "mean_seconds": 26.3234696062963,
+            "recent_mean_seconds": 26.530412307499954,
+            "assigned": 225,
+            "error_tail": null
+          },
+          {
+            "lane": 1,
+            "status": "running",
+            "elapsed_seconds": 2216.766889391,
+            "observed_generated": 77,
+            "mean_seconds": 27.633748247623398,
+            "recent_mean_seconds": 27.839853237200032,
+            "assigned": 225,
+            "error_tail": null
+          },
+          {
+            "lane": 2,
+            "status": "running",
+            "elapsed_seconds": 2213.6793296309997,
+            "observed_generated": 83,
+            "mean_seconds": 25.973561970843377,
+            "recent_mean_seconds": 25.90124779609996,
+            "assigned": 225,
+            "error_tail": null
+          }
+        ],
+        "observed_at_kst": "2026-11-03T15:20:24.751563+09:00",
+        "generation_remaining_seconds": 4120.298279105605,
+        "generation_eta_kst": "2026-11-03T16:29:05.049842+09:00",
+        "generation_eta_with_15pct_margin_kst": "2026-11-03T16:39:23.094584+09:00",
+        "metric_completion_range_kst": [
+          "2026-11-03T16:34:05.049842+09:00",
+          "2026-11-03T16:54:23.094584+09:00"
+        ],
+        "mean_seconds_per_image": 26.6215987417303,
+        "generation_compute_usd_range": [
+          14.218249807174509,
+          15.494808710037962
+        ],
+        "total_with_setup_scoring_allowance_usd": [
+          15.418249807174508,
+          16.69480871003796
+        ],
+        "total_with_15pct_generation_margin_usd": 19.019030016543653,
+        "note": "Early observed cases; not a billing balance. Human/style may run at different speeds. 32-64 GiB host RAM range."
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "generated_images": 1350,
+  "zip_files": 1,
+  "total_archive_bytes": 1048529244,
+  "all_member_sha256_verified": true,
+  "source_reference_paths_recoverable": true,
+  "metric_cases": 1350,
+  "score_image_sha256_verified": true,
+  "coverage": "complete",
+  "missing_case_ids": []
+}
