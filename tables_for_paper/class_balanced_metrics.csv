@@ -1,0 +1,43 @@
+﻿method,cohort,cases,eligible,metric,original,balanced,delta_vs_baseline,precision
+historical_0,four_class,1350,True,CLIP-I,0.8534,0.844275,0.0,historical rounded class means (4 decimals)
+historical_0,four_class,1350,True,CLIP-T,0.2994,0.29285,0.0,historical rounded class means (4 decimals)
+historical_0,four_class,1350,True,DINO-I,0.682,0.6706,0.0,historical rounded class means (4 decimals)
+historical_1,four_class,1350,True,CLIP-I,0.8115,0.7979499999999999,-0.04632500000000006,historical rounded class means (4 decimals)
+historical_1,four_class,1350,True,CLIP-T,0.328,0.32465,0.031799999999999995,historical rounded class means (4 decimals)
+historical_1,four_class,1350,True,DINO-I,0.6154,0.5903,-0.08029999999999993,historical rounded class means (4 decimals)
+historical_2,four_class,1350,True,CLIP-I,0.8273,0.8164750000000001,-0.027799999999999936,historical rounded class means (4 decimals)
+historical_2,four_class,1350,True,CLIP-T,0.3208,0.316425,0.023575000000000013,historical rounded class means (4 decimals)
+historical_2,four_class,1350,True,DINO-I,0.6413,0.6212249999999999,-0.04937500000000006,historical rounded class means (4 decimals)
+freecus,four_class,1170,False,CLIP-I,0.8209768963675214,,,full precision measured class means
+freecus,four_class,1170,False,CLIP-T,0.2899658203125,,,full precision measured class means
+freecus,four_class,1170,False,DINO-I,0.7036308562653696,,,full precision measured class means
+dreamo,four_class,1350,True,CLIP-I,0.7902325665509259,0.7723520451008651,-0.07192295489913492,full precision measured class means
+dreamo,four_class,1350,True,CLIP-T,0.3358822518807871,0.3333093409524684,0.04045934095246839,full precision measured class means
+dreamo,four_class,1350,True,DINO-I,0.6292904380653743,0.583027008022708,-0.08757299197729196,full precision measured class means
+uno,four_class,1350,True,CLIP-I,0.7767974175347222,0.7473857767335144,-0.09688922326648564,full precision measured class means
+uno,four_class,1350,True,CLIP-T,0.32957356770833335,0.3273951763214662,0.0345451763214662,full precision measured class means
+uno,four_class,1350,True,DINO-I,0.5900723126668621,0.523239020329342,-0.14736097967065798,full precision measured class means
+xverse,four_class,1350,True,CLIP-I,0.7925728804976852,0.7782671342434933,-0.06600786575650675,full precision measured class means
+xverse,four_class,1350,True,CLIP-T,0.32577537254050926,0.3230743871908016,0.030224387190801616,full precision measured class means
+xverse,four_class,1350,True,DINO-I,0.6038922082908728,0.5754435228798556,-0.09515647712014441,full precision measured class means
+historical_0,non_style,1170,True,CLIP-I,0.8549,0.8445,0.0,historical rounded class means (4 decimals)
+historical_0,non_style,1170,True,CLIP-T,0.3001,0.2923,0.0,historical rounded class means (4 decimals)
+historical_0,non_style,1170,True,DINO-I,0.6914,0.6872333333333334,0.0,historical rounded class means (4 decimals)
+historical_1,non_style,1170,True,CLIP-I,0.8153,0.8017666666666666,-0.0427333333333334,historical rounded class means (4 decimals)
+historical_1,non_style,1170,True,CLIP-T,0.3273,0.32203333333333334,0.029733333333333334,historical rounded class means (4 decimals)
+historical_1,non_style,1170,True,DINO-I,0.6345,0.6232000000000001,-0.06403333333333328,historical rounded class means (4 decimals)
+historical_2,non_style,1170,True,CLIP-I,0.8303,0.8194,-0.02510000000000001,historical rounded class means (4 decimals)
+historical_2,non_style,1170,True,CLIP-T,0.3204,0.31423333333333336,0.02193333333333336,historical rounded class means (4 decimals)
+historical_2,non_style,1170,True,DINO-I,0.6573,0.6490666666666667,-0.03816666666666668,historical rounded class means (4 decimals)
+freecus,non_style,1170,True,CLIP-I,0.8209768963675214,0.8180475489177746,-0.02645245108222538,full precision measured class means
+freecus,non_style,1170,True,CLIP-T,0.2899658203125,0.27768751955288956,-0.014612480447110443,full precision measured class means
+freecus,non_style,1170,True,DINO-I,0.7036308562653696,0.6957038387090165,0.008470505375683168,full precision measured class means
+dreamo,non_style,1170,True,CLIP-I,0.799569102230235,0.7866210319226812,-0.05787896807731885,full precision measured class means
+dreamo,non_style,1170,True,CLIP-T,0.33561771751469016,0.3318785461831523,0.03957854618315232,full precision measured class means
+dreamo,non_style,1170,True,DINO-I,0.6604352888197471,0.6350863746429601,-0.052146958690373224,full precision measured class means
+uno,non_style,1170,True,CLIP-I,0.7879763872195513,0.7618029974502414,-0.08269700254975865,full precision measured class means
+uno,non_style,1170,True,CLIP-T,0.330338854667468,0.3283271676039688,0.03602716760396879,full precision measured class means
+uno,non_style,1170,True,DINO-I,0.6311629531602574,0.5899909772858586,-0.09724235604747478,full precision measured class means
+xverse,non_style,1170,True,CLIP-I,0.7968628973023505,0.7827935885688707,-0.061706411431129315,full precision measured class means
+xverse,non_style,1170,True,CLIP-T,0.32537789630074787,0.321312860221416,0.02901286022141597,full precision measured class means
+xverse,non_style,1170,True,DINO-I,0.6211068094763745,0.6032589303114372,-0.08397440302189618,full precision measured class means
