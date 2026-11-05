@@ -14,7 +14,8 @@ def run(a):
     from PIL import Image
     from transformers import set_seed
     from .runtime import Diptych, XVerse
-    base = Path('/root')/a.method
+    project = Path(__file__).resolve().parents[1]
+    base = project/a.method
     upstream = json.loads((base/'UPSTREAM.json').read_text())
     for name,digest in upstream['files'].items():
         if sha256(base/'upstream'/name) != digest:
@@ -24,12 +25,13 @@ def run(a):
     selected = [r for r in rows if r['case_id'] in wanted]
     if len(selected) != len(wanted) or {r['seed'] for r in rows} != {42}:
         raise ValueError('Noncanonical case selection')
-    cfg = json.loads((base/'config.json').read_text())
+    cfg = json.loads((getattr(a, 'config', None) or base/'config.json').read_text())
     files = (list(base.glob('*.json'))+list(base.glob('requirements*.txt'))+
              [p for p in (base/'upstream').rglob('*') if p.is_file() and '__pycache__' not in p.parts]+
-             list(Path('/root/comparison_candidates').glob('*.py'))+
-             [Path('/root/freecus')/n for n in ['manifest.py','run.py','evaluate.py','project_metrics/benchmark_metrics.py']])
-    code = {p.relative_to('/root').as_posix():sha256(p) for p in files}
+             list(base.glob('*.py'))+
+             list((project/'comparison_candidates').glob('*.py'))+
+             [project/'freecus'/n for n in ['manifest.py','run.py','evaluate.py','project_metrics/benchmark_metrics.py']])
+    code = {p.relative_to(project).as_posix():sha256(p) for p in files}
     identity = dict(config=cfg,manifest_sha256=sha256(a.bundle/'manifest.jsonl'),code=code,
                     models=json.loads((base/'models.lock.json').read_text()))
     fingerprint = hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
@@ -75,6 +77,7 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     p.add_argument('--method',choices=['diptych','xverse'],required=True)
+    p.add_argument('--config',type=Path)
     p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--cases',nargs='+',required=True)

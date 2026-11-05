@@ -1,0 +1,56 @@
+{
+  "bundles": [
+    {
+      "method": "diptych",
+      "benchmark": "dreambench",
+      "bundle_id": "local-gpu0-seed42-bf16-v1",
+      "status": "verified",
+      "generated_images": 750,
+      "zip_files": 1,
+      "total_archive_bytes": 628046492,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 750,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 628046492,
+          "sha256": "4f570083ec12d7ea5ab790b3fdae6ba539f357e78587dc9124bad011e743092f",
+          "path": "diptych/artifacts/dreambench/local-gpu0-seed42-bf16-v1/images-000.zip"
+        }
+      ]
+    },
+    {
+      "method": "diptych",
+      "benchmark": "dreambench_plus",
+      "bundle_id": "local-gpu0-seed42-bf16-v1",
+      "status": "verified",
+      "generated_images": 1350,
+      "zip_files": 2,
+      "total_archive_bytes": 1205689488,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 1350,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 1071929536,
+          "sha256": "b162a154824e0259065a95793ff14bfc5b2c52359158b76a8977c098841b0c71",
+          "path": "diptych/artifacts/dreambench_plus/local-gpu0-seed42-bf16-v1/images-000.zip"
+        },
+        {
+          "file": "images-001.zip",
+          "size_bytes": 133759952,
+          "sha256": "9532e21e8f2c165c88f5aa54bade2a858bb68c7c0039f37483f7a9a1cdcd8be3",
+          "path": "diptych/artifacts/dreambench_plus/local-gpu0-seed42-bf16-v1/images-001.zip"
+        }
+      ]
+    }
+  ]
+}

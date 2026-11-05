@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "evaluations": [
+    {
+      "method": "diptych",
+      "benchmark": "dreambench",
+      "cases": 750,
+      "references": 30,
+      "canonical_cases": 750,
+      "missing_cases": 0,
+      "selection": "all",
+      "CLIP-T": 0.3178009440104167,
+      "CLIP-I": 0.8047981770833333,
+      "DINO-I": 0.6938665079871813
+    },
+    {
+      "method": "diptych",
+      "benchmark": "dreambench_plus",
+      "cases": 1350,
+      "references": 150,
+      "canonical_cases": 1350,
+      "missing_cases": 0,
+      "selection": "all",
+      "CLIP-T": 0.33767189308449075,
+      "CLIP-I": 0.7734888599537038,
+      "DINO-I": 0.5625064048543572
+    }
+  ],
+  "generation_resolution": [
+    768,
+    768
+  ],
+  "physical_gpu_index": 0,
+  "scoring_source_sha256": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9"
+}
