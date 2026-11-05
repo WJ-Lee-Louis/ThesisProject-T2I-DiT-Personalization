@@ -2,3 +2,5 @@ outputs/
 .venv*/
 __pycache__/
 *.pyc
+artifacts/**/*.json
+artifacts/**/*.download

@@ -1,0 +1,43 @@
+{
+  "method": "diptych",
+  "benchmark": "dreambench",
+  "bundle_id": "local-gpu0-seed42-bf16-v1",
+  "backend": "local",
+  "physical_gpu_index": 0,
+  "generation_resolution": [
+    768,
+    768
+  ],
+  "source_archive_sha256": "4336a98583f7cb6c20bf4bbed43195a803580e73e7ea4ece320f5837ce3be71b",
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "generated_images": 750,
+  "generation_fingerprint": "9593efb54b741e6beee8d0a8780e42d2a9a4b2193f64715d4200280a72bd567b",
+  "missing_case_ids": [],
+  "metrics_sha256": "fba372083e6258e87cb13a8653cd777aafb84df57559b794c77bb538f0a55318",
+  "metric_cases": 750,
+  "metric_versions": {
+    "torch": "2.7.1+cu128",
+    "torchvision": "0.22.1+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "11.3.0",
+    "clip": "1.0"
+  },
+  "metric_device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "metric_protocol": {
+    "name": "uno-selected-reference-v1",
+    "uno_revision": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "clip_model": "ViT-B/32",
+    "clip_revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "dino_model": "dino_vits16",
+    "dino_revision": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "reference_policy": "exact manifest image_path; one reference per generated image",
+    "clip_preprocess": "RGB; bicubic resize shorter edge 224; center crop 224; CLIP normalization",
+    "dino_preprocess": "RGB; bicubic resize shorter edge 256; center crop 224; ImageNet normalization",
+    "clip_t": "max(0, cosine(generated, original target_prompt)); weight=1; no prefix; truncate=True",
+    "image_metrics": "cosine(generated, selected reference); no clipping; no logit scale",
+    "score_scale": 1,
+    "aggregation": "per benchmark, condition and class: reference macro and case micro; class macro separately",
+    "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
+    "generated_format": "original PNG; no JPEG export"
+  }
+}

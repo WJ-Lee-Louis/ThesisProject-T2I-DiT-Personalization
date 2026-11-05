@@ -17,7 +17,7 @@ class Diptych:
     def __init__(self, paths, config):
         import torch
         from transformers import AutoProcessor, AutoModelForMaskGeneration, pipeline
-        sys.path.insert(0, str(Path('/root/diptych/upstream')))
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'diptych/upstream'))
         import diptych_prompting_inference as official
         self.official = official
         self.config = config
