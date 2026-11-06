@@ -8,6 +8,7 @@ dreamo/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
 uno/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
 xverse/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
 diptych/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
+mosaic/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
 
 # Preserve byte hashes used by the benchmark manifests, scores and receipts.
 freecus/results/** -text
@@ -15,7 +16,9 @@ dreamo/results/** -text
 uno/results/** -text
 xverse/results/** -text
 diptych/results/** -text
+mosaic/results/** -text
 freecus/manifests/** -text
 dreamo/manifests/** -text
 uno/manifests/** -text
 diptych/manifests/** -text
+mosaic/manifests/** -text

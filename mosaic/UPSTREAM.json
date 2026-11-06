@@ -1,0 +1,13 @@
+{
+  "repo": "https://github.com/bytedance-fanqie-ai/MOSAIC",
+  "commit": "b3c90086d28778fb8bba2f0e372d2f99ceca0913",
+  "files": {
+    "README.md": "3909a04f7297604e6f53a5d043ed18aaf998b6e4cef957eaed6bc71238732cda",
+    "requirements.txt": "7d7dc667eb8c0c67d66f564572ba124883eb308fe3ed369b7544ab6d3b118804",
+    "inference.py": "f9f6362bc883a01b0850e8c66b96beeca055d36e3d99875c4380995702070d87",
+    "utils.py": "544826b15e33ae65f323661272ff60443ae57591edd3fed2c0608be282e28cf7",
+    "src/flux_omini.py": "d42757bdc44ef229ecc9f237d52902c99da2bf348a5948160ba8a374a8fcd9fd",
+    "src/flux_omini_mosaic.py": "fcd43109f956feff0128a4359694317ef4968f20733a5d39786282dc46107240",
+    "example_cases.json": "416bee42aa2ee8acd34e36dc1f22241e4209b997a6bb471828acb340819385af"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "method": "mosaic",
+  "width": 512,
+  "height": 512,
+  "seeds": [
+    42
+  ],
+  "seed": 42,
+  "steps": 28,
+  "guidance": 3.5,
+  "quantization": "none",
+  "reference_policy": "selected_one",
+  "evaluation_selection": "all",
+  "reference_size": 512,
+  "reference_scale": 0.9,
+  "pad_color": [
+    255,
+    255,
+    255
+  ],
+  "position_delta": [
+    0,
+    -32
+  ],
+  "adapter_name": "subject",
+  "adapter_weight": 1.0,
+  "image_guidance_scale": 1.0,
+  "kv_cache": false,
+  "batch_size": 1,
+  "style_policy": "official_subject_adapter_and_reference_preprocessing",
+  "implementation": "official_flux_omini",
+  "checkpoint_resolution": 512
+}
