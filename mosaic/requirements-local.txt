@@ -1,0 +1,21 @@
+# RTX PRO 6000 Blackwell requires the CUDA 12.8 build (Modal uses CUDA 12.4).
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+numpy==1.26.4
+accelerate==1.1.1
+huggingface-hub==0.29.3
+hf_transfer==0.1.9
+sentencepiece==0.2.0
+protobuf==5.29.3
+opencv-python-headless==4.11.0.86
+safetensors==0.5.3
+diffusers==0.32.0
+transformers==4.46.3
+Pillow==11.3.0
+ftfy==6.3.1
+regex
+tqdm
+packaging
+clip @ git+https://github.com/openai/CLIP.git@d05afc436d78f1c48dc0dbf8e5980a9d471f35f6
+peft==0.15.0

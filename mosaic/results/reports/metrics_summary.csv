@@ -1,0 +1,3 @@
+method,benchmark,cases,references,canonical_cases,missing_cases,selection,CLIP-T,CLIP-I,DINO-I
+mosaic,dreambench,750,30,750,0,all,0.31925634765625,0.7927102864583333,0.6525451610187689
+mosaic,dreambench_plus,1350,150,1350,0,all,0.33916775173611113,0.7567994068287037,0.5301494092114821

@@ -1,0 +1,50 @@
+{
+  "bundles": [
+    {
+      "method": "mosaic",
+      "benchmark": "dreambench",
+      "bundle_id": "local-gpu0-seed42-bf16-v1",
+      "status": "verified",
+      "generated_images": 750,
+      "zip_files": 1,
+      "total_archive_bytes": 350159228,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 750,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 350159228,
+          "sha256": "73f5734df44f16591c9e6089fffc19ddb15cf42ebe5a41f8272a469c277d0a7d",
+          "path": "mosaic/artifacts/dreambench/local-gpu0-seed42-bf16-v1/images-000.zip"
+        }
+      ]
+    },
+    {
+      "method": "mosaic",
+      "benchmark": "dreambench_plus",
+      "bundle_id": "local-gpu0-seed42-bf16-v1",
+      "status": "verified",
+      "generated_images": 1350,
+      "zip_files": 1,
+      "total_archive_bytes": 624819107,
+      "all_member_sha256_verified": true,
+      "source_reference_paths_recoverable": true,
+      "metric_cases": 1350,
+      "score_image_sha256_verified": true,
+      "coverage": "complete",
+      "missing_case_ids": [],
+      "archives": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 624819107,
+          "sha256": "de4154735882696c2eb77fcd4be4d6e47e6d29b375cc07532f5b356335b2b567",
+          "path": "mosaic/artifacts/dreambench_plus/local-gpu0-seed42-bf16-v1/images-000.zip"
+        }
+      ]
+    }
+  ]
+}
