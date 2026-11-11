@@ -6,12 +6,13 @@ Requires matplotlib and Pillow; does not launch generation, metrics or remote jo
 import csv
 import argparse
 import hashlib
+import io
 import json
 import math
 from pathlib import Path
 import statistics
 import sys
-import zipfile
+import tempfile
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent
@@ -24,8 +25,13 @@ SOURCES={
     'dreamo':dict(dreambench='80f168f66963c39103d3a528',dreambench_plus='0d879ac6888dff2965d416b6'),
     'uno':dict(dreambench='98bf99baf41eb1b758fceb23',dreambench_plus='2ff93b396bb6c6eda2ee2215'),
     'xverse':dict(dreambench='2e73e10891f643f354a846f4-complete-v1',dreambench_plus='f811b3fa80a9700e30dd8115'),
+    'diptych':dict.fromkeys(['dreambench','dreambench_plus'],'local-gpu0-seed42-bf16-v1'),
+    'mosaic':dict.fromkeys(['dreambench','dreambench_plus'],'local-gpu0-seed42-bf16-v1'),
+    'xlabs_application':dict.fromkeys(['dreambench','dreambench_plus'],'598a7ef43356a8eb05e1314b'),
 }
-LABELS={'freecus':'FreeCus','dreamo':'DreamO','uno':'UNO','xverse':'XVerse'}
+LABELS={'freecus':'FreeCus','dreamo':'DreamO','uno':'UNO','xverse':'XVerse',
+        'diptych':'Diptych','mosaic':'MOSAIC','xlabs_application':'XLabs-IP-Adapter'}
+RESOLUTIONS=dict(freecus=1024,dreamo=1024,uno=1024,xverse=768,diptych=768,mosaic=512,xlabs_application=1024)
 COUNTS={'dreambench':dict(animal=(225,9),object=(525,21)),
         'dreambench_plus':dict(animal=(405,45),human=(180,20),object=(585,65),style=(180,20),non_style=(1170,130))}
 
@@ -33,6 +39,18 @@ COUNTS={'dreambench':dict(animal=(225,9),object=(525,21)),
 def read(p):return json.loads(p.read_text(encoding='utf-8'))
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def write(p,value):p.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+
+def save_png(fig,target):
+    # Replace a complete file, so an open image viewer cannot interrupt an in-place rewrite.
+    with io.BytesIO() as output:
+        fig.savefig(output,format='png',dpi=200,facecolor='white')
+        with tempfile.NamedTemporaryFile(dir=target.parent,prefix='.table-',suffix='.tmp',delete=False) as temporary:
+            temporary.write(output.getvalue())
+        temporary_path=Path(temporary.name)
+        try:temporary_path.replace(target)
+        finally:
+            if temporary_path.exists():temporary_path.unlink()
 
 
 def same(a,b):
@@ -48,91 +66,143 @@ def aggregate(scores):
     return {m:statistics.fmean(statistics.fmean(s[m] for s in rows) for rows in groups.values()) for m in METRICS}
 
 
+def source_scores(method,bench):
+    source='xlabs_application' if method=='xlabs_projection' else method
+    result=read(ROOT/source/'results'/bench/SOURCES[source][bench]/'metrics.json')
+    condition=('source_target' if method=='xlabs_projection' else 'baseline') if source=='xlabs_application' else method
+    return [s for s in result['scores'] if s['condition']==condition]
+
+
+def generation_record(folder,index,provenance,result,method):
+    """Use retained metadata; image ZIPs were deliberately moved out of Git."""
+    resolution=RESOLUTIONS[method]
+    run_path=folder/'run.json'
+    if method=='xlabs_application':
+        run=read(run_path)
+        if run['settings']!=result['generation_provenance']['settings'] or run['code']!=index['generation_fingerprint']:
+            raise ValueError('XLabs generation provenance differs')
+        config=run['settings']
+        checked='retained run.json'
+    elif run_path.exists():
+        if digest(run_path)!=index['members']['run.json']['sha256']:raise ValueError('Run hash differs')
+        run=read(run_path);config=run['config'];checked='retained run.json'
+        if run['fingerprint']!=index['generation_fingerprint']:raise ValueError('Generation fingerprint differs')
+    else:
+        # Original run.json bytes remain in external image archives. Do not claim to have reread them.
+        if provenance['generation_resolution']!=[resolution,resolution]:raise ValueError('Generation resolution differs')
+        if provenance['generation_fingerprint']!=index['generation_fingerprint']:raise ValueError('Generation fingerprint differs')
+        if index.get('generation_resolution',[resolution,resolution])!=[resolution,resolution]:raise ValueError('Index resolution differs')
+        if 'generation_resolution' in result and result['generation_resolution']!=[resolution,resolution]:raise ValueError('Score resolution differs')
+        return 'retained provenance and bundle index (external run.json not reread)'
+    if [config['width'],config['height']]!=[resolution,resolution] or config.get('seeds',[config.get('seed')])!=[42]:
+        raise ValueError('Generation resolution/seed differs')
+    return checked
+
+
 def audit_sources():
-    evaluator=project_evaluator();env=None;audits=[];data={};exports=[]
+    evaluator=project_evaluator();audits=[];data={};exports=[];environments={}
     for method,bundles in SOURCES.items():
         for bench,bid in bundles.items():
             folder=ROOT/method/'results'/bench/bid
             path=folder/'metrics.json';result=read(path);index=read(folder/'bundle_index.json')
-            manifest=folder/'manifest.jsonl'
-            canonical={r['case_id']:r for r in map(json.loads,manifest.read_text(encoding='utf-8').splitlines())}
-            no_style=method=='freecus' and bench=='dreambench_plus'
-            expected={cid:r for cid,r in canonical.items() if not(no_style and r['category']=='style')}
-            if len(canonical)!=(750 if bench=='dreambench' else 1350):raise ValueError('Canonical manifest size differs')
-            if digest(manifest)!=index['manifest_sha256']:raise ValueError('Manifest hash differs')
+            manifest=folder/'manifest.jsonl';provenance=read(folder/'provenance.json')
+            canonical_rows=list(map(json.loads,manifest.read_text(encoding='utf-8').splitlines()))
+            canonical={r['case_id']:r for r in canonical_rows}
+            if len(canonical)!=len(canonical_rows) or len(canonical)!=(750 if bench=='dreambench' else 1350):
+                raise ValueError('Canonical manifest size or uniqueness differs')
+            if digest(manifest)!=index['manifest_sha256'] or digest(manifest)!=provenance['manifest_sha256']:
+                raise ValueError('Manifest hash differs')
             shared_manifest=ROOT/'freecus/manifests'/(bench+'_project_seed42.jsonl')
-            if digest(manifest)!=digest(shared_manifest):raise ValueError('Methods do not use the same canonical benchmark manifest')
-            if result['protocol']!=evaluator.PROTOCOL:raise ValueError('Metric protocol differs: '+str(path))
+            shared={r['case_id']:r for r in map(json.loads,shared_manifest.read_text(encoding='utf-8').splitlines())}
+            if set(shared)!=set(canonical):raise ValueError('Benchmark case IDs differ')
+            if method!='xlabs_application' and digest(manifest)!=digest(shared_manifest):
+                raise ValueError('Canonical manifest bytes differ')
+            for cid,row in canonical.items():
+                ref=shared[cid]
+                if (row['reference_id']!=ref['reference_id'] or row['reference_sha256']!=ref['reference_sha256']
+                    or row.get('prompt',row.get('target_prompt'))!=ref['prompt']):
+                    raise ValueError('Canonical reference or prompt differs: '+cid)
+                if ref['seed']!=42 or ref['reference_policy']!='selected_one' or ref['evaluation_references']!=[ref['reference']]:
+                    raise ValueError('Shared seed/reference selection differs')
+                if method!='xlabs_application' and (row['seed']!=42 or row['reference_policy']!='selected_one'
+                    or row['evaluation_references']!=[row['reference']]):raise ValueError('Method reference selection differs')
+            if result['protocol']!=evaluator.PROTOCOL or provenance.get('metric_protocol',result['protocol'])!=evaluator.PROTOCOL:
+                raise ValueError('Metric protocol differs: '+str(path))
             current={k:result[k] for k in ['device','device_name','versions']}
-            if env is not None and current!=env:raise ValueError('Metric environments differ')
-            env=current
-            provenance=read(folder/'provenance.json')
-            if provenance.get('metrics_sha256',digest(path))!=digest(path):raise ValueError('Score provenance hash differs')
-            run=None
-            for part in index['parts']:
-                archive=ROOT/method/'artifacts'/bench/bid/part['file']
-                if archive.stat().st_size!=part['size_bytes']:raise ValueError('Archive size differs')
-                with zipfile.ZipFile(archive) as z:
-                    if 'run.json' in z.namelist():
-                        payload=z.read('run.json')
-                        if hashlib.sha256(payload).hexdigest()!=index['members']['run.json']['sha256']:raise ValueError('Run hash differs')
-                        run=json.loads(payload);break
-            if run is None:raise ValueError('No generation run record')
-            resolution=768 if method=='xverse' else 1024
-            if [run['config']['width'],run['config']['height']]!=[resolution,resolution] or run['config']['seeds']!=[42]:
-                raise ValueError('Generation resolution/seed differs')
-            if run['fingerprint']!=index['generation_fingerprint']:raise ValueError('Generation fingerprint differs')
-            seen=set()
-            for s in result['scores']:
-                cid=s['case_id']
-                if cid not in expected or cid in seen:raise ValueError('Unknown, excluded or duplicate score')
-                row=expected[cid];seen.add(cid)
-                if (s['condition']!=method or s['benchmark']!=bench or s['reference_id']!=row['reference_id']
-                    or s['reference_sha256']!=row['reference_sha256'] or s['target_prompt']!=row['prompt']
-                    or s['category']!=evaluator.category(s) or row['seed']!=42
-                    or row['reference_policy']!='selected_one' or row['evaluation_references']!=[row['reference']]):
-                    raise ValueError('Score identity differs: '+cid)
-                if not all(math.isfinite(s[m]) for m in METRICS):raise ValueError('Nonfinite score')
-                if index['members']['tgt_image/'+row['id']+'.png']['sha256']!=s['generated_sha256']:
-                    raise ValueError('Score image hash differs from artifact index')
-            if seen!=set(expected):raise ValueError('Incomplete evaluated cohort')
-            if no_style and (len(seen)!=1170 or len({r['reference_id'] for r in canonical.values() if r['category']=='style'})!=20):
-                raise ValueError('Expected 1170 non-style cases; 20 style references excluded')
+            environments[method+'/'+bench]=current
+            if provenance.get('metrics_sha256')!=digest(path):raise ValueError('Score provenance hash differs')
+            generation_check=generation_record(folder,index,provenance,result,method)
             if not same(evaluator.summarize(result['scores']),result['summary']):raise ValueError('Stored summary differs from recomputation')
-            groups={'overall':result['scores']}
-            for group in COUNTS[bench]:
-                groups[group]=[s for s in result['scores'] if (s['category']!='style' if group=='non_style' else s['category']==group)]
-            data[method,bench]={}
-            for group,scores in groups.items():
-                refs={s['reference_id'] for s in scores}
-                if scores:
-                    expected_count=(1170,130) if group=='overall' and no_style else ((750,30) if bench=='dreambench' else (1350,150)) if group=='overall' else COUNTS[bench][group]
-                    if (len(scores),len(refs))!=expected_count:raise ValueError('Class coverage differs')
-                    per_ref={r:sum(s['reference_id']==r for s in scores) for r in refs}
-                    if set(per_ref.values())!={25 if bench=='dreambench' else 9}:raise ValueError('Uneven reference coverage')
-                values=aggregate(scores) if scores else {m:None for m in METRICS}
-                stored=result['summary'][bench+'/'+method]
-                stored=stored['subject_macro'] if group=='overall' else stored['non_style']['subject_macro'] if group=='non_style' else stored.get('by_class',{}).get(group,{}).get('subject_macro')
-                if scores and not same(values,stored):raise ValueError('Independent macro check failed')
-                rec=dict(method=method,benchmark=bench,group=group,cases=len(scores),references=len(refs),
-                    resolution=resolution,selection='non-style only' if no_style else 'all',status='evaluated' if scores else 'excluded',**values)
-                data[method,bench][group]=rec;exports.append(rec)
-            report_name='dreambench_plus_no_style_scores.json' if no_style else bench+'_scores.json'
+            report_name='dreambench_plus_no_style_scores.json' if method=='freecus' and bench=='dreambench_plus' else bench+'_scores.json'
             report=ROOT/method/'results/reports'/report_name
             if not report.exists() or digest(report)!=digest(path):raise ValueError('Published score copy differs')
-            audits.append(dict(method=method,benchmark=bench,source=path.relative_to(ROOT).as_posix(),
-                sha256=digest(path),bundle_index_sha256=digest(folder/'bundle_index.json'),
-                shared_manifest_sha256=digest(shared_manifest),
-                evaluated_cases=len(seen),references=len({s['reference_id'] for s in result['scores']}),
-                excluded_cases=sorted(set(canonical)-seen),generation_resolution=[resolution,resolution],
-                generation_fingerprint=run['fingerprint'],summary_recomputed=True,independent_subject_macro_verified=True,
-                score_image_hashes_match_bundle_index=True))
-    return data,exports,dict(date='2026-11-04',status='verified',environment=env,protocol=evaluator.PROTOCOL,
+            members=index.get('members',{})
+            lane_hashes={}
+            for lane in index.get('lanes',[]):
+                lane_path=folder/lane['index'];lane_index=read(lane_path)
+                lane_hashes[lane['index']]=digest(lane_path)
+                # Lane-specific run/conditioning records can share names; compare result images only.
+                lane_members={k:v for k,v in lane_index['members'].items() if k.startswith('results/') and k.endswith('.png')}
+                if any(members[k]!=lane_members[k] for k in set(members)&set(lane_members)):
+                    raise ValueError('Conflicting lane member')
+                members={**members,**lane_members}
+            conditions=['baseline','source_target'] if method=='xlabs_application' else [method]
+            if {s['condition'] for s in result['scores']}!=set(conditions):raise ValueError('Unexpected scored condition')
+            no_style=method=='freecus' and bench=='dreambench_plus'
+            expected={cid:r for cid,r in shared.items() if not(no_style and r['category']=='style')}
+            for condition in conditions:
+                key='xlabs_projection' if condition=='source_target' else method
+                scores=[s for s in result['scores'] if s['condition']==condition];seen=set()
+                for score in scores:
+                    cid=score['case_id']
+                    if cid not in expected or cid in seen:raise ValueError('Unknown, excluded or duplicate score')
+                    row=expected[cid];seen.add(cid)
+                    if (score['benchmark']!=bench or score['reference_id']!=row['reference_id']
+                        or score['reference_sha256']!=row['reference_sha256'] or score['target_prompt']!=row['prompt']
+                        or score['category']!=row['category'] or score['category']!=evaluator.category(score)):
+                        raise ValueError('Score identity differs: '+cid)
+                    if not all(math.isfinite(score[m]) for m in METRICS):raise ValueError('Nonfinite score')
+                    member=f'results/{condition}/{bench}/{cid}.png' if method=='xlabs_application' else 'tgt_image/'+row['id']+'.png'
+                    if members[member]['sha256']!=score['generated_sha256']:raise ValueError('Score image hash differs from artifact index')
+                if seen!=set(expected):raise ValueError('Incomplete evaluated cohort')
+                groups={'overall':scores}
+                for group in COUNTS[bench]:
+                    groups[group]=[s for s in scores if (s['category']!='style' if group=='non_style' else s['category']==group)]
+                data[key,bench]={}
+                for group,selected in groups.items():
+                    refs={s['reference_id'] for s in selected}
+                    if selected:
+                        expected_count=(1170,130) if group=='overall' and no_style else ((750,30) if bench=='dreambench' else (1350,150)) if group=='overall' else COUNTS[bench][group]
+                        if (len(selected),len(refs))!=expected_count:raise ValueError('Class coverage differs')
+                        if {sum(s['reference_id']==r for s in selected) for r in refs}!={25 if bench=='dreambench' else 9}:
+                            raise ValueError('Uneven reference coverage')
+                    values=aggregate(selected) if selected else {m:None for m in METRICS}
+                    stored=result['summary'][bench+'/'+condition]
+                    stored=stored['subject_macro'] if group=='overall' else stored['non_style']['subject_macro'] if group=='non_style' else stored.get('by_class',{}).get(group,{}).get('subject_macro')
+                    if selected and not same(values,stored):raise ValueError('Independent macro check failed')
+                    rec=dict(method=key,benchmark=bench,group=group,cases=len(selected),references=len(refs),
+                        resolution=RESOLUTIONS[method],selection='non-style only' if no_style else 'all',
+                        status='evaluated' if selected else 'excluded',**values)
+                    data[key,bench][group]=rec;exports.append(rec)
+                audits.append(dict(method=key,condition=condition,benchmark=bench,source=path.relative_to(ROOT).as_posix(),
+                    sha256=digest(path),bundle_index_sha256=digest(folder/'bundle_index.json'),lane_index_sha256=lane_hashes,
+                    shared_manifest_sha256=digest(shared_manifest),method_manifest_sha256=digest(manifest),
+                    evaluated_cases=len(seen),references=len({s['reference_id'] for s in scores}),
+                    excluded_cases=sorted(set(shared)-seen),generation_resolution=[RESOLUTIONS[method]]*2,
+                    generation_fingerprint=index['generation_fingerprint'],generation_record_check=generation_check,
+                    summary_recomputed=True,independent_subject_macro_verified=True,score_image_hashes_match_bundle_index=True))
+    return data,exports,dict(date='2026-11-11',status='verified',environments=environments,protocol=evaluator.PROTOCOL,
+        environment_note='Same metric protocol; stored hardware and CUDA builds differ. Diptych/MOSAIC: RTX PRO 6000 Blackwell; other comparison methods: T4. No cross-device rescoring performed.',
         evaluations=audits,total_scored_cases=sum(a['evaluated_cases'] for a in audits),
-        scope='Recomputed stored per-image metric aggregates; checked canonical identity, exclusions, generation run, score provenance and score-to-bundle-index image hashes. Existing image ZIPs were not fully rehashed and models were not rerun.')
+        scope='Recomputed stored per-image aggregates and checked canonical case/reference/prompt identity, coverage, provenance and score-to-index image hashes. Image archives were moved outside Git: archive bytes and missing run.json files were not reread. Generation resolution is checked against retained run metadata or provenance/index. Models were not rerun.')
 
 
-def table_rows(data,historical,bench,group):
+def table_rows(data,historical,bench,group,applicability=False):
+    if applicability:
+        before=data['xlabs_application',bench][group];after=data['xlabs_projection',bench][group]
+        return [dict(method='XLabs-IP-Adapter (scale 1.0)',cases=before['cases'],values=[before[m] for m in METRICS]),
+                dict(method='+ Our Projection (source + target)',cases=after['cases'],values=[after[m] for m in METRICS]),
+                dict(method='Change after projection (after − before)',cases=None,values=[after[m]-before[m] for m in METRICS])]
     count=(750 if bench=='dreambench' else 1350) if group=='overall' else COUNTS[bench][group][0]
     rows=[]
     for method,values in zip(historical['methods'],historical[bench][group]):
@@ -148,22 +218,28 @@ def table_rows(data,historical,bench,group):
     return rows
 
 
-def render(data,historical,bench,classes):
+def render(data,historical,bench,classes,applicability=False):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.family':'DejaVu Serif','pdf.fonttype':42})
     groups=list(COUNTS[bench]) if classes else ['overall']
     notes=['Subject macro; one selected reference; seed 42; higher is better.',
-        'FreeCus / DreamO / UNO: 1024 × 1024. XVerse: native 768 × 768. N = evaluated images.',
-        'Baseline / Ours: preserved historical PNG values (4 decimals); four comparison methods: audited local scores.',
+        'Resolution shown per row. Diptych / XVerse: 768 × 768; MOSAIC: 512 × 512; other measured methods: 1024 × 1024.',
+        'Baseline / Ours: preserved historical PNG values (4 decimals); seven comparison methods: audited local scores.',
         '* Ours best uses provisional scale 0.8; this is not an optimized scale.']
     if bench=='dreambench_plus':notes += ['† FreeCus: 1,170 images / 130 references only; excludes all 20 style references (180 images).',
         'FreeCus overall is non-style only; compare the Non-Style block for a shared 1,170-image cohort.' if classes else 'FreeCus overall uses a different cohort from the 1,350-image rows; matched non-style results are in the classes table.']
     else:notes += ['USO: historical external overall value; class-level results unavailable. Old external UNO values were replaced.']
+    if applicability:
+        notes=['Subject macro; one selected reference; original target prompt; higher is better.',
+            'Both conditions: 1024 × 1024; seed 42; 24 steps; guidance 3.5; IP-Adapter scale 1.0; same cases and references.',
+            'Our Projection: source + target; strength 1.0; norm restoration ON; single-stream gate OFF.',
+            'Change = after − before (unrounded scores); positive means increase.',
+            'CLIP-T increases on both benchmarks; identity metrics do not improve consistently.']
     if classes and bench=='dreambench_plus':notes += ['Non-Style pools animal + human + object; it is not another disjoint class.']
     row_h=74;group_h=92;top=360
-    total=top+sum(group_h+row_h*len(table_rows(data,historical,bench,g)) for g in groups)+80+43*len(notes)+70
+    total=top+sum(group_h+row_h*len(table_rows(data,historical,bench,g,applicability)) for g in groups)+80+43*len(notes)+70
     fig=plt.figure(figsize=(15,total/200),dpi=200,facecolor='white');ax=fig.add_axes([0,0,1,1])
     ax.set_xlim(0,3000);ax.set_ylim(total,0);ax.axis('off')
     texts=[]
@@ -171,7 +247,8 @@ def render(data,historical,bench,classes):
         texts.append(ax.text(x,y,value,fontsize=size,color=color,ha=align,va='center'))
     def rule(y,lw):ax.plot([130,2870],[y,y],color='black',lw=lw)
     text(132,82,'DreamBench' if bench=='dreambench' else 'DreamBench++',25)
-    text(132,161,'Method comparison — classes' if classes else 'Method comparison',15,'#4a4a4a')
+    subtitle='XLabs-IP-Adapter — projection applicability' if applicability else 'Method comparison'
+    text(132,161,subtitle+(' — classes' if classes else ''),15,'#4a4a4a')
     rule(240,1.7);text(160,295,'Method',15)
     columns=[1570,1940,2340,2740]
     for x,label in zip(columns,['N',*[m+' ↑' for m in METRICS]]):text(x,295,label,15,align='center')
@@ -180,13 +257,15 @@ def render(data,historical,bench,classes):
         if y!=350:rule(y,.7)
         label=group.replace('_','-').title()
         if group=='overall':
-            label='Overall (750 images / method)' if bench=='dreambench' else 'Overall (1,350 images; FreeCus † 1,170)'
+            label='Overall (750 images / method)' if bench=='dreambench' else 'Overall (1,350 images / method)' if applicability else 'Overall (1,350 images; FreeCus † 1,170)'
         else:label+=f' ({COUNTS[bench][group][0]:,} images)'
         text(160,y+49,label,14);y+=group_h
-        for row in table_rows(data,historical,bench,group):
+        for row in table_rows(data,historical,bench,group,applicability):
             text(160,y+row_h/2,row['method'],14)
             text(columns[0],y+row_h/2,'—' if row['cases'] is None else f"{row['cases']:,}",14,align='center')
-            for x,value in zip(columns[1:],row['values']):text(x,y+row_h/2,'—' if value is None else f'{value:.4f}',15,align='center')
+            for x,value in zip(columns[1:],row['values']):
+                formatted='—' if value is None else f'{value:+.4f}' if applicability and row['cases'] is None else f'{value:.4f}'
+                text(x,y+row_h/2,formatted,15,align='center')
             y+=row_h
     rule(y+8,1.7)
     for i,note in enumerate(notes):text(160,y+70+43*i,note,10.2,'#4a4a4a')
@@ -196,8 +275,8 @@ def render(data,historical,bench,classes):
     for t in texts:
         box=t.get_window_extent(renderer)
         if box.x0<0 or box.x1>bounds.x1 or box.y0<0 or box.y1>bounds.y1:raise ValueError('Text clipped: '+t.get_text())
-    target=HERE/(bench+'_method_comparison'+('_classes' if classes else '')+'.png')
-    fig.savefig(target,dpi=200,facecolor='white');plt.close(fig)
+    target=HERE/(bench+'_method_comparison'+('_classes' if classes else '')+('_applicabiltiy' if applicability else '')+'.png')
+    save_png(fig,target);plt.close(fig)
     return dict(path=target.name,sha256=digest(target),width=3000,height=int(total),notes=notes)
 
 
@@ -211,15 +290,26 @@ def main():
     data,rows,audit=audit_sources()
     historical=read(HERE/'historical_rows.json')
     audit['historical_rows_source']=dict(path='historical_rows.json',sha256=digest(HERE/'historical_rows.json'),
-        historical_vs_new_measurements='Baseline/Ours/USO are historical; FreeCus/DreamO/UNO/XVerse are recomputed from their stored case scores.')
+        historical_vs_new_measurements='Baseline/Ours/USO are historical; all seven comparison methods and XLabs projection are recomputed from stored case scores.')
     audit['figures']=[render(data,historical,b,c) for b in ['dreambench','dreambench_plus'] for c in [False,True]]
+    audit['figures'] += [render(data,historical,b,c,True) for b in ['dreambench','dreambench_plus'] for c in [False,True]]
+    applicability=[]
+    for bench in ['dreambench','dreambench_plus']:
+        for group in ['overall',*COUNTS[bench]]:
+            before=data['xlabs_application',bench][group];after=data['xlabs_projection',bench][group]
+            applicability.append(dict(benchmark=bench,group=group,cases=before['cases'],references=before['references'],
+                before={m:before[m] for m in METRICS},after={m:after[m] for m in METRICS},
+                delta={m:after[m]-before[m] for m in METRICS}))
+    write(HERE/'applicability_metrics.json',dict(aggregation='subject_macro',
+        conditions=['baseline','source_target'],settings=read(ROOT/'xlabs_application/results/dreambench'/SOURCES['xlabs_application']['dreambench']/'run.json')['settings'],
+        rows=applicability))
     for name,sha in untouched.items():
         if digest(HERE/name)!=sha:raise ValueError('Unrelated table changed')
     audit['unchanged_other_pngs']=untouched
     with (HERE/'method_metrics.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     write(HERE/'method_metrics.json',dict(aggregation='subject_macro',rows=rows))
-    write(HERE/'aggregation_audit.json',audit)
+    build_balanced_tables(data,dict(audit))
     print(json.dumps(dict(status='verified',evaluations=len(audit['evaluations']),scored_cases=audit['total_scored_cases'],
         figures=[p['path'] for p in audit['figures']],overall=[r for r in rows if r['group']=='overall']),indent=2))
 
@@ -245,7 +335,7 @@ def balanced_records(data,historical):
             # Independent per-image weighting check for measured methods: each class sums to 1/K.
             verified=False
             if eligible and not method['historical']:
-                scores=read(ROOT/method['key']/'results'/bench/SOURCES[method['key']][bench]/'metrics.json')['scores']
+                scores=source_scores(method['key'],bench)
                 selected=[s for s in scores if s['category'] in classes]
                 for metric in METRICS:
                     direct=math.fsum(s[metric]/(k*COUNTS[bench][s['category']][0]) for s in selected)
@@ -278,7 +368,7 @@ def render_balanced(methods,records,classes):
         'Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.',
         '† FreeCus excludes style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.',
         'Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.',
-        '* Ours best is provisional scale 0.8. FreeCus / DreamO / UNO: 1024 × 1024; XVerse: 768 × 768.']
+        '* Ours best is provisional scale 0.8. Diptych / XVerse: 768 × 768; MOSAIC: 512 × 512; other measured rows: 1024 × 1024.']
     notes += ['Class score stays unchanged. Contribution = 0.25 × class score; sum four contributions for the Balanced Overall.',
         'FreeCus contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes.'] if classes else [
         'Original = existing reference-weighted aggregate; Balanced = mean of class means; Δ = Balanced(method) − Balanced(baseline).',
@@ -329,14 +419,15 @@ def render_balanced(methods,records,classes):
         box=t.get_window_extent(renderer)
         if box.x0<0 or box.x1>fig.bbox.x1 or box.y0<0 or box.y1>fig.bbox.y1:raise ValueError('Balanced text clipped: '+t.get_text())
     name='dreambench_plus_method_comparison'+('_classes' if classes else '')+'_balanced.png'
-    target=HERE/name;fig.savefig(target,dpi=200,facecolor='white');plt.close(fig)
+    target=HERE/name;save_png(fig,target);plt.close(fig)
     return dict(path=name,sha256=digest(target),width=width,height=height,notes=notes)
 
 
-def build_balanced_tables():
+def build_balanced_tables(data=None,audit=None):
     # Existing tables stay available with their original aggregation.
     unchanged={p.name:digest(p) for p in HERE.glob('*.png') if not p.stem.endswith('_balanced')}
-    data,_,audit=audit_sources();historical=read(HERE/'historical_rows.json')
+    if data is None:data,_,audit=audit_sources()
+    historical=read(HERE/'historical_rows.json')
     methods,records=balanced_records(data,historical)
     audit.update(aggregation='equal-class macro after within-class subject macro',
         historical_source_sha256=digest(HERE/'historical_rows.json'),
@@ -347,14 +438,13 @@ def build_balanced_tables():
         if digest(HERE/name)!=value:raise ValueError('Existing PNG changed')
     audit['unchanged_existing_pngs']=unchanged
     write(HERE/'class_balanced_metrics.json',dict(records=records))
-    write(HERE/'class_balanced_audit.json',audit)
     with (HERE/'class_balanced_metrics.csv').open('w',encoding='utf-8-sig',newline='') as f:
         fields=['method','cohort','cases','eligible','metric','original','balanced','delta_vs_baseline','precision']
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
         for r in records:
             for metric in METRICS:writer.writerow(dict(method=r['method'],cohort=r['cohort'],cases=r['cases'],eligible=r['eligible'],
                 metric=metric,original=r['original'][metric],balanced=r['balanced'][metric],delta_vs_baseline=r['delta_vs_baseline'][metric],precision=r['precision']))
-    print(json.dumps(dict(status='verified',figures=audit['figures'],balanced=[dict(method=r['label'],cohort=r['cohort'],metrics=r['balanced']) for r in records]),indent=2))
+    print(json.dumps(dict(status='verified',balanced_figures=[f['path'] for f in audit['figures']],methods=len(methods)),indent=2))
 
 
 if __name__=='__main__':main()

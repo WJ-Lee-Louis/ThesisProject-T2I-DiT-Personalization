@@ -20,6 +20,15 @@ uno,four_class,1350,True,DINO-I,0.5900723126668621,0.523239020329342,-0.14736097
 xverse,four_class,1350,True,CLIP-I,0.7925728804976852,0.7782671342434933,-0.06600786575650675,full precision measured class means
 xverse,four_class,1350,True,CLIP-T,0.32577537254050926,0.3230743871908016,0.030224387190801616,full precision measured class means
 xverse,four_class,1350,True,DINO-I,0.6038922082908728,0.5754435228798556,-0.09515647712014441,full precision measured class means
+diptych,four_class,1350,True,CLIP-I,0.7734888599537038,0.7565486665238456,-0.08772633347615444,full precision measured class means
+diptych,four_class,1350,True,CLIP-T,0.33767189308449075,0.3324745460792824,0.0396245460792824,full precision measured class means
+diptych,four_class,1350,True,DINO-I,0.5625064048543572,0.5214950223476781,-0.1491049776523219,full precision measured class means
+mosaic,four_class,1350,True,CLIP-I,0.7567994068287037,0.72780327575046,-0.11647172424954,full precision measured class means
+mosaic,four_class,1350,True,CLIP-T,0.3391677517361111,0.33623788513009706,0.04338788513009706,full precision measured class means
+mosaic,four_class,1350,True,DINO-I,0.5301494092114821,0.4711899755132678,-0.19941002448673217,full precision measured class means
+xlabs_application,four_class,1350,True,CLIP-I,0.7738776765046296,0.7681454882209684,-0.0761295117790316,full precision measured class means
+xlabs_application,four_class,1350,True,CLIP-T,0.308226001880787,0.3016640875980272,0.00881408759802721,full precision measured class means
+xlabs_application,four_class,1350,True,DINO-I,0.49436650351517725,0.5008090282024432,-0.16979097179755676,full precision measured class means
 historical_0,non_style,1170,True,CLIP-I,0.8549,0.8445,0.0,historical rounded class means (4 decimals)
 historical_0,non_style,1170,True,CLIP-T,0.3001,0.2923,0.0,historical rounded class means (4 decimals)
 historical_0,non_style,1170,True,DINO-I,0.6914,0.6872333333333334,0.0,historical rounded class means (4 decimals)
@@ -41,3 +50,12 @@ uno,non_style,1170,True,DINO-I,0.6311629531602574,0.5899909772858586,-0.09724235
 xverse,non_style,1170,True,CLIP-I,0.7968628973023505,0.7827935885688707,-0.061706411431129315,full precision measured class means
 xverse,non_style,1170,True,CLIP-T,0.32537789630074787,0.321312860221416,0.02901286022141597,full precision measured class means
 xverse,non_style,1170,True,DINO-I,0.6211068094763745,0.6032589303114372,-0.08397440302189618,full precision measured class means
+diptych,non_style,1170,True,CLIP-I,0.7786921574519231,0.7621757466267015,-0.08232425337329852,full precision measured class means
+diptych,non_style,1170,True,CLIP-T,0.339509778145032,0.33472418137538584,0.04242418137538584,full precision measured class means
+diptych,non_style,1170,True,DINO-I,0.586188992124019,0.5591368339297188,-0.12809649940361456,full precision measured class means
+mosaic,non_style,1170,True,CLIP-I,0.7667219634748932,0.7396367714577892,-0.10486322854221086,full precision measured class means
+mosaic,non_style,1170,True,CLIP-T,0.340772945045406,0.3387391817648979,0.04643918176489792,full precision measured class means
+mosaic,non_style,1170,True,DINO-I,0.5637675871961138,0.5243762165805647,-0.1628571167527687,full precision measured class means
+xlabs_application,non_style,1170,True,CLIP-I,0.7686093583066239,0.7548200693640689,-0.08967993063593116,full precision measured class means
+xlabs_application,non_style,1170,True,CLIP-T,0.3088511409922543,0.30083125091195295,0.008531250911952948,full precision measured class means
+xlabs_application,non_style,1170,True,DINO-I,0.49195255231844565,0.49772630883861324,-0.18950702449472012,full precision measured class means
