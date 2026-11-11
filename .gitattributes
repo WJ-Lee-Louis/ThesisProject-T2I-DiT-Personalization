@@ -2,10 +2,6 @@
 *.sh text eol=lf
 *.py text eol=lf
 
-# Model-comparison image archives are Git LFS objects; Git stores only pointers.
-diptych/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
-mosaic/artifacts/**/*.zip filter=lfs diff=lfs merge=lfs -text
-
 # Preserve byte hashes used by the benchmark manifests, scores and receipts.
 freecus/results/** -text
 dreamo/results/** -text

@@ -14,6 +14,8 @@ venv/
 /uno/artifacts/**/*.zip
 /xverse/artifacts/**/*.zip
 /xlabs_application/artifacts/**/*.zip
+/diptych/artifacts/**/*.zip
+/mosaic/artifacts/**/*.zip
 /Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_images_v1/
 /Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_metrics_v1/runs/**/inputs_*.zip
 /Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/
