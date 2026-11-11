@@ -22,3 +22,9 @@ dreamo/manifests/** -text
 uno/manifests/** -text
 diptych/manifests/** -text
 mosaic/manifests/** -text
+
+xlabs_application/results/** -text
+xlabs_application/manifests/** -text
+# Vendored research contracts retain their recorded original byte hashes.
+xlabs_application/vendor/** -text
+xlabs_application/requirements*.txt text eol=lf

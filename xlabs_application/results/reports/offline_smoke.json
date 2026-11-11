@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "cross_workspace_volume_read": true,
+  "source_zip_crc_verified": true,
+  "cloud_archive_and_metric_binding_verified": true,
+  "partial_final_report_rejected": true,
+  "purpose": "Four existing pilot images only; not final benchmark results",
+  "call_id": "fc-01M6PBK6A45JTPN3N5VG77SMJW",
+  "download_and_restore_verified": true,
+  "generated_images": 4
+}

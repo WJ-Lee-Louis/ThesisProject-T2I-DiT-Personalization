@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "completed_at": "2026-11-06T08:05:32.610927+00:00",
+  "generated_images": 4200,
+  "scored_images": 4200,
+  "archive_parts": 8,
+  "archive_bytes": 6440625039,
+  "original_pngs_restored_and_verified": true,
+  "git_lfs_archives": true,
+  "no_commit_or_push_performed": true,
+  "benchmarks": [
+    {
+      "status": "complete",
+      "observed_at": "2026-11-06T08:05:31.331323+00:00",
+      "benchmark": "dreambench",
+      "bundle_id": "598a7ef43356a8eb05e1314b",
+      "generated_images": 1500,
+      "scored_images": 1500,
+      "manifest_cases": 750,
+      "by_condition": {
+        "baseline": 750,
+        "source_target": 750
+      },
+      "archive_parts": 3,
+      "archive_bytes": 2213260011,
+      "archive_and_member_sha256_crc_verified": true,
+      "restored_bytes_verified": true,
+      "metric_png_reference_cache_binding_verified": true,
+      "cloud_local_metric_merge_identical": true
+    },
+    {
+      "status": "complete",
+      "observed_at": "2026-11-06T08:05:32.505357+00:00",
+      "benchmark": "dreambench_plus",
+      "bundle_id": "598a7ef43356a8eb05e1314b",
+      "generated_images": 2700,
+      "scored_images": 2700,
+      "manifest_cases": 1350,
+      "by_condition": {
+        "source_target": 1350,
+        "baseline": 1350
+      },
+      "archive_parts": 5,
+      "archive_bytes": 4227365028,
+      "archive_and_member_sha256_crc_verified": true,
+      "restored_bytes_verified": true,
+      "metric_png_reference_cache_binding_verified": true,
+      "cloud_local_metric_merge_identical": true
+    }
+  ]
+}

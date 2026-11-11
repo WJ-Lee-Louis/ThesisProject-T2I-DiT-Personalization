@@ -1,0 +1,11 @@
+{
+  "profile": "method-comparison",
+  "archives_verified": true,
+  "restored_bytes_verified": true,
+  "bundle_index_sha256": "c24f9fd6a2aa308ef9fdb42d90ccd94e4e23f3878a0140f9cf490b07bf56f761",
+  "generated_images": 750,
+  "parts": {
+    "images-000.zip": "29633a2e26b3462b1f6b7b96e957601d62f0c504bf9038094e3b594307753200",
+    "images-001.zip": "0faf49042e85f29d337f3ebbe3e449b77baf62c1e3c208f7d67f4324047fade7"
+  }
+}

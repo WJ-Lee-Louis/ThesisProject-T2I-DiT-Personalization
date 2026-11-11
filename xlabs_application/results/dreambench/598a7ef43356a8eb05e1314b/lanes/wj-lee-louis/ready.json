@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "directory": "deliverables/598a7ef43356a8eb05e1314b/dreambench/wj-lee-louis",
+  "files": {
+    "bundle_index.json": {
+      "size": 306947,
+      "sha256": "1b1bfad1273c5de2bb70a90fb0440ef9f3d26beb4e57f85c25f1fe885b4ed826"
+    },
+    "dreambench_seed42.jsonl": {
+      "size": 760956,
+      "sha256": "8f3281f2d799569584ab4a8dbc7b0ddfcf06c9068ee4b7619b913e942b9d82cd"
+    },
+    "generation_source.zip": {
+      "size": 58474,
+      "sha256": "2019a946f2c5931b21ab94e2102262ac2a767d8a253677fd896fa35cf5ca8067"
+    },
+    "metrics.json": {
+      "size": 571357,
+      "sha256": "cace1506fe09b2fe2e28bb9393c979badfa6d87d0b1c0857e2f44f569a9e3597"
+    },
+    "orchestration_hashes.json": {
+      "size": 273,
+      "sha256": "a6a46d45241b2ef7924e77a6314f4bd23aa8ac9f3037cbb134bbc02e53f550cf"
+    },
+    "orchestration_source.zip": {
+      "size": 8534,
+      "sha256": "b372ee57d70c1d48a76fdbcf98f70e2d32f73e074935cf8cd0af47965dec4052"
+    },
+    "per_image.csv": {
+      "size": 198017,
+      "sha256": "3149f8fe790e9c927ea28e716288736c68768179adbd30ea310406cffa7e68b2"
+    },
+    "plan.json": {
+      "size": 2864683,
+      "sha256": "7da63bc92b577bf11fcb0279def8c5a8d3798fd578f01386cb1118ca5dade824"
+    },
+    "source_hashes.json": {
+      "size": 2551,
+      "sha256": "c19cd93cbae5e1035c905afa94eb546ab291a496e88f69302176a1b4de6ee4a8"
+    },
+    "verification.json": {
+      "size": 146,
+      "sha256": "66be8b712fa7e9fc8120e2d848bd94b36c6064bd3b3b01c2b3def0a07971d0dc"
+    },
+    "workflow.json": {
+      "size": 3811,
+      "sha256": "61057fe7469cd8777a31b6d5f648b9ebbb7f7cc5b375bf36d8011fa70a549b2a"
+    }
+  },
+  "benchmark": "dreambench",
+  "shard": "wj-lee-louis",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 750,
+  "archive_index": "exports/598a7ef43356a8eb05e1314b/wj-lee-louis/bundle_index.json"
+}

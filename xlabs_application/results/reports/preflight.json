@@ -1,0 +1,131 @@
+{
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "code": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+  "models": {
+    "base": [
+      "black-forest-labs/FLUX.1-dev",
+      "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+    ],
+    "adapter": [
+      "XLabs-AI/flux-ip-adapter",
+      "18f6940238ab5dc3744df7a8e30315892279d5f9"
+    ],
+    "clip": [
+      "openai/clip-vit-large-patch14",
+      "32bd64288804d66eefd0ccbe215aa642df71cc41"
+    ]
+  },
+  "settings": {
+    "width": 1024,
+    "height": 1024,
+    "seed": 42,
+    "steps": 24,
+    "guidance_scale": 3.5,
+    "ip_adapter_scale": 1.0,
+    "strength": 1.0,
+    "restore_norm": true,
+    "relative_tolerance": 0.001,
+    "mask_single_text_rows": false,
+    "max_sequence_length": 512,
+    "true_cfg_scale": 1.0
+  },
+  "validated_conditionings": 2100,
+  "validated_references": 180,
+  "cpu_tests_passed": 8,
+  "pilots": [
+    {
+      "bundle_id": "bdf2a2088092f1d1a47d2e5d",
+      "gpu": "L40S",
+      "status": "complete",
+      "parity": {
+        "png_identical": true,
+        "max_pixel_difference": 0
+      },
+      "images": 4,
+      "mean_image_seconds": 14.707615928,
+      "peak_reserved_gib": 37.912109375,
+      "peak_allocated_gib": 35.547423362731934,
+      "estimated_pilot_compute_usd": 0.09791156327356954,
+      "inference_source_identical_to_final": true,
+      "estimated_1500_inference_only_usd": 15.380783509024559
+    },
+    {
+      "bundle_id": "c64bd0d2eb9a93063c60cc81",
+      "gpu": "H100",
+      "status": "complete",
+      "parity": {
+        "png_identical": true,
+        "max_pixel_difference": 0
+      },
+      "images": 4,
+      "mean_image_seconds": 6.999213774999998,
+      "peak_reserved_gib": 37.87109375,
+      "peak_allocated_gib": 35.570738792419434,
+      "estimated_pilot_compute_usd": 0.1176273410754038,
+      "inference_source_identical_to_final": true,
+      "estimated_1500_inference_only_usd": 13.146413257169247
+    }
+  ],
+  "selected_gpu": "H100",
+  "dreambench_images": 1500,
+  "dreambench_plus_images": 2700,
+  "dreambench_plus_submitted": true,
+  "additional_dreambench_spend_authorized": true,
+  "measured_billing": false,
+  "price_source": "https://modal.com/pricing",
+  "price_date": "2026-11-06",
+  "local_status_publication_fix_sha256": "40c3cb2d240c21dbc26269a4ff8d1911ab901acac5a3b62f2d01aa7deadd53e8",
+  "generation_snapshot_frozen": true,
+  "submitted_workspaces": {
+    "wj-lee-louis": {
+      "call_id": "fc-01M6P9JNV74RD5SF7TWSM0A4T5",
+      "invocation": "submit-05f249d84c32",
+      "gpu": "H100",
+      "budget_usd": 8.5,
+      "submitted_at": "2026-11-05T16:44:52.791283+00:00",
+      "images": 750,
+      "supervisor_call_id": "fc-01M6PA6GXJDK48NB5F5WY62J9T",
+      "generation_cap_usd": 12.0
+    },
+    "method-comparison": {
+      "call_id": "fc-01M6P9JMTSJ41D4AFV6W0GY1NC",
+      "invocation": "submit-ae9ac46b023b",
+      "gpu": "H100",
+      "budget_usd": 8.5,
+      "submitted_at": "2026-11-05T16:44:51.740613+00:00",
+      "images": 750,
+      "supervisor_call_id": "fc-01M6PA6KW2YGHXBM3KBSC8HFVT",
+      "generation_cap_usd": 12.0
+    }
+  },
+  "generation_admission_usd_per_workspace": 12,
+  "estimated_end_to_end_compute_usd_total_early_run": "approximately 20; includes PNG serialization and Volume commits, not just inference",
+  "pilot_estimates_exclude_per_image_storage_overhead": true,
+  "supervisor_source_sha256": "4d65c800432c1e4486a38b5cda6f2bcf511e13b30d432d1c10c98aceb38da145",
+  "workspace_usage_and_spend_limits_confirmed_by_user": true,
+  "cpu_contract_tests_passed": 10,
+  "pipeline_smoke_reports": [
+    "metric_smoke.json",
+    "artifact_smoke.json"
+  ],
+  "local_orchestration_hashes": {
+    "client.py": "48ff90589f3fa7257ba3bf948c331ce09925553cb25643823676518af8757e2a",
+    "io.py": "40c3cb2d240c21dbc26269a4ff8d1911ab901acac5a3b62f2d01aa7deadd53e8",
+    "supervisor.py": "4d65c800432c1e4486a38b5cda6f2bcf511e13b30d432d1c10c98aceb38da145",
+    "watch.py": "f8879ce8f98bc667517540ac92585efd1b2af1515ad85aff475c56d88aeb3598",
+    "artifacts.py": "f952581873641d4813ac8793d85f44baaa1b56f6be59fa1882bd7796f6c86bb2",
+    "config.py": "2b6ce69d16b60ca5a48c65504f4a33fc7e1502db8965036876417368f0476681"
+  },
+  "last_observed_at": "2026-11-05T17:05:53.090494+00:00",
+  "last_observed_generated_images": {
+    "wj-lee-louis": 102,
+    "method-comparison": 105
+  },
+  "full_dreambench_evaluation_complete": true,
+  "local_pc_required": false,
+  "cloud_execution_report": "cloud_execution/execution.json",
+  "local_download_status": "complete",
+  "full_benchmarks_complete": true,
+  "collection_verification": "xlabs_application/verification/collection.json",
+  "local_completion_observed_at": "2026-11-06T08:08:09.484513+00:00"
+}

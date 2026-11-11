@@ -1,0 +1,42 @@
+{
+  "schema": "xlabs-lane-archives-v1",
+  "method": "xlabs_application",
+  "benchmark": "dreambench",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 1500,
+  "manifest_cases": 750,
+  "missing_case_ids": [],
+  "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+  "lanes": [
+    {
+      "shard": "method-comparison",
+      "index": "lanes/method-comparison/bundle_index.json",
+      "archive_directory": "method-comparison",
+      "generated_images": 750
+    },
+    {
+      "shard": "wj-lee-louis",
+      "index": "lanes/wj-lee-louis/bundle_index.json",
+      "archive_directory": "wj-lee-louis",
+      "generated_images": 750
+    }
+  ],
+  "parts": [
+    {
+      "file": "method-comparison/images-000.zip",
+      "size_bytes": 1072082017,
+      "sha256": "29633a2e26b3462b1f6b7b96e957601d62f0c504bf9038094e3b594307753200"
+    },
+    {
+      "file": "method-comparison/images-001.zip",
+      "size_bytes": 76589347,
+      "sha256": "0faf49042e85f29d337f3ebbe3e449b77baf62c1e3c208f7d67f4324047fade7"
+    },
+    {
+      "file": "wj-lee-louis/images-000.zip",
+      "size_bytes": 1064588647,
+      "sha256": "6ce7f19000301b71653182a722f5cfbf30702983ef33231b787df4ab406a955c"
+    }
+  ],
+  "manifest_sha256": "8f3281f2d799569584ab4a8dbc7b0ddfcf06c9068ee4b7619b913e942b9d82cd"
+}

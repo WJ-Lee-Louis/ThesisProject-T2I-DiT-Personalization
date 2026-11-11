@@ -1,0 +1,9 @@
+{
+  "purpose": "Four pilot images only, not the final benchmark",
+  "call_id": "fc-01M6PAH2XK8MGXFZAWTPTBN84E",
+  "generated_images": 4,
+  "parts": 1,
+  "members": 14,
+  "archive_hashes_crc_and_member_hashes_verified": true,
+  "restored_bytes_verified": true
+}

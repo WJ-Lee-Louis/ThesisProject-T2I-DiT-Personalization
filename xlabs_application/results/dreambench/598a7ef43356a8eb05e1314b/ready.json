@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "directory": "deliverables/598a7ef43356a8eb05e1314b/dreambench/combined",
+  "files": {
+    "per_image.csv": {
+      "size": 398158,
+      "sha256": "a5c432b672ffd95d150d60d9eb595ef71391b7e18ce50339e838f4538edab1b1"
+    },
+    "scores.json": {
+      "size": 1140183,
+      "sha256": "2d60cb06fc2d63817d9e88a36d42152bdbd39be25c962f0f6f0446afb9cde827"
+    },
+    "shards.json": {
+      "size": 4277,
+      "sha256": "4ea01d23e3f41b3752e9da33413c5e75790925bcbafd055082ba2f87a56e1a0c"
+    },
+    "summary.json": {
+      "size": 4716,
+      "sha256": "7ffc5abebf897134bd6170d1e09acad3c7a9d9a74c7434461951847065ecf749"
+    },
+    "inputs/method-comparison-method-comparison.json": {
+      "size": 573688,
+      "sha256": "173c30f970350472f48a5fbb6696e0017c7c34e125b4c16df63ef161912d8c96"
+    },
+    "inputs/wj-lee-louis-wj-lee-louis.json": {
+      "size": 571357,
+      "sha256": "cace1506fe09b2fe2e28bb9393c979badfa6d87d0b1c0857e2f44f569a9e3597"
+    }
+  },
+  "benchmark": "dreambench",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "scored_images": 1500
+}

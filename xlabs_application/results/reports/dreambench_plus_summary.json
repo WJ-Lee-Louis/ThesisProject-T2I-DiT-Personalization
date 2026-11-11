@@ -1,0 +1,204 @@
+{
+  "protocol": {
+    "name": "uno-selected-reference-v1",
+    "uno_revision": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "clip_model": "ViT-B/32",
+    "clip_revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "dino_model": "dino_vits16",
+    "dino_revision": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "reference_policy": "exact manifest image_path; one reference per generated image",
+    "clip_preprocess": "RGB; bicubic resize shorter edge 224; center crop 224; CLIP normalization",
+    "dino_preprocess": "RGB; bicubic resize shorter edge 256; center crop 224; ImageNet normalization",
+    "clip_t": "max(0, cosine(generated, original target_prompt)); weight=1; no prefix; truncate=True",
+    "image_metrics": "cosine(generated, selected reference); no clipping; no logit scale",
+    "score_scale": 1,
+    "aggregation": "per benchmark, condition and class: reference macro and case micro; class macro separately",
+    "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
+    "generated_format": "original PNG; no JPEG export"
+  },
+  "summary": {
+    "dreambench_plus/baseline": {
+      "cases": 1350,
+      "subjects": 150,
+      "subject_macro": {
+        "CLIP-T": 0.308226001880787,
+        "CLIP-I": 0.7738776765046296,
+        "DINO-I": 0.4943665035151773
+      },
+      "case_micro": {
+        "CLIP-T": 0.308226001880787,
+        "CLIP-I": 0.7738776765046296,
+        "DINO-I": 0.4943665035151773
+      },
+      "by_class": {
+        "animal": {
+          "cases": 405,
+          "subjects": 45,
+          "subject_macro": {
+            "CLIP-T": 0.30936897183641976,
+            "CLIP-I": 0.826245418595679,
+            "DINO-I": 0.5620855291040592
+          },
+          "case_micro": {
+            "CLIP-T": 0.30936897183641976,
+            "CLIP-I": 0.826245418595679,
+            "DINO-I": 0.5620855291040592
+          }
+        },
+        "human": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.2738681369357639,
+            "CLIP-I": 0.68323974609375,
+            "DINO-I": 0.4858019520011213
+          },
+          "case_micro": {
+            "CLIP-T": 0.2738681369357639,
+            "CLIP-I": 0.68323974609375,
+            "DINO-I": 0.4858019520011213
+          }
+        },
+        "object": {
+          "cases": 585,
+          "subjects": 65,
+          "subject_macro": {
+            "CLIP-T": 0.3192566439636752,
+            "CLIP-I": 0.7549750434027778,
+            "DINO-I": 0.4452914454106592
+          },
+          "case_micro": {
+            "CLIP-T": 0.3192566439636752,
+            "CLIP-I": 0.7549750434027778,
+            "DINO-I": 0.4452914454106592
+          }
+        },
+        "style": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.30416259765625,
+            "CLIP-I": 0.8081217447916667,
+            "DINO-I": 0.5100571862939332
+          },
+          "case_micro": {
+            "CLIP-T": 0.30416259765625,
+            "CLIP-I": 0.8081217447916667,
+            "DINO-I": 0.5100571862939332
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.3016640875980272,
+        "CLIP-I": 0.7681454882209684,
+        "DINO-I": 0.5008090282024432
+      },
+      "non_style": {
+        "cases": 1170,
+        "subjects": 130,
+        "subject_macro": {
+          "CLIP-T": 0.30885114099225425,
+          "CLIP-I": 0.7686093583066239,
+          "DINO-I": 0.49195255231844565
+        },
+        "case_micro": {
+          "CLIP-T": 0.30885114099225425,
+          "CLIP-I": 0.7686093583066239,
+          "DINO-I": 0.49195255231844565
+        }
+      }
+    },
+    "dreambench_plus/source_target": {
+      "cases": 1350,
+      "subjects": 150,
+      "subject_macro": {
+        "CLIP-T": 0.31536313657407405,
+        "CLIP-I": 0.7664514612268518,
+        "DINO-I": 0.4862504348710731
+      },
+      "case_micro": {
+        "CLIP-T": 0.31536313657407405,
+        "CLIP-I": 0.7664514612268518,
+        "DINO-I": 0.4862504348710731
+      },
+      "by_class": {
+        "animal": {
+          "cases": 405,
+          "subjects": 45,
+          "subject_macro": {
+            "CLIP-T": 0.31671519338348764,
+            "CLIP-I": 0.820874324845679,
+            "DINO-I": 0.5622824863151268
+          },
+          "case_micro": {
+            "CLIP-T": 0.31671519338348764,
+            "CLIP-I": 0.820874324845679,
+            "DINO-I": 0.5622824863151268
+          }
+        },
+        "human": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.28285997178819444,
+            "CLIP-I": 0.669704861111111,
+            "DINO-I": 0.46740027750945756
+          },
+          "case_micro": {
+            "CLIP-T": 0.28285997178819444,
+            "CLIP-I": 0.6697048611111112,
+            "DINO-I": 0.46740027750945756
+          }
+        },
+        "object": {
+          "cases": 585,
+          "subjects": 65,
+          "subject_macro": {
+            "CLIP-T": 0.32399192875267097,
+            "CLIP-I": 0.7509223090277778,
+            "DINO-I": 0.4404608602134081
+          },
+          "case_micro": {
+            "CLIP-T": 0.32399192875267097,
+            "CLIP-I": 0.7509223090277778,
+            "DINO-I": 0.4404608602134081
+          }
+        },
+        "style": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.3167805989583333,
+            "CLIP-I": 0.7912163628472222,
+            "DINO-I": 0.4828445941209793
+          },
+          "case_micro": {
+            "CLIP-T": 0.3167805989583333,
+            "CLIP-I": 0.7912163628472222,
+            "DINO-I": 0.4828445941209793
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.3100869232206716,
+        "CLIP-I": 0.7581794644579475,
+        "DINO-I": 0.48824705453974293
+      },
+      "non_style": {
+        "cases": 1170,
+        "subjects": 130,
+        "subject_macro": {
+          "CLIP-T": 0.31514506543803417,
+          "CLIP-I": 0.7626414763621795,
+          "DINO-I": 0.48677441037108754
+        },
+        "case_micro": {
+          "CLIP-T": 0.31514506543803417,
+          "CLIP-I": 0.7626414763621795,
+          "DINO-I": 0.48677441037108754
+        }
+      }
+    }
+  },
+  "scored_images": 2700
+}

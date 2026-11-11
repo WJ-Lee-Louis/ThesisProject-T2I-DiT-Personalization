@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "observed_at": "2026-11-06T08:05:32.505357+00:00",
+  "benchmark": "dreambench_plus",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 2700,
+  "scored_images": 2700,
+  "manifest_cases": 1350,
+  "by_condition": {
+    "source_target": 1350,
+    "baseline": 1350
+  },
+  "archive_parts": 5,
+  "archive_bytes": 4227365028,
+  "archive_and_member_sha256_crc_verified": true,
+  "restored_bytes_verified": true,
+  "metric_png_reference_cache_binding_verified": true,
+  "cloud_local_metric_merge_identical": true
+}

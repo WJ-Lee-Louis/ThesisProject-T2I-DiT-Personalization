@@ -1,0 +1,138 @@
+{
+  "status": "complete",
+  "active_invocation": "submit-ae9ac46b023b",
+  "original_call_id": "fc-01M6P9JMTSJ41D4AFV6W0GY1NC",
+  "children": [
+    "fc-01M6PF6MJYMN4PPMRKE3X4ZS81",
+    "fc-01M6PHPC8N25A95ZCWHJCN7MZ8",
+    "fc-01M6PJ22P729H2EGV6W5A7JFDT"
+  ],
+  "generation_cap_usd": 12.0,
+  "previous_pilot_estimate_usd": 0,
+  "invocation": "submit-ae9ac46b023b",
+  "generation": {
+    "status": "complete",
+    "invocation": "submit-ae9ac46b023b",
+    "gpu": "H100",
+    "seconds_cap": 6758.161446437412,
+    "versions": {
+      "torch": "2.7.1",
+      "diffusers": "0.35.2",
+      "transformers": "4.54.0",
+      "Pillow": "11.3.0"
+    },
+    "worker_seconds": 1725.789684532,
+    "estimated_compute_usd": 2.17352112717728,
+    "initialization_seconds": 31.611040441999997,
+    "initialization_peak_reserved_gib": 33.177734375,
+    "host_peak_rss_gib": 35.28773498535156,
+    "mean_image_seconds": 6.211602136934917
+  },
+  "evaluation": {
+    "path": "metrics/598a7ef43356a8eb05e1314b/1a6a5f108c8fddbb/metrics.json",
+    "cases": 750,
+    "summary": {
+      "dreambench/baseline": {
+        "cases": 375,
+        "subjects": 15,
+        "subject_macro": {
+          "CLIP-T": 0.29706575520833334,
+          "CLIP-I": 0.753833984375,
+          "DINO-I": 0.44364228691657387
+        },
+        "case_micro": {
+          "CLIP-T": 0.29706575520833334,
+          "CLIP-I": 0.753833984375,
+          "DINO-I": 0.44364228691657387
+        },
+        "by_class": {
+          "animal": {
+            "cases": 100,
+            "subjects": 4,
+            "subject_macro": {
+              "CLIP-T": 0.288377685546875,
+              "CLIP-I": 0.8478857421875,
+              "DINO-I": 0.5512328417599202
+            },
+            "case_micro": {
+              "CLIP-T": 0.288377685546875,
+              "CLIP-I": 0.8478857421875,
+              "DINO-I": 0.5512328417599202
+            }
+          },
+          "object": {
+            "cases": 275,
+            "subjects": 11,
+            "subject_macro": {
+              "CLIP-T": 0.30022505326704546,
+              "CLIP-I": 0.7196333451704545,
+              "DINO-I": 0.40451844879172066
+            },
+            "case_micro": {
+              "CLIP-T": 0.30022505326704546,
+              "CLIP-I": 0.7196333451704545,
+              "DINO-I": 0.40451844879172066
+            }
+          }
+        },
+        "class_macro": {
+          "CLIP-T": 0.2943013694069602,
+          "CLIP-I": 0.7837595436789773,
+          "DINO-I": 0.4778756452758204
+        }
+      },
+      "dreambench/source_target": {
+        "cases": 375,
+        "subjects": 15,
+        "subject_macro": {
+          "CLIP-T": 0.30616731770833333,
+          "CLIP-I": 0.7466822916666667,
+          "DINO-I": 0.43749430161714553
+        },
+        "case_micro": {
+          "CLIP-T": 0.30616731770833333,
+          "CLIP-I": 0.7466822916666667,
+          "DINO-I": 0.43749430161714553
+        },
+        "by_class": {
+          "animal": {
+            "cases": 100,
+            "subjects": 4,
+            "subject_macro": {
+              "CLIP-T": 0.30127807617187496,
+              "CLIP-I": 0.8343896484375,
+              "DINO-I": 0.5434312653541565
+            },
+            "case_micro": {
+              "CLIP-T": 0.301278076171875,
+              "CLIP-I": 0.8343896484375,
+              "DINO-I": 0.5434312653541565
+            }
+          },
+          "object": {
+            "cases": 275,
+            "subjects": 11,
+            "subject_macro": {
+              "CLIP-T": 0.3079452237215909,
+              "CLIP-I": 0.7147887073863637,
+              "DINO-I": 0.3989717693491416
+            },
+            "case_micro": {
+              "CLIP-T": 0.3079452237215909,
+              "CLIP-I": 0.7147887073863637,
+              "DINO-I": 0.3989717693491416
+            }
+          }
+        },
+        "class_macro": {
+          "CLIP-T": 0.30461164994673295,
+          "CLIP-I": 0.7745891779119318,
+          "DINO-I": 0.47120151735164906
+        }
+      }
+    }
+  },
+  "export": {
+    "index": "exports/598a7ef43356a8eb05e1314b/method-comparison/bundle_index.json"
+  }
+}

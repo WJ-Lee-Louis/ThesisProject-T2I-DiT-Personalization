@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-11-06T07:08:03.058158+00:00",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "states": {
+    "dreambench": "complete",
+    "dreambench_plus": "complete",
+    "finish-wj-lee-louis": "complete",
+    "finish-dreambench-plus-0": "complete",
+    "finish-dreambench-plus-1": "complete"
+  },
+  "images": 4200,
+  "local_download_status": "complete",
+  "full_benchmarks_complete": true,
+  "full_dreambench_evaluation_complete": true,
+  "collection_verification": "xlabs_application/verification/collection.json",
+  "local_completion_observed_at": "2026-11-06T08:08:09.458518+00:00"
+}

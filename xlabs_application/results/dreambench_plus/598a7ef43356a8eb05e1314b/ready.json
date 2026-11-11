@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "directory": "deliverables/598a7ef43356a8eb05e1314b/dreambench_plus/combined",
+  "files": {
+    "per_image.csv": {
+      "size": 882965,
+      "sha256": "e4ec619f8a4ba30cd06b9b0edc84d8286969c6c1e76e89fd82509b86186d10c9"
+    },
+    "scores.json": {
+      "size": 2228688,
+      "sha256": "1e0faa6d88532cb6c8de461f6f2acb0968c70e4eecd79276153425ac087103e4"
+    },
+    "shards.json": {
+      "size": 4323,
+      "sha256": "34eca656cedc56c01895d17c4c49e4b003137ada1e011ed46f8fb65c3165abf9"
+    },
+    "summary.json": {
+      "size": 7170,
+      "sha256": "92af917e7873c153fdd38a6a7649460b25008f22515c2eb28d01b34a75a1cddc"
+    },
+    "inputs/wj-lee-louis-dreambench-plus-0.json": {
+      "size": 1117551,
+      "sha256": "46c6564756bc76a023878f4ea65d4523e44bbd954b126aae0ef5d2d6535b5396"
+    },
+    "inputs/wj-lee-louis-dreambench-plus-1.json": {
+      "size": 1118485,
+      "sha256": "e3b38aeb74e9808aaa9e2065b6fecc50ea0e683fc1795dd2ded4ccbab4004e12"
+    }
+  },
+  "benchmark": "dreambench_plus",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "scored_images": 2700
+}

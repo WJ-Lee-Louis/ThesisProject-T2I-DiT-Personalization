@@ -1,0 +1,11 @@
+{
+  "profile": "wj-lee-louis",
+  "archives_verified": true,
+  "restored_bytes_verified": true,
+  "bundle_index_sha256": "58b4521c24302b0c70eb1281da368c1e6efd5ad70640cbd85794dfa0caf3e1a4",
+  "generated_images": 1350,
+  "parts": {
+    "images-000.zip": "366bff7233f79aff91addd393f911274bf7415550ffbc602a190759f658efdef",
+    "images-001.zip": "5033e528ef48e10ce948018e77279100263679c11a7f8c16336a34b3a4f7e94c"
+  }
+}

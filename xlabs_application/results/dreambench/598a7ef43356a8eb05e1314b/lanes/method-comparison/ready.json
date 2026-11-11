@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "directory": "deliverables/598a7ef43356a8eb05e1314b/dreambench/method-comparison",
+  "files": {
+    "bundle_index.json": {
+      "size": 307105,
+      "sha256": "c24f9fd6a2aa308ef9fdb42d90ccd94e4e23f3878a0140f9cf490b07bf56f761"
+    },
+    "dreambench_seed42.jsonl": {
+      "size": 760956,
+      "sha256": "8f3281f2d799569584ab4a8dbc7b0ddfcf06c9068ee4b7619b913e942b9d82cd"
+    },
+    "generation_source.zip": {
+      "size": 58474,
+      "sha256": "2019a946f2c5931b21ab94e2102262ac2a767d8a253677fd896fa35cf5ca8067"
+    },
+    "metrics.json": {
+      "size": 573688,
+      "sha256": "173c30f970350472f48a5fbb6696e0017c7c34e125b4c16df63ef161912d8c96"
+    },
+    "orchestration_hashes.json": {
+      "size": 273,
+      "sha256": "a6a46d45241b2ef7924e77a6314f4bd23aa8ac9f3037cbb134bbc02e53f550cf"
+    },
+    "orchestration_source.zip": {
+      "size": 8534,
+      "sha256": "b372ee57d70c1d48a76fdbcf98f70e2d32f73e074935cf8cd0af47965dec4052"
+    },
+    "per_image.csv": {
+      "size": 200261,
+      "sha256": "f0a9af13d40e8d2857bf51488c38a9baa6ad47bd68fb3d94b84616b444eb64fb"
+    },
+    "plan.json": {
+      "size": 2864683,
+      "sha256": "7da63bc92b577bf11fcb0279def8c5a8d3798fd578f01386cb1118ca5dade824"
+    },
+    "source_hashes.json": {
+      "size": 2551,
+      "sha256": "c19cd93cbae5e1035c905afa94eb546ab291a496e88f69302176a1b4de6ee4a8"
+    },
+    "verification.json": {
+      "size": 146,
+      "sha256": "66be8b712fa7e9fc8120e2d848bd94b36c6064bd3b3b01c2b3def0a07971d0dc"
+    },
+    "workflow.json": {
+      "size": 4084,
+      "sha256": "5afced507dccef886bb03a30987c35a505f88359bbca0bed2a26e974744e896e"
+    }
+  },
+  "benchmark": "dreambench",
+  "shard": "method-comparison",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 750,
+  "archive_index": "exports/598a7ef43356a8eb05e1314b/method-comparison/bundle_index.json"
+}

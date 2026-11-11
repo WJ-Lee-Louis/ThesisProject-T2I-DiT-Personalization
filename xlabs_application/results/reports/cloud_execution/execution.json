@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-11-05T17:23:06.878967+00:00",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generation_code": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+  "local_pc_required_for_generation_evaluation_archives_or_reports": false,
+  "physical_pc_download": "Resume cloud_control download after PC returns; no GPU resubmission required",
+  "additional_dreambench_plus_gpu_count": 2,
+  "gpu": "H100",
+  "workspace": "wj-lee-louis",
+  "dreambench_plus_cases": 1350,
+  "dreambench_plus_generated_images_expected": 2700,
+  "dreambench_plus_generation_admission_usd_per_shard": 30,
+  "dreambench_plus_expected_compute_usd": "approximately 40-50 plus evaluation/CPU/storage",
+  "dreambench_recovery_generation_admission_usd_per_workspace": 16,
+  "full_benchmarks_complete": false,
+  "progress": {
+    "dreambench-plus-0": {
+      "status": "generating",
+      "gpu": "H100",
+      "saved_images": 46,
+      "worker_seconds": 472.28351203799997,
+      "estimated_compute_usd": 0.6039057681037429,
+      "gpu_calls": [
+        "fc-01M6PB9M93NZMHRDDTJY79BK9S"
+      ]
+    },
+    "dreambench-plus-1": {
+      "status": "generating",
+      "gpu": "H100",
+      "saved_images": 42,
+      "worker_seconds": 468.42645342900005,
+      "estimated_compute_usd": 0.5990760364547253,
+      "gpu_calls": [
+        "fc-01M6PB9NVY1PMKGJ0JZJMB612W"
+      ]
+    }
+  },
+  "apps": {
+    "plus": "xlabs-application-plus-v1",
+    "finalization": "xlabs-application-offline-v1",
+    "consolidation": "xlabs-application-consolidation-v1"
+  },
+  "original_generation_snapshot_unchanged": true,
+  "cloud_smoke": {
+    "status": "passed",
+    "cross_workspace_volume_read": true,
+    "source_zip_crc_verified": true,
+    "cloud_archive_and_metric_binding_verified": true,
+    "partial_final_report_rejected": true,
+    "purpose": "Four existing pilot images only; not final benchmark results",
+    "call_id": "fc-01M6PBK6A45JTPN3N5VG77SMJW",
+    "download_and_restore_verified": true,
+    "generated_images": 4
+  }
+}

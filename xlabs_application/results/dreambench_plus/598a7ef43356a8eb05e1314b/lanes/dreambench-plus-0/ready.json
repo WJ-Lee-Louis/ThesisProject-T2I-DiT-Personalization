@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "directory": "deliverables/598a7ef43356a8eb05e1314b/dreambench_plus/dreambench-plus-0",
+  "files": {
+    "bundle_index.json": {
+      "size": 575543,
+      "sha256": "42ef40b70121c3632168ac696de5b010bcb110d5872ac322d6ad184d0905cff6"
+    },
+    "dreambench_plus_seed42.jsonl": {
+      "size": 1640535,
+      "sha256": "bee1ccc92ba43d73e763b9000614d50c1eb9694380590e9717fde12262f14e8e"
+    },
+    "generation_source.zip": {
+      "size": 58474,
+      "sha256": "2019a946f2c5931b21ab94e2102262ac2a767d8a253677fd896fa35cf5ca8067"
+    },
+    "metrics.json": {
+      "size": 1117551,
+      "sha256": "46c6564756bc76a023878f4ea65d4523e44bbd954b126aae0ef5d2d6535b5396"
+    },
+    "orchestration_hashes.json": {
+      "size": 273,
+      "sha256": "a6a46d45241b2ef7924e77a6314f4bd23aa8ac9f3037cbb134bbc02e53f550cf"
+    },
+    "orchestration_source.zip": {
+      "size": 8534,
+      "sha256": "b372ee57d70c1d48a76fdbcf98f70e2d32f73e074935cf8cd0af47965dec4052"
+    },
+    "per_image.csv": {
+      "size": 441047,
+      "sha256": "6577ba46a3a412ac4a1b979520fd02ea087ba8bb6dab57a523b394ff35cf4714"
+    },
+    "plan.json": {
+      "size": 2864683,
+      "sha256": "7da63bc92b577bf11fcb0279def8c5a8d3798fd578f01386cb1118ca5dade824"
+    },
+    "source_hashes.json": {
+      "size": 2551,
+      "sha256": "c19cd93cbae5e1035c905afa94eb546ab291a496e88f69302176a1b4de6ee4a8"
+    },
+    "verification.json": {
+      "size": 147,
+      "sha256": "ce7ed6b477f1969553b776c488d86e62cb1578f8e948411368d05195eec45a51"
+    },
+    "workflow.json": {
+      "size": 6637,
+      "sha256": "cc0b660eb3c7fab9bf4d3cff4db1b8c6c08767ca3e63245fc572d6e47c2f317c"
+    }
+  },
+  "benchmark": "dreambench_plus",
+  "shard": "dreambench-plus-0",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 1350,
+  "archive_index": "exports/598a7ef43356a8eb05e1314b/dreambench-plus-0/bundle_index.json"
+}

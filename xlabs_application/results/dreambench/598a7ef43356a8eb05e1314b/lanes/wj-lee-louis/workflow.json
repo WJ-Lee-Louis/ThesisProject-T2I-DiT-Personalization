@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "invocation": "resume-db-c6ddc1657b60",
+  "children": [
+    "fc-01M6QKD17S8Y8DA0STCFJWXXG5",
+    "fc-01M6QKT5S9Q1TK2BF34E7SWEXC",
+    "fc-01M6QM1ZJ3CD2NEVEZK9J2Z7ZT"
+  ],
+  "generation": {
+    "status": "complete",
+    "invocation": "resume-db-c6ddc1657b60",
+    "gpu": "H100",
+    "seconds_cap": 6758.161446437412,
+    "versions": {
+      "torch": "2.7.1",
+      "diffusers": "0.35.2",
+      "transformers": "4.54.0",
+      "Pillow": "11.3.0"
+    },
+    "worker_seconds": 107.284646851,
+    "estimated_compute_usd": 0.1468614890938852,
+    "initialization_seconds": 23.247004937,
+    "initialization_peak_reserved_gib": 33.177734375,
+    "host_peak_rss_gib": 35.692413330078125,
+    "mean_image_seconds": 0
+  },
+  "evaluation": {
+    "path": "metrics/598a7ef43356a8eb05e1314b/32e8353885204e20/metrics.json",
+    "cases": 750,
+    "summary": {
+      "dreambench/baseline": {
+        "cases": 375,
+        "subjects": 15,
+        "subject_macro": {
+          "CLIP-T": 0.2912184244791667,
+          "CLIP-I": 0.7481985677083334,
+          "DINO-I": 0.45340235950549446
+        },
+        "case_micro": {
+          "CLIP-T": 0.2912184244791667,
+          "CLIP-I": 0.7481985677083334,
+          "DINO-I": 0.45340235950549446
+        },
+        "by_class": {
+          "animal": {
+            "cases": 125,
+            "subjects": 5,
+            "subject_macro": {
+              "CLIP-T": 0.290734375,
+              "CLIP-I": 0.819609375,
+              "DINO-I": 0.4737187517881393
+            },
+            "case_micro": {
+              "CLIP-T": 0.290734375,
+              "CLIP-I": 0.819609375,
+              "DINO-I": 0.4737187517881393
+            }
+          },
+          "object": {
+            "cases": 250,
+            "subjects": 10,
+            "subject_macro": {
+              "CLIP-T": 0.29146044921875003,
+              "CLIP-I": 0.7124931640625,
+              "DINO-I": 0.443244163364172
+            },
+            "case_micro": {
+              "CLIP-T": 0.29146044921875,
+              "CLIP-I": 0.7124931640625,
+              "DINO-I": 0.443244163364172
+            }
+          }
+        },
+        "class_macro": {
+          "CLIP-T": 0.291097412109375,
+          "CLIP-I": 0.76605126953125,
+          "DINO-I": 0.45848145757615566
+        }
+      },
+      "dreambench/source_target": {
+        "cases": 375,
+        "subjects": 15,
+        "subject_macro": {
+          "CLIP-T": 0.29825260416666666,
+          "CLIP-I": 0.7460078125,
+          "DINO-I": 0.46033552290995916
+        },
+        "case_micro": {
+          "CLIP-T": 0.29825260416666666,
+          "CLIP-I": 0.7460078125,
+          "DINO-I": 0.46033552290995916
+        },
+        "by_class": {
+          "animal": {
+            "cases": 125,
+            "subjects": 5,
+            "subject_macro": {
+              "CLIP-T": 0.30019921875,
+              "CLIP-I": 0.8133671875,
+              "DINO-I": 0.49020314276218413
+            },
+            "case_micro": {
+              "CLIP-T": 0.30019921875,
+              "CLIP-I": 0.8133671875,
+              "DINO-I": 0.49020314276218413
+            }
+          },
+          "object": {
+            "cases": 250,
+            "subjects": 10,
+            "subject_macro": {
+              "CLIP-T": 0.297279296875,
+              "CLIP-I": 0.712328125,
+              "DINO-I": 0.4454017129838467
+            },
+            "case_micro": {
+              "CLIP-T": 0.297279296875,
+              "CLIP-I": 0.712328125,
+              "DINO-I": 0.4454017129838467
+            }
+          }
+        },
+        "class_macro": {
+          "CLIP-T": 0.2987392578125,
+          "CLIP-I": 0.76284765625,
+          "DINO-I": 0.4678024278730154
+        }
+      }
+    }
+  },
+  "export": {
+    "index": "exports/598a7ef43356a8eb05e1314b/wj-lee-louis/bundle_index.json"
+  }
+}

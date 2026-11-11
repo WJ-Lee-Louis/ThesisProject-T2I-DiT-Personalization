@@ -1,0 +1,7 @@
+outputs/
+.venv*/
+__pycache__/
+.pytest_cache/
+artifacts/**/*.download
+artifacts/**/*.tmp
+artifacts/**/*.prefetch

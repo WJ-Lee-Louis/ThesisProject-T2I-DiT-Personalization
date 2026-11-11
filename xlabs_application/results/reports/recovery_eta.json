@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-11-06T05:04:53.710710+00:00",
+  "timezone": "Asia/Seoul",
+  "date": "2026-11-06",
+  "generation_end_estimate_kst": [
+    "15:30",
+    "16:00"
+  ],
+  "metric_end_estimate_kst": [
+    "16:00",
+    "16:30"
+  ],
+  "estimate_type": "Conservative range using resumed saved-image rate; allows later PNG/commit variation and T4 queueing",
+  "observed_workers": {
+    "dreambench-plus-0": {
+      "new_images": 17,
+      "total_saved": 718,
+      "remaining": 632,
+      "seconds_per_saved_image": 7.084189168099999,
+      "eta_kst": "2026-11-06T15:16:53.462392+09:00"
+    },
+    "dreambench-plus-1": {
+      "new_images": 21,
+      "total_saved": 688,
+      "remaining": 662,
+      "seconds_per_saved_image": 7.6815914669,
+      "eta_kst": "2026-11-06T15:27:03.752522+09:00"
+    }
+  },
+  "metric_timing_basis": {
+    "previous_750_image_evaluation_seconds": 383.41,
+    "plus_evaluation_images_per_shard": 1350,
+    "plus_evaluator_max_concurrent_containers": 1
+  },
+  "remaining_generation_and_new_evaluation_workspace": "wj-lee-louis",
+  "local_pc_required": false
+}

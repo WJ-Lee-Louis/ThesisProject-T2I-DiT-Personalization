@@ -1,0 +1,52 @@
+{
+  "schema": "xlabs-lane-archives-v1",
+  "method": "xlabs_application",
+  "benchmark": "dreambench_plus",
+  "bundle_id": "598a7ef43356a8eb05e1314b",
+  "generated_images": 2700,
+  "manifest_cases": 1350,
+  "missing_case_ids": [],
+  "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+  "lanes": [
+    {
+      "shard": "dreambench-plus-0",
+      "index": "lanes/dreambench-plus-0/bundle_index.json",
+      "archive_directory": "dreambench-plus-0",
+      "generated_images": 1350
+    },
+    {
+      "shard": "dreambench-plus-1",
+      "index": "lanes/dreambench-plus-1/bundle_index.json",
+      "archive_directory": "dreambench-plus-1",
+      "generated_images": 1350
+    }
+  ],
+  "parts": [
+    {
+      "file": "dreambench-plus-0/images-000.zip",
+      "size_bytes": 1072508465,
+      "sha256": "64ec4c13caf5ef92f6b6252af83631ccbb8f59fbc17cfcaae04d34ea91d5f733"
+    },
+    {
+      "file": "dreambench-plus-0/images-001.zip",
+      "size_bytes": 1071938254,
+      "sha256": "e465856b8241a018f23481a8a5eabffa28861e079137d069ec33def10812878e"
+    },
+    {
+      "file": "dreambench-plus-0/images-002.zip",
+      "size_bytes": 9703884,
+      "sha256": "e2a1229547f29ed10c120060dbfbc6ec49a1853c7e765c11e690acf2b005ad7b"
+    },
+    {
+      "file": "dreambench-plus-1/images-000.zip",
+      "size_bytes": 1072013787,
+      "sha256": "366bff7233f79aff91addd393f911274bf7415550ffbc602a190759f658efdef"
+    },
+    {
+      "file": "dreambench-plus-1/images-001.zip",
+      "size_bytes": 1001200638,
+      "sha256": "5033e528ef48e10ce948018e77279100263679c11a7f8c16336a34b3a4f7e94c"
+    }
+  ],
+  "manifest_sha256": "bee1ccc92ba43d73e763b9000614d50c1eb9694380590e9717fde12262f14e8e"
+}
