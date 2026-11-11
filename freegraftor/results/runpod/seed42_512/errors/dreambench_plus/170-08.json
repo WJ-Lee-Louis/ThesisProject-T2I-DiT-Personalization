@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "170-08",
+    "reference_id": "dreambench_plus/style/10",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/10.jpg",
+    "identity_term": "Ukiyo-e",
+    "target_prompt": "A scene of moon jellyfish floating in the sky, imagined in Ukiyo-e brushwork",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/170-08.json",
+    "source_directions": 10,
+    "target_directions": 4,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "72bbfed2cea0a970d7099a3a60c752891891701008f65c5ca5498d0c5ae0db6c",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Ukiyo-e': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.0843541622161865,
+  "updated_at": 1793972309.8642933
+}

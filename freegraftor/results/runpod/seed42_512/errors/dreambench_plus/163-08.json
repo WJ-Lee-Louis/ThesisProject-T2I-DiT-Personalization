@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "163-08",
+    "reference_id": "dreambench_plus/style/03",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/03.jpg",
+    "identity_term": "cyberpunk neon",
+    "target_prompt": "A floating market with neon signs hovering above boats, in a cyberpunk neon style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/163-08.json",
+    "source_directions": 1,
+    "target_directions": 1,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "794d701c1ac60449e9f48ddb62f0c0a67f946d44ec3da37f958a69666477635e",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'cyberpunk neon': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.092814207077026,
+  "updated_at": 1793971514.759756
+}

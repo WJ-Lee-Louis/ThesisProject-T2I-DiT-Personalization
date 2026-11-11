@@ -1,0 +1,208 @@
+{
+  "row": {
+    "case_id": "135-07",
+    "reference_id": "dreambench_plus/object/40",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/40.jpg",
+    "identity_term": "Rolls-Royce hood ornament",
+    "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/135-07.json",
+    "source_directions": 2,
+    "target_directions": 5,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "settings": {
+    "condition": "freegraftor",
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "num_steps": 25,
+    "guidance": 3.0,
+    "sim_threshold": 0.2,
+    "cyc_threshold": 1.5,
+    "inject_match_dropout": 0.5,
+    "start_inject_step": 0,
+    "end_inject_step": 25,
+    "inject_block_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "alignment": "center",
+    "requires_offload": false,
+    "precision": "bfloat16",
+    "upstream_commit": "b8e0f93e91753265e46e9d0b364daa38e25f1afa"
+  },
+  "job_signature": "950ecaeb0f023558d0f041ead04b75619e1db1707f77c27fa161f2e9a02433e0",
+  "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/40/40.jpg",
+  "reference_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27",
+  "png_sha256": "52b2096acc1f7b5b1008557eacf9ba8c0d4f44a6f209d4168be65ecc33774928",
+  "elapsed_seconds": 19.32431411743164,
+  "template_seconds": null,
+  "mask_recovery": {
+    "original_job_signature": "950ecaeb0f023558d0f041ead04b75619e1db1707f77c27fa161f2e9a02433e0",
+    "recovery_source_sha256": "d0710cae3c1ef36447d33387689e471d68f6398f73dcc08ff04e1a26d0b1d467",
+    "alias_evidence": null,
+    "original_error_record": "/workspace/freegraftor/recovery/original_failures/dreambench_plus/135-07.json",
+    "generation_prompt_unchanged": true,
+    "reference_bytes_unchanged": true,
+    "detector_thresholds_unchanged": true,
+    "detector_calls": [
+      {
+        "stage": "reference",
+        "original_query": "Rolls-Royce hood ornament",
+        "selected_query": "Rolls-Royce hood ornament",
+        "attempts": [
+          {
+            "query": "Rolls-Royce hood ornament",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.4598037302494049
+            ],
+            "boxes": [
+              [
+                304.4171447753906,
+                111.9705810546875,
+                616.23779296875,
+                675.4149169921875
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "stage": "template",
+        "original_query": "Rolls-Royce hood ornament",
+        "selected_query": "a Rolls-Royce hood ornament",
+        "attempts": [
+          {
+            "query": "Rolls-Royce hood ornament",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [],
+            "boxes": []
+          },
+          {
+            "query": "a Rolls-Royce hood ornament",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.39606815576553345
+            ],
+            "boxes": [
+              [
+                156.92828369140625,
+                115.28065490722656,
+                274.8326110839844,
+                371.58837890625
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "mask_artifacts": [
+      {
+        "stage": "reference",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench_plus/135-07/reference-mask.png",
+        "mask_sha256": "6e769a947ee6959389c6a65f3ad762a6b73179dd24c58c47b78161e484d98735",
+        "foreground_fraction": 0.07112693786621094,
+        "box": [
+          304.4171447753906,
+          111.9705810546875,
+          616.23779296875,
+          675.4149169921875
+        ]
+      },
+      {
+        "stage": "template",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench_plus/135-07/template-mask.png",
+        "mask_sha256": "a1aaa41b9a7ba1520db5d3b30ab0035059344809e03f06ad0f8a8c2caaed11c8",
+        "foreground_fraction": 0.0667266845703125,
+        "box": [
+          156.92828369140625,
+          115.28065490722656,
+          274.8326110839844,
+          371.58837890625
+        ]
+      }
+    ],
+    "completed_at": 1793973285.1348996
+  },
+  "mask_recovery_signature": "4cd87a6826197308bb4ac5f8885471d36f11dd6092c73bfefa7bb4eebbb00dca",
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "physical_gpu": 1,
+    "versions": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.51.3",
+      "diffusers": "0.31.0",
+      "numpy": "1.24.4",
+      "Pillow": "9.5.0",
+      "modelscope": "1.25.0",
+      "segment-anything-py": "1.0.1",
+      "kornia": "0.8.1"
+    },
+    "recovery": true,
+    "shared_memory_budget": false
+  },
+  "completed_at": 1793973285.2654126
+}

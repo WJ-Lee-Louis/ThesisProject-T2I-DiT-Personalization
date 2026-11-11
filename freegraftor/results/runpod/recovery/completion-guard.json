@@ -1,0 +1,15 @@
+{
+  "native_workers": {
+    "0": {
+      "pid": 7350,
+      "start_ticks": "151013608"
+    },
+    "1": {
+      "pid": 7351,
+      "start_ticks": "151013608"
+    }
+  },
+  "replaced_native_controller": 7011,
+  "reason": "Require zero missing non-style cases before final metrics; preserve live native generation workers",
+  "updated_at": 1793956732.6641648
+}

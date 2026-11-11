@@ -1,0 +1,32 @@
+{
+  "generated": 12,
+  "scored": 12,
+  "failed": 0,
+  "categories": [
+    [
+      "dreambench",
+      "animal"
+    ],
+    [
+      "dreambench",
+      "object"
+    ],
+    [
+      "dreambench_plus",
+      "animal"
+    ],
+    [
+      "dreambench_plus",
+      "human"
+    ],
+    [
+      "dreambench_plus",
+      "object"
+    ],
+    [
+      "dreambench_plus",
+      "style"
+    ]
+  ],
+  "updated_at": 1793952067.0593946
+}

@@ -1,0 +1,19 @@
+{
+  "expected": 12,
+  "metric_expected": null,
+  "generated": 12,
+  "scored": 12,
+  "excluded_generated_style": 0,
+  "evaluation_policy": {
+    "exclude_dbpp_style": false,
+    "reason": "all_attempted_style_cases_generated_without_fallback",
+    "style_attempted": 2,
+    "style_failed": 0,
+    "fallback_images_used": 0,
+    "primary_dbpp_scope": "all-classes",
+    "updated_at": 1793951977.422258
+  },
+  "failed": 0,
+  "failures_by_category": {},
+  "failures": []
+}

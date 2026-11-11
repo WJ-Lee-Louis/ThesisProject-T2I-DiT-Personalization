@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "135-07",
+    "reference_id": "dreambench_plus/object/40",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/40.jpg",
+    "identity_term": "Rolls-Royce hood ornament",
+    "target_prompt": "A Rolls-Royce hood ornament transformed into a sleek spaceship leading a caravan of vintage cars across a galaxy",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/135-07.json",
+    "source_directions": 2,
+    "target_directions": 5,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "950ecaeb0f023558d0f041ead04b75619e1db1707f77c27fa161f2e9a02433e0",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Rolls-Royce hood ornament': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 5.204884767532349,
+  "updated_at": 1793969049.6612167
+}

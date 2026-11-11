@@ -1,0 +1,4760 @@
+{
+  "expected": 160,
+  "processed": 160,
+  "results": [
+    {
+      "reference_id": "dreambench/backpack",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/backpack/02.jpg",
+      "reference_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c",
+      "original_query": "backpack",
+      "selected_query": "backpack",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "backpack",
+          "boxes": [
+            [
+              234.71728515625,
+              53.39881896972656,
+              1176.717041015625,
+              1190.847412109375
+            ]
+          ],
+          "scores": [
+            0.954647421836853
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.450968017578125,
+          "nonempty": true,
+          "seconds": 2.033243417739868
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/backpack_dog",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/backpack_dog/02.jpg",
+      "reference_sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a",
+      "original_query": "backpack",
+      "selected_query": "backpack",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "backpack",
+          "boxes": [
+            [
+              247.82603454589844,
+              223.79150390625,
+              1139.583984375,
+              1272.6025390625
+            ]
+          ],
+          "scores": [
+            0.917302668094635
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2814496527777778,
+          "nonempty": true,
+          "seconds": 0.9736435413360596
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/bear_plushie",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/bear_plushie/03.jpg",
+      "reference_sha256": "9cfc394fa5dc971740938216c2a9e14e8a3729ae42c1562474f9248d4aa53c52",
+      "original_query": "stuffed animal",
+      "selected_query": "stuffed animal",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "stuffed animal",
+          "boxes": [
+            [
+              356.61944580078125,
+              318.47137451171875,
+              1499.549560546875,
+              1852.950927734375
+            ]
+          ],
+          "scores": [
+            0.543347954750061
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.25836801528930664,
+          "nonempty": true,
+          "seconds": 0.6664390563964844
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/berry_bowl",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/berry_bowl/02.jpg",
+      "reference_sha256": "3ca2f510ca6b9d3b1dd0cb25b3358195d098fe31a8aa2b7d9b370c8a3fdb4246",
+      "original_query": "bowl",
+      "selected_query": "bowl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "bowl",
+          "boxes": [
+            [
+              84.51946258544922,
+              194.88613891601562,
+              1111.807373046875,
+              1080.06201171875
+            ]
+          ],
+          "scores": [
+            0.9099069833755493
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2371807861328125,
+          "nonempty": true,
+          "seconds": 1.0713682174682617
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/can",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/can/01.jpg",
+      "reference_sha256": "0be6499890c9f125f84bb94c3570838892c3caf27527ec7f5e342d2e17480808",
+      "original_query": "can",
+      "selected_query": "beer can",
+      "status": "noun_phrase_retry_ok",
+      "attempts": [
+        {
+          "query": "can",
+          "boxes": [],
+          "scores": [],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "seconds": 0.5456464290618896
+        },
+        {
+          "query": "beer can",
+          "boxes": [
+            [
+              383.56414794921875,
+              207.83782958984375,
+              870.3671264648438,
+              1086.155029296875
+            ]
+          ],
+          "scores": [
+            0.9518632292747498
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2346563720703125,
+          "nonempty": true,
+          "seconds": 1.7215373516082764
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/candle",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/candle/02.jpg",
+      "reference_sha256": "e502da38cb2fd364a6fbb27ff1140ffec233431223a6508b645efb1888459d97",
+      "original_query": "candle",
+      "selected_query": "candle",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "candle",
+          "boxes": [
+            [
+              701.396484375,
+              623.6806640625,
+              1323.9635009765625,
+              1268.45458984375
+            ]
+          ],
+          "scores": [
+            0.700894832611084
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.07532501220703125,
+          "nonempty": true,
+          "seconds": 2.312577486038208
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/cat",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/cat/04.jpg",
+      "reference_sha256": "62afd15fe7205e514044bb5846299e3b7ef4769ad95a667eb246ae57416d69eb",
+      "original_query": "cat",
+      "selected_query": "cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cat",
+          "boxes": [
+            [
+              228.58116149902344,
+              74.39676666259766,
+              1026.074462890625,
+              1280.6083984375
+            ]
+          ],
+          "scores": [
+            0.9559813141822815
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4214413662349926,
+          "nonempty": true,
+          "seconds": 1.1109156608581543
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/cat2",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/cat2/02.jpg",
+      "reference_sha256": "d6d81497562ff39a58d749a85078fa7fe9734f9c4113e45816f4973697749038",
+      "original_query": "cat",
+      "selected_query": "cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cat",
+          "boxes": [
+            [
+              2.6343154907226562,
+              136.2535400390625,
+              1277.38720703125,
+              1180.056640625
+            ]
+          ],
+          "scores": [
+            0.9343951344490051
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4324578857421875,
+          "nonempty": true,
+          "seconds": 1.0876665115356445
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/clock",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/clock/03.jpg",
+      "reference_sha256": "0e1eb6ca2c944f3bfaed3ace56f5f186ed073a477e0333e0237253d98f0c9267",
+      "original_query": "clock",
+      "selected_query": "clock",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "clock",
+          "boxes": [
+            [
+              263.13232421875,
+              140.4259490966797,
+              977.2137451171875,
+              1059.13623046875
+            ]
+          ],
+          "scores": [
+            0.5836780667304993
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2774066162109375,
+          "nonempty": true,
+          "seconds": 0.8180172443389893
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/colorful_sneaker",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/colorful_sneaker/01.jpg",
+      "reference_sha256": "4a6b167131472609ac531a80ed389f4072f7e393ab6faafb7b967df4f04dd917",
+      "original_query": "sneaker",
+      "selected_query": "sneaker",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "sneaker",
+          "boxes": [
+            [
+              383.0562744140625,
+              517.0613403320312,
+              1749.3201904296875,
+              1593.725341796875
+            ]
+          ],
+          "scores": [
+            0.9304582476615906
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2057034969329834,
+          "nonempty": true,
+          "seconds": 1.6530487537384033
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog/02.jpg",
+      "reference_sha256": "daad1959b4754734000bcb3699d616876f49797960a2c2b36915503fd5a1c1e5",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              152.0363311767578,
+              150.09197998046875,
+              778.8497924804688,
+              726.3715209960938
+            ]
+          ],
+          "scores": [
+            0.9559813141822815
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3856114398422091,
+          "nonempty": true,
+          "seconds": 0.952613115310669
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog2",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog2/02.jpg",
+      "reference_sha256": "5548b9f76ba808793ff3c9bc73525810f442ba9284dcaa95894a51dda1890879",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              76.21402740478516,
+              28.43738555908203,
+              1214.132080078125,
+              1189.0880126953125
+            ]
+          ],
+          "scores": [
+            0.9473810195922852
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.580733642578125,
+          "nonempty": true,
+          "seconds": 1.3447775840759277
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog3",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog3/05.jpg",
+      "reference_sha256": "f91476780363cec20e3324745d1ecce2b53573d9506d6dd245ee0b2e5acb062e",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              9.244199752807617,
+              3.257939338684082,
+              636.4735717773438,
+              818.2144775390625
+            ]
+          ],
+          "scores": [
+            0.9343951344490051
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.41475163593099346,
+          "nonempty": true,
+          "seconds": 1.1171543598175049
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog5",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog5/00.jpg",
+      "reference_sha256": "42e96a78608ec2644115b964f5f97ddc48d099f5c458863a7070f4c83aab1a90",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              284.5044860839844,
+              468.8626708984375,
+              1295.5775146484375,
+              975.4481201171875
+            ]
+          ],
+          "scores": [
+            0.9399133324623108
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12595823688271604,
+          "nonempty": true,
+          "seconds": 1.1985564231872559
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog6",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog6/02.jpg",
+      "reference_sha256": "ff206a9787229e33e6fdc0810ed902531f7a18b0ddb42e9529d8a605895bcb9e",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              203.21282958984375,
+              4.452397346496582,
+              1033.7852783203125,
+              1266.6995849609375
+            ]
+          ],
+          "scores": [
+            0.9518632292747498
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.39947737431272495,
+          "nonempty": true,
+          "seconds": 1.308706283569336
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog7",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog7/01.jpg",
+      "reference_sha256": "c8dc22728777cf4be26f5f527b6d96a26a61d5c35dbccb1e0ef9fceb6d107fe8",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              127.39314270019531,
+              162.74302673339844,
+              1066.240478515625,
+              1190.4774169921875
+            ]
+          ],
+          "scores": [
+            0.9648551344871521
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3960637944013585,
+          "nonempty": true,
+          "seconds": 1.362835168838501
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/dog8",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/dog8/04.jpg",
+      "reference_sha256": "1994030da6d469b983f04c3e0161f49fb5b3b0a261d5f7dc56aefaed1ae74d8f",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              212.3341064453125,
+              30.294342041015625,
+              1016.9322509765625,
+              1224.82861328125
+            ]
+          ],
+          "scores": [
+            0.5154370069503784
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.36764892578125,
+          "nonempty": true,
+          "seconds": 0.5887851715087891
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/duck_toy",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/duck_toy/01.jpg",
+      "reference_sha256": "028d9cef79640084382f3c6a62a103095f1b33f017f80dca183a841d199e1bea",
+      "original_query": "toy",
+      "selected_query": "toy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toy",
+          "boxes": [
+            [
+              356.99224853515625,
+              342.8541259765625,
+              1111.04931640625,
+              1190.680419921875
+            ]
+          ],
+          "scores": [
+            0.9324532747268677
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.23397376543209877,
+          "nonempty": true,
+          "seconds": 1.0109589099884033
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/fancy_boot",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/fancy_boot/02.jpg",
+      "reference_sha256": "906e947c111602a955caeed0544f8e1352fc6b37063e55df4a3af605ab36680d",
+      "original_query": "boot",
+      "selected_query": "boot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "boot",
+          "boxes": [
+            [
+              493.9486083984375,
+              75.74114990234375,
+              1680.5601806640625,
+              1785.1748046875
+            ]
+          ],
+          "scores": [
+            0.8418256044387817
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.28168201446533203,
+          "nonempty": true,
+          "seconds": 1.9577529430389404
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/grey_sloth_plushie",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/grey_sloth_plushie/04.jpg",
+      "reference_sha256": "01cd945206f96e3bb04967ca59c0a82a1ab3f0c1e2bd334ce4a1147de96542fc",
+      "original_query": "stuffed animal",
+      "selected_query": "stuffed animal",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "stuffed animal",
+          "boxes": [
+            [
+              434.9700927734375,
+              313.56304931640625,
+              1508.8212890625,
+              1595.658447265625
+            ]
+          ],
+          "scores": [
+            0.896251380443573
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1904292106628418,
+          "nonempty": true,
+          "seconds": 0.9632158279418945
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/monster_toy",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/monster_toy/04.jpg",
+      "reference_sha256": "0acdcfe19e422bac159b2b90eb8702f669175d22761ce6faf21b4b621911824b",
+      "original_query": "toy",
+      "selected_query": "toy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toy",
+          "boxes": [
+            [
+              183.17942810058594,
+              239.32650756835938,
+              1255.0751953125,
+              1225.66943359375
+            ]
+          ],
+          "scores": [
+            0.9532750844955444
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.21284336419753086,
+          "nonempty": true,
+          "seconds": 1.2170095443725586
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/pink_sunglasses",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/pink_sunglasses/04.jpg",
+      "reference_sha256": "0f4ca83b161dbdbcc642235dedfc3c95a3d78f9ad994e2a493b94f4339f6942d",
+      "original_query": "glasses",
+      "selected_query": "glasses",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "glasses",
+          "boxes": [
+            [
+              29.76078224182129,
+              519.867919921875,
+              1475.3719482421875,
+              1150.8302001953125
+            ]
+          ],
+          "scores": [
+            0.9381240010261536
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.14784386422429593,
+          "nonempty": true,
+          "seconds": 0.9516642093658447
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/poop_emoji",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/poop_emoji/00.jpg",
+      "reference_sha256": "4ad04ad35c2503b8a68265731e0172edba3f62dc7f43b424421349583684660d",
+      "original_query": "toy",
+      "selected_query": "toy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toy",
+          "boxes": [
+            [
+              593.9801025390625,
+              571.3349609375,
+              1320.3944091796875,
+              1331.666259765625
+            ]
+          ],
+          "scores": [
+            0.9407896995544434
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.08790874481201172,
+          "nonempty": true,
+          "seconds": 2.697561264038086
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/rc_car",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/rc_car/03.jpg",
+      "reference_sha256": "ed3f563a4ec793e34be5ce3810d8c8da3e42c5d4f2fa3e3f4159f6b05ab4307a",
+      "original_query": "toy",
+      "selected_query": "toy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toy",
+          "boxes": [
+            [
+              276.7682189941406,
+              126.15291595458984,
+              1074.5723876953125,
+              1346.910400390625
+            ]
+          ],
+          "scores": [
+            0.7866228222846985
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2300954861111111,
+          "nonempty": true,
+          "seconds": 1.593017339706421
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/red_cartoon",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/red_cartoon/00.jpg",
+      "reference_sha256": "509d4adff91c58058a3a92affffe4fb0d0b019c4ac5302064e3cfb8ddfc665eb",
+      "original_query": "cartoon",
+      "selected_query": "cartoon",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cartoon",
+          "boxes": [
+            [
+              565.878662109375,
+              539.4164428710938,
+              1475.8221435546875,
+              1916.03662109375
+            ]
+          ],
+          "scores": [
+            0.9481545686721802
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.21330642700195312,
+          "nonempty": true,
+          "seconds": 1.6896271705627441
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/robot_toy",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/robot_toy/00.jpg",
+      "reference_sha256": "c7b87b86a58fc702b1245498abbc02e5297bad03c657d089675ef6467f91f6cb",
+      "original_query": "toy",
+      "selected_query": "toy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toy",
+          "boxes": [
+            [
+              296.13519287109375,
+              140.5277557373047,
+              1141.0145263671875,
+              1342.2298583984375
+            ]
+          ],
+          "scores": [
+            0.894789457321167
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.30713155864197533,
+          "nonempty": true,
+          "seconds": 1.2775824069976807
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/shiny_sneaker",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/shiny_sneaker/01.jpg",
+      "reference_sha256": "5c1024358a1f840a40590f87ff14f530249c09d8bf1ef0379a8ef45fc1d36797",
+      "original_query": "sneaker",
+      "selected_query": "sneaker",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "sneaker",
+          "boxes": [
+            [
+              472.220703125,
+              524.6898193359375,
+              1570.0997314453125,
+              1495.609130859375
+            ]
+          ],
+          "scores": [
+            0.9362850189208984
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.14458346366882324,
+          "nonempty": true,
+          "seconds": 1.3949522972106934
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/teapot",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/teapot/04.jpg",
+      "reference_sha256": "db6ae25c7689495cb9650023ea7b2029da3abf8dbfff64ae7caadb4a602e1cff",
+      "original_query": "teapot",
+      "selected_query": "teapot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "teapot",
+          "boxes": [
+            [
+              219.09959411621094,
+              380.4109191894531,
+              644.3380126953125,
+              690.211669921875
+            ]
+          ],
+          "scores": [
+            0.9559813141822815
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.06186937009317059,
+          "nonempty": true,
+          "seconds": 1.4502935409545898
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/vase",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/vase/02.jpg",
+      "reference_sha256": "26048d2ea6da0328bb011527793cde0084f6efb029825ce0638554e6b3fcf21c",
+      "original_query": "vase",
+      "selected_query": "vase",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vase",
+          "boxes": [
+            [
+              393.63165283203125,
+              229.27188110351562,
+              602.8634033203125,
+              870.9578857421875
+            ]
+          ],
+          "scores": [
+            0.9504110217094421
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.08056528089722699,
+          "nonempty": true,
+          "seconds": 0.7042410373687744
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench/wolf_plushie",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/wolf_plushie/04.jpg",
+      "reference_sha256": "e88eb5df08f7dfe7c878c8836456cceb55816e93f04b60498a9a6159d6eb8946",
+      "original_query": "stuffed animal",
+      "selected_query": "stuffed animal",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "stuffed animal",
+          "boxes": [
+            [
+              142.29254150390625,
+              455.568603515625,
+              1818.7216796875,
+              1799.113525390625
+            ]
+          ],
+          "scores": [
+            0.8539127111434937
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.27992796897888184,
+          "nonempty": true,
+          "seconds": 1.7183465957641602
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/00/00.jpg",
+      "reference_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "original_query": "kitten",
+      "selected_query": "kitten",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "kitten",
+          "boxes": [
+            [
+              318.61871337890625,
+              195.87008666992188,
+              979.1699829101562,
+              843.912109375
+            ],
+            [
+              319.1585693359375,
+              195.93820190429688,
+              733.177734375,
+              843.0963134765625
+            ]
+          ],
+          "scores": [
+            0.403566837310791,
+            0.3647775650024414
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1782093048095703,
+          "nonempty": true,
+          "seconds": 1.2554876804351807
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/01/01.jpg",
+      "reference_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "original_query": "stork",
+      "selected_query": "stork",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "stork",
+          "boxes": [
+            [
+              239.09429931640625,
+              141.91070556640625,
+              772.119140625,
+              793.2496948242188
+            ]
+          ],
+          "scores": [
+            0.9407896995544434
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.11118221282958984,
+          "nonempty": true,
+          "seconds": 1.9341466426849365
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/02",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/02/02.jpg",
+      "reference_sha256": "89af56dec1afd2a0b2a71cc38ff730a9669d8e24aaf3fa10e9c77aaa187e18b5",
+      "original_query": "kitten",
+      "selected_query": "kitten",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "kitten",
+          "boxes": [
+            [
+              161.27352905273438,
+              99.16445922851562,
+              1021.617431640625,
+              917.5859375
+            ]
+          ],
+          "scores": [
+            0.672331690788269
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.34885597229003906,
+          "nonempty": true,
+          "seconds": 1.2356643676757812
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/03",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/03/03.jpg",
+      "reference_sha256": "4e48caaa82f5239626e09867987af12fa886104e71e8c7af4f542d03c03f7df1",
+      "original_query": "horse",
+      "selected_query": "horse",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "horse",
+          "boxes": [
+            [
+              0.73101806640625,
+              108.81793212890625,
+              946.34423828125,
+              1023.3446655273438
+            ]
+          ],
+          "scores": [
+            0.961533784866333
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.456085205078125,
+          "nonempty": true,
+          "seconds": 1.0816185474395752
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/04",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/04/04.jpg",
+      "reference_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+      "original_query": "crab",
+      "selected_query": "crab",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "crab",
+          "boxes": [
+            [
+              133.56063842773438,
+              24.84356689453125,
+              1007.02880859375,
+              1021.7319946289062
+            ]
+          ],
+          "scores": [
+            0.851952850818634
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3020639419555664,
+          "nonempty": true,
+          "seconds": 0.8489253520965576
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/05",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/05/05.jpg",
+      "reference_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+      "original_query": "penguin",
+      "selected_query": "penguin",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "penguin",
+          "boxes": [
+            [
+              180.85324096679688,
+              287.4374694824219,
+              721.6688232421875,
+              878.6763916015625
+            ]
+          ],
+          "scores": [
+            0.9241418242454529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.10980415344238281,
+          "nonempty": true,
+          "seconds": 1.1468231678009033
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/06",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/06/06.jpg",
+      "reference_sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+      "original_query": "shark",
+      "selected_query": "shark",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "shark",
+          "boxes": [
+            [
+              80.60498046875,
+              303.99224853515625,
+              894.1008911132812,
+              609.9005737304688
+            ]
+          ],
+          "scores": [
+            0.9196425676345825
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.11647319793701172,
+          "nonempty": true,
+          "seconds": 1.193070650100708
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/07",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/07/07.jpg",
+      "reference_sha256": "d57c788d07ad3b1f6d1a8962fd81da4412e8103e59d9e052769037b823a2042d",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              327.14886474609375,
+              263.9608459472656,
+              723.4215698242188,
+              990.0130615234375
+            ]
+          ],
+          "scores": [
+            0.9653811454772949
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.16976356506347656,
+          "nonempty": true,
+          "seconds": 2.0419304370880127
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/08",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/08/08.jpg",
+      "reference_sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+      "original_query": "raccoon",
+      "selected_query": "raccoon",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "raccoon",
+          "boxes": [
+            [
+              196.85113525390625,
+              120.04608154296875,
+              993.0634155273438,
+              913.6701049804688
+            ]
+          ],
+          "scores": [
+            0.7549149990081787
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3436746597290039,
+          "nonempty": true,
+          "seconds": 1.8350536823272705
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/09",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/09/09.jpg",
+      "reference_sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+      "original_query": "rooster",
+      "selected_query": "rooster",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "rooster",
+          "boxes": [
+            [
+              135.3294677734375,
+              100.91265869140625,
+              781.7523193359375,
+              876.3594360351562
+            ]
+          ],
+          "scores": [
+            0.9489172697067261
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.19295692443847656,
+          "nonempty": true,
+          "seconds": 1.1000690460205078
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/10",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/10/10.jpg",
+      "reference_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+      "original_query": "fox",
+      "selected_query": "fox",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "fox",
+          "boxes": [
+            [
+              43.679534912109375,
+              126.35916137695312,
+              1007.441162109375,
+              1023.6446533203125
+            ]
+          ],
+          "scores": [
+            0.9219217896461487
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4233407974243164,
+          "nonempty": true,
+          "seconds": 1.2654168605804443
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/11",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/11/11.jpg",
+      "reference_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+      "original_query": "heron",
+      "selected_query": "heron",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "heron",
+          "boxes": [
+            [
+              1.67840576171875,
+              175.40591430664062,
+              1009.0990600585938,
+              788.447509765625
+            ]
+          ],
+          "scores": [
+            0.9230391979217529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3042469024658203,
+          "nonempty": true,
+          "seconds": 1.1124451160430908
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/12",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/12/12.jpg",
+      "reference_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+      "original_query": "dog",
+      "selected_query": "dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dog",
+          "boxes": [
+            [
+              167.53604125976562,
+              79.72537231445312,
+              838.353759765625,
+              877.2880859375
+            ]
+          ],
+          "scores": [
+            0.9473810195922852
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.32121944427490234,
+          "nonempty": true,
+          "seconds": 1.8037972450256348
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/13",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/13/13.jpg",
+      "reference_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "original_query": "polar bear",
+      "selected_query": "polar bear",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "polar bear",
+          "boxes": [
+            [
+              235.82325744628906,
+              164.81192016601562,
+              702.731689453125,
+              947.0228271484375
+            ]
+          ],
+          "scores": [
+            0.9566342234611511
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.24411582946777344,
+          "nonempty": true,
+          "seconds": 1.4846956729888916
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/14",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/14/14.jpg",
+      "reference_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+      "original_query": "eagle",
+      "selected_query": "eagle",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "eagle",
+          "boxes": [
+            [
+              95.85394287109375,
+              52.39605712890625,
+              794.36572265625,
+              890.135498046875
+            ]
+          ],
+          "scores": [
+            0.9416541457176208
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.13357257843017578,
+          "nonempty": true,
+          "seconds": 1.0072741508483887
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/15",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/15/15.jpg",
+      "reference_sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+      "original_query": "butterfly",
+      "selected_query": "butterfly",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "butterfly",
+          "boxes": [
+            [
+              55.4962158203125,
+              232.299072265625,
+              975.9957275390625,
+              808.5635986328125
+            ]
+          ],
+          "scores": [
+            0.9591543078422546
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.30486011505126953,
+          "nonempty": true,
+          "seconds": 1.3224661350250244
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/16",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/16/16.jpg",
+      "reference_sha256": "b29daaca843a484ac2bd503f395f53587c0d372d40e3dd550db8e4af1452f844",
+      "original_query": "jellyfish",
+      "selected_query": "jellyfish",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "jellyfish",
+          "boxes": [
+            [
+              318.7125549316406,
+              85.41610717773438,
+              1021.5279541015625,
+              1023.2698974609375
+            ]
+          ],
+          "scores": [
+            0.6397360563278198
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.15212535858154297,
+          "nonempty": true,
+          "seconds": 1.836777687072754
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/17",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/17/17.jpg",
+      "reference_sha256": "76d9d226a527f86df01c738b07319e59992732fb1eeb28b5c9981f5381d509b8",
+      "original_query": "frog",
+      "selected_query": "frog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "frog",
+          "boxes": [
+            [
+              193.52920532226562,
+              292.42303466796875,
+              856.083251953125,
+              783.4428100585938
+            ]
+          ],
+          "scores": [
+            0.9196425676345825
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1490945816040039,
+          "nonempty": true,
+          "seconds": 0.6767644882202148
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/18",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/18/18.jpg",
+      "reference_sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+      "original_query": "sea turtle",
+      "selected_query": "sea turtle",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "sea turtle",
+          "boxes": [
+            [
+              1.12548828125,
+              222.38031005859375,
+              1000.4518432617188,
+              936.8954467773438
+            ]
+          ],
+          "scores": [
+            0.929440438747406
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3865175247192383,
+          "nonempty": true,
+          "seconds": 0.6633331775665283
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/19",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/19/19.jpg",
+      "reference_sha256": "e07efd14f998946efb538df93b92b649f5b0c50fadd876aba107cb594356db63",
+      "original_query": "robin",
+      "selected_query": "robin",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "robin",
+          "boxes": [
+            [
+              171.93392944335938,
+              241.51705932617188,
+              993.57275390625,
+              836.12060546875
+            ]
+          ],
+          "scores": [
+            0.9334307909011841
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.17293167114257812,
+          "nonempty": true,
+          "seconds": 0.971928596496582
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/20",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/20/20.jpg",
+      "reference_sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+      "original_query": "hamster",
+      "selected_query": "hamster",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "hamster",
+          "boxes": [
+            [
+              216.25198364257812,
+              163.96136474609375,
+              767.0321044921875,
+              876.7068481445312
+            ]
+          ],
+          "scores": [
+            0.9099069833755493
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2767620086669922,
+          "nonempty": true,
+          "seconds": 2.14107346534729
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/21",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/21/21.jpg",
+      "reference_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4",
+      "original_query": "Siamese cat",
+      "selected_query": "Siamese cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Siamese cat",
+          "boxes": [
+            [
+              179.30535888671875,
+              77.8929443359375,
+              878.1112670898438,
+              974.9979248046875
+            ]
+          ],
+          "scores": [
+            0.9489172697067261
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.34230613708496094,
+          "nonempty": true,
+          "seconds": 1.1641435623168945
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/22",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/22/22.jpg",
+      "reference_sha256": "015c9d3fa79095a1c8d13b102cba5fd1079f26ce71827369c12c9e60bfdaab1c",
+      "original_query": "corgi",
+      "selected_query": "corgi",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "corgi",
+          "boxes": [
+            [
+              151.729248046875,
+              116.2647705078125,
+              900.7176513671875,
+              1022.7493896484375
+            ]
+          ],
+          "scores": [
+            0.8887587189674377
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.38692378997802734,
+          "nonempty": true,
+          "seconds": 1.1575849056243896
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/23",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/23/23.jpg",
+      "reference_sha256": "f78ade71d3154c46dcbeb1329cfa0dbe7a1f566c369cd5f6f1193c5cad4cd166",
+      "original_query": "lion",
+      "selected_query": "lion",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "lion",
+          "boxes": [
+            [
+              28.173828125,
+              47.6441650390625,
+              1022.6968994140625,
+              822.7935180664062
+            ]
+          ],
+          "scores": [
+            0.8918110132217407
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.40668678283691406,
+          "nonempty": true,
+          "seconds": 1.1813750267028809
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/24",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/24/24.jpg",
+      "reference_sha256": "5c0545a1241324847555920b51d0c5c5334a13c2831b03f4766562ff278a6ae6",
+      "original_query": "llama",
+      "selected_query": "llama",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "llama",
+          "boxes": [
+            [
+              281.808349609375,
+              134.90011596679688,
+              734.6973266601562,
+              923.8138427734375
+            ],
+            [
+              915.0126953125,
+              487.069580078125,
+              1013.76171875,
+              571.0631103515625
+            ]
+          ],
+          "scores": [
+            0.8933094143867493,
+            0.40827676653862
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.16686153411865234,
+          "nonempty": true,
+          "seconds": 1.4567813873291016
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/25",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/25/25.jpg",
+      "reference_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+      "original_query": "Sphynx cat",
+      "selected_query": "Sphynx cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Sphynx cat",
+          "boxes": [
+            [
+              150.63626098632812,
+              26.36090087890625,
+              1020.36376953125,
+              1021.2481079101562
+            ]
+          ],
+          "scores": [
+            0.8386797308921814
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4223899841308594,
+          "nonempty": true,
+          "seconds": 2.2652835845947266
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/26",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/26/26.jpg",
+      "reference_sha256": "a15947217a9064cae231f93d3bbc6db0e5cc594e4345309504d012cf65467370",
+      "original_query": "cotton-top tamarin",
+      "selected_query": "cotton-top tamarin",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cotton-top tamarin",
+          "boxes": [
+            [
+              84.98492431640625,
+              100.65090942382812,
+              876.0219116210938,
+              1021.7451171875
+            ]
+          ],
+          "scores": [
+            0.7905303239822388
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.41893577575683594,
+          "nonempty": true,
+          "seconds": 1.1673264503479004
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/27",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/27/27.jpg",
+      "reference_sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+      "original_query": "wolf",
+      "selected_query": "wolf",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "wolf",
+          "boxes": [
+            [
+              76.34207153320312,
+              6.604705810546875,
+              881.49755859375,
+              1022.600830078125
+            ]
+          ],
+          "scores": [
+            0.9511421918869019
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4470491409301758,
+          "nonempty": true,
+          "seconds": 1.6186363697052002
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/28",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/28/28.jpg",
+      "reference_sha256": "209d6a67939a4c8817e4cc9f78d785d785259be7dbf0deca79b1e6d83a8d6f83",
+      "original_query": "flamingo",
+      "selected_query": "flamingo",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "flamingo",
+          "boxes": [
+            [
+              252.9991455078125,
+              151.85171508789062,
+              709.2432250976562,
+              885.67919921875
+            ]
+          ],
+          "scores": [
+            0.9504110217094421
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.06909561157226562,
+          "nonempty": true,
+          "seconds": 0.8779749870300293
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/29",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/29/29.jpg",
+      "reference_sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+      "original_query": "grasshopper",
+      "selected_query": "grasshopper",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "grasshopper",
+          "boxes": [
+            [
+              1.35430908203125,
+              131.18942260742188,
+              1021.5472412109375,
+              847.589599609375
+            ]
+          ],
+          "scores": [
+            0.929440438747406
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.15759944915771484,
+          "nonempty": true,
+          "seconds": 0.8447780609130859
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/30",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/30/30.jpg",
+      "reference_sha256": "fcf95e7b1c93c5351283115169f5c6a1ddeb46265d8cab740b7df14097aeb50c",
+      "original_query": "lion",
+      "selected_query": "lion",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "lion",
+          "boxes": [
+            [
+              280.7322998046875,
+              168.90087890625,
+              758.011962890625,
+              867.716552734375
+            ],
+            [
+              70.01583862304688,
+              168.82852172851562,
+              758.3277587890625,
+              873.9342041015625
+            ]
+          ],
+          "scores": [
+            0.47779780626296997,
+            0.3812195360660553
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1829853057861328,
+          "nonempty": true,
+          "seconds": 1.4762625694274902
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/31",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/31/31.jpg",
+      "reference_sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+      "original_query": "deer",
+      "selected_query": "deer",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "deer",
+          "boxes": [
+            [
+              106.1839599609375,
+              2.251007080078125,
+              823.5183715820312,
+              1023.06591796875
+            ],
+            [
+              719.9835205078125,
+              578.14501953125,
+              963.357177734375,
+              769.9844970703125
+            ]
+          ],
+          "scores": [
+            0.8840392827987671,
+            0.6306849718093872
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.23787403106689453,
+          "nonempty": true,
+          "seconds": 0.6330854892730713
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/32",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/32/32.jpg",
+      "reference_sha256": "40f90c57c399065a8ae8bc1cd980a5d2e2a6f9b250287f34ea7c4e567f24e8b1",
+      "original_query": "Corgi dog",
+      "selected_query": "Corgi dog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Corgi dog",
+          "boxes": [
+            [
+              214.3756103515625,
+              120.2039794921875,
+              882.4151611328125,
+              1020.3790283203125
+            ]
+          ],
+          "scores": [
+            0.9511421918869019
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4223604202270508,
+          "nonempty": true,
+          "seconds": 1.2546892166137695
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/33",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/33/33.jpg",
+      "reference_sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+      "original_query": "panda",
+      "selected_query": "panda",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "panda",
+          "boxes": [
+            [
+              125.76290893554688,
+              308.4307556152344,
+              874.343994140625,
+              885.47314453125
+            ]
+          ],
+          "scores": [
+            0.9304582476615906
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2933521270751953,
+          "nonempty": true,
+          "seconds": 1.5357234477996826
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/34",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/34/34.jpg",
+      "reference_sha256": "a35223420e4568c5773b3f2c50fb435b2f2d9b1cfc74c02220010c16d6076e49",
+      "original_query": "cat",
+      "selected_query": "cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cat",
+          "boxes": [
+            [
+              1.93731689453125,
+              73.73480224609375,
+              1021.771240234375,
+              1023.2465209960938
+            ]
+          ],
+          "scores": [
+            0.9433475732803345
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.6367425918579102,
+          "nonempty": true,
+          "seconds": 1.1168835163116455
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/35",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/35/35.jpg",
+      "reference_sha256": "ebe9e985a0ac51823bd2e83b189e315ed288737e883fc9f73a109200be8a4b5b",
+      "original_query": "tiger",
+      "selected_query": "tiger",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "tiger",
+          "boxes": [
+            [
+              113.8663330078125,
+              456.62347412109375,
+              813.3404541015625,
+              1003.9802856445312
+            ]
+          ],
+          "scores": [
+            0.929440438747406
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.18854713439941406,
+          "nonempty": true,
+          "seconds": 1.1487607955932617
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/36",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/36/36.jpg",
+      "reference_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+      "original_query": "lizard",
+      "selected_query": "lizard",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "lizard",
+          "boxes": [
+            [
+              1.15887451171875,
+              272.75531005859375,
+              1020.8907470703125,
+              830.2330932617188
+            ]
+          ],
+          "scores": [
+            0.8856314420700073
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2071390151977539,
+          "nonempty": true,
+          "seconds": 1.2932569980621338
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/37",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/37/37.jpg",
+      "reference_sha256": "7c63760cecbd1aa432a67dd7bce5633e5a0db482cfe4b1cec3f4c8be3c8421fd",
+      "original_query": "toucan",
+      "selected_query": "toucan",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "toucan",
+          "boxes": [
+            [
+              350.1663513183594,
+              185.76947021484375,
+              873.428466796875,
+              1014.0827026367188
+            ]
+          ],
+          "scores": [
+            0.5717666149139404
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.16048145294189453,
+          "nonempty": true,
+          "seconds": 0.9439120292663574
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/38",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/38/38.jpg",
+      "reference_sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+      "original_query": "elephant",
+      "selected_query": "elephant",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "elephant",
+          "boxes": [
+            [
+              114.5552978515625,
+              44.139312744140625,
+              882.3285522460938,
+              1013.765625
+            ]
+          ],
+          "scores": [
+            0.9343951344490051
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.44809627532958984,
+          "nonempty": true,
+          "seconds": 1.0452916622161865
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/39",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/39/39.jpg",
+      "reference_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+      "original_query": "dolphin",
+      "selected_query": "dolphin",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "dolphin",
+          "boxes": [
+            [
+              255.46762084960938,
+              300.3018493652344,
+              713.02978515625,
+              857.4586181640625
+            ]
+          ],
+          "scores": [
+            0.9489172697067261
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.07508182525634766,
+          "nonempty": true,
+          "seconds": 1.3797199726104736
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/40",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/40/40.jpg",
+      "reference_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+      "original_query": "white tiger",
+      "selected_query": "white tiger",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "white tiger",
+          "boxes": [
+            [
+              1.34271240234375,
+              30.598907470703125,
+              1022.0507202148438,
+              1021.8077392578125
+            ]
+          ],
+          "scores": [
+            0.9532750844955444
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.768651008605957,
+          "nonempty": true,
+          "seconds": 1.2482519149780273
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/41",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/41/41.jpg",
+      "reference_sha256": "7f6428464a00770435313692554c95b2b923577017096e4c6574ce72f44ca3ee",
+      "original_query": "parrot",
+      "selected_query": "parrot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "parrot",
+          "boxes": [
+            [
+              370.5416259765625,
+              27.979949951171875,
+              667.6561279296875,
+              1009.5369873046875
+            ]
+          ],
+          "scores": [
+            0.9511421918869019
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.13620948791503906,
+          "nonempty": true,
+          "seconds": 0.9947240352630615
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/42",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/42/42.jpg",
+      "reference_sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+      "original_query": "puppy",
+      "selected_query": "puppy",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "puppy",
+          "boxes": [
+            [
+              234.51239013671875,
+              284.590576171875,
+              874.0009155273438,
+              1022.3485107421875
+            ]
+          ],
+          "scores": [
+            0.4007493853569031
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.251983642578125,
+          "nonempty": true,
+          "seconds": 2.0047974586486816
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/43",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/43/43.jpg",
+      "reference_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+      "original_query": "French bulldog",
+      "selected_query": "French bulldog",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "French bulldog",
+          "boxes": [
+            [
+              161.31137084960938,
+              122.64697265625,
+              765.6146240234375,
+              933.73974609375
+            ]
+          ],
+          "scores": [
+            0.9416541457176208
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2687711715698242,
+          "nonempty": true,
+          "seconds": 0.7134232521057129
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/animal/44",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/44/44.jpg",
+      "reference_sha256": "205f0f17eb0b06242ccc7bf48bfeae63978d721c2617334989a4f49b3cbce938",
+      "original_query": "cat",
+      "selected_query": "cat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cat",
+          "boxes": [
+            [
+              216.24319458007812,
+              42.23980712890625,
+              806.81982421875,
+              979.57080078125
+            ]
+          ],
+          "scores": [
+            0.8856314420700073
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.32954883575439453,
+          "nonempty": true,
+          "seconds": 1.2267529964447021
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/00/00.jpg",
+      "reference_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9",
+      "original_query": "space ranger",
+      "selected_query": "space ranger",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "space ranger",
+          "boxes": [
+            [
+              313.89312744140625,
+              301.6060485839844,
+              683.6867065429688,
+              1001.161865234375
+            ]
+          ],
+          "scores": [
+            0.9241418242454529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12688636779785156,
+          "nonempty": true,
+          "seconds": 1.0549659729003906
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/01/01.jpg",
+      "reference_sha256": "5c316b87bab11b7b3bf8b60da5c06812c3b13406ca292d1c359df626dc990b99",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              1.58929443359375,
+              21.170074462890625,
+              1021.6882934570312,
+              1022.9605712890625
+            ]
+          ],
+          "scores": [
+            0.9449946880340576
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.6397829055786133,
+          "nonempty": true,
+          "seconds": 1.3817334175109863
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/02",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/02/02.jpg",
+      "reference_sha256": "57222fa3132f6a6275a0b611711ea8b704a100064619e9a00a3ef00fbf2ba24d",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              2.116668701171875,
+              48.856781005859375,
+              924.818359375,
+              1022.82666015625
+            ]
+          ],
+          "scores": [
+            0.9449946880340576
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5622005462646484,
+          "nonempty": true,
+          "seconds": 0.9767694473266602
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/03",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/03/03.jpg",
+      "reference_sha256": "da781bf6d35107afde9bab3410c62a0a8f235fecd95a16a6dc45d6ea2cf881a8",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              221.33004760742188,
+              91.08877563476562,
+              933.4912109375,
+              1021.9080810546875
+            ]
+          ],
+          "scores": [
+            0.5467381477355957
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.16403865814208984,
+          "nonempty": true,
+          "seconds": 1.0984854698181152
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/04",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/04/04.jpg",
+      "reference_sha256": "9f0befb26354d910e2fc281c0670d9969b26ce9664a9fbdac1fc8acdd63e9fd3",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              38.393951416015625,
+              136.54550170898438,
+              659.7833251953125,
+              1022.762451171875
+            ]
+          ],
+          "scores": [
+            0.9314625263214111
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.33635520935058594,
+          "nonempty": true,
+          "seconds": 1.340855598449707
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/05",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/05/05.jpg",
+      "reference_sha256": "85aec5b5fffd6d2b0fcef16cc4f91cd9bc10afd3b605fb0d5dc19f56b5aa356e",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              3.027191162109375,
+              1.44183349609375,
+              909.197265625,
+              1022.3519287109375
+            ]
+          ],
+          "scores": [
+            0.939024806022644
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5571489334106445,
+          "nonempty": true,
+          "seconds": 1.8778209686279297
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/06",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/06/06.jpg",
+      "reference_sha256": "2acbd6037b057bec75446b19ad012086ff33a909fc04ae0219d431ca2ab04b79",
+      "original_query": "pixelated warrior",
+      "selected_query": "pixelated warrior",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "pixelated warrior",
+          "boxes": [
+            [
+              210.35797119140625,
+              97.9295654296875,
+              939.3884887695312,
+              952.0650634765625
+            ]
+          ],
+          "scores": [
+            0.6433292627334595
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.26467132568359375,
+          "nonempty": true,
+          "seconds": 0.9910035133361816
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/07",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/07/07.jpg",
+      "reference_sha256": "041002bb03f887a1ad87990cedb41a226fab9187db3da60c655bc1e352c969b4",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              1.86334228515625,
+              24.197723388671875,
+              1020.5130004882812,
+              1022.73388671875
+            ]
+          ],
+          "scores": [
+            0.939024806022644
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.7343587875366211,
+          "nonempty": true,
+          "seconds": 1.1627156734466553
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/08",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/08/08.jpg",
+      "reference_sha256": "f2fb011113530393a1924702bd30395d18c8a9498327e964277816720fb8cca8",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              1.7415771484375,
+              38.0130615234375,
+              1002.7310791015625,
+              1022.548828125
+            ]
+          ],
+          "scores": [
+            0.9196425676345825
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4673776626586914,
+          "nonempty": true,
+          "seconds": 1.193664789199829
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/09",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/09/09.jpg",
+      "reference_sha256": "054e2dfaedc4acc6b40b6e67e53108b229299c94388af57744e054fad4274e21",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              2.812042236328125,
+              1.25152587890625,
+              1020.826171875,
+              1022.5802612304688
+            ]
+          ],
+          "scores": [
+            0.9343951344490051
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.8904342651367188,
+          "nonempty": true,
+          "seconds": 0.7882323265075684
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/10",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/10/10.jpg",
+      "reference_sha256": "78c8991b224c8d54dd6043a8cf9a09d5d338048280360fd134c9a764d17f4a08",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              67.53988647460938,
+              65.47384643554688,
+              986.2205810546875,
+              1022.4136962890625
+            ]
+          ],
+          "scores": [
+            0.929440438747406
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4577169418334961,
+          "nonempty": true,
+          "seconds": 0.9474449157714844
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/11",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/11/11.jpg",
+      "reference_sha256": "438e8569d63cea47e5ec2f821022c20cf2ce6dab6775b3e3d0d9af140d27cb91",
+      "original_query": "basketball player",
+      "selected_query": "basketball player",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "basketball player",
+          "boxes": [
+            [
+              254.99252319335938,
+              140.76974487304688,
+              763.7095947265625,
+              983.62255859375
+            ],
+            [
+              584.1278076171875,
+              329.1712646484375,
+              754.1123046875,
+              483.73651123046875
+            ]
+          ],
+          "scores": [
+            0.8068526387214661,
+            0.3711366057395935
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.17056560516357422,
+          "nonempty": true,
+          "seconds": 1.4201710224151611
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/12",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/12/12.jpg",
+      "reference_sha256": "74f755e96ea9543b0212fb03dc6f5c98021898f56753d2efbaba200bc50a6bce",
+      "original_query": "samurai",
+      "selected_query": "samurai",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "samurai",
+          "boxes": [
+            [
+              163.95379638671875,
+              8.6138916015625,
+              860.3043823242188,
+              1022.1510009765625
+            ]
+          ],
+          "scores": [
+            0.837619960308075
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.40312671661376953,
+          "nonempty": true,
+          "seconds": 1.7210376262664795
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/13",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/13/13.jpg",
+      "reference_sha256": "72baa304e257a83c802038c4f552a9f70efc07bd7b4ea0d67d3acb5bb13b44a4",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              237.75604248046875,
+              86.7581787109375,
+              750.0453491210938,
+              957.2113037109375
+            ]
+          ],
+          "scores": [
+            0.9381240010261536
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.21045684814453125,
+          "nonempty": true,
+          "seconds": 1.3408966064453125
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/14",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/14/14.jpg",
+      "reference_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859",
+      "original_query": "Spider-Man",
+      "selected_query": "Spider-Man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Spider-Man",
+          "boxes": [
+            [
+              271.0677795410156,
+              96.03131103515625,
+              892.455322265625,
+              688.2454223632812
+            ]
+          ],
+          "scores": [
+            0.7185943722724915
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1298828125,
+          "nonempty": true,
+          "seconds": 1.030602216720581
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/15",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/15/15.jpg",
+      "reference_sha256": "29870e8a31271ce975170d9044d16c865e29ffda6e2160e496d7eb145b8acd24",
+      "original_query": "woman",
+      "selected_query": "woman",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "woman",
+          "boxes": [
+            [
+              117.26358032226562,
+              292.5289001464844,
+              973.919921875,
+              1022.8292236328125
+            ]
+          ],
+          "scores": [
+            0.9416541457176208
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.33387279510498047,
+          "nonempty": true,
+          "seconds": 1.1302261352539062
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/16",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/16/16.jpg",
+      "reference_sha256": "fe57c734ec38d08af9200865e88d6c8073b69368e572e413301ce429c65b976c",
+      "original_query": "woman",
+      "selected_query": "woman",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "woman",
+          "boxes": [
+            [
+              1.17138671875,
+              2.7130126953125,
+              1020.7877807617188,
+              1023.4356689453125
+            ]
+          ],
+          "scores": [
+            0.9230391979217529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.7934541702270508,
+          "nonempty": true,
+          "seconds": 0.7731773853302002
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/17",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/17/17.jpg",
+      "reference_sha256": "169fd2f8245fc49996cc45a72de2a760b5a6d7e81933832557535795196e3359",
+      "original_query": "man",
+      "selected_query": "man",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "man",
+          "boxes": [
+            [
+              2.097747802734375,
+              3.977203369140625,
+              865.541748046875,
+              1023.0345458984375
+            ]
+          ],
+          "scores": [
+            0.9252299070358276
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.20481586456298828,
+          "nonempty": true,
+          "seconds": 1.0266563892364502
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/18",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/18/18.jpg",
+      "reference_sha256": "a20bdcdbadcd6ddf84e0603fc3197fe07b204399f7c22265844df01a2ad6cb4e",
+      "original_query": "basketball player",
+      "selected_query": "basketball player",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "basketball player",
+          "boxes": [
+            [
+              53.552581787109375,
+              111.5859375,
+              789.9400634765625,
+              1022.74169921875
+            ]
+          ],
+          "scores": [
+            0.9005298018455505
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.38892650604248047,
+          "nonempty": true,
+          "seconds": 0.916069507598877
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/live_subject/human/19",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/19/19.jpg",
+      "reference_sha256": "e9f9d74fb8c46a6f73cf29709399846235165edaf797663ebb664b5deef903df",
+      "original_query": "girl",
+      "selected_query": "girl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "girl",
+          "boxes": [
+            [
+              1.999603271484375,
+              61.3038330078125,
+              1020.4627685546875,
+              1022.693359375
+            ]
+          ],
+          "scores": [
+            0.949669361114502
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5380401611328125,
+          "nonempty": true,
+          "seconds": 1.0907957553863525
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/00/00.jpg",
+      "reference_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30",
+      "original_query": "motorcycle",
+      "selected_query": "motorcycle",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "motorcycle",
+          "boxes": [
+            [
+              61.400054931640625,
+              322.3564453125,
+              952.516845703125,
+              737.0528564453125
+            ]
+          ],
+          "scores": [
+            0.9702399373054504
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.20286846160888672,
+          "nonempty": true,
+          "seconds": 1.0349047183990479
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/01/01.jpg",
+      "reference_sha256": "947f961adf0b6715aeb3bebf2067b0ae729b41c26722d81779e7f54ea585b202",
+      "original_query": "hat",
+      "selected_query": "hat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "hat",
+          "boxes": [
+            [
+              298.13916015625,
+              356.4913330078125,
+              817.5478515625,
+              736.2645263671875
+            ]
+          ],
+          "scores": [
+            0.937210738658905
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1316823959350586,
+          "nonempty": true,
+          "seconds": 1.0805377960205078
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/02",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/02/02.jpg",
+      "reference_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+      "original_query": "vintage television",
+      "selected_query": "vintage television",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage television",
+          "boxes": [
+            [
+              97.20498657226562,
+              154.05517578125,
+              614.085693359375,
+              751.2840576171875
+            ]
+          ],
+          "scores": [
+            0.8529354333877563
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2850179672241211,
+          "nonempty": true,
+          "seconds": 0.9080395698547363
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/03",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/03/03.jpg",
+      "reference_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18",
+      "original_query": "cherry blossoms",
+      "selected_query": "cherry blossoms",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cherry blossoms",
+          "boxes": [
+            [
+              278.9352111816406,
+              196.076416015625,
+              855.7899169921875,
+              962.6507568359375
+            ],
+            [
+              279.833251953125,
+              198.3921356201172,
+              721.3603515625,
+              541.4921875
+            ],
+            [
+              540.69189453125,
+              429.7829284667969,
+              839.558837890625,
+              641.28125
+            ]
+          ],
+          "scores": [
+            0.6011253595352173,
+            0.44890937209129333,
+            0.4144248068332672
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.22774887084960938,
+          "nonempty": true,
+          "seconds": 1.2292304039001465
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/04",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/04/04.jpg",
+      "reference_sha256": "be4cd162f6db231c1c78cc58cabec3126d57f5732604f0fe87c7f5e9665f348b",
+      "original_query": "beer can",
+      "selected_query": "beer can",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "beer can",
+          "boxes": [
+            [
+              281.1747741699219,
+              84.76547241210938,
+              739.827392578125,
+              968.7008056640625
+            ]
+          ],
+          "scores": [
+            0.9489172697067261
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.35088443756103516,
+          "nonempty": true,
+          "seconds": 1.081026554107666
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/05",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/05/05.jpg",
+      "reference_sha256": "0269cded348e8d7119b4047cd49d8ce2f5b3978c2c0ce8f7849c438e4a573a7b",
+      "original_query": "minion",
+      "selected_query": "minion",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "minion",
+          "boxes": [
+            [
+              292.8609619140625,
+              185.87725830078125,
+              766.761474609375,
+              739.8787841796875
+            ]
+          ],
+          "scores": [
+            0.724090576171875
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.15394210815429688,
+          "nonempty": true,
+          "seconds": 1.213205099105835
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/06",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/06/06.jpg",
+      "reference_sha256": "fba2aebb6714c8e36df24d697a3604b552cf108c3f7dbda2ba703f4a19c99b75",
+      "original_query": "avocado",
+      "selected_query": "avocado",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "avocado",
+          "boxes": [
+            [
+              307.7799987792969,
+              266.10430908203125,
+              710.82470703125,
+              752.5267944335938
+            ]
+          ],
+          "scores": [
+            0.917302668094635
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1398773193359375,
+          "nonempty": true,
+          "seconds": 1.4912033081054688
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/07",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/07/07.jpg",
+      "reference_sha256": "455653b9dd0d46dffb4cdd5da0a038af26132ce1c6eaa309b661c3e7b530abd3",
+      "original_query": "basketball shoe",
+      "selected_query": "basketball shoe",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "basketball shoe",
+          "boxes": [
+            [
+              160.941162109375,
+              171.34423828125,
+              757.6124267578125,
+              843.4962158203125
+            ]
+          ],
+          "scores": [
+            0.9046505093574524
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.21836185455322266,
+          "nonempty": true,
+          "seconds": 1.6174323558807373
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/08",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/08/08.jpg",
+      "reference_sha256": "7e1ff0b4902008e9a1e70a8354fcae73cd2ca63bb4268307448d706ce0b325ca",
+      "original_query": "tree",
+      "selected_query": "tree",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "tree",
+          "boxes": [
+            [
+              41.2054443359375,
+              99.66876220703125,
+              991.41064453125,
+              954.2345581054688
+            ]
+          ],
+          "scores": [
+            0.8633915781974792
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3770732879638672,
+          "nonempty": true,
+          "seconds": 0.913468599319458
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/09",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/09/09.jpg",
+      "reference_sha256": "371351b9c6ec8a072a16bc49932dc3ae896ea3b836dc9d7915be480582ffbb69",
+      "original_query": "hot air balloon",
+      "selected_query": "hot air balloon",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "hot air balloon",
+          "boxes": [
+            [
+              29.88958740234375,
+              0.70458984375,
+              993.1699829101562,
+              1021.430908203125
+            ]
+          ],
+          "scores": [
+            0.9399133324623108
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.6346120834350586,
+          "nonempty": true,
+          "seconds": 0.972693920135498
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/10",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/10/10.jpg",
+      "reference_sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a",
+      "original_query": "flamingo float",
+      "selected_query": "flamingo float",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "flamingo float",
+          "boxes": [
+            [
+              236.92575073242188,
+              259.66937255859375,
+              691.158203125,
+              689.3063354492188
+            ]
+          ],
+          "scores": [
+            0.9252299070358276
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.07785224914550781,
+          "nonempty": true,
+          "seconds": 0.9738786220550537
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/11",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/11/11.jpg",
+      "reference_sha256": "d628cc78b91b97aeccbdab8f4f162bf474bce1f7d9eb84973b96684c9418d8c7",
+      "original_query": "armchair",
+      "selected_query": "armchair",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "armchair",
+          "boxes": [
+            [
+              239.12484741210938,
+              224.31121826171875,
+              765.40283203125,
+              834.1419067382812
+            ]
+          ],
+          "scores": [
+            0.9304582476615906
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.17706871032714844,
+          "nonempty": true,
+          "seconds": 0.9479632377624512
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/12",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/12/12.jpg",
+      "reference_sha256": "9b96f4c826927fa2efa4e153872449b4e7b75cbb52cd01536b01e032cb9e3315",
+      "original_query": "watch",
+      "selected_query": "watch",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "watch",
+          "boxes": [
+            [
+              163.54656982421875,
+              297.248046875,
+              835.6895751953125,
+              752.974365234375
+            ]
+          ],
+          "scores": [
+            0.9511421918869019
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.18134117126464844,
+          "nonempty": true,
+          "seconds": 1.346665382385254
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/13",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/13/13.jpg",
+      "reference_sha256": "094de0502d52ec423daa32895f65d1c9d092133b0ca32737ee4e4fa1be916fd4",
+      "original_query": "teddy bear",
+      "selected_query": "teddy bear",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "teddy bear",
+          "boxes": [
+            [
+              280.2486267089844,
+              251.24493408203125,
+              749.2113037109375,
+              766.48486328125
+            ]
+          ],
+          "scores": [
+            0.9416541457176208
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12684345245361328,
+          "nonempty": true,
+          "seconds": 1.1688261032104492
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/14",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/14/14.jpg",
+      "reference_sha256": "01b89feacd0d949b3ba4c96328a604a80a388085ec736fc08e657d9704ad8390",
+      "original_query": "house",
+      "selected_query": "house",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "house",
+          "boxes": [
+            [
+              1.217071533203125,
+              1.148162841796875,
+              1022.086181640625,
+              1013.47998046875
+            ]
+          ],
+          "scores": [
+            0.9314625263214111
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.10787200927734375,
+          "nonempty": true,
+          "seconds": 1.1530003547668457
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/15",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/15/15.jpg",
+      "reference_sha256": "bb807665e6075d3a1593607544383be5e6f85881be6a6668f3658dde8e83e0c4",
+      "original_query": "street lamp",
+      "selected_query": "street lamp",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "street lamp",
+          "boxes": [
+            [
+              223.83641052246094,
+              113.27581787109375,
+              733.41357421875,
+              1022.3806762695312
+            ]
+          ],
+          "scores": [
+            0.9099069833755493
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12603378295898438,
+          "nonempty": true,
+          "seconds": 1.1581523418426514
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/16",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/16/16.jpg",
+      "reference_sha256": "ee6dd3f1dbf8805e21521c83229c0c6831dbe8149603b62db9b2765dbfbb5a75",
+      "original_query": "ring",
+      "selected_query": "ring",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "ring",
+          "boxes": [
+            [
+              298.91082763671875,
+              189.14852905273438,
+              745.7233276367188,
+              763.2705078125
+            ]
+          ],
+          "scores": [
+            0.7786493301391602
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.086334228515625,
+          "nonempty": true,
+          "seconds": 1.1280677318572998
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/17",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/17/17.jpg",
+      "reference_sha256": "753f4311cb0eec391d566a403d20cd90d694a75ffa07e3438e193099a5f0f5c1",
+      "original_query": "bicycle",
+      "selected_query": "bicycle",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "bicycle",
+          "boxes": [
+            [
+              193.41305541992188,
+              582.3150024414062,
+              844.5208740234375,
+              963.5126342773438
+            ]
+          ],
+          "scores": [
+            0.9626730680465698
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12130165100097656,
+          "nonempty": true,
+          "seconds": 1.2309355735778809
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/18",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/18/18.jpg",
+      "reference_sha256": "7f08d2598ace2dbc11a28b6cd2e4f41f8ca863ac438770e6d25d5684ae2f22e5",
+      "original_query": "robot",
+      "selected_query": "robot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "robot",
+          "boxes": [
+            [
+              200.81015014648438,
+              242.67880249023438,
+              800.171142578125,
+              844.124267578125
+            ]
+          ],
+          "scores": [
+            0.9473810195922852
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.19371604919433594,
+          "nonempty": true,
+          "seconds": 1.1838843822479248
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/19",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/19/19.jpg",
+      "reference_sha256": "e8357b9a62508824631e2e315974c43c0d7a26b03c28b1fbc6b3e17636367627",
+      "original_query": "steam locomotive",
+      "selected_query": "steam locomotive",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "steam locomotive",
+          "boxes": [
+            [
+              5.043060302734375,
+              284.76519775390625,
+              909.9271240234375,
+              937.9502563476562
+            ]
+          ],
+          "scores": [
+            0.9252299070358276
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.32364749908447266,
+          "nonempty": true,
+          "seconds": 0.9317622184753418
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/20",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/20/20.jpg",
+      "reference_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea",
+      "original_query": "Magic Cube",
+      "selected_query": "Magic Cube",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Magic Cube",
+          "boxes": [
+            [
+              296.5601806640625,
+              264.97369384765625,
+              728.6353759765625,
+              760.4616088867188
+            ]
+          ],
+          "scores": [
+            0.8856314420700073
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.14427661895751953,
+          "nonempty": true,
+          "seconds": 1.0759789943695068
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/21",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/21/21.jpg",
+      "reference_sha256": "d1a2f8566b08b810dcc630396e0c57e47155f7f797d7b6625074e6d6dcb3d086",
+      "original_query": "vintage van",
+      "selected_query": "vintage van",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage van",
+          "boxes": [
+            [
+              168.74371337890625,
+              246.92831420898438,
+              919.2250366210938,
+              904.9720458984375
+            ]
+          ],
+          "scores": [
+            0.9518632292747498
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.36838722229003906,
+          "nonempty": true,
+          "seconds": 0.9519922733306885
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/22",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/22/22.jpg",
+      "reference_sha256": "38935584952815df8ee07777880f9b9fe8eb8ab1613b95a152980955f4377db0",
+      "original_query": "sneaker",
+      "selected_query": "sneaker",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "sneaker",
+          "boxes": [
+            [
+              186.96279907226562,
+              339.28033447265625,
+              925.097900390625,
+              855.9838256835938
+            ]
+          ],
+          "scores": [
+            0.9314625263214111
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.19819164276123047,
+          "nonempty": true,
+          "seconds": 1.0831615924835205
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/23",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/23/23.jpg",
+      "reference_sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29",
+      "original_query": "vintage camera",
+      "selected_query": "vintage camera",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage camera",
+          "boxes": [
+            [
+              76.80099487304688,
+              153.928466796875,
+              908.7332763671875,
+              891.348388671875
+            ]
+          ],
+          "scores": [
+            0.9263036847114563
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.31560707092285156,
+          "nonempty": true,
+          "seconds": 1.1818156242370605
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/24",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/24/24.jpg",
+      "reference_sha256": "fe4d1e623a6b8cb47365bb9c67bfc854c93c050eada21e77466e6623961cf3b8",
+      "original_query": "vintage camera",
+      "selected_query": "vintage camera",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage camera",
+          "boxes": [
+            [
+              151.628173828125,
+              202.64920043945312,
+              884.1083984375,
+              815.7965087890625
+            ]
+          ],
+          "scores": [
+            0.9441768527030945
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3836336135864258,
+          "nonempty": true,
+          "seconds": 1.0026018619537354
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/25",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/25/25.jpg",
+      "reference_sha256": "ae44c2085a73b9fb6abeba90910bd2f54a7fe71d5f3cf2c54d95d7341473524b",
+      "original_query": "classical bust",
+      "selected_query": "classical bust",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "classical bust",
+          "boxes": [
+            [
+              77.46237182617188,
+              51.4263916015625,
+              939.3780517578125,
+              1020.1556396484375
+            ]
+          ],
+          "scores": [
+            0.9230391979217529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4920930862426758,
+          "nonempty": true,
+          "seconds": 0.7087235450744629
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/26",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/26/26.jpg",
+      "reference_sha256": "fd9e0212e883b9c9a3f7b435dc50c95320daccf4a0469e6b93f3518c29e80b1f",
+      "original_query": "hair dryer",
+      "selected_query": "hair dryer",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "hair dryer",
+          "boxes": [
+            [
+              192.4815673828125,
+              115.37911987304688,
+              802.0180053710938,
+              957.488037109375
+            ]
+          ],
+          "scores": [
+            0.7772998809814453
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.12766742706298828,
+          "nonempty": true,
+          "seconds": 0.5780408382415771
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/27",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/27/27.jpg",
+      "reference_sha256": "6db5fcc1cdbf6bb141093adaebaa1b29d1a40bc7e3ebe823022ca962c1a7d1d4",
+      "original_query": "mug",
+      "selected_query": "mug",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "mug",
+          "boxes": [
+            [
+              281.484375,
+              217.13360595703125,
+              834.115478515625,
+              957.5562133789062
+            ]
+          ],
+          "scores": [
+            0.9425067901611328
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.31395816802978516,
+          "nonempty": true,
+          "seconds": 0.6091272830963135
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/28",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/28/28.jpg",
+      "reference_sha256": "2fd1a4d1e0a703de79cbd4a8b148ebc2ecf795e960199435c24d788d0f901ba9",
+      "original_query": "backpack",
+      "selected_query": "backpack",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "backpack",
+          "boxes": [
+            [
+              181.37442016601562,
+              167.62374877929688,
+              862.4259033203125,
+              1022.3681640625
+            ]
+          ],
+          "scores": [
+            0.5355842709541321
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.33306312561035156,
+          "nonempty": true,
+          "seconds": 1.3178462982177734
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/29",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/29/29.jpg",
+      "reference_sha256": "8a0c84dd7625531467c68fabfcdae3e0b25ab0511d6057434c9669e291b9ae81",
+      "original_query": "maple leaf",
+      "selected_query": "maple leaf",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "maple leaf",
+          "boxes": [
+            [
+              159.86141967773438,
+              133.52740478515625,
+              886.41455078125,
+              902.5064086914062
+            ]
+          ],
+          "scores": [
+            0.9099069833755493
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1365041732788086,
+          "nonempty": true,
+          "seconds": 1.3932855129241943
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/30",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/30/30.jpg",
+      "reference_sha256": "bc2feed10538e2df787b4554eaa56db3c59f580ccc1f65a874cde2e15c77b790",
+      "original_query": "vase",
+      "selected_query": "vase",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vase",
+          "boxes": [
+            [
+              385.302001953125,
+              255.40850830078125,
+              620.7197265625,
+              933.6530151367188
+            ]
+          ],
+          "scores": [
+            0.9539660811424255
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.08000373840332031,
+          "nonempty": true,
+          "seconds": 1.9536237716674805
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/31",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/31/31.jpg",
+      "reference_sha256": "a2eda27f03efacd55f8f2f16a1582e30362618dcb949d54b49b5c8825ab21475",
+      "original_query": "piggy bank",
+      "selected_query": "piggy bank",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "piggy bank",
+          "boxes": [
+            [
+              279.7489013671875,
+              323.5762634277344,
+              759.8597412109375,
+              896.6741943359375
+            ]
+          ],
+          "scores": [
+            0.9230391979217529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.18694019317626953,
+          "nonempty": true,
+          "seconds": 1.602562665939331
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/32",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/32/32.jpg",
+      "reference_sha256": "a1609f3cae9264b13d1d6b94f2e431ffb5b663f93b0affb0dcf4426a7a7b1d13",
+      "original_query": "cap",
+      "selected_query": "cap",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cap",
+          "boxes": [
+            [
+              147.1590576171875,
+              173.95034790039062,
+              796.0270385742188,
+              793.4168701171875
+            ],
+            [
+              169.10659790039062,
+              173.69818115234375,
+              777.7352294921875,
+              522.1700439453125
+            ]
+          ],
+          "scores": [
+            0.6034645438194275,
+            0.3711366057395935
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2917633056640625,
+          "nonempty": true,
+          "seconds": 1.1016135215759277
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/33",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/33/33.jpg",
+      "reference_sha256": "4a8fe2e15b53ed8fbed521a4247ec32cc6014a3ab0c570573c7fb949f9af232e",
+      "original_query": "bouquet of flowers",
+      "selected_query": "bouquet of flowers",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "bouquet of flowers",
+          "boxes": [
+            [
+              75.8262939453125,
+              25.67919921875,
+              903.6131591796875,
+              988.9611206054688
+            ],
+            [
+              76.36053466796875,
+              25.84124755859375,
+              902.90380859375,
+              982.0961303710938
+            ]
+          ],
+          "scores": [
+            0.815232515335083,
+            0.40497803688049316
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3811674118041992,
+          "nonempty": true,
+          "seconds": 0.9129424095153809
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/34",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/34/34.jpg",
+      "reference_sha256": "b862285097d9b81dcf586909d7fd20874787e3b00dd4ea76924b5a03358f6a57",
+      "original_query": "tree-like character",
+      "selected_query": "tree-like character",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "tree-like character",
+          "boxes": [
+            [
+              259.5748596191406,
+              18.91748046875,
+              829.57763671875,
+              1006.2686767578125
+            ]
+          ],
+          "scores": [
+            0.9059898257255554
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.31945133209228516,
+          "nonempty": true,
+          "seconds": 0.7791917324066162
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/35",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/35/35.jpg",
+      "reference_sha256": "1441c7bf8e7f2c3d2f5a2384d73e320713e4d964b07c90560f0f03cb5ce4a3a0",
+      "original_query": "vintage computer",
+      "selected_query": "vintage computer",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage computer",
+          "boxes": [
+            [
+              318.8037109375,
+              405.76959228515625,
+              668.434326171875,
+              833.4942016601562
+            ]
+          ],
+          "scores": [
+            0.9343951344490051
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.11974906921386719,
+          "nonempty": true,
+          "seconds": 0.69931960105896
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/36",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/36/36.jpg",
+      "reference_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e",
+      "original_query": "ceramic bowl",
+      "selected_query": "ceramic bowl",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "ceramic bowl",
+          "boxes": [
+            [
+              1.04644775390625,
+              177.85922241210938,
+              983.41259765625,
+              832.1749267578125
+            ]
+          ],
+          "scores": [
+            0.9399133324623108
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.4534645080566406,
+          "nonempty": true,
+          "seconds": 1.7994706630706787
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/37",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/37/37.jpg",
+      "reference_sha256": "624e721c740f50012b5d1ad3817ba7f0b4872233caafa136bdb166a9c74175a8",
+      "original_query": "airplane",
+      "selected_query": "airplane",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "airplane",
+          "boxes": [
+            [
+              108.4686279296875,
+              365.44232177734375,
+              850.419921875,
+              853.8574829101562
+            ]
+          ],
+          "scores": [
+            0.9674102663993835
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1222391128540039,
+          "nonempty": true,
+          "seconds": 1.1425516605377197
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/38",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/38/38.jpg",
+      "reference_sha256": "fe47bdfa1843b58d1a79b7735da8e9a73c28755f7a4fe75201799caa8858ea9d",
+      "original_query": "donut",
+      "selected_query": "donut",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "donut",
+          "boxes": [
+            [
+              458.7356872558594,
+              311.12713623046875,
+              818.300537109375,
+              621.8699951171875
+            ],
+            [
+              216.00643920898438,
+              389.6528015136719,
+              561.7989501953125,
+              626.8106689453125
+            ]
+          ],
+          "scores": [
+            0.8740772008895874,
+            0.8624675869941711
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.07560920715332031,
+          "nonempty": true,
+          "seconds": 1.2992405891418457
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/39",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/39/39.jpg",
+      "reference_sha256": "7fd1b3a4481e5fd70e1428992c5209cd1812129e4c3ba792339656e76bf9b877",
+      "original_query": "guitar",
+      "selected_query": "guitar",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "guitar",
+          "boxes": [
+            [
+              281.66632080078125,
+              33.45941162109375,
+              772.5111694335938,
+              935.6788330078125
+            ]
+          ],
+          "scores": [
+            0.9473810195922852
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.17304134368896484,
+          "nonempty": true,
+          "seconds": 1.0149054527282715
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/40",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/40/40.jpg",
+      "reference_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27",
+      "original_query": "Rolls-Royce hood ornament",
+      "selected_query": "Rolls-Royce hood ornament",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Rolls-Royce hood ornament",
+          "boxes": [
+            [
+              304.3737487792969,
+              111.93292236328125,
+              616.3697509765625,
+              675.64306640625
+            ]
+          ],
+          "scores": [
+            0.4515683352947235
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.07112789154052734,
+          "nonempty": true,
+          "seconds": 1.1024291515350342
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/41",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/41/41.jpg",
+      "reference_sha256": "cf34b50348fd3f2bde31e2de36265e11a3806b2fc3efb2fae84f78e93e53d15f",
+      "original_query": "t-shirt",
+      "selected_query": "t-shirt",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "t-shirt",
+          "boxes": [
+            [
+              21.9659423828125,
+              1.0078125,
+              994.2852783203125,
+              1021.77392578125
+            ]
+          ],
+          "scores": [
+            0.9504110217094421
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.31699371337890625,
+          "nonempty": true,
+          "seconds": 1.1610252857208252
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/42",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/42/42.jpg",
+      "reference_sha256": "4e012a57d5edfd529eac639ef298ef9fad0acdfa2b6469d8b97bb8c4e2a8614f",
+      "original_query": "hut",
+      "selected_query": "hut",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "hut",
+          "boxes": [
+            [
+              122.40011596679688,
+              459.15948486328125,
+              877.560791015625,
+              962.6577758789062
+            ]
+          ],
+          "scores": [
+            0.9407896995544434
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2698030471801758,
+          "nonempty": true,
+          "seconds": 1.1741487979888916
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/43",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/43/43.jpg",
+      "reference_sha256": "961ee20225d8c67c2ebde0a3d7505edb61207ee75490d4113f2fa9cfbb53edab",
+      "original_query": "pineapple",
+      "selected_query": "pineapple",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "pineapple",
+          "boxes": [
+            [
+              324.57586669921875,
+              104.37039184570312,
+              681.0704956054688,
+              970.1507568359375
+            ]
+          ],
+          "scores": [
+            0.9219217896461487
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2030162811279297,
+          "nonempty": true,
+          "seconds": 1.2927219867706299
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/44",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/44/44.jpg",
+      "reference_sha256": "1723b67e922e2d097279b745fdaa4017b52a25863049815cab17f2bd1a6fa82f",
+      "original_query": "yellow taxi",
+      "selected_query": "yellow taxi",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "yellow taxi",
+          "boxes": [
+            [
+              4.333892822265625,
+              179.39065551757812,
+              1020.9759521484375,
+              953.758056640625
+            ]
+          ],
+          "scores": [
+            0.9124361872673035
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5611724853515625,
+          "nonempty": true,
+          "seconds": 1.1649272441864014
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/45",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/45/45.jpg",
+      "reference_sha256": "a8d66cc4e4cc3909b335a5778f2633fd73d10472b72fdf9ab8bf5726868f3ac8",
+      "original_query": "wooden house",
+      "selected_query": "wooden house",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "wooden house",
+          "boxes": [
+            [
+              173.51626586914062,
+              379.271484375,
+              746.9166259765625,
+              656.419189453125
+            ]
+          ],
+          "scores": [
+            0.9353464841842651
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.0911397933959961,
+          "nonempty": true,
+          "seconds": 0.9619054794311523
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/46",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/46/46.jpg",
+      "reference_sha256": "ab5644459d8777b20a9154f6dc701ee2b1bb2ff0345b97ed2b3ff8e166784bc3",
+      "original_query": "teddy bear",
+      "selected_query": "teddy bear",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "teddy bear",
+          "boxes": [
+            [
+              83.49423217773438,
+              63.56207275390625,
+              949.4931640625,
+              974.4246215820312
+            ]
+          ],
+          "scores": [
+            0.9184802770614624
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5049629211425781,
+          "nonempty": true,
+          "seconds": 0.8958919048309326
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/47",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/47/47.jpg",
+      "reference_sha256": "971f938f3c7eb876bd3db85575db08842f4575927199e4eeea7e7964fa4915df",
+      "original_query": "UFO",
+      "selected_query": "UFO",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "UFO",
+          "boxes": [
+            [
+              41.665283203125,
+              140.61572265625,
+              981.7335205078125,
+              882.26513671875
+            ]
+          ],
+          "scores": [
+            0.8210441470146179
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3890647888183594,
+          "nonempty": true,
+          "seconds": 0.9520125389099121
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/48",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/48/48.jpg",
+      "reference_sha256": "5470aed041b156f02a4abf9e3516257ee8750df4ebdccf2f69ea5b7e3f09224f",
+      "original_query": "egg",
+      "selected_query": "egg",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "egg",
+          "boxes": [
+            [
+              312.24542236328125,
+              285.8186340332031,
+              712.9923706054688,
+              880.954833984375
+            ]
+          ],
+          "scores": [
+            0.8887587189674377
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.17235946655273438,
+          "nonempty": true,
+          "seconds": 0.8753912448883057
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/49",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/49/49.jpg",
+      "reference_sha256": "a0f521ccb308c25835a4ffb37a253f3db6e2c7e11944d72c2a6578e6a2c20d8c",
+      "original_query": "vintage television",
+      "selected_query": "vintage television",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "vintage television",
+          "boxes": [
+            [
+              367.3944091796875,
+              375.67462158203125,
+              657.6641845703125,
+              577.6589965820312
+            ]
+          ],
+          "scores": [
+            0.9433475732803345
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.049918174743652344,
+          "nonempty": true,
+          "seconds": 1.0382733345031738
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/50",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/50/50.jpg",
+      "reference_sha256": "db2435017749fee683483b0aba1ea4cd872bf44f08d5bedd0955bbd31224b3fd",
+      "original_query": "rubber duck",
+      "selected_query": "rubber duck",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "rubber duck",
+          "boxes": [
+            [
+              235.84844970703125,
+              223.75015258789062,
+              805.8261108398438,
+              763.2911376953125
+            ]
+          ],
+          "scores": [
+            0.8887587189674377
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.2085590362548828,
+          "nonempty": true,
+          "seconds": 1.253507375717163
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/51",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/51/51.jpg",
+      "reference_sha256": "2684119b3e24f7920775d256fb1b1a4905f775da6a940b671dc1031cb3ed5968",
+      "original_query": "stop sign",
+      "selected_query": "stop sign",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "stop sign",
+          "boxes": [
+            [
+              149.20120239257812,
+              128.96389770507812,
+              963.937744140625,
+              940.0491943359375
+            ]
+          ],
+          "scores": [
+            0.7826625108718872
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.5036849975585938,
+          "nonempty": true,
+          "seconds": 1.9276721477508545
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/52",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/52/52.jpg",
+      "reference_sha256": "e898e815656fd538977b5c0735727fa03e1f4261842ca6eb91c7ae8d43ceb365",
+      "original_query": "teapot",
+      "selected_query": "teapot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "teapot",
+          "boxes": [
+            [
+              235.26547241210938,
+              287.8336181640625,
+              757.343505859375,
+              667.1567993164062
+            ]
+          ],
+          "scores": [
+            0.9481545686721802
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.10266494750976562,
+          "nonempty": true,
+          "seconds": 1.621886968612671
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/53",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/53/53.jpg",
+      "reference_sha256": "c4e9374b3de01094b73c41f909863cb8b6aab3c3b916e14178ed49f9e873a656",
+      "original_query": "cactus",
+      "selected_query": "cactus",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cactus",
+          "boxes": [
+            [
+              373.25079345703125,
+              241.11895751953125,
+              630.7198486328125,
+              571.052978515625
+            ],
+            [
+              409.5709533691406,
+              246.5231170654297,
+              596.994873046875,
+              570.5584716796875
+            ]
+          ],
+          "scores": [
+            0.46198752522468567,
+            0.35667070746421814
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.04125690460205078,
+          "nonempty": true,
+          "seconds": 0.655524492263794
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/54",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/54/54.jpg",
+      "reference_sha256": "a6835caba5c64cdcaf829729fe9036f996f8e40b15d29f8c7f00c69779cb68a8",
+      "original_query": "Poke Ball",
+      "selected_query": "Poke Ball",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Poke Ball",
+          "boxes": [
+            [
+              128.9964599609375,
+              117.55239868164062,
+              902.8658447265625,
+              945.9920654296875
+            ]
+          ],
+          "scores": [
+            0.7786493301391602
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.45865631103515625,
+          "nonempty": true,
+          "seconds": 1.0664591789245605
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/55",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/55/55.jpg",
+      "reference_sha256": "1ad82c7271bffbbbf25dab6e0d7d43921c313b950ecfe2eba4e30ce771cbf024",
+      "original_query": "headphones",
+      "selected_query": "headphones",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "headphones",
+          "boxes": [
+            [
+              202.6727294921875,
+              192.135498046875,
+              808.736572265625,
+              825.1477661132812
+            ]
+          ],
+          "scores": [
+            0.9621075391769409
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.207763671875,
+          "nonempty": true,
+          "seconds": 1.2775018215179443
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/56",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/56/56.jpg",
+      "reference_sha256": "4617746bfc0c5039b5e688aaaf0429adb283093fe342cda125c8c23660c0d1f0",
+      "original_query": "clock",
+      "selected_query": "clock",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "clock",
+          "boxes": [
+            [
+              372.71630859375,
+              358.95440673828125,
+              731.8621826171875,
+              824.4880981445312
+            ]
+          ],
+          "scores": [
+            0.9241418242454529
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.11147308349609375,
+          "nonempty": true,
+          "seconds": 0.8691461086273193
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/57",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/57/57.jpg",
+      "reference_sha256": "4c819ee4a36ab3a419f50cb358cbae4c245ff86311ad1285229faa9fd58158b4",
+      "original_query": "leather handbag",
+      "selected_query": "leather handbag",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "leather handbag",
+          "boxes": [
+            [
+              127.90591430664062,
+              122.60943603515625,
+              908.339599609375,
+              935.9017944335938
+            ]
+          ],
+          "scores": [
+            0.8757869601249695
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3729372024536133,
+          "nonempty": true,
+          "seconds": 0.8133730888366699
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/58",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/58/58.jpg",
+      "reference_sha256": "ee489052afca91859bbab61be7f8f565bb087463e0d894fc0b6f08b820e318c6",
+      "original_query": "sunglasses",
+      "selected_query": "sunglasses",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "sunglasses",
+          "boxes": [
+            [
+              13.506591796875,
+              310.51422119140625,
+              1021.70361328125,
+              735.2341918945312
+            ]
+          ],
+          "scores": [
+            0.8397339582443237
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.32659053802490234,
+          "nonempty": true,
+          "seconds": 1.306525707244873
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/59",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/59/59.jpg",
+      "reference_sha256": "6c15c3862168e72177e10c36c22c1a386121202b7818b24cf075d711890ce92c",
+      "original_query": "Eevee figurine",
+      "selected_query": "Eevee figurine",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "Eevee figurine",
+          "boxes": [
+            [
+              142.20721435546875,
+              263.28985595703125,
+              719.1505126953125,
+              871.7385864257812
+            ],
+            [
+              604.4313354492188,
+              395.94891357421875,
+              891.0097045898438,
+              845.7633666992188
+            ]
+          ],
+          "scores": [
+            0.5688949227333069,
+            0.3812195360660553
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1264963150024414,
+          "nonempty": true,
+          "seconds": 0.8921432495117188
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/60",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/60/60.jpg",
+      "reference_sha256": "0aa0582800d4aeb1dd9458a6569db5c1f124a6efaa3568eeb9b10b03c682e4f3",
+      "original_query": "snare drum",
+      "selected_query": "snare drum",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "snare drum",
+          "boxes": [
+            [
+              202.15643310546875,
+              215.95071411132812,
+              837.9462280273438,
+              810.9989013671875
+            ]
+          ],
+          "scores": [
+            0.8887587189674377
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.26340198516845703,
+          "nonempty": true,
+          "seconds": 1.287156105041504
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/61",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/61/61.jpg",
+      "reference_sha256": "3331257f07b95493d91b47b6f18ce38fea3e5eb0fabddb774ed7c8440d572161",
+      "original_query": "roll of film",
+      "selected_query": "roll of film",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "roll of film",
+          "boxes": [
+            [
+              346.9432373046875,
+              221.6663055419922,
+              662.132568359375,
+              732.627685546875
+            ],
+            [
+              347.26739501953125,
+              221.81478881835938,
+              661.7040405273438,
+              732.4368896484375
+            ]
+          ],
+          "scores": [
+            0.8933094143867493,
+            0.5518152117729187
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.1309814453125,
+          "nonempty": true,
+          "seconds": 0.9161272048950195
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/62",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/62/62.jpg",
+      "reference_sha256": "24884d4a8ab80d7939554add436ce49dcc9332b80d5d78fd91359d642b143cf8",
+      "original_query": "boat",
+      "selected_query": "boat",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "boat",
+          "boxes": [
+            [
+              111.81951904296875,
+              409.37750244140625,
+              829.1993408203125,
+              821.6442260742188
+            ],
+            [
+              461.5019836425781,
+              300.4227294921875,
+              521.9036254882812,
+              318.55029296875
+            ],
+            [
+              133.00167846679688,
+              295.177978515625,
+              164.12887573242188,
+              310.40081787109375
+            ]
+          ],
+          "scores": [
+            0.854884684085846,
+            0.6636689305305481,
+            0.5275599360466003
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.16825294494628906,
+          "nonempty": true,
+          "seconds": 0.7297778129577637
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/63",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/63/63.jpg",
+      "reference_sha256": "77a4d05a253d73c384a5d2718f591160215b0194e44ba4eec558defffeb39f49",
+      "original_query": "cocktail",
+      "selected_query": "cocktail",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "cocktail",
+          "boxes": [
+            [
+              317.0147705078125,
+              330.7540283203125,
+              599.3348388671875,
+              721.0054931640625
+            ]
+          ],
+          "scores": [
+            0.8976953029632568
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.08572006225585938,
+          "nonempty": true,
+          "seconds": 1.2248151302337646
+        }
+      ]
+    },
+    {
+      "reference_id": "dreambench_plus/object/64",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/64/64.jpg",
+      "reference_sha256": "f98cc5cfa92e7753235b3535d76934e3d859b68d1f9ced7b997ef4ca3d21e02f",
+      "original_query": "robot",
+      "selected_query": "robot",
+      "status": "native_ok",
+      "attempts": [
+        {
+          "query": "robot",
+          "boxes": [
+            [
+              244.96646118164062,
+              3.108123779296875,
+              867.1697998046875,
+              1021.6639404296875
+            ]
+          ],
+          "scores": [
+            0.9458011984825134
+          ],
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "mask_fraction": 0.3087139129638672,
+          "nonempty": true,
+          "seconds": 1.1503348350524902
+        }
+      ]
+    }
+  ],
+  "updated_at": 1793957271.3804817
+}

@@ -1,0 +1,18 @@
+{
+  "source_snapshot": "/workspace/instantx-0807/cache/huggingface/hub/models--black-forest-labs--FLUX.1-dev/snapshots/3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+  "source_blobs": {
+    "transformer/diffusion_pytorch_model-00001-of-00003.safetensors": "d86a3038eacaa720682cb9b1da3c49fecf8a3ded605af4def6061eaa18903eb8",
+    "transformer/diffusion_pytorch_model-00002-of-00003.safetensors": "5e830704a83aa938dfaf23da308100a1c44b83fa084283abf1d163ea727e5f7a",
+    "transformer/diffusion_pytorch_model-00003-of-00003.safetensors": "0d9c7c663217d1c3d44a6deed4e1cf1ac09fbc2c4137c47de1e3d74c959833de",
+    "vae/diffusion_pytorch_model.safetensors": "f5b59a26851551b67ae1fe58d32e76486e1e812def4696a4bea97f16604d40a3"
+  },
+  "transformer_tensors": 780,
+  "vae_tensors": 244,
+  "roundtrip_all_tensors_exact": true,
+  "quantization": false,
+  "dtype_conversion": false,
+  "native_sha256": {
+    "flux1-dev.safetensors": "0c874a33d295006924b5bd478ac65a530486eea6d7b6f004faf5a9defd9c8594",
+    "ae.safetensors": "e49d48aa3474df744ad718d11736d87f38d52bf7ca57dee6b8417978bfbfc9ad"
+  }
+}

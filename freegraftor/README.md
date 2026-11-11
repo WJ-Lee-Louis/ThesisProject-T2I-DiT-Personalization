@@ -1,3 +1,7 @@
+RunPod benchmark: [execution and recovery sources](runpod/README.md) ·
+[manifests](manifests/runpod/) · [results and incomplete-case records](results/runpod/README.md).
+The existing Modal implementation below is retained separately.
+
 <div align="center">
 
 <h1>FreeGraftor</h1>

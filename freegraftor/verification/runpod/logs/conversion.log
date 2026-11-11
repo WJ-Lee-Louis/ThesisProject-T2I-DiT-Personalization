@@ -1,0 +1,6 @@
+Loading diffusion_pytorch_model-00001-of-00003.safetensors
+Loading diffusion_pytorch_model-00002-of-00003.safetensors
+Loading diffusion_pytorch_model-00003-of-00003.safetensors
+Checking transformer round-trip 780
+Saving native transformer
+Conversion and exact tensor roundtrip verified

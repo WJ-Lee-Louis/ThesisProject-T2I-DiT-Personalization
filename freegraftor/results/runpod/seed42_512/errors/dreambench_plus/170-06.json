@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "170-06",
+    "reference_id": "dreambench_plus/style/10",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/10.jpg",
+    "identity_term": "Ukiyo-e",
+    "target_prompt": "A traditional tea ceremony, portrayed with Ukiyo-e aesthetics",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/170-06.json",
+    "source_directions": 1,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "30927e2bfc70327c5d892ca052e0bf415d5467f48fdc53f42ff5c823d0b671d8",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Ukiyo-e': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.028027296066284,
+  "updated_at": 1793972285.4727876
+}

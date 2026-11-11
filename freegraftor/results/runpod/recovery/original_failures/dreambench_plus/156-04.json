@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "156-04",
+    "reference_id": "dreambench_plus/object/61",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/61.jpg",
+    "identity_term": "roll of film",
+    "target_prompt": "A watercolor painting of a roll of film unraveled across a painter’s canvas",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/156-04.json",
+    "source_directions": 0,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "52c7c5d21d714f3ad7d94c74ab69d88035079eb7380bf0ef39f7f41817e8e393",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'roll of film': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 4.894317150115967,
+  "updated_at": 1793971127.824262
+}

@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "034-06",
+    "reference_id": "dreambench_plus/live_subject/animal/04",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/04.jpg",
+    "identity_term": "crab",
+    "target_prompt": "An ink sketch of a crab amidst coral reefs, in a minimalist style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/034-06.json",
+    "source_directions": 1,
+    "target_directions": 3,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "8fc13ef3bfd6d58c4943d85bc7ddb4cece6de190b57d6b348bd8610d0a44b569",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'crab': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "animal",
+  "elapsed_seconds": 4.998919486999512,
+  "updated_at": 1793960425.8354483
+}

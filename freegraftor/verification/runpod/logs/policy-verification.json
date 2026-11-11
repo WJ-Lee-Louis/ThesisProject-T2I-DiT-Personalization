@@ -1,0 +1,13 @@
+{
+  "check": "Simulated one native style mask failure in an isolated temporary output directory",
+  "without_failure": {
+    "dreambench": 750,
+    "dreambench_plus": 1350
+  },
+  "with_style_failure": {
+    "dreambench": 750,
+    "dreambench_plus": 1170
+  },
+  "passed": true,
+  "live_results_modified": false
+}

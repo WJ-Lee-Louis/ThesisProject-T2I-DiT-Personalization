@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "021-14",
+    "reference_id": "dreambench/pink_sunglasses",
+    "benchmark": "dreambench",
+    "image_path": "datasets/dreambench_uno/images/pink_sunglasses/04.jpg",
+    "identity_term": "glasses",
+    "target_prompt": "a glasses floating in an ocean of milk",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/021-14.json",
+    "source_directions": 1,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "e9d7d27cc19688be6d957bf061698b5d1338fef973333036c51e00f953a4548e",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'glasses': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 5.325024127960205,
+  "updated_at": 1793957741.7777047
+}

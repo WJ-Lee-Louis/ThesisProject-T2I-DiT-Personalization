@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "160-02",
+    "reference_id": "dreambench_plus/style/00",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/00.jpg",
+    "identity_term": "pencil sketch",
+    "target_prompt": "A painting of a bustling street market, captured in pencil sketch style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/160-02.json",
+    "source_directions": 5,
+    "target_directions": 3,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "06f880e5567d09fa0a97116cf7d076c45ea9449130719689e12720c885f16010",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'pencil sketch': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 4.903321027755737,
+  "updated_at": 1793971405.9447718
+}

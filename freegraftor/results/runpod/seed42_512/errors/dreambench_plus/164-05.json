@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "164-05",
+    "reference_id": "dreambench_plus/style/04",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/04.jpg",
+    "identity_term": "Impressionist swirls",
+    "target_prompt": "A cozy cafe corner with patrons chatting, illustrated in Impressionist swirls",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/164-05.json",
+    "source_directions": 5,
+    "target_directions": 3,
+    "contrast_attempts": 2,
+    "fallback": null
+  },
+  "job_signature": "5fd8bb39a673ddf8e5f32f163ba3585fca3fc77ba2f6fe4873e4c420b26694d5",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Impressionist swirls': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 4.914457082748413,
+  "updated_at": 1793971770.3468559
+}

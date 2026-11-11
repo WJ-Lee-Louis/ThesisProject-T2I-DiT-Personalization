@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "101-03",
+    "reference_id": "dreambench_plus/object/06",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/06.jpg",
+    "identity_term": "avocado",
+    "target_prompt": "A photo capturing a bowl of guacamole, made from mashed avocado, beside a sunny window",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/101-03.json",
+    "source_directions": 2,
+    "target_directions": 5,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "89e35c02f1b186dbd4c2f1e2105ae0b1e01a4824546baf535468ab869eb608b0",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'avocado': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 4.993071556091309,
+  "updated_at": 1793965933.6273377
+}

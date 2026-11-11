@@ -1,0 +1,32 @@
+/workspace/freegraftor/venvs/generation/lib/python3.10/site-packages/modelscope/utils/plugins.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  6.05it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  6.03it/s]
+t5 loaded to cuda
+clip loaded to cuda
+Init model
+Loading checkpoint
+flow loaded to cuda
+Init AE
+ae loaded to cuda
+2026-11-06 07:53:13,102 - modelscope - INFO - Use user-specified model revision: v1.0.0
+Downloading Model from https://www.modelscope.cn to directory: /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama
+2026-11-06 07:53:16,418 - modelscope - INFO - Use user-specified model revision: v1.0.0
+2026-11-06 07:53:19,468 - modelscope - INFO - initiate model from /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama
+2026-11-06 07:53:19,472 - modelscope - INFO - initiate model from location /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama.
+2026-11-06 07:53:19,485 - modelscope - INFO - initialize model from /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama
+2026-11-06 07:53:19,558 - modelscope - INFO - BaseInpaintingTrainingModule init called, predict_only is False
+Loading weights for net_encoder
+2026-11-06 07:53:20,317 - modelscope - INFO - BaseInpaintingTrainingModule init done
+2026-11-06 07:53:20,320 - modelscope - INFO - loading pretrained model from /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama/pytorch_model.pt
+2026-11-06 07:53:20,745 - modelscope - WARNING - No preprocessor field found in cfg.
+2026-11-06 07:53:20,746 - modelscope - WARNING - No val key and type key found in preprocessor domain of configuration.json file.
+2026-11-06 07:53:20,748 - modelscope - WARNING - Cannot find available config to build preprocessor at mode inference, current config: {'model_dir': '/workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama'}. trying to build by task and model information.
+2026-11-06 07:53:20,749 - modelscope - WARNING - No preprocessor key ('FFTInpainting', 'image-inpainting') found in PREPROCESSOR_MAP, skip building preprocessor.
+2026-11-06 07:53:20,757 - modelscope - INFO - loading model from dir /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama
+2026-11-06 07:53:20,758 - modelscope - INFO - BaseInpaintingTrainingModule init called, predict_only is True
+2026-11-06 07:53:21,036 - modelscope - INFO - BaseInpaintingTrainingModule init done
+2026-11-06 07:53:21,038 - modelscope - INFO - loading pretrained model from /workspace/freegraftor/cache/modelscope/models/iic/cv_fft_inpainting_lama/pytorch_model.pt
+2026-11-06 07:53:21,411 - modelscope - INFO - loading model done, refinement is set to True
+START 1 dreambench 001-00 backpack
+sampling: 0it [00:00, ?it/s]sampling: 1it [00:50, 50.08s/it]sampling: 3it [00:50, 13.07s/it]sampling: 4it [00:50,  8.60s/it]sampling: 5it [00:50,  5.80s/it]sampling: 6it [00:50,  3.99s/it]sampling: 7it [00:50,  2.78s/it]sampling: 8it [00:51,  1.96s/it]sampling: 9it [00:51,  1.40s/it]sampling: 10it [00:51,  1.02s/it]sampling: 11it [00:51,  1.33it/s]sampling: 12it [00:51,  1.76it/s]sampling: 13it [00:51,  2.27it/s]sampling: 14it [00:51,  2.86it/s]sampling: 15it [00:52,  3.48it/s]sampling: 16it [00:52,  4.10it/s]sampling: 17it [00:52,  4.68it/s]sampling: 18it [00:52,  5.19it/s]sampling: 19it [00:52,  5.63it/s]sampling: 20it [00:52,  5.98it/s]sampling: 21it [00:52,  6.27it/s]sampling: 22it [00:53,  6.48it/s]sampling: 23it [00:53,  6.63it/s]sampling: 24it [00:53,  6.74it/s]sampling: 25it [00:53,  6.82it/s]sampling: 25it [00:53,  2.14s/it]
+  0%|          | 0/15 [00:00<?, ?it/s]                                      sampling: 0it [00:00, ?it/s]sampling: 1it [00:06,  6.48s/it]sampling: 2it [00:06,  2.75s/it]sampling: 3it [00:06,  1.56s/it]sampling: 4it [00:06,  1.00s/it]sampling: 5it [00:07,  1.44it/s]sampling: 6it [00:07,  1.98it/s]sampling: 7it [00:07,  2.58it/s]sampling: 8it [00:07,  3.19it/s]sampling: 9it [00:07,  3.84it/s]sampling: 10it [00:07,  4.41it/s]sampling: 11it [00:07,  4.97it/s]sampling: 12it [00:08,  5.34it/s]sampling: 13it [00:08,  5.75it/s]sampling: 14it [00:08,  5.90it/s]sampling: 15it [00:08,  6.17it/s]sampling: 16it [00:08,  6.20it/s]sampling: 17it [00:08,  6.41it/s]sampling: 18it [00:08,  6.46it/s]sampling: 19it [00:09,  6.59it/s]sampling: 20it [00:09,  6.54it/s]sampling: 21it [00:09,  6.65it/s]sampling: 22it [00:09,  6.61it/s]sampling: 23it [00:09,  6.68it/s]

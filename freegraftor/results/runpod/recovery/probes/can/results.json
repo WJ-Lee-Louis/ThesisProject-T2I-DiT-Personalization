@@ -1,0 +1,68 @@
+[
+  {
+    "query": "can",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "count": 0,
+    "scores": [],
+    "boxes": [],
+    "elapsed_seconds": 1.1076345443725586
+  },
+  {
+    "query": "beer can",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "count": 1,
+    "scores": [
+      0.9518632292747498
+    ],
+    "boxes": [
+      [
+        383.56414794921875,
+        207.83782958984375,
+        870.3671264648438,
+        1086.155029296875
+      ]
+    ],
+    "elapsed_seconds": 0.7038705348968506,
+    "mask_fraction": 0.2346563720703125
+  },
+  {
+    "query": "beverage can",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "count": 1,
+    "scores": [
+      0.9458011984825134
+    ],
+    "boxes": [
+      [
+        383.5302734375,
+        207.7332305908203,
+        870.4314575195312,
+        1086.2886962890625
+      ]
+    ],
+    "elapsed_seconds": 0.5988812446594238,
+    "mask_fraction": 0.2346563720703125
+  },
+  {
+    "query": "tin can",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "count": 1,
+    "scores": [
+      0.9416541457176208
+    ],
+    "boxes": [
+      [
+        383.79278564453125,
+        207.78900146484375,
+        870.3446044921875,
+        1086.159423828125
+      ]
+    ],
+    "elapsed_seconds": 0.590552568435669,
+    "mask_fraction": 0.23465576171875
+  }
+]
