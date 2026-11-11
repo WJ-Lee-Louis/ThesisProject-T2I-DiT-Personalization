@@ -1,0 +1,16 @@
+{
+  "cases": 2100,
+  "metric_status": "complete",
+  "original_controller_status": {
+    "status": "failed",
+    "error": "Command '['/workspace/instantx-0807/venvs/generation/bin/python', '/workspace/instantx-0807/analysis_tools/run_ablation_20261026.py', 'worker', '--lane', '0']' returned non-zero exit status 1.",
+    "updated_at": 1793019745.005251
+  },
+  "provider": "modal",
+  "fallback_cases": [
+    "092-08",
+    "154-07"
+  ],
+  "fallback_policy": "target_conflict_no_projection_v1",
+  "metric_device_name": "NVIDIA A100-SXM4-80GB"
+}

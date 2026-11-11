@@ -1,0 +1,80 @@
+{
+  "condition": "source_target_ssg",
+  "scale": 0.8,
+  "aggregation": "subject_macro",
+  "residual_norm_measured": false,
+  "summary": [
+    {
+      "benchmark": "dreambench",
+      "group": "overall",
+      "cases": 750,
+      "subjects": 30,
+      "pre_restore_reduction_pct": 0.4188289483388265,
+      "post_restore_reduction_pct": -2.4380685334316844e-07,
+      "max_abs_post_restore_reduction_pct": 1.548093897518754e-05
+    },
+    {
+      "benchmark": "dreambench",
+      "group": "animal",
+      "cases": 225,
+      "subjects": 9,
+      "pre_restore_reduction_pct": 0.4537005689409044,
+      "post_restore_reduction_pct": -3.795536731823448e-07,
+      "max_abs_post_restore_reduction_pct": 8.94581368982017e-06
+    },
+    {
+      "benchmark": "dreambench",
+      "group": "object",
+      "cases": 525,
+      "subjects": 21,
+      "pre_restore_reduction_pct": 0.40388396808079313,
+      "post_restore_reduction_pct": -1.8562964484066433e-07,
+      "max_abs_post_restore_reduction_pct": 1.548093897518754e-05
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "group": "overall",
+      "cases": 1350,
+      "subjects": 150,
+      "pre_restore_reduction_pct": 0.7082899323216191,
+      "post_restore_reduction_pct": 9.626607454392575e-08,
+      "max_abs_post_restore_reduction_pct": 1.0731571209454671e-05
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "group": "animal",
+      "cases": 405,
+      "subjects": 45,
+      "pre_restore_reduction_pct": 0.5628223036542351,
+      "post_restore_reduction_pct": 1.1434430338103438e-07,
+      "max_abs_post_restore_reduction_pct": 9.619036145380733e-06
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "group": "human",
+      "cases": 180,
+      "subjects": 20,
+      "pre_restore_reduction_pct": 0.8094695210456848,
+      "post_restore_reduction_pct": 2.3261681321902944e-07,
+      "max_abs_post_restore_reduction_pct": 1.0305033104618389e-05
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "group": "object",
+      "cases": 585,
+      "subjects": 65,
+      "pre_restore_reduction_pct": 0.6302859334864168,
+      "post_restore_reduction_pct": -2.646727291274474e-08,
+      "max_abs_post_restore_reduction_pct": 9.85824533117352e-06
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "group": "style",
+      "cases": 180,
+      "subjects": 20,
+      "pre_restore_reduction_pct": 1.1879255043135748,
+      "post_restore_reduction_pct": 3.1812270021950673e-07,
+      "max_abs_post_restore_reduction_pct": 1.0731571209454671e-05
+    }
+  ]
+}

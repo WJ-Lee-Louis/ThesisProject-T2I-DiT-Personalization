@@ -19,3 +19,11 @@ venv/
 /Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_images_v1/
 /Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_metrics_v1/runs/**/inputs_*.zip
 /Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/
+
+# RunPod final images and downloadable archives remain outside Git.
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.png
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.jpg
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.jpeg
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.webp
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.zip
+/Orthogonalization-InstantX-IP-Adapter/results/runpod/**/*.tar.gz

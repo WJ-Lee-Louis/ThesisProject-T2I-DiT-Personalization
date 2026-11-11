@@ -1,0 +1,13 @@
+{
+  "status": "running",
+  "condition": "baseline_0.8",
+  "scale": 0.8,
+  "projection": false,
+  "origin": null,
+  "gate": false,
+  "images": 2100,
+  "gpus": 1,
+  "per_gpu": 2100,
+  "started_at": 1792992370.3313699,
+  "script_sha256": "ce9ab90bc8074aa65a831b22333c13682167aef21d93f82ff01bb8b8ff129091"
+}

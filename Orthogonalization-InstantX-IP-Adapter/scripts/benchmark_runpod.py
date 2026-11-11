@@ -63,6 +63,9 @@ def jobs_for(limit=0):
                        implementation_sha256=code)
             signature = common.digest(dict(row=row, settings=cfg, cache=cache, image_sha256=image_hash))
             jobs.append(dict(row=row, settings=cfg, signature=signature, image_sha256=image_hash))
+    # Finish each experiment before starting the next on a single GPU.
+    order = {condition: i for i, condition in enumerate(EXPERIMENTS)}
+    jobs.sort(key=lambda job: order[job['settings']['condition']])
     return jobs
 
 

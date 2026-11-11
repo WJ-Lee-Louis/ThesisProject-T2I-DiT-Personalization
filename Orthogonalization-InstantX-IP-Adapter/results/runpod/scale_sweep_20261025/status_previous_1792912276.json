@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "Command '['/workspace/instantx-0807/venvs/generation/bin/python', '/workspace/instantx-0807/analysis_tools/run_scale_sweep.py', 'worker', '--lane', '0']' returned non-zero exit status 1.",
+  "updated_at": 1792912243.0533237
+}

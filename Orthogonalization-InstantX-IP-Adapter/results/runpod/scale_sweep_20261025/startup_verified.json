@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-10-25T16:18:09.348812+09:00",
+  "gpu_utilization_percent": [
+    100,
+    100
+  ],
+  "lanes": [
+    {
+      "processed": 3,
+      "assigned": 3150,
+      "failures": [],
+      "updated_at": 1792912677.624963
+    },
+    {
+      "processed": 3,
+      "assigned": 3150,
+      "failures": [],
+      "updated_at": 1792912678.4149675
+    }
+  ],
+  "first_image_checks": {
+    "scale": 0.6,
+    "ssg": true,
+    "projection": true,
+    "png_sha256": "passed",
+    "image_size": [
+      1024,
+      1024
+    ]
+  }
+}

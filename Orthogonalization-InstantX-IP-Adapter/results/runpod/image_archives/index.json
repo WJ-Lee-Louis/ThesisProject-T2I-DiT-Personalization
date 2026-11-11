@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "mode": "fast",
+  "archives": [
+    {
+      "name": "baseline_scale0.8",
+      "path": "/opt/instantx-exports-20261111/baseline_scale0.8.zip",
+      "bytes": 2211090120,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2107,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "baseline_scale0.9",
+      "path": "/opt/instantx-exports-20261111/baseline_scale0.9.zip",
+      "bytes": 2200603725,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2107,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_only_scale0.7",
+      "path": "/opt/instantx-exports-20261111/source_only_scale0.7.zip",
+      "bytes": 2214062654,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2107,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_target_scale0.7",
+      "path": "/opt/instantx-exports-20261111/source_target_scale0.7.zip",
+      "bytes": 2218165237,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2104,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_target_ssg_scale0.6",
+      "path": "/opt/instantx-exports-20261111/source_target_ssg_scale0.6.zip",
+      "bytes": 2352496439,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2112,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_target_ssg_scale0.8",
+      "path": "/opt/instantx-exports-20261111/source_target_ssg_scale0.8.zip",
+      "bytes": 2333775504,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2104,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_target_ssg_scale0.9",
+      "path": "/opt/instantx-exports-20261111/source_target_ssg_scale0.9.zip",
+      "bytes": 2319904415,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2112,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "source_target_ssg_scale1.0",
+      "path": "/opt/instantx-exports-20261111/source_target_ssg_scale1.0.zip",
+      "bytes": 2302930050,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2112,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "ssg_only_scale0.7",
+      "path": "/opt/instantx-exports-20261111/ssg_only_scale0.7.zip",
+      "bytes": 2349503524,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2112,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    },
+    {
+      "name": "target_only_scale0.7",
+      "path": "/opt/instantx-exports-20261111/target_only_scale0.7.zip",
+      "bytes": 2230753397,
+      "dreambench": 750,
+      "dreambench_plus": 1350,
+      "execution_records": 2107,
+      "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+    }
+  ],
+  "total_images": 21000,
+  "total_bytes": 22733285065
+}

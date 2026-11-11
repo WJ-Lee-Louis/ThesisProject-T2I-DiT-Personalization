@@ -1,0 +1,9 @@
+{
+  "name": "baseline_scale0.9",
+  "path": "/opt/instantx-exports-20261111/baseline_scale0.9.zip",
+  "bytes": 2200603725,
+  "dreambench": 750,
+  "dreambench_plus": 1350,
+  "execution_records": 2107,
+  "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+}

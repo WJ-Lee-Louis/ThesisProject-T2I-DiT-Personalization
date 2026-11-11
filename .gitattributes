@@ -21,3 +21,6 @@ Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_metrics_v1/** -text
 # Vendored research contracts retain their recorded original byte hashes.
 xlabs_application/vendor/** -text
 xlabs_application/requirements*.txt text eol=lf
+
+# Preserve original RunPod metric/manifests and export-record bytes.
+Orthogonalization-InstantX-IP-Adapter/results/runpod/** -text whitespace=cr-at-eol

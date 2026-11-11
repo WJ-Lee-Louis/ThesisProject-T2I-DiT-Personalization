@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "condition": "ssg",
+  "ip_adapter_scale": 0.7,
+  "projection": false,
+  "ssg": true,
+  "images": 2100,
+  "per_gpu": 1050,
+  "gpus": 2,
+  "queued_at": 1792936614.7381577,
+  "dependency": "/workspace/instantx-0807/results/scale_sweep_20261025",
+  "dependency_started_at": 1792912276.4856899,
+  "dependency_sha256": "6981f7aad28a463c4e79ba1ee4d9ef32d7220f448c9e75f11c650ba15fd503cc",
+  "successor_sha256": "476949587226ec9ae87afcf572b14e6ee5a51ff349c71605c7a540304159d0a5",
+  "queue_sha256": "9e876596297636c43abce4209329af9e188b1bf2c279e6472daa7ba5013fbf88",
+  "poll_seconds": 30,
+  "updated_at": 1792968174.0170782,
+  "started_at": 1792954030.5465667,
+  "completed_at": 1792968174.0170774
+}

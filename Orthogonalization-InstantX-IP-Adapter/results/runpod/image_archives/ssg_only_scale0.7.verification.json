@@ -1,0 +1,9 @@
+{
+  "name": "ssg_only_scale0.7",
+  "path": "/opt/instantx-exports-20261111/ssg_only_scale0.7.zip",
+  "bytes": 2349503524,
+  "dreambench": 750,
+  "dreambench_plus": 1350,
+  "execution_records": 2112,
+  "checks": "counts, case-id filenames, ZIP central directory; full content verification skipped at user request"
+}

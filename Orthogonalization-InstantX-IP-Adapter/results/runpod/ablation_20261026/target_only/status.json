@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "updated_at": 1793156495.6850312,
+  "recovered": true,
+  "images": 2100,
+  "metric_cases": 2100,
+  "recovery_record": "/workspace/instantx-0807/results/ablation_20261026/target_only/metrics/recovery.json"
+}

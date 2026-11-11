@@ -1,0 +1,15 @@
+{
+  "status": "running",
+  "scales": [
+    0.6,
+    0.9,
+    1.0
+  ],
+  "gate": true,
+  "projection": true,
+  "images": 6300,
+  "gpus": 2,
+  "per_gpu": 3150,
+  "started_at": 1792912276.4856899,
+  "script_sha256": "6981f7aad28a463c4e79ba1ee4d9ef32d7220f448c9e75f11c650ba15fd503cc"
+}

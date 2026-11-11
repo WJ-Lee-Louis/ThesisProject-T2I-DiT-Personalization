@@ -1,0 +1,12 @@
+{
+  "status": "running",
+  "condition": "ssg",
+  "scale": 0.7,
+  "projection": false,
+  "gate": true,
+  "images": 2100,
+  "gpus": 2,
+  "per_gpu": 1050,
+  "started_at": 1792954030.8768392,
+  "script_sha256": "476949587226ec9ae87afcf572b14e6ee5a51ff349c71605c7a540304159d0a5"
+}

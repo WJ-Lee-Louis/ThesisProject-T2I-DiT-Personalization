@@ -1,5 +1,10 @@
 # RunPod 실험 개요
 
+기존 본 실험·scale sweep·ablation 10개 조건의 metric과 기록은
+[results/runpod](../results/runpod/README.md)에 보존되어 있다.
+추가 실행·분석 스크립트는 [runpod/experiments](../runpod/experiments/README.md)에 있다.
+최종 생성 이미지는 repo/LFS에 넣지 않고 조건별 ZIP으로 외부 보관한다.
+
 **실행은 [RUNPOD_EXECUTION_KO.md](RUNPOD_EXECUTION_KO.md)의 1번부터 진행한다.**
 팀 계정에 이미 있는 100GB Network Volume을 사용한다. 여유 공간은 충분하다고 가정하며 새 볼륨을 만들지 않는다.
 

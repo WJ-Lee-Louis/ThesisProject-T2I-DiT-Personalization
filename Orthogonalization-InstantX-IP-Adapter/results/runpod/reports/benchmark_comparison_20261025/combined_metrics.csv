@@ -1,0 +1,37 @@
+benchmark,group,method,label,scale,ssg,images,source,CLIP-T,CLIP-I,DINO-I
+dreambench,overall,baseline,InstantX-IP-Adapter,—,OFF,750,screenshot,0.2939,0.8319,0.69
+dreambench,overall,method_0.7,Ours,0.7,ON,750,screenshot,0.3123,0.8022,0.6548
+dreambench,overall,method_0.8,Ours,0.8,ON,750,local_json,0.3077775065104167,0.8143502604166667,0.6725505407849948
+dreambench,overall,no_ssg_0.7,Ours w/o SSG,0.7,OFF,750,local_json,0.3016673177083333,0.8244088541666666,0.6805821841756503
+dreambench,animal,baseline,InstantX-IP-Adapter,—,OFF,225,screenshot,0.2917,0.8901,0.7872
+dreambench,animal,method_0.7,Ours,0.7,ON,225,screenshot,0.3204,0.8561,0.7562
+dreambench,animal,method_0.8,Ours,0.8,ON,225,local_json,0.3149994574652778,0.8632486979166667,0.7687876195377774
+dreambench,animal,no_ssg_0.7,Ours w/o SSG,0.7,OFF,225,local_json,0.3052853732638889,0.8781770833333333,0.7780577066209581
+dreambench,object,baseline,InstantX-IP-Adapter,—,OFF,525,screenshot,0.2949,0.807,0.6483
+dreambench,object,method_0.7,Ours,0.7,ON,525,screenshot,0.3089,0.7791,0.6113
+dreambench,object,method_0.8,Ours,0.8,ON,525,local_json,0.30468238467261904,0.793393787202381,0.6313060784623736
+dreambench,object,no_ssg_0.7,Ours w/o SSG,0.7,OFF,525,local_json,0.3001167224702381,0.8013653273809523,0.6388069602705183
+dreambench_plus,overall,baseline,InstantX-IP-Adapter,—,OFF,1350,screenshot,0.2994,0.8534,0.682
+dreambench_plus,overall,method_0.7,Ours,0.7,ON,1350,screenshot,0.328,0.8115,0.6154
+dreambench_plus,overall,method_0.8,Ours,0.8,ON,1350,local_json,0.32078893590856483,0.8273066767939815,0.6413216755235637
+dreambench_plus,overall,no_ssg_0.7,Ours w/o SSG,0.7,OFF,1350,local_json,0.3087129267939815,0.8413588686342592,0.661750714679559
+dreambench_plus,animal,baseline,InstantX-IP-Adapter,—,OFF,405,screenshot,0.3117,0.8902,0.7609
+dreambench_plus,animal,method_0.7,Ours,0.7,ON,405,screenshot,0.3352,0.8548,0.7226
+dreambench_plus,animal,method_0.8,Ours,0.8,ON,405,local_json,0.3288613401813272,0.866698013117284,0.7403545370808354
+dreambench_plus,animal,no_ssg_0.7,Ours w/o SSG,0.7,OFF,405,local_json,0.3182400173611111,0.8822229456018519,0.7509688005771166
+dreambench_plus,human,baseline,InstantX-IP-Adapter,—,OFF,180,screenshot,0.261,0.7941,0.6424
+dreambench_plus,human,method_0.7,Ours,0.7,ON,180,screenshot,0.301,0.7389,0.5466
+dreambench_plus,human,method_0.8,Ours,0.8,ON,180,local_json,0.28984375,0.7667616102430556,0.5847950418790181
+dreambench_plus,human,no_ssg_0.7,Ours w/o SSG,0.7,OFF,180,local_json,0.2726352267795139,0.7816813151041667,0.6097944211628702
+dreambench_plus,object,baseline,InstantX-IP-Adapter,—,OFF,585,screenshot,0.3042,0.8492,0.6584
+dreambench_plus,object,method_0.7,Ours,0.7,ON,585,screenshot,0.3299,0.8116,0.6004
+dreambench_plus,object,method_0.8,Ours,0.8,ON,585,local_json,0.3240309495192308,0.8246957632211539,0.6220323353751093
+dreambench_plus,object,no_ssg_0.7,Ours w/o SSG,0.7,OFF,585,local_json,0.3113456530448718,0.8385859041132478,0.6460970430802077
+dreambench_plus,style,baseline,InstantX-IP-Adapter,—,OFF,180,screenshot,0.2945,0.8436,0.6207
+dreambench_plus,style,method_0.7,Ours,0.7,ON,180,screenshot,0.3325,0.7865,0.4916
+dreambench_plus,style,method_0.8,Ours,0.8,ON,180,local_json,0.32303466796875,0.8077067057291667,0.5377147261467244
+dreambench_plus,style,no_ssg_0.7,Ours w/o SSG,0.7,OFF,180,local_json,0.31479831271701386,0.8181043836805556,0.5638407476246357
+dreambench_plus,non_style,baseline,InstantX-IP-Adapter,—,OFF,1170,screenshot,0.3001,0.8549,0.6914
+dreambench_plus,non_style,method_0.7,Ours,0.7,ON,1170,screenshot,0.3273,0.8153,0.6345
+dreambench_plus,non_style,method_0.8,Ours,0.8,ON,1170,local_json,0.3204434386685363,0.8303220569577991,0.6572612061969235
+dreambench_plus,non_style,no_ssg_0.7,Ours w/o SSG,0.7,OFF,1170,local_json,0.30777671357505343,0.8449364817040599,0.6768137865341627

@@ -1,0 +1,118 @@
+benchmark,table,group,method,label,images,source,CLIP-I,CLIP-T,DINO-I
+dreambench,method_comparison,overall,baseline,InstantX-IP-Adapter (baseline),750,historical screenshot (4 decimals),0.8319,0.2939,0.69
+dreambench,method_comparison,overall,ours_0.7,Ours (scale 0.7),750,historical screenshot (4 decimals),0.8022,0.3123,0.6548
+dreambench,method_comparison,overall,ours_0.8,Ours (scale best*),750,/workspace/instantx-0807/results/full/metrics/scores.json,0.8143502604166667,0.3077775065104167,0.6725505407849948
+dreambench,method_comparison,overall,FreeCus,FreeCus,750,provided comparison PNG; class scores unavailable,0.8058,0.3004,0.6708
+dreambench,method_comparison,overall,UNO,UNO [T],750,provided comparison PNG; class scores unavailable,0.8356,0.3039,0.7604
+dreambench,method_comparison,overall,USO,USO [T],750,provided comparison PNG; class scores unavailable,0.8301,0.3178,0.7686
+dreambench,method_comparison,animal,baseline,InstantX-IP-Adapter (baseline),225,historical screenshot (4 decimals),0.8901,0.2917,0.7872
+dreambench,method_comparison,animal,ours_0.7,Ours (scale 0.7),225,historical screenshot (4 decimals),0.8561,0.3204,0.7562
+dreambench,method_comparison,animal,ours_0.8,Ours (scale best*),225,/workspace/instantx-0807/results/full/metrics/scores.json,0.8632486979166667,0.3149994574652778,0.7687876195377774
+dreambench,method_comparison,animal,FreeCus,FreeCus,225,provided comparison PNG; class scores unavailable,,,
+dreambench,method_comparison,animal,UNO,UNO [T],225,provided comparison PNG; class scores unavailable,,,
+dreambench,method_comparison,animal,USO,USO [T],225,provided comparison PNG; class scores unavailable,,,
+dreambench,method_comparison,object,baseline,InstantX-IP-Adapter (baseline),525,historical screenshot (4 decimals),0.807,0.2949,0.6483
+dreambench,method_comparison,object,ours_0.7,Ours (scale 0.7),525,historical screenshot (4 decimals),0.7791,0.3089,0.6113
+dreambench,method_comparison,object,ours_0.8,Ours (scale best*),525,/workspace/instantx-0807/results/full/metrics/scores.json,0.793393787202381,0.30468238467261904,0.6313060784623736
+dreambench,method_comparison,object,FreeCus,FreeCus,525,provided comparison PNG; class scores unavailable,,,
+dreambench,method_comparison,object,UNO,UNO [T],525,provided comparison PNG; class scores unavailable,,,
+dreambench,method_comparison,object,USO,USO [T],525,provided comparison PNG; class scores unavailable,,,
+dreambench,scale_sensitivity,overall,ours_0.6,Ours (scale 0.6),750,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.78696484375,0.31650244140625,0.6323803634643554
+dreambench,scale_sensitivity,overall,ours_0.7,Ours (scale 0.7),750,historical screenshot (4 decimals),0.8022,0.3123,0.6548
+dreambench,scale_sensitivity,overall,ours_0.8,Ours (scale 0.8),750,/workspace/instantx-0807/results/full/metrics/scores.json,0.8143502604166667,0.3077775065104167,0.6725505407849948
+dreambench,scale_sensitivity,overall,ours_0.9,Ours (scale 0.9),750,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8252350260416667,0.30370621744791665,0.6874253786007564
+dreambench,scale_sensitivity,overall,ours_1.0,Ours (scale 1.0),750,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8353515625,0.29910335286458334,0.7015055228273074
+dreambench,scale_sensitivity,animal,ours_0.6,Ours (scale 0.6),225,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8464409722222223,0.32336588541666667,0.7362192565864987
+dreambench,scale_sensitivity,animal,ours_0.7,Ours (scale 0.7),225,historical screenshot (4 decimals),0.8561,0.3204,0.7562
+dreambench,scale_sensitivity,animal,ours_0.8,Ours (scale 0.8),225,/workspace/instantx-0807/results/full/metrics/scores.json,0.8632486979166667,0.3149994574652778,0.7687876195377774
+dreambench,scale_sensitivity,animal,ours_0.9,Ours (scale 0.9),225,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8714952256944445,0.3109478081597222,0.78042023340861
+dreambench,scale_sensitivity,animal,ours_1.0,Ours (scale 1.0),225,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8795551215277778,0.30571126302083335,0.7940961265563965
+dreambench,scale_sensitivity,object,ours_0.6,Ours (scale 0.6),525,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7614750744047619,0.31356096540178574,0.5878779806977227
+dreambench,scale_sensitivity,object,ours_0.7,Ours (scale 0.7),525,historical screenshot (4 decimals),0.7791,0.3089,0.6113
+dreambench,scale_sensitivity,object,ours_0.8,Ours (scale 0.8),525,/workspace/instantx-0807/results/full/metrics/scores.json,0.793393787202381,0.30468238467261904,0.6313060784623736
+dreambench,scale_sensitivity,object,ours_0.9,Ours (scale 0.9),525,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8054092261904762,0.3006026785714286,0.6475704408259618
+dreambench,scale_sensitivity,object,ours_1.0,Ours (scale 1.0),525,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8164071800595238,0.2962713913690476,0.6618238355148406
+dreambench,method_ablation,overall,baseline,InstantX-IP-Adapter (baseline),750,historical screenshot (4 decimals),0.8319,0.2939,0.69
+dreambench,method_ablation,overall,proj,+ Proj. (scale 0.7),750,/workspace/instantx-0807/results/full/metrics/scores.json,0.8244088541666666,0.3016673177083333,0.6805821841756503
+dreambench,method_ablation,overall,ssg,+ SSG (scale 0.7),750,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.806900390625,0.3089609375,0.6615988464951515
+dreambench,method_ablation,overall,ours_0.7,Ours (scale 0.7),750,historical screenshot (4 decimals),0.8022,0.3123,0.6548
+dreambench,method_ablation,animal,baseline,InstantX-IP-Adapter (baseline),225,historical screenshot (4 decimals),0.8901,0.2917,0.7872
+dreambench,method_ablation,animal,proj,+ Proj. (scale 0.7),225,/workspace/instantx-0807/results/full/metrics/scores.json,0.8781770833333333,0.3052853732638889,0.7780577066209581
+dreambench,method_ablation,animal,ssg,+ SSG (scale 0.7),225,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8645811631944444,0.3137717013888889,0.7632608744833205
+dreambench,method_ablation,animal,ours_0.7,Ours (scale 0.7),225,historical screenshot (4 decimals),0.8561,0.3204,0.7562
+dreambench,method_ablation,object,baseline,InstantX-IP-Adapter (baseline),525,historical screenshot (4 decimals),0.807,0.2949,0.6483
+dreambench,method_ablation,object,proj,+ Proj. (scale 0.7),525,/workspace/instantx-0807/results/full/metrics/scores.json,0.8013653273809523,0.3001167224702381,0.6388069602705183
+dreambench,method_ablation,object,ssg,+ SSG (scale 0.7),525,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.7821800595238095,0.306899181547619,0.6180294059287934
+dreambench,method_ablation,object,ours_0.7,Ours (scale 0.7),525,historical screenshot (4 decimals),0.7791,0.3089,0.6113
+dreambench_plus,method_comparison,overall,baseline,InstantX-IP-Adapter (baseline),1350,historical screenshot (4 decimals),0.8534,0.2994,0.682
+dreambench_plus,method_comparison,overall,ours_0.7,Ours (scale 0.7),1350,historical screenshot (4 decimals),0.8115,0.328,0.6154
+dreambench_plus,method_comparison,overall,ours_0.8,Ours (scale best*),1350,/workspace/instantx-0807/results/full/metrics/scores.json,0.8273066767939815,0.32078893590856483,0.6413216755235637
+dreambench_plus,method_comparison,animal,baseline,InstantX-IP-Adapter (baseline),405,historical screenshot (4 decimals),0.8902,0.3117,0.7609
+dreambench_plus,method_comparison,animal,ours_0.7,Ours (scale 0.7),405,historical screenshot (4 decimals),0.8548,0.3352,0.7226
+dreambench_plus,method_comparison,animal,ours_0.8,Ours (scale best*),405,/workspace/instantx-0807/results/full/metrics/scores.json,0.866698013117284,0.3288613401813272,0.7403545370808354
+dreambench_plus,method_comparison,human,baseline,InstantX-IP-Adapter (baseline),180,historical screenshot (4 decimals),0.7941,0.261,0.6424
+dreambench_plus,method_comparison,human,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7389,0.301,0.5466
+dreambench_plus,method_comparison,human,ours_0.8,Ours (scale best*),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.7667616102430556,0.28984375,0.5847950418790181
+dreambench_plus,method_comparison,object,baseline,InstantX-IP-Adapter (baseline),585,historical screenshot (4 decimals),0.8492,0.3042,0.6584
+dreambench_plus,method_comparison,object,ours_0.7,Ours (scale 0.7),585,historical screenshot (4 decimals),0.8116,0.3299,0.6004
+dreambench_plus,method_comparison,object,ours_0.8,Ours (scale best*),585,/workspace/instantx-0807/results/full/metrics/scores.json,0.8246957632211539,0.3240309495192308,0.6220323353751093
+dreambench_plus,method_comparison,style,baseline,InstantX-IP-Adapter (baseline),180,historical screenshot (4 decimals),0.8436,0.2945,0.6207
+dreambench_plus,method_comparison,style,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7865,0.3325,0.4916
+dreambench_plus,method_comparison,style,ours_0.8,Ours (scale best*),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.8077067057291667,0.32303466796875,0.5377147261467244
+dreambench_plus,method_comparison,non_style,baseline,InstantX-IP-Adapter (baseline),1170,historical screenshot (4 decimals),0.8549,0.3001,0.6914
+dreambench_plus,method_comparison,non_style,ours_0.7,Ours (scale 0.7),1170,historical screenshot (4 decimals),0.8153,0.3273,0.6345
+dreambench_plus,method_comparison,non_style,ours_0.8,Ours (scale best*),1170,/workspace/instantx-0807/results/full/metrics/scores.json,0.8303220569577991,0.3204434386685363,0.6572612061969235
+dreambench_plus,scale_sensitivity,overall,ours_0.6,Ours (scale 0.6),1350,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7944869429976852,0.3331110749421296,0.586854640789054
+dreambench_plus,scale_sensitivity,overall,ours_0.7,Ours (scale 0.7),1350,historical screenshot (4 decimals),0.8115,0.328,0.6154
+dreambench_plus,scale_sensitivity,overall,ours_0.8,Ours (scale 0.8),1350,/workspace/instantx-0807/results/full/metrics/scores.json,0.8273066767939815,0.32078893590856483,0.6413216755235637
+dreambench_plus,scale_sensitivity,overall,ours_0.9,Ours (scale 0.9),1350,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.840947265625,0.31235785590277776,0.6636944850561796
+dreambench_plus,scale_sensitivity,overall,ours_1.0,Ours (scale 1.0),1350,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8526889829282407,0.30487087673611113,0.6804160032117809
+dreambench_plus,scale_sensitivity,animal,ours_0.6,Ours (scale 0.6),405,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.842748119212963,0.3393747588734568,0.7013135580736913
+dreambench_plus,scale_sensitivity,animal,ours_0.7,Ours (scale 0.7),405,historical screenshot (4 decimals),0.8548,0.3352,0.7226
+dreambench_plus,scale_sensitivity,animal,ours_0.8,Ours (scale 0.8),405,/workspace/instantx-0807/results/full/metrics/scores.json,0.866698013117284,0.3288613401813272,0.7403545370808354
+dreambench_plus,scale_sensitivity,animal,ours_0.9,Ours (scale 0.9),405,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8771641107253086,0.32176739728009257,0.7526086799892379
+dreambench_plus,scale_sensitivity,animal,ours_1.0,Ours (scale 1.0),405,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8866307388117284,0.31565363377700617,0.7630541351842292
+dreambench_plus,scale_sensitivity,human,ours_0.6,Ours (scale 0.6),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7049750434027777,0.3135871039496528,0.4921170287662082
+dreambench_plus,scale_sensitivity,human,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7389,0.301,0.5466
+dreambench_plus,scale_sensitivity,human,ours_0.8,Ours (scale 0.8),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.7667616102430556,0.28984375,0.5847950418790181
+dreambench_plus,scale_sensitivity,human,ours_0.9,Ours (scale 0.9),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7867865668402778,0.2751987033420139,0.6171896941132016
+dreambench_plus,scale_sensitivity,human,ours_1.0,Ours (scale 1.0),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8033867730034723,0.26472032335069445,0.639879950053162
+dreambench_plus,scale_sensitivity,object,ours_0.6,Ours (scale 0.6),585,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7965745192307693,0.3339161408253205,0.5793709277533567
+dreambench_plus,scale_sensitivity,object,ours_0.7,Ours (scale 0.7),585,historical screenshot (4 decimals),0.8116,0.3299,0.6004
+dreambench_plus,scale_sensitivity,object,ours_0.8,Ours (scale 0.8),585,/workspace/instantx-0807/results/full/metrics/scores.json,0.8246957632211539,0.3240309495192308,0.6220323353751093
+dreambench_plus,scale_sensitivity,object,ours_0.9,Ours (scale 0.9),585,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8356870993589743,0.31750279614049143,0.6410022936315618
+dreambench_plus,scale_sensitivity,object,ours_1.0,Ours (scale 1.0),585,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8470761551816239,0.3110076121794872,0.6564501449083671
+dreambench_plus,scale_sensitivity,style,ours_0.6,Ours (scale 0.6),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7686265733506944,0.33592529296875,0.44838175628748206
+dreambench_plus,scale_sensitivity,style,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7865,0.3325,0.4916
+dreambench_plus,scale_sensitivity,style,ours_0.8,Ours (scale 0.8),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.8077067057291667,0.32303466796875,0.5377147261467244
+dreambench_plus,scale_sensitivity,style,ours_0.9,Ours (scale 0.9),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8307156032986112,0.31162448459201386,0.583891959529784
+dreambench_plus,scale_sensitivity,style,ours_1.0,Ours (scale 1.0),180,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8438639322916667,0.30081583658854166,0.6129052989184857
+dreambench_plus,scale_sensitivity,non_style,ours_0.6,Ours (scale 0.6),1170,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.7984654614049145,0.3326781183226496,0.6081581614816036
+dreambench_plus,scale_sensitivity,non_style,ours_0.7,Ours (scale 0.7),1170,historical screenshot (4 decimals),0.8153,0.3273,0.6345
+dreambench_plus,scale_sensitivity,non_style,ours_0.8,Ours (scale 0.8),1170,/workspace/instantx-0807/results/full/metrics/scores.json,0.8303220569577991,0.3204434386685363,0.6572612061969235
+dreambench_plus,scale_sensitivity,non_style,ours_0.9,Ours (scale 0.9),1170,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8425213675213675,0.3124706822582799,0.675971796675625
+dreambench_plus,scale_sensitivity,non_style,ours_1.0,Ours (scale 1.0),1170,/workspace/instantx-0807/results/scale_sweep_20261025/metrics/scores.json,0.8540466830261753,0.30549472906650643,0.6908022654107493
+dreambench_plus,method_ablation,overall,baseline,InstantX-IP-Adapter (baseline),1350,historical screenshot (4 decimals),0.8534,0.2994,0.682
+dreambench_plus,method_ablation,overall,proj,+ Proj. (scale 0.7),1350,/workspace/instantx-0807/results/full/metrics/scores.json,0.8413588686342592,0.3087129267939815,0.661750714679559
+dreambench_plus,method_ablation,overall,ssg,+ SSG (scale 0.7),1350,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8205953414351852,0.3220050274884259,0.6335135242784464
+dreambench_plus,method_ablation,overall,ours_0.7,Ours (scale 0.7),1350,historical screenshot (4 decimals),0.8115,0.328,0.6154
+dreambench_plus,method_ablation,animal,baseline,InstantX-IP-Adapter (baseline),405,historical screenshot (4 decimals),0.8902,0.3117,0.7609
+dreambench_plus,method_ablation,animal,proj,+ Proj. (scale 0.7),405,/workspace/instantx-0807/results/full/metrics/scores.json,0.8822229456018519,0.3182400173611111,0.7509688005771166
+dreambench_plus,method_ablation,animal,ssg,+ SSG (scale 0.7),405,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8629991319444444,0.33001633632330246,0.7362798745985384
+dreambench_plus,method_ablation,animal,ours_0.7,Ours (scale 0.7),405,historical screenshot (4 decimals),0.8548,0.3352,0.7226
+dreambench_plus,method_ablation,human,baseline,InstantX-IP-Adapter (baseline),180,historical screenshot (4 decimals),0.7941,0.261,0.6424
+dreambench_plus,method_ablation,human,proj,+ Proj. (scale 0.7),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.7816813151041667,0.2726352267795139,0.6097944211628702
+dreambench_plus,method_ablation,human,ssg,+ SSG (scale 0.7),180,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.7481160481770833,0.2957492404513889,0.5703094007240401
+dreambench_plus,method_ablation,human,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7389,0.301,0.5466
+dreambench_plus,method_ablation,object,baseline,InstantX-IP-Adapter (baseline),585,historical screenshot (4 decimals),0.8492,0.3042,0.6584
+dreambench_plus,method_ablation,object,proj,+ Proj. (scale 0.7),585,/workspace/instantx-0807/results/full/metrics/scores.json,0.8385859041132478,0.3113456530448718,0.6460970430802077
+dreambench_plus,method_ablation,object,ssg,+ SSG (scale 0.7),585,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8188180255074786,0.32474834735576924,0.6133150209473749
+dreambench_plus,method_ablation,object,ours_0.7,Ours (scale 0.7),585,historical screenshot (4 decimals),0.8116,0.3299,0.6004
+dreambench_plus,method_ablation,style,baseline,InstantX-IP-Adapter (baseline),180,historical screenshot (4 decimals),0.8436,0.2945,0.6207
+dreambench_plus,method_ablation,style,proj,+ Proj. (scale 0.7),180,/workspace/instantx-0807/results/full/metrics/scores.json,0.8181043836805556,0.31479831271701386,0.5638407476246357
+dreambench_plus,method_ablation,style,ssg,+ SSG (scale 0.7),180,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8034423828125,0.321319580078125,0.5311384954386287
+dreambench_plus,method_ablation,style,ours_0.7,Ours (scale 0.7),180,historical screenshot (4 decimals),0.7865,0.3325,0.4916
+dreambench_plus,method_ablation,non_style,baseline,InstantX-IP-Adapter (baseline),1170,historical screenshot (4 decimals),0.8549,0.3001,0.6914
+dreambench_plus,method_ablation,non_style,proj,+ Proj. (scale 0.7),1170,/workspace/instantx-0807/results/full/metrics/scores.json,0.8449364817040599,0.30777671357505343,0.6768137865341627
+dreambench_plus,method_ablation,non_style,ssg,+ SSG (scale 0.7),1170,/workspace/instantx-0807/results/ssg_only_scale_0.7_20261025/metrics/scores.json,0.8232342581463675,0.3221104809361645,0.6492635287153415
+dreambench_plus,method_ablation,non_style,ours_0.7,Ours (scale 0.7),1170,historical screenshot (4 decimals),0.8153,0.3273,0.6345
