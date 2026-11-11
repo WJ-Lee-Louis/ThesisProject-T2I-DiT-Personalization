@@ -1,0 +1,18 @@
+{
+  "account": "B",
+  "checked_at": 1792585618.9024813,
+  "stored_scores": 324,
+  "device": "Tesla T4",
+  "versions": {
+    "torch": "2.7.1",
+    "torchvision": "0.22.1",
+    "numpy": "1.26.4",
+    "Pillow": "11.3.0",
+    "clip": "1.0"
+  },
+  "classes": [
+    "animal",
+    "object"
+  ],
+  "inputs_match": true
+}

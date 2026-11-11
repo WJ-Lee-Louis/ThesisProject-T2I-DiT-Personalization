@@ -1,0 +1,49 @@
+{
+  "status": "metadata_prepared_only; generation/download completion not assumed",
+  "accounts": {
+    "A": {
+      "benchmark": "dreambench_plus",
+      "expected_pairs": 2700,
+      "by_condition": {
+        "baseline": 1350,
+        "source_target_ssg": 1350
+      },
+      "classes": {
+        "animal": {
+          "references": 45,
+          "expected_pairs": 810
+        },
+        "human": {
+          "references": 20,
+          "expected_pairs": 360
+        },
+        "object": {
+          "references": 65,
+          "expected_pairs": 1170
+        },
+        "style": {
+          "references": 20,
+          "expected_pairs": 360
+        }
+      }
+    },
+    "B": {
+      "benchmark": "dreambench",
+      "expected_pairs": 1500,
+      "by_condition": {
+        "baseline": 750,
+        "source_target_ssg": 750
+      },
+      "classes": {
+        "animal": {
+          "references": 9,
+          "expected_pairs": 450
+        },
+        "object": {
+          "references": 21,
+          "expected_pairs": 1050
+        }
+      }
+    }
+  }
+}

@@ -7,3 +7,13 @@ venv/
 !.env.example
 *.pem
 *.key
+
+# Final benchmark images are stored outside the repository in Downloads/AI_PROJECT_images.
+/freecus/artifacts/**/*.zip
+/dreamo/artifacts/**/*.zip
+/uno/artifacts/**/*.zip
+/xverse/artifacts/**/*.zip
+/xlabs_application/artifacts/**/*.zip
+/Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_images_v1/
+/Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_metrics_v1/runs/**/inputs_*.zip
+/Orthogonalization-InstantX-IP-Adapter/datasets/dreambench_uno/images/

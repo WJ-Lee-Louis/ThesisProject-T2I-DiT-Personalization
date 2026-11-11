@@ -3,9 +3,27 @@
   "method": "freecus",
   "benchmark": "dreambench_plus",
   "bundle_id": "0fa5460f44b4b8672480a187",
-  "generated_images": 1188,
+  "generated_images": 1170,
   "manifest_cases": 1350,
   "missing_case_ids": [
+    "160-00",
+    "160-01",
+    "160-02",
+    "160-03",
+    "160-04",
+    "160-05",
+    "160-06",
+    "160-07",
+    "160-08",
+    "161-00",
+    "161-01",
+    "161-02",
+    "161-03",
+    "161-04",
+    "161-05",
+    "161-06",
+    "161-07",
+    "161-08",
     "162-00",
     "162-01",
     "162-02",
@@ -7465,10 +7483,6 @@
       "size": 2151,
       "sha256": "bcb1267f2d1ba5cf06c9ded371674b2c529ce0ddddeb644cdbbe2606adf8e1b0"
     },
-    "tgt_image/dreambench_plus__style__00/0_0.png": {
-      "size": 2406772,
-      "sha256": "98bba09628be7e78826e56c5bd4a0acdac08ba7b0092baf42c05e6bc15eebc61"
-    },
     "references/f0c798c30709cc78f70019f8ab49a7d95b44c1f6b1df7137870e859eb8671709.png": {
       "size": 1416474,
       "sha256": "f0c798c30709cc78f70019f8ab49a7d95b44c1f6b1df7137870e859eb8671709"
@@ -7481,10 +7495,6 @@
       "size": 2197,
       "sha256": "08819303398534cf53496a25078a98f86828d43c5ba5bf90ff58c046c11c195a"
     },
-    "tgt_image/dreambench_plus__style__00/1_0.png": {
-      "size": 2338358,
-      "sha256": "2c4449b6bd2b577bef837ae25f8cb99a4d81eac077fbb6d871a8a5134801ee33"
-    },
     "text/dreambench_plus__style__00/1_0.txt": {
       "size": 74,
       "sha256": "29067bd79cd35a7d80dc4f176a75718e40935f5429bd8b403f1685316be873c1"
@@ -7492,10 +7502,6 @@
     "metadata/dreambench_plus__style__00/2_0.json": {
       "size": 2190,
       "sha256": "3ba27831e8e6da155f9a71dad3541df383536a4dc5c427846a9a417da69c23fe"
-    },
-    "tgt_image/dreambench_plus__style__00/2_0.png": {
-      "size": 2438857,
-      "sha256": "8bd69d880a2241ba3fbff0339c6f62b3cd1d977887e378180dd273c017f50244"
     },
     "text/dreambench_plus__style__00/2_0.txt": {
       "size": 71,
@@ -7505,10 +7511,6 @@
       "size": 2172,
       "sha256": "84366e787d8b9c282618384a489dfca6173becffd1d08e80a559950d42e3ad72"
     },
-    "tgt_image/dreambench_plus__style__00/3_0.png": {
-      "size": 2273103,
-      "sha256": "fdde74492daa40fd83173a417ab1e2be522678673911b70a50ed11267b17e2a4"
-    },
     "text/dreambench_plus__style__00/3_0.txt": {
       "size": 62,
       "sha256": "5ed52ae51153cd3eeb68ac6a8b343c8ad9ea6cbd01c0a8ca67dd6a936a561a1a"
@@ -7516,10 +7518,6 @@
     "metadata/dreambench_plus__style__00/4_0.json": {
       "size": 2171,
       "sha256": "9076cc5851644e79457b1b6fcef500fd87fdd32f6fde920aa5981248c09c1517"
-    },
-    "tgt_image/dreambench_plus__style__00/4_0.png": {
-      "size": 2194909,
-      "sha256": "8ae6e1c13bf1c941e874b8d281a90bb05fdbe3d6b562ae2ee195dac57d1fc8e8"
     },
     "text/dreambench_plus__style__00/4_0.txt": {
       "size": 61,
@@ -7529,10 +7527,6 @@
       "size": 2202,
       "sha256": "5aff60e3d73e0418e835c72e771e3a646bff3e96978e1e852a92e506780055a0"
     },
-    "tgt_image/dreambench_plus__style__00/5_0.png": {
-      "size": 2248729,
-      "sha256": "102541fd34d6c11496413866b43e07cf57b61621b67f312aa2f6f264db1e84c9"
-    },
     "text/dreambench_plus__style__00/5_0.txt": {
       "size": 77,
       "sha256": "b603d5411b65e9dfa4f7060833d639b28a759136b435e7f5a201e388c988bec5"
@@ -7540,10 +7534,6 @@
     "metadata/dreambench_plus__style__00/6_0.json": {
       "size": 2215,
       "sha256": "bc285859c4005a4ec20333e216fcb517db3286639fcdab50c57151a285f378a5"
-    },
-    "tgt_image/dreambench_plus__style__00/6_0.png": {
-      "size": 2281423,
-      "sha256": "e07dce75dc2fa0a4875639d97f80f63de63eeb510d759dcc5a026c848f383111"
     },
     "text/dreambench_plus__style__00/6_0.txt": {
       "size": 83,
@@ -7553,10 +7543,6 @@
       "size": 2201,
       "sha256": "742b2195685295905d817662e1d1957510107fe638488a483df7833a6706fd41"
     },
-    "tgt_image/dreambench_plus__style__00/7_0.png": {
-      "size": 2332069,
-      "sha256": "1eb3836303e2d864f57cc0a72ee4ce5d71961455cf19ee033c56cfc59ef296b0"
-    },
     "text/dreambench_plus__style__00/7_0.txt": {
       "size": 76,
       "sha256": "f9cbee7d0ab7d19c8a1a917ef886cf38707ddde78fbd0ec9b0a82634f8b02b66"
@@ -7564,10 +7550,6 @@
     "metadata/dreambench_plus__style__00/8_0.json": {
       "size": 2201,
       "sha256": "fd79d1e999a33736f8b619a51fa0e98078244630c22c4f5dbe6aa15c3455cfd5"
-    },
-    "tgt_image/dreambench_plus__style__00/8_0.png": {
-      "size": 2313388,
-      "sha256": "f18a78d4e5d796e46088fd48ddf255ac7b9c22de9bfac54bc806cf1747277d16"
     },
     "text/dreambench_plus__style__00/8_0.txt": {
       "size": 76,
@@ -14857,10 +14839,6 @@
       "size": 2223,
       "sha256": "c129cd509fac3fa18f35df9c0ab05b9fa78b22df9af082fe020c9b68aa73ffcc"
     },
-    "tgt_image/dreambench_plus__style__01/0_0.png": {
-      "size": 1390013,
-      "sha256": "e8060c396bf07fb40cb2e5b22b06485e66e3a399d070ad6b2058b30ba5c2cee6"
-    },
     "text/dreambench_plus__style__01/0_0.txt": {
       "size": 54,
       "sha256": "873847b1855131d896206ac0ff2a36c857a8d1b45c79a6d25f0da06107c6ee4b"
@@ -14868,10 +14846,6 @@
     "metadata/dreambench_plus__style__01/1_0.json": {
       "size": 2263,
       "sha256": "04b71cb35b9be5fc3f5b38d048d8ad71ff2770003c2c7f2994f2f90e1252a8b2"
-    },
-    "tgt_image/dreambench_plus__style__01/1_0.png": {
-      "size": 1324802,
-      "sha256": "2f18c38476b805a3a55e30ebced139af78b3975cf73cbbea1aef14d5a8d489aa"
     },
     "text/dreambench_plus__style__01/1_0.txt": {
       "size": 74,
@@ -14881,10 +14855,6 @@
       "size": 2232,
       "sha256": "774c5a72436311655a47fa64bb546d135700ae8b12f5ed60779c79b9106e7d7f"
     },
-    "tgt_image/dreambench_plus__style__01/2_0.png": {
-      "size": 1224378,
-      "sha256": "a69e9d35d9a123d9f50e271e97930bb00c06df9ee22700d3ea3c972e02f944c9"
-    },
     "text/dreambench_plus__style__01/2_0.txt": {
       "size": 58,
       "sha256": "2f006ad059f85aa5d93898be088badcba0187989cdb0d325f58e68cf1d7c46b9"
@@ -14892,10 +14862,6 @@
     "metadata/dreambench_plus__style__01/3_0.json": {
       "size": 2238,
       "sha256": "eb68d62c7ab0ef7a5f6d86d91671e3674cc6d57c470fbf4f14dab2b5e5fd5ee0"
-    },
-    "tgt_image/dreambench_plus__style__01/3_0.png": {
-      "size": 1256305,
-      "sha256": "49dcb8797a0d861391b9a04f7ad0672cc4d7159d8601f04fa06e071108f440b4"
     },
     "text/dreambench_plus__style__01/3_0.txt": {
       "size": 61,
@@ -14905,10 +14871,6 @@
       "size": 2238,
       "sha256": "9a3655efc29371077504151072f7071f247f68475c98e6e9078ee880a88106ee"
     },
-    "tgt_image/dreambench_plus__style__01/4_0.png": {
-      "size": 1254828,
-      "sha256": "52046bf0ee7c02e76b3f453add213c94958f86192f5a8ef2370ffd5d9ffbdaad"
-    },
     "text/dreambench_plus__style__01/4_0.txt": {
       "size": 64,
       "sha256": "ca06c2aecea0408388733aa5f6ecbb636bc5d8a43855d1e1a87bffedebc4f5ed"
@@ -14916,10 +14878,6 @@
     "metadata/dreambench_plus__style__01/5_0.json": {
       "size": 2240,
       "sha256": "f010e6d5d43b3612d4a24010810515b065df470a8446a4a2d01793928243b450"
-    },
-    "tgt_image/dreambench_plus__style__01/5_0.png": {
-      "size": 1171805,
-      "sha256": "0cb91fca68ce1ec12b7e67c23121dd8d345e07ef44d4b728b5c2cc6e321117cf"
     },
     "text/dreambench_plus__style__01/5_0.txt": {
       "size": 62,
@@ -14929,10 +14887,6 @@
       "size": 2228,
       "sha256": "19ddc0fbe208847b4541c9263c06bb884cdc1694e237c152a0263591c91ed6b9"
     },
-    "tgt_image/dreambench_plus__style__01/6_0.png": {
-      "size": 1027134,
-      "sha256": "f15829535a109b906ad5f872756a01b1c4d745bc29294b0b7e06477890cd15b1"
-    },
     "text/dreambench_plus__style__01/6_0.txt": {
       "size": 56,
       "sha256": "dfb63014e8be81a1107f45248c15498e848809a488989cc642332f46267a386c"
@@ -14941,10 +14895,6 @@
       "size": 2199,
       "sha256": "fbb8ec193b04e2fd3c71b40d3c281ccb8d5b2126ffcf86777e927612771ff8a1"
     },
-    "tgt_image/dreambench_plus__style__01/7_0.png": {
-      "size": 1023969,
-      "sha256": "a7b829c6cf3afb24687bacda426b94d93d1afc0be68e9dd1951b2f2a9432c194"
-    },
     "text/dreambench_plus__style__01/7_0.txt": {
       "size": 42,
       "sha256": "70eaf76a79a4de1c429880ef62d990d9a488de8a1d2b64a06872461be2911c94"
@@ -14952,10 +14902,6 @@
     "metadata/dreambench_plus__style__01/8_0.json": {
       "size": 2228,
       "sha256": "e797aeb3ad3cce47d94c31fb118936ed4083da22014c97280bc99b90b143edbc"
-    },
-    "tgt_image/dreambench_plus__style__01/8_0.png": {
-      "size": 1293143,
-      "sha256": "1b820dc148d34e2a0394aeac924cef3cd96ce0b147c2368fdc66fd3c74ecaa23"
     },
     "text/dreambench_plus__style__01/8_0.txt": {
       "size": 56,
@@ -15574,8 +15520,191 @@
     },
     {
       "file": "images-001.zip",
-      "size_bytes": 157014367,
-      "sha256": "70aaa9a2ba0143632df3beea7d6c3c3ec5621e0b400f4d719ce9847bac7dfdad"
+      "size_bytes": 125217430,
+      "sha256": "325e5b984984abd9816a68975cb69765333853ca8eaffb347ea1b7f7b28cffc5"
     }
-  ]
+  ],
+  "excluded_case_ids": [
+    "160-00",
+    "160-01",
+    "160-02",
+    "160-03",
+    "160-04",
+    "160-05",
+    "160-06",
+    "160-07",
+    "160-08",
+    "161-00",
+    "161-01",
+    "161-02",
+    "161-03",
+    "161-04",
+    "161-05",
+    "161-06",
+    "161-07",
+    "161-08",
+    "162-00",
+    "162-01",
+    "162-02",
+    "162-03",
+    "162-04",
+    "162-05",
+    "162-06",
+    "162-07",
+    "162-08",
+    "163-00",
+    "163-01",
+    "163-02",
+    "163-03",
+    "163-04",
+    "163-05",
+    "163-06",
+    "163-07",
+    "163-08",
+    "164-00",
+    "164-01",
+    "164-02",
+    "164-03",
+    "164-04",
+    "164-05",
+    "164-06",
+    "164-07",
+    "164-08",
+    "165-00",
+    "165-01",
+    "165-02",
+    "165-03",
+    "165-04",
+    "165-05",
+    "165-06",
+    "165-07",
+    "165-08",
+    "166-00",
+    "166-01",
+    "166-02",
+    "166-03",
+    "166-04",
+    "166-05",
+    "166-06",
+    "166-07",
+    "166-08",
+    "167-00",
+    "167-01",
+    "167-02",
+    "167-03",
+    "167-04",
+    "167-05",
+    "167-06",
+    "167-07",
+    "167-08",
+    "168-00",
+    "168-01",
+    "168-02",
+    "168-03",
+    "168-04",
+    "168-05",
+    "168-06",
+    "168-07",
+    "168-08",
+    "169-00",
+    "169-01",
+    "169-02",
+    "169-03",
+    "169-04",
+    "169-05",
+    "169-06",
+    "169-07",
+    "169-08",
+    "170-00",
+    "170-01",
+    "170-02",
+    "170-03",
+    "170-04",
+    "170-05",
+    "170-06",
+    "170-07",
+    "170-08",
+    "171-00",
+    "171-01",
+    "171-02",
+    "171-03",
+    "171-04",
+    "171-05",
+    "171-06",
+    "171-07",
+    "171-08",
+    "172-00",
+    "172-01",
+    "172-02",
+    "172-03",
+    "172-04",
+    "172-05",
+    "172-06",
+    "172-07",
+    "172-08",
+    "173-00",
+    "173-01",
+    "173-02",
+    "173-03",
+    "173-04",
+    "173-05",
+    "173-06",
+    "173-07",
+    "173-08",
+    "174-00",
+    "174-01",
+    "174-02",
+    "174-03",
+    "174-04",
+    "174-05",
+    "174-06",
+    "174-07",
+    "174-08",
+    "175-00",
+    "175-01",
+    "175-02",
+    "175-03",
+    "175-04",
+    "175-05",
+    "175-06",
+    "175-07",
+    "175-08",
+    "176-00",
+    "176-01",
+    "176-02",
+    "176-03",
+    "176-04",
+    "176-05",
+    "176-06",
+    "176-07",
+    "176-08",
+    "177-00",
+    "177-01",
+    "177-02",
+    "177-03",
+    "177-04",
+    "177-05",
+    "177-06",
+    "177-07",
+    "177-08",
+    "178-00",
+    "178-01",
+    "178-02",
+    "178-03",
+    "178-04",
+    "178-05",
+    "178-06",
+    "178-07",
+    "178-08",
+    "179-00",
+    "179-01",
+    "179-02",
+    "179-03",
+    "179-04",
+    "179-05",
+    "179-06",
+    "179-07",
+    "179-08"
+  ],
+  "exclusion_reason": "Style category intentionally excluded from the retained DreamBench++ evaluation images."
 }
