@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "archive": "C:\\graduate_project_sy\\AI_PROJECT_images\\drive_upload_1024\\USO_1024.zip",
+  "size_bytes": 2655155265,
+  "sha256": "957d4244157749214063ad02a0911ae4d96767d15370280a87c88519c8e7eb6d",
+  "images": 2100,
+  "resolution": [
+    1024,
+    1024
+  ],
+  "coverage": {
+    "dreambench": {
+      "generated": 750,
+      "excluded_case_ids": [],
+      "missing": []
+    },
+    "dreambench_plus": {
+      "generated": 1350,
+      "excluded_case_ids": [],
+      "missing": []
+    }
+  },
+  "original_png_bytes_unchanged": true,
+  "member_sha256_and_crc_verified": true,
+  "local_sha256_verified": true,
+  "actual_png_dimensions_verified": true
+}

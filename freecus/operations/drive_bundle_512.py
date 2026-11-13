@@ -10,16 +10,18 @@ from freecus.operations.artifact_bundle import digest, verify
 from freecus.run import write_json
 
 
-def build(method, state, expected):
+def build(method, state, expected, *, resolution=(512, 512), destination=None, source_folders=None):
     plans = json.loads(state.read_text(encoding='utf-8'))
-    destination = PROJECT.parent / 'AI_PROJECT_images/drive_upload_512'
+    destination = Path(destination) if destination is not None else PROJECT.parent / 'AI_PROJECT_images/drive_upload_512'
     destination.mkdir(parents=True, exist_ok=True)
     final = destination / (method + '.zip')
     proof = destination / (method + '.verification.json')
     if final.exists():
         if proof.exists():
             previous = json.loads(proof.read_text(encoding='utf-8'))
-            if previous['sha256'] == digest(final) and previous['verified']:
+            if (previous['sha256'] == digest(final) and previous['verified']
+                    and previous['resolution'] == list(resolution)
+                    and {k: v['generated'] for k, v in previous['coverage'].items()} == expected):
                 return previous
         raise ValueError('Existing upload ZIP must be preserved: ' + str(final))
     partial = final.with_suffix('.zip.partial')
@@ -35,7 +37,8 @@ def build(method, state, expected):
 
         for plan in plans:
             benchmark, run_id = plan['benchmark'], plan['run_id']
-            folder = PROJECT.parent / 'AI_PROJECT_images' / method.lower() / benchmark / run_id
+            folder = (Path(source_folders[benchmark]) if source_folders is not None
+                      else PROJECT.parent / 'AI_PROJECT_images' / method.lower() / benchmark / run_id)
             index = json.loads((folder / 'bundle_index.json').read_text(encoding='utf-8'))
             verify(folder, index)
             prefix = f'execution_records/{benchmark}/{run_id}/'
@@ -55,8 +58,8 @@ def build(method, state, expected):
                             if case in found or case not in wanted:
                                 raise ValueError('Duplicate or excluded image: ' + case)
                             data = archive.read(entry)
-                            if data[:8] != b'\x89PNG\r\n\x1a\n' or struct.unpack('>II', data[16:24]) != (512, 512):
-                                raise ValueError('Not a native-size 512 PNG: ' + name)
+                            if data[:8] != b'\x89PNG\r\n\x1a\n' or struct.unpack('>II', data[16:24]) != tuple(resolution):
+                                raise ValueError('Unexpected native PNG resolution: ' + name)
                             target = f'{benchmark}/{case}.png'
                             add(target, data)
                             if members[target]['sha256'] != index['members'][name]['sha256']:
@@ -82,7 +85,7 @@ def build(method, state, expected):
             print(method, benchmark, len(found), 'original PNGs repackaged', flush=True)
         if len(images) != sum(expected.values()):
             raise ValueError('Unexpected combined image count')
-        record = dict(method=method, resolution=[512, 512], images=images, coverage=coverage,
+        record = dict(method=method, resolution=list(resolution), images=images, coverage=coverage,
                       source_bundles=sources, resized=False, image_bytes_unchanged=True,
                       reference_pixels='Preserved in original Modal bundles; reference IDs/hashes in manifest and metadata')
         add('execution_records/upload_manifest.json', json.dumps(record, ensure_ascii=False, indent=2).encode())
@@ -98,7 +101,7 @@ def build(method, state, expected):
                 raise ValueError('Output member SHA mismatch')
     partial.replace(final)
     report = dict(verified=True, archive=str(final), size_bytes=final.stat().st_size,
-                  sha256=digest(final), images=len(images), resolution=[512, 512], coverage=coverage,
+                  sha256=digest(final), images=len(images), resolution=list(resolution), coverage=coverage,
                   original_png_bytes_unchanged=True, member_sha256_and_crc_verified=True)
     write_json(proof, report)
     write_json(destination / (method + '.bundle_index.json'), dict(report, members=members, source_bundles=sources))

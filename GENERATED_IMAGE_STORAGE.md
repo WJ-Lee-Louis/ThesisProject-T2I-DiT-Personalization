@@ -1,4 +1,4 @@
-# Generated Image Storage and Native 512 Results
+# Generated Image Storage and Verified Results
 
 Generated PNGs and image ZIPs are distributed through the shared Google Drive,
 not Git. Code, configuration, model revisions, original manifests, per-image
@@ -38,6 +38,27 @@ Original preservation bundles: `../AI_PROJECT_images/freecus_512/` and
 `../AI_PROJECT_images/uno_512/`. Both locations are outside this Git repository.
 Copies of the upload verification records are stored in each run directory below.
 
+## USO Native 1024 Experiment
+
+[USO_1024.zip on Google Drive](https://drive.google.com/file/d/1kKre7W5IRzoij9pIaozEFLQ9NwmqSIcQ/view)
+contains 750 DreamBench and 1350 DreamBench++ PNGs, including all 180 style cases.
+All 2100 outputs were generated natively at 1024x1024 with seed 42, 25 steps,
+guidance 4.0 and the official pretrained USO LoRA (rank 128).
+No target prompt augmentation or image resizing was applied.
+
+The archive uses the same `dreambench/`, `dreambench_plus/` and
+`execution_records/` layout as the 512 packages. Exact size: 2655155265 bytes.
+SHA-256: `957d4244157749214063ad02a0911ae4d96767d15370280a87c88519c8e7eb6d`.
+Local upload location: `../AI_PROJECT_images/drive_upload_1024/` (outside Git).
+Original preservation bundles remain on the experiment's Modal Volume.
+
+The complete local ZIP SHA-256, all member SHA-256/CRC values and actual PNG
+dimensions were verified before release. A subsequent range-based Drive check
+verified the exact file length, complete entry names/sizes and upload-manifest
+SHA-256 against the local records. It did not re-download or hash all remote
+image bytes. See [Drive verification](uso/results/reports/google_drive_verification.json)
+and [metric summary](uso/results/reports/summary.csv).
+
 ## Canonical Run Records
 
 | Method | Benchmark | Run directory |
@@ -46,6 +67,8 @@ Copies of the upload verification records are stored in each run directory below
 | FreeCus 512 | DreamBench++ non-style | [records](freecus/results_512/dreambench_plus/freecus512-dreambench_plus-s42-a63b054d17b9ab87/) |
 | UNO 512 | DreamBench | [records](uno/results_512/dreambench/uno512-dreambench-s42-50396742e580597d/) |
 | UNO 512 | DreamBench++ full | [records](uno/results_512/dreambench_plus/uno512-dreambench_plus-s42-ca39a70a1f5ebec3/) |
+| USO 1024 | DreamBench | [records](uso/results/dreambench/uso1024-dreambench-s42-59e9e8cf62e1b2c8/) |
+| USO 1024 | DreamBench++ full | [records](uso/results/dreambench_plus/uso1024-dreambench_plus-s42-736623e31bbbb95d/) |
 
 FreeCus keeps its 1024 paper settings except output dimensions: seed/caption_seed
 42, 30 steps, guidance 3.5, scale 1.1. UNO keeps seed 42, 25 steps, guidance 4.0,
@@ -68,10 +91,15 @@ means, equal to case micro means for these balanced cohorts. Higher is better.
 | UNO | DreamBench | 512 | 0.8349 | 0.3023 | 0.7606 |
 | UNO | DreamBench++ full | 1024 | 0.7768 | 0.3296 | 0.5901 |
 | UNO | DreamBench++ full | 512 | 0.8101 | 0.3216 | 0.6573 |
+| USO | DreamBench | 1024 | 0.8302 | 0.3198 | 0.7730 |
+| USO | DreamBench++ full | 1024 | 0.7750 | 0.3494 | 0.6201 |
+| USO | DreamBench++ non-style | 1024 | 0.7835 | 0.3494 | 0.6514 |
 
 FreeCus DreamBench++ excludes the 180 style cases from generation/evaluation;
 the complete canonical 1350-case manifest and explicit exclusion list remain.
 UNO includes all 180 style cases. No missing result is assigned a zero score.
+USO also includes every style case; its non-style row is a separate 1170-case
+subset of the completed 1350-case evaluation, not an excluded generation cohort.
 
 ## Image ZIP History Cleanup
 

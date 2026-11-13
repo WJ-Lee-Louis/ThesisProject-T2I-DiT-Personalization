@@ -1,0 +1,1 @@
+{"model_type": "flux-dev", "width": 1024, "height": 1024, "seed": 42, "steps": 25, "guidance": 4.0, "reference_resolution": 512, "only_lora": true, "lora_rank": 128, "pe": "d", "cpu_offload": false, "reference_task": "subject_or_style_by_canonical_category"}

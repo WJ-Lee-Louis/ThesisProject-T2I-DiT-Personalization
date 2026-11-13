@@ -6,6 +6,11 @@
 freecus/results/** -text
 dreamo/results/** -text
 uno/results/** -text
+uso/results/** -text whitespace=cr-at-eol
+uso/upstream/** -text
+uso/*.json text eol=lf
+uso/*.md text eol=lf
+uso/requirements*.txt text eol=lf
 freecus/results_512/** -text whitespace=cr-at-eol
 uno/results_512/** -text whitespace=cr-at-eol
 xverse/results/** -text

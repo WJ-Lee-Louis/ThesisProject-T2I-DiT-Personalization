@@ -1,0 +1,18 @@
+{
+  "folder": "https://drive.google.com/drive/folders/1TGZGEdoiG_2uvCHQ9PfAmMor9qfMOTmT",
+  "checked_date": "2026-11-14",
+  "archives": [
+    {
+      "file": "USO_1024.zip",
+      "file_id": "1kKre7W5IRzoij9pIaozEFLQ9NwmqSIcQ",
+      "url": "https://drive.google.com/file/d/1kKre7W5IRzoij9pIaozEFLQ9NwmqSIcQ/view",
+      "size_bytes": 2655155265,
+      "images": 2100,
+      "local_sha256": "957d4244157749214063ad02a0911ae4d96767d15370280a87c88519c8e7eb6d",
+      "verified": true,
+      "remote_check": "Exact byte length, complete ZIP entry names and sizes, upload-manifest SHA-256 and all recorded image hashes match the verified local ZIP",
+      "metadata_bytes_transferred": 1738786,
+      "full_remote_sha256_computed": false
+    }
+  ]
+}

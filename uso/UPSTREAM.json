@@ -1,0 +1,20 @@
+{
+  "repo": "https://github.com/bytedance/USO.git",
+  "commit": "6587514aa3adf8e8f46e5f7e804239651d30b32d",
+  "files": {
+    "example.env": "d08ac32683f5beec6fe2412f8eaf6d9c70dbd0ca27e9fc4315b4986934d5bc05",
+    "inference.py": "393794670c544fd8815f26bf72e48d0ba4ed26c765fe330109971bf7fafb30fb",
+    "LICENSE": "5ad8c213095c573921d7388edf93f6a9f54490b8ebf3b165ae8ef1947cf70846",
+    "README.md": "547e5e2ea814d259d0839face2da2c8a8a1a3d430506fbac7153fba86dbc5357",
+    "requirements.txt": "4dadfa42aa3f6f53f3c613a03a57acaf3b10f0a92daa48f5795e361bc4f3580d",
+    "uso/flux/math.py": "7dddf2e29506f74624e0cab01fa9d7385a7713e2653912bd4d886880f8d5066c",
+    "uso/flux/model.py": "3e14f8b1e8f6d880e2ec7590e4ee87e7d1668bb5a217df01d035ae693453ffa3",
+    "uso/flux/modules/autoencoder.py": "530ced9a5728bceb7cea480f3c29cb7fc18242d0044db357dcb8433e20f2fda9",
+    "uso/flux/modules/conditioner.py": "1016620a48498b07f58d8a2e94c1a1f22e73c9a943f260c3e89dc90dc7e84483",
+    "uso/flux/modules/layers.py": "358c9a82c5e0850812027871e3b310c628b3a300baab043e4d4e1de700ca56b4",
+    "uso/flux/pipeline.py": "0d3ec8f288470c7870b1797bf3d263d2bbd6174e1c789f24689eee2714500276",
+    "uso/flux/sampling.py": "e36e0ec67b7974b36f4eb01924808966592eb845b43be39f9a8b331dbd9955bf",
+    "uso/flux/util.py": "d1007e34453f60a20aec27c35426f051fe57f26fccb58dd47a65d0509c984b49",
+    "weights/downloader.py": "fae80b52d765eddfbd39be998fe0bca5fd543554ce25009536b5cc21168ffd92"
+  }
+}
