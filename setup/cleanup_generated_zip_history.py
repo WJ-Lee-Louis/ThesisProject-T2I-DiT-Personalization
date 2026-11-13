@@ -11,7 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'setup/image_zip_cleanup_20261113.json'
 PATHS = ROOT / 'setup/image_zip_cleanup_paths_20261113.txt'
-BARE = ROOT.parent / '_image_zip_history_cleanup_20261113.git'
+BARE = ROOT.parent / '_image_zip_history_cleanup_20261113_v2.git'
 PATTERNS = [
     r'^(freecus|uno|dreamo|xverse)/artifacts/(dreambench|dreambench_plus)/[^/]+/images-\d+\.zip$',
     r'^Orthogonalization-InstantX-IP-Adapter/outputs/benchmark_images_v1/(baseline|source_target_ssg)/(dreambench|dreambench_plus)/images-\d+\.zip$',
@@ -64,12 +64,50 @@ def rewrite():
         raise ValueError('Removal list differs from approved scope')
     source=git('rev-parse','HEAD').decode().strip()
     git('clone','--bare','--shared',str(ROOT),str(BARE))
-    command=[sys.executable,'-m','git_filter_repo','--force','--partial','--refs','refs/heads/main',
-             '--paths-from-file',str(PATHS),'--invert-paths','--prune-empty','never',
-             '--prune-degenerate','never','--preserve-commit-hashes']
-    subprocess.run(command,cwd=BARE,check=True,env=dict(os.environ,GIT_NO_LAZY_FETCH='1',GIT_LFS_SKIP_SMUDGE='1'))
-    target=git('rev-parse','main',cwd=BARE).decode().strip()
-    mappings=(BARE/'filter-repo/commit-map').read_text().splitlines()[1:]
+    env=dict(os.environ,GIT_NO_LAZY_FETCH='1',GIT_LFS_SKIP_SMUDGE='1')
+    def write_object(command,data):
+        return subprocess.check_output(['git',*command],input=data,cwd=BARE,env=env).decode().strip()
+    removed=set(paths)
+    cache={}
+    def tree(oid,prefix=''):
+        key=(oid,prefix)
+        if key in cache:return cache[key]
+        original=git('ls-tree','-z',oid,cwd=BARE)
+        entries=[]
+        for entry in original.split(b'\0'):
+            if not entry:continue
+            info,name=entry.split(b'\t',1)
+            mode,kind,child=info.split()
+            full=prefix+name.decode()
+            if full in removed:continue
+            if kind==b'tree' and any(p.startswith(full+'/') for p in removed):
+                updated=tree(child.decode(),full+'/')
+                if updated=='4b825dc642cb6eb9a060e54bf8d69288fbee4904':continue
+                info=b' '.join([mode,kind,updated.encode()])
+            entries.append(info+b'\t'+name+b'\0')
+        data=b''.join(entries)
+        # --missing retains untouched promisor blobs without fetching their contents.
+        result=oid if data==original else write_object(['mktree','-z','--missing'],data)
+        cache[key]=result
+        return result
+    mappings=[]
+    remap={}
+    for old in git('rev-list','--reverse','--topo-order',source).decode().splitlines():
+        raw=git('cat-file','commit',old)
+        header,message=raw.split(b'\n\n',1)
+        if b'\ngpgsig ' in header or b'\nmergetag ' in header:
+            raise ValueError('Signed commit requires a separate explicit signature policy')
+        lines=[]
+        for line in header.split(b'\n'):
+            if line.startswith(b'tree '):line=b'tree '+tree(line[5:].decode()).encode()
+            elif line.startswith(b'parent '):line=b'parent '+remap[line[7:].decode()].encode()
+            lines.append(line)
+        updated=b'\n'.join(lines)+b'\n\n'+message
+        new=old if updated==raw else write_object(['hash-object','-t','commit','-w','--stdin'],updated)
+        remap[old]=new;mappings.append(old+' '+new)
+    target=remap[source]
+    git('update-ref','refs/heads/main',target,source,cwd=BARE)
+    (BARE/'image-zip-commit-map.txt').write_text('old new\n'+'\n'.join(mappings)+'\n',encoding='ascii')
     checked=0
     for line in mappings:
         old,new=line.split()
@@ -89,7 +127,7 @@ def rewrite():
     result=dict(source_head=source,cleaned_head=target,verified_commits=checked,
                 non_image_paths_modes_blob_ids_unchanged=True,commit_metadata_unchanged=True,
                 latest_tree_identical=True,selected_zip_paths_absent_from_history=True,
-                cleanup_repository=str(BARE),removed_path_count=len(paths),pushed=False)
+                cleanup_repository=str(BARE),removed_path_count=len(paths),phase='validated before push')
     dest=ROOT/'setup/image_zip_cleanup_validation_20261113.json'
     dest.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))
