@@ -1,0 +1,12 @@
+{
+  "source_head": "0e3cdf30b5944eb4520fa212d7eb0406e3ac7b53",
+  "cleaned_head": "e4a3aeb50558b349bef2b3e9e35e39e116d1c850",
+  "verified_commits": 57,
+  "non_image_paths_modes_blob_ids_unchanged": true,
+  "commit_metadata_unchanged": true,
+  "latest_tree_identical": true,
+  "selected_zip_paths_absent_from_history": true,
+  "cleanup_repository": "C:\\graduate_project_sy\\_image_zip_history_cleanup_20261113_v2.git",
+  "removed_path_count": 55,
+  "phase": "validated before push"
+}

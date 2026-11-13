@@ -108,15 +108,25 @@ def rewrite():
     target=remap[source]
     git('update-ref','refs/heads/main',target,source,cwd=BARE)
     (BARE/'image-zip-commit-map.txt').write_text('old new\n'+'\n'.join(mappings)+'\n',encoding='ascii')
+    validate()
+
+
+def validate():
+    paths=PATHS.read_text().splitlines()
+    mappings=(BARE/'image-zip-commit-map.txt').read_text().splitlines()[1:]
+    source=mappings[-1].split()[0]
+    target=git('rev-parse','main',cwd=BARE).decode().strip()
     checked=0
+    def metadata(commit,cwd):
+        header,message=git('cat-file','commit',commit,cwd=cwd).split(b'\n\n',1)
+        return b'\n'.join(line for line in header.split(b'\n') if not line.startswith((b'tree ',b'parent ')))+b'\n\n'+message
     for line in mappings:
         old,new=line.split()
         if set(new)=={'0'}:
             raise ValueError('A commit was unexpectedly removed')
         if snapshot(old,ROOT)!=snapshot(new,BARE):
             raise ValueError('Non-image contents changed at '+old)
-        fmt='%an%x00%ae%x00%at%x00%cn%x00%ce%x00%ct%x00%B'
-        if git('show','-s','--format='+fmt,old)!=git('show','-s','--format='+fmt,new,cwd=BARE):
+        if metadata(old,ROOT)!=metadata(new,BARE):
             raise ValueError('Commit metadata changed at '+old)
         checked+=1
     remaining=git('log','main','--format=','--name-only','--','*.zip',cwd=BARE).decode().splitlines()
@@ -135,6 +145,6 @@ def rewrite():
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['plan','rewrite'])
+    parser.add_argument('command',choices=['plan','rewrite','validate'])
     args=parser.parse_args()
-    plan() if args.command=='plan' else rewrite()
+    {'plan':plan,'rewrite':rewrite,'validate':validate}[args.command]()
