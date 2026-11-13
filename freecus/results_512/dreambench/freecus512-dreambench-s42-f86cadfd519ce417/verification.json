@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "generated": 750,
+  "excluded_case_ids": [],
+  "missing_case_ids": [],
+  "archive_folder": "C:\\graduate_project_sy\\AI_PROJECT_images\\freecus_512\\dreambench\\freecus512-dreambench-s42-f86cadfd519ce417",
+  "parts": [
+    {
+      "file": "images-000.zip",
+      "size_bytes": 351321869,
+      "sha256": "2e42f5d811d58122b1136d44d1cc473129849cd276a50f7859d140e32e7a3687"
+    }
+  ],
+  "member_hashes_and_crc_verified": true
+}

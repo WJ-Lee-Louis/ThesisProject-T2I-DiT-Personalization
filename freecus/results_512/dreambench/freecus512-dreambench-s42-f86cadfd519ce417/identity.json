@@ -1,0 +1,90 @@
+{
+  "benchmark": "dreambench",
+  "config": {
+    "height": 512,
+    "width": 512,
+    "steps": 30,
+    "guidance": 3.5,
+    "scale": 1.1,
+    "implementation": "paper",
+    "seeds": [
+      42
+    ],
+    "caption_seed": 42,
+    "models": {
+      "flux": "black-forest-labs/FLUX.1-dev",
+      "qwen_vl": "Qwen/Qwen2-VL-7B-Instruct",
+      "qwen_llm": "Qwen/Qwen2.5-7B-Instruct",
+      "birefnet": "ZhengPeng7/BiRefNet"
+    }
+  },
+  "lock": {
+    "flux": {
+      "repo": "black-forest-labs/FLUX.1-dev",
+      "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+    },
+    "qwen_vl": {
+      "repo": "Qwen/Qwen2-VL-7B-Instruct",
+      "revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac"
+    },
+    "qwen_llm": {
+      "repo": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "birefnet": {
+      "repo": "ZhengPeng7/BiRefNet",
+      "revision": "e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4"
+    }
+  },
+  "code": {
+    "__init__.py": "e9b2b5c5881d92db70626f5bafe47b7fbc9dfbf20c0aa36a879776aaed9431be",
+    "audit_references.py": "034331da2deec9637aa7249f8e2b65ab15b32625cbb4458c4532d28a4385ca85",
+    "constraints.txt": "5a651e6e5149c1107dc368818c2456aa05e1ca8d3363ac471f35dfe7d15b1b5e",
+    "evaluate.py": "e507e4d73c901064bd9dc66593d86ce6cc835fd6b304fb1ba6d527251334d49b",
+    "evaluate_diagnostic.py": "384be239b635b57b000c70ba0ce865f6d0f5434b7e0fece48739771a123c1846",
+    "experiment_512.py": "1cc6e1ec0efb392b6513e1d85bfa50a33d2823b49d82a12b776cb0a8b57fc4a6",
+    "fetch_data.py": "835bf873d3f4e937ec426f2ae00002e4320e6c38615727d7eb460f926e4cebce",
+    "manifest.py": "f2cf92a0ecd1a136491c2e6baa106c88d1270999e8e92f20f55961e532adceff",
+    "modal_client.py": "196174349272beb4d5bd59d100a2733b69a5f9d9fdf0c4e830aa6d5a3ae8b061",
+    "modal_cost.py": "354a2114179801803f20590a0a360ae556e8391281ee619f5742bf638faa18a8",
+    "modal_remote.py": "557b5a15b0e2686606b8bc109d75a99e29c008eec117c0fe63c8e3e5f549ae04",
+    "modal_worker.py": "5092fae2dfc59c2ce064c12d49e0ce9337768ed3c86575431b0c6eb166ad1791",
+    "models.py": "b5b6a444883e1f6739764f2aeea2adcd17b0f4da6d20507e2edf4785d2ba134a",
+    "operations/artifact_bundle.py": "b574623565247a784eba6ad0ae9a813050a435ac19dd2f00ada91eb98dc40509",
+    "operations/assemble_run.py": "1513a491f248d3ae541b9b3576ad4006051087953e5c4fb6ea6db95d683b2570",
+    "operations/budget_watch.py": "cb0a1fe710668ac7b43e37ba022fc4b73927823f7878b558e35c3e0d076c0423",
+    "operations/collect_artifacts.py": "3bc46a9375a9e47e87e0c74d19a45fdb32a93cc7be8ca0fb399b9067e9db33e9",
+    "operations/collect_results.py": "7f807a3f66ad76fa580c01f6879a722e012345f14d6d8fa6fe680f67527e028e",
+    "operations/compare_metrics.py": "47ce3818d5aa8fe2d7d9ffa7fda2056c39bda47562331dda25529ac3db922f13",
+    "operations/evaluate_comparison.py": "eddce3990c4f5434296584351a7fa657357d5d7073a9842304f034385f0a846f",
+    "operations/evaluate_modal.py": "8872eceb4dbf0c9365c13233c93b11e7a7ccd7982aae42164b63f5cf851229a6",
+    "operations/prime_lfs_cache.py": "45761bfc2e982457692a983c07e67b3c1b87e3475ba071391efa1e2eb070447f",
+    "project_metrics/benchmark_metrics.py": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+    "project_metrics/SOURCE.json": "5cfa98869b3f8a95742e002f95cf6171a62bd382f1bbc1d6acb159ae7e34dcfa",
+    "remote_512.py": "a97dadb5dc3aa442200fcf58187b1d56c8acaeb0299c46d80d1d045a9032ccea",
+    "requirements-client.txt": "da18917ab12877f1358e762c9c34a284c69cf0180d3dd07f61c2bc2edee77859",
+    "requirements-eval.txt": "52621b7db2ad03583895566f7492057424dfb3ac532a5561048fbc159a968b5a",
+    "requirements-gpu.txt": "63593c8b302841dae1dedd365715ef5db64f79984ab90401974e5ae011552759",
+    "requirements.txt": "bc24c1fcd444c1b4f35b2238162a0d7a90a553b4387cf8f49e9b3939d414eaf5",
+    "resume_dreambench_remote.py": "e8f1fa633c86f54141deee24e045225d122f26423b8c6f3fbfa0200cb0915221",
+    "run.py": "b81f0a0cfe6edb1717bd41e33f1ce48f2bce72ab399aaa99ad89d360a1f1f7cd",
+    "runtime.py": "cf0e5636dc0ff9544a7be7237e42a530130e3b119ee1ba93d173eaa45b8b71ff",
+    "runtime_src/flux_utils.py": "f710a215dab4abc25fa0cd97c28ba11138b7f0655bab628c9b2f513ecccfc2bf",
+    "runtime_src/qwen_for_subject.py": "a06c48d7bec02023b937539ee6536461b170d62e5f70727b021442658de7a961",
+    "runtime_src/sa_handler_for_flux_clean.py": "6e0fd1912536f577b1e786394d9a37e349d3f5950ae1c5ad3587d39f925fb86c",
+    "runtime_src/seg_birefnet.py": "f85c28363e73e60c8cb82a4ac933d7bb4d398fa6637004bb3c63a2639096ffcb",
+    "upstream/flux_utils.py": "c90b91a7f6b6d8a6f8276694618069828918ce71d0263f59ba756f72a6480349",
+    "upstream/infer.py": "8ec805dcc5b0e89475ea013e7ec4fb55ca1253df18b43e6d71442c599a6a92fd",
+    "upstream/qwen_for_subject.py": "283f04859c0304e1a45fd55509030085e87de02a454cae3cf8bda9e71ef7fb3b",
+    "upstream/sa_handler_for_flux_clean.py": "6c3a4c934207053cf3560246e908fa6cc0484487e57cbd4afcafb9424655fd15",
+    "upstream/seg_birefnet.py": "f85c28363e73e60c8cb82a4ac933d7bb4d398fa6637004bb3c63a2639096ffcb",
+    "UPSTREAM.json": "ed915d639c354ec3baf5a8a6244ab4136336f350d618722ebab146f2f9047ea1",
+    "verify.py": "7a20944b665e07a0052c27c6a21f1435644d03aab9895de32c04f2a8014b2eef",
+    "worker_512.py": "969be7cdd74b67f0c26a06984467a2768ea812cca7995d19b05eaa46eb41f2cc"
+  },
+  "manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+  "generation_selection": "all",
+  "expected_generated": 750,
+  "excluded_case_ids": [],
+  "git_commit": "c310573070846f472e443e802000ff50da5cada8"
+}

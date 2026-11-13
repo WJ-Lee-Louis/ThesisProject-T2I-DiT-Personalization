@@ -33,7 +33,7 @@ def safe_path(root, relative):
     return target
 
 
-def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id, expected, resolution=(1024, 1024), allow_gpu_variants=False):
+def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id, expected, resolution=(1024, 1024), allow_gpu_variants=False, provenance_files=None):
     """Archive all completed cases, original references and provenance; never model weights."""
     lanes = [Path(p) for p in lanes]
     manifest, input_root, destination = Path(manifest), Path(input_root), Path(destination)
@@ -79,6 +79,8 @@ def pack(lanes, manifest, input_root, destination, method, benchmark, bundle_id,
 
     add(lanes[0] / "run.json", "run.json")
     add(manifest, "manifest.jsonl")
+    for relative, path in (provenance_files or {}).items():
+        add(path, "provenance/" + relative)
     for lane in lanes:
         add(lane / "run.json", "lanes/" + lane.name + "/run.json")
         init = lane / "initialization.json"

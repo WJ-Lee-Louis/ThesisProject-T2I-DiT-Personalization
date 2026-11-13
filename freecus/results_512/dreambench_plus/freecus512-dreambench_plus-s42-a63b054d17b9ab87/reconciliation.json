@@ -1,0 +1,36 @@
+{
+  "freecus_workflow_id": "freecus512-0a68b8354f4a933a-cache-recovery-v1-verified-completion",
+  "freecus_status": "complete",
+  "checks": {
+    "dreambench": {
+      "generated": 750,
+      "metric_coverage_complete": true,
+      "archive_sha256_verified": true,
+      "parts": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 351321869,
+          "sha256": "2e42f5d811d58122b1136d44d1cc473129849cd276a50f7859d140e32e7a3687"
+        }
+      ]
+    },
+    "dreambench_plus": {
+      "generated": 1170,
+      "metric_coverage_complete": true,
+      "archive_sha256_verified": true,
+      "parts": [
+        {
+          "file": "images-000.zip",
+          "size_bytes": 518639149,
+          "sha256": "b07882b077607bdc2c1526a00a5037f854a8b7c98000b295cb847908912df56d"
+        }
+      ]
+    }
+  },
+  "uno_queue_id": "uno512-after-freecus-f5aedf8ebf3663e9-verified-v1",
+  "uno_call_id": "fc-01M77VRX74T2PZF2ZYP4FTSMA5",
+  "dependency": {
+    "workflow_id": "freecus512-0a68b8354f4a933a-cache-recovery-v1-verified-completion",
+    "call_id": "fc-01M77J59ZTPH218RR2TNZFQRMW"
+  }
+}

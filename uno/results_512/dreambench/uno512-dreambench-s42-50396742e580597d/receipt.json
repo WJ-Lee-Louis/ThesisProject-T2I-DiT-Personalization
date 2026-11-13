@@ -1,0 +1,15 @@
+{
+  "queue_id": "uno512-after-freecus-8a5fc8468bf3f1eb-export-recovered",
+  "profile": "third",
+  "app": "uno-512-seed42-after-freecus-20261112-third",
+  "dependency": {
+    "workflow_id": "freecus512-0a68b8354f4a933a-cache-recovery-v1-verified-completion",
+    "proof_sha256": "ef5c367027be4a35a287ceecbdff2db268fb0c421df366d0594d15f350bbb534",
+    "source_profile": "second"
+  },
+  "status": "complete",
+  "call_id": "fc-01M787JKH3CJHXPB0TM7600GAP",
+  "dashboard": "https://modal.com/id/fc-01M787JKH3CJHXPB0TM7600GAP",
+  "recovered_from": "uno512-after-freecus-8a5fc8468bf3f1eb",
+  "recovery_call_id": "fc-01M78YWCCF20F01T018E0AARN3"
+}

@@ -1,0 +1,70 @@
+{
+  "coverage": {
+    "expected": 750,
+    "generated": 750,
+    "missing_case_ids": [],
+    "excluded_case_ids": [],
+    "style_included": true,
+    "status": "complete"
+  },
+  "summary": {
+    "dreambench/uno_512": {
+      "cases": 750,
+      "subjects": 30,
+      "subject_macro": {
+        "CLIP-T": 0.30229996744791665,
+        "CLIP-I": 0.8348561197916666,
+        "DINO-I": 0.7605656756560008
+      },
+      "case_micro": {
+        "CLIP-T": 0.30229996744791665,
+        "CLIP-I": 0.8348561197916666,
+        "DINO-I": 0.7605656756560008
+      },
+      "by_class": {
+        "animal": {
+          "cases": 225,
+          "subjects": 9,
+          "subject_macro": {
+            "CLIP-T": 0.3056125217013889,
+            "CLIP-I": 0.8640885416666667,
+            "DINO-I": 0.8243388319015503
+          },
+          "case_micro": {
+            "CLIP-T": 0.30561252170138886,
+            "CLIP-I": 0.8640885416666667,
+            "DINO-I": 0.8243388319015503
+          }
+        },
+        "object": {
+          "cases": 525,
+          "subjects": 21,
+          "subject_macro": {
+            "CLIP-T": 0.3008803013392857,
+            "CLIP-I": 0.8223279389880952,
+            "DINO-I": 0.7332343229793367
+          },
+          "case_micro": {
+            "CLIP-T": 0.3008803013392857,
+            "CLIP-I": 0.8223279389880952,
+            "DINO-I": 0.7332343229793367
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.3032464115203373,
+        "CLIP-I": 0.843208240327381,
+        "DINO-I": 0.7787865774404434
+      }
+    }
+  },
+  "verified": true,
+  "parts": [
+    {
+      "file": "images-000.zip",
+      "size_bytes": 366760640,
+      "sha256": "5e903793d9aa945f7d0010ee50724b2491f7924b4f931b7ac6e5e333141f40ae"
+    }
+  ],
+  "elapsed_seconds": 630.7821600679999
+}

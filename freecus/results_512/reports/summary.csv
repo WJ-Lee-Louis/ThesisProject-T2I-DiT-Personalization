@@ -1,0 +1,3 @@
+﻿method,resolution,benchmark,run_id,cases,subjects,style_included,CLIP-T,CLIP-I,DINO-I
+freecus,512,dreambench,freecus512-dreambench-s42-f86cadfd519ce417,750,30,False,0.3019225260416667,0.813583984375,0.6678336187601089
+freecus,512,dreambench_plus,freecus512-dreambench_plus-s42-a63b054d17b9ab87,1170,130,False,0.3234699477497329,0.8103536491720086,0.6513220405731446

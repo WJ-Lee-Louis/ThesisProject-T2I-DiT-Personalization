@@ -1,0 +1,10 @@
+{
+  "reason": "A100 PCIe/SXM names differ; all other checked generation fields match",
+  "generation_devices": [
+    "NVIDIA A100 80GB PCIe",
+    "NVIDIA A100-SXM4-80GB"
+  ],
+  "generation_changed": false,
+  "metrics_recomputed": false,
+  "original_queue_id": "uno512-after-freecus-8a5fc8468bf3f1eb"
+}

@@ -21,6 +21,8 @@ def validate_config(config):
     expected = dict(model_type="flux-dev", width=1024, height=1024, seed=42, steps=25, guidance=4.0,
                     reference_resolution=512, reference_task="single_image_all_categories", only_lora=True,
                     lora_rank=512, pe="d", quantization="none", cpu_offload=False)
+    if (config.get('width'),config.get('height')) == (512,512):
+        expected.update(width=512,height=512)
     if config != expected:
         raise ValueError("Primary UNO single-image BF16 configuration changed; define a separate experiment")
 

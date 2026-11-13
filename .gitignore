@@ -8,6 +8,23 @@ venv/
 *.pem
 *.key
 
+# Isolated 512 run: keep generated data and transient client inputs outside Git.
+/freecus/outputs/modal512-*/
+/freecus/results_512/**/source.zip
+/freecus/results_512/**/tgt_image/
+/freecus/results_512/**/src_image/
+/freecus/results_512/**/*.zip
+/uno/outputs/modal512-*/
+/uno/results_512/**/*.zip
+/uno/results_512/**/tgt_image/
+/uno/results_512/**/src_image/
+/uso/outputs/
+/uso/*.tar
+/uso/results/**/*.zip
+/uso/results/**/tgt_image/
+/uso/results/**/src_image/
+/uso/**/__pycache__/
+
 # Final benchmark images are stored outside the repository in Downloads/AI_PROJECT_images.
 /freecus/artifacts/**/*.zip
 /dreamo/artifacts/**/*.zip

@@ -1,0 +1,25 @@
+{
+  "verified": true,
+  "archive": "C:\\graduate_project_sy\\AI_PROJECT_images\\drive_upload_512\\UNO_512.zip",
+  "size_bytes": 696797490,
+  "sha256": "a4d2d4a00faaa44f979e33b24afe78b6c59aaf920480abd1a16fd188f315d979",
+  "images": 2100,
+  "resolution": [
+    512,
+    512
+  ],
+  "coverage": {
+    "dreambench": {
+      "generated": 750,
+      "excluded_case_ids": [],
+      "missing": []
+    },
+    "dreambench_plus": {
+      "generated": 1350,
+      "excluded_case_ids": [],
+      "missing": []
+    }
+  },
+  "original_png_bytes_unchanged": true,
+  "member_sha256_and_crc_verified": true
+}

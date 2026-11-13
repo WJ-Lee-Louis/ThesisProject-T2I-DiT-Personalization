@@ -17,8 +17,8 @@ def write_json(path, value):
 
 
 def validate_config(cfg):
-    if (cfg["height"], cfg["width"]) != (1024, 1024):
-        raise ValueError("This benchmark integration requires 1024x1024")
+    if (cfg["height"], cfg["width"]) not in {(1024, 1024), (512, 512)}:
+        raise ValueError("Supported benchmark resolutions are 1024x1024 and 512x512")
     if cfg["implementation"] not in {"paper", "upstream"}:
         raise ValueError("implementation must be paper or upstream")
     if cfg["steps"] != 30 or cfg["guidance"] != 3.5 or cfg["scale"] != 1.1:
@@ -60,7 +60,7 @@ def execute(a, on_event=None):
     code_hashes = {f.relative_to(source).as_posix(): sha256(f) for f in sorted(files)}
     identity = {"config": cfg, "manifest_sha256": sha256(a.manifest), "code": code_hashes}
     fingerprint = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
-    print(json.dumps(dict(samples=len(rows), selected=len(selected), resolution="1024x1024",
+    print(json.dumps(dict(samples=len(rows), selected=len(selected), resolution=f"{cfg['width']}x{cfg['height']}",
                           implementation=cfg["implementation"], fingerprint=fingerprint), indent=2))
     if a.dry_run:
         return
@@ -120,7 +120,7 @@ def execute(a, on_event=None):
         paths = artifact_paths(a.output, row)
         for path in paths.values():
             path.parent.mkdir(parents=True, exist_ok=True)
-        if image.size != (1024, 1024):
+        if image.size != (cfg["width"], cfg["height"]):
             raise RuntimeError(f"Unexpected generated resolution: {image.size}")
         image.save(paths["tgt_image"])
         with Image.open(a.data_root / row["reference"]) as ref:

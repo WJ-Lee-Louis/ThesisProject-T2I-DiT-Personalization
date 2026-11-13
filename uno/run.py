@@ -34,7 +34,7 @@ def execute(args, event=None):
     identity = dict(config=cfg, manifest_sha256=sha256(manifest), models=lock, code=code)
     fingerprint = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
     print(json.dumps(dict(benchmark=args.benchmark, samples=len(rows), selected=len(selected),
-                          resolution="1024x1024", fingerprint=fingerprint), indent=2), flush=True)
+                          resolution=f"{cfg['width']}x{cfg['height']}", fingerprint=fingerprint), indent=2), flush=True)
     if args.dry_run:
         return
     import torch
@@ -87,7 +87,7 @@ def execute(args, event=None):
             conditioning.save(condition_path)
         image = engine.generate(row, conditioning)
         torch.cuda.synchronize()
-        if image.size != (1024, 1024):
+        if image.size != (cfg['width'],cfg['height']):
             raise ValueError("Unexpected generated resolution")
         output = artifact_paths(args.output, row)
         for path in output.values():

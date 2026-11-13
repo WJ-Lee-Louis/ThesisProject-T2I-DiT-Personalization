@@ -6,6 +6,8 @@
 freecus/results/** -text
 dreamo/results/** -text
 uno/results/** -text
+freecus/results_512/** -text whitespace=cr-at-eol
+uno/results_512/** -text whitespace=cr-at-eol
 xverse/results/** -text
 diptych/results/** -text
 mosaic/results/** -text

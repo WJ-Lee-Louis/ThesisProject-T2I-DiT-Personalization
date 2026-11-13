@@ -1,0 +1,121 @@
+{
+  "coverage": {
+    "expected": 1350,
+    "generated": 1350,
+    "missing_case_ids": [],
+    "excluded_case_ids": [],
+    "style_included": true,
+    "status": "complete"
+  },
+  "summary": {
+    "dreambench_plus/uno_512": {
+      "cases": 1350,
+      "subjects": 150,
+      "subject_macro": {
+        "CLIP-T": 0.3215676540798611,
+        "CLIP-I": 0.8101171875,
+        "DINO-I": 0.6572650098793761
+      },
+      "case_micro": {
+        "CLIP-T": 0.3215676540798611,
+        "CLIP-I": 0.8101171875,
+        "DINO-I": 0.6572650098793761
+      },
+      "by_class": {
+        "animal": {
+          "cases": 405,
+          "subjects": 45,
+          "subject_macro": {
+            "CLIP-T": 0.3330412688078704,
+            "CLIP-I": 0.8486750096450617,
+            "DINO-I": 0.7622144409903774
+          },
+          "case_micro": {
+            "CLIP-T": 0.3330412688078704,
+            "CLIP-I": 0.8486750096450617,
+            "DINO-I": 0.7622144409903774
+          }
+        },
+        "human": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.2981207953559028,
+            "CLIP-I": 0.7337565104166667,
+            "DINO-I": 0.5380482418255673
+          },
+          "case_micro": {
+            "CLIP-T": 0.2981207953559028,
+            "CLIP-I": 0.7337565104166667,
+            "DINO-I": 0.5380482418255673
+          }
+        },
+        "object": {
+          "cases": 585,
+          "subjects": 65,
+          "subject_macro": {
+            "CLIP-T": 0.3214217748397436,
+            "CLIP-I": 0.8293473724626068,
+            "DINO-I": 0.6952558278910115
+          },
+          "case_micro": {
+            "CLIP-T": 0.3214217748397436,
+            "CLIP-I": 0.8293473724626068,
+            "DINO-I": 0.6952558278910115
+          }
+        },
+        "style": {
+          "cases": 180,
+          "subjects": 20,
+          "subject_macro": {
+            "CLIP-T": 0.31967298719618054,
+            "CLIP-I": 0.7372246636284723,
+            "DINO-I": 0.4168753993956165
+          },
+          "case_micro": {
+            "CLIP-T": 0.31967298719618054,
+            "CLIP-I": 0.7372246636284723,
+            "DINO-I": 0.4168753993956165
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.31806420654992434,
+        "CLIP-I": 0.7872508890382018,
+        "DINO-I": 0.6030984775256432
+      },
+      "non_style": {
+        "cases": 1170,
+        "subjects": 130,
+        "subject_macro": {
+          "CLIP-T": 0.321859141292735,
+          "CLIP-I": 0.8213314219417736,
+          "DINO-I": 0.6942480268768775
+        },
+        "case_micro": {
+          "CLIP-T": 0.321859141292735,
+          "CLIP-I": 0.8213314219417736,
+          "DINO-I": 0.6942480268768775
+        }
+      }
+    }
+  },
+  "verified": true,
+  "parts": [
+    {
+      "file": "images-000.zip",
+      "size_bytes": 622406142,
+      "sha256": "c5af0c8c4a5effb0f955f11365ab69c9775aa582e263d9a5073fb411783303c3"
+    }
+  ],
+  "recovery": {
+    "reason": "A100 PCIe/SXM names differ; all other checked generation fields match",
+    "generation_devices": [
+      "NVIDIA A100 80GB PCIe",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "generation_changed": false,
+    "metrics_recomputed": false,
+    "original_queue_id": "uno512-after-freecus-8a5fc8468bf3f1eb"
+  }
+}

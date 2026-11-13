@@ -1,5 +1,9 @@
 # FreeCus / DreamO / UNO: 로컬 결과 통합 및 Git 추적
 
+> 현재 이미지 저장 정책은 [GENERATED_IMAGE_STORAGE.md](GENERATED_IMAGE_STORAGE.md)를 따른다.
+> 아래 Git/LFS 이미지 ZIP 업로드 설명은 과거 작업 기록이다. 현재 생성 이미지 ZIP은
+> Google Drive에 보관하며, GitHub에는 코드·설정·평가·검증 기록만 저장한다.
+
 목적은 **로컬의 FreeCus·DreamO·UNO 결과를 먼저 GitHub에 반영해 공통 기준점을 만든 뒤, RunPod의 기존 InstantX 실험 결과를 통합하는 것**이다. 별도의 RunPod 복원 과정은 필요하지 않다. 이번 작업은 이미지 다운로드·검증과 Git/LFS 추적 설정 및 staging까지 수행했으며, **commit, fetch, pull, push는 사용자가 직접 수행한다.**
 
 ## 보관 구조

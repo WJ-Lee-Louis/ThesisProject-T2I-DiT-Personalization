@@ -1,0 +1,16 @@
+{
+  "height": 512,
+  "width": 512,
+  "steps": 30,
+  "guidance": 3.5,
+  "scale": 1.1,
+  "implementation": "paper",
+  "seeds": [42],
+  "caption_seed": 42,
+  "models": {
+    "flux": "black-forest-labs/FLUX.1-dev",
+    "qwen_vl": "Qwen/Qwen2-VL-7B-Instruct",
+    "qwen_llm": "Qwen/Qwen2.5-7B-Instruct",
+    "birefnet": "ZhengPeng7/BiRefNet"
+  }
+}

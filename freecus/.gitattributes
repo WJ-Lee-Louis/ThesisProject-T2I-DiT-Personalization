@@ -6,4 +6,5 @@ project_metrics/benchmark_metrics.py -text
 # Byte-preserving benchmark data takes precedence over generic text rules.
 upstream/** -text
 results/** -text
+results_512/** -text whitespace=cr-at-eol
 manifests/** -text

@@ -1,0 +1,28 @@
+{
+  "folder": "https://drive.google.com/drive/folders/1TGZGEdoiG_2uvCHQ9PfAmMor9qfMOTmT",
+  "checked_date": "2026-11-13",
+  "archives": [
+    {
+      "file": "FreeCus_512.zip",
+      "file_id": "1OkDiP351DukfrVwd2wO-lf_BiOGPqqfT",
+      "url": "https://drive.google.com/file/d/1OkDiP351DukfrVwd2wO-lf_BiOGPqqfT/view",
+      "size_bytes": 652493842,
+      "images": 1920,
+      "local_sha256": "55f5ebd017b820816f5b81a71a150926092ebfc88787198f553051529439cc9d",
+      "verified": true,
+      "remote_check": "exact bytes length, complete entry names/CRC/sizes, and upload manifest match verified local ZIP",
+      "full_remote_sha256_computed": false
+    },
+    {
+      "file": "UNO_512.zip",
+      "file_id": "1IRA9IQggGuHg01zco5UP8yAWdIiUiyca",
+      "url": "https://drive.google.com/file/d/1IRA9IQggGuHg01zco5UP8yAWdIiUiyca/view",
+      "size_bytes": 696797490,
+      "images": 2100,
+      "local_sha256": "a4d2d4a00faaa44f979e33b24afe78b6c59aaf920480abd1a16fd188f315d979",
+      "verified": true,
+      "remote_check": "exact bytes length, complete entry names/CRC/sizes, and upload manifest match verified local ZIP",
+      "full_remote_sha256_computed": false
+    }
+  ]
+}

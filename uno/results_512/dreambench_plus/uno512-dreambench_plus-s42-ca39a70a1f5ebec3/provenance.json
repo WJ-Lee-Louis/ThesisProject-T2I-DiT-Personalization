@@ -1,0 +1,86 @@
+{
+  "config": {
+    "model_type": "flux-dev",
+    "width": 512,
+    "height": 512,
+    "seed": 42,
+    "steps": 25,
+    "guidance": 4.0,
+    "reference_resolution": 512,
+    "reference_task": "single_image_all_categories",
+    "only_lora": true,
+    "lora_rank": 512,
+    "pe": "d",
+    "quantization": "none",
+    "cpu_offload": false
+  },
+  "models": {
+    "flux": {
+      "repo": "black-forest-labs/FLUX.1-dev",
+      "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21"
+    },
+    "t5": {
+      "repo": "xlabs-ai/xflux_text_encoders",
+      "revision": "5ce032c6b9bfe31a4ffb220c8afa147e8de6acea"
+    },
+    "clip": {
+      "repo": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41"
+    },
+    "lora": {
+      "repo": "bytedance-research/UNO",
+      "revision": "cd4a5a8896243db22aaf4a2d3d2a9511c437fb12"
+    }
+  },
+  "code": {
+    "freecus/__init__.py": "e9b2b5c5881d92db70626f5bafe47b7fbc9dfbf20c0aa36a879776aaed9431be",
+    "freecus/evaluate.py": "92d2b3be9e08516518f856b02817918fc2f520c4cff18b177c2d7e77e84e113a",
+    "freecus/manifest.py": "f2cf92a0ecd1a136491c2e6baa106c88d1270999e8e92f20f55961e532adceff",
+    "freecus/modal_client.py": "196174349272beb4d5bd59d100a2733b69a5f9d9fdf0c4e830aa6d5a3ae8b061",
+    "freecus/modal_cost.py": "354a2114179801803f20590a0a360ae556e8391281ee619f5742bf638faa18a8",
+    "freecus/operations/artifact_bundle.py": "b574623565247a784eba6ad0ae9a813050a435ac19dd2f00ada91eb98dc40509",
+    "freecus/project_metrics/benchmark_metrics.py": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+    "freecus/project_metrics/SOURCE.json": "5cfa98869b3f8a95742e002f95cf6171a62bd382f1bbc1d6acb159ae7e34dcfa",
+    "freecus/run.py": "b81f0a0cfe6edb1717bd41e33f1ce48f2bce72ab399aaa99ad89d360a1f1f7cd",
+    "uno/__init__.py": "eeece78dffa6f592b45250b11bebf74b6bee1bd951bb1082a2575bdd8d93e4b8",
+    "uno/assemble.py": "0bb9c5476047d1bf2e0df8259a9ce43597f4a79697d72a7f6107eeb15b0efa27",
+    "uno/config.512.json": "b2cf86c2eb03fabc464514b116ad1bb44ef5894915b3a84d3ed811199fba15fd",
+    "uno/config.json": "2a18ad7953b92a5738a8915a5f4c65e009a3c25d21d573c68322775d486362dc",
+    "uno/constraints.txt": "92a9bd9d6c9e38c02d3c86f58ff209e17491d4f6d85c19d0c6a345006a7640da",
+    "uno/efficiency.py": "c3bc400d095744ae9c5af9343fff047ff1229af732b7742d2572ae170abf20c4",
+    "uno/evaluate.py": "bc5b592afebc847c8314ad1a314e2208936832bc947e9e1931fd65ed3a267bb8",
+    "uno/experiment_512.py": "0ff892049d533599e7375c58e930c4004fadfa5ee93d6be808fa8dcbdb136b20",
+    "uno/modal_app.py": "716e3d5aeb995326ff11b9adcd55fbe35a322643bb17db557b5bca43eab7c6ab",
+    "uno/modal_client.py": "fb33fd499ea6b56b9ecf00513a807a82b45ff6021c5e246e4be87f44b21f70aa",
+    "uno/models.lock.json": "4168ec13aba68e26bc750bdaf848cb520e8e873ee386ffb6ba7cb277947e7eca",
+    "uno/models.py": "ffa0037f09271e6f4d37bacecb11b83558ef2173e8cf99266ed312f1442277a7",
+    "uno/protocol.py": "487c3d56d7c56f8999c9b990cd53383608825d08a043e10c914f973a87d3591b",
+    "uno/requirements-eval.txt": "201fac44672ab5be3a66fc90254565e1dbf7493b42f21854138625d7a21dab90",
+    "uno/requirements-gpu.txt": "4ecfbcd427fb4cda7adddf6839c5d30355a2bb7cf55fd9be18cebd8cbb5c9f44",
+    "uno/requirements.txt": "13f5995d614a4940e8c6848a1ce012595552bef0ef1e1f281396952d821e63cd",
+    "uno/run.py": "b3c90a0119d5242ffdd2d148db303dfbd8c3a81c8bb22cf35aab36652f2d550d",
+    "uno/runtime.py": "2b8e4b8745b097a8b8ae5ad87ae6cbc837f34070fe2bb6b7878b280e43269a8b",
+    "uno/upstream/datasets/dreambench_singleip.json": "920055b106f8522199f4f163c84ccc8fbcf583d20490ed57628040a37d559e86",
+    "uno/upstream/eval/evaluate_clip_dino_score_single_subject.py": "16792f3341adf09d44522ef4cd67a780b818e67a96693d1b7f8ac43ee515e5bf",
+    "uno/upstream/inference.py": "36b38f607b7d69890131eab4b6ae974a9e5425b86dfb15e648653f5d4bf87b8c",
+    "uno/upstream/LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "uno/upstream/pyproject.toml": "96e29e529985f6e3ac27d3c4cad6a731cc1f7f167ffa23a2e446b84df41cfb22",
+    "uno/upstream/README.md": "01acf0c1ae27a9ab97c650f023d5c052f9a1331051e97492701b4edd10372b55",
+    "uno/upstream/requirements.txt": "b8f7831184863fba2f96da872d2882fc21e8d8b2d12238446396251166529071",
+    "uno/upstream/uno/flux/math.py": "d94bae455e0d88e605bb746fe6336ea2ee3cf503b746151a1fdcda44933012b7",
+    "uno/upstream/uno/flux/model.py": "3a9a411092e7a871ee2804530a5311da1a03c3db5d5bf8124e006fa515bc2b1c",
+    "uno/upstream/uno/flux/modules/autoencoder.py": "30492e52b2e4157b631e10493b373b86a8eae5074b4db64f0a090df417959235",
+    "uno/upstream/uno/flux/modules/conditioner.py": "78859f79ea1975282e853bee127f417bf0ecb673db669416878a97dcdd01d725",
+    "uno/upstream/uno/flux/modules/layers.py": "c9723fcfc801ff18ce80ad2e55d6d01e93d116169efff0fa0547bde75d8a0fb8",
+    "uno/upstream/uno/flux/pipeline.py": "cc4c20112b84d163ffffc712ca8bf9d484f675538275464fdbea6a784dde1cba",
+    "uno/upstream/uno/flux/sampling.py": "c72cafd6721a66449db11f6871e17ba753e53df1c067dc884af790cb6541aba3",
+    "uno/upstream/uno/flux/util.py": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e",
+    "uno/UPSTREAM.json": "7e561730d230fa4fa608b059b2a1e8ddffaa8dec97bcf4801af121cc30d2daad"
+  },
+  "manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+  "expected_generated": 1350,
+  "excluded_case_ids": [],
+  "style_included": true,
+  "modal_profile": "third",
+  "prerequisite": "FreeCus 512 750+1170 generation/evaluation/verified ZIP export complete"
+}

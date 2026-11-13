@@ -7,12 +7,15 @@ RUNS_NAME = "freecus-method-comparison-runs"
 SECRET_NAME = "freecus-huggingface"
 
 
-def build_app(source_dir, gpu_type="A100-80GB"):
+def build_app(source_dir, gpu_type="A100-80GB", *, app_name=APP_NAME,
+              cache_name=CACHE_NAME, runs_name=RUNS_NAME, secret_name=SECRET_NAME,
+              worker_module="freecus.modal_worker"):
     import modal
     source_dir = Path(source_dir)
-    cache = modal.Volume.from_name(CACHE_NAME, create_if_missing=True, version=2)
-    runs = modal.Volume.from_name(RUNS_NAME, create_if_missing=True, version=2)
-    secret = modal.Secret.from_name(SECRET_NAME, required_keys=["HF_TOKEN"])
+    cache = modal.Volume.from_name(cache_name, create_if_missing=True,
+                                   **({'version': 2} if cache_name == CACHE_NAME else {}))
+    runs = modal.Volume.from_name(runs_name, create_if_missing=True, version=2)
+    secret = modal.Secret.from_name(secret_name, required_keys=["HF_TOKEN"])
     env = dict(HF_HOME="/cache/huggingface", HF_HUB_ENABLE_HF_TRANSFER="1", PYTHONUNBUFFERED="1")
     cpu_image = (modal.Image.debian_slim(python_version="3.11")
                  .pip_install("huggingface-hub==0.29.3", "hf_transfer==0.1.9")
@@ -22,7 +25,7 @@ def build_app(source_dir, gpu_type="A100-80GB"):
         gpu_image = gpu_image.add_local_file(source_dir / name, f"/tmp/freecus/{name}", copy=True)
     gpu_image = (gpu_image.run_commands("pip install --no-cache-dir -r /tmp/freecus/requirements-gpu.txt")
                  .pip_install("hf_transfer==0.1.9").env(env).add_local_dir(source_dir, "/root/freecus"))
-    app = modal.App(APP_NAME)
+    app = modal.App(app_name)
 
     @app.function(name="stage", serialized=True, image=cpu_image, secrets=[secret], volumes={"/cache": cache, "/work": runs},
                   cpu=(2, 2), memory=(4096, 8192), timeout=3600, max_containers=1, scaledown_window=2, retries=0)
@@ -94,7 +97,7 @@ def build_app(source_dir, gpu_type="A100-80GB"):
         write_json(journal / "job.json", job)
         write_json(journal / "state.json", dict(status="running", cases=len(case_ids), seconds_cap=worker_seconds_cap))
         runs.commit()
-        child = subprocess.Popen([sys.executable, "-m", "freecus.modal_worker", str(journal / "job.json")])
+        child = subprocess.Popen([sys.executable, "-m", worker_module, str(journal / "job.json")])
         last_commit = time.monotonic()
         event_size = 0
         stopped = False

@@ -1,0 +1,3 @@
+﻿method,resolution,benchmark,run_id,cases,subjects,style_included,CLIP-T,CLIP-I,DINO-I
+uno,512,dreambench,uno512-dreambench-s42-50396742e580597d,750,30,True,0.30229996744791665,0.8348561197916666,0.7605656756560008
+uno,512,dreambench_plus,uno512-dreambench_plus-s42-ca39a70a1f5ebec3,1350,150,True,0.3215676540798611,0.8101171875,0.6572650098793761

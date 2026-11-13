@@ -20,7 +20,7 @@ def project_evaluator():
     return module
 
 
-def prepare(manifest, root, run, evaluator, selection="all"):
+def prepare(manifest, root, run, evaluator, selection="all", available_case_ids=None,condition='freecus'):
     rows = load(manifest, root)
     from collections import Counter
     counts = Counter(row["benchmark"] for row in rows)
@@ -39,6 +39,15 @@ def prepare(manifest, root, run, evaluator, selection="all"):
         rows = [r for r in rows if r["category"] != "style"]
     elif selection != "all":
         raise ValueError("Unknown evaluation selection")
+    coverage = None
+    if available_case_ids is not None:
+        available = set(available_case_ids)
+        if not available.issubset({r["case_id"] for r in load(manifest, root)}):
+            raise ValueError("Unknown available case IDs")
+        missing = [r["case_id"] for r in rows if r["case_id"] not in available]
+        coverage = dict(expected_cases=len(rows), missing_case_ids=missing,
+                        complete=not missing, available_case_ids=sorted(available))
+        rows = [r for r in rows if r["case_id"] in available]
     records = []
     for row in rows:
         if row["seed"] != 42 or row.get("reference_policy") != "selected_one":
@@ -48,14 +57,16 @@ def prepare(manifest, root, run, evaluator, selection="all"):
         metric_row = dict(case_id=row["case_id"], reference_id=row["reference_id"],
                           benchmark=row["benchmark"], target_prompt=row["prompt"])
         paths = artifact_paths(run, row)
-        records.append(dict(condition="freecus", category=evaluator.category(metric_row),
+        records.append(dict(condition=condition, category=evaluator.category(metric_row),
                             row=metric_row, reference=str((root / row["reference"]).resolve()),
                             reference_sha256=row["reference_sha256"],
                             generated=str(paths["tgt_image"].resolve()), freecus_id=row["id"]))
     return dict(schema_version=1, protocol=evaluator.PROTOCOL, records=records,
+                **({'condition':condition} if condition!='freecus' else {}),
                 selection=dict(name=selection, included_cases=len(rows), excluded_cases=len(excluded),
                                excluded_case_ids=[r["case_id"] for r in excluded],
-                               excluded_reference_ids=sorted({r["reference_id"] for r in excluded})),
+                               excluded_reference_ids=sorted({r["reference_id"] for r in excluded}),
+                               **(coverage or {})),
                 manifest=str(manifest.resolve()), manifest_sha256=sha256(manifest),
                 freecus_run=str(run.resolve()), data_root=str(root.resolve()))
 
@@ -67,10 +78,12 @@ def validate(plan, account=None):
     info = json.loads((run / "run.json").read_text(encoding="utf-8"))
     if sha256(plan["manifest"]) != plan["manifest_sha256"] or info["manifest_sha256"] != plan["manifest_sha256"]:
         raise ValueError("Run and evaluation manifests differ")
-    if (info["config"]["width"], info["config"]["height"]) != (1024, 1024) or info["config"]["seeds"] != [42]:
-        raise ValueError("Primary comparison requires 1024x1024, seed 42")
+    resolution = (info["config"]["width"], info["config"]["height"])
+    if resolution not in {(1024, 1024), (512, 512)} or info["config"]["seeds"] != [42]:
+        raise ValueError("Comparison requires declared 512/1024 resolution and seed 42")
     expected = prepare(Path(plan["manifest"]), Path(plan["data_root"]), run,
-                       project_evaluator(), plan["selection"]["name"])
+                       project_evaluator(), plan["selection"]["name"],
+                       plan["selection"].get("available_case_ids"),plan.get('condition','freecus'))
     if expected["records"] != plan["records"] or expected["selection"] != plan["selection"]:
         raise ValueError("Evaluation selection differs from the canonical manifest")
     from PIL import Image
@@ -88,8 +101,8 @@ def validate(plan, account=None):
             raise ValueError("Reference changed")
         with Image.open(record["generated"]) as image:
             image.verify()
-            if image.size != (1024, 1024):
-                raise ValueError("Generated image is not 1024x1024")
+            if image.size != resolution:
+                raise ValueError("Generated image differs from declared resolution")
 
 
 def main():

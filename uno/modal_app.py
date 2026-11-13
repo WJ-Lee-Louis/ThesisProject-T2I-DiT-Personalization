@@ -7,12 +7,14 @@ RUNS = "uno-runs"
 SECRET = "uno-huggingface"
 
 
-def build_app(source, gpu="A100-80GB"):
+def build_app(source, gpu="A100-80GB", *, app_name=APP,cache_name=CACHE,runs_name=RUNS,
+              secret_name=SECRET,config_filename=None):
     import modal
     source = Path(source)
-    cache = modal.Volume.from_name(CACHE, create_if_missing=True, version=2)
-    runs = modal.Volume.from_name(RUNS, create_if_missing=True, version=2)
-    secret = modal.Secret.from_name(SECRET, required_keys=["HF_TOKEN"])
+    cache = modal.Volume.from_name(cache_name, create_if_missing=True,
+                                   **({'version':2} if cache_name==CACHE else {}))
+    runs = modal.Volume.from_name(runs_name, create_if_missing=True, version=2)
+    secret = modal.Secret.from_name(secret_name, required_keys=["HF_TOKEN"])
     env = dict(HF_HOME="/cache/huggingface", HF_HUB_ENABLE_HF_TRANSFER="1", PYTHONUNBUFFERED="1")
     cpu_image = (modal.Image.debian_slim(python_version="3.11")
                  .pip_install("huggingface-hub==0.29.3", "hf_transfer==0.1.9", "Pillow==11.1.0")
@@ -21,7 +23,7 @@ def build_app(source, gpu="A100-80GB"):
              .add_local_dir(source, "/root", copy=True)
              .run_commands("pip install --no-cache-dir -r /root/uno/requirements-gpu.txt")
              .pip_install("hf_transfer==0.1.9").env(env))
-    app = modal.App(APP)
+    app = modal.App(app_name)
 
     @app.function(name="stage", serialized=True, image=cpu_image, secrets=[secret],
                   volumes={"/cache": cache, "/work": runs}, cpu=(2, 2), memory=(4096, 8192),
@@ -61,7 +63,7 @@ def build_app(source, gpu="A100-80GB"):
                       timeout=21600, max_containers=2, retries=0, scaledown_window=2, single_use_containers=True)
         def lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap):
             from uno.modal_app import execute_lane
-            return execute_lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap, gpu_kind, runs, cache)
+            return execute_lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap, gpu_kind, runs, cache,config_filename)
         return lane
 
     a100_lane = register_lane(gpu, "gpu_lane")
@@ -171,7 +173,7 @@ def build_app(source, gpu="A100-80GB"):
     return app
 
 
-def execute_lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap, gpu, runs, cache):
+def execute_lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap, gpu, runs, cache,config_filename=None):
     import json
     import subprocess
     import resource
@@ -193,6 +195,8 @@ def execute_lane(bundle_id, benchmark, invocation, lane, cases, seconds_cap, gpu
     command = [sys.executable, "-m", "uno.run", "--benchmark", benchmark,
                "--manifest", str(bundle / "manifest.jsonl"), "--data-root", str(bundle / "input"),
                "--resolved-models", str(bundle / "resolved_models.json"), "--output", str(output), "--case-ids", *cases]
+    if config_filename is not None:
+        command.extend(['--config',str(bundle/config_filename)])
     began = time.monotonic()
     with (journal / "worker.log").open("wb") as log:
         child = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)

@@ -1,0 +1,28 @@
+{
+  "workflow_id": "freecus512-0a68b8354f4a933a-cache-recovery-v1-verified-completion",
+  "profile": "second",
+  "app": "freecus-512-paper-seed42-20261112",
+  "recovery_app": "freecus-512-cache-recovery-20261112",
+  "parent": {
+    "workflow_id": "freecus512-0a68b8354f4a933a",
+    "profile": "second",
+    "app": "freecus-512-paper-seed42-20261112",
+    "status": "submitted",
+    "runs": [
+      {
+        "benchmark": "dreambench",
+        "run_id": "freecus512-dreambench-s42-f86cadfd519ce417"
+      },
+      {
+        "benchmark": "dreambench_plus",
+        "run_id": "freecus512-dreambench_plus-s42-a63b054d17b9ab87"
+      }
+    ],
+    "call_id": "fc-01M778CX2G3262E0X7GXVKK4XX",
+    "dashboard": "https://modal.com/id/fc-01M778CX2G3262E0X7GXVKK4XX"
+  },
+  "status": "complete",
+  "call_id": "fc-01M77VQZYQYDQK9526QJE7B8H1",
+  "dashboard": "https://modal.com/id/fc-01M77HB44TGGG2P7AJRWSR64QN",
+  "reconciled_from": "freecus512-0a68b8354f4a933a-cache-recovery-v1"
+}

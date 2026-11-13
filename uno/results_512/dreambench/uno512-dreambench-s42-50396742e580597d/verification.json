@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "generated": 750,
+  "parts": [
+    {
+      "file": "images-000.zip",
+      "size_bytes": 366760640,
+      "sha256": "5e903793d9aa945f7d0010ee50724b2491f7924b4f931b7ac6e5e333141f40ae"
+    }
+  ],
+  "archive_folder": "C:\\graduate_project_sy\\AI_PROJECT_images\\uno_512\\dreambench\\uno512-dreambench-s42-50396742e580597d",
+  "member_hashes_and_crc_verified": true,
+  "missing_case_ids": []
+}
