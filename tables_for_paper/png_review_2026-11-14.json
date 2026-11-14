@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-14",
+  "status": "verified",
+  "png_count": 16,
+  "updated_pngs": 6,
+  "unchanged_pngs": 10,
+  "initial_findings": [
+    "FreeCus and UNO used 1024 scores in all six comparison PNGs",
+    "USO external overall row remained; local class and DreamBench++ scores were absent",
+    "FreeGraftor was missing from comparison PNGs"
+  ],
+  "validation": {
+    "score_files": 17,
+    "condition_benchmark_evaluations": 20,
+    "scored_cases": 20640,
+    "comparison_rows_checked": 192,
+    "numeric_cells_verified_by_ocr": 1040,
+    "numeric_cells_verified_visually": 4,
+    "ocr_note": "Full-image OCR plus 2x row crops. Four zero-count cells and ten labels containing dagger signs were visually verified after OCR failed to recognize them.",
+    "manual_checks": [
+      [
+        "dreambench_plus_method_comparison_classes.png",
+        "FreeCus (512 × 512) †",
+        "0",
+        []
+      ],
+      [
+        "dreambench_plus_method_comparison_classes.png",
+        "FreeGraftor (512 × 512) †",
+        "0",
+        []
+      ],
+      [
+        "dreambench_plus_method_comparison_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.7331189710610932
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.8697698744769875
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeGraftor (512 × 512) †",
+        0.7819037656903766
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.6990934449093444
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeGraftor (512 × 512) †",
+        0.6112273361227336
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.5284170153417016
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeGraftor (512 × 512) †",
+        0.44055090655509066
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.35774058577405854
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "FreeCus (512 × 512) †",
+        "0",
+        []
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeGraftor (512 × 512) †",
+        0.2698744769874477
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "FreeGraftor (512 × 512) †",
+        "0",
+        []
+      ],
+      [
+        "dreambench_plus_method_comparison_classes_balanced.png",
+        "missing label",
+        "FreeCus (512 × 512) †",
+        0.1870641562064156
+      ]
+    ],
+    "style_policy": "FreeCus and FreeGraftor: N=0 and em dash for Style; no four-class balanced metric, delta or contributions; Non-Style metrics retained",
+    "unrelated_metrics_unchanged": true,
+    "unrelated_png_bytes_unchanged": true,
+    "models_rerun": false,
+    "external_image_archives_reread": false
+  },
+  "files": [
+    {
+      "path": "dreambench_method_ablation.png",
+      "sha256": "2e3272b70e7ea4bbd32b780bc6e6797e5d62657029ae977ebbfda1254d2ad174",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "2e3272b70e7ea4bbd32b780bc6e6797e5d62657029ae977ebbfda1254d2ad174"
+    },
+    {
+      "path": "dreambench_method_ablation_classes.png",
+      "sha256": "90d9a3bd135d484f4323ca18876f42719886a91905159819cc3826c0294dd371",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "90d9a3bd135d484f4323ca18876f42719886a91905159819cc3826c0294dd371"
+    },
+    {
+      "path": "dreambench_method_comparison.png",
+      "sha256": "e33fa914d3e8e0776ba834ab890f23b834e46eb24adf7561bd8d7aa696388877",
+      "status": "updated and reviewed",
+      "previous_sha256": "545763f54ab25691d872e61821c0db3621bf3b3adea1409272249c371cbf13ff",
+      "rows": 12,
+      "numeric_cells_verified": 48
+    },
+    {
+      "path": "dreambench_method_comparison_applicabiltiy.png",
+      "sha256": "556880d4a1005df0c09d22746df652515f8b63f39ea53419c128862dbc9685dc",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "556880d4a1005df0c09d22746df652515f8b63f39ea53419c128862dbc9685dc"
+    },
+    {
+      "path": "dreambench_method_comparison_classes.png",
+      "sha256": "9fdc79e3b0e5c43d0d56f9f992fdbe04336a0fde8c62757152452f5d25ef2f80",
+      "status": "updated and reviewed",
+      "previous_sha256": "02c1444671204cee49697dd3e3746d5cd63ab210a85462e6c5653f4faae761ce",
+      "rows": 24,
+      "numeric_cells_verified": 96
+    },
+    {
+      "path": "dreambench_method_comparison_classes_applicabiltiy.png",
+      "sha256": "e0608c8d008b5d60144b3a2864330d2e13f22aa6e3ac1fb5f9a2f9279bc742f7",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "e0608c8d008b5d60144b3a2864330d2e13f22aa6e3ac1fb5f9a2f9279bc742f7"
+    },
+    {
+      "path": "dreambench_method_verification.png",
+      "sha256": "eadfa975e6d83637a3226b6cdd4b1f189125c2a6ad6589e97a74069d12cbced8",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "eadfa975e6d83637a3226b6cdd4b1f189125c2a6ad6589e97a74069d12cbced8"
+    },
+    {
+      "path": "dreambench_plus_method_ablation.png",
+      "sha256": "60dc210bdaaf7442a69f6c75ede1f85d285603afd35f08daa3cbec2aa82481f5",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "60dc210bdaaf7442a69f6c75ede1f85d285603afd35f08daa3cbec2aa82481f5"
+    },
+    {
+      "path": "dreambench_plus_method_ablation_classes.png",
+      "sha256": "539f4501399430d722136f9b56e1ce498b04dbd0ffc4ae834abdb8ad198ca35d",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "539f4501399430d722136f9b56e1ce498b04dbd0ffc4ae834abdb8ad198ca35d"
+    },
+    {
+      "path": "dreambench_plus_method_comparison.png",
+      "sha256": "65068d48dadabd29e8041e03f56db51fdb80460a9a7a3f3dbb503ddd1b75768a",
+      "status": "updated and reviewed",
+      "previous_sha256": "82fecbd9d30c2d2609f07c21141e25b2d9c26cb7840404d710f09a317360d21b",
+      "rows": 12,
+      "numeric_cells_verified": 48
+    },
+    {
+      "path": "dreambench_plus_method_comparison_applicabiltiy.png",
+      "sha256": "db255aa4bb8a48f484eb31639bd7f284833f6127b4e3bd1671e041e4165732f6",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "db255aa4bb8a48f484eb31639bd7f284833f6127b4e3bd1671e041e4165732f6"
+    },
+    {
+      "path": "dreambench_plus_method_comparison_balanced.png",
+      "sha256": "37d62b4bc727db2f8e81545436ae14fdc185c6603f919b598c15246e0a47b94f",
+      "status": "updated and reviewed",
+      "previous_sha256": "b00b314212d493999000db6815258e5360a3106260f8dc84b8b80db7f11f4820",
+      "rows": 24,
+      "numeric_cells_verified": 228
+    },
+    {
+      "path": "dreambench_plus_method_comparison_classes.png",
+      "sha256": "34f3d4142abd4a23c719ec33f47d27bda5b682196e07695ae5f99b43eed83851",
+      "status": "updated and reviewed",
+      "previous_sha256": "3f2d5deee4dcaa2d3ff8531d9c9529fc04fd667aaeaaa94dc1a9db63290ce21f",
+      "rows": 60,
+      "numeric_cells_verified": 232
+    },
+    {
+      "path": "dreambench_plus_method_comparison_classes_applicabiltiy.png",
+      "sha256": "135a5a0f8ec3da711df134bb1e817bf69a2b4578fe12a540c7c1300d9d106588",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "135a5a0f8ec3da711df134bb1e817bf69a2b4578fe12a540c7c1300d9d106588"
+    },
+    {
+      "path": "dreambench_plus_method_comparison_classes_balanced.png",
+      "sha256": "dcec75567162fa681ec93e49ac72439353138f35b17b74ca663db6cec2ab1745",
+      "status": "updated and reviewed",
+      "previous_sha256": "ca1493ccac2d1c6c88a5b4f15557cc978e86a7d838f5bde5f05978c836dec4b1",
+      "rows": 60,
+      "numeric_cells_verified": 388
+    },
+    {
+      "path": "dreambench_plus_method_verification.png",
+      "sha256": "ab8ce2a979d5cf80a6369334bffe90f7af8ffcd8659baf15fc16e6b2d98f154a",
+      "status": "reviewed; unchanged",
+      "previous_sha256": "ab8ce2a979d5cf80a6369334bffe90f7af8ffcd8659baf15fc16e6b2d98f154a"
+    }
+  ]
+}

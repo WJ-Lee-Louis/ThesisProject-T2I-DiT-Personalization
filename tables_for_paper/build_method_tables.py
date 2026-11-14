@@ -21,20 +21,25 @@ from freecus.evaluate import project_evaluator
 
 METRICS=['CLIP-I','CLIP-T','DINO-I']
 SOURCES={
-    'freecus':dict(dreambench='477fc2c07d3451850b37b400',dreambench_plus='0fa5460f44b4b8672480a187'),
+    'freecus':dict(dreambench='freecus512-dreambench-s42-f86cadfd519ce417',dreambench_plus='freecus512-dreambench_plus-s42-a63b054d17b9ab87'),
     'dreamo':dict(dreambench='80f168f66963c39103d3a528',dreambench_plus='0d879ac6888dff2965d416b6'),
-    'uno':dict(dreambench='98bf99baf41eb1b758fceb23',dreambench_plus='2ff93b396bb6c6eda2ee2215'),
+    'uno':dict(dreambench='uno512-dreambench-s42-50396742e580597d',dreambench_plus='uno512-dreambench_plus-s42-ca39a70a1f5ebec3'),
     'xverse':dict(dreambench='2e73e10891f643f354a846f4-complete-v1',dreambench_plus='f811b3fa80a9700e30dd8115'),
     'diptych':dict.fromkeys(['dreambench','dreambench_plus'],'local-gpu0-seed42-bf16-v1'),
     'mosaic':dict.fromkeys(['dreambench','dreambench_plus'],'local-gpu0-seed42-bf16-v1'),
+    'uso':dict(dreambench='uso1024-dreambench-s42-59e9e8cf62e1b2c8',dreambench_plus='uso1024-dreambench_plus-s42-736623e31bbbb95d'),
+    'freegrafor2':dict.fromkeys(['dreambench','dreambench_plus'],'seed42_512'),
     'xlabs_application':dict.fromkeys(['dreambench','dreambench_plus'],'598a7ef43356a8eb05e1314b'),
 }
 LABELS={'freecus':'FreeCus','dreamo':'DreamO','uno':'UNO','xverse':'XVerse',
-        'diptych':'Diptych','mosaic':'MOSAIC','xlabs_application':'XLabs-IP-Adapter'}
-RESOLUTIONS=dict(freecus=1024,dreamo=1024,uno=1024,xverse=768,diptych=768,mosaic=512,xlabs_application=1024)
+        'uso':'USO','freegrafor2':'FreeGraftor','diptych':'Diptych','mosaic':'MOSAIC','xlabs_application':'XLabs-IP-Adapter'}
+RESOLUTIONS=dict(freecus=512,dreamo=1024,uno=512,uso=1024,freegrafor2=512,xverse=768,diptych=768,mosaic=512,xlabs_application=1024)
 COUNTS={'dreambench':dict(animal=(225,9),object=(525,21)),
         'dreambench_plus':dict(animal=(405,45),human=(180,20),object=(585,65),style=(180,20),non_style=(1170,130))}
 
+
+NON_STYLE_METHODS={'freecus','freegrafor2'}
+RECENT_METHODS={'freecus','uno','uso','freegrafor2'}
 
 def read(p):return json.loads(p.read_text(encoding='utf-8'))
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -45,6 +50,10 @@ def save_png(fig,target):
     # Replace a complete file, so an open image viewer cannot interrupt an in-place rewrite.
     with io.BytesIO() as output:
         fig.savefig(output,format='png',dpi=200,facecolor='white')
+        if target.exists():
+            from PIL import Image, ImageChops
+            with Image.open(target) as previous, Image.open(io.BytesIO(output.getvalue())) as current:
+                if previous.size==current.size and ImageChops.difference(previous.convert('RGB'),current.convert('RGB')).getbbox() is None:return
         with tempfile.NamedTemporaryFile(dir=target.parent,prefix='.table-',suffix='.tmp',delete=False) as temporary:
             temporary.write(output.getvalue())
         temporary_path=Path(temporary.name)
@@ -68,9 +77,66 @@ def aggregate(scores):
 
 def source_scores(method,bench):
     source='xlabs_application' if method=='xlabs_projection' else method
-    result=read(ROOT/source/'results'/bench/SOURCES[source][bench]/'metrics.json')
-    condition=('source_target' if method=='xlabs_projection' else 'baseline') if source=='xlabs_application' else method
-    return [s for s in result['scores'] if s['condition']==condition]
+    result=read(score_path(source,bench))
+    condition=('source_target' if method=='xlabs_projection' else 'baseline') if source=='xlabs_application' else 'uno_512' if method=='uno' else 'freegraftor' if method=='freegrafor2' else method
+    return [s for s in result['scores'] if s['condition']==condition and s['benchmark']==bench]
+
+
+def score_path(method,bench):
+    if method=='freegrafor2':return ROOT/'freegrafor2/results/runpod/seed42_512/metrics/scores.json'
+    base=ROOT/method/('results_512' if method in {'freecus','uno'} else 'results')/bench/SOURCES[method][bench]
+    if method=='freecus':return base/'metrics'/('all.scores.json' if bench=='dreambench' else 'dbpp-no-style.scores.json')
+    return base/'metrics.json'
+
+
+def audit_recent(method,bench,evaluator):
+    path=score_path(method,bench);result=read(path);scores=source_scores(method,bench)
+    if result['protocol']!=evaluator.PROTOCOL:raise ValueError('Metric protocol differs: '+str(path))
+    if not same(evaluator.summarize(result['scores']),result['summary']):raise ValueError('Stored summary differs: '+str(path))
+    shared_path=ROOT/'freecus/manifests'/(bench+'_project_seed42.jsonl')
+    shared={r['case_id']:r for r in map(json.loads,shared_path.read_text().splitlines())}
+    no_style=method in NON_STYLE_METHODS and bench=='dreambench_plus'
+    expected={cid:r for cid,r in shared.items() if not(no_style and r['category']=='style')}
+    extra={}
+    if method=='freegrafor2':
+        folder=path.parent.parent
+        config=read(folder/'run.json')['provenance']['settings']
+        index_path=ROOT/'freegrafor2/results/runpod/downloads/export_manifest.json'
+        entries={(r['benchmark'],r['case_id']):r for r in read(index_path)['files']}
+        if [config['width'],config['height'],config['seed']]!=[512,512,42]:raise ValueError('FreeGraftor settings differ')
+    else:
+        folder=path.parent.parent if method=='freecus' else path.parent
+        index_path=folder/'bundle_index.json';index=read(index_path)
+        if index['generation_resolution']!=[RESOLUTIONS[method]]*2:raise ValueError('Resolution differs')
+        if digest(folder/'manifest.jsonl')!=digest(shared_path) or index['manifest_sha256']!=digest(shared_path):raise ValueError('Manifest differs')
+        config=read(folder/('config.512.json' if method in {'freecus','uno'} else 'provenance.json'))
+        if method=='uso':config=config['config']
+        if [config['width'],config['height']]!=[RESOLUTIONS[method]]*2 or config.get('seeds',[config.get('seed')])!=[42]:raise ValueError('Generation settings differ')
+        extra['generation_fingerprint']=index['generation_fingerprint']
+    seen=set()
+    for score in scores:
+        cid=score['case_id']
+        if cid not in expected or cid in seen:raise ValueError('Unknown or duplicate score: '+cid)
+        seen.add(cid);row=expected[cid]
+        if any(score[k]!=row[k] for k in ['reference_id','reference_sha256','category']) or score['target_prompt']!=row['prompt'] or row['seed']!=42 or row['evaluation_references']!=[row['reference']]:raise ValueError('Case identity differs: '+cid)
+        if not all(math.isfinite(score[m]) for m in METRICS):raise ValueError('Nonfinite score')
+        if method=='freegrafor2':
+            entry=entries[bench,cid];metadata=folder/'execution_records'/bench/(cid+'.json');meta=read(metadata)
+            if digest(metadata)!=entry['metadata_sha256'] or meta['png_sha256']!=score['generated_sha256'] or entry['png_sha256']!=score['generated_sha256']:raise ValueError('FreeGraftor artifact hash differs')
+            if meta['settings']!=config or meta['row']['target_prompt']!=row['prompt'] or meta['reference_sha256']!=row['reference_sha256']:raise ValueError('FreeGraftor metadata differs')
+        elif index['members']['tgt_image/'+row['id']+'.png']['sha256']!=score['generated_sha256']:raise ValueError('Artifact hash differs')
+    if seen!=set(expected):raise ValueError('Incomplete cohort')
+    groups={'overall':scores,**{g:[s for s in scores if (s['category']!='style' if g=='non_style' else s['category']==g)] for g in COUNTS[bench]}}
+    records={}
+    for group,selected in groups.items():
+        refs={s['reference_id'] for s in selected}
+        expected_count=(1170,130) if group=='overall' and no_style else ((750,30) if bench=='dreambench' else (1350,150)) if group=='overall' else COUNTS[bench][group]
+        if selected and ((len(selected),len(refs))!=expected_count or {sum(s['reference_id']==r for s in selected) for r in refs}!={25 if bench=='dreambench' else 9}):raise ValueError('Coverage differs')
+        if not selected and not(no_style and group=='style'):raise ValueError('Unexpected missing class')
+        values=aggregate(selected) if selected else {m:None for m in METRICS}
+        records[group]=dict(method=method,benchmark=bench,group=group,cases=len(selected),references=len(refs),resolution=RESOLUTIONS[method],selection='non-style only' if no_style else 'all',status='evaluated' if selected else 'excluded',**values)
+    audit=dict(method=method,condition=scores[0]['condition'],benchmark=bench,source=path.relative_to(ROOT).as_posix(),sha256=digest(path),bundle_index_sha256=digest(index_path),shared_manifest_sha256=digest(shared_path),evaluated_cases=len(scores),references=len({s['reference_id'] for s in scores}),excluded_cases=sorted(set(shared)-seen),generation_resolution=[RESOLUTIONS[method]]*2,summary_recomputed=True,independent_subject_macro_verified=True,score_image_hashes_match_bundle_index=True,**extra)
+    return records,audit,{k:result[k] for k in ['device','device_name','versions']}
 
 
 def generation_record(folder,index,provenance,result,method):
@@ -103,6 +169,10 @@ def audit_sources():
     evaluator=project_evaluator();audits=[];data={};exports=[];environments={}
     for method,bundles in SOURCES.items():
         for bench,bid in bundles.items():
+            if method in RECENT_METHODS:
+                records,audit,env=audit_recent(method,bench,evaluator)
+                data[method,bench]=records;exports.extend(records.values());audits.append(audit);environments[method+'/'+bench]=env
+                continue
             folder=ROOT/method/'results'/bench/bid
             path=folder/'metrics.json';result=read(path);index=read(folder/'bundle_index.json')
             manifest=folder/'manifest.jsonl';provenance=read(folder/'provenance.json')
@@ -133,7 +203,7 @@ def audit_sources():
             if provenance.get('metrics_sha256')!=digest(path):raise ValueError('Score provenance hash differs')
             generation_check=generation_record(folder,index,provenance,result,method)
             if not same(evaluator.summarize(result['scores']),result['summary']):raise ValueError('Stored summary differs from recomputation')
-            report_name='dreambench_plus_no_style_scores.json' if method=='freecus' and bench=='dreambench_plus' else bench+'_scores.json'
+            report_name='dreambench_plus_no_style_scores.json' if method in NON_STYLE_METHODS and bench=='dreambench_plus' else bench+'_scores.json'
             report=ROOT/method/'results/reports'/report_name
             if not report.exists() or digest(report)!=digest(path):raise ValueError('Published score copy differs')
             members=index.get('members',{})
@@ -148,7 +218,7 @@ def audit_sources():
                 members={**members,**lane_members}
             conditions=['baseline','source_target'] if method=='xlabs_application' else [method]
             if {s['condition'] for s in result['scores']}!=set(conditions):raise ValueError('Unexpected scored condition')
-            no_style=method=='freecus' and bench=='dreambench_plus'
+            no_style=method in NON_STYLE_METHODS and bench=='dreambench_plus'
             expected={cid:r for cid,r in shared.items() if not(no_style and r['category']=='style')}
             for condition in conditions:
                 key='xlabs_projection' if condition=='source_target' else method
@@ -191,8 +261,8 @@ def audit_sources():
                     excluded_cases=sorted(set(shared)-seen),generation_resolution=[RESOLUTIONS[method]]*2,
                     generation_fingerprint=index['generation_fingerprint'],generation_record_check=generation_check,
                     summary_recomputed=True,independent_subject_macro_verified=True,score_image_hashes_match_bundle_index=True))
-    return data,exports,dict(date='2026-11-11',status='verified',environments=environments,protocol=evaluator.PROTOCOL,
-        environment_note='Same metric protocol; stored hardware and CUDA builds differ. Diptych/MOSAIC: RTX PRO 6000 Blackwell; other comparison methods: T4. No cross-device rescoring performed.',
+    return data,exports,dict(date='2026-11-14',status='verified',environments=environments,protocol=evaluator.PROTOCOL,
+        environment_note='Same metric protocol; stored hardware and CUDA builds differ. See environments for each method and benchmark. No cross-device rescoring performed.',
         evaluations=audits,total_scored_cases=sum(a['evaluated_cases'] for a in audits),
         scope='Recomputed stored per-image aggregates and checked canonical case/reference/prompt identity, coverage, provenance and score-to-index image hashes. Image archives were moved outside Git: archive bytes and missing run.json files were not reread. Generation resolution is checked against retained run metadata or provenance/index. Models were not rerun.')
 
@@ -209,12 +279,9 @@ def table_rows(data,historical,bench,group,applicability=False):
         rows.append(dict(method=method,cases=count,values=values,source='historical'))
     for method in SOURCES:
         r=data[method,bench][group]
-        dagger=' †' if method=='freecus' and bench=='dreambench_plus' else ''
+        dagger=' †' if method in NON_STYLE_METHODS and bench=='dreambench_plus' else ''
         rows.append(dict(method=f"{LABELS[method]} ({r['resolution']} × {r['resolution']}){dagger}",
             cases=r['cases'],values=[r[m] for m in METRICS],source='recomputed'))
-    if bench=='dreambench':
-        rows.append(dict(method='USO (external)',cases=750 if group=='overall' else None,
-            values=historical[bench]['uso_external'] if group=='overall' else [None]*3,source='historical'))
     return rows
 
 
@@ -225,12 +292,12 @@ def render(data,historical,bench,classes,applicability=False):
     plt.rcParams.update({'font.family':'DejaVu Serif','pdf.fonttype':42})
     groups=list(COUNTS[bench]) if classes else ['overall']
     notes=['Subject macro; one selected reference; seed 42; higher is better.',
-        'Resolution shown per row. Diptych / XVerse: 768 × 768; MOSAIC: 512 × 512; other measured methods: 1024 × 1024.',
-        'Baseline / Ours: preserved historical PNG values (4 decimals); seven comparison methods: audited local scores.',
+        'Resolution shown per row. FreeCus / UNO / MOSAIC / FreeGraftor: 512; Diptych / XVerse: 768; others: 1024.',
+        'Baseline / Ours: preserved historical PNG values (4 decimals); nine comparison methods: audited local scores.',
         '* Ours best uses provisional scale 0.8; this is not an optimized scale.']
-    if bench=='dreambench_plus':notes += ['† FreeCus: 1,170 images / 130 references only; excludes all 20 style references (180 images).',
-        'FreeCus overall is non-style only; compare the Non-Style block for a shared 1,170-image cohort.' if classes else 'FreeCus overall uses a different cohort from the 1,350-image rows; matched non-style results are in the classes table.']
-    else:notes += ['USO: historical external overall value; class-level results unavailable. Old external UNO values were replaced.']
+    if bench=='dreambench_plus':notes += ['† FreeCus / FreeGraftor: 1,170 images / 130 references only; excludes all 20 style references (180 images).',
+        'FreeCus / FreeGraftor overall is non-style only; compare the Non-Style block for a shared 1,170-image cohort.' if classes else 'FreeCus / FreeGraftor overall uses a different cohort from the 1,350-image rows; matched non-style results are in the classes table.']
+    else:notes += ['USO and FreeGraftor: local per-image scores; external USO and 1024 FreeCus / UNO rows removed.']
     if applicability:
         notes=['Subject macro; one selected reference; original target prompt; higher is better.',
             'Both conditions: 1024 × 1024; seed 42; 24 steps; guidance 3.5; IP-Adapter scale 1.0; same cases and references.',
@@ -257,7 +324,7 @@ def render(data,historical,bench,classes,applicability=False):
         if y!=350:rule(y,.7)
         label=group.replace('_','-').title()
         if group=='overall':
-            label='Overall (750 images / method)' if bench=='dreambench' else 'Overall (1,350 images / method)' if applicability else 'Overall (1,350 images; FreeCus † 1,170)'
+            label='Overall (750 images / method)' if bench=='dreambench' else 'Overall (1,350 images / method)' if applicability else 'Overall (1,350 images; FreeCus / FreeGraftor † 1,170)'
         else:label+=f' ({COUNTS[bench][group][0]:,} images)'
         text(160,y+49,label,14);y+=group_h
         for row in table_rows(data,historical,bench,group,applicability):
@@ -290,7 +357,7 @@ def main():
     data,rows,audit=audit_sources()
     historical=read(HERE/'historical_rows.json')
     audit['historical_rows_source']=dict(path='historical_rows.json',sha256=digest(HERE/'historical_rows.json'),
-        historical_vs_new_measurements='Baseline/Ours/USO are historical; all seven comparison methods and XLabs projection are recomputed from stored case scores.')
+        historical_vs_new_measurements='Baseline/Ours are historical; all nine comparison methods and XLabs projection are recomputed from stored case scores.')
     audit['figures']=[render(data,historical,b,c) for b in ['dreambench','dreambench_plus'] for c in [False,True]]
     audit['figures'] += [render(data,historical,b,c,True) for b in ['dreambench','dreambench_plus'] for c in [False,True]]
     applicability=[]
@@ -307,8 +374,9 @@ def main():
         if digest(HERE/name)!=sha:raise ValueError('Unrelated table changed')
     audit['unchanged_other_pngs']=untouched
     with (HERE/'method_metrics.csv').open('w',encoding='utf-8-sig',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+        writer=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");writer.writeheader();writer.writerows(rows)
     write(HERE/'method_metrics.json',dict(aggregation='subject_macro',rows=rows))
+    write(HERE/'aggregation_audit.json',audit)
     build_balanced_tables(data,dict(audit))
     print(json.dumps(dict(status='verified',evaluations=len(audit['evaluations']),scored_cases=audit['total_scored_cases'],
         figures=[p['path'] for p in audit['figures']],overall=[r for r in rows if r['group']=='overall']),indent=2))
@@ -320,7 +388,7 @@ def balanced_records(data,historical):
         methods.append(dict(key='historical_'+str(i),label=label,resolution=None,historical=True,
             groups={g:{m:v for m,v in zip(METRICS,historical[bench][g][i])} for g in ['overall',*COUNTS[bench]]}))
     for key in SOURCES:
-        methods.append(dict(key=key,label=f"{LABELS[key]} ({data[key,bench]['overall']['resolution']} × {data[key,bench]['overall']['resolution']})"+(' †' if key=='freecus' else ''),
+        methods.append(dict(key=key,label=f"{LABELS[key]} ({data[key,bench]['overall']['resolution']} × {data[key,bench]['overall']['resolution']})"+(' †' if key in NON_STYLE_METHODS else ''),
             resolution=data[key,bench]['overall']['resolution'],historical=False,
             groups={g:{m:r[m] for m in METRICS} for g,r in data[key,bench].items()}))
     records=[]
@@ -328,7 +396,7 @@ def balanced_records(data,historical):
         k=len(classes)
         baseline={m:statistics.fmean(methods[0]['groups'][c][m] for c in classes) for m in METRICS}
         for method in methods:
-            eligible=not(cohort=='four_class' and method['key']=='freecus')
+            eligible=not(cohort=='four_class' and method['key'] in NON_STYLE_METHODS)
             values={m:statistics.fmean(method['groups'][c][m] for c in classes) if eligible else None for m in METRICS}
             original_group='overall' if cohort=='four_class' else 'non_style'
             original=method['groups'][original_group]
@@ -343,9 +411,9 @@ def balanced_records(data,historical):
                 if not math.isclose(math.fsum(1/(k*COUNTS[bench][s['category']][0]) for s in selected),1,abs_tol=1e-12):raise ValueError('Weights do not sum to one')
                 verified=True
             records.append(dict(method=method['key'],label=method['label'],cohort=cohort,
-                cases=1170 if method['key']=='freecus' or cohort=='non_style' else 1350,
+                cases=1170 if method['key'] in NON_STYLE_METHODS or cohort=='non_style' else 1350,
                 eligible=eligible,classes=classes,weights={c:1/k for c in classes},
-                original_cohort='non_style' if method['key']=='freecus' else original_group,
+                original_cohort='non_style' if method['key'] in NON_STYLE_METHODS else original_group,
                 original=original,balanced=values,
                 delta_vs_baseline={m:values[m]-baseline[m] if eligible else None for m in METRICS},
                 class_means={c:method['groups'][c] for c in classes},
@@ -366,13 +434,13 @@ def render_balanced(methods,records,classes):
     groups=['animal','human','object','style','non_style'] if classes else ['four_class','non_style']
     notes=['Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.',
         'Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.',
-        '† FreeCus excludes style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.',
+        '† FreeCus / FreeGraftor exclude style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.',
         'Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.',
-        '* Ours best is provisional scale 0.8. Diptych / XVerse: 768 × 768; MOSAIC: 512 × 512; other measured rows: 1024 × 1024.']
+        '* Ours best is provisional scale 0.8. 512: FreeCus / UNO / MOSAIC / FreeGraftor; 768: Diptych / XVerse; 1024: other measured rows.']
     notes += ['Class score stays unchanged. Contribution = 0.25 × class score; sum four contributions for the Balanced Overall.',
-        'FreeCus contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes.'] if classes else [
+        'FreeCus / FreeGraftor contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes.'] if classes else [
         'Original = existing reference-weighted aggregate; Balanced = mean of class means; Δ = Balanced(method) − Balanced(baseline).',
-        'FreeCus Original in the full-cohort block is its 1,170-image non-style score, not a 1,350-image score.']
+        'FreeCus / FreeGraftor Original in the full-cohort block is their 1,170-image non-style scores, not a 1,350-image score.']
     height=header+len(groups)*(group_h+row_h*len(methods))+80+43*len(notes)+70
     fig=plt.figure(figsize=(width/200,height/200),dpi=200,facecolor='white');ax=fig.add_axes([0,0,1,1])
     ax.set_xlim(0,width);ax.set_ylim(height,0);ax.axis('off');texts=[]
@@ -402,7 +470,7 @@ def render_balanced(methods,records,classes):
         for method in methods:
             cohort='non_style' if group=='non_style' else 'four_class'
             r=next(r for r in records if r['method']==method['key'] and r['cohort']==cohort)
-            n=r['cases'] if group in ['four_class','non_style'] else (0 if group=='style' and method['key']=='freecus' else COUNTS['dreambench_plus'][group][0])
+            n=r['cases'] if group in ['four_class','non_style'] else (0 if group=='style' and method['key'] in NON_STYLE_METHODS else COUNTS['dreambench_plus'][group][0])
             text(160,y+row_h/2,method['label'],14);text(1530,y+row_h/2,f'{n:,}',14,align='center')
             for metric,xs in zip(METRICS,cols):
                 if not classes:values=[r['original'][metric],r['balanced'][metric],r['delta_vs_baseline'][metric]]
@@ -432,15 +500,16 @@ def build_balanced_tables(data=None,audit=None):
     audit.update(aggregation='equal-class macro after within-class subject macro',
         historical_source_sha256=digest(HERE/'historical_rows.json'),
         class_weights=dict(four_class={c:.25 for c in ['animal','human','object','style']},non_style={c:1/3 for c in ['animal','human','object']}),
-        baseline='historical_0',freecus_policy='No four-class balanced metric; equal-weight three-class Non-Style only',
+        baseline='historical_0',non_style_policy='FreeCus/FreeGraftor: no four-class balanced metric; equal-weight three-class Non-Style only',
         figures=[render_balanced(methods,records,c) for c in [False,True]])
     for name,value in unchanged.items():
         if digest(HERE/name)!=value:raise ValueError('Existing PNG changed')
     audit['unchanged_existing_pngs']=unchanged
+    write(HERE/'class_balanced_audit.json',audit)
     write(HERE/'class_balanced_metrics.json',dict(records=records))
     with (HERE/'class_balanced_metrics.csv').open('w',encoding='utf-8-sig',newline='') as f:
         fields=['method','cohort','cases','eligible','metric','original','balanced','delta_vs_baseline','precision']
-        writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
+        writer=csv.DictWriter(f,fieldnames=fields,lineterminator="\n");writer.writeheader()
         for r in records:
             for metric in METRICS:writer.writerow(dict(method=r['method'],cohort=r['cohort'],cases=r['cases'],eligible=r['eligible'],
                 metric=metric,original=r['original'][metric],balanced=r['balanced'][metric],delta_vs_baseline=r['delta_vs_baseline'][metric],precision=r['precision']))

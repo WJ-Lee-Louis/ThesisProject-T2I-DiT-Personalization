@@ -7,12 +7,12 @@
       "group": "overall",
       "cases": 750,
       "references": 30,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8183795572916667,
-      "CLIP-T": 0.27886881510416667,
-      "DINO-I": 0.7156239940722783
+      "CLIP-I": 0.813583984375,
+      "CLIP-T": 0.30192252604166664,
+      "DINO-I": 0.6678336187601089
     },
     {
       "method": "freecus",
@@ -20,12 +20,12 @@
       "group": "animal",
       "cases": 225,
       "references": 9,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8476236979166667,
-      "CLIP-T": 0.26963758680555555,
-      "DINO-I": 0.8119164692031012
+      "CLIP-I": 0.8490017361111111,
+      "CLIP-T": 0.3132666015625,
+      "DINO-I": 0.7704902654223972
     },
     {
       "method": "freecus",
@@ -33,12 +33,12 @@
       "group": "object",
       "cases": 525,
       "references": 21,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8058463541666666,
-      "CLIP-T": 0.2828250558035714,
-      "DINO-I": 0.6743557904447828
+      "CLIP-I": 0.7984049479166667,
+      "CLIP-T": 0.29706077938988096,
+      "DINO-I": 0.6238379130476996
     },
     {
       "method": "freecus",
@@ -46,12 +46,12 @@
       "group": "overall",
       "cases": 1170,
       "references": 130,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "evaluated",
-      "CLIP-I": 0.8209768963675214,
-      "CLIP-T": 0.2899658203125,
-      "DINO-I": 0.7036308562653696
+      "CLIP-I": 0.8103536491720086,
+      "CLIP-T": 0.3234699477497329,
+      "DINO-I": 0.6513220405731446
     },
     {
       "method": "freecus",
@@ -59,12 +59,12 @@
       "group": "animal",
       "cases": 405,
       "references": 45,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "evaluated",
-      "CLIP-I": 0.8270893614969137,
-      "CLIP-T": 0.30143982687114196,
-      "DINO-I": 0.7336980791003617
+      "CLIP-I": 0.8359821084104938,
+      "CLIP-T": 0.33646677276234566,
+      "DINO-I": 0.6972168455889196
     },
     {
       "method": "freecus",
@@ -72,12 +72,12 @@
       "group": "human",
       "cases": 180,
       "references": 20,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "evaluated",
-      "CLIP-I": 0.80556640625,
-      "CLIP-T": 0.23166029188368054,
-      "DINO-I": 0.6559172367056211
+      "CLIP-I": 0.735400390625,
+      "CLIP-T": 0.28389553493923614,
+      "DINO-I": 0.5764504082500934
     },
     {
       "method": "freecus",
@@ -85,12 +85,12 @@
       "group": "object",
       "cases": 585,
       "references": 65,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "evaluated",
-      "CLIP-I": 0.8214868790064103,
-      "CLIP-T": 0.29996243990384613,
-      "DINO-I": 0.6974962003210671
+      "CLIP-I": 0.8156734107905983,
+      "CLIP-T": 0.32664888822115384,
+      "DINO-I": 0.6425861393539315
     },
     {
       "method": "freecus",
@@ -98,7 +98,7 @@
       "group": "style",
       "cases": 0,
       "references": 0,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "excluded",
       "CLIP-I": null,
@@ -111,12 +111,12 @@
       "group": "non_style",
       "cases": 1170,
       "references": 130,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "non-style only",
       "status": "evaluated",
-      "CLIP-I": 0.8209768963675214,
-      "CLIP-T": 0.2899658203125,
-      "DINO-I": 0.7036308562653696
+      "CLIP-I": 0.8103536491720086,
+      "CLIP-T": 0.3234699477497329,
+      "DINO-I": 0.6513220405731446
     },
     {
       "method": "dreamo",
@@ -241,12 +241,12 @@
       "group": "overall",
       "cases": 750,
       "references": 30,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.80693359375,
-      "CLIP-T": 0.30881282552083333,
-      "DINO-I": 0.7178054170807203
+      "CLIP-I": 0.8348561197916666,
+      "CLIP-T": 0.3022999674479167,
+      "DINO-I": 0.7605656756560008
     },
     {
       "method": "uno",
@@ -254,12 +254,12 @@
       "group": "animal",
       "cases": 225,
       "references": 9,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8428342013888889,
-      "CLIP-T": 0.3135487196180555,
-      "DINO-I": 0.7904901328351763
+      "CLIP-I": 0.8640885416666667,
+      "CLIP-T": 0.3056125217013889,
+      "DINO-I": 0.8243388319015503
     },
     {
       "method": "uno",
@@ -267,12 +267,12 @@
       "group": "object",
       "cases": 525,
       "references": 21,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.7915476190476189,
-      "CLIP-T": 0.30678315662202377,
-      "DINO-I": 0.6866548246145248
+      "CLIP-I": 0.8223279389880952,
+      "CLIP-T": 0.3008803013392857,
+      "DINO-I": 0.7332343229793367
     },
     {
       "method": "uno",
@@ -280,12 +280,12 @@
       "group": "overall",
       "cases": 1350,
       "references": 150,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.7767974175347222,
-      "CLIP-T": 0.32957356770833335,
-      "DINO-I": 0.5900723126668621
+      "CLIP-I": 0.8101171875,
+      "CLIP-T": 0.3215676540798611,
+      "DINO-I": 0.6572650098793761
     },
     {
       "method": "uno",
@@ -293,12 +293,12 @@
       "group": "animal",
       "cases": 405,
       "references": 45,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8232192804783951,
-      "CLIP-T": 0.3383135006751543,
-      "DINO-I": 0.7104602760002937
+      "CLIP-I": 0.8486750096450617,
+      "CLIP-T": 0.3330412688078704,
+      "DINO-I": 0.7622144409903773
     },
     {
       "method": "uno",
@@ -306,12 +306,12 @@
       "group": "human",
       "cases": 180,
       "references": 20,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.6588948567708333,
-      "CLIP-T": 0.31807725694444444,
-      "DINO-I": 0.4175078031089571
+      "CLIP-I": 0.7337565104166667,
+      "CLIP-T": 0.29812079535590275,
+      "DINO-I": 0.5380482418255673
     },
     {
       "method": "uno",
@@ -319,12 +319,12 @@
       "group": "object",
       "cases": 585,
       "references": 65,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.8032948551014957,
-      "CLIP-T": 0.3285907451923077,
-      "DINO-I": 0.6420048527483248
+      "CLIP-I": 0.8293473724626068,
+      "CLIP-T": 0.32142177483974355,
+      "DINO-I": 0.6952558278910116
     },
     {
       "method": "uno",
@@ -332,12 +332,12 @@
       "group": "style",
       "cases": 180,
       "references": 20,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.7041341145833333,
-      "CLIP-T": 0.32459920247395835,
-      "DINO-I": 0.3229831494597925
+      "CLIP-I": 0.7372246636284723,
+      "CLIP-T": 0.31967298719618054,
+      "DINO-I": 0.4168753993956165
     },
     {
       "method": "uno",
@@ -345,12 +345,12 @@
       "group": "non_style",
       "cases": 1170,
       "references": 130,
-      "resolution": 1024,
+      "resolution": 512,
       "selection": "all",
       "status": "evaluated",
-      "CLIP-I": 0.7879763872195513,
-      "CLIP-T": 0.330338854667468,
-      "DINO-I": 0.6311629531602574
+      "CLIP-I": 0.8213314219417736,
+      "CLIP-T": 0.3218591412927351,
+      "DINO-I": 0.6942480268768775
     },
     {
       "method": "xverse",
@@ -702,6 +702,240 @@
       "CLIP-I": 0.7667219634748932,
       "CLIP-T": 0.340772945045406,
       "DINO-I": 0.5637675871961138
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench",
+      "group": "overall",
+      "cases": 750,
+      "references": 30,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.830173828125,
+      "CLIP-T": 0.3198050130208333,
+      "DINO-I": 0.7729698298772176
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench",
+      "group": "animal",
+      "cases": 225,
+      "references": 9,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.84734375,
+      "CLIP-T": 0.3289529079861111,
+      "DINO-I": 0.8401908715565999
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench",
+      "group": "object",
+      "cases": 525,
+      "references": 21,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.8228152901785715,
+      "CLIP-T": 0.31588448660714286,
+      "DINO-I": 0.7441608120146251
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "overall",
+      "cases": 1350,
+      "references": 150,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.7750007233796297,
+      "CLIP-T": 0.34943693938078707,
+      "DINO-I": 0.6200784018690939
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "animal",
+      "cases": 405,
+      "references": 45,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.8170066550925925,
+      "CLIP-T": 0.356373275945216,
+      "DINO-I": 0.7327536542842418
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "human",
+      "cases": 180,
+      "references": 20,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.6602891710069445,
+      "CLIP-T": 0.33583170572916665,
+      "DINO-I": 0.42373125375145004
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "object",
+      "cases": 585,
+      "references": 65,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.7982062967414529,
+      "CLIP-T": 0.3487471621260684,
+      "DINO-I": 0.6651119342344438
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "style",
+      "cases": 180,
+      "references": 20,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.7197808159722222,
+      "CLIP-T": 0.3496771918402778,
+      "DINO-I": 0.41654725186526775
+    },
+    {
+      "method": "uso",
+      "benchmark": "dreambench_plus",
+      "group": "non_style",
+      "cases": 1170,
+      "references": 130,
+      "resolution": 1024,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.78349609375,
+      "CLIP-T": 0.3493999774639423,
+      "DINO-I": 0.6513908864850672
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench",
+      "group": "overall",
+      "cases": 750,
+      "references": 30,
+      "resolution": 512,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.7823238932291667,
+      "CLIP-T": 0.31560514322916666,
+      "DINO-I": 0.6548911551634471
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench",
+      "group": "animal",
+      "cases": 225,
+      "references": 9,
+      "resolution": 512,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.82603515625,
+      "CLIP-T": 0.3253765190972222,
+      "DINO-I": 0.7099614805645413
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench",
+      "group": "object",
+      "cases": 525,
+      "references": 21,
+      "resolution": 512,
+      "selection": "all",
+      "status": "evaluated",
+      "CLIP-I": 0.7635904947916666,
+      "CLIP-T": 0.31141741071428575,
+      "DINO-I": 0.6312895871344066
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "overall",
+      "cases": 1170,
+      "references": 130,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "evaluated",
+      "CLIP-I": 0.7600819644764957,
+      "CLIP-T": 0.34252741887019234,
+      "DINO-I": 0.5816265634523753
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "animal",
+      "cases": 405,
+      "references": 45,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "evaluated",
+      "CLIP-I": 0.8189995659722222,
+      "CLIP-T": 0.3463167920524691,
+      "DINO-I": 0.6863531576446545
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "human",
+      "cases": 180,
+      "references": 20,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "evaluated",
+      "CLIP-I": 0.5761528862847223,
+      "CLIP-T": 0.33658243815104166,
+      "DINO-I": 0.32110377775712146
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "object",
+      "cases": 585,
+      "references": 65,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "evaluated",
+      "CLIP-I": 0.7758864182692308,
+      "CLIP-T": 0.34173323150373935,
+      "DINO-I": 0.5892843938408754
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "style",
+      "cases": 0,
+      "references": 0,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "excluded",
+      "CLIP-I": null,
+      "CLIP-T": null,
+      "DINO-I": null
+    },
+    {
+      "method": "freegrafor2",
+      "benchmark": "dreambench_plus",
+      "group": "non_style",
+      "cases": 1170,
+      "references": 130,
+      "resolution": 512,
+      "selection": "non-style only",
+      "status": "evaluated",
+      "CLIP-I": 0.7600819644764957,
+      "CLIP-T": 0.34252741887019234,
+      "DINO-I": 0.5816265634523753
     },
     {
       "method": "xlabs_application",

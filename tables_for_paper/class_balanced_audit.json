@@ -1,15 +1,204 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-14",
   "status": "verified",
-  "environment": {
-    "device": "cuda",
-    "device_name": "Tesla T4",
-    "versions": {
-      "torch": "2.7.1",
-      "torchvision": "0.22.1",
-      "numpy": "1.26.4",
-      "Pillow": "11.3.0",
-      "clip": "1.0"
+  "environments": {
+    "freecus/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "freecus/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "dreamo/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "dreamo/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "uno/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "uno/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "xverse/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "xverse/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "diptych/dreambench": {
+      "device": "cuda",
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "versions": {
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "diptych/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "versions": {
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "mosaic/dreambench": {
+      "device": "cuda",
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "versions": {
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "mosaic/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "versions": {
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "uso/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "uso/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "freegrafor2/dreambench": {
+      "device": "cuda",
+      "device_name": "NVIDIA A100-SXM4-80GB",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "freegrafor2/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "NVIDIA A100-SXM4-80GB",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "xlabs_application/dreambench": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
+    },
+    "xlabs_application/dreambench_plus": {
+      "device": "cuda",
+      "device_name": "Tesla T4",
+      "versions": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "1.26.4",
+        "Pillow": "11.3.0",
+        "clip": "1.0"
+      }
     }
   },
   "protocol": {
@@ -29,32 +218,35 @@
     "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
     "generated_format": "original PNG; no JPEG export"
   },
+  "environment_note": "Same metric protocol; stored hardware and CUDA builds differ. See environments for each method and benchmark. No cross-device rescoring performed.",
   "evaluations": [
     {
       "method": "freecus",
+      "condition": "freecus",
       "benchmark": "dreambench",
-      "source": "freecus/results/dreambench/477fc2c07d3451850b37b400/metrics.json",
-      "sha256": "aef7bd9f5b1c7338f48da63b1c48660e86a84b6b2e518387a4a972031b64727b",
-      "bundle_index_sha256": "ab7b433617dda085ef2cb7f52cd3798948cf875fce64cc6dfa56e4756c57dca4",
+      "source": "freecus/results_512/dreambench/freecus512-dreambench-s42-f86cadfd519ce417/metrics/all.scores.json",
+      "sha256": "4bc447ce4b5195ccf8286aebda63b5613c63bd8eb67ffc5b276ae7757a9da6a7",
+      "bundle_index_sha256": "998a818dda450c8ac47f3ee20f00e0329a0d635f218199f7b5304f2a6a035923",
       "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
       "evaluated_cases": 750,
       "references": 30,
       "excluded_cases": [],
       "generation_resolution": [
-        1024,
-        1024
+        512,
+        512
       ],
-      "generation_fingerprint": "0821a395cebbbd7287c24b02725930fa9a0b32eaf3db81bbe0192d077ce12c4a",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
-      "score_image_hashes_match_bundle_index": true
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "8dbd12b59ed428f3fefc409e0672f392ccc1a168b73d63809c21cc25ac776f9e"
     },
     {
       "method": "freecus",
+      "condition": "freecus",
       "benchmark": "dreambench_plus",
-      "source": "freecus/results/dreambench_plus/0fa5460f44b4b8672480a187/metrics.json",
-      "sha256": "6a9c5535abf4637451a2841b2cb2e6c1ca1ef513343e9272e57d644e7dbc9aab",
-      "bundle_index_sha256": "01a9ef6a1181bef8f9b82bee490b11eb1fe2b6678e08dc1c4e5d82c13df3c75e",
+      "source": "freecus/results_512/dreambench_plus/freecus512-dreambench_plus-s42-a63b054d17b9ab87/metrics/dbpp-no-style.scores.json",
+      "sha256": "45c12345712c217d20872959e6075ea52ce144892a18ce177ecedbcd604daca5",
+      "bundle_index_sha256": "fed48a88565e9ee8ae52953fadbd2f9ef2f063d77f8b8eaafb10ac6a9c20316e",
       "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
       "evaluated_cases": 1170,
       "references": 130,
@@ -241,21 +433,24 @@
         "179-08"
       ],
       "generation_resolution": [
-        1024,
-        1024
+        512,
+        512
       ],
-      "generation_fingerprint": "86abcbfb25a49e0e967a68a2adb8a60b0ca230089732a32ee507721572cdbb17",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
-      "score_image_hashes_match_bundle_index": true
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "c411263a03d9896f75f684822a6f85410158e6ed77f53f0f1a32e6e21142b0b8"
     },
     {
       "method": "dreamo",
+      "condition": "dreamo",
       "benchmark": "dreambench",
       "source": "dreamo/results/dreambench/80f168f66963c39103d3a528/metrics.json",
       "sha256": "dba2d205ba5c5b446af97b473b025d00e4d0fba4836acfb06cb480da3789a301",
       "bundle_index_sha256": "e128335f13ac3d4339c7c0002ebe9be50cc40c2a38d8d77a90f3e4fb3d048cb4",
+      "lane_index_sha256": {},
       "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
       "evaluated_cases": 750,
       "references": 30,
       "excluded_cases": [],
@@ -264,17 +459,21 @@
         1024
       ],
       "generation_fingerprint": "6d566a486c8c7631ef5efc7b47d189a23ea7cd741e7a20125b8b5d39ee18342e",
+      "generation_record_check": "retained run.json",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
       "score_image_hashes_match_bundle_index": true
     },
     {
       "method": "dreamo",
+      "condition": "dreamo",
       "benchmark": "dreambench_plus",
       "source": "dreamo/results/dreambench_plus/0d879ac6888dff2965d416b6/metrics.json",
       "sha256": "7c1c1305a0a6973970856bedc93f02c93c0ffee01b83a8996e8c1b7c317e9396",
       "bundle_index_sha256": "185ece6ba9643b061d04e7c341e4bf80f4ce849dd8ff95a0d4b85456a9729baf",
+      "lane_index_sha256": {},
       "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
       "evaluated_cases": 1350,
       "references": 150,
       "excluded_cases": [],
@@ -283,55 +482,61 @@
         1024
       ],
       "generation_fingerprint": "5ede585856f25b1d4e1ed8d0a6a0cc4ae7beee7c9080764a6c8d052a00e02f2f",
+      "generation_record_check": "retained run.json",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
       "score_image_hashes_match_bundle_index": true
     },
     {
       "method": "uno",
+      "condition": "uno_512",
       "benchmark": "dreambench",
-      "source": "uno/results/dreambench/98bf99baf41eb1b758fceb23/metrics.json",
-      "sha256": "4a64c63c6b48fbb453f1352589ba90182d7d5b5cf8d7799630f20ae24402af46",
-      "bundle_index_sha256": "50591301735336d45729bc508d2c2237d0a7ebc4ac0327a5a9c4381464eefc6a",
+      "source": "uno/results_512/dreambench/uno512-dreambench-s42-50396742e580597d/metrics.json",
+      "sha256": "1b13fe203ef9ec4169456eb2ed470921ac3f20f7ccd7efa50e73fcbb2cdc4266",
+      "bundle_index_sha256": "4446ddb4995780a1438d1aefc64231d1d5a2d87582a3a3f31aab954965da45d4",
       "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
       "evaluated_cases": 750,
       "references": 30,
       "excluded_cases": [],
       "generation_resolution": [
-        1024,
-        1024
+        512,
+        512
       ],
-      "generation_fingerprint": "bbc35e6ac4a47fed443de47289e1ff5ac51a8e961773e8f29984e6a3e909f40b",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
-      "score_image_hashes_match_bundle_index": true
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "029cb187ab72c227a5b140a2f16f774b4f17edf6584bf45fb19bc27e951c6a58"
     },
     {
       "method": "uno",
+      "condition": "uno_512",
       "benchmark": "dreambench_plus",
-      "source": "uno/results/dreambench_plus/2ff93b396bb6c6eda2ee2215/metrics.json",
-      "sha256": "129693dde2854c6650c809681eda01963db49404f446827ba03520c1df4133f2",
-      "bundle_index_sha256": "27f3be8473f66ab26e1663351e53407ef210d063bd5f2c760973738fc4e1620c",
+      "source": "uno/results_512/dreambench_plus/uno512-dreambench_plus-s42-ca39a70a1f5ebec3/metrics.json",
+      "sha256": "821209c4fb608740081120bc194559e2e89fe9675902ef52ff195574b5cc0a0c",
+      "bundle_index_sha256": "4b77f5b15670f6cef733146654dde83b473bfa9698491a08ab5d316921278699",
       "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
       "evaluated_cases": 1350,
       "references": 150,
       "excluded_cases": [],
       "generation_resolution": [
-        1024,
-        1024
+        512,
+        512
       ],
-      "generation_fingerprint": "6bd911a74da4c6e102d8b7fc3fe50277f5dbdfe7f1737a0ba2d2f9c698927665",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
-      "score_image_hashes_match_bundle_index": true
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "7840995a6c7d55d05241589dd608f9ba113030813aa921e74d3e46e67826d2b2"
     },
     {
       "method": "xverse",
+      "condition": "xverse",
       "benchmark": "dreambench",
       "source": "xverse/results/dreambench/2e73e10891f643f354a846f4-complete-v1/metrics.json",
       "sha256": "6f17b08ff8ce946b6eabd769681fa30c2ff4b9e4bca46d28117e97549c16a38c",
       "bundle_index_sha256": "6b400012e2c76b8ef4992b26a3af8050d2f68a6852768ff363ca0161aa26a4c6",
+      "lane_index_sha256": {},
       "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
       "evaluated_cases": 750,
       "references": 30,
       "excluded_cases": [],
@@ -340,17 +545,21 @@
         768
       ],
       "generation_fingerprint": "d2b25dc3a20d020f43a62302f9836dabadc4bef7a02e765b9061bde2926b0732",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
       "score_image_hashes_match_bundle_index": true
     },
     {
       "method": "xverse",
+      "condition": "xverse",
       "benchmark": "dreambench_plus",
       "source": "xverse/results/dreambench_plus/f811b3fa80a9700e30dd8115/metrics.json",
       "sha256": "98e81ead350c1126ae471a264b4f6d336031b91f59ba1d1842cb2b39b7cb1336",
       "bundle_index_sha256": "7d02d212f5c10ea79fff58f74ad02caad48e897fc138775e9b22cc2d5dd2b976",
+      "lane_index_sha256": {},
       "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
       "evaluated_cases": 1350,
       "references": 150,
       "excluded_cases": [],
@@ -359,15 +568,516 @@
         768
       ],
       "generation_fingerprint": "f480f257c058cd1bbcb46d6898e50f6aac2c1f9c326961086753981bd7d10643",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "diptych",
+      "condition": "diptych",
+      "benchmark": "dreambench",
+      "source": "diptych/results/dreambench/local-gpu0-seed42-bf16-v1/metrics.json",
+      "sha256": "fba372083e6258e87cb13a8653cd777aafb84df57559b794c77bb538f0a55318",
+      "bundle_index_sha256": "f08c23e2ba747557015604fa117678b52be35a2833c05c12322af84b270a65a1",
+      "lane_index_sha256": {},
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        768,
+        768
+      ],
+      "generation_fingerprint": "9593efb54b741e6beee8d0a8780e42d2a9a4b2193f64715d4200280a72bd567b",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "diptych",
+      "condition": "diptych",
+      "benchmark": "dreambench_plus",
+      "source": "diptych/results/dreambench_plus/local-gpu0-seed42-bf16-v1/metrics.json",
+      "sha256": "ebd1c24e26efb3bba712310372bfbe7c9b33a1c1395f6187faa2ee8983ca4c2a",
+      "bundle_index_sha256": "89a1bb513d157837e7b8ea5da16b0ec0c530be3db1dbb09bb6ca0df3d5def07e",
+      "lane_index_sha256": {},
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "evaluated_cases": 1350,
+      "references": 150,
+      "excluded_cases": [],
+      "generation_resolution": [
+        768,
+        768
+      ],
+      "generation_fingerprint": "8548236a1e32be054009d204036c4118c4e8fda5502bd5daf98dda0f94537f1a",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "mosaic",
+      "condition": "mosaic",
+      "benchmark": "dreambench",
+      "source": "mosaic/results/dreambench/local-gpu0-seed42-bf16-v1/metrics.json",
+      "sha256": "b72c891c00f1df73fdbd1d3487c3d5f733a89222f4f6b9c3d512cfe3e9e01d06",
+      "bundle_index_sha256": "7cf0ac08fac713c125257f849553398e9167cb42010cd53c0e6357325f53ece5",
+      "lane_index_sha256": {},
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        512,
+        512
+      ],
+      "generation_fingerprint": "0e9bfa362f5e8a870dffa748cfc7d00df2f8689dd273edca69e00aac3700226b",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "mosaic",
+      "condition": "mosaic",
+      "benchmark": "dreambench_plus",
+      "source": "mosaic/results/dreambench_plus/local-gpu0-seed42-bf16-v1/metrics.json",
+      "sha256": "dd70db6e1bff9574c59d1d35c1cb68a22a809d6ce3f3d9185986dd6f1fcf73b1",
+      "bundle_index_sha256": "506ffbc7aecaad2a1809566806c245586978090d36d74f23cedc84c1378a7311",
+      "lane_index_sha256": {},
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "evaluated_cases": 1350,
+      "references": 150,
+      "excluded_cases": [],
+      "generation_resolution": [
+        512,
+        512
+      ],
+      "generation_fingerprint": "1a6019a7f86495d479a20ae91d8b2f24c2dbb628e8ed82cf7c119efefdadef8e",
+      "generation_record_check": "retained provenance and bundle index (external run.json not reread)",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "uso",
+      "condition": "uso",
+      "benchmark": "dreambench",
+      "source": "uso/results/dreambench/uso1024-dreambench-s42-59e9e8cf62e1b2c8/metrics.json",
+      "sha256": "28449f58e27ec5237dfe46eae8f99e7a83d010be9613ce431539f85fc78cb8a2",
+      "bundle_index_sha256": "fc9f49d0b9d64f4f838b836eef314fb4b4ebaf98f81f9f93c633e2273359ea89",
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "59e9e8cf62e1b2c81712b581724b080e50544fd358315d7aa469d740d815c5f4"
+    },
+    {
+      "method": "uso",
+      "condition": "uso",
+      "benchmark": "dreambench_plus",
+      "source": "uso/results/dreambench_plus/uso1024-dreambench_plus-s42-736623e31bbbb95d/metrics.json",
+      "sha256": "c504537d07f06aa15efa13348bc5b2f9a4e3d8e8d9f382671bf9d4270e6f790c",
+      "bundle_index_sha256": "1fd87767c1ffe30c542a66702fe4ff6cdd3743fd8f37b8a39f59a7595d6a3210",
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "evaluated_cases": 1350,
+      "references": 150,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true,
+      "generation_fingerprint": "736623e31bbbb95d7297622b7023113cc2addea9c83b280442eccea7713838ea"
+    },
+    {
+      "method": "freegrafor2",
+      "condition": "freegraftor",
+      "benchmark": "dreambench",
+      "source": "freegrafor2/results/runpod/seed42_512/metrics/scores.json",
+      "sha256": "6f5e84ad5728b3f5bddd892ed3c05a3df60b9cc39b9e9eface72e3bc611231ca",
+      "bundle_index_sha256": "55e79b3462dcd20d4e7002ea6f6b5cf6872c1bd02fa73734c4533aa16b324569",
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        512,
+        512
+      ],
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "freegrafor2",
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "source": "freegrafor2/results/runpod/seed42_512/metrics/scores.json",
+      "sha256": "6f5e84ad5728b3f5bddd892ed3c05a3df60b9cc39b9e9eface72e3bc611231ca",
+      "bundle_index_sha256": "55e79b3462dcd20d4e7002ea6f6b5cf6872c1bd02fa73734c4533aa16b324569",
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "evaluated_cases": 1170,
+      "references": 130,
+      "excluded_cases": [
+        "160-00",
+        "160-01",
+        "160-02",
+        "160-03",
+        "160-04",
+        "160-05",
+        "160-06",
+        "160-07",
+        "160-08",
+        "161-00",
+        "161-01",
+        "161-02",
+        "161-03",
+        "161-04",
+        "161-05",
+        "161-06",
+        "161-07",
+        "161-08",
+        "162-00",
+        "162-01",
+        "162-02",
+        "162-03",
+        "162-04",
+        "162-05",
+        "162-06",
+        "162-07",
+        "162-08",
+        "163-00",
+        "163-01",
+        "163-02",
+        "163-03",
+        "163-04",
+        "163-05",
+        "163-06",
+        "163-07",
+        "163-08",
+        "164-00",
+        "164-01",
+        "164-02",
+        "164-03",
+        "164-04",
+        "164-05",
+        "164-06",
+        "164-07",
+        "164-08",
+        "165-00",
+        "165-01",
+        "165-02",
+        "165-03",
+        "165-04",
+        "165-05",
+        "165-06",
+        "165-07",
+        "165-08",
+        "166-00",
+        "166-01",
+        "166-02",
+        "166-03",
+        "166-04",
+        "166-05",
+        "166-06",
+        "166-07",
+        "166-08",
+        "167-00",
+        "167-01",
+        "167-02",
+        "167-03",
+        "167-04",
+        "167-05",
+        "167-06",
+        "167-07",
+        "167-08",
+        "168-00",
+        "168-01",
+        "168-02",
+        "168-03",
+        "168-04",
+        "168-05",
+        "168-06",
+        "168-07",
+        "168-08",
+        "169-00",
+        "169-01",
+        "169-02",
+        "169-03",
+        "169-04",
+        "169-05",
+        "169-06",
+        "169-07",
+        "169-08",
+        "170-00",
+        "170-01",
+        "170-02",
+        "170-03",
+        "170-04",
+        "170-05",
+        "170-06",
+        "170-07",
+        "170-08",
+        "171-00",
+        "171-01",
+        "171-02",
+        "171-03",
+        "171-04",
+        "171-05",
+        "171-06",
+        "171-07",
+        "171-08",
+        "172-00",
+        "172-01",
+        "172-02",
+        "172-03",
+        "172-04",
+        "172-05",
+        "172-06",
+        "172-07",
+        "172-08",
+        "173-00",
+        "173-01",
+        "173-02",
+        "173-03",
+        "173-04",
+        "173-05",
+        "173-06",
+        "173-07",
+        "173-08",
+        "174-00",
+        "174-01",
+        "174-02",
+        "174-03",
+        "174-04",
+        "174-05",
+        "174-06",
+        "174-07",
+        "174-08",
+        "175-00",
+        "175-01",
+        "175-02",
+        "175-03",
+        "175-04",
+        "175-05",
+        "175-06",
+        "175-07",
+        "175-08",
+        "176-00",
+        "176-01",
+        "176-02",
+        "176-03",
+        "176-04",
+        "176-05",
+        "176-06",
+        "176-07",
+        "176-08",
+        "177-00",
+        "177-01",
+        "177-02",
+        "177-03",
+        "177-04",
+        "177-05",
+        "177-06",
+        "177-07",
+        "177-08",
+        "178-00",
+        "178-01",
+        "178-02",
+        "178-03",
+        "178-04",
+        "178-05",
+        "178-06",
+        "178-07",
+        "178-08",
+        "179-00",
+        "179-01",
+        "179-02",
+        "179-03",
+        "179-04",
+        "179-05",
+        "179-06",
+        "179-07",
+        "179-08"
+      ],
+      "generation_resolution": [
+        512,
+        512
+      ],
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "xlabs_application",
+      "condition": "baseline",
+      "benchmark": "dreambench",
+      "source": "xlabs_application/results/dreambench/598a7ef43356a8eb05e1314b/metrics.json",
+      "sha256": "51cde43ae2c23a534c10c5662d4e8ef317900ec64ae64662e45e3eb550691e85",
+      "bundle_index_sha256": "87715f2603bc3ca39312536838674a02a114ad96510ce0dde5286f25407b3517",
+      "lane_index_sha256": {
+        "lanes/method-comparison/bundle_index.json": "c24f9fd6a2aa308ef9fdb42d90ccd94e4e23f3878a0140f9cf490b07bf56f761",
+        "lanes/wj-lee-louis/bundle_index.json": "1b1bfad1273c5de2bb70a90fb0440ef9f3d26beb4e57f85c25f1fe885b4ed826"
+      },
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "8f3281f2d799569584ab4a8dbc7b0ddfcf06c9068ee4b7619b913e942b9d82cd",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+      "generation_record_check": "retained run.json",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "xlabs_projection",
+      "condition": "source_target",
+      "benchmark": "dreambench",
+      "source": "xlabs_application/results/dreambench/598a7ef43356a8eb05e1314b/metrics.json",
+      "sha256": "51cde43ae2c23a534c10c5662d4e8ef317900ec64ae64662e45e3eb550691e85",
+      "bundle_index_sha256": "87715f2603bc3ca39312536838674a02a114ad96510ce0dde5286f25407b3517",
+      "lane_index_sha256": {
+        "lanes/method-comparison/bundle_index.json": "c24f9fd6a2aa308ef9fdb42d90ccd94e4e23f3878a0140f9cf490b07bf56f761",
+        "lanes/wj-lee-louis/bundle_index.json": "1b1bfad1273c5de2bb70a90fb0440ef9f3d26beb4e57f85c25f1fe885b4ed826"
+      },
+      "shared_manifest_sha256": "ccb2db210d152a3c7969d126c74517e7fd0569fd52560b1036532f48e24280d7",
+      "method_manifest_sha256": "8f3281f2d799569584ab4a8dbc7b0ddfcf06c9068ee4b7619b913e942b9d82cd",
+      "evaluated_cases": 750,
+      "references": 30,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+      "generation_record_check": "retained run.json",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "xlabs_application",
+      "condition": "baseline",
+      "benchmark": "dreambench_plus",
+      "source": "xlabs_application/results/dreambench_plus/598a7ef43356a8eb05e1314b/metrics.json",
+      "sha256": "81dd455efa54bc5f8507d51e778c0075a76fcdb8b6ffe4651ef704781a97bcad",
+      "bundle_index_sha256": "f606bf1554b3040d45f0004fffd83228be07c52644cd800bfcd2f40de4dfd8d7",
+      "lane_index_sha256": {
+        "lanes/dreambench-plus-0/bundle_index.json": "42ef40b70121c3632168ac696de5b010bcb110d5872ac322d6ad184d0905cff6",
+        "lanes/dreambench-plus-1/bundle_index.json": "58b4521c24302b0c70eb1281da368c1e6efd5ad70640cbd85794dfa0caf3e1a4"
+      },
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "bee1ccc92ba43d73e763b9000614d50c1eb9694380590e9717fde12262f14e8e",
+      "evaluated_cases": 1350,
+      "references": 150,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+      "generation_record_check": "retained run.json",
+      "summary_recomputed": true,
+      "independent_subject_macro_verified": true,
+      "score_image_hashes_match_bundle_index": true
+    },
+    {
+      "method": "xlabs_projection",
+      "condition": "source_target",
+      "benchmark": "dreambench_plus",
+      "source": "xlabs_application/results/dreambench_plus/598a7ef43356a8eb05e1314b/metrics.json",
+      "sha256": "81dd455efa54bc5f8507d51e778c0075a76fcdb8b6ffe4651ef704781a97bcad",
+      "bundle_index_sha256": "f606bf1554b3040d45f0004fffd83228be07c52644cd800bfcd2f40de4dfd8d7",
+      "lane_index_sha256": {
+        "lanes/dreambench-plus-0/bundle_index.json": "42ef40b70121c3632168ac696de5b010bcb110d5872ac322d6ad184d0905cff6",
+        "lanes/dreambench-plus-1/bundle_index.json": "58b4521c24302b0c70eb1281da368c1e6efd5ad70640cbd85794dfa0caf3e1a4"
+      },
+      "shared_manifest_sha256": "f0c949e9702e96213bd227a066f55dfd2cd92a46037c96f1243e9afc2d66ee06",
+      "method_manifest_sha256": "bee1ccc92ba43d73e763b9000614d50c1eb9694380590e9717fde12262f14e8e",
+      "evaluated_cases": 1350,
+      "references": 150,
+      "excluded_cases": [],
+      "generation_resolution": [
+        1024,
+        1024
+      ],
+      "generation_fingerprint": "b9763a13c5608fdc87814f926873e3e0c9392cdf92b003004a5949b6f1ff3597",
+      "generation_record_check": "retained run.json",
       "summary_recomputed": true,
       "independent_subject_macro_verified": true,
       "score_image_hashes_match_bundle_index": true
     }
   ],
-  "total_scored_cases": 8220,
-  "scope": "Recomputed stored per-image metric aggregates; checked canonical identity, exclusions, generation run, score provenance and score-to-bundle-index image hashes. Existing image ZIPs were not fully rehashed and models were not rerun.",
+  "total_scored_cases": 20640,
+  "scope": "Recomputed stored per-image aggregates and checked canonical case/reference/prompt identity, coverage, provenance and score-to-index image hashes. Image archives were moved outside Git: archive bytes and missing run.json files were not reread. Generation resolution is checked against retained run metadata or provenance/index. Models were not rerun.",
+  "historical_rows_source": {
+    "path": "historical_rows.json",
+    "sha256": "4e239d11cd1520dc4641e6ff2fdfbf3e93eb78cfd1941354e699e0edde828a03",
+    "historical_vs_new_measurements": "Baseline/Ours are historical; all nine comparison methods and XLabs projection are recomputed from stored case scores."
+  },
+  "figures": [
+    {
+      "path": "dreambench_plus_method_comparison_balanced.png",
+      "sha256": "37d62b4bc727db2f8e81545436ae14fdc185c6603f919b598c15246e0a47b94f",
+      "width": 4600,
+      "height": 2799,
+      "notes": [
+        "Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.",
+        "Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.",
+        "† FreeCus / FreeGraftor exclude style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.",
+        "Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.",
+        "* Ours best is provisional scale 0.8. 512: FreeCus / UNO / MOSAIC / FreeGraftor; 768: Diptych / XVerse; 1024: other measured rows.",
+        "Original = existing reference-weighted aggregate; Balanced = mean of class means; Δ = Balanced(method) − Balanced(baseline).",
+        "FreeCus / FreeGraftor Original in the full-cohort block is their 1,170-image non-style scores, not a 1,350-image score."
+      ]
+    },
+    {
+      "path": "dreambench_plus_method_comparison_classes_balanced.png",
+      "sha256": "dcec75567162fa681ec93e49ac72439353138f35b17b74ca663db6cec2ab1745",
+      "width": 4200,
+      "height": 5736,
+      "notes": [
+        "Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.",
+        "Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.",
+        "† FreeCus / FreeGraftor exclude style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.",
+        "Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.",
+        "* Ours best is provisional scale 0.8. 512: FreeCus / UNO / MOSAIC / FreeGraftor; 768: Diptych / XVerse; 1024: other measured rows.",
+        "Class score stays unchanged. Contribution = 0.25 × class score; sum four contributions for the Balanced Overall.",
+        "FreeCus / FreeGraftor contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes."
+      ]
+    }
+  ],
+  "unchanged_other_pngs": {
+    "dreambench_method_ablation_classes.png": "90d9a3bd135d484f4323ca18876f42719886a91905159819cc3826c0294dd371",
+    "dreambench_method_ablation.png": "2e3272b70e7ea4bbd32b780bc6e6797e5d62657029ae977ebbfda1254d2ad174",
+    "dreambench_method_verification.png": "eadfa975e6d83637a3226b6cdd4b1f189125c2a6ad6589e97a74069d12cbced8",
+    "dreambench_plus_method_verification.png": "ab8ce2a979d5cf80a6369334bffe90f7af8ffcd8659baf15fc16e6b2d98f154a",
+    "dreambench_plus_method_ablation.png": "60dc210bdaaf7442a69f6c75ede1f85d285603afd35f08daa3cbec2aa82481f5",
+    "dreambench_plus_method_ablation_classes.png": "539f4501399430d722136f9b56e1ce498b04dbd0ffc4ae834abdb8ad198ca35d"
+  },
   "aggregation": "equal-class macro after within-class subject macro",
-  "historical_source_sha256": "e9373d64e441b17dc4914e23d4b6050b3363e74f60d9ae5879ebdb1a2ae6847e",
+  "historical_source_sha256": "4e239d11cd1520dc4641e6ff2fdfbf3e93eb78cfd1941354e699e0edde828a03",
   "class_weights": {
     "four_class": {
       "animal": 0.25,
@@ -382,49 +1092,21 @@
     }
   },
   "baseline": "historical_0",
-  "freecus_policy": "No four-class balanced metric; equal-weight three-class Non-Style only",
-  "figures": [
-    {
-      "path": "dreambench_plus_method_comparison_balanced.png",
-      "sha256": "f1b2c6aa7b18dcd1f74206069c38b6ee1dcaaf3098c8d171026d31e0ad0ff93b",
-      "width": 4600,
-      "height": 2079,
-      "notes": [
-        "Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.",
-        "Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.",
-        "† FreeCus excludes style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.",
-        "Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.",
-        "* Ours best is provisional scale 0.8. FreeCus / DreamO / UNO: 1024 × 1024; XVerse: 768 × 768.",
-        "Original = existing reference-weighted aggregate; Balanced = mean of class means; Δ = Balanced(method) − Balanced(baseline).",
-        "FreeCus Original in the full-cohort block is its 1,170-image non-style score, not a 1,350-image score."
-      ]
-    },
-    {
-      "path": "dreambench_plus_method_comparison_classes_balanced.png",
-      "sha256": "90a423f25a8a8bf2e96e8b728344206a5d6592ab468edad4840352c7d7e41423",
-      "width": 4200,
-      "height": 3936,
-      "notes": [
-        "Class-balanced: animal / human / object / style each receive 25%; Non-Style Balanced: first three each receive 1/3.",
-        "Class means retain the existing subject-macro definition. Higher is better. N = evaluated images.",
-        "† FreeCus excludes style (20 references / 180 images): no 4-class Balanced or delta; 3-class Non-Style Balanced is available.",
-        "Baseline / Ours use historical class means rounded to 4 decimals; their balanced values and all baseline deltas are approximate.",
-        "* Ours best is provisional scale 0.8. FreeCus / DreamO / UNO: 1024 × 1024; XVerse: 768 × 768.",
-        "Class score stays unchanged. Contribution = 0.25 × class score; sum four contributions for the Balanced Overall.",
-        "FreeCus contributions to the 4-class metric are unavailable. The Non-Style block uses all three valid classes."
-      ]
-    }
-  ],
+  "non_style_policy": "FreeCus/FreeGraftor: no four-class balanced metric; equal-weight three-class Non-Style only",
   "unchanged_existing_pngs": {
-    "dreambench_method_ablation.png": "2e3272b70e7ea4bbd32b780bc6e6797e5d62657029ae977ebbfda1254d2ad174",
     "dreambench_method_ablation_classes.png": "90d9a3bd135d484f4323ca18876f42719886a91905159819cc3826c0294dd371",
-    "dreambench_method_comparison.png": "6f67d50baac8c8b6f7d2ca115bec829fa248efccd4057768b29bf761c90c6a06",
-    "dreambench_method_comparison_classes.png": "4c53415e033779c89f513591b4f00b1637dff35d3b2d5be8c8d172627d03b6cf",
+    "dreambench_plus_method_comparison_applicabiltiy.png": "db255aa4bb8a48f484eb31639bd7f284833f6127b4e3bd1671e041e4165732f6",
+    "dreambench_method_ablation.png": "2e3272b70e7ea4bbd32b780bc6e6797e5d62657029ae977ebbfda1254d2ad174",
     "dreambench_method_verification.png": "eadfa975e6d83637a3226b6cdd4b1f189125c2a6ad6589e97a74069d12cbced8",
+    "dreambench_method_comparison.png": "e33fa914d3e8e0776ba834ab890f23b834e46eb24adf7561bd8d7aa696388877",
+    "dreambench_method_comparison_classes_applicabiltiy.png": "e0608c8d008b5d60144b3a2864330d2e13f22aa6e3ac1fb5f9a2f9279bc742f7",
+    "dreambench_plus_method_comparison.png": "65068d48dadabd29e8041e03f56db51fdb80460a9a7a3f3dbb503ddd1b75768a",
+    "dreambench_plus_method_comparison_classes.png": "34f3d4142abd4a23c719ec33f47d27bda5b682196e07695ae5f99b43eed83851",
+    "dreambench_plus_method_verification.png": "ab8ce2a979d5cf80a6369334bffe90f7af8ffcd8659baf15fc16e6b2d98f154a",
+    "dreambench_method_comparison_classes.png": "9fdc79e3b0e5c43d0d56f9f992fdbe04336a0fde8c62757152452f5d25ef2f80",
+    "dreambench_plus_method_comparison_classes_applicabiltiy.png": "135a5a0f8ec3da711df134bb1e817bf69a2b4578fe12a540c7c1300d9d106588",
     "dreambench_plus_method_ablation.png": "60dc210bdaaf7442a69f6c75ede1f85d285603afd35f08daa3cbec2aa82481f5",
     "dreambench_plus_method_ablation_classes.png": "539f4501399430d722136f9b56e1ce498b04dbd0ffc4ae834abdb8ad198ca35d",
-    "dreambench_plus_method_comparison.png": "70aee86f430f39aeaa3b91acadf20ac70632287b6458364a736bc8a1c53e8280",
-    "dreambench_plus_method_comparison_classes.png": "d2d4e8c292fb4aa0aa580a0f42c82522d2d3e82e4386045b1910de71102cef6f",
-    "dreambench_plus_method_verification.png": "ab8ce2a979d5cf80a6369334bffe90f7af8ffcd8659baf15fc16e6b2d98f154a"
+    "dreambench_method_comparison_applicabiltiy.png": "556880d4a1005df0c09d22746df652515f8b63f39ea53419c128862dbc9685dc"
   }
 }
