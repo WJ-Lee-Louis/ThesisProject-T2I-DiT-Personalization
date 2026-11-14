@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/53",
+  "reference_sha256": "c4e9374b3de01094b73c41f909863cb8b6aab3c3b916e14178ed49f9e873a656",
+  "original_query": "cactus",
+  "selected_query": "cactus",
+  "attempts": [
+    {
+      "query": "cactus",
+      "scores": [
+        0.46198752522468567,
+        0.35667070746421814
+      ],
+      "boxes": [
+        [
+          373.25079345703125,
+          241.11895751953125,
+          630.7198486328125,
+          571.052978515625
+        ],
+        [
+          409.5709533691406,
+          246.5231170654297,
+          596.994873046875,
+          570.5584716796875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.04125690460205078,
+  "selected_box": [
+    373.25079345703125,
+    241.11895751953125,
+    630.7198486328125,
+    571.052978515625
+  ],
+  "mask_sha256": "d05dcce535af13f0438c8d08fe7b1e1837f75e238e26c3af376c43b95a741c92"
+}

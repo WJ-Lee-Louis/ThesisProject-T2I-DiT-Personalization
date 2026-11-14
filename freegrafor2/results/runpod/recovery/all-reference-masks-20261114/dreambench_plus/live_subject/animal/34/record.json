@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/34",
+  "reference_sha256": "a35223420e4568c5773b3f2c50fb435b2f2d9b1cfc74c02220010c16d6076e49",
+  "original_query": "cat",
+  "selected_query": "cat",
+  "attempts": [
+    {
+      "query": "cat",
+      "scores": [
+        0.9433475732803345
+      ],
+      "boxes": [
+        [
+          1.93731689453125,
+          73.73480224609375,
+          1021.771240234375,
+          1023.2465209960938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.6367425918579102,
+  "selected_box": [
+    1.93731689453125,
+    73.73480224609375,
+    1021.771240234375,
+    1023.2465209960938
+  ],
+  "mask_sha256": "0d89115fa6bb780917ef968e21790b3953dceab7bd4f99c24b1b905169d20eac"
+}

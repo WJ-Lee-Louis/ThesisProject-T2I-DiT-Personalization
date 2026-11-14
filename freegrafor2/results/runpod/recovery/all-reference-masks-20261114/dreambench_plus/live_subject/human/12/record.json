@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/12",
+  "reference_sha256": "74f755e96ea9543b0212fb03dc6f5c98021898f56753d2efbaba200bc50a6bce",
+  "original_query": "samurai",
+  "selected_query": "samurai",
+  "attempts": [
+    {
+      "query": "samurai",
+      "scores": [
+        0.837619960308075
+      ],
+      "boxes": [
+        [
+          163.95379638671875,
+          8.6138916015625,
+          860.3043823242188,
+          1022.1510009765625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.40312671661376953,
+  "selected_box": [
+    163.95379638671875,
+    8.6138916015625,
+    860.3043823242188,
+    1022.1510009765625
+  ],
+  "mask_sha256": "daf13d6d8b787875e0c097d847448a5ec232f9223a428c5c836d3f3873dd115a"
+}

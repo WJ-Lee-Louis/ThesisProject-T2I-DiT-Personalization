@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/22",
+  "reference_sha256": "38935584952815df8ee07777880f9b9fe8eb8ab1613b95a152980955f4377db0",
+  "original_query": "sneaker",
+  "selected_query": "sneaker",
+  "attempts": [
+    {
+      "query": "sneaker",
+      "scores": [
+        0.9314625263214111
+      ],
+      "boxes": [
+        [
+          186.96279907226562,
+          339.28033447265625,
+          925.097900390625,
+          855.9838256835938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.19819164276123047,
+  "selected_box": [
+    186.96279907226562,
+    339.28033447265625,
+    925.097900390625,
+    855.9838256835938
+  ],
+  "mask_sha256": "a922ed54035c85a7ee6d52103b2cd70e1c235f0970cd324b3b30373a8d8da5c8"
+}

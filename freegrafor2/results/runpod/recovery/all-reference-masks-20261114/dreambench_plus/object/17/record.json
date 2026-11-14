@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/17",
+  "reference_sha256": "753f4311cb0eec391d566a403d20cd90d694a75ffa07e3438e193099a5f0f5c1",
+  "original_query": "bicycle",
+  "selected_query": "bicycle",
+  "attempts": [
+    {
+      "query": "bicycle",
+      "scores": [
+        0.9626730680465698
+      ],
+      "boxes": [
+        [
+          193.41305541992188,
+          582.3150024414062,
+          844.5208740234375,
+          963.5126342773438
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.12130165100097656,
+  "selected_box": [
+    193.41305541992188,
+    582.3150024414062,
+    844.5208740234375,
+    963.5126342773438
+  ],
+  "mask_sha256": "54921adcf7ab849c08f794d9a04e215d25435da49279ee0b8c8b962c766528b5"
+}

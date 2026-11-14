@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/robot_toy",
+  "reference_sha256": "c7b87b86a58fc702b1245498abbc02e5297bad03c657d089675ef6467f91f6cb",
+  "original_query": "toy",
+  "selected_query": "toy",
+  "attempts": [
+    {
+      "query": "toy",
+      "scores": [
+        0.894789457321167
+      ],
+      "boxes": [
+        [
+          296.13519287109375,
+          140.5277557373047,
+          1141.0145263671875,
+          1342.2298583984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.30713155864197533,
+  "selected_box": [
+    296.13519287109375,
+    140.5277557373047,
+    1141.0145263671875,
+    1342.2298583984375
+  ],
+  "mask_sha256": "9dbc62235e18f66385cedd32aad4ea6637d64250a2a2ef72858fbb014762ee5a"
+}

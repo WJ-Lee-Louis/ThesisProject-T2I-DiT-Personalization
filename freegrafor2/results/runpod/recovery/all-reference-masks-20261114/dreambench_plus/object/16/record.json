@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/16",
+  "reference_sha256": "ee6dd3f1dbf8805e21521c83229c0c6831dbe8149603b62db9b2765dbfbb5a75",
+  "original_query": "ring",
+  "selected_query": "ring",
+  "attempts": [
+    {
+      "query": "ring",
+      "scores": [
+        0.7786493301391602
+      ],
+      "boxes": [
+        [
+          298.91082763671875,
+          189.14852905273438,
+          745.7233276367188,
+          763.2705078125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.086334228515625,
+  "selected_box": [
+    298.91082763671875,
+    189.14852905273438,
+    745.7233276367188,
+    763.2705078125
+  ],
+  "mask_sha256": "a5559fc467295fd9eb3feba3e31cc939c1daf40d5f568145eaa179ca6b6bd676"
+}

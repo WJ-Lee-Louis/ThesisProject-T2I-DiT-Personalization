@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/20",
+  "reference_sha256": "0d92a962da496eeac5fa8e9da4c4a296c6559a45cbd0d384344f19bc5a5f496e",
+  "original_query": "hamster",
+  "selected_query": "hamster",
+  "attempts": [
+    {
+      "query": "hamster",
+      "scores": [
+        0.9099069833755493
+      ],
+      "boxes": [
+        [
+          216.25198364257812,
+          163.96136474609375,
+          767.0321044921875,
+          876.7068481445312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2767620086669922,
+  "selected_box": [
+    216.25198364257812,
+    163.96136474609375,
+    767.0321044921875,
+    876.7068481445312
+  ],
+  "mask_sha256": "cb861c823453a155c4c02575c074611e2e8f53a41de8d6363e40a26cf7836c95"
+}

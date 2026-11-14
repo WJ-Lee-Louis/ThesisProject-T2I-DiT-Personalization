@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/12",
+  "reference_sha256": "9b96f4c826927fa2efa4e153872449b4e7b75cbb52cd01536b01e032cb9e3315",
+  "original_query": "watch",
+  "selected_query": "watch",
+  "attempts": [
+    {
+      "query": "watch",
+      "scores": [
+        0.9511421918869019
+      ],
+      "boxes": [
+        [
+          163.54656982421875,
+          297.248046875,
+          835.6895751953125,
+          752.974365234375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.18134117126464844,
+  "selected_box": [
+    163.54656982421875,
+    297.248046875,
+    835.6895751953125,
+    752.974365234375
+  ],
+  "mask_sha256": "d9c4924c678cc7cd5b4038cdcfa03743619eb90b4b93fa47dfb8b35168575f11"
+}

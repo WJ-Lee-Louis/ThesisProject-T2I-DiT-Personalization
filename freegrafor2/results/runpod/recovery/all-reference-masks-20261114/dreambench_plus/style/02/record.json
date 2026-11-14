@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/02",
+  "reference_sha256": "a997fb7761642a463dbc5c1955f9c40380ebc0b237d8aea17effc2fc1056873e",
+  "original_query": "sunset",
+  "selected_query": "sunset",
+  "attempts": [
+    {
+      "query": "sunset",
+      "scores": [
+        0.6601723432540894
+      ],
+      "boxes": [
+        [
+          1.298736572265625,
+          1.730560302734375,
+          1022.06005859375,
+          560.0205078125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.5175151824951172,
+  "selected_box": [
+    1.298736572265625,
+    1.730560302734375,
+    1022.06005859375,
+    560.0205078125
+  ],
+  "mask_sha256": "65cec180257693524996c2b1d5861503a3a8c57b5e4b7ce50dc5d787a5898c30"
+}

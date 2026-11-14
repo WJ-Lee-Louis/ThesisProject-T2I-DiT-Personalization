@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/cat2",
+  "reference_sha256": "d6d81497562ff39a58d749a85078fa7fe9734f9c4113e45816f4973697749038",
+  "original_query": "cat",
+  "selected_query": "cat",
+  "attempts": [
+    {
+      "query": "cat",
+      "scores": [
+        0.9343951344490051
+      ],
+      "boxes": [
+        [
+          2.6343154907226562,
+          136.2535400390625,
+          1277.38720703125,
+          1180.056640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4324578857421875,
+  "selected_box": [
+    2.6343154907226562,
+    136.2535400390625,
+    1277.38720703125,
+    1180.056640625
+  ],
+  "mask_sha256": "f8eced788d538f8ba04fcf48aab82daeffc25a264c52082305937c4204638479"
+}

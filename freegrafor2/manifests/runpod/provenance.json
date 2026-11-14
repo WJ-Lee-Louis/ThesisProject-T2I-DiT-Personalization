@@ -1,0 +1,8 @@
+{
+  "source": "/workspace/Ours/ThesisProject-T2I-DiT-Personalization/Orthogonalization-InstantX-IP-Adapter/outputs/semantic_benchmark_gpt56_sol/generation_manifest.json",
+  "source_sha256": "2ce8931bb3aadd056fe9bf991d35b8b79a1dc536fb0dc096662cba1405124936",
+  "cases": 2100,
+  "references": 180,
+  "per_lane": 1050,
+  "policy": "same original target prompts, selected reference bytes and seed42 as historical InstantX; assign whole reference groups alternately per benchmark"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/13",
+  "reference_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+  "original_query": "polar bear",
+  "selected_query": "polar bear",
+  "attempts": [
+    {
+      "query": "polar bear",
+      "scores": [
+        0.9566342234611511
+      ],
+      "boxes": [
+        [
+          235.82325744628906,
+          164.81192016601562,
+          702.731689453125,
+          947.0228271484375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.24411582946777344,
+  "selected_box": [
+    235.82325744628906,
+    164.81192016601562,
+    702.731689453125,
+    947.0228271484375
+  ],
+  "mask_sha256": "bee440325a0b529db218d7f94a48af13c638ed9256a5189d92dee30808250c08"
+}

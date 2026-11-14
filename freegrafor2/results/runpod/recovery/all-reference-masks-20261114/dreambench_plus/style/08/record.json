@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/08",
+  "reference_sha256": "b48700bc86719a622b50707642618c55ec8097e499f19a0cfb702d3c0bab1da2",
+  "original_query": "desert moonscape",
+  "selected_query": "desert moonscape",
+  "attempts": [
+    {
+      "query": "desert moonscape",
+      "scores": [
+        0.8031737804412842
+      ],
+      "boxes": [
+        [
+          460.7655334472656,
+          320.373779296875,
+          614.6119384765625,
+          441.15863037109375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.013458251953125,
+  "selected_box": [
+    460.7655334472656,
+    320.373779296875,
+    614.6119384765625,
+    441.15863037109375
+  ],
+  "mask_sha256": "971924ed1ede058eb4b4bbf57a8534cf6f8d5fd09630f3443f2db51bbdcb4c0c"
+}

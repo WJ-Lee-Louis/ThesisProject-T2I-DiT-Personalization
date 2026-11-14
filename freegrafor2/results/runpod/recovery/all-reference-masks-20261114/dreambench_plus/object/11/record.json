@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/11",
+  "reference_sha256": "d628cc78b91b97aeccbdab8f4f162bf474bce1f7d9eb84973b96684c9418d8c7",
+  "original_query": "armchair",
+  "selected_query": "armchair",
+  "attempts": [
+    {
+      "query": "armchair",
+      "scores": [
+        0.9304582476615906
+      ],
+      "boxes": [
+        [
+          239.12484741210938,
+          224.31121826171875,
+          765.40283203125,
+          834.1419067382812
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.17706871032714844,
+  "selected_box": [
+    239.12484741210938,
+    224.31121826171875,
+    765.40283203125,
+    834.1419067382812
+  ],
+  "mask_sha256": "2e5863a0ad30f2c7cf92d379595975ba9caae1a916deb6f88474ab810e8360cf"
+}

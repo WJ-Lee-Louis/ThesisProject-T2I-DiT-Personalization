@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/28",
+  "reference_sha256": "2fd1a4d1e0a703de79cbd4a8b148ebc2ecf795e960199435c24d788d0f901ba9",
+  "original_query": "backpack",
+  "selected_query": "backpack",
+  "attempts": [
+    {
+      "query": "backpack",
+      "scores": [
+        0.5355842709541321
+      ],
+      "boxes": [
+        [
+          181.37442016601562,
+          167.62374877929688,
+          862.4259033203125,
+          1022.3681640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.33306312561035156,
+  "selected_box": [
+    181.37442016601562,
+    167.62374877929688,
+    862.4259033203125,
+    1022.3681640625
+  ],
+  "mask_sha256": "15d9feb79909af380965b6704a43192eb88d0990cabebef53232d96d62a165a0"
+}

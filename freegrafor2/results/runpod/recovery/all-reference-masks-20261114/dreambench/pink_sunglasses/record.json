@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/pink_sunglasses",
+  "reference_sha256": "0f4ca83b161dbdbcc642235dedfc3c95a3d78f9ad994e2a493b94f4339f6942d",
+  "original_query": "glasses",
+  "selected_query": "glasses",
+  "attempts": [
+    {
+      "query": "glasses",
+      "scores": [
+        0.9381240010261536
+      ],
+      "boxes": [
+        [
+          29.76078224182129,
+          519.867919921875,
+          1475.3719482421875,
+          1150.8302001953125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.14784386422429593,
+  "selected_box": [
+    29.76078224182129,
+    519.867919921875,
+    1475.3719482421875,
+    1150.8302001953125
+  ],
+  "mask_sha256": "72405788fb13ddf30fd7b5dbf765a22c0ab1aaabc0136c873be547d752509fd3"
+}

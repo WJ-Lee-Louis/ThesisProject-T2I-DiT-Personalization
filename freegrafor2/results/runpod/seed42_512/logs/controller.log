@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/freegraftor/scripts/completion_guard.py", line 104, in <module>
+    if __name__=='__main__':run()
+  File "/workspace/freegraftor/scripts/completion_guard.py", line 88, in run
+    coverage=enforce_non_style_complete()
+  File "/workspace/freegraftor/scripts/completion_guard.py", line 68, in enforce_non_style_complete
+    if missing:raise MissingSubjectMasks(f'{len(missing)} non-style cases need a valid subject mask; final benchmark metrics are withheld')
+__main__.MissingSubjectMasks: 1 non-style cases need a valid subject mask; final benchmark metrics are withheld

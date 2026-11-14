@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/58",
+  "reference_sha256": "ee489052afca91859bbab61be7f8f565bb087463e0d894fc0b6f08b820e318c6",
+  "original_query": "sunglasses",
+  "selected_query": "sunglasses",
+  "attempts": [
+    {
+      "query": "sunglasses",
+      "scores": [
+        0.8397339582443237
+      ],
+      "boxes": [
+        [
+          13.506591796875,
+          310.51422119140625,
+          1021.70361328125,
+          735.2341918945312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.32659053802490234,
+  "selected_box": [
+    13.506591796875,
+    310.51422119140625,
+    1021.70361328125,
+    735.2341918945312
+  ],
+  "mask_sha256": "e4ca592335908b64a25642ea2e6221a4ca4875c1a74218045ed51c1f7c633717"
+}

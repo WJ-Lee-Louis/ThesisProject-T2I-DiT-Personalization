@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/36",
+  "reference_sha256": "c78ddcb3ade4950a929469b95eb2cdcbaa1f338069173c1c9ae95675bbd8f53a",
+  "original_query": "lizard",
+  "selected_query": "lizard",
+  "attempts": [
+    {
+      "query": "lizard",
+      "scores": [
+        0.8856314420700073
+      ],
+      "boxes": [
+        [
+          1.15887451171875,
+          272.75531005859375,
+          1020.8907470703125,
+          830.2330932617188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2071390151977539,
+  "selected_box": [
+    1.15887451171875,
+    272.75531005859375,
+    1020.8907470703125,
+    830.2330932617188
+  ],
+  "mask_sha256": "2ecb24e0ca8f0e3da487cda68a586bc6397ab32aad22498bcd63a4ed1326aba1"
+}

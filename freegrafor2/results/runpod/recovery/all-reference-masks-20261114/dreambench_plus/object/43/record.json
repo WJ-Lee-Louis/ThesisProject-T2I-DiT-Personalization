@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/43",
+  "reference_sha256": "961ee20225d8c67c2ebde0a3d7505edb61207ee75490d4113f2fa9cfbb53edab",
+  "original_query": "pineapple",
+  "selected_query": "pineapple",
+  "attempts": [
+    {
+      "query": "pineapple",
+      "scores": [
+        0.9219217896461487
+      ],
+      "boxes": [
+        [
+          324.57586669921875,
+          104.37039184570312,
+          681.0704956054688,
+          970.1507568359375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2030162811279297,
+  "selected_box": [
+    324.57586669921875,
+    104.37039184570312,
+    681.0704956054688,
+    970.1507568359375
+  ],
+  "mask_sha256": "8fcd542d70b7c700daffecb58c7dd0e5f5f71b898aaa00357d9e1a5d8600b9e9"
+}

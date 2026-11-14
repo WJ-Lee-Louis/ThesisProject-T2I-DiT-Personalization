@@ -1,0 +1,47 @@
+{
+  "verified_reprocessed_cases": 25,
+  "case_ids": [
+    "004-00",
+    "004-01",
+    "004-02",
+    "004-03",
+    "004-04",
+    "004-05",
+    "004-06",
+    "004-07",
+    "004-08",
+    "004-09",
+    "004-10",
+    "004-11",
+    "004-12",
+    "004-13",
+    "004-14",
+    "004-15",
+    "004-16",
+    "004-17",
+    "004-18",
+    "004-19",
+    "004-20",
+    "004-21",
+    "004-22",
+    "004-23",
+    "004-24"
+  ],
+  "active_non_style_failures": 0,
+  "reference_mask_preflight": {
+    "expected": 160,
+    "processed": 160,
+    "native_ok": 159,
+    "noun_phrase_retry_ok": 1,
+    "needs_mask_review": []
+  },
+  "native_gpu0_resumed": true,
+  "checks": [
+    "PNG integrity and native row/settings signature",
+    "selected reference SHA256 unchanged",
+    "mask and recovery-source SHA256",
+    "original failure archives preserved",
+    "detector thresholds unchanged"
+  ],
+  "verified_at": 1793957515.7472064
+}

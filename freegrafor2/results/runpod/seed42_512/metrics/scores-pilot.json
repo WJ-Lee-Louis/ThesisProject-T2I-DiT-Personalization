@@ -1,0 +1,352 @@
+{
+  "protocol": {
+    "name": "uno-selected-reference-v1",
+    "uno_revision": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "clip_model": "ViT-B/32",
+    "clip_revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "dino_model": "dino_vits16",
+    "dino_revision": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "reference_policy": "exact manifest image_path; one reference per generated image",
+    "clip_preprocess": "RGB; bicubic resize shorter edge 224; center crop 224; CLIP normalization",
+    "dino_preprocess": "RGB; bicubic resize shorter edge 256; center crop 224; ImageNet normalization",
+    "clip_t": "max(0, cosine(generated, original target_prompt)); weight=1; no prefix; truncate=True",
+    "image_metrics": "cosine(generated, selected reference); no clipping; no logit scale",
+    "score_scale": 1,
+    "aggregation": "per benchmark, condition and class: reference macro and case micro; class macro separately",
+    "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
+    "generated_format": "original PNG; no JPEG export"
+  },
+  "device": "cuda",
+  "device_name": "NVIDIA A100-SXM4-80GB",
+  "versions": {
+    "torch": "2.7.1",
+    "torchvision": "0.22.1",
+    "numpy": "1.26.4",
+    "Pillow": "11.3.0",
+    "clip": "1.0"
+  },
+  "summary": {
+    "dreambench/freegraftor": {
+      "cases": 4,
+      "subjects": 4,
+      "subject_macro": {
+        "CLIP-T": 0.3128662109375,
+        "CLIP-I": 0.8800048828125,
+        "DINO-I": 0.8242010474205017
+      },
+      "case_micro": {
+        "CLIP-T": 0.3128662109375,
+        "CLIP-I": 0.8800048828125,
+        "DINO-I": 0.8242010474205017
+      },
+      "by_class": {
+        "animal": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.2935791015625,
+            "CLIP-I": 0.901123046875,
+            "DINO-I": 0.9151763916015625
+          },
+          "case_micro": {
+            "CLIP-T": 0.2935791015625,
+            "CLIP-I": 0.901123046875,
+            "DINO-I": 0.9151763916015625
+          }
+        },
+        "object": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.3321533203125,
+            "CLIP-I": 0.85888671875,
+            "DINO-I": 0.7332257032394409
+          },
+          "case_micro": {
+            "CLIP-T": 0.3321533203125,
+            "CLIP-I": 0.85888671875,
+            "DINO-I": 0.7332257032394409
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.3128662109375,
+        "CLIP-I": 0.8800048828125,
+        "DINO-I": 0.8242010474205017
+      }
+    },
+    "dreambench_plus/freegraftor": {
+      "cases": 8,
+      "subjects": 8,
+      "subject_macro": {
+        "CLIP-T": 0.329925537109375,
+        "CLIP-I": 0.7567138671875,
+        "DINO-I": 0.5702262343838811
+      },
+      "case_micro": {
+        "CLIP-T": 0.329925537109375,
+        "CLIP-I": 0.7567138671875,
+        "DINO-I": 0.5702262343838811
+      },
+      "by_class": {
+        "animal": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.337158203125,
+            "CLIP-I": 0.827880859375,
+            "DINO-I": 0.7688409388065338
+          },
+          "case_micro": {
+            "CLIP-T": 0.337158203125,
+            "CLIP-I": 0.827880859375,
+            "DINO-I": 0.7688409388065338
+          }
+        },
+        "human": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.2977294921875,
+            "CLIP-I": 0.711181640625,
+            "DINO-I": 0.6573815047740936
+          },
+          "case_micro": {
+            "CLIP-T": 0.2977294921875,
+            "CLIP-I": 0.711181640625,
+            "DINO-I": 0.6573815047740936
+          }
+        },
+        "object": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.3585205078125,
+            "CLIP-I": 0.8369140625,
+            "DINO-I": 0.6037869900465012
+          },
+          "case_micro": {
+            "CLIP-T": 0.3585205078125,
+            "CLIP-I": 0.8369140625,
+            "DINO-I": 0.6037869900465012
+          }
+        },
+        "style": {
+          "cases": 2,
+          "subjects": 2,
+          "subject_macro": {
+            "CLIP-T": 0.3262939453125,
+            "CLIP-I": 0.65087890625,
+            "DINO-I": 0.25089550390839577
+          },
+          "case_micro": {
+            "CLIP-T": 0.3262939453125,
+            "CLIP-I": 0.65087890625,
+            "DINO-I": 0.25089550390839577
+          }
+        }
+      },
+      "class_macro": {
+        "CLIP-T": 0.329925537109375,
+        "CLIP-I": 0.7567138671875,
+        "DINO-I": 0.5702262343838811
+      },
+      "non_style": {
+        "cases": 6,
+        "subjects": 6,
+        "subject_macro": {
+          "CLIP-T": 0.3311360677083333,
+          "CLIP-I": 0.7919921875,
+          "DINO-I": 0.6766698112090429
+        },
+        "case_micro": {
+          "CLIP-T": 0.3311360677083333,
+          "CLIP-I": 0.7919921875,
+          "DINO-I": 0.6766698112090429
+        }
+      }
+    }
+  },
+  "scores": [
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench",
+      "category": "object",
+      "case_id": "000-00",
+      "reference_id": "dreambench/backpack",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/backpack/02.jpg",
+      "reference_sha256": "113e6661ff47cd0c41e77afd20c194beed2bd13a624371a07e38e4ef366e0d2c",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/000-00.png",
+      "generated_sha256": "0477a59e1abfebcc9f3d66da095b75666e7efe177a9fe607bcf5d1a9231c94da",
+      "target_prompt": "a backpack in the jungle",
+      "CLIP-T": 0.33349609375,
+      "CLIP-I": 0.9306640625,
+      "DINO-I": 0.8306801319122314
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench",
+      "category": "object",
+      "case_id": "001-00",
+      "reference_id": "dreambench/backpack_dog",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/backpack_dog/02.jpg",
+      "reference_sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/001-00.png",
+      "generated_sha256": "434a901f5f95e12734caa8387f596e941759ea699ed04ba564e2c7628e516b00",
+      "target_prompt": "a backpack in the jungle",
+      "CLIP-T": 0.330810546875,
+      "CLIP-I": 0.787109375,
+      "DINO-I": 0.6357712745666504
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench",
+      "category": "animal",
+      "case_id": "006-00",
+      "reference_id": "dreambench/cat",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/cat/04.jpg",
+      "reference_sha256": "62afd15fe7205e514044bb5846299e3b7ef4769ad95a667eb246ae57416d69eb",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/006-00.png",
+      "generated_sha256": "b9e5609112fcc2dc2d1e1ced5c5aa4e879488dcced91ee768a7c0d54c53d425d",
+      "target_prompt": "a cat in the jungle",
+      "CLIP-T": 0.302490234375,
+      "CLIP-I": 0.92041015625,
+      "DINO-I": 0.941827118396759
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench",
+      "category": "animal",
+      "case_id": "007-00",
+      "reference_id": "dreambench/cat2",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/cat2/02.jpg",
+      "reference_sha256": "d6d81497562ff39a58d749a85078fa7fe9734f9c4113e45816f4973697749038",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/007-00.png",
+      "generated_sha256": "e4068bd9d1a423aeb25e3c1417426823ec7e79c2fa122ca0b5c66e5c1cca43c3",
+      "target_prompt": "a cat in the jungle",
+      "CLIP-T": 0.28466796875,
+      "CLIP-I": 0.8818359375,
+      "DINO-I": 0.888525664806366
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "animal",
+      "case_id": "030-00",
+      "reference_id": "dreambench_plus/live_subject/animal/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/00/00.jpg",
+      "reference_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/030-00.png",
+      "generated_sha256": "27b3988df934fa4cc81e38ac088ef6038ec57638a9e02b803d5d6c81e317d38c",
+      "target_prompt": "A photo of a kitten chasing a fluttering butterfly in a sunny garden",
+      "CLIP-T": 0.3740234375,
+      "CLIP-I": 0.79052734375,
+      "DINO-I": 0.6756124496459961
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "animal",
+      "case_id": "031-00",
+      "reference_id": "dreambench_plus/live_subject/animal/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/01/01.jpg",
+      "reference_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/031-00.png",
+      "generated_sha256": "4b6166b3589dc5cf0aa7535cede919c2d5805c0048b13fbdb7ec32c4b6f59313",
+      "target_prompt": "A photo of a stork gracefully landing on a serene lake",
+      "CLIP-T": 0.30029296875,
+      "CLIP-I": 0.865234375,
+      "DINO-I": 0.8620694279670715
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "human",
+      "case_id": "075-00",
+      "reference_id": "dreambench_plus/live_subject/human/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/00/00.jpg",
+      "reference_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/075-00.png",
+      "generated_sha256": "e337df7f7adb5c63edd5f9d8a8569a09c37f488bb42ef9a9be6b686d76d3dd5e",
+      "target_prompt": "A photo of a space ranger navigating through a rocky alien terrain",
+      "CLIP-T": 0.286376953125,
+      "CLIP-I": 0.837890625,
+      "DINO-I": 0.6246505975723267
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "human",
+      "case_id": "076-00",
+      "reference_id": "dreambench_plus/live_subject/human/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/01/01.jpg",
+      "reference_sha256": "5c316b87bab11b7b3bf8b60da5c06812c3b13406ca292d1c359df626dc990b99",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/076-00.png",
+      "generated_sha256": "9d7b3d36a71fe9c5789e63c2bd9dee4a070bf2114daad2b1c511675728352d8b",
+      "target_prompt": "A photograph of a man reading a newspaper in a cozy coffee shop",
+      "CLIP-T": 0.30908203125,
+      "CLIP-I": 0.58447265625,
+      "DINO-I": 0.6901124119758606
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "object",
+      "case_id": "095-00",
+      "reference_id": "dreambench_plus/object/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/00/00.jpg",
+      "reference_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/095-00.png",
+      "generated_sha256": "37f0028a7679ca1736137dcf03bdbb9cf9761e9d948a4efd7d8ce3d034d545b9",
+      "target_prompt": "A photograph of a motorcycle parked beside a bustling city street at night, illuminated by street lights",
+      "CLIP-T": 0.343994140625,
+      "CLIP-I": 0.876953125,
+      "DINO-I": 0.7715922594070435
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "object",
+      "case_id": "096-00",
+      "reference_id": "dreambench_plus/object/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/01/01.jpg",
+      "reference_sha256": "947f961adf0b6715aeb3bebf2067b0ae729b41c26722d81779e7f54ea585b202",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/096-00.png",
+      "generated_sha256": "7785f9a20669de2170d21e60e83277738e2f1b0ebf9ef25243cb19a67766328d",
+      "target_prompt": "A photograph of a hat left on a sunlit park bench",
+      "CLIP-T": 0.373046875,
+      "CLIP-I": 0.796875,
+      "DINO-I": 0.43598172068595886
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "style",
+      "case_id": "160-00",
+      "reference_id": "dreambench_plus/style/00",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/style/00/00.jpg",
+      "reference_sha256": "0ee305167c7e046ad69888dcbb26b236e8d8330cc9866253bb82ea9a01bc1359",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/160-00.png",
+      "generated_sha256": "d8bb6388e6220eb329c21864392534801c612f3cf3a54dc90da8e48aafabe2e3",
+      "target_prompt": "A photo of a quiet forest path, in pencil sketch style",
+      "CLIP-T": 0.339111328125,
+      "CLIP-I": 0.6298828125,
+      "DINO-I": 0.03487706929445267
+    },
+    {
+      "condition": "freegraftor",
+      "benchmark": "dreambench_plus",
+      "category": "style",
+      "case_id": "161-00",
+      "reference_id": "dreambench_plus/style/01",
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/style/01/01.jpg",
+      "reference_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/161-00.png",
+      "generated_sha256": "92779365a4ad01ffc5efbd6b296ed787eed94baf7a945bd62a45810bff2fff7b",
+      "target_prompt": "A photo of a bustling cityscape, rendered in pixel art",
+      "CLIP-T": 0.3134765625,
+      "CLIP-I": 0.671875,
+      "DINO-I": 0.46691393852233887
+    }
+  ]
+}

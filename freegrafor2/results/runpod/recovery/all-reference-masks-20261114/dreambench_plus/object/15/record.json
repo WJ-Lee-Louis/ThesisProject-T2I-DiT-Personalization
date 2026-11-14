@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/15",
+  "reference_sha256": "bb807665e6075d3a1593607544383be5e6f85881be6a6668f3658dde8e83e0c4",
+  "original_query": "street lamp",
+  "selected_query": "street lamp",
+  "attempts": [
+    {
+      "query": "street lamp",
+      "scores": [
+        0.9099069833755493
+      ],
+      "boxes": [
+        [
+          223.83641052246094,
+          113.27581787109375,
+          733.41357421875,
+          1022.3806762695312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.12603378295898438,
+  "selected_box": [
+    223.83641052246094,
+    113.27581787109375,
+    733.41357421875,
+    1022.3806762695312
+  ],
+  "mask_sha256": "51808e2240cec75e74dd5528e7e82bba7a5e3b6786e4067b34c557d218968c06"
+}

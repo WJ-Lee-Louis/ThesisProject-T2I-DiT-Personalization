@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "175-01",
+    "reference_id": "dreambench_plus/style/15",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/15.jpg",
+    "identity_term": "monochromatic ink sketch",
+    "target_prompt": "A drawing of a bustling city street, with pedestrians and cars, rendered in monochromatic ink sketch",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/175-01.json",
+    "source_directions": 3,
+    "target_directions": 5,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "dddcaa826c8894c5af84b5b11a5cde7bff48901ab86540b366c6cc5557b131c2",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'monochromatic ink sketch': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.01047420501709,
+  "updated_at": 1793972358.762761
+}

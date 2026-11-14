@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/16",
+  "reference_sha256": "b29daaca843a484ac2bd503f395f53587c0d372d40e3dd550db8e4af1452f844",
+  "original_query": "jellyfish",
+  "selected_query": "jellyfish",
+  "attempts": [
+    {
+      "query": "jellyfish",
+      "scores": [
+        0.6397360563278198
+      ],
+      "boxes": [
+        [
+          318.7125549316406,
+          85.41610717773438,
+          1021.5279541015625,
+          1023.2698974609375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.15212535858154297,
+  "selected_box": [
+    318.7125549316406,
+    85.41610717773438,
+    1021.5279541015625,
+    1023.2698974609375
+  ],
+  "mask_sha256": "f9e310605ff5dc12352424376169f325873669825d730155b19f5f44a192a6f5"
+}

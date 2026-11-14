@@ -1,0 +1,7 @@
+Copied/verified text_encoder/model.safetensors
+Copied/verified text_encoder/config.json
+Copied/verified text_encoder_2/model.safetensors.index.json
+Copied/verified text_encoder_2/model-00002-of-00002.safetensors
+Copied/verified text_encoder_2/model-00001-of-00002.safetensors
+Copied/verified text_encoder_2/config.json
+Text encoders now use unchanged local SSD copies

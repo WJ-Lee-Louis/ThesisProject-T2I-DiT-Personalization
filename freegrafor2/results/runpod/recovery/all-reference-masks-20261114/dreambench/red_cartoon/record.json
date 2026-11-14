@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/red_cartoon",
+  "reference_sha256": "509d4adff91c58058a3a92affffe4fb0d0b019c4ac5302064e3cfb8ddfc665eb",
+  "original_query": "cartoon",
+  "selected_query": "cartoon",
+  "attempts": [
+    {
+      "query": "cartoon",
+      "scores": [
+        0.9481545686721802
+      ],
+      "boxes": [
+        [
+          565.878662109375,
+          539.4164428710938,
+          1475.8221435546875,
+          1916.03662109375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.21330642700195312,
+  "selected_box": [
+    565.878662109375,
+    539.4164428710938,
+    1475.8221435546875,
+    1916.03662109375
+  ],
+  "mask_sha256": "ecef333e9c39bbc68998ddbb8fcc36399c0d90a30b873487e746d2183179ee15"
+}

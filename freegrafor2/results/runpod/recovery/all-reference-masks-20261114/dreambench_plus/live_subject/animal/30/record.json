@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/30",
+  "reference_sha256": "fcf95e7b1c93c5351283115169f5c6a1ddeb46265d8cab740b7df14097aeb50c",
+  "original_query": "lion",
+  "selected_query": "lion",
+  "attempts": [
+    {
+      "query": "lion",
+      "scores": [
+        0.47779780626296997,
+        0.3812195360660553
+      ],
+      "boxes": [
+        [
+          280.7322998046875,
+          168.90087890625,
+          758.011962890625,
+          867.716552734375
+        ],
+        [
+          70.01583862304688,
+          168.82852172851562,
+          758.3277587890625,
+          873.9342041015625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1829853057861328,
+  "selected_box": [
+    280.7322998046875,
+    168.90087890625,
+    758.011962890625,
+    867.716552734375
+  ],
+  "mask_sha256": "e253c10203974b589cff90fac67f339e1c6ae5663114ff910a14f40f1226064b"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/21",
+  "reference_sha256": "4b96ed094e0bc2a4e1250b1033308a720d57f7234a1fd0b8eb2f60151b8ab1e4",
+  "original_query": "Siamese cat",
+  "selected_query": "Siamese cat",
+  "attempts": [
+    {
+      "query": "Siamese cat",
+      "scores": [
+        0.9489172697067261
+      ],
+      "boxes": [
+        [
+          179.30535888671875,
+          77.8929443359375,
+          878.1112670898438,
+          974.9979248046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.34230613708496094,
+  "selected_box": [
+    179.30535888671875,
+    77.8929443359375,
+    878.1112670898438,
+    974.9979248046875
+  ],
+  "mask_sha256": "19fed097b33dd88c284d2fa662fa15aac36f40e8e29c71ac03f7b56f2d59505b"
+}

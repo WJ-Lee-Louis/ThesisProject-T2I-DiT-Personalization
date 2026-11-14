@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/33",
+  "reference_sha256": "1e08c167c17e098733f24ee0f7e8d4201132ff5810ef97f76e4a20a312930f09",
+  "original_query": "panda",
+  "selected_query": "panda",
+  "attempts": [
+    {
+      "query": "panda",
+      "scores": [
+        0.9304582476615906
+      ],
+      "boxes": [
+        [
+          125.76290893554688,
+          308.4307556152344,
+          874.343994140625,
+          885.47314453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2933521270751953,
+  "selected_box": [
+    125.76290893554688,
+    308.4307556152344,
+    874.343994140625,
+    885.47314453125
+  ],
+  "mask_sha256": "fb7c34af2d7bd63c6f52a2da7eaaba840d4480ec97ded487a1d44f8c5fcc9a74"
+}

@@ -1,0 +1,26 @@
+{
+  "text_encoder/model.safetensors": {
+    "size": 246144352,
+    "original_blob": "893d67a23f4693ed42cdab4cbad7fe3e727cf59609c40da28a46b5470f9ed082"
+  },
+  "text_encoder/config.json": {
+    "size": 613,
+    "original_blob": "5ebd923ce51522c605f64ab3d26ea024672777b6"
+  },
+  "text_encoder_2/model.safetensors.index.json": {
+    "size": 19885,
+    "original_blob": "c8728bc3dca59d2616a2a594cbac3ddb9eb77d5b"
+  },
+  "text_encoder_2/model-00002-of-00002.safetensors": {
+    "size": 4530066360,
+    "original_blob": "a5640855b301fcdbceddfa90ae8066cd9414aff020552a201a255ecf2059da00"
+  },
+  "text_encoder_2/model-00001-of-00002.safetensors": {
+    "size": 4994582224,
+    "original_blob": "ec87bffd1923e8b2774a6d240c922a41f6143081d52cf83b8fe39e9d838c893e"
+  },
+  "text_encoder_2/config.json": {
+    "size": 782,
+    "original_blob": "b00a8a6908682a2091f1194b81f220fd2b67c41c"
+  }
+}

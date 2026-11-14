@@ -1,0 +1,47 @@
+{
+  "reference_id": "dreambench_plus/object/03",
+  "reference_sha256": "d01323ab6dd477c0709d26f86d036d403b8abaac4af879903298cab1d4167f18",
+  "original_query": "cherry blossoms",
+  "selected_query": "cherry blossoms",
+  "attempts": [
+    {
+      "query": "cherry blossoms",
+      "scores": [
+        0.6011253595352173,
+        0.44890937209129333,
+        0.4144248068332672
+      ],
+      "boxes": [
+        [
+          278.9352111816406,
+          196.076416015625,
+          855.7899169921875,
+          962.6507568359375
+        ],
+        [
+          279.833251953125,
+          198.3921356201172,
+          721.3603515625,
+          541.4921875
+        ],
+        [
+          540.69189453125,
+          429.7829284667969,
+          839.558837890625,
+          641.28125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.22774887084960938,
+  "selected_box": [
+    278.9352111816406,
+    196.076416015625,
+    855.7899169921875,
+    962.6507568359375
+  ],
+  "mask_sha256": "0f8ce605f8478bcc67f8c56e149c2fbcfd04b91182fa97bb650f0c4add1bef0a"
+}

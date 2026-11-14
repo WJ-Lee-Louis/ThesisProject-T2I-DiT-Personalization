@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/dog7",
+  "reference_sha256": "c8dc22728777cf4be26f5f527b6d96a26a61d5c35dbccb1e0ef9fceb6d107fe8",
+  "original_query": "dog",
+  "selected_query": "dog",
+  "attempts": [
+    {
+      "query": "dog",
+      "scores": [
+        0.9648551344871521
+      ],
+      "boxes": [
+        [
+          127.39314270019531,
+          162.74302673339844,
+          1066.240478515625,
+          1190.4774169921875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3960637944013585,
+  "selected_box": [
+    127.39314270019531,
+    162.74302673339844,
+    1066.240478515625,
+    1190.4774169921875
+  ],
+  "mask_sha256": "953fbae9a5f3ad653ad26dc7ec69ec8ffd265be420c44e81b65c7cf12c64b9ce"
+}

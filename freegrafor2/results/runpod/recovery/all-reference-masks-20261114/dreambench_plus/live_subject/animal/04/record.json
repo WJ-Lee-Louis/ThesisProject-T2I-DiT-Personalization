@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/04",
+  "reference_sha256": "53f32f639c34419387eb91c67338c15430500c8eb0f2664916147e45986f6611",
+  "original_query": "crab",
+  "selected_query": "crab",
+  "attempts": [
+    {
+      "query": "crab",
+      "scores": [
+        0.851952850818634
+      ],
+      "boxes": [
+        [
+          133.56063842773438,
+          24.84356689453125,
+          1007.02880859375,
+          1021.7319946289062
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3020639419555664,
+  "selected_box": [
+    133.56063842773438,
+    24.84356689453125,
+    1007.02880859375,
+    1021.7319946289062
+  ],
+  "mask_sha256": "e9d98eb41cd02e75a22a0a2117db77ed62415cc8206276bf916c5a4c4e2d498b"
+}

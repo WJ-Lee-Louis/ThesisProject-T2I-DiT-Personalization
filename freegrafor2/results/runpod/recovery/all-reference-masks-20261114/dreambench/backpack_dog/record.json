@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/backpack_dog",
+  "reference_sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a",
+  "original_query": "backpack",
+  "selected_query": "backpack",
+  "attempts": [
+    {
+      "query": "backpack",
+      "scores": [
+        0.917302668094635
+      ],
+      "boxes": [
+        [
+          247.82603454589844,
+          223.79150390625,
+          1139.583984375,
+          1272.6025390625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2814496527777778,
+  "selected_box": [
+    247.82603454589844,
+    223.79150390625,
+    1139.583984375,
+    1272.6025390625
+  ],
+  "mask_sha256": "271d9af0ed006f25d8c22e2440102958912081d9c9ac31dde5591025dc43e6c5"
+}

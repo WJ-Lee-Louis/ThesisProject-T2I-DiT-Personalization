@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "111-07",
+    "reference_id": "dreambench_plus/object/16",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/16.jpg",
+    "identity_term": "ring",
+    "target_prompt": "A ring that controls the weather, shown with clouds and lightning emanating from it",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/111-07.json",
+    "source_directions": 0,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "ddd33533eeda2a0a87415e2a375052f99f0df4721211b776ed46b518cea14581",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'ring': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 5.092280626296997,
+  "updated_at": 1793966907.542758
+}

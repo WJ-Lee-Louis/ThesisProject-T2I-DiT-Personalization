@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/23",
+  "reference_sha256": "f456fb22b148cde75788b038595c5a892b219c2e4ebe04a58ce7745dc7d14b29",
+  "original_query": "vintage camera",
+  "selected_query": "vintage camera",
+  "attempts": [
+    {
+      "query": "vintage camera",
+      "scores": [
+        0.9263036847114563
+      ],
+      "boxes": [
+        [
+          76.80099487304688,
+          153.928466796875,
+          908.7332763671875,
+          891.348388671875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.31560707092285156,
+  "selected_box": [
+    76.80099487304688,
+    153.928466796875,
+    908.7332763671875,
+    891.348388671875
+  ],
+  "mask_sha256": "09cdad1d7616163759b5db209e6ed4b8fbcb083617bbda694e5e6c52217e57b2"
+}

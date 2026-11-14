@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/grey_sloth_plushie",
+  "reference_sha256": "01cd945206f96e3bb04967ca59c0a82a1ab3f0c1e2bd334ce4a1147de96542fc",
+  "original_query": "stuffed animal",
+  "selected_query": "stuffed animal",
+  "attempts": [
+    {
+      "query": "stuffed animal",
+      "scores": [
+        0.896251380443573
+      ],
+      "boxes": [
+        [
+          434.9700927734375,
+          313.56304931640625,
+          1508.8212890625,
+          1595.658447265625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1904292106628418,
+  "selected_box": [
+    434.9700927734375,
+    313.56304931640625,
+    1508.8212890625,
+    1595.658447265625
+  ],
+  "mask_sha256": "663dbeac8215f5b2c5bc288c9817eb6467fd935f159fc9a25c747fc63893099f"
+}

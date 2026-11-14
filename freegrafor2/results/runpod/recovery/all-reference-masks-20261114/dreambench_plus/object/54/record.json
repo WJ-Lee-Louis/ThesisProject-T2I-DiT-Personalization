@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/54",
+  "reference_sha256": "a6835caba5c64cdcaf829729fe9036f996f8e40b15d29f8c7f00c69779cb68a8",
+  "original_query": "Poke Ball",
+  "selected_query": "Poke Ball",
+  "attempts": [
+    {
+      "query": "Poke Ball",
+      "scores": [
+        0.7786493301391602
+      ],
+      "boxes": [
+        [
+          128.9964599609375,
+          117.55239868164062,
+          902.8658447265625,
+          945.9920654296875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.45865631103515625,
+  "selected_box": [
+    128.9964599609375,
+    117.55239868164062,
+    902.8658447265625,
+    945.9920654296875
+  ],
+  "mask_sha256": "9f2b85c2aea4e92ebbf4542f9272a2685e39f0b82708ef3ab7b7da8c6e7afea8"
+}

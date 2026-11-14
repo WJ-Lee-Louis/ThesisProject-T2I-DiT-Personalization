@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/poop_emoji",
+  "reference_sha256": "4ad04ad35c2503b8a68265731e0172edba3f62dc7f43b424421349583684660d",
+  "original_query": "toy",
+  "selected_query": "toy",
+  "attempts": [
+    {
+      "query": "toy",
+      "scores": [
+        0.9407896995544434
+      ],
+      "boxes": [
+        [
+          593.9801025390625,
+          571.3349609375,
+          1320.3944091796875,
+          1331.666259765625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.08790874481201172,
+  "selected_box": [
+    593.9801025390625,
+    571.3349609375,
+    1320.3944091796875,
+    1331.666259765625
+  ],
+  "mask_sha256": "0f9c31720b2415d712801d348331b10f84fdb6ff1f6735e19cda5792434fa251"
+}

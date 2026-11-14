@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/10",
+  "reference_sha256": "1ea789c9d394277709a8fbc7eb8e97c526c4eec12257302b7e37e1f82c0546c1",
+  "original_query": "fox",
+  "selected_query": "fox",
+  "attempts": [
+    {
+      "query": "fox",
+      "scores": [
+        0.9219217896461487
+      ],
+      "boxes": [
+        [
+          43.679534912109375,
+          126.35916137695312,
+          1007.441162109375,
+          1023.6446533203125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4233407974243164,
+  "selected_box": [
+    43.679534912109375,
+    126.35916137695312,
+    1007.441162109375,
+    1023.6446533203125
+  ],
+  "mask_sha256": "fceacbc1f2aa444939d33c27a3b826b05cf097fabd46a27185380940c16c5642"
+}

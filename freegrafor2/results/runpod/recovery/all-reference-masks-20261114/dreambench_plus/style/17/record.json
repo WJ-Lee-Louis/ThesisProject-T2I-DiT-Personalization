@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/17",
+  "reference_sha256": "c1139e8f8e061be3be09bed6c56c9c78ca453e639683a71fb185cbc313ad748a",
+  "original_query": "cosmic nebula",
+  "selected_query": "cosmic nebula",
+  "attempts": [
+    {
+      "query": "cosmic nebula",
+      "scores": [
+        0.4311051070690155
+      ],
+      "boxes": [
+        [
+          1.411529541015625,
+          512.154541015625,
+          450.13409423828125,
+          1021.8837890625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.15749835968017578,
+  "selected_box": [
+    1.411529541015625,
+    512.154541015625,
+    450.13409423828125,
+    1021.8837890625
+  ],
+  "mask_sha256": "ab93654ea1476b0af993a32aa1e626e4f29242f9af0ae268d1b4ec0aa7373fc2"
+}

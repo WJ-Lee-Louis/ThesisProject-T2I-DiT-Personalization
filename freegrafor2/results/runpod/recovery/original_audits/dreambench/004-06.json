@@ -1,0 +1,99 @@
+{
+  "original_job_signature": "2894e48aa64c03ae8d0d1a4239964ac98fb2991cc97b1cdba52f2857a34abce3",
+  "recovery_source_sha256": "4a51dba8f77f5b05179578f7bdd0efa7ca716ecdd501af90fd8d5978c7c17d0c",
+  "alias_evidence": {
+    "original": "can",
+    "queries": [
+      "beer can"
+    ],
+    "evidence": "Official upstream configs/can.json uses class_name=beer can; same selected reference inspected; same thresholds produce confidence 0.95186 and SAM foreground mask visually verified.",
+    "source": "/workspace/freegraftor/upstream/configs/can.json",
+    "probe": "/workspace/freegraftor/recovery/probes/can/results.json"
+  },
+  "original_error_record": "/workspace/freegraftor/recovery/original_failures/dreambench/004-06.json",
+  "generation_prompt_unchanged": true,
+  "reference_bytes_unchanged": true,
+  "detector_thresholds_unchanged": true,
+  "detector_calls": [
+    {
+      "stage": "template",
+      "original_query": "can",
+      "selected_query": "beer can",
+      "attempts": [
+        {
+          "query": "can",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [],
+          "boxes": []
+        },
+        {
+          "query": "beer can",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [
+            0.9504110217094421
+          ],
+          "boxes": [
+            [
+              383.58599853515625,
+              207.82943725585938,
+              870.342529296875,
+              1086.2257080078125
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "template",
+      "original_query": "can",
+      "selected_query": "can",
+      "attempts": [
+        {
+          "query": "can",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [
+            0.46295860409736633
+          ],
+          "boxes": [
+            [
+              130.16354370117188,
+              201.04872131347656,
+              248.60482788085938,
+              481.61492919921875
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "mask_artifacts": [
+    {
+      "stage": "reference",
+      "mask_path": "/workspace/freegraftor/recovery/masks/dreambench/004-06/reference-mask.png",
+      "mask_sha256": "69bea62fcd104ec2de9107821fdd17b92531129e44ff099b5abf97421c382a12",
+      "foreground_fraction": 0.23467041015625,
+      "box": [
+        383.58599853515625,
+        207.82943725585938,
+        870.342529296875,
+        1086.2257080078125
+      ]
+    },
+    {
+      "stage": "template",
+      "mask_path": "/workspace/freegraftor/recovery/masks/dreambench/004-06/template-mask.png",
+      "mask_sha256": "c5b91bba188b2637d96bb8f20edf9898d69977517ce4086c0a6201554d831220",
+      "foreground_fraction": 0.11737823486328125,
+      "box": [
+        130.16354370117188,
+        201.04872131347656,
+        248.60482788085938,
+        481.61492919921875
+      ]
+    }
+  ],
+  "completed_at": 1793956853.5124
+}

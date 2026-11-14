@@ -1,0 +1,64 @@
+{
+  "contents/configs": [
+    {
+      "name": "can.json",
+      "path": "configs/can.json",
+      "sha": "63220ecfc92794e2e3b946826763d6649ec4874c",
+      "html_url": "https://github.com/Nihukat/FreeGraftor/blob/main/configs/can.json"
+    },
+    {
+      "name": "cat_dog.json",
+      "path": "configs/cat_dog.json",
+      "sha": "2064da58e7606504dbd7566ff3725de55664b83e",
+      "html_url": "https://github.com/Nihukat/FreeGraftor/blob/main/configs/cat_dog.json"
+    }
+  ],
+  "contents/examples": [
+    {
+      "name": "can_00.jpg",
+      "path": "examples/can_00.jpg",
+      "sha": "ca7ac5fb028a8c19eed87f4aad8707c6a8715f49",
+      "html_url": "https://github.com/Nihukat/FreeGraftor/blob/main/examples/can_00.jpg"
+    },
+    {
+      "name": "cat_01.jpg",
+      "path": "examples/cat_01.jpg",
+      "sha": "75a287b518f2a2461e6fd1ea3c4f1258a2ee41f0",
+      "html_url": "https://github.com/Nihukat/FreeGraftor/blob/main/examples/cat_01.jpg"
+    },
+    {
+      "name": "dog_02.jpg",
+      "path": "examples/dog_02.jpg",
+      "sha": "d69480a344830698ba711721e0bfd013a23c8376",
+      "html_url": "https://github.com/Nihukat/FreeGraftor/blob/main/examples/dog_02.jpg"
+    }
+  ],
+  "git/trees/main?recursive=1": {
+    "sha": "b8e0f93e91753265e46e9d0b364daa38e25f1afa",
+    "truncated": false,
+    "paths": [
+      "README.md",
+      "assets/teaser.png",
+      "configs/can.json",
+      "configs/cat_dog.json",
+      "examples/can_00.jpg",
+      "examples/cat_01.jpg",
+      "examples/dog_02.jpg",
+      "requirements.txt",
+      "src/app.py",
+      "src/core/collage_creation.py",
+      "src/core/semantic_match.py",
+      "src/flux/__init__.py",
+      "src/flux/math.py",
+      "src/flux/model.py",
+      "src/flux/modules/autoencoder.py",
+      "src/flux/modules/conditioner.py",
+      "src/flux/modules/layers.py",
+      "src/flux/sampling.py",
+      "src/flux/util.py",
+      "src/generate.py",
+      "src/pipeline.py",
+      "src/utils/load_and_save.py"
+    ]
+  }
+}

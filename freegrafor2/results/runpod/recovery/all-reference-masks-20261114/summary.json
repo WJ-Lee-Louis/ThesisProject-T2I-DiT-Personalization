@@ -1,0 +1,10 @@
+{
+  "expected": 180,
+  "processed": 180,
+  "detected": 180,
+  "not_detected": [],
+  "needs_review": [
+    "dreambench_plus/style/13"
+  ],
+  "historical_masks": false
+}

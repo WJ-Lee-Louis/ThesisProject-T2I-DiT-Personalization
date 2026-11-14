@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/32",
+  "reference_sha256": "40f90c57c399065a8ae8bc1cd980a5d2e2a6f9b250287f34ea7c4e567f24e8b1",
+  "original_query": "Corgi dog",
+  "selected_query": "Corgi dog",
+  "attempts": [
+    {
+      "query": "Corgi dog",
+      "scores": [
+        0.9511421918869019
+      ],
+      "boxes": [
+        [
+          214.3756103515625,
+          120.2039794921875,
+          882.4151611328125,
+          1020.3790283203125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4223604202270508,
+  "selected_box": [
+    214.3756103515625,
+    120.2039794921875,
+    882.4151611328125,
+    1020.3790283203125
+  ],
+  "mask_sha256": "8dc241546e543119a7011db5c9ebb6c02e0d9809872eac7f212625b4d12700ec"
+}

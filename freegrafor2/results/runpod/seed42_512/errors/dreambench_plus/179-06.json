@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "179-06",
+    "reference_id": "dreambench_plus/style/19",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/19.jpg",
+    "identity_term": "traditional Chinese painting",
+    "target_prompt": "A bustling ancient market scene with vendors and shoppers, traditional Chinese painting style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/179-06.json",
+    "source_directions": 1,
+    "target_directions": 1,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "3231ccc5dd9a3740026b603caeda024ae6c64fcf42a7020176485cb11a283926",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'traditional Chinese painting': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.106815338134766,
+  "updated_at": 1793972788.2566257
+}

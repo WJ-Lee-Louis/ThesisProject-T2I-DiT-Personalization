@@ -1,0 +1,208 @@
+{
+  "row": {
+    "case_id": "111-07",
+    "reference_id": "dreambench_plus/object/16",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/16.jpg",
+    "identity_term": "ring",
+    "target_prompt": "A ring that controls the weather, shown with clouds and lightning emanating from it",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/111-07.json",
+    "source_directions": 0,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "settings": {
+    "condition": "freegraftor",
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "num_steps": 25,
+    "guidance": 3.0,
+    "sim_threshold": 0.2,
+    "cyc_threshold": 1.5,
+    "inject_match_dropout": 0.5,
+    "start_inject_step": 0,
+    "end_inject_step": 25,
+    "inject_block_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "alignment": "center",
+    "requires_offload": false,
+    "precision": "bfloat16",
+    "upstream_commit": "b8e0f93e91753265e46e9d0b364daa38e25f1afa"
+  },
+  "job_signature": "ddd33533eeda2a0a87415e2a375052f99f0df4721211b776ed46b518cea14581",
+  "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/16/16.jpg",
+  "reference_sha256": "ee6dd3f1dbf8805e21521c83229c0c6831dbe8149603b62db9b2765dbfbb5a75",
+  "png_sha256": "1eca4171b3f4db7e79c2325370a9b90238fa318289a4fc601d3f885c4fabe3d0",
+  "elapsed_seconds": 20.09692931175232,
+  "template_seconds": null,
+  "mask_recovery": {
+    "original_job_signature": "ddd33533eeda2a0a87415e2a375052f99f0df4721211b776ed46b518cea14581",
+    "recovery_source_sha256": "d0710cae3c1ef36447d33387689e471d68f6398f73dcc08ff04e1a26d0b1d467",
+    "alias_evidence": null,
+    "original_error_record": "/workspace/freegraftor/recovery/original_failures/dreambench_plus/111-07.json",
+    "generation_prompt_unchanged": true,
+    "reference_bytes_unchanged": true,
+    "detector_thresholds_unchanged": true,
+    "detector_calls": [
+      {
+        "stage": "reference",
+        "original_query": "ring",
+        "selected_query": "ring",
+        "attempts": [
+          {
+            "query": "ring",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.7853085398674011
+            ],
+            "boxes": [
+              [
+                298.8863220214844,
+                189.14669799804688,
+                745.7166748046875,
+                763.265869140625
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "stage": "template",
+        "original_query": "ring",
+        "selected_query": "a ring",
+        "attempts": [
+          {
+            "query": "ring",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [],
+            "boxes": []
+          },
+          {
+            "query": "a ring",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.43494126200675964
+            ],
+            "boxes": [
+              [
+                146.66244506835938,
+                129.89691162109375,
+                373.5675964355469,
+                356.44403076171875
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "mask_artifacts": [
+      {
+        "stage": "reference",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench_plus/111-07/reference-mask.png",
+        "mask_sha256": "5434abb4e7df715286b5cbeedc01bb9fd28832477db66a1884c11fc684f554bd",
+        "foreground_fraction": 0.08632946014404297,
+        "box": [
+          298.8863220214844,
+          189.14669799804688,
+          745.7166748046875,
+          763.265869140625
+        ]
+      },
+      {
+        "stage": "template",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench_plus/111-07/template-mask.png",
+        "mask_sha256": "d260e10be7664b2f42fc77d06705b0864f7c172065e13da0be34c888c7a5bff5",
+        "foreground_fraction": 0.024265289306640625,
+        "box": [
+          146.66244506835938,
+          129.89691162109375,
+          373.5675964355469,
+          356.44403076171875
+        ]
+      }
+    ],
+    "completed_at": 1793973265.3227203
+  },
+  "mask_recovery_signature": "d97fc049734c2b92c57fb42986ae08e16a7fb249aa4a4badb2b5fd85d9e1deab",
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "physical_gpu": 1,
+    "versions": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.51.3",
+      "diffusers": "0.31.0",
+      "numpy": "1.24.4",
+      "Pillow": "9.5.0",
+      "modelscope": "1.25.0",
+      "segment-anything-py": "1.0.1",
+      "kornia": "0.8.1"
+    },
+    "recovery": true,
+    "shared_memory_budget": false
+  },
+  "completed_at": 1793973265.4519627
+}

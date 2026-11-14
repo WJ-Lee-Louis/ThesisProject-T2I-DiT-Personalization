@@ -1,0 +1,23 @@
+{
+  "status": "complete_with_style_exclusions",
+  "stage": "all",
+  "expected": 2100,
+  "images": 2086,
+  "scored": 1920,
+  "failed": 14,
+  "non_style_missing": 0,
+  "subject_mask_reprocessed_cases": 36,
+  "evaluation_policy": {
+    "exclude_dbpp_style": true,
+    "reason": "native_style_generation_or_subject_mask_failure",
+    "style_attempted": 180,
+    "style_failed": 14,
+    "fallback_images_used": 0,
+    "primary_dbpp_scope": "non-style",
+    "updated_at": 1794641926.4912941,
+    "non_style_complete_required": true,
+    "non_style_cases_complete": 1920,
+    "subject_mask_reprocessed_cases": 36
+  },
+  "updated_at": 1794642360.7927597
+}

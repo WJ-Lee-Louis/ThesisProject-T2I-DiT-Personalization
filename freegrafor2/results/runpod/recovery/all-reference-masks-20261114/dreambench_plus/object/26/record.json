@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/26",
+  "reference_sha256": "fd9e0212e883b9c9a3f7b435dc50c95320daccf4a0469e6b93f3518c29e80b1f",
+  "original_query": "hair dryer",
+  "selected_query": "hair dryer",
+  "attempts": [
+    {
+      "query": "hair dryer",
+      "scores": [
+        0.7772998809814453
+      ],
+      "boxes": [
+        [
+          192.4815673828125,
+          115.37911987304688,
+          802.0180053710938,
+          957.488037109375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.12766742706298828,
+  "selected_box": [
+    192.4815673828125,
+    115.37911987304688,
+    802.0180053710938,
+    957.488037109375
+  ],
+  "mask_sha256": "49b0e8a3f7d7991ab09d091bbd8b3d1c85342a25558ad5831c5016c903da2880"
+}

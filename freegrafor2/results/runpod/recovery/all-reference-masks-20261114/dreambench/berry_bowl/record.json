@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/berry_bowl",
+  "reference_sha256": "3ca2f510ca6b9d3b1dd0cb25b3358195d098fe31a8aa2b7d9b370c8a3fdb4246",
+  "original_query": "bowl",
+  "selected_query": "bowl",
+  "attempts": [
+    {
+      "query": "bowl",
+      "scores": [
+        0.9099069833755493
+      ],
+      "boxes": [
+        [
+          84.51946258544922,
+          194.88613891601562,
+          1111.807373046875,
+          1080.06201171875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2371807861328125,
+  "selected_box": [
+    84.51946258544922,
+    194.88613891601562,
+    1111.807373046875,
+    1080.06201171875
+  ],
+  "mask_sha256": "6e41ed0f63b03f0b981eb6da3dc3cadac4af5554fc599a0d5f411aa716541b83"
+}

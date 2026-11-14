@@ -1,0 +1,222 @@
+{
+  "row": {
+    "case_id": "004-07",
+    "reference_id": "dreambench/can",
+    "benchmark": "dreambench",
+    "image_path": "datasets/dreambench_uno/images/can/01.jpg",
+    "identity_term": "can",
+    "target_prompt": "a can with a mountain in the background",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/004-07.json",
+    "source_directions": 2,
+    "target_directions": 1,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "settings": {
+    "condition": "freegraftor",
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "num_steps": 25,
+    "guidance": 3.0,
+    "sim_threshold": 0.2,
+    "cyc_threshold": 1.5,
+    "inject_match_dropout": 0.5,
+    "start_inject_step": 0,
+    "end_inject_step": 25,
+    "inject_block_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "alignment": "center",
+    "requires_offload": false,
+    "precision": "bfloat16",
+    "upstream_commit": "b8e0f93e91753265e46e9d0b364daa38e25f1afa"
+  },
+  "job_signature": "6fabcb4142df6c17d142c1f1a155c680feec7edab1618e3306dbd3fa5bc4e709",
+  "reference": "/workspace/freegraftor/inputs/references/dreambench/can/01.jpg",
+  "reference_sha256": "0be6499890c9f125f84bb94c3570838892c3caf27527ec7f5e342d2e17480808",
+  "png_sha256": "ee5e5131f85c5ffb76a9b014387b01af56ddcac563e5351a7f89efebc765add7",
+  "elapsed_seconds": 23.46762180328369,
+  "template_seconds": null,
+  "mask_recovery": {
+    "original_job_signature": "6fabcb4142df6c17d142c1f1a155c680feec7edab1618e3306dbd3fa5bc4e709",
+    "recovery_source_sha256": "4a51dba8f77f5b05179578f7bdd0efa7ca716ecdd501af90fd8d5978c7c17d0c",
+    "alias_evidence": {
+      "original": "can",
+      "queries": [
+        "beer can"
+      ],
+      "evidence": "Official upstream configs/can.json uses class_name=beer can; same selected reference inspected; same thresholds produce confidence 0.95186 and SAM foreground mask visually verified.",
+      "source": "/workspace/freegraftor/upstream/configs/can.json",
+      "probe": "/workspace/freegraftor/recovery/probes/can/results.json"
+    },
+    "original_error_record": "/workspace/freegraftor/recovery/original_failures/dreambench/004-07.json",
+    "generation_prompt_unchanged": true,
+    "reference_bytes_unchanged": true,
+    "detector_thresholds_unchanged": true,
+    "detector_calls": [
+      {
+        "stage": "reference",
+        "original_query": "can",
+        "selected_query": "beer can",
+        "attempts": [
+          {
+            "query": "can",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [],
+            "boxes": []
+          },
+          {
+            "query": "beer can",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.9504110217094421
+            ],
+            "boxes": [
+              [
+                383.58599853515625,
+                207.82943725585938,
+                870.342529296875,
+                1086.2257080078125
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "stage": "template",
+        "original_query": "can",
+        "selected_query": "can",
+        "attempts": [
+          {
+            "query": "can",
+            "box_threshold": 0.35,
+            "text_threshold": 0.25,
+            "scores": [
+              0.45423004031181335
+            ],
+            "boxes": [
+              [
+                131.90789794921875,
+                203.95663452148438,
+                247.73410034179688,
+                477.5586853027344
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "mask_artifacts": [
+      {
+        "stage": "reference",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench/004-07/reference-mask.png",
+        "mask_sha256": "69bea62fcd104ec2de9107821fdd17b92531129e44ff099b5abf97421c382a12",
+        "foreground_fraction": 0.23467041015625,
+        "box": [
+          383.58599853515625,
+          207.82943725585938,
+          870.342529296875,
+          1086.2257080078125
+        ]
+      },
+      {
+        "stage": "template",
+        "mask_path": "/workspace/freegraftor/recovery/masks/dreambench/004-07/template-mask.png",
+        "mask_sha256": "dde75156470eb8d6ced4e964375c680b5f9abb56e3154828311a3e9fef7e5333",
+        "foreground_fraction": 0.1118316650390625,
+        "box": [
+          131.90789794921875,
+          203.95663452148438,
+          247.73410034179688,
+          477.5586853027344
+        ]
+      }
+    ],
+    "completed_at": 1793956878.2555428,
+    "logging_correction": {
+      "reason": "Native segment passes PIL images for both reference and template; use ordered signed mask artifacts for their stage labels",
+      "original_audit_path": "/workspace/freegraftor/recovery/original_audits/dreambench/004-07.json",
+      "original_audit_sha256": "85464011b3530bfad04edca9a6675ded6dba9a47750409becbc56abd15720ced",
+      "correction_source_sha256": "8500261c70f478af73ffe54fcc656b4955ec0a2fc97cbe7e47d674e12aacafd5"
+    }
+  },
+  "mask_recovery_signature": "b933ab68b631c670d9214bc90714cecd6b785166b110447141c941146e3aff9e",
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "physical_gpu": 0,
+    "versions": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.51.3",
+      "diffusers": "0.31.0",
+      "numpy": "1.24.4",
+      "Pillow": "9.5.0",
+      "modelscope": "1.25.0",
+      "segment-anything-py": "1.0.1",
+      "kornia": "0.8.1"
+    },
+    "recovery": true,
+    "shared_memory_budget": true
+  },
+  "completed_at": 1793956878.6303692
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/18",
+  "reference_sha256": "bd7d1f7be670bf4d27ef3a7c10419bf9b9f2fd716282f46062f6913569245124",
+  "original_query": "sea turtle",
+  "selected_query": "sea turtle",
+  "attempts": [
+    {
+      "query": "sea turtle",
+      "scores": [
+        0.929440438747406
+      ],
+      "boxes": [
+        [
+          1.12548828125,
+          222.38031005859375,
+          1000.4518432617188,
+          936.8954467773438
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3865175247192383,
+  "selected_box": [
+    1.12548828125,
+    222.38031005859375,
+    1000.4518432617188,
+    936.8954467773438
+  ],
+  "mask_sha256": "7540228bed02479241d754beaafd0570ff1d52f57ce33ba318087bf70b6915fe"
+}

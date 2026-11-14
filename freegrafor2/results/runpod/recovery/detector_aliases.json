@@ -1,0 +1,19 @@
+{
+  "dreambench/can": {
+    "original": "can",
+    "queries": [
+      "beer can"
+    ],
+    "evidence": "Official upstream configs/can.json uses class_name=beer can; same selected reference inspected; same thresholds produce confidence 0.95186 and SAM foreground mask visually verified.",
+    "source": "/workspace/freegraftor/upstream/configs/can.json",
+    "probe": "/workspace/freegraftor/recovery/probes/can/results.json"
+  },
+  "dreambench_plus/object/61": {
+    "original": "roll of film",
+    "queries": [
+      "film strip"
+    ],
+    "evidence": "Equivalent noun phrase for the unrolled photographic film in the unchanged target prompt. Fixed-query probe on the preserved seed-42 template: score 0.47792 at unchanged thresholds 0.35/0.25; SAM foreground fraction 0.23166. Template overlay visually reviewed; mask follows the depicted strip, excluding the watercolor background. No diffusion prompt, seed, or threshold change. First successful equivalent query in the predefined probe order; no metric-based selection.",
+    "probe": "/workspace/freegraftor/recovery/probes/film-20261114/results.json"
+  }
+}

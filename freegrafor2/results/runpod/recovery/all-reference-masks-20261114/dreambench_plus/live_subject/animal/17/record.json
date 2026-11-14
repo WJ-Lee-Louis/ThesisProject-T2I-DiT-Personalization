@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/17",
+  "reference_sha256": "76d9d226a527f86df01c738b07319e59992732fb1eeb28b5c9981f5381d509b8",
+  "original_query": "frog",
+  "selected_query": "frog",
+  "attempts": [
+    {
+      "query": "frog",
+      "scores": [
+        0.9196425676345825
+      ],
+      "boxes": [
+        [
+          193.52920532226562,
+          292.42303466796875,
+          856.083251953125,
+          783.4428100585938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1490945816040039,
+  "selected_box": [
+    193.52920532226562,
+    292.42303466796875,
+    856.083251953125,
+    783.4428100585938
+  ],
+  "mask_sha256": "be8cf00b70a201a5f591322450b7429577409a3909c9c09b621b6505ec156722"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/teapot",
+  "reference_sha256": "db6ae25c7689495cb9650023ea7b2029da3abf8dbfff64ae7caadb4a602e1cff",
+  "original_query": "teapot",
+  "selected_query": "teapot",
+  "attempts": [
+    {
+      "query": "teapot",
+      "scores": [
+        0.9559813141822815
+      ],
+      "boxes": [
+        [
+          219.09959411621094,
+          380.4109191894531,
+          644.3380126953125,
+          690.211669921875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.06186937009317059,
+  "selected_box": [
+    219.09959411621094,
+    380.4109191894531,
+    644.3380126953125,
+    690.211669921875
+  ],
+  "mask_sha256": "fbded343af5f5761734169079c0fc5f41c838c4e2e09750132a03c3a0b4b50c4"
+}

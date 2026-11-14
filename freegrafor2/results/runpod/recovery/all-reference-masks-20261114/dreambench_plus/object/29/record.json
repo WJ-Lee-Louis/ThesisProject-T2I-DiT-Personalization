@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/29",
+  "reference_sha256": "8a0c84dd7625531467c68fabfcdae3e0b25ab0511d6057434c9669e291b9ae81",
+  "original_query": "maple leaf",
+  "selected_query": "maple leaf",
+  "attempts": [
+    {
+      "query": "maple leaf",
+      "scores": [
+        0.9099069833755493
+      ],
+      "boxes": [
+        [
+          159.86141967773438,
+          133.52740478515625,
+          886.41455078125,
+          902.5064086914062
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1365041732788086,
+  "selected_box": [
+    159.86141967773438,
+    133.52740478515625,
+    886.41455078125,
+    902.5064086914062
+  ],
+  "mask_sha256": "c9a0f40ff97553af6be58ef1a8a555f17895e026a3fd090c3d03cd55786e0948"
+}

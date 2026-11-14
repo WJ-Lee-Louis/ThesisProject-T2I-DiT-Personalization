@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/06",
+  "reference_sha256": "fba2aebb6714c8e36df24d697a3604b552cf108c3f7dbda2ba703f4a19c99b75",
+  "original_query": "avocado",
+  "selected_query": "avocado",
+  "attempts": [
+    {
+      "query": "avocado",
+      "scores": [
+        0.917302668094635
+      ],
+      "boxes": [
+        [
+          307.7799987792969,
+          266.10430908203125,
+          710.82470703125,
+          752.5267944335938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1398773193359375,
+  "selected_box": [
+    307.7799987792969,
+    266.10430908203125,
+    710.82470703125,
+    752.5267944335938
+  ],
+  "mask_sha256": "effd8a7f7afe445b917bc5c8fc34c7be6fa309a438ef234405bd5312b6ad6a7d"
+}

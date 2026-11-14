@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/60",
+  "reference_sha256": "0aa0582800d4aeb1dd9458a6569db5c1f124a6efaa3568eeb9b10b03c682e4f3",
+  "original_query": "snare drum",
+  "selected_query": "snare drum",
+  "attempts": [
+    {
+      "query": "snare drum",
+      "scores": [
+        0.8887587189674377
+      ],
+      "boxes": [
+        [
+          202.15643310546875,
+          215.95071411132812,
+          837.9462280273438,
+          810.9989013671875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.26340198516845703,
+  "selected_box": [
+    202.15643310546875,
+    215.95071411132812,
+    837.9462280273438,
+    810.9989013671875
+  ],
+  "mask_sha256": "28b15d3febefc825523747c75d0ffe0b0cde77457bb39a8f564ff9bae0ed75b5"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/08",
+  "reference_sha256": "9930dee822e229bd0c4b2236ce061ace0ad1a30e54782ad07dff6ec012fe8374",
+  "original_query": "raccoon",
+  "selected_query": "raccoon",
+  "attempts": [
+    {
+      "query": "raccoon",
+      "scores": [
+        0.7549149990081787
+      ],
+      "boxes": [
+        [
+          196.85113525390625,
+          120.04608154296875,
+          993.0634155273438,
+          913.6701049804688
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3436746597290039,
+  "selected_box": [
+    196.85113525390625,
+    120.04608154296875,
+    993.0634155273438,
+    913.6701049804688
+  ],
+  "mask_sha256": "d9aedf04eca1db29dc48c09db80971b4dbd035e1a39f5bf221f8e4e9903cb6b8"
+}

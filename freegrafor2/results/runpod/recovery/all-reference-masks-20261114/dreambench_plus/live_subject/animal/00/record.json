@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/00",
+  "reference_sha256": "161187d91b1160057af265ad9e64cfe6c9aecd1ad17d3599d8ed1f6f6ce4b4c9",
+  "original_query": "kitten",
+  "selected_query": "kitten",
+  "attempts": [
+    {
+      "query": "kitten",
+      "scores": [
+        0.403566837310791,
+        0.3647775650024414
+      ],
+      "boxes": [
+        [
+          318.61871337890625,
+          195.87008666992188,
+          979.1699829101562,
+          843.912109375
+        ],
+        [
+          319.1585693359375,
+          195.93820190429688,
+          733.177734375,
+          843.0963134765625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1782093048095703,
+  "selected_box": [
+    318.61871337890625,
+    195.87008666992188,
+    979.1699829101562,
+    843.912109375
+  ],
+  "mask_sha256": "f76d614a30521588c27b75dbc29e9d9ea9681034302b9215d889c238c1ec9d68"
+}

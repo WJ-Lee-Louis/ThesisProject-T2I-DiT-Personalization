@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/55",
+  "reference_sha256": "1ad82c7271bffbbbf25dab6e0d7d43921c313b950ecfe2eba4e30ce771cbf024",
+  "original_query": "headphones",
+  "selected_query": "headphones",
+  "attempts": [
+    {
+      "query": "headphones",
+      "scores": [
+        0.9621075391769409
+      ],
+      "boxes": [
+        [
+          202.6727294921875,
+          192.135498046875,
+          808.736572265625,
+          825.1477661132812
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.207763671875,
+  "selected_box": [
+    202.6727294921875,
+    192.135498046875,
+    808.736572265625,
+    825.1477661132812
+  ],
+  "mask_sha256": "2e643506788aa1641755047dcf942ce7d4f0522845a85ae9ac64b6d79ab8b305"
+}

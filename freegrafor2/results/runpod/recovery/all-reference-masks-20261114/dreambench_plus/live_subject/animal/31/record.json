@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/31",
+  "reference_sha256": "6a8bddc8777ed2fa5831b5577a3d5dfc3b1ae72bcb1d06cd25b8a2e546d89ed6",
+  "original_query": "deer",
+  "selected_query": "deer",
+  "attempts": [
+    {
+      "query": "deer",
+      "scores": [
+        0.8840392827987671,
+        0.6306849718093872
+      ],
+      "boxes": [
+        [
+          106.1839599609375,
+          2.251007080078125,
+          823.5183715820312,
+          1023.06591796875
+        ],
+        [
+          719.9835205078125,
+          578.14501953125,
+          963.357177734375,
+          769.9844970703125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.23787403106689453,
+  "selected_box": [
+    106.1839599609375,
+    2.251007080078125,
+    823.5183715820312,
+    1023.06591796875
+  ],
+  "mask_sha256": "da929ce1d70a2f8dadf8ab33ce9be4a5907d432702908cfc6ff9441e40d5b585"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/25",
+  "reference_sha256": "b5ad7d9f8a034f6ff89e6795209355913877f60466a74584a20000964620a897",
+  "original_query": "Sphynx cat",
+  "selected_query": "Sphynx cat",
+  "attempts": [
+    {
+      "query": "Sphynx cat",
+      "scores": [
+        0.8386797308921814
+      ],
+      "boxes": [
+        [
+          150.63626098632812,
+          26.36090087890625,
+          1020.36376953125,
+          1021.2481079101562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4223899841308594,
+  "selected_box": [
+    150.63626098632812,
+    26.36090087890625,
+    1020.36376953125,
+    1021.2481079101562
+  ],
+  "mask_sha256": "7e91ec7bd31fc62ef756e52f145a53983ffc942bd9d6d46c5216f21f058a524c"
+}

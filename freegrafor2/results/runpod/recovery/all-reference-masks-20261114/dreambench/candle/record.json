@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/candle",
+  "reference_sha256": "e502da38cb2fd364a6fbb27ff1140ffec233431223a6508b645efb1888459d97",
+  "original_query": "candle",
+  "selected_query": "candle",
+  "attempts": [
+    {
+      "query": "candle",
+      "scores": [
+        0.700894832611084
+      ],
+      "boxes": [
+        [
+          701.396484375,
+          623.6806640625,
+          1323.9635009765625,
+          1268.45458984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07532501220703125,
+  "selected_box": [
+    701.396484375,
+    623.6806640625,
+    1323.9635009765625,
+    1268.45458984375
+  ],
+  "mask_sha256": "78fa3c321425978926d7c4189a08e0ca21cfafb4e1b96166169b9847bdea509e"
+}

@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "167-06",
+    "reference_id": "dreambench_plus/style/07",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/07.jpg",
+    "identity_term": "Impressionist pointillism",
+    "target_prompt": "A streetscape with old-fashioned lampposts, in Impressionist pointillism style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/167-06.json",
+    "source_directions": 2,
+    "target_directions": 1,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "d8f4e065a432ace6ee78988ad0bb9f59d7ed21a62c6cb6728524d947f9355ecd",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Impressionist pointillism': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 4.942799091339111,
+  "updated_at": 1793971813.2645984
+}

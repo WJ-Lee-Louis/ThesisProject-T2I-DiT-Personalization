@@ -1,0 +1,21 @@
+{
+  "measured_at": "2026-11-06T17:00:47.562400+09:00",
+  "completed_pilot_images": 12,
+  "warm_image_seconds_median": 19.19558358192444,
+  "warm_image_seconds_min": 18.198273181915283,
+  "warm_image_seconds_max": 19.981902599334717,
+  "expected_remaining_images": 2088,
+  "gpus": 2,
+  "estimated_finish_earliest": "2026-11-06T23:00:47.562400+09:00",
+  "estimated_finish_latest": "2026-11-07T01:00:47.562400+09:00",
+  "note": "Initial estimate from 10 warm pilot cases; includes conservative startup/evaluation and subject variability allowance. No completed benchmark claim.",
+  "throughput_exclusions": [
+    {
+      "benchmark": "dreambench",
+      "case_id": "018-20",
+      "reason": "elapsed_seconds includes the temporary GPU0 pause; see recovery/native-worker-pause.json"
+    }
+  ],
+  "mask_recovery_completed_cases": 25,
+  "non_style_current_unresolved": 0
+}

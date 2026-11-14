@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/37",
+  "reference_sha256": "624e721c740f50012b5d1ad3817ba7f0b4872233caafa136bdb166a9c74175a8",
+  "original_query": "airplane",
+  "selected_query": "airplane",
+  "attempts": [
+    {
+      "query": "airplane",
+      "scores": [
+        0.9674102663993835
+      ],
+      "boxes": [
+        [
+          108.4686279296875,
+          365.44232177734375,
+          850.419921875,
+          853.8574829101562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1222391128540039,
+  "selected_box": [
+    108.4686279296875,
+    365.44232177734375,
+    850.419921875,
+    853.8574829101562
+  ],
+  "mask_sha256": "154892403d492914f4775ffb7880efccaa3f04d4bb1fa197fb77b133a05e5569"
+}

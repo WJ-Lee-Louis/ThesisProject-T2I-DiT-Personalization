@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/57",
+  "reference_sha256": "4c819ee4a36ab3a419f50cb358cbae4c245ff86311ad1285229faa9fd58158b4",
+  "original_query": "leather handbag",
+  "selected_query": "leather handbag",
+  "attempts": [
+    {
+      "query": "leather handbag",
+      "scores": [
+        0.8757869601249695
+      ],
+      "boxes": [
+        [
+          127.90591430664062,
+          122.60943603515625,
+          908.339599609375,
+          935.9017944335938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3729372024536133,
+  "selected_box": [
+    127.90591430664062,
+    122.60943603515625,
+    908.339599609375,
+    935.9017944335938
+  ],
+  "mask_sha256": "97598cc89e719d3e67d4c7ee4f8006c9d54631f5625b39306b3e75eb24d7b08b"
+}

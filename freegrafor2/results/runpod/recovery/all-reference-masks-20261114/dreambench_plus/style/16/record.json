@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/style/16",
+  "reference_sha256": "d170550580e7c3d4021566a31dc3aa7501fdcc61d4ef655f885b5a277871cb3f",
+  "original_query": "watercolor sketch",
+  "selected_query": "watercolor sketch",
+  "attempts": [
+    {
+      "query": "watercolor sketch",
+      "scores": [
+        0.4675748646259308,
+        0.40827676653862
+      ],
+      "boxes": [
+        [
+          2.02838134765625,
+          4.079925537109375,
+          1020.7039184570312,
+          1020.7626953125
+        ],
+        [
+          2.658599853515625,
+          329.9779052734375,
+          1019.861572265625,
+          828.59619140625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.5952539443969727,
+  "selected_box": [
+    2.02838134765625,
+    4.079925537109375,
+    1020.7039184570312,
+    1020.7626953125
+  ],
+  "mask_sha256": "a4041a62149ebde11f6816d7df422e6493b327e2fcdfb645f039dd682e26c292"
+}

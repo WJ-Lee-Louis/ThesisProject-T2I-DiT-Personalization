@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/31",
+  "reference_sha256": "a2eda27f03efacd55f8f2f16a1582e30362618dcb949d54b49b5c8825ab21475",
+  "original_query": "piggy bank",
+  "selected_query": "piggy bank",
+  "attempts": [
+    {
+      "query": "piggy bank",
+      "scores": [
+        0.9230391979217529
+      ],
+      "boxes": [
+        [
+          279.7489013671875,
+          323.5762634277344,
+          759.8597412109375,
+          896.6741943359375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.18694019317626953,
+  "selected_box": [
+    279.7489013671875,
+    323.5762634277344,
+    759.8597412109375,
+    896.6741943359375
+  ],
+  "mask_sha256": "08f50d8af6081fcc367bd4aae35ae1175b93bc2c3189e603c839d29984e7d8c9"
+}

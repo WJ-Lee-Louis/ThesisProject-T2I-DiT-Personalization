@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/13",
+  "reference_sha256": "094de0502d52ec423daa32895f65d1c9d092133b0ca32737ee4e4fa1be916fd4",
+  "original_query": "teddy bear",
+  "selected_query": "teddy bear",
+  "attempts": [
+    {
+      "query": "teddy bear",
+      "scores": [
+        0.9416541457176208
+      ],
+      "boxes": [
+        [
+          280.2486267089844,
+          251.24493408203125,
+          749.2113037109375,
+          766.48486328125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.12684345245361328,
+  "selected_box": [
+    280.2486267089844,
+    251.24493408203125,
+    749.2113037109375,
+    766.48486328125
+  ],
+  "mask_sha256": "c8df637fbe3b5c4766ebfc36a83de39daa69798f51ddd21362f940b749d0c8b5"
+}

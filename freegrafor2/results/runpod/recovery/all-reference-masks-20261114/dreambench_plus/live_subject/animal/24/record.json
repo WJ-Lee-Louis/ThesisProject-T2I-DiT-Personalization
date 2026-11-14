@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/24",
+  "reference_sha256": "5c0545a1241324847555920b51d0c5c5334a13c2831b03f4766562ff278a6ae6",
+  "original_query": "llama",
+  "selected_query": "llama",
+  "attempts": [
+    {
+      "query": "llama",
+      "scores": [
+        0.8933094143867493,
+        0.40827676653862
+      ],
+      "boxes": [
+        [
+          281.808349609375,
+          134.90011596679688,
+          734.6973266601562,
+          923.8138427734375
+        ],
+        [
+          915.0126953125,
+          487.069580078125,
+          1013.76171875,
+          571.0631103515625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.16686153411865234,
+  "selected_box": [
+    281.808349609375,
+    134.90011596679688,
+    734.6973266601562,
+    923.8138427734375
+  ],
+  "mask_sha256": "158c59e37efb91b921589aaf7052bd81ebb639a4f6d5be1fae69db838dd9083c"
+}

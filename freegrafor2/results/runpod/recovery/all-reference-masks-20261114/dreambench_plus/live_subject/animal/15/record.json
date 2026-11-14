@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/15",
+  "reference_sha256": "e2ea5e66d117dbda8f764112aec84a39e1e37a339fbbcfecf61acb1a33149bb5",
+  "original_query": "butterfly",
+  "selected_query": "butterfly",
+  "attempts": [
+    {
+      "query": "butterfly",
+      "scores": [
+        0.9591543078422546
+      ],
+      "boxes": [
+        [
+          55.4962158203125,
+          232.299072265625,
+          975.9957275390625,
+          808.5635986328125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.30486011505126953,
+  "selected_box": [
+    55.4962158203125,
+    232.299072265625,
+    975.9957275390625,
+    808.5635986328125
+  ],
+  "mask_sha256": "9339f56eabd528e332839c43f5dfeba3ae8b769f2eb2f4f19e60fa148d0eee68"
+}

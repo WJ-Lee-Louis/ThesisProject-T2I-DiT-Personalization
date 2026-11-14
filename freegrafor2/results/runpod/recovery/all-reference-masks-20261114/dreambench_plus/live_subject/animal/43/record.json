@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/43",
+  "reference_sha256": "b340eb7186b3bb7966a899240d6cea3c9be85ab5d4409ea5b9c191dddb7f4c92",
+  "original_query": "French bulldog",
+  "selected_query": "French bulldog",
+  "attempts": [
+    {
+      "query": "French bulldog",
+      "scores": [
+        0.9416541457176208
+      ],
+      "boxes": [
+        [
+          161.31137084960938,
+          122.64697265625,
+          765.6146240234375,
+          933.73974609375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2687711715698242,
+  "selected_box": [
+    161.31137084960938,
+    122.64697265625,
+    765.6146240234375,
+    933.73974609375
+  ],
+  "mask_sha256": "72ea7ac599acc0bce30171ff6fc2a1a93b5c55a8f38b387777e8a041850d29fd"
+}

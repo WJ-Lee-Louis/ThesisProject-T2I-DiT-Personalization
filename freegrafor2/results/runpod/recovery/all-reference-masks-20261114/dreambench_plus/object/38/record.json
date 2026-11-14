@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/38",
+  "reference_sha256": "fe47bdfa1843b58d1a79b7735da8e9a73c28755f7a4fe75201799caa8858ea9d",
+  "original_query": "donut",
+  "selected_query": "donut",
+  "attempts": [
+    {
+      "query": "donut",
+      "scores": [
+        0.8740772008895874,
+        0.8624675869941711
+      ],
+      "boxes": [
+        [
+          458.7356872558594,
+          311.12713623046875,
+          818.300537109375,
+          621.8699951171875
+        ],
+        [
+          216.00643920898438,
+          389.6528015136719,
+          561.7989501953125,
+          626.8106689453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07560920715332031,
+  "selected_box": [
+    458.7356872558594,
+    311.12713623046875,
+    818.300537109375,
+    621.8699951171875
+  ],
+  "mask_sha256": "0e30ecc2995095e5b3f1fd95429584e52c77366a9801bbfd23254c494403ce07"
+}

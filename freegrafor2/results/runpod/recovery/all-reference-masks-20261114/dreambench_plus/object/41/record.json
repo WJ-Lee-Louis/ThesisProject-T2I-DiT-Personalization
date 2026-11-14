@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/41",
+  "reference_sha256": "cf34b50348fd3f2bde31e2de36265e11a3806b2fc3efb2fae84f78e93e53d15f",
+  "original_query": "t-shirt",
+  "selected_query": "t-shirt",
+  "attempts": [
+    {
+      "query": "t-shirt",
+      "scores": [
+        0.9504110217094421
+      ],
+      "boxes": [
+        [
+          21.9659423828125,
+          1.0078125,
+          994.2852783203125,
+          1021.77392578125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.31699371337890625,
+  "selected_box": [
+    21.9659423828125,
+    1.0078125,
+    994.2852783203125,
+    1021.77392578125
+  ],
+  "mask_sha256": "cee3ce21a13a5e93c2ea07a30dffb17c1fbd6dcad7f88bada1518a803c88c469"
+}

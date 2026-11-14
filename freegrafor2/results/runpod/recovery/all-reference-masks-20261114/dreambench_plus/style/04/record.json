@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/04",
+  "reference_sha256": "3b52f47779ff3329c6fc5fd928f94c6b7a0068a6931920ce965b0afbc760f4cd",
+  "original_query": "Impressionist swirls",
+  "selected_query": "Impressionist swirls",
+  "attempts": [
+    {
+      "query": "Impressionist swirls",
+      "scores": [
+        0.4798692762851715
+      ],
+      "boxes": [
+        [
+          3.18402099609375,
+          3.11572265625,
+          1021.0359497070312,
+          1018.1689453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.7296590805053711,
+  "selected_box": [
+    3.18402099609375,
+    3.11572265625,
+    1021.0359497070312,
+    1018.1689453125
+  ],
+  "mask_sha256": "5ac1da6ba767182652b8753eceddb241a0532b38b98e7dbb7bc5b01f0ab1cccd"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/11",
+  "reference_sha256": "a26d418ab2f1a89bd3747e68770472f6be19d8a49461b8817d4f0f4f9d9468d5",
+  "original_query": "heron",
+  "selected_query": "heron",
+  "attempts": [
+    {
+      "query": "heron",
+      "scores": [
+        0.9230391979217529
+      ],
+      "boxes": [
+        [
+          1.67840576171875,
+          175.40591430664062,
+          1009.0990600585938,
+          788.447509765625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3042469024658203,
+  "selected_box": [
+    1.67840576171875,
+    175.40591430664062,
+    1009.0990600585938,
+    788.447509765625
+  ],
+  "mask_sha256": "a292e84e46b57c64fec0ad4ba8bdc7b8dc79b44a9155ba6c52ae87006917f865"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/64",
+  "reference_sha256": "f98cc5cfa92e7753235b3535d76934e3d859b68d1f9ced7b997ef4ca3d21e02f",
+  "original_query": "robot",
+  "selected_query": "robot",
+  "attempts": [
+    {
+      "query": "robot",
+      "scores": [
+        0.9458011984825134
+      ],
+      "boxes": [
+        [
+          244.96646118164062,
+          3.108123779296875,
+          867.1697998046875,
+          1021.6639404296875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3087139129638672,
+  "selected_box": [
+    244.96646118164062,
+    3.108123779296875,
+    867.1697998046875,
+    1021.6639404296875
+  ],
+  "mask_sha256": "e50a15d72300e751640c4c7eef4c3ffba8f1255e7d410f47fe0dc75e70d71cb8"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/56",
+  "reference_sha256": "4617746bfc0c5039b5e688aaaf0429adb283093fe342cda125c8c23660c0d1f0",
+  "original_query": "clock",
+  "selected_query": "clock",
+  "attempts": [
+    {
+      "query": "clock",
+      "scores": [
+        0.9241418242454529
+      ],
+      "boxes": [
+        [
+          372.71630859375,
+          358.95440673828125,
+          731.8621826171875,
+          824.4880981445312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.11147308349609375,
+  "selected_box": [
+    372.71630859375,
+    358.95440673828125,
+    731.8621826171875,
+    824.4880981445312
+  ],
+  "mask_sha256": "7116f97fe380eb38fc3cac59155d1d526866de3e914d203a0ac83f491ec299f0"
+}

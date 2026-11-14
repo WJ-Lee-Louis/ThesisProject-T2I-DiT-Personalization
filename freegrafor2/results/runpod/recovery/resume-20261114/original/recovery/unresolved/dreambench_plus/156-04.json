@@ -1,0 +1,71 @@
+{
+  "row": {
+    "case_id": "156-04",
+    "reference_id": "dreambench_plus/object/61",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/61.jpg",
+    "identity_term": "roll of film",
+    "target_prompt": "A watercolor painting of a roll of film unraveled across a painter’s canvas",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/156-04.json",
+    "source_directions": 0,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "error": "Grounding DINO could not detect enough template instances for class 'roll of film': expected 1, detected 0.",
+  "detector_calls": [
+    {
+      "stage": "reference",
+      "original_query": "roll of film",
+      "selected_query": "roll of film",
+      "attempts": [
+        {
+          "query": "roll of film",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [
+            0.8840392827987671,
+            0.5693738460540771
+          ],
+          "boxes": [
+            [
+              346.9429016113281,
+              221.67933654785156,
+              662.1318359375,
+              732.6140747070312
+            ],
+            [
+              347.2236328125,
+              221.7256622314453,
+              661.66162109375,
+              732.7860107421875
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "template",
+      "original_query": "roll of film",
+      "selected_query": null,
+      "attempts": [
+        {
+          "query": "roll of film",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [],
+          "boxes": []
+        },
+        {
+          "query": "a roll of film",
+          "box_threshold": 0.35,
+          "text_threshold": 0.25,
+          "scores": [],
+          "boxes": []
+        }
+      ]
+    }
+  ],
+  "updated_at": 1793973288.8756385
+}

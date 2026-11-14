@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/00",
+  "reference_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30",
+  "original_query": "motorcycle",
+  "selected_query": "motorcycle",
+  "attempts": [
+    {
+      "query": "motorcycle",
+      "scores": [
+        0.9702399373054504
+      ],
+      "boxes": [
+        [
+          61.400054931640625,
+          322.3564453125,
+          952.516845703125,
+          737.0528564453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.20286846160888672,
+  "selected_box": [
+    61.400054931640625,
+    322.3564453125,
+    952.516845703125,
+    737.0528564453125
+  ],
+  "mask_sha256": "c46c2b6940e93b8f0dc089dc5621c33aa808f99998e9fe1aed97b641dbaefc68"
+}

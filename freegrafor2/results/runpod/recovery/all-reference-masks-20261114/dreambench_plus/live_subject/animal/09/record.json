@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/09",
+  "reference_sha256": "cae20a99c292e938c5958fffe836da499346934e656a8bef95c18aef7f319f6e",
+  "original_query": "rooster",
+  "selected_query": "rooster",
+  "attempts": [
+    {
+      "query": "rooster",
+      "scores": [
+        0.9489172697067261
+      ],
+      "boxes": [
+        [
+          135.3294677734375,
+          100.91265869140625,
+          781.7523193359375,
+          876.3594360351562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.19295692443847656,
+  "selected_box": [
+    135.3294677734375,
+    100.91265869140625,
+    781.7523193359375,
+    876.3594360351562
+  ],
+  "mask_sha256": "85dd2f6a10b160365316db4f25527b56658d8e6204be7df57b617fac0e8251df"
+}

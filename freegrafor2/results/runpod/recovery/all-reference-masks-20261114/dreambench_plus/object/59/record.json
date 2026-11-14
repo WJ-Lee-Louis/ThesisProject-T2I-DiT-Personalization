@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/59",
+  "reference_sha256": "6c15c3862168e72177e10c36c22c1a386121202b7818b24cf075d711890ce92c",
+  "original_query": "Eevee figurine",
+  "selected_query": "Eevee figurine",
+  "attempts": [
+    {
+      "query": "Eevee figurine",
+      "scores": [
+        0.5688949227333069,
+        0.3812195360660553
+      ],
+      "boxes": [
+        [
+          142.20721435546875,
+          263.28985595703125,
+          719.1505126953125,
+          871.7385864257812
+        ],
+        [
+          604.4313354492188,
+          395.94891357421875,
+          891.0097045898438,
+          845.7633666992188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1264963150024414,
+  "selected_box": [
+    142.20721435546875,
+    263.28985595703125,
+    719.1505126953125,
+    871.7385864257812
+  ],
+  "mask_sha256": "07770c94f62df5b842b53bbc2862ee0ac35a6508c2ca38cfe4068395d885f4ce"
+}

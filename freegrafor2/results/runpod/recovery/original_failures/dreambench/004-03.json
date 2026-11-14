@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "004-03",
+    "reference_id": "dreambench/can",
+    "benchmark": "dreambench",
+    "image_path": "datasets/dreambench_uno/images/can/01.jpg",
+    "identity_term": "can",
+    "target_prompt": "a can on a cobblestone street",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/004-03.json",
+    "source_directions": 2,
+    "target_directions": 1,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "5601950cc1ed42e9fa0c99f4056fbb911f47a58fb7a7edbd4bbb3744472716df",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect reference class 'can' in '/workspace/freegraftor/inputs/references/dreambench/can/01.jpg'.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 4.699343681335449,
+  "updated_at": 1793953117.286633
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/03",
+  "reference_sha256": "363bf44f75a3807196fd605d1aab1ce7ed48291caf0fb04c03d34ffd1d6444dc",
+  "original_query": "cyberpunk neon",
+  "selected_query": "cyberpunk neon",
+  "attempts": [
+    {
+      "query": "cyberpunk neon",
+      "scores": [
+        0.35042136907577515
+      ],
+      "boxes": [
+        [
+          657.9656982421875,
+          296.2013854980469,
+          1022.514892578125,
+          623.63232421875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07098674774169922,
+  "selected_box": [
+    657.9656982421875,
+    296.2013854980469,
+    1022.514892578125,
+    623.63232421875
+  ],
+  "mask_sha256": "ff7e0a9379713452fd9498e43c8d7a4a9e372e681c89f55f48b3e741180bf394"
+}

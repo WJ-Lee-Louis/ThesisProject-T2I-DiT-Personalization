@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/63",
+  "reference_sha256": "77a4d05a253d73c384a5d2718f591160215b0194e44ba4eec558defffeb39f49",
+  "original_query": "cocktail",
+  "selected_query": "cocktail",
+  "attempts": [
+    {
+      "query": "cocktail",
+      "scores": [
+        0.8976953029632568
+      ],
+      "boxes": [
+        [
+          317.0147705078125,
+          330.7540283203125,
+          599.3348388671875,
+          721.0054931640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.08572006225585938,
+  "selected_box": [
+    317.0147705078125,
+    330.7540283203125,
+    599.3348388671875,
+    721.0054931640625
+  ],
+  "mask_sha256": "3d69554aad3467261552ffa53323acea07e54e70936b2b9592a7ce1b552ac81c"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/34",
+  "reference_sha256": "b862285097d9b81dcf586909d7fd20874787e3b00dd4ea76924b5a03358f6a57",
+  "original_query": "tree-like character",
+  "selected_query": "tree-like character",
+  "attempts": [
+    {
+      "query": "tree-like character",
+      "scores": [
+        0.9059898257255554
+      ],
+      "boxes": [
+        [
+          259.5748596191406,
+          18.91748046875,
+          829.57763671875,
+          1006.2686767578125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.31945133209228516,
+  "selected_box": [
+    259.5748596191406,
+    18.91748046875,
+    829.57763671875,
+    1006.2686767578125
+  ],
+  "mask_sha256": "3e6f9aba6642a322a6f6ea3f01b2bf3d4e5a36745ff33c14e4f5aa496594393d"
+}

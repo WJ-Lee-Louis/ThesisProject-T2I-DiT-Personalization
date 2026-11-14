@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/05",
+  "reference_sha256": "0269cded348e8d7119b4047cd49d8ce2f5b3978c2c0ce8f7849c438e4a573a7b",
+  "original_query": "minion",
+  "selected_query": "minion",
+  "attempts": [
+    {
+      "query": "minion",
+      "scores": [
+        0.724090576171875
+      ],
+      "boxes": [
+        [
+          292.8609619140625,
+          185.87725830078125,
+          766.761474609375,
+          739.8787841796875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.15394210815429688,
+  "selected_box": [
+    292.8609619140625,
+    185.87725830078125,
+    766.761474609375,
+    739.8787841796875
+  ],
+  "mask_sha256": "6eca5e6292885d1af694a4ac54fcb8588b4ce69f7e1787b34c6792aa9704c33f"
+}

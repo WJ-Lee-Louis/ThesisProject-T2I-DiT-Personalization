@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/10",
+  "reference_sha256": "78c8991b224c8d54dd6043a8cf9a09d5d338048280360fd134c9a764d17f4a08",
+  "original_query": "man",
+  "selected_query": "man",
+  "attempts": [
+    {
+      "query": "man",
+      "scores": [
+        0.929440438747406
+      ],
+      "boxes": [
+        [
+          67.53988647460938,
+          65.47384643554688,
+          986.2205810546875,
+          1022.4136962890625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4577169418334961,
+  "selected_box": [
+    67.53988647460938,
+    65.47384643554688,
+    986.2205810546875,
+    1022.4136962890625
+  ],
+  "mask_sha256": "929cb700cb498d9c97244503103a0169827e03ddd229a331fae11dc3c1fab965"
+}

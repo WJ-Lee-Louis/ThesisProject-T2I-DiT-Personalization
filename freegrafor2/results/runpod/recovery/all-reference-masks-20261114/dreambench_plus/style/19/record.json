@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/19",
+  "reference_sha256": "e63e21a915504b530fc053b0cc31b517f335b4390b2e9fc301036b8c65dee050",
+  "original_query": "traditional Chinese painting",
+  "selected_query": "traditional Chinese painting",
+  "attempts": [
+    {
+      "query": "traditional Chinese painting",
+      "scores": [
+        0.7704647779464722
+      ],
+      "boxes": [
+        [
+          3.0072021484375,
+          2.354156494140625,
+          1021.18408203125,
+          1020.78662109375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.7473649978637695,
+  "selected_box": [
+    3.0072021484375,
+    2.354156494140625,
+    1021.18408203125,
+    1020.78662109375
+  ],
+  "mask_sha256": "a4976077581c596fb30a07132eba42862740294e8193bbcf7c5ee01c640ebee4"
+}

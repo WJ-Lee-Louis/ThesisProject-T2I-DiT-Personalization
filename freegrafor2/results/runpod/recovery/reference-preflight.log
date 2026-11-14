@@ -1,0 +1,163 @@
+/opt/freegraftor-runtime/generation-local/lib/python3.10/site-packages/modelscope/utils/plugins.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+1 dreambench/backpack native_ok backpack
+2 dreambench/backpack_dog native_ok backpack
+3 dreambench/bear_plushie native_ok stuffed animal
+4 dreambench/berry_bowl native_ok bowl
+5 dreambench/can noun_phrase_retry_ok beer can
+6 dreambench/candle native_ok candle
+7 dreambench/cat native_ok cat
+8 dreambench/cat2 native_ok cat
+9 dreambench/clock native_ok clock
+10 dreambench/colorful_sneaker native_ok sneaker
+11 dreambench/dog native_ok dog
+12 dreambench/dog2 native_ok dog
+13 dreambench/dog3 native_ok dog
+14 dreambench/dog5 native_ok dog
+15 dreambench/dog6 native_ok dog
+16 dreambench/dog7 native_ok dog
+17 dreambench/dog8 native_ok dog
+18 dreambench/duck_toy native_ok toy
+19 dreambench/fancy_boot native_ok boot
+20 dreambench/grey_sloth_plushie native_ok stuffed animal
+21 dreambench/monster_toy native_ok toy
+22 dreambench/pink_sunglasses native_ok glasses
+23 dreambench/poop_emoji native_ok toy
+24 dreambench/rc_car native_ok toy
+25 dreambench/red_cartoon native_ok cartoon
+26 dreambench/robot_toy native_ok toy
+27 dreambench/shiny_sneaker native_ok sneaker
+28 dreambench/teapot native_ok teapot
+29 dreambench/vase native_ok vase
+30 dreambench/wolf_plushie native_ok stuffed animal
+31 dreambench_plus/live_subject/animal/00 native_ok kitten
+32 dreambench_plus/live_subject/animal/01 native_ok stork
+33 dreambench_plus/live_subject/animal/02 native_ok kitten
+34 dreambench_plus/live_subject/animal/03 native_ok horse
+35 dreambench_plus/live_subject/animal/04 native_ok crab
+36 dreambench_plus/live_subject/animal/05 native_ok penguin
+37 dreambench_plus/live_subject/animal/06 native_ok shark
+38 dreambench_plus/live_subject/animal/07 native_ok dog
+39 dreambench_plus/live_subject/animal/08 native_ok raccoon
+40 dreambench_plus/live_subject/animal/09 native_ok rooster
+41 dreambench_plus/live_subject/animal/10 native_ok fox
+42 dreambench_plus/live_subject/animal/11 native_ok heron
+43 dreambench_plus/live_subject/animal/12 native_ok dog
+44 dreambench_plus/live_subject/animal/13 native_ok polar bear
+45 dreambench_plus/live_subject/animal/14 native_ok eagle
+46 dreambench_plus/live_subject/animal/15 native_ok butterfly
+47 dreambench_plus/live_subject/animal/16 native_ok jellyfish
+48 dreambench_plus/live_subject/animal/17 native_ok frog
+49 dreambench_plus/live_subject/animal/18 native_ok sea turtle
+50 dreambench_plus/live_subject/animal/19 native_ok robin
+51 dreambench_plus/live_subject/animal/20 native_ok hamster
+52 dreambench_plus/live_subject/animal/21 native_ok Siamese cat
+53 dreambench_plus/live_subject/animal/22 native_ok corgi
+54 dreambench_plus/live_subject/animal/23 native_ok lion
+55 dreambench_plus/live_subject/animal/24 native_ok llama
+56 dreambench_plus/live_subject/animal/25 native_ok Sphynx cat
+57 dreambench_plus/live_subject/animal/26 native_ok cotton-top tamarin
+58 dreambench_plus/live_subject/animal/27 native_ok wolf
+59 dreambench_plus/live_subject/animal/28 native_ok flamingo
+60 dreambench_plus/live_subject/animal/29 native_ok grasshopper
+61 dreambench_plus/live_subject/animal/30 native_ok lion
+62 dreambench_plus/live_subject/animal/31 native_ok deer
+63 dreambench_plus/live_subject/animal/32 native_ok Corgi dog
+64 dreambench_plus/live_subject/animal/33 native_ok panda
+65 dreambench_plus/live_subject/animal/34 native_ok cat
+66 dreambench_plus/live_subject/animal/35 native_ok tiger
+67 dreambench_plus/live_subject/animal/36 native_ok lizard
+68 dreambench_plus/live_subject/animal/37 native_ok toucan
+69 dreambench_plus/live_subject/animal/38 native_ok elephant
+70 dreambench_plus/live_subject/animal/39 native_ok dolphin
+71 dreambench_plus/live_subject/animal/40 native_ok white tiger
+72 dreambench_plus/live_subject/animal/41 native_ok parrot
+73 dreambench_plus/live_subject/animal/42 native_ok puppy
+74 dreambench_plus/live_subject/animal/43 native_ok French bulldog
+75 dreambench_plus/live_subject/animal/44 native_ok cat
+76 dreambench_plus/live_subject/human/00 native_ok space ranger
+77 dreambench_plus/live_subject/human/01 native_ok man
+78 dreambench_plus/live_subject/human/02 native_ok man
+79 dreambench_plus/live_subject/human/03 native_ok girl
+80 dreambench_plus/live_subject/human/04 native_ok girl
+81 dreambench_plus/live_subject/human/05 native_ok girl
+82 dreambench_plus/live_subject/human/06 native_ok pixelated warrior
+83 dreambench_plus/live_subject/human/07 native_ok man
+84 dreambench_plus/live_subject/human/08 native_ok man
+85 dreambench_plus/live_subject/human/09 native_ok girl
+86 dreambench_plus/live_subject/human/10 native_ok man
+87 dreambench_plus/live_subject/human/11 native_ok basketball player
+88 dreambench_plus/live_subject/human/12 native_ok samurai
+89 dreambench_plus/live_subject/human/13 native_ok girl
+90 dreambench_plus/live_subject/human/14 native_ok Spider-Man
+91 dreambench_plus/live_subject/human/15 native_ok woman
+92 dreambench_plus/live_subject/human/16 native_ok woman
+93 dreambench_plus/live_subject/human/17 native_ok man
+94 dreambench_plus/live_subject/human/18 native_ok basketball player
+95 dreambench_plus/live_subject/human/19 native_ok girl
+96 dreambench_plus/object/00 native_ok motorcycle
+97 dreambench_plus/object/01 native_ok hat
+98 dreambench_plus/object/02 native_ok vintage television
+99 dreambench_plus/object/03 native_ok cherry blossoms
+100 dreambench_plus/object/04 native_ok beer can
+101 dreambench_plus/object/05 native_ok minion
+102 dreambench_plus/object/06 native_ok avocado
+103 dreambench_plus/object/07 native_ok basketball shoe
+104 dreambench_plus/object/08 native_ok tree
+105 dreambench_plus/object/09 native_ok hot air balloon
+106 dreambench_plus/object/10 native_ok flamingo float
+107 dreambench_plus/object/11 native_ok armchair
+108 dreambench_plus/object/12 native_ok watch
+109 dreambench_plus/object/13 native_ok teddy bear
+110 dreambench_plus/object/14 native_ok house
+111 dreambench_plus/object/15 native_ok street lamp
+112 dreambench_plus/object/16 native_ok ring
+113 dreambench_plus/object/17 native_ok bicycle
+114 dreambench_plus/object/18 native_ok robot
+115 dreambench_plus/object/19 native_ok steam locomotive
+116 dreambench_plus/object/20 native_ok Magic Cube
+117 dreambench_plus/object/21 native_ok vintage van
+118 dreambench_plus/object/22 native_ok sneaker
+119 dreambench_plus/object/23 native_ok vintage camera
+120 dreambench_plus/object/24 native_ok vintage camera
+121 dreambench_plus/object/25 native_ok classical bust
+122 dreambench_plus/object/26 native_ok hair dryer
+123 dreambench_plus/object/27 native_ok mug
+124 dreambench_plus/object/28 native_ok backpack
+125 dreambench_plus/object/29 native_ok maple leaf
+126 dreambench_plus/object/30 native_ok vase
+127 dreambench_plus/object/31 native_ok piggy bank
+128 dreambench_plus/object/32 native_ok cap
+129 dreambench_plus/object/33 native_ok bouquet of flowers
+130 dreambench_plus/object/34 native_ok tree-like character
+131 dreambench_plus/object/35 native_ok vintage computer
+132 dreambench_plus/object/36 native_ok ceramic bowl
+133 dreambench_plus/object/37 native_ok airplane
+134 dreambench_plus/object/38 native_ok donut
+135 dreambench_plus/object/39 native_ok guitar
+136 dreambench_plus/object/40 native_ok Rolls-Royce hood ornament
+137 dreambench_plus/object/41 native_ok t-shirt
+138 dreambench_plus/object/42 native_ok hut
+139 dreambench_plus/object/43 native_ok pineapple
+140 dreambench_plus/object/44 native_ok yellow taxi
+141 dreambench_plus/object/45 native_ok wooden house
+142 dreambench_plus/object/46 native_ok teddy bear
+143 dreambench_plus/object/47 native_ok UFO
+144 dreambench_plus/object/48 native_ok egg
+145 dreambench_plus/object/49 native_ok vintage television
+146 dreambench_plus/object/50 native_ok rubber duck
+147 dreambench_plus/object/51 native_ok stop sign
+148 dreambench_plus/object/52 native_ok teapot
+149 dreambench_plus/object/53 native_ok cactus
+150 dreambench_plus/object/54 native_ok Poke Ball
+151 dreambench_plus/object/55 native_ok headphones
+152 dreambench_plus/object/56 native_ok clock
+153 dreambench_plus/object/57 native_ok leather handbag
+154 dreambench_plus/object/58 native_ok sunglasses
+155 dreambench_plus/object/59 native_ok Eevee figurine
+156 dreambench_plus/object/60 native_ok snare drum
+157 dreambench_plus/object/61 native_ok roll of film
+158 dreambench_plus/object/62 native_ok boat
+159 dreambench_plus/object/63 native_ok cocktail
+160 dreambench_plus/object/64 native_ok robot
+{"expected": 160, "processed": 160, "native_ok": 159, "noun_phrase_retry_ok": 1, "needs_mask_review": []}

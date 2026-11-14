@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/05",
+  "reference_sha256": "856150a023f5af0dce19231f7f220ad12ebf59294d3c5c305124c636ab866152",
+  "original_query": "penguin",
+  "selected_query": "penguin",
+  "attempts": [
+    {
+      "query": "penguin",
+      "scores": [
+        0.9241418242454529
+      ],
+      "boxes": [
+        [
+          180.85324096679688,
+          287.4374694824219,
+          721.6688232421875,
+          878.6763916015625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.10980415344238281,
+  "selected_box": [
+    180.85324096679688,
+    287.4374694824219,
+    721.6688232421875,
+    878.6763916015625
+  ],
+  "mask_sha256": "e4572ad43493d8a9701a5fba0617613ea765d3415309146fca5990888f2605e5"
+}

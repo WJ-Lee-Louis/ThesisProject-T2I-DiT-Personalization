@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/14",
+  "reference_sha256": "4eafa93141dddc762e3253f4c6f81683737493b0feb3f7b0b3bbf4bcf9064859",
+  "original_query": "Spider-Man",
+  "selected_query": "Spider-Man",
+  "attempts": [
+    {
+      "query": "Spider-Man",
+      "scores": [
+        0.7185943722724915
+      ],
+      "boxes": [
+        [
+          271.0677795410156,
+          96.03131103515625,
+          892.455322265625,
+          688.2454223632812
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1298828125,
+  "selected_box": [
+    271.0677795410156,
+    96.03131103515625,
+    892.455322265625,
+    688.2454223632812
+  ],
+  "mask_sha256": "bad2dd429372b62c68b12a36643b89ef93a8f7ec57b4095176ee0dd8cb5b7ef5"
+}

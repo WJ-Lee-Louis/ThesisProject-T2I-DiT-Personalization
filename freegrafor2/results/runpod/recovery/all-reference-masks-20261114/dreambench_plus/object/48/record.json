@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/48",
+  "reference_sha256": "5470aed041b156f02a4abf9e3516257ee8750df4ebdccf2f69ea5b7e3f09224f",
+  "original_query": "egg",
+  "selected_query": "egg",
+  "attempts": [
+    {
+      "query": "egg",
+      "scores": [
+        0.8887587189674377
+      ],
+      "boxes": [
+        [
+          312.24542236328125,
+          285.8186340332031,
+          712.9923706054688,
+          880.954833984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.17235946655273438,
+  "selected_box": [
+    312.24542236328125,
+    285.8186340332031,
+    712.9923706054688,
+    880.954833984375
+  ],
+  "mask_sha256": "048a8570f3ded65cb1a8be560837dfcb02c2a2e656e67f0804c88a143af5ff58"
+}

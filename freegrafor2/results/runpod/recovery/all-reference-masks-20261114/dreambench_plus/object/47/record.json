@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/47",
+  "reference_sha256": "971f938f3c7eb876bd3db85575db08842f4575927199e4eeea7e7964fa4915df",
+  "original_query": "UFO",
+  "selected_query": "UFO",
+  "attempts": [
+    {
+      "query": "UFO",
+      "scores": [
+        0.8210441470146179
+      ],
+      "boxes": [
+        [
+          41.665283203125,
+          140.61572265625,
+          981.7335205078125,
+          882.26513671875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3890647888183594,
+  "selected_box": [
+    41.665283203125,
+    140.61572265625,
+    981.7335205078125,
+    882.26513671875
+  ],
+  "mask_sha256": "3190d14f1dd723e4707a63256edb29f9e768047032d25bb286871d08e78845db"
+}

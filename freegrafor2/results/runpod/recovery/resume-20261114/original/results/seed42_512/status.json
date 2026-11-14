@@ -1,0 +1,7 @@
+{
+  "status": "needs_mask_review",
+  "stage": "non_style_mask_reprocessing",
+  "error": "1 non-style cases need a valid subject mask; final benchmark metrics are withheld",
+  "non_style_complete_required": true,
+  "updated_at": 1793973381.3649044
+}

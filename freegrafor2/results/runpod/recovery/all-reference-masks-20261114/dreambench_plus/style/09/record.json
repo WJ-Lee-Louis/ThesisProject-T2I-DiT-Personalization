@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/09",
+  "reference_sha256": "f3b36accefa14f91ac8a719118a9387e9189d97ff5e79e33bd70049a3331e04b",
+  "original_query": "low-poly geometric",
+  "selected_query": "low-poly geometric",
+  "attempts": [
+    {
+      "query": "low-poly geometric",
+      "scores": [
+        0.41063806414604187
+      ],
+      "boxes": [
+        [
+          1.291748046875,
+          4.628936767578125,
+          1019.7655639648438,
+          1017.46826171875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3188304901123047,
+  "selected_box": [
+    1.291748046875,
+    4.628936767578125,
+    1019.7655639648438,
+    1017.46826171875
+  ],
+  "mask_sha256": "2cc1db9b7451664e422f03d04cb1b259262e6289bfae3a35ce3d331236519b02"
+}

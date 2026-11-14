@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/12",
+  "reference_sha256": "5d1f82e8aff72e7a31050e7427fd1a2bf14ee75314378f39d73457baf01190fc",
+  "original_query": "dog",
+  "selected_query": "dog",
+  "attempts": [
+    {
+      "query": "dog",
+      "scores": [
+        0.9473810195922852
+      ],
+      "boxes": [
+        [
+          167.53604125976562,
+          79.72537231445312,
+          838.353759765625,
+          877.2880859375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.32121944427490234,
+  "selected_box": [
+    167.53604125976562,
+    79.72537231445312,
+    838.353759765625,
+    877.2880859375
+  ],
+  "mask_sha256": "62f372a06b7851f2c0f1a51f68c449264f7a044468def7c4273a0ef047eab02c"
+}

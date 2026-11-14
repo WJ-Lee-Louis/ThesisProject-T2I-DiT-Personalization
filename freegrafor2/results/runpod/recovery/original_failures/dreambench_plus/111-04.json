@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "111-04",
+    "reference_id": "dreambench_plus/object/16",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/16.jpg",
+    "identity_term": "ring",
+    "target_prompt": "A watercolor painting of a ring surrounded by a swirl of autumn leaves",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/111-04.json",
+    "source_directions": 0,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "258acfc4fbf79b7f65cd23ff34a3de9f703ac3dff42975e2931781c63096e8ea",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'ring': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "object",
+  "elapsed_seconds": 5.008917331695557,
+  "updated_at": 1793966862.5458548
+}

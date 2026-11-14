@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/04",
+  "reference_sha256": "9f0befb26354d910e2fc281c0670d9969b26ce9664a9fbdac1fc8acdd63e9fd3",
+  "original_query": "girl",
+  "selected_query": "girl",
+  "attempts": [
+    {
+      "query": "girl",
+      "scores": [
+        0.9314625263214111
+      ],
+      "boxes": [
+        [
+          38.393951416015625,
+          136.54550170898438,
+          659.7833251953125,
+          1022.762451171875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.33635520935058594,
+  "selected_box": [
+    38.393951416015625,
+    136.54550170898438,
+    659.7833251953125,
+    1022.762451171875
+  ],
+  "mask_sha256": "f8fe7b855081e0d3da4c0e6a7cf075743a51302e7644597bbfebe2d63dc17418"
+}

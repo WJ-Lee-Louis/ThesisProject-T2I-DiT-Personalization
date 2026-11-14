@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/10",
+  "reference_sha256": "7d295fbe01922564c35400b4a2ed0d10f8ae9ba4355b0cf9728b07f2528858c8",
+  "original_query": "Ukiyo-e",
+  "selected_query": "Ukiyo-e",
+  "attempts": [
+    {
+      "query": "Ukiyo-e",
+      "scores": [
+        0.3904758393764496
+      ],
+      "boxes": [
+        [
+          2.583831787109375,
+          79.735107421875,
+          1019.5487060546875,
+          1018.814453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.6377067565917969,
+  "selected_box": [
+    2.583831787109375,
+    79.735107421875,
+    1019.5487060546875,
+    1018.814453125
+  ],
+  "mask_sha256": "0f1d4127efff498c524a70136545ff46a7f88d76ecc143e42aef1fc2b7841c5e"
+}

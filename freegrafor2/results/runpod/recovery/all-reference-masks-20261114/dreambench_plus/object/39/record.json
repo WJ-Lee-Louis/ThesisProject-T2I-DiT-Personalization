@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/39",
+  "reference_sha256": "7fd1b3a4481e5fd70e1428992c5209cd1812129e4c3ba792339656e76bf9b877",
+  "original_query": "guitar",
+  "selected_query": "guitar",
+  "attempts": [
+    {
+      "query": "guitar",
+      "scores": [
+        0.9473810195922852
+      ],
+      "boxes": [
+        [
+          281.66632080078125,
+          33.45941162109375,
+          772.5111694335938,
+          935.6788330078125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.17304134368896484,
+  "selected_box": [
+    281.66632080078125,
+    33.45941162109375,
+    772.5111694335938,
+    935.6788330078125
+  ],
+  "mask_sha256": "9d9cc388d3770a7c751f2020994f476aec8c129fbcadc60d159fc910433f4c99"
+}

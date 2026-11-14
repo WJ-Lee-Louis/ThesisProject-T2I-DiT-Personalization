@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/35",
+  "reference_sha256": "1441c7bf8e7f2c3d2f5a2384d73e320713e4d964b07c90560f0f03cb5ce4a3a0",
+  "original_query": "vintage computer",
+  "selected_query": "vintage computer",
+  "attempts": [
+    {
+      "query": "vintage computer",
+      "scores": [
+        0.9343951344490051
+      ],
+      "boxes": [
+        [
+          318.8037109375,
+          405.76959228515625,
+          668.434326171875,
+          833.4942016601562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.11974906921386719,
+  "selected_box": [
+    318.8037109375,
+    405.76959228515625,
+    668.434326171875,
+    833.4942016601562
+  ],
+  "mask_sha256": "e25ac9b9ff62bc585c5db4aec54166bb713849f300185e048721862fed58ef54"
+}

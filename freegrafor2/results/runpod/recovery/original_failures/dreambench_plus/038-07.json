@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "038-07",
+    "reference_id": "dreambench_plus/live_subject/animal/08",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/08.jpg",
+    "identity_term": "raccoon",
+    "target_prompt": "A raccoon piloting a tiny, makeshift raft down a bustling city canal under a starry sky",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/038-07.json",
+    "source_directions": 2,
+    "target_directions": 2,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "9f8b6bf5cde42ce9e3b4ca9c30ed799a45a6394391c0c64e683449871f986e1a",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'raccoon': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "animal",
+  "elapsed_seconds": 4.982649803161621,
+  "updated_at": 1793960783.5251658
+}

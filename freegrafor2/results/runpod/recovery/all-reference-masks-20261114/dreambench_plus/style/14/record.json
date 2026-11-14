@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/14",
+  "reference_sha256": "b10ccab4436097beceeaba860ad247ab679fea333869bd9c81f8d259df72e8b2",
+  "original_query": "serene desert",
+  "selected_query": "serene desert",
+  "attempts": [
+    {
+      "query": "serene desert",
+      "scores": [
+        0.815232515335083
+      ],
+      "boxes": [
+        [
+          1.58917236328125,
+          557.1433715820312,
+          1021.4937744140625,
+          1021.2988891601562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4046773910522461,
+  "selected_box": [
+    1.58917236328125,
+    557.1433715820312,
+    1021.4937744140625,
+    1021.2988891601562
+  ],
+  "mask_sha256": "7481118fa9a3a0c3161f22adbbbeed6780f0d15270d65d5b9d3f789685540e27"
+}

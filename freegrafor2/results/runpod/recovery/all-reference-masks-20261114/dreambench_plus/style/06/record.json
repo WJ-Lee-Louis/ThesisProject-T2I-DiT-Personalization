@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/06",
+  "reference_sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c",
+  "original_query": "volcanic landscape",
+  "selected_query": "volcanic landscape",
+  "attempts": [
+    {
+      "query": "volcanic landscape",
+      "scores": [
+        0.879974365234375
+      ],
+      "boxes": [
+        [
+          1.76007080078125,
+          114.849609375,
+          1021.1896362304688,
+          1022.9876708984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.7801132202148438,
+  "selected_box": [
+    1.76007080078125,
+    114.849609375,
+    1021.1896362304688,
+    1022.9876708984375
+  ],
+  "mask_sha256": "8a1b01d06bb8f98e1875d632d40f6253957f228a891962147e25f43e077d31a9"
+}

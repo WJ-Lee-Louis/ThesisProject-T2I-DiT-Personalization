@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/monster_toy",
+  "reference_sha256": "0acdcfe19e422bac159b2b90eb8702f669175d22761ce6faf21b4b621911824b",
+  "original_query": "toy",
+  "selected_query": "toy",
+  "attempts": [
+    {
+      "query": "toy",
+      "scores": [
+        0.9532750844955444
+      ],
+      "boxes": [
+        [
+          183.17942810058594,
+          239.32650756835938,
+          1255.0751953125,
+          1225.66943359375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.21284336419753086,
+  "selected_box": [
+    183.17942810058594,
+    239.32650756835938,
+    1255.0751953125,
+    1225.66943359375
+  ],
+  "mask_sha256": "63c6e141b207c8cae3c0fde865241ea0da66f419ff50fca624fb85ac786665f6"
+}

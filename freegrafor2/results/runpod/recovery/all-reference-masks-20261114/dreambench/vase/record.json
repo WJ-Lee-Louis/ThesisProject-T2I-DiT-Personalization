@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/vase",
+  "reference_sha256": "26048d2ea6da0328bb011527793cde0084f6efb029825ce0638554e6b3fcf21c",
+  "original_query": "vase",
+  "selected_query": "vase",
+  "attempts": [
+    {
+      "query": "vase",
+      "scores": [
+        0.9504110217094421
+      ],
+      "boxes": [
+        [
+          393.63165283203125,
+          229.27188110351562,
+          602.8634033203125,
+          870.9578857421875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.08056528089722699,
+  "selected_box": [
+    393.63165283203125,
+    229.27188110351562,
+    602.8634033203125,
+    870.9578857421875
+  ],
+  "mask_sha256": "12718dface43798cd24361bd1e4ca40335c04e2d6f31a5db2ddcfa4539ad99e8"
+}

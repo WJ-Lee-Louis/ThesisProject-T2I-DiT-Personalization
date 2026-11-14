@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/bear_plushie",
+  "reference_sha256": "9cfc394fa5dc971740938216c2a9e14e8a3729ae42c1562474f9248d4aa53c52",
+  "original_query": "stuffed animal",
+  "selected_query": "stuffed animal",
+  "attempts": [
+    {
+      "query": "stuffed animal",
+      "scores": [
+        0.543347954750061
+      ],
+      "boxes": [
+        [
+          356.61944580078125,
+          318.47137451171875,
+          1499.549560546875,
+          1852.950927734375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.25836801528930664,
+  "selected_box": [
+    356.61944580078125,
+    318.47137451171875,
+    1499.549560546875,
+    1852.950927734375
+  ],
+  "mask_sha256": "5d022cbfbae6495169d440538a1a91c2241a0097e75d9afaccd742b99e029406"
+}

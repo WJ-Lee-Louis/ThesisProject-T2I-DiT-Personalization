@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/14",
+  "reference_sha256": "01b89feacd0d949b3ba4c96328a604a80a388085ec736fc08e657d9704ad8390",
+  "original_query": "house",
+  "selected_query": "house",
+  "attempts": [
+    {
+      "query": "house",
+      "scores": [
+        0.9314625263214111
+      ],
+      "boxes": [
+        [
+          1.217071533203125,
+          1.148162841796875,
+          1022.086181640625,
+          1013.47998046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.10787200927734375,
+  "selected_box": [
+    1.217071533203125,
+    1.148162841796875,
+    1022.086181640625,
+    1013.47998046875
+  ],
+  "mask_sha256": "f202a41bdf8040c23d862d50969811d07e0dcf24c92b22624038a9be70dbff91"
+}

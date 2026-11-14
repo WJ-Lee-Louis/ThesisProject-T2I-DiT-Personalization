@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/61",
+  "reference_sha256": "3331257f07b95493d91b47b6f18ce38fea3e5eb0fabddb774ed7c8440d572161",
+  "original_query": "roll of film",
+  "selected_query": "roll of film",
+  "attempts": [
+    {
+      "query": "roll of film",
+      "scores": [
+        0.8933094143867493,
+        0.5518152117729187
+      ],
+      "boxes": [
+        [
+          346.9432373046875,
+          221.6663055419922,
+          662.132568359375,
+          732.627685546875
+        ],
+        [
+          347.26739501953125,
+          221.81478881835938,
+          661.7040405273438,
+          732.4368896484375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.1309814453125,
+  "selected_box": [
+    346.9432373046875,
+    221.6663055419922,
+    662.132568359375,
+    732.627685546875
+  ],
+  "mask_sha256": "50175dd9a3b14fde02a37cf9455ac26841e9d612f91617b7abd9544bbb982602"
+}

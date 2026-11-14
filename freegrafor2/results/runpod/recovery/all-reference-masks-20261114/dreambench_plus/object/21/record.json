@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/21",
+  "reference_sha256": "d1a2f8566b08b810dcc630396e0c57e47155f7f797d7b6625074e6d6dcb3d086",
+  "original_query": "vintage van",
+  "selected_query": "vintage van",
+  "attempts": [
+    {
+      "query": "vintage van",
+      "scores": [
+        0.9518632292747498
+      ],
+      "boxes": [
+        [
+          168.74371337890625,
+          246.92831420898438,
+          919.2250366210938,
+          904.9720458984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.36838722229003906,
+  "selected_box": [
+    168.74371337890625,
+    246.92831420898438,
+    919.2250366210938,
+    904.9720458984375
+  ],
+  "mask_sha256": "de903f6d50752254fd0ed4d1270384b2c158e5c2875f805d2f203cc46c6ed7b8"
+}

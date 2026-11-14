@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+run_history/
+outputs/
+image_cache/
+image_info_cache/
+inference_results/
+sam_vit_h_4b8939.pth
+
+# RunPod outputs and model/runtime storage remain outside Git and LFS.
+/runpod/cache/
+/runpod/venvs/
+/runpod/inputs/
+/runpod/results/
+/runpod/recovery/
+/manifests/runpod/references/
+/results/runpod/**/*.png
+/results/runpod/**/*.jpg
+/results/runpod/**/*.jpeg
+/results/runpod/**/*.webp
+/results/runpod/**/*.zip
+/results/runpod/**/*.tar.gz
+/results/runpod/**/*.pid
+/results/runpod/**/.run.lock
+*.safetensors
+*.pth

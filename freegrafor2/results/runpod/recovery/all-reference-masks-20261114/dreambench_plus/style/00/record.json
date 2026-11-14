@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/00",
+  "reference_sha256": "0ee305167c7e046ad69888dcbb26b236e8d8330cc9866253bb82ea9a01bc1359",
+  "original_query": "pencil sketch",
+  "selected_query": "pencil sketch",
+  "attempts": [
+    {
+      "query": "pencil sketch",
+      "scores": [
+        0.7549149990081787
+      ],
+      "boxes": [
+        [
+          46.39642333984375,
+          27.6024169921875,
+          1021.3102416992188,
+          1021.195068359375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.7168292999267578,
+  "selected_box": [
+    46.39642333984375,
+    27.6024169921875,
+    1021.3102416992188,
+    1021.195068359375
+  ],
+  "mask_sha256": "3ec6ccd908c83b38d39e1bc8e0941dacf2f1837f155ff8e7699d9a37fefe7809"
+}

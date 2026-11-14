@@ -1,0 +1,14 @@
+{
+  "kind": "new_reference_mask_reextraction",
+  "historical_masks": false,
+  "generated_at": 1794642405.848164,
+  "box_threshold": 0.35,
+  "text_threshold": 0.25,
+  "source_sha256": "748b35fb46014148fa7496876a469040f7e86294dc4a04262f5cf82bdf7b974a",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3",
+    "segment-anything-py": "1.0.1"
+  },
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}

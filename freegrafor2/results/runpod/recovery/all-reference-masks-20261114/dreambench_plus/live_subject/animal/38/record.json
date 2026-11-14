@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/38",
+  "reference_sha256": "0a807f696f702a2a1b01ad9f8ef208fe9df63b49e9984456c76c713c64a52f0e",
+  "original_query": "elephant",
+  "selected_query": "elephant",
+  "attempts": [
+    {
+      "query": "elephant",
+      "scores": [
+        0.9343951344490051
+      ],
+      "boxes": [
+        [
+          114.5552978515625,
+          44.139312744140625,
+          882.3285522460938,
+          1013.765625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.44809627532958984,
+  "selected_box": [
+    114.5552978515625,
+    44.139312744140625,
+    882.3285522460938,
+    1013.765625
+  ],
+  "mask_sha256": "cd89da355ae2c2cdbfeed7bce4b735958a328b4708a5f3df52107210e295a8e7"
+}

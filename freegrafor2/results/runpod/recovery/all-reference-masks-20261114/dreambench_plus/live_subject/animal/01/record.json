@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/01",
+  "reference_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+  "original_query": "stork",
+  "selected_query": "stork",
+  "attempts": [
+    {
+      "query": "stork",
+      "scores": [
+        0.9407896995544434
+      ],
+      "boxes": [
+        [
+          239.09429931640625,
+          141.91070556640625,
+          772.119140625,
+          793.2496948242188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.11118221282958984,
+  "selected_box": [
+    239.09429931640625,
+    141.91070556640625,
+    772.119140625,
+    793.2496948242188
+  ],
+  "mask_sha256": "59f97757d7586533f8841df18c91999c6851a2809318b226d8fb86215db0929a"
+}

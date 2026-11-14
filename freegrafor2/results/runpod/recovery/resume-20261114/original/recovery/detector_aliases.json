@@ -1,0 +1,11 @@
+{
+  "dreambench/can": {
+    "original": "can",
+    "queries": [
+      "beer can"
+    ],
+    "evidence": "Official upstream configs/can.json uses class_name=beer can; same selected reference inspected; same thresholds produce confidence 0.95186 and SAM foreground mask visually verified.",
+    "source": "/workspace/freegraftor/upstream/configs/can.json",
+    "probe": "/workspace/freegraftor/recovery/probes/can/results.json"
+  }
+}

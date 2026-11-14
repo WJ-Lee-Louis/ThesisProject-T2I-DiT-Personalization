@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/colorful_sneaker",
+  "reference_sha256": "4a6b167131472609ac531a80ed389f4072f7e393ab6faafb7b967df4f04dd917",
+  "original_query": "sneaker",
+  "selected_query": "sneaker",
+  "attempts": [
+    {
+      "query": "sneaker",
+      "scores": [
+        0.9304582476615906
+      ],
+      "boxes": [
+        [
+          383.0562744140625,
+          517.0613403320312,
+          1749.3201904296875,
+          1593.725341796875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2057034969329834,
+  "selected_box": [
+    383.0562744140625,
+    517.0613403320312,
+    1749.3201904296875,
+    1593.725341796875
+  ],
+  "mask_sha256": "ea3fd8fabb028f85d2f11e50c979b0a493f4b293c97e9bf27c0ccae94e927951"
+}

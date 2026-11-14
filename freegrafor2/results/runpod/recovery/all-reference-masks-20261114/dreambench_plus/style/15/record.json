@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/15",
+  "reference_sha256": "4b3a83e26079e82ebaf5fe7e220909d4d26538cb5c0a0391f77e6590210f4a5a",
+  "original_query": "monochromatic ink sketch",
+  "selected_query": "monochromatic ink sketch",
+  "attempts": [
+    {
+      "query": "monochromatic ink sketch",
+      "scores": [
+        0.8397339582443237
+      ],
+      "boxes": [
+        [
+          90.68826293945312,
+          256.1300354003906,
+          953.615234375,
+          1021.52490234375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.45297908782958984,
+  "selected_box": [
+    90.68826293945312,
+    256.1300354003906,
+    953.615234375,
+    1021.52490234375
+  ],
+  "mask_sha256": "e92864d422a1777f29acce0472a4ddae4747ec644092430fa06fd43935f745ad"
+}

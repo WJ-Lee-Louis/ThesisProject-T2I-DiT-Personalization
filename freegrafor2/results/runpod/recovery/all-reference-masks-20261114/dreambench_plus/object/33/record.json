@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/33",
+  "reference_sha256": "4a8fe2e15b53ed8fbed521a4247ec32cc6014a3ab0c570573c7fb949f9af232e",
+  "original_query": "bouquet of flowers",
+  "selected_query": "bouquet of flowers",
+  "attempts": [
+    {
+      "query": "bouquet of flowers",
+      "scores": [
+        0.815232515335083,
+        0.40497803688049316
+      ],
+      "boxes": [
+        [
+          75.8262939453125,
+          25.67919921875,
+          903.6131591796875,
+          988.9611206054688
+        ],
+        [
+          76.36053466796875,
+          25.84124755859375,
+          902.90380859375,
+          982.0961303710938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.3811674118041992,
+  "selected_box": [
+    75.8262939453125,
+    25.67919921875,
+    903.6131591796875,
+    988.9611206054688
+  ],
+  "mask_sha256": "d0b538e24e18b2732f3ec1aab6dc4944af63a764501c0b411db540aebc3bbbfd"
+}

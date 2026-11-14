@@ -1,0 +1,13 @@
+# Retain original manifest, metric, sidecar and recovery-source hashes.
+manifests/runpod/** -text whitespace=cr-at-eol
+results/runpod/** -text whitespace=cr-at-eol
+verification/runpod/** -text whitespace=cr-at-eol
+runpod/** -text whitespace=cr-at-eol
+
+# Frozen upstream/source patches retain their original signed whitespace.
+runpod/src_snapshot/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+runpod/upstream/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+runpod/source-adaptations.patch whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+# Raw progress logs contain carriage-return updates; keep them out of diffs.
+results/runpod/**/*.log -diff
+verification/runpod/**/*.log -diff

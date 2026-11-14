@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/06",
+  "reference_sha256": "7b302a4ef7a1d3353fb99bd934e596b9cd1cd11ba6db8142afd2167b81556ab7",
+  "original_query": "shark",
+  "selected_query": "shark",
+  "attempts": [
+    {
+      "query": "shark",
+      "scores": [
+        0.9196425676345825
+      ],
+      "boxes": [
+        [
+          80.60498046875,
+          303.99224853515625,
+          894.1008911132812,
+          609.9005737304688
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.11647319793701172,
+  "selected_box": [
+    80.60498046875,
+    303.99224853515625,
+    894.1008911132812,
+    609.9005737304688
+  ],
+  "mask_sha256": "7eaf66f0d4ae8db796c6a63f763a58477159274a4b9ecb905856fe92a638d89e"
+}

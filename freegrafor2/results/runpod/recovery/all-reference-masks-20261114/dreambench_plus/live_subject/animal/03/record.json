@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/03",
+  "reference_sha256": "4e48caaa82f5239626e09867987af12fa886104e71e8c7af4f542d03c03f7df1",
+  "original_query": "horse",
+  "selected_query": "horse",
+  "attempts": [
+    {
+      "query": "horse",
+      "scores": [
+        0.961533784866333
+      ],
+      "boxes": [
+        [
+          0.73101806640625,
+          108.81793212890625,
+          946.34423828125,
+          1023.3446655273438
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.456085205078125,
+  "selected_box": [
+    0.73101806640625,
+    108.81793212890625,
+    946.34423828125,
+    1023.3446655273438
+  ],
+  "mask_sha256": "8db379d107210ed3444477181d4ed8f2e6a40597025cc7ca97e726a18e3a49c0"
+}

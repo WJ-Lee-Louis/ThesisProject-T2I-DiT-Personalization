@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/09",
+  "reference_sha256": "371351b9c6ec8a072a16bc49932dc3ae896ea3b836dc9d7915be480582ffbb69",
+  "original_query": "hot air balloon",
+  "selected_query": "hot air balloon",
+  "attempts": [
+    {
+      "query": "hot air balloon",
+      "scores": [
+        0.9399133324623108
+      ],
+      "boxes": [
+        [
+          29.88958740234375,
+          0.70458984375,
+          993.1699829101562,
+          1021.430908203125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.6346120834350586,
+  "selected_box": [
+    29.88958740234375,
+    0.70458984375,
+    993.1699829101562,
+    1021.430908203125
+  ],
+  "mask_sha256": "8a468870fe0a8cc7e3eb41c6249d76f64cc1ee3b522f3abc726b0e5553034ad8"
+}

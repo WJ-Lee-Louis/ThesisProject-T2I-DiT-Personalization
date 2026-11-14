@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "171-08",
+    "reference_id": "dreambench_plus/style/11",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/11.jpg",
+    "identity_term": "Impressionist",
+    "target_prompt": "A dreamlike cityscape where the buildings softly blur into the sky, in the Impressionist style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/171-08.json",
+    "source_directions": 5,
+    "target_directions": 3,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "b06918d6cef0444380417e6ef2b421cbdafdc4ef7b7a97105e087be034d4299c",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Impressionist': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 4.983572721481323,
+  "updated_at": 1793972162.325904
+}

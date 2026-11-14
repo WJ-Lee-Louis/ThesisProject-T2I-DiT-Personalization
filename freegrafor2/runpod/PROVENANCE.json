@@ -1,0 +1,81 @@
+{
+  "upstream_repo": "https://github.com/Nihukat/FreeGraftor",
+  "upstream_commit": "b8e0f93e91753265e46e9d0b364daa38e25f1afa",
+  "sources": {
+    "scripts/prepare_inputs.py": "01916b6f110cfab79345106ecdee4da38a7403d99fd3afbae839855776081b23",
+    "scripts/benchmark.py": "7f75659c62d1f03f3b0e009e511d66a793c83e83d6af82ca1863eb770ef0e2c5",
+    "scripts/project_metrics.py": "0f86321bfd854e644fc80bd783ae6b4d91322b639fff1bedd49c1db71177cea9",
+    "scripts/convert_cached_flux.py": "e96c5213551551e220c3a7a61bcd95026f90b3de25e706cec1a0ca559a44ba7e",
+    "requirements-generation.txt": "c508e6f86181233d8fc9bf87d29617e36326d0e68d4f8af9c7779dceff79b5c5",
+    "requirements-generation.lock.txt": "148bf1a316bd75b64b2b30eaeefb06372cc6e22cbc4b7b0866185596b2ce3a9e",
+    "source-adaptations.patch": "981322858e14bdc93699175887d9f948e14c4e42ea882c2a150430f6576c82fc",
+    "setup.sh": "6f49945a13b22d09ea426a6f9f96d788abd73c6318f9e20c2d5cdc74b723ccbe",
+    "start.sh": "9cabe42f95a2ebe627fde566895809094a09d3622e1ccfc464398493add88244",
+    "env.sh": "9d2e4aab5c94e24c9cdfb91581d8e324435bae4e31135dd7ae06ea674fe0c5f8",
+    "scripts/prepare_public_assets.py": "7e2b797dd94031d5e6b10e0c4f9da46191223e19f87bcbd2dc9414c35f9f8780",
+    "README.md": "a33b23786fdc030cec26586f921bf6c68fdf625be54af0e530746e733e017e12",
+    "scripts/mirror_text_encoders.py": "c8faa7a65197cec9aab97481d11ef0fa699d5768fd866e550da80c192f6a44df",
+    "scripts/status.py": "766953ca816e152c1d96ee64aed7d6e16e122b3f53874e63a79ba234f43e6fd1",
+    "scripts/mask_recovery.py": "d0710cae3c1ef36447d33387689e471d68f6398f73dcc08ff04e1a26d0b1d467",
+    "scripts/completion_guard.py": "dbce2583ab47c31a3f30fe6af494cb3780b64f69144a7e27f12bb57506d781c4",
+    "scripts/normalize_recovery_audit.py": "8500261c70f478af73ffe54fcc656b4955ec0a2fc97cbe7e47d674e12aacafd5",
+    "scripts/preflight_reference_masks.py": "b48a429909d1b1500f2f0747571a457df2da7fbeb866ede01a9a0b86b1cc1fb6",
+    "scripts/probe_can_mask.py": "e7f0a67556c5c05d6e34c5a638cb14009cfcd9a635aaf46756f931057d98611b",
+    "recovery/PROTOCOL.md": "0c1ca6582f434d5d991e7ee98d67572e57ce2f8acbc5a2ab771154e0f3b5ac58",
+    "recovery/detector_aliases.json": "8cb207b261d92a8fccc0ad899432ecb2c12a073b25d64b8f6db2fac729f25dfd"
+  },
+  "native_weight_conversion": {
+    "source_snapshot": "/workspace/instantx-0807/cache/huggingface/hub/models--black-forest-labs--FLUX.1-dev/snapshots/3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "source_blobs": {
+      "transformer/diffusion_pytorch_model-00001-of-00003.safetensors": "d86a3038eacaa720682cb9b1da3c49fecf8a3ded605af4def6061eaa18903eb8",
+      "transformer/diffusion_pytorch_model-00002-of-00003.safetensors": "5e830704a83aa938dfaf23da308100a1c44b83fa084283abf1d163ea727e5f7a",
+      "transformer/diffusion_pytorch_model-00003-of-00003.safetensors": "0d9c7c663217d1c3d44a6deed4e1cf1ac09fbc2c4137c47de1e3d74c959833de",
+      "vae/diffusion_pytorch_model.safetensors": "f5b59a26851551b67ae1fe58d32e76486e1e812def4696a4bea97f16604d40a3"
+    },
+    "transformer_tensors": 780,
+    "vae_tensors": 244,
+    "roundtrip_all_tensors_exact": true,
+    "quantization": false,
+    "dtype_conversion": false,
+    "native_sha256": {
+      "flux1-dev.safetensors": "0c874a33d295006924b5bd478ac65a530486eea6d7b6f004faf5a9defd9c8594",
+      "ae.safetensors": "e49d48aa3474df744ad718d11736d87f38d52bf7ca57dee6b8417978bfbfc9ad"
+    }
+  },
+  "local_runtime": "/opt/freegraftor-runtime",
+  "persistent_root": "/workspace/freegraftor",
+  "original_instantx_untouched": true,
+  "text_encoders_local_copy_audit": {
+    "text_encoder/model.safetensors": {
+      "size": 246144352,
+      "original_blob": "893d67a23f4693ed42cdab4cbad7fe3e727cf59609c40da28a46b5470f9ed082"
+    },
+    "text_encoder/config.json": {
+      "size": 613,
+      "original_blob": "5ebd923ce51522c605f64ab3d26ea024672777b6"
+    },
+    "text_encoder_2/model.safetensors.index.json": {
+      "size": 19885,
+      "original_blob": "c8728bc3dca59d2616a2a594cbac3ddb9eb77d5b"
+    },
+    "text_encoder_2/model-00002-of-00002.safetensors": {
+      "size": 4530066360,
+      "original_blob": "a5640855b301fcdbceddfa90ae8066cd9414aff020552a201a255ecf2059da00"
+    },
+    "text_encoder_2/model-00001-of-00002.safetensors": {
+      "size": 4994582224,
+      "original_blob": "ec87bffd1923e8b2774a6d240c922a41f6143081d52cf83b8fe39e9d838c893e"
+    },
+    "text_encoder_2/config.json": {
+      "size": 782,
+      "original_blob": "b00a8a6908682a2091f1194b81f220fd2b67c41c"
+    }
+  },
+  "non_style_mask_recovery": {
+    "required_complete_cases": 1920,
+    "generation_inputs_unchanged": true,
+    "equivalent_detector_label_retries": true,
+    "record": "recovery/PROTOCOL.md",
+    "verification": "recovery/verification.json"
+  }
+}

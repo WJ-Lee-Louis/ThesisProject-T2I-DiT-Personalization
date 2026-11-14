@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/50",
+  "reference_sha256": "db2435017749fee683483b0aba1ea4cd872bf44f08d5bedd0955bbd31224b3fd",
+  "original_query": "rubber duck",
+  "selected_query": "rubber duck",
+  "attempts": [
+    {
+      "query": "rubber duck",
+      "scores": [
+        0.8887587189674377
+      ],
+      "boxes": [
+        [
+          235.84844970703125,
+          223.75015258789062,
+          805.8261108398438,
+          763.2911376953125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2085590362548828,
+  "selected_box": [
+    235.84844970703125,
+    223.75015258789062,
+    805.8261108398438,
+    763.2911376953125
+  ],
+  "mask_sha256": "4baf5ca6a8ea35c176e3660799c3be3a5e196306efe9bcbb0bf6448c20c5a9e7"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/14",
+  "reference_sha256": "6f205220f5f2aebe0e2984c14432b795e7d5bbb34d924043c5aa52f8a0ef5e37",
+  "original_query": "eagle",
+  "selected_query": "eagle",
+  "attempts": [
+    {
+      "query": "eagle",
+      "scores": [
+        0.9416541457176208
+      ],
+      "boxes": [
+        [
+          95.85394287109375,
+          52.39605712890625,
+          794.36572265625,
+          890.135498046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.13357257843017578,
+  "selected_box": [
+    95.85394287109375,
+    52.39605712890625,
+    794.36572265625,
+    890.135498046875
+  ],
+  "mask_sha256": "a13c49d2323001edd4ba773f2b2501ebcf66a463fb89438d8e35c628496854bf"
+}

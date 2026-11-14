@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/36",
+  "reference_sha256": "8045b5290de25ebce08ba8ce6e1b7f90dcbca53b34239ab56a83aed5209de36e",
+  "original_query": "ceramic bowl",
+  "selected_query": "ceramic bowl",
+  "attempts": [
+    {
+      "query": "ceramic bowl",
+      "scores": [
+        0.9399133324623108
+      ],
+      "boxes": [
+        [
+          1.04644775390625,
+          177.85922241210938,
+          983.41259765625,
+          832.1749267578125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4534645080566406,
+  "selected_box": [
+    1.04644775390625,
+    177.85922241210938,
+    983.41259765625,
+    832.1749267578125
+  ],
+  "mask_sha256": "6fe119db6c6ad3457d2031c6595fe16aa9a46fa024b75e37eb6f8a401cbfd502"
+}

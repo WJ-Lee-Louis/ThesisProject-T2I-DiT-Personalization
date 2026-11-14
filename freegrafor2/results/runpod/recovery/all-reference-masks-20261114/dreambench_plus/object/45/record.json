@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/45",
+  "reference_sha256": "a8d66cc4e4cc3909b335a5778f2633fd73d10472b72fdf9ab8bf5726868f3ac8",
+  "original_query": "wooden house",
+  "selected_query": "wooden house",
+  "attempts": [
+    {
+      "query": "wooden house",
+      "scores": [
+        0.9353464841842651
+      ],
+      "boxes": [
+        [
+          173.51626586914062,
+          379.271484375,
+          746.9166259765625,
+          656.419189453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.0911397933959961,
+  "selected_box": [
+    173.51626586914062,
+    379.271484375,
+    746.9166259765625,
+    656.419189453125
+  ],
+  "mask_sha256": "4b51a576467780b07add16e5007f0dbf285da1590135a4b07e9f8c5fa4da1827"
+}

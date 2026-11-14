@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/fancy_boot",
+  "reference_sha256": "906e947c111602a955caeed0544f8e1352fc6b37063e55df4a3af605ab36680d",
+  "original_query": "boot",
+  "selected_query": "boot",
+  "attempts": [
+    {
+      "query": "boot",
+      "scores": [
+        0.8418256044387817
+      ],
+      "boxes": [
+        [
+          493.9486083984375,
+          75.74114990234375,
+          1680.5601806640625,
+          1785.1748046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.28168201446533203,
+  "selected_box": [
+    493.9486083984375,
+    75.74114990234375,
+    1680.5601806640625,
+    1785.1748046875
+  ],
+  "mask_sha256": "b3352ad776218c29de887135f1697e2cb4ed97698140973a5ac6ec3702987e7b"
+}

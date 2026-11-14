@@ -1,0 +1,11 @@
+{
+  "worker": 7350,
+  "lane": 0,
+  "benchmark": "dreambench",
+  "case_id": "018-20",
+  "started_at": 1793956525.0384252,
+  "reason": "Temporary pause to repair 25 failed can masks on the same A100; exclude this interrupted case from throughput ETA estimates",
+  "ended_at": 1793957439.9790423,
+  "pause_seconds": 914.9406170845032,
+  "native_worker_resumed": true
+}

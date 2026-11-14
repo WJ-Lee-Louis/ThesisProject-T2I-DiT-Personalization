@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/41",
+  "reference_sha256": "7f6428464a00770435313692554c95b2b923577017096e4c6574ce72f44ca3ee",
+  "original_query": "parrot",
+  "selected_query": "parrot",
+  "attempts": [
+    {
+      "query": "parrot",
+      "scores": [
+        0.9511421918869019
+      ],
+      "boxes": [
+        [
+          370.5416259765625,
+          27.979949951171875,
+          667.6561279296875,
+          1009.5369873046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.13620948791503906,
+  "selected_box": [
+    370.5416259765625,
+    27.979949951171875,
+    667.6561279296875,
+    1009.5369873046875
+  ],
+  "mask_sha256": "b384a9023facf47783f14afea1a00011b762bc2826ab66eda69d7065288cc692"
+}

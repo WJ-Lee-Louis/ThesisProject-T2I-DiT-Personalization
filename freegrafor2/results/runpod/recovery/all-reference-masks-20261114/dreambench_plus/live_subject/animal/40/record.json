@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/40",
+  "reference_sha256": "9448f2b9629d16a6bbca63d4f9526e34905e9fdbc27776f1384c31fc6252e631",
+  "original_query": "white tiger",
+  "selected_query": "white tiger",
+  "attempts": [
+    {
+      "query": "white tiger",
+      "scores": [
+        0.9532750844955444
+      ],
+      "boxes": [
+        [
+          1.34271240234375,
+          30.598907470703125,
+          1022.0507202148438,
+          1021.8077392578125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.768651008605957,
+  "selected_box": [
+    1.34271240234375,
+    30.598907470703125,
+    1022.0507202148438,
+    1021.8077392578125
+  ],
+  "mask_sha256": "8dfee9d74b9818648d8d9ad619f0401fc5e05bf19506631c021efdccaa90689e"
+}

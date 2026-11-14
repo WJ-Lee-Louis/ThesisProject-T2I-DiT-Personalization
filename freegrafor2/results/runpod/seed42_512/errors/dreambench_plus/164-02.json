@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "164-02",
+    "reference_id": "dreambench_plus/style/04",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/04.jpg",
+    "identity_term": "Impressionist swirls",
+    "target_prompt": "A photograph of an old wooden bridge over a tranquil pond, rendered in Impressionist swirls",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/164-02.json",
+    "source_directions": 4,
+    "target_directions": 5,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "9761b0a01ba437056a24b740ddbec6080ee46e9eb3ffdb3856c0e405a4a85c98",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Impressionist swirls': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.188756942749023,
+  "updated_at": 1793971727.32953
+}

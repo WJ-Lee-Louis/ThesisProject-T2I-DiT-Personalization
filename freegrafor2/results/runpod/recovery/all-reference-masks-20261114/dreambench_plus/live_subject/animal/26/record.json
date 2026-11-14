@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/26",
+  "reference_sha256": "a15947217a9064cae231f93d3bbc6db0e5cc594e4345309504d012cf65467370",
+  "original_query": "cotton-top tamarin",
+  "selected_query": "cotton-top tamarin",
+  "attempts": [
+    {
+      "query": "cotton-top tamarin",
+      "scores": [
+        0.7905303239822388
+      ],
+      "boxes": [
+        [
+          84.98492431640625,
+          100.65090942382812,
+          876.0219116210938,
+          1021.7451171875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.41893577575683594,
+  "selected_box": [
+    84.98492431640625,
+    100.65090942382812,
+    876.0219116210938,
+    1021.7451171875
+  ],
+  "mask_sha256": "b9ce5088295d55d48548f84eb8b6cc697cc1cc3c34852e0cebf42c27658285e0"
+}

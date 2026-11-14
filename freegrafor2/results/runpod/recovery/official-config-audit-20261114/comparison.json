@@ -1,0 +1,26 @@
+[
+  {
+    "subject": "can",
+    "benchmark_identity_term": "can",
+    "official_class_name": "beer can",
+    "different": true,
+    "official_example": "examples/can_00.jpg",
+    "config_url": "https://raw.githubusercontent.com/Nihukat/FreeGraftor/main/configs/can.json"
+  },
+  {
+    "subject": "cat",
+    "benchmark_identity_term": "cat",
+    "official_class_name": "cat",
+    "different": false,
+    "official_example": "examples/cat_01.jpg",
+    "config_url": "https://raw.githubusercontent.com/Nihukat/FreeGraftor/main/configs/cat_dog.json"
+  },
+  {
+    "subject": "dog",
+    "benchmark_identity_term": "dog",
+    "official_class_name": "dog",
+    "different": false,
+    "official_example": "examples/dog_02.jpg",
+    "config_url": "https://raw.githubusercontent.com/Nihukat/FreeGraftor/main/configs/cat_dog.json"
+  }
+]

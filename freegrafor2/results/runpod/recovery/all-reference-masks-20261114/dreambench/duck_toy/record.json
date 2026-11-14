@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/duck_toy",
+  "reference_sha256": "028d9cef79640084382f3c6a62a103095f1b33f017f80dca183a841d199e1bea",
+  "original_query": "toy",
+  "selected_query": "toy",
+  "attempts": [
+    {
+      "query": "toy",
+      "scores": [
+        0.9324532747268677
+      ],
+      "boxes": [
+        [
+          356.99224853515625,
+          342.8541259765625,
+          1111.04931640625,
+          1190.680419921875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.23397376543209877,
+  "selected_box": [
+    356.99224853515625,
+    342.8541259765625,
+    1111.04931640625,
+    1190.680419921875
+  ],
+  "mask_sha256": "f4e56adc5a31b0fb60a4755644232a879d2314704c351b7b71c4ab746c133db0"
+}

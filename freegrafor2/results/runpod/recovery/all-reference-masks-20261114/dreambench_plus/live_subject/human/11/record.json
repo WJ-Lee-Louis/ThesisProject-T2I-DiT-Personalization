@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/11",
+  "reference_sha256": "438e8569d63cea47e5ec2f821022c20cf2ce6dab6775b3e3d0d9af140d27cb91",
+  "original_query": "basketball player",
+  "selected_query": "basketball player",
+  "attempts": [
+    {
+      "query": "basketball player",
+      "scores": [
+        0.8068526387214661,
+        0.3711366057395935
+      ],
+      "boxes": [
+        [
+          254.99252319335938,
+          140.76974487304688,
+          763.7095947265625,
+          983.62255859375
+        ],
+        [
+          584.1278076171875,
+          329.1712646484375,
+          754.1123046875,
+          483.73651123046875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.17056560516357422,
+  "selected_box": [
+    254.99252319335938,
+    140.76974487304688,
+    763.7095947265625,
+    983.62255859375
+  ],
+  "mask_sha256": "9bd0c1248ee861b4435cc275ee2bcbb085e763a9256c6d5d664f7586837acb15"
+}

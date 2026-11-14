@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/19",
+  "reference_sha256": "e07efd14f998946efb538df93b92b649f5b0c50fadd876aba107cb594356db63",
+  "original_query": "robin",
+  "selected_query": "robin",
+  "attempts": [
+    {
+      "query": "robin",
+      "scores": [
+        0.9334307909011841
+      ],
+      "boxes": [
+        [
+          171.93392944335938,
+          241.51705932617188,
+          993.57275390625,
+          836.12060546875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.17293167114257812,
+  "selected_box": [
+    171.93392944335938,
+    241.51705932617188,
+    993.57275390625,
+    836.12060546875
+  ],
+  "mask_sha256": "6e524a4ae4c10325d2d93094183b8e606cdc040a4fd6794166be4a9ea90071c8"
+}

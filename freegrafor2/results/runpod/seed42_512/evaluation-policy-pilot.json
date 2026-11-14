@@ -1,0 +1,9 @@
+{
+  "exclude_dbpp_style": false,
+  "reason": "all_attempted_style_cases_generated_without_fallback",
+  "style_attempted": 2,
+  "style_failed": 0,
+  "fallback_images_used": 0,
+  "primary_dbpp_scope": "all-classes",
+  "updated_at": 1793951977.422258
+}

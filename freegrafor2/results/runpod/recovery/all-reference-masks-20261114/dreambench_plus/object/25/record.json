@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/25",
+  "reference_sha256": "ae44c2085a73b9fb6abeba90910bd2f54a7fe71d5f3cf2c54d95d7341473524b",
+  "original_query": "classical bust",
+  "selected_query": "classical bust",
+  "attempts": [
+    {
+      "query": "classical bust",
+      "scores": [
+        0.9230391979217529
+      ],
+      "boxes": [
+        [
+          77.46237182617188,
+          51.4263916015625,
+          939.3780517578125,
+          1020.1556396484375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4920930862426758,
+  "selected_box": [
+    77.46237182617188,
+    51.4263916015625,
+    939.3780517578125,
+    1020.1556396484375
+  ],
+  "mask_sha256": "187364dd2944e0546eacdb6306e1cc88aa97baa12c709d05013cf2ca4bea704d"
+}

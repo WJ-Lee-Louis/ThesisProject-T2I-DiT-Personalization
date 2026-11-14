@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/07",
+  "reference_sha256": "455653b9dd0d46dffb4cdd5da0a038af26132ce1c6eaa309b661c3e7b530abd3",
+  "original_query": "basketball shoe",
+  "selected_query": "basketball shoe",
+  "attempts": [
+    {
+      "query": "basketball shoe",
+      "scores": [
+        0.9046505093574524
+      ],
+      "boxes": [
+        [
+          160.941162109375,
+          171.34423828125,
+          757.6124267578125,
+          843.4962158203125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.21836185455322266,
+  "selected_box": [
+    160.941162109375,
+    171.34423828125,
+    757.6124267578125,
+    843.4962158203125
+  ],
+  "mask_sha256": "c74f6e91356816851bb428a9e2cceae1e2ba8c87050f7f4e963c796378122daa"
+}

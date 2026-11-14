@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/27",
+  "reference_sha256": "6db5fcc1cdbf6bb141093adaebaa1b29d1a40bc7e3ebe823022ca962c1a7d1d4",
+  "original_query": "mug",
+  "selected_query": "mug",
+  "attempts": [
+    {
+      "query": "mug",
+      "scores": [
+        0.9425067901611328
+      ],
+      "boxes": [
+        [
+          281.484375,
+          217.13360595703125,
+          834.115478515625,
+          957.5562133789062
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.31395816802978516,
+  "selected_box": [
+    281.484375,
+    217.13360595703125,
+    834.115478515625,
+    957.5562133789062
+  ],
+  "mask_sha256": "5e3a64e1ce28c79b4e5fc12c38df1b0658b8aef3e9777fc837e3dbc9983c09b4"
+}

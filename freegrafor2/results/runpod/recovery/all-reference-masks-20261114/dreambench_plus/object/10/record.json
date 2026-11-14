@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/10",
+  "reference_sha256": "7d7cb0785a13fb35d8d24782f82c6109f7e3ca71f39956bf9e328f7938e9871a",
+  "original_query": "flamingo float",
+  "selected_query": "flamingo float",
+  "attempts": [
+    {
+      "query": "flamingo float",
+      "scores": [
+        0.9252299070358276
+      ],
+      "boxes": [
+        [
+          236.92575073242188,
+          259.66937255859375,
+          691.158203125,
+          689.3063354492188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07785224914550781,
+  "selected_box": [
+    236.92575073242188,
+    259.66937255859375,
+    691.158203125,
+    689.3063354492188
+  ],
+  "mask_sha256": "24aa4172b82c1a04f50f50eb9f5e8bee3ccf1b5cb69210eabbef19d43725f63b"
+}

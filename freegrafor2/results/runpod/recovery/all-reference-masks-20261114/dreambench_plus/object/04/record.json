@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/04",
+  "reference_sha256": "be4cd162f6db231c1c78cc58cabec3126d57f5732604f0fe87c7f5e9665f348b",
+  "original_query": "beer can",
+  "selected_query": "beer can",
+  "attempts": [
+    {
+      "query": "beer can",
+      "scores": [
+        0.9489172697067261
+      ],
+      "boxes": [
+        [
+          281.1747741699219,
+          84.76547241210938,
+          739.827392578125,
+          968.7008056640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.35088443756103516,
+  "selected_box": [
+    281.1747741699219,
+    84.76547241210938,
+    739.827392578125,
+    968.7008056640625
+  ],
+  "mask_sha256": "0cb4ccfe5e1e4f06b2ea1266338b512934007e3459204ade384a472dfe659e47"
+}

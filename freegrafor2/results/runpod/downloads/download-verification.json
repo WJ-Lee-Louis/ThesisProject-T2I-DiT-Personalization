@@ -1,0 +1,13 @@
+{
+  "local": {
+    "status": 206,
+    "zip_signature_ok": true,
+    "content_range": "bytes 0-3/627399745",
+    "download_attachment": true
+  },
+  "https": {
+    "error": "HTTPError",
+    "http_status": 403,
+    "note": "Cloudflare rejected the server-side public proxy request; HTTPS download was not verified. Authenticated local Jupyter range request succeeded. Archive also exists on persistent /workspace."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/42",
+  "reference_sha256": "02665141e63d6b4428b86cf69bc806523de17bcb50c9a6244150f2f0c4cc28b2",
+  "original_query": "puppy",
+  "selected_query": "puppy",
+  "attempts": [
+    {
+      "query": "puppy",
+      "scores": [
+        0.4007493853569031
+      ],
+      "boxes": [
+        [
+          234.51239013671875,
+          284.590576171875,
+          874.0009155273438,
+          1022.3485107421875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.251983642578125,
+  "selected_box": [
+    234.51239013671875,
+    284.590576171875,
+    874.0009155273438,
+    1022.3485107421875
+  ],
+  "mask_sha256": "91c6dd716967f5f84889c08dba472688186e01ac65652c55cbaf05242686b02f"
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/19",
+  "reference_sha256": "e8357b9a62508824631e2e315974c43c0d7a26b03c28b1fbc6b3e17636367627",
+  "original_query": "steam locomotive",
+  "selected_query": "steam locomotive",
+  "attempts": [
+    {
+      "query": "steam locomotive",
+      "scores": [
+        0.9252299070358276
+      ],
+      "boxes": [
+        [
+          5.043060302734375,
+          284.76519775390625,
+          909.9271240234375,
+          937.9502563476562
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.32364749908447266,
+  "selected_box": [
+    5.043060302734375,
+    284.76519775390625,
+    909.9271240234375,
+    937.9502563476562
+  ],
+  "mask_sha256": "e1c8df4ba2b61eb455680e68108cb2e50d67e9583a16805f1f076586a86f15a4"
+}

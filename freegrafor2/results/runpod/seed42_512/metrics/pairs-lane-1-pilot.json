@@ -1,0 +1,147 @@
+{
+  "protocol": {
+    "name": "uno-selected-reference-v1",
+    "uno_revision": "a563432dcfb4caf98df4368facb8102bf97d376c",
+    "clip_model": "ViT-B/32",
+    "clip_revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "dino_model": "dino_vits16",
+    "dino_revision": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "reference_policy": "exact manifest image_path; one reference per generated image",
+    "clip_preprocess": "RGB; bicubic resize shorter edge 224; center crop 224; CLIP normalization",
+    "dino_preprocess": "RGB; bicubic resize shorter edge 256; center crop 224; ImageNet normalization",
+    "clip_t": "max(0, cosine(generated, original target_prompt)); weight=1; no prefix; truncate=True",
+    "image_metrics": "cosine(generated, selected reference); no clipping; no logit scale",
+    "score_scale": 1,
+    "aggregation": "per benchmark, condition and class: reference macro and case micro; class macro separately",
+    "category_policy": "DreamBench explicit animal/object map; DreamBench++ reference collection category",
+    "generated_format": "original PNG; no JPEG export"
+  },
+  "records": [
+    {
+      "condition": "freegraftor",
+      "category": "object",
+      "row": {
+        "case_id": "001-00",
+        "reference_id": "dreambench/backpack_dog",
+        "benchmark": "dreambench",
+        "image_path": "datasets/dreambench_uno/images/backpack_dog/02.jpg",
+        "identity_term": "backpack",
+        "target_prompt": "a backpack in the jungle",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/001-00.json",
+        "source_directions": 1,
+        "target_directions": 1,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/backpack_dog/02.jpg",
+      "reference_sha256": "d7c58f4c3b568be497da581536132e21d5010262ffbbfcefe69f6315a3a10d7a",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/001-00.png"
+    },
+    {
+      "condition": "freegraftor",
+      "category": "animal",
+      "row": {
+        "case_id": "007-00",
+        "reference_id": "dreambench/cat2",
+        "benchmark": "dreambench",
+        "image_path": "datasets/dreambench_uno/images/cat2/02.jpg",
+        "identity_term": "cat",
+        "target_prompt": "a cat in the jungle",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/007-00.json",
+        "source_directions": 2,
+        "target_directions": 1,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench/cat2/02.jpg",
+      "reference_sha256": "d6d81497562ff39a58d749a85078fa7fe9734f9c4113e45816f4973697749038",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench/007-00.png"
+    },
+    {
+      "condition": "freegraftor",
+      "category": "animal",
+      "row": {
+        "case_id": "031-00",
+        "reference_id": "dreambench_plus/live_subject/animal/01",
+        "benchmark": "dreambench_plus",
+        "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/01.jpg",
+        "identity_term": "stork",
+        "target_prompt": "A photo of a stork gracefully landing on a serene lake",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/031-00.json",
+        "source_directions": 2,
+        "target_directions": 5,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/animal/01/01.jpg",
+      "reference_sha256": "5a2e7f8ce5b9a7569ef28a3e629f6056a4510f09421357c5d8d96d84ac417edf",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/031-00.png"
+    },
+    {
+      "condition": "freegraftor",
+      "category": "human",
+      "row": {
+        "case_id": "075-00",
+        "reference_id": "dreambench_plus/live_subject/human/00",
+        "benchmark": "dreambench_plus",
+        "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/human/00.jpg",
+        "identity_term": "space ranger",
+        "target_prompt": "A photo of a space ranger navigating through a rocky alien terrain",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/075-00.json",
+        "source_directions": 3,
+        "target_directions": 3,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/live_subject/human/00/00.jpg",
+      "reference_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/075-00.png"
+    },
+    {
+      "condition": "freegraftor",
+      "category": "object",
+      "row": {
+        "case_id": "095-00",
+        "reference_id": "dreambench_plus/object/00",
+        "benchmark": "dreambench_plus",
+        "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/object/00.jpg",
+        "identity_term": "motorcycle",
+        "target_prompt": "A photograph of a motorcycle parked beside a bustling city street at night, illuminated by street lights",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/095-00.json",
+        "source_directions": 2,
+        "target_directions": 6,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/object/00/00.jpg",
+      "reference_sha256": "b9acfb6d6a65abefd5f994fa5fc882dbe56ab2a42ae617e7bad319e2e0cd8c30",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/095-00.png"
+    },
+    {
+      "condition": "freegraftor",
+      "category": "style",
+      "row": {
+        "case_id": "161-00",
+        "reference_id": "dreambench_plus/style/01",
+        "benchmark": "dreambench_plus",
+        "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/01.jpg",
+        "identity_term": "pixel art",
+        "target_prompt": "A photo of a bustling cityscape, rendered in pixel art",
+        "status": "READY",
+        "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/161-00.json",
+        "source_directions": 5,
+        "target_directions": 3,
+        "contrast_attempts": 1,
+        "fallback": null
+      },
+      "reference": "/workspace/freegraftor/inputs/references/dreambench_plus/style/01/01.jpg",
+      "reference_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+      "generated": "/workspace/freegraftor/results/seed42_512/images/dreambench_plus/161-00.png"
+    }
+  ]
+}

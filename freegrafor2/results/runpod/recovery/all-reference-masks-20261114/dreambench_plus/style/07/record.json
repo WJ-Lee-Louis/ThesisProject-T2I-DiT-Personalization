@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/style/07",
+  "reference_sha256": "03120c17725b5d69f11a5b2793930c02bb6a893cb36af1f3adffb3a785b3a651",
+  "original_query": "Impressionist pointillism",
+  "selected_query": "Impressionist pointillism",
+  "attempts": [
+    {
+      "query": "Impressionist pointillism",
+      "scores": [
+        0.3602639436721802,
+        0.45834869146347046
+      ],
+      "boxes": [
+        [
+          2.77191162109375,
+          4.252838134765625,
+          1019.9578247070312,
+          1018.4007568359375
+        ],
+        [
+          881.4505004882812,
+          645.1143798828125,
+          1002.3897094726562,
+          952.2159423828125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.020984649658203125,
+  "selected_box": [
+    881.4505004882812,
+    645.1143798828125,
+    1002.3897094726562,
+    952.2159423828125
+  ],
+  "mask_sha256": "b71f0fd66dc8194b92b31b4600dac296cce3363ad6a0824577538b01ab777ba5"
+}

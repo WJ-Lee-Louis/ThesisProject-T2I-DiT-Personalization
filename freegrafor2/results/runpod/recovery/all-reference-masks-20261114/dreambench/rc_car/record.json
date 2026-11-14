@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/rc_car",
+  "reference_sha256": "ed3f563a4ec793e34be5ce3810d8c8da3e42c5d4f2fa3e3f4159f6b05ab4307a",
+  "original_query": "toy",
+  "selected_query": "toy",
+  "attempts": [
+    {
+      "query": "toy",
+      "scores": [
+        0.7866228222846985
+      ],
+      "boxes": [
+        [
+          276.7682189941406,
+          126.15291595458984,
+          1074.5723876953125,
+          1346.910400390625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2300954861111111,
+  "selected_box": [
+    276.7682189941406,
+    126.15291595458984,
+    1074.5723876953125,
+    1346.910400390625
+  ],
+  "mask_sha256": "6fb3dace52af4d41aa15c6241c4ce17e1c697a2345cd46e06d987a1909f90afb"
+}

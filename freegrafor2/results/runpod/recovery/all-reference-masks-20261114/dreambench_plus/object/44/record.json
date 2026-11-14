@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/44",
+  "reference_sha256": "1723b67e922e2d097279b745fdaa4017b52a25863049815cab17f2bd1a6fa82f",
+  "original_query": "yellow taxi",
+  "selected_query": "yellow taxi",
+  "attempts": [
+    {
+      "query": "yellow taxi",
+      "scores": [
+        0.9124361872673035
+      ],
+      "boxes": [
+        [
+          4.333892822265625,
+          179.39065551757812,
+          1020.9759521484375,
+          953.758056640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.5611724853515625,
+  "selected_box": [
+    4.333892822265625,
+    179.39065551757812,
+    1020.9759521484375,
+    953.758056640625
+  ],
+  "mask_sha256": "7551f0f070630ded6f7461b2aba3b17404bee3ff4356959c441e024a5596f85c"
+}

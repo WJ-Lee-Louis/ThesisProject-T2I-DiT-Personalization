@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/28",
+  "reference_sha256": "209d6a67939a4c8817e4cc9f78d785d785259be7dbf0deca79b1e6d83a8d6f83",
+  "original_query": "flamingo",
+  "selected_query": "flamingo",
+  "attempts": [
+    {
+      "query": "flamingo",
+      "scores": [
+        0.9504110217094421
+      ],
+      "boxes": [
+        [
+          252.9991455078125,
+          151.85171508789062,
+          709.2432250976562,
+          885.67919921875
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.06909561157226562,
+  "selected_box": [
+    252.9991455078125,
+    151.85171508789062,
+    709.2432250976562,
+    885.67919921875
+  ],
+  "mask_sha256": "af2c8a2e4e961bab289a1514a98242fbd494b196f32a2a584383bd6f5971458f"
+}

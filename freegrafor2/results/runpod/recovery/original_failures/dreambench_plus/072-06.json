@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "072-06",
+    "reference_id": "dreambench_plus/live_subject/animal/42",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/live_subject/animal/42.jpg",
+    "identity_term": "puppy",
+    "target_prompt": "A retro-style digital drawing of a puppy wearing a tiny detective hat, looking curiously at a magnifying glass",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/072-06.json",
+    "source_directions": 1,
+    "target_directions": 3,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "df8bcc9032de007921094054c378c8422a07c50b62fd267f5c4ec0bc6a1bb6f3",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'puppy': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "animal",
+  "elapsed_seconds": 5.178228378295898,
+  "updated_at": 1793963757.6457727
+}

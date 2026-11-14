@@ -1,0 +1,90 @@
+[
+  {
+    "query": "roll of film",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [],
+    "boxes": [],
+    "elapsed_seconds": 1.2671940326690674
+  },
+  {
+    "query": "a roll of film",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [],
+    "boxes": [],
+    "elapsed_seconds": 0.26769232749938965
+  },
+  {
+    "query": "film strip",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [
+      0.47791963815689087
+    ],
+    "boxes": [
+      [
+        1.5421600341796875,
+        91.74333190917969,
+        510.81805419921875,
+        403.04437255859375
+      ]
+    ],
+    "elapsed_seconds": 0.2925999164581299,
+    "mask_fraction": 0.231658935546875
+  },
+  {
+    "query": "photographic film",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [
+      0.700894832611084
+    ],
+    "boxes": [
+      [
+        1.232269287109375,
+        2.0914154052734375,
+        509.655517578125,
+        510.32025146484375
+      ]
+    ],
+    "elapsed_seconds": 0.37746691703796387,
+    "mask_fraction": 0.4864768981933594
+  },
+  {
+    "query": "unrolled photographic film",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [
+      0.44601210951805115
+    ],
+    "boxes": [
+      [
+        1.1851043701171875,
+        5.8345947265625,
+        509.3685302734375,
+        507.8218994140625
+      ]
+    ],
+    "elapsed_seconds": 0.3062260150909424,
+    "mask_fraction": 0.4890937805175781
+  },
+  {
+    "query": "strip of photographic film",
+    "box_threshold": 0.35,
+    "text_threshold": 0.25,
+    "scores": [
+      0.561214804649353
+    ],
+    "boxes": [
+      [
+        1.742156982421875,
+        3.3549652099609375,
+        509.3098449707031,
+        508.68426513671875
+      ]
+    ],
+    "elapsed_seconds": 0.28287649154663086,
+    "mask_fraction": 0.4873847961425781
+  }
+]

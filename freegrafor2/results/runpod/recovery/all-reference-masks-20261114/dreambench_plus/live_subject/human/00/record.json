@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/human/00",
+  "reference_sha256": "934b13ca996ba2cb90624de22464adc6ea96f494771fc90823f12d175270bdb9",
+  "original_query": "space ranger",
+  "selected_query": "space ranger",
+  "attempts": [
+    {
+      "query": "space ranger",
+      "scores": [
+        0.9241418242454529
+      ],
+      "boxes": [
+        [
+          313.89312744140625,
+          301.6060485839844,
+          683.6867065429688,
+          1001.161865234375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.12688636779785156,
+  "selected_box": [
+    313.89312744140625,
+    301.6060485839844,
+    683.6867065429688,
+    1001.161865234375
+  ],
+  "mask_sha256": "0d8d704f10649982edd7a7931b7dbc8e1d0ee22d107c6b0b3f865b2cfa9399da"
+}

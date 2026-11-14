@@ -1,0 +1,20 @@
+{
+  "started_at": 1794641736.1576772,
+  "physical_gpu": 0,
+  "logical_lanes": [
+    0,
+    1
+  ],
+  "execution": "sequential",
+  "reason": "Previous Pod runtime was lost; current Pod has one A100 80GB",
+  "source_signatures_preserved": true,
+  "model_conversion_signature_preserved": true,
+  "original_records": "original/",
+  "files": {
+    "scripts/resume_single_gpu.py": "2f0a257759bd13dacf864a18cf1604cb9ace66e188bc341a439b48ae8f78bf39",
+    "scripts/probe_film_mask.py": "1d3893c25450e8e890ac9de92bf579b45c13c7807de76b974a4574b0289e0c0a",
+    "recovery/detector_aliases.json": "259d6a5f10bff09d6706173ac5373197046fe52fefe14b7ba20252e3fa90a792",
+    "recovery/probes/film-20261114/results.json": "b18fe5a817f699a8312a225dc1a9b0829705967a518881de827a9dece846f19d",
+    "cache/flux-native/conversion.json": "8b532f883521f0273c7041a6c0266c32711d532d117b9ae8efb3bc18312bb557"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/05",
+  "reference_sha256": "712404d96b98938596371ff25f7a35dbce5d864aa2dcdabd8b404a5791b864af",
+  "original_query": "minimalist line art",
+  "selected_query": "minimalist line art",
+  "attempts": [
+    {
+      "query": "minimalist line art",
+      "scores": [
+        0.6926419734954834
+      ],
+      "boxes": [
+        [
+          147.58428955078125,
+          118.560546875,
+          875.841064453125,
+          898.8416137695312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.19724559783935547,
+  "selected_box": [
+    147.58428955078125,
+    118.560546875,
+    875.841064453125,
+    898.8416137695312
+  ],
+  "mask_sha256": "bfbac6ee00c6ffcaf208f8cf2a7eb368e6e054b1fc02491489365c4bfcdaaaf4"
+}

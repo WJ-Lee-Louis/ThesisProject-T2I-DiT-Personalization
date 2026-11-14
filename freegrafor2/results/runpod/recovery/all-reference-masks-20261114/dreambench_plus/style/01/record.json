@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/style/01",
+  "reference_sha256": "36e00824e46342a415b2e200bd471a42b1ab828c4a7e8eb3b4a256cb596de16c",
+  "original_query": "pixel art",
+  "selected_query": "pixel art",
+  "attempts": [
+    {
+      "query": "pixel art",
+      "scores": [
+        0.7853085398674011
+      ],
+      "boxes": [
+        [
+          98.09951782226562,
+          155.81619262695312,
+          613.4952392578125,
+          751.4329833984375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2849597930908203,
+  "selected_box": [
+    98.09951782226562,
+    155.81619262695312,
+    613.4952392578125,
+    751.4329833984375
+  ],
+  "mask_sha256": "d9d52ab0eef42542e61bfdd5d6cd3dc37bff0d5c8c9e1671efb734a0bd229cc7"
+}

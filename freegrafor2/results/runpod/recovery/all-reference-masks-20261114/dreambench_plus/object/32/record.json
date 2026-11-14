@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/object/32",
+  "reference_sha256": "a1609f3cae9264b13d1d6b94f2e431ffb5b663f93b0affb0dcf4426a7a7b1d13",
+  "original_query": "cap",
+  "selected_query": "cap",
+  "attempts": [
+    {
+      "query": "cap",
+      "scores": [
+        0.6034645438194275,
+        0.3711366057395935
+      ],
+      "boxes": [
+        [
+          147.1590576171875,
+          173.95034790039062,
+          796.0270385742188,
+          793.4168701171875
+        ],
+        [
+          169.10659790039062,
+          173.69818115234375,
+          777.7352294921875,
+          522.1700439453125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.2917633056640625,
+  "selected_box": [
+    147.1590576171875,
+    173.95034790039062,
+    796.0270385742188,
+    793.4168701171875
+  ],
+  "mask_sha256": "6ac404ad2d9c37a47322ca4ebd1aea16885d112ccc29f846b20c4bd0318ad3f0"
+}

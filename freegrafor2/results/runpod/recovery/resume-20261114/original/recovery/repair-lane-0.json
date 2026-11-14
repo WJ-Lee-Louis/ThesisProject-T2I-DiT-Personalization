@@ -1,0 +1,12 @@
+{
+  "status": "needs_mask_review",
+  "assigned": 6,
+  "success": 5,
+  "failures": [
+    {
+      "case_id": "156-04",
+      "error": "Grounding DINO could not detect enough template instances for class 'roll of film': expected 1, detected 0."
+    }
+  ],
+  "updated_at": 1793973289.1416886
+}

@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/20",
+  "reference_sha256": "4a2164d3101363d0f8b143ba867d8ce079f3ca4371d83339c5fa781966b2d3ea",
+  "original_query": "Magic Cube",
+  "selected_query": "Magic Cube",
+  "attempts": [
+    {
+      "query": "Magic Cube",
+      "scores": [
+        0.8856314420700073
+      ],
+      "boxes": [
+        [
+          296.5601806640625,
+          264.97369384765625,
+          728.6353759765625,
+          760.4616088867188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.14427661895751953,
+  "selected_box": [
+    296.5601806640625,
+    264.97369384765625,
+    728.6353759765625,
+    760.4616088867188
+  ],
+  "mask_sha256": "18923ce5dbca9b226762fda1201a041343b2514ec2bc1030ceb2e6e48c7e2cfb"
+}

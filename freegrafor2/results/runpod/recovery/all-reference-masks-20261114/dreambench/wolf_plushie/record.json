@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench/wolf_plushie",
+  "reference_sha256": "e88eb5df08f7dfe7c878c8836456cceb55816e93f04b60498a9a6159d6eb8946",
+  "original_query": "stuffed animal",
+  "selected_query": "stuffed animal",
+  "attempts": [
+    {
+      "query": "stuffed animal",
+      "scores": [
+        0.8539127111434937
+      ],
+      "boxes": [
+        [
+          142.29254150390625,
+          455.568603515625,
+          1818.7216796875,
+          1799.113525390625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.27992796897888184,
+  "selected_box": [
+    142.29254150390625,
+    455.568603515625,
+    1818.7216796875,
+    1799.113525390625
+  ],
+  "mask_sha256": "6088ce6f2d4b18f309394c3110882f26f1a0c7c9443a3857c3d3542436c4a6e6"
+}

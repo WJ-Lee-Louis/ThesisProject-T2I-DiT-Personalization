@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "170-03",
+    "reference_id": "dreambench_plus/style/10",
+    "benchmark": "dreambench_plus",
+    "image_path": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/images/style/10.jpg",
+    "identity_term": "Ukiyo-e",
+    "target_prompt": "A woodblock print of a bustling Edo period marketplace, in Ukiyo-e style",
+    "status": "READY",
+    "conditioning_path": "outputs/semantic_benchmark_gpt56_sol/conditioning/170-03.json",
+    "source_directions": 7,
+    "target_directions": 4,
+    "contrast_attempts": 1,
+    "fallback": null
+  },
+  "job_signature": "4aa4086ebefc238418c9321050259598db173ba375d9d2ea7a96bd01e295905a",
+  "error_type": "RuntimeError",
+  "error": "Grounding DINO could not detect enough template instances for class 'Ukiyo-e': expected 1, detected 0.",
+  "detection_failure": true,
+  "category": "style",
+  "elapsed_seconds": 5.027666807174683,
+  "updated_at": 1793972242.2852626
+}

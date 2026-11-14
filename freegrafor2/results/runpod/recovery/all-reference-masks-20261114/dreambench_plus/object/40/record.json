@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/40",
+  "reference_sha256": "55cabd1c093bb5a593c82df322c849c9a2b15290ffe249fb5d853ae62274ed27",
+  "original_query": "Rolls-Royce hood ornament",
+  "selected_query": "Rolls-Royce hood ornament",
+  "attempts": [
+    {
+      "query": "Rolls-Royce hood ornament",
+      "scores": [
+        0.4515683352947235
+      ],
+      "boxes": [
+        [
+          304.3737487792969,
+          111.93292236328125,
+          616.3697509765625,
+          675.64306640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07112789154052734,
+  "selected_box": [
+    304.3737487792969,
+    111.93292236328125,
+    616.3697509765625,
+    675.64306640625
+  ],
+  "mask_sha256": "a1418f843bfc9850e274a6e421cc55f8f0c2f0c4fd940c17fc8d6ac29cf5a7d8"
+}

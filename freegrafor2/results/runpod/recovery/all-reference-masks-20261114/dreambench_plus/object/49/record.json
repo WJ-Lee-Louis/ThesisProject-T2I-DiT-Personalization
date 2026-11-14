@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/object/49",
+  "reference_sha256": "a0f521ccb308c25835a4ffb37a253f3db6e2c7e11944d72c2a6578e6a2c20d8c",
+  "original_query": "vintage television",
+  "selected_query": "vintage television",
+  "attempts": [
+    {
+      "query": "vintage television",
+      "scores": [
+        0.9433475732803345
+      ],
+      "boxes": [
+        [
+          367.3944091796875,
+          375.67462158203125,
+          657.6641845703125,
+          577.6589965820312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.049918174743652344,
+  "selected_box": [
+    367.3944091796875,
+    375.67462158203125,
+    657.6641845703125,
+    577.6589965820312
+  ],
+  "mask_sha256": "bfb12eb17d0900934d6392c578fd9a6980d21fb6125553ad0942153db532bcde"
+}

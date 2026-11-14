@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/37",
+  "reference_sha256": "7c63760cecbd1aa432a67dd7bce5633e5a0db482cfe4b1cec3f4c8be3c8421fd",
+  "original_query": "toucan",
+  "selected_query": "toucan",
+  "attempts": [
+    {
+      "query": "toucan",
+      "scores": [
+        0.5717666149139404
+      ],
+      "boxes": [
+        [
+          350.1663513183594,
+          185.76947021484375,
+          873.428466796875,
+          1014.0827026367188
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.16048145294189453,
+  "selected_box": [
+    350.1663513183594,
+    185.76947021484375,
+    873.428466796875,
+    1014.0827026367188
+  ],
+  "mask_sha256": "c5ae233e51e365b9a4ca7b8ec9aed39bf9b510f787969078b853889f220617da"
+}

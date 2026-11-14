@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "directory": "/workspace/FreeGraftor_512",
+  "archive": "/opt/freegraftor-downloads/FreeGraftor_512.zip",
+  "bytes": 627399745,
+  "sha256": "4bed12ecab5e55e9a3734a376a96a6bd9d156dad82dc2f66c40ab80ef345d1c9",
+  "images": 1920,
+  "metadata_files": 1920,
+  "zip_crc_verified": true,
+  "all_image_and_metadata_sha256_verified": true,
+  "download_url": "https://f3k38c19wb7kgn-8888.proxy.runpod.net/files/opt/freegraftor-downloads/FreeGraftor_512.zip?download=1",
+  "workspace_archive": "/workspace/FreeGraftor_512.zip"
+}

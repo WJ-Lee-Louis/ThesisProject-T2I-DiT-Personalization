@@ -1,0 +1,40 @@
+{
+  "reference_id": "dreambench_plus/style/11",
+  "reference_sha256": "3fd3ad1c9368c524b911f3231932503dfc2f6c429b5d6fc9c593b89ae007f593",
+  "original_query": "Impressionist",
+  "selected_query": "Impressionist",
+  "attempts": [
+    {
+      "query": "Impressionist",
+      "scores": [
+        0.38676342368125916,
+        0.4125301241874695
+      ],
+      "boxes": [
+        [
+          2.799102783203125,
+          3.59686279296875,
+          1021.985107421875,
+          1021.0324096679688
+        ],
+        [
+          155.9251708984375,
+          158.90286254882812,
+          224.2767333984375,
+          216.61849975585938
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": true,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.0023145675659179688,
+  "selected_box": [
+    155.9251708984375,
+    158.90286254882812,
+    224.2767333984375,
+    216.61849975585938
+  ],
+  "mask_sha256": "a6b5b35665a676f0c455a999ef067c4e0c1b64aa19ee862693810d026182315f"
+}

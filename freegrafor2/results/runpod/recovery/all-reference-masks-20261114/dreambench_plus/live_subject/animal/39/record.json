@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/39",
+  "reference_sha256": "a70469668674fd1a789678d48aabd49d7065efa14358b1e7b72714d74e28840f",
+  "original_query": "dolphin",
+  "selected_query": "dolphin",
+  "attempts": [
+    {
+      "query": "dolphin",
+      "scores": [
+        0.9489172697067261
+      ],
+      "boxes": [
+        [
+          255.46762084960938,
+          300.3018493652344,
+          713.02978515625,
+          857.4586181640625
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.07508182525634766,
+  "selected_box": [
+    255.46762084960938,
+    300.3018493652344,
+    713.02978515625,
+    857.4586181640625
+  ],
+  "mask_sha256": "e7575d12c775c6ebeacf24274a4a9ea00b66c927ee6ecfcad653f33c169b7f59"
+}

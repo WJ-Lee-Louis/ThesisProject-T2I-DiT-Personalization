@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/29",
+  "reference_sha256": "5c2dd69711fd024d2a81c564e793909a9bf8739c190fa78a53ab05e224fbfe43",
+  "original_query": "grasshopper",
+  "selected_query": "grasshopper",
+  "attempts": [
+    {
+      "query": "grasshopper",
+      "scores": [
+        0.929440438747406
+      ],
+      "boxes": [
+        [
+          1.35430908203125,
+          131.18942260742188,
+          1021.5472412109375,
+          847.589599609375
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.15759944915771484,
+  "selected_box": [
+    1.35430908203125,
+    131.18942260742188,
+    1021.5472412109375,
+    847.589599609375
+  ],
+  "mask_sha256": "b8a33463a076df8536088172230f9f812c1b976650a8da373f9178214334eeb3"
+}

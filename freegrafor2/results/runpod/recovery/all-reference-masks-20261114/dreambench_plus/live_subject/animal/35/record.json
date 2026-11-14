@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/35",
+  "reference_sha256": "ebe9e985a0ac51823bd2e83b189e315ed288737e883fc9f73a109200be8a4b5b",
+  "original_query": "tiger",
+  "selected_query": "tiger",
+  "attempts": [
+    {
+      "query": "tiger",
+      "scores": [
+        0.929440438747406
+      ],
+      "boxes": [
+        [
+          113.8663330078125,
+          456.62347412109375,
+          813.3404541015625,
+          1003.9802856445312
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.18854713439941406,
+  "selected_box": [
+    113.8663330078125,
+    456.62347412109375,
+    813.3404541015625,
+    1003.9802856445312
+  ],
+  "mask_sha256": "dd2ddf8fdada9a9f9e9520c620ad72d3eac7bbff93a3090d02a5cc445bfa3c0c"
+}

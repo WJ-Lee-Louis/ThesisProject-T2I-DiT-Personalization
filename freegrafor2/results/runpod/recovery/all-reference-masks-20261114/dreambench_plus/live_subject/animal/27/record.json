@@ -1,0 +1,33 @@
+{
+  "reference_id": "dreambench_plus/live_subject/animal/27",
+  "reference_sha256": "6bb1d6a3f692d14f7a57532e033a91f4d2a9ebe4755ec81e54caa56f95f419a2",
+  "original_query": "wolf",
+  "selected_query": "wolf",
+  "attempts": [
+    {
+      "query": "wolf",
+      "scores": [
+        0.9511421918869019
+      ],
+      "boxes": [
+        [
+          76.34207153320312,
+          6.604705810546875,
+          881.49755859375,
+          1022.600830078125
+        ]
+      ]
+    }
+  ],
+  "style_excluded_from_primary_metrics": false,
+  "historical_mask": false,
+  "status": "native_detected",
+  "mask_fraction": 0.4470491409301758,
+  "selected_box": [
+    76.34207153320312,
+    6.604705810546875,
+    881.49755859375,
+    1022.600830078125
+  ],
+  "mask_sha256": "f951adf2814f0bd457a7beee467752701c58119fc43102e00f7e0941ac4510f4"
+}
