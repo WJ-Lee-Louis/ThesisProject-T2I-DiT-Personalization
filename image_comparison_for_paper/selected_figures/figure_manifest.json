@@ -1,0 +1,1276 @@
+{
+  "font": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+  "bold_font": "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+  "bold_labels": [
+    "VIP-Adapter",
+    "(Ours)"
+  ],
+  "italic_font": "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
+  "prompt_italic": true,
+  "colors": {
+    "identity": "#0070C0",
+    "requested_change": "#FF0000",
+    "general": "#000000"
+  },
+  "png_dpi": 288,
+  "cases": [
+    {
+      "benchmark": "dreambench",
+      "case_id": "016-21",
+      "ours_scale": "0.8",
+      "baseline_scale": "0.7",
+      "identity": "dog",
+      "category": "animal",
+      "prompt": "a purple dog",
+      "prompt_spans": [
+        [
+          "a ",
+          "#000000"
+        ],
+        [
+          "purple",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "dog",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench__dog8.jpg",
+      "reference_sha256": "1994030da6d469b983f04c3e0161f49fb5b3b0a261d5f7dc56aefaed1ae74d8f",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench/016-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "f6f6cd4cb3eba218fbd6d0ca06efbeffe47e94d0d66cee3af4a58cafa86ad219"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench/016-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "8e33eb496bcfd9710fd8c914b82654601645df2d4f98ca986d868fb61442f143"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench/016-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "91ada6323dec9922ad27fe9c0007b58c0bf80451d5130dc2622a5479f1a16e1c"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench/016-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "837840d699882955be1771a1c0a275ccd7019d862b91a10fe33e0fa47bbd2ce1"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench/016-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "c61b6229663c0e2a50664dda285ca4fd7dbb35f8e79c622c27e5c975381d960a"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.8",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.8/dreambench/016-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "e709b3134bf9f6d4af95de9b0c4b4d02091210660812d13bb9019f7b33b279d1"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench/016-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "4e0cf4982d4605c4eacf0a1cfcbd332775cddd945669d560eb076f884923428b"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench/016-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "0ec6c4f1e609b5b70f65b63854a16eee29b39d1537058546f67553648bc7a0b4"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench/016-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "2f4a2a581df747d05fe7f7e3bc19f0cf076124c16cf00e8d1337b98d2d125650"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench/016-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "064f84637a430e023a832423b580eefba8c88cd29aef053d851f0fa1e899b084"
+        }
+      ],
+      "png": "selected_figures/dreamBench/016-21.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench",
+      "case_id": "015-21",
+      "ours_scale": "0.7",
+      "baseline_scale": "0.7",
+      "identity": "dog",
+      "category": "animal",
+      "prompt": "a purple dog",
+      "prompt_spans": [
+        [
+          "a ",
+          "#000000"
+        ],
+        [
+          "purple",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "dog",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench__dog7.jpg",
+      "reference_sha256": "c8dc22728777cf4be26f5f527b6d96a26a61d5c35dbccb1e0ef9fceb6d107fe8",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench/015-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "3278e2dbdcecedf48f5fd3dfd6537cee58deca9ed9626e3ed45c021c6450a0f6"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench/015-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "9c6ebf61879d05c6a30eca6ddf4d5a2343c35a1c3eb0ea09fa9ae60f15ba6df7"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench/015-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "4ea6dcb13c4396b1f4b94e62c53811c250afaf992e47430c3f5f5e91de34c3e7"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench/015-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "cc3c3c53aa9c0274851235dac49ba71013cbcb118cd76e630e98427b45b6f004"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench/015-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "41892ba7659a4ceee426c37551e864c9b82227de8e8f5e8e271be75766ac72d5"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench/015-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "be644112169687bd8acc68fbd3e81d24ab6654ffed1aa5d5fbb800250b324183"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench/015-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "f7b2fa37031a7cad65f7b8c8bd7a43d2da4fe2ee8e6fbfb44f89555930973a11"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench/015-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "8baa0c97bf84abcd977d90eeba461e547ff3610f335475d3cec62fe56c55c376"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench/015-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "4ed5e9e7bf2bab68748485be422a82b3f2f6950134bbe3af80d3d264f8d2ca69"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench/015-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "2fc5af523d62d01c08d548ff490bf67f63f22a35a6d6f2457389df520b957845"
+        }
+      ],
+      "png": "selected_figures/dreamBench/015-21.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench",
+      "case_id": "014-21",
+      "ours_scale": "0.8",
+      "baseline_scale": "0.7",
+      "identity": "dog",
+      "category": "animal",
+      "prompt": "a purple dog",
+      "prompt_spans": [
+        [
+          "a ",
+          "#000000"
+        ],
+        [
+          "purple",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "dog",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench__dog6.jpg",
+      "reference_sha256": "ff206a9787229e33e6fdc0810ed902531f7a18b0ddb42e9529d8a605895bcb9e",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench/014-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "7f04853437dbba757a715b0504aae33d12a4ebc87010a3cf652cf0c0e34fd3ed"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench/014-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "2a64587b50b30ded681f1bd0d30076c5a29c984efbee811b0aa46cd7d4795e5f"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench/014-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "f67612eb4c9c8f3cfc02bae4061f72e5a3986ebf92ee75288b7f9322fd17783a"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench/014-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "cf00ccbd6f0e76c64cb1387c9c93bf8d3b08905c33b56947659e2a6d2a160721"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench/014-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "1fae83dab9acaff72241f6805bc14a2c0606359776d6690e5112949b2c89e78f"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.8",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.8/dreambench/014-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "3a2466b909cc8ba176fd280480d73770577f4a5dd0054770fc03b70b70c3a026"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench/014-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "4bc672c774c0fb0a75e3d3dc57659c1470f6f793a4989aa3e6bd68355782c137"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench/014-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "82a0358d1ac2992feb37492c1eecad3014a97f1fe45046c64673ed5527cabd21"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench/014-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "90f02d4418bdf5777c3f98d12b2760f7810f9f6e4821dd31ddb9da86ae3fc7a9"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench/014-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "eac39a7facf6338e2c6b499fd3cdbc7824b814187aa13626fb7a26dcd8e82844"
+        }
+      ],
+      "png": "selected_figures/dreamBench/014-21.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench",
+      "case_id": "013-21",
+      "ours_scale": "0.8",
+      "baseline_scale": "0.7",
+      "identity": "dog",
+      "category": "animal",
+      "prompt": "a purple dog",
+      "prompt_spans": [
+        [
+          "a ",
+          "#000000"
+        ],
+        [
+          "purple",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "dog",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench__dog5.jpg",
+      "reference_sha256": "42e96a78608ec2644115b964f5f97ddc48d099f5c458863a7070f4c83aab1a90",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench/013-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "00a0c69d65ca9f55130cb89afccafab5a275e6c405071f4a8c1413ef234a9c15"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench/013-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "28f08b85f86341ddb4d98ed9dff73dc8545703f7d665339596e20e3f557e237f"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench/013-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "6b06b64251175350114d58e8fdbf4fdfa0a313c0e23115fcea35098966231396"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench/013-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "6f1fcc3ba9b86c83464722b39fcc0ca4ecab40614dfe75ae1b6692b6ac136708"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench/013-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "dd4aac701189a7bc90da0a7a9b1d599631418995bded50000ed791d24c374419"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.8",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.8/dreambench/013-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "f59d60b4762208be60d1feff1fef722549a9436e10e5ee648010a1b7c131ae77"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench/013-21.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "5a4e9e4a5da2d97b88ec2b9efb8809520657db25f96ad645a5042eb9bf0054ed"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench/013-21.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "62ac23ef74851399658e6d5ae28db9f55c2ceb35967d62eddb33c67e5277471b"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench/013-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "f7b2a7772f4088169b16df0e7eaadbcdbaebf03a43c37f5401913f1f20e526e5"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench/013-21.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "82be1b5fddd34ec00c0947d3fb716dfa106895caaef8f397d5153d616770e8fd"
+        }
+      ],
+      "png": "selected_figures/dreamBench/013-21.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "case_id": "177-08",
+      "ours_scale": "0.7",
+      "baseline_scale": "0.7",
+      "identity": "cosmic nebula",
+      "category": "style",
+      "prompt": "A ancient sailboat navigating through a sea of stars and nebulae in cosmic nebula style",
+      "prompt_spans": [
+        [
+          "A ",
+          "#000000"
+        ],
+        [
+          "ancient sailboat navigating through a sea of stars and nebulae",
+          "#FF0000"
+        ],
+        [
+          " in ",
+          "#000000"
+        ],
+        [
+          "cosmic nebula",
+          "#0070C0"
+        ],
+        [
+          " style",
+          "#000000"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__style__17.jpg",
+      "reference_sha256": "c1139e8f8e061be3be09bed6c56c9c78ca453e639683a71fb185cbc313ad748a",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench_plus/177-08.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "b20300ffe7ac41bca7ca6db1eb822a8b2828e33b32884d265b5c28f4a9650565"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench_plus/177-08.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "2744c8e0ce5d60c0d5a33ff1f6ebd3c042755dcec4fc00dbc102858d11940f54"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench_plus/177-08.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "22636857978fc057e3ddfbd0c6c2e44418c0de3f5d481e7fef5906d61446dbe2"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench_plus/177-08.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "43d91039cf83f90eeea9674b5f05d89cc6fc4378807e9034cb5df13cfa71ea6f"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench_plus/177-08.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "24dbe2c1b5a3c3ce9d14edcda2e7f281f1f944310ed5e80e1d7889439ae9a1ff"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench_plus/177-08.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "b8604110fd40c5ca6a8962c1905259587e453e8b1c49f6e46fddb8a739d080b9"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/177-08.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "a5bd9cd1deed9258dbdd19e373b786c5dcc4dfee251958a3c13f3f7aaac55c0e"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench_plus/177-08.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "06de0386cbab45e40a999834957c42e673e0fe5b3eeb273a94ff289549853074"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        }
+      ],
+      "png": "selected_figures/dreambench_plus/177-08.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "case_id": "166-05",
+      "ours_scale": "0.7",
+      "baseline_scale": "0.7",
+      "identity": "volcanic landscape",
+      "category": "style",
+      "prompt": "A forest recovering after a volcanic eruption, with new growth sprouting through ash, in the style of a volcanic landscape",
+      "prompt_spans": [
+        [
+          "A ",
+          "#000000"
+        ],
+        [
+          "forest recovering after a volcanic eruption",
+          "#FF0000"
+        ],
+        [
+          ", with ",
+          "#000000"
+        ],
+        [
+          "new growth sprouting through ash",
+          "#FF0000"
+        ],
+        [
+          ", in the style of a ",
+          "#000000"
+        ],
+        [
+          "volcanic landscape",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__style__06.jpg",
+      "reference_sha256": "e253ca9d176628d0990b776afe63e2850b11032a6c451b265fc149ce00c7933c",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench_plus/166-05.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "31b421093c9eadd22e77f3889fd4972199529d5e53c47e940690d07469429606"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench_plus/166-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "744316be7cddabef71b379a81b6e227a84ac66be81932dc10118773d4bc59e24"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench_plus/166-05.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "0b08ee9fc50cbbf9a6915ea99d59d46195a576018d7381abc14ada4d66438019"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench_plus/166-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "7ae8a720dcb80df9424e54c79e92b9b503b7a62464bf372b5dbddd96bd1f2569"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench_plus/166-05.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "0e1d550d1b5282888be433ce74b32c97548fae31be2d3462ebbac2d63ee8e8a7"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench_plus/166-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "f4e02d434bfe1c745e055337b7ffc424cdeee6083d9275c67b5af6af37c508af"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/166-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "0059aaf564e181f1f511526d91e5bda935f891efacf98625897369ade7f39abd"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench_plus/166-05.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "27341b08c7420bb6e1b77cee2d118e877788feb3ae4b8f83b712d85ba6870c5d"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        }
+      ],
+      "png": "selected_figures/dreambench_plus/166-05.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "case_id": "164-03",
+      "ours_scale": "0.7",
+      "baseline_scale": "0.7",
+      "identity": "Impressionist swirls",
+      "category": "style",
+      "prompt": "A serene lakeside at sunset, depicted with vibrant Impressionist swirls",
+      "prompt_spans": [
+        [
+          "A ",
+          "#000000"
+        ],
+        [
+          "serene lakeside at sunset",
+          "#FF0000"
+        ],
+        [
+          ", depicted with ",
+          "#000000"
+        ],
+        [
+          "vibrant",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "Impressionist swirls",
+          "#0070C0"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__style__04.jpg",
+      "reference_sha256": "3b52f47779ff3329c6fc5fd928f94c6b7a0068a6931920ce965b0afbc760f4cd",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench_plus/164-03.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "e816d5c4f9c7c06e92222564fbeecaf4d59640a8317295c28c8a3c32d42642fb"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench_plus/164-03.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "29ea4573edab70a7666439e919c7224fe60778f40230309bf5644ff2a0b55fb2"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench_plus/164-03.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "f9419c4e0d5124a6a769c75dd4ebcd1b8c01d7529b1b9a3f8c0eaac01f21898b"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench_plus/164-03.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "d611605fca2868b717a204c7aa11fde8be64d7868e0cadedd159412402a0de2d"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench_plus/164-03.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "0920cd27bd7039c851b51b79ff6eb903b9c551623a6c0008719ff4fc7d500abe"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench_plus/164-03.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "a10ca5d93cc199e7131ea34f3530603543c7745002cd1d10d8af4a96e19b704c"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/164-03.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "59a469afb3f385c7ae3a3ac6b685020a70f5a576f10328b4b0f522401697c46e"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench_plus/164-03.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "4cf4d2d0dfc3225b90171a84e5810c765a47bc8bf9e2b319c791afadfb6d5932"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "(impossible)",
+          "dimensions": null,
+          "sha256": null
+        }
+      ],
+      "png": "selected_figures/dreambench_plus/164-03.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "case_id": "103-02",
+      "ours_scale": "0.6",
+      "baseline_scale": "0.7",
+      "identity": "tree",
+      "category": "object",
+      "prompt": "A detailed photograph of a cherry tree in full blossom against a clear blue sky",
+      "prompt_spans": [
+        [
+          "A detailed photograph of a ",
+          "#000000"
+        ],
+        [
+          "cherry",
+          "#FF0000"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "tree",
+          "#0070C0"
+        ],
+        [
+          " in ",
+          "#000000"
+        ],
+        [
+          "full blossom",
+          "#FF0000"
+        ],
+        [
+          " against a ",
+          "#000000"
+        ],
+        [
+          "clear blue sky",
+          "#FF0000"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__object__08.jpg",
+      "reference_sha256": "7e1ff0b4902008e9a1e70a8354fcae73cd2ca63bb4268307448d706ce0b325ca",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench_plus/103-02.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "b2f5c8e312f75a08c9c481f8cc4ebf4f0ea3246bb01edef4b47a0ecbbc2bf5e5"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench_plus/103-02.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "9399baa283e66112ab9264a1444e927e938618f3fca85e2935b58b9455f269ba"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench_plus/103-02.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "f2156af3b058e70a3be96ef2735c5011767fe7dcb246e4dbaa8ee597927461e1"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench_plus/103-02.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "aeb76a540aa2613b981b3fabf7d9480bfdef9621850f96774b65bda1e638d537"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench_plus/103-02.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "12f282c1776ab6c0ff8d6f5556c906f25bbd840713f80dedeed2d7ab313e9af5"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.6",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.6/dreambench_plus/103-02.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "3d54377bc1cc64c548dcf253b32e1036b556b0ebb8c54914fc21085df4c7cbea"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/103-02.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "1816cde68dca5d52b9ce0e7b6c68fd4685de6c03f4db23111086fadc4928e26d"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench_plus/103-02.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "c8154a629753e58cc4b56582ec8772b866d13f77b5e0ed58a692a771b018a85f"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench_plus/103-02.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "4dc3a05c378ad95dfd95c531289a8d5680d137d7e708358c42e966ef35b3e383"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench_plus/103-02.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "b8d46904de008b6dd6dfcdf9e1d3ba387c046a8e2e8bbdc21c5fd98e7b765a62"
+        }
+      ],
+      "png": "selected_figures/dreambench_plus/103-02.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    },
+    {
+      "benchmark": "dreambench_plus",
+      "case_id": "043-04",
+      "ours_scale": "0.7",
+      "baseline_scale": "0.7",
+      "identity": "polar bear",
+      "category": "animal",
+      "prompt": "An anime-style illustration of a polar bear wearing a scarf and sipping hot chocolate",
+      "prompt_spans": [
+        [
+          "An ",
+          "#000000"
+        ],
+        [
+          "anime-style illustration",
+          "#FF0000"
+        ],
+        [
+          " of a ",
+          "#000000"
+        ],
+        [
+          "polar bear",
+          "#0070C0"
+        ],
+        [
+          " ",
+          "#000000"
+        ],
+        [
+          "wearing a scarf",
+          "#FF0000"
+        ],
+        [
+          " and ",
+          "#000000"
+        ],
+        [
+          "sipping hot chocolate",
+          "#FF0000"
+        ]
+      ],
+      "reference": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__live_subject__animal__13.jpg",
+      "reference_sha256": "adc13d40c224da073685030f4ceb29a1a1a8b408d536209ca4c05f0fc5e560f4",
+      "sources": [
+        {
+          "label": "UNO",
+          "method": "UNO_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/UNO_512/dreambench_plus/043-04.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "a94d96e8dc0e5d0f569532e7509afbd6cc786d94fca29e256222bd9d1bc4d99b"
+        },
+        {
+          "label": "DreamO",
+          "method": "DreamO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/DreamO_1024/dreambench_plus/043-04.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "4c754db41b0bdb71f31ee941772239acb18623d25c4eaab9d6e689d2081961e6"
+        },
+        {
+          "label": "XVerse",
+          "method": "XVerse_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/XVerse_768/dreambench_plus/043-04.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "929ec32350767fbcf726b397f2265e81c52785ba0d339241e990cc7240b4a84f"
+        },
+        {
+          "label": "USO",
+          "method": "USO_1024",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/USO_1024/dreambench_plus/043-04.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "1b46e66d4297a6559cbad106faa524958250cca61bc200cac6213bf26657da28"
+        },
+        {
+          "label": "MOSAIC",
+          "method": "MOSAIC_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/MOSAIC_512/dreambench_plus/043-04.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "2780f19e6a7c2420c12e692ce6fc5469b200f3b81f764048576e9075d24d96f8"
+        },
+        {
+          "label": "VIP-Adapter\n(Ours)",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench_plus/043-04.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "81d1e4006c788586ee3c29ca40ccded6c0a08df8977b861bfdb4fc1799bdbc03"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/043-04.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "c31734506d5906336b1c498edf41e2f9f6e117756798177d396eedea547a4f0e"
+        },
+        {
+          "label": "Diptych\nPrompting",
+          "method": "Diptych_768",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Diptych_768/dreambench_plus/043-04.png",
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "c83e98480bcdd041d173063a585f99ad1558f54c0ec941f253502f6165cf52e7"
+        },
+        {
+          "label": "FreeCus",
+          "method": "FreeCus_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeCus_512/dreambench_plus/043-04.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "dee644df234b278b4f86b0c0c0d0adddac97dcdc5517c01c5f49a7b7798d13c7"
+        },
+        {
+          "label": "FreeGraftor",
+          "method": "FreeGraftor_512",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/FreeGraftor_512/dreambench_plus/043-04.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "1ed560bcca246932ae0d859b2f1ead75f31c10c7ce8e26ccc9a7bc32a95d5c06"
+        }
+      ],
+      "png": "selected_figures/dreambench_plus/043-04.png",
+      "png_dimensions": [
+        4752,
+        2560
+      ]
+    }
+  ]
+}

@@ -7,6 +7,14 @@ venv/
 !.env.example
 *.pem
 *.key
+.DS_Store
+
+# Keep the 2,100 full comparison grids local; retain scripts and selected figures.
+/image_comparison_for_paper/dreamBench/*.png
+/image_comparison_for_paper/dreambench_plus/*.png
+# Selected figures have one final PNG per case.
+/image_comparison_for_paper/selected_figures/**/*.pdf
+/image_comparison_for_paper/selected_figures/**/*_preview.png
 
 # Isolated 512 run: keep generated data and transient client inputs outside Git.
 /freecus/outputs/modal512-*/

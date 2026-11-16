@@ -1,0 +1,38 @@
+{
+  "total_grids": 2100,
+  "methods": [
+    "FreeCus_512",
+    "FreeGraftor_512",
+    "DreamO_1024",
+    "UNO_512",
+    "USO_1024",
+    "XVerse_768",
+    "Diptych_768",
+    "MOSAIC_512",
+    "XLabs_baseline_scale_1.0",
+    "XLabs_Ours_scale_1.0",
+    "baseline_scale0.7",
+    "baseline_scale0.8",
+    "baseline_scale0.9",
+    "ablation_source_only_scale0.7",
+    "ablation_target_only_scale0.7",
+    "ablation_source_target_scale0.7",
+    "ablation_ssg_only_scale0.7",
+    "Ours_scale0.6",
+    "Ours_scale0.7",
+    "Ours_scale0.8",
+    "Ours_scale0.9",
+    "Ours_scale1.0"
+  ],
+  "font": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+  "dimensions": [
+    2480,
+    2054
+  ],
+  "counts": {
+    "dreamBench": 750,
+    "dreambench_plus": 1350
+  },
+  "impossible_cells": 360,
+  "all_pngs_verified": true
+}

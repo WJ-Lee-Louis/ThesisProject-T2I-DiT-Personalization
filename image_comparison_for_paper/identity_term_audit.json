@@ -1,0 +1,291 @@
+{
+  "review_date": "2026-11-16",
+  "all_nine_identity_terms_match": true,
+  "notes": [
+    "Figure identities were initially written as explicit constants, not automatically extracted from Ours execution records. This audit verifies them against the selected-scale records.",
+    "DreamBench subject IDs dog5/dog6/dog7/dog8 differ from the class/identity term dog.",
+    "DreamBench++ label provenance is recorded in the semantic benchmark ledger. Original caption text files are absent locally, so their first lines were not independently re-read.",
+    "Prompt color annotations are editorial annotations and are not exact LLM contrast output. In 103-02 detailed photograph is black although the LLM lists detailed photograph representation as a target change.",
+    "No figure pixels or labels were changed during this audit."
+  ],
+  "cases": [
+    {
+      "case_id": "016-21",
+      "ours_scale": "0.8",
+      "identities": {
+        "figure": "dog",
+        "execution_row": "dog",
+        "llm_input": "dog",
+        "caption_record": "dog",
+        "contrast_output": "dog",
+        "benchmark_ledger": "dog"
+      },
+      "reference_id": "dreambench/dog8",
+      "subject_id": "dog8",
+      "execution_record": "Ours_scale0.8/execution_records/images/dreambench/016-21.json",
+      "execution_record_sha256": "b5657bdde7863b1e8f34945dee5e5c232932ec81be828a2fc414e0bfc1aa8e6e",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/dreambench_uno/manifest.json",
+      "label_source_available_locally": true,
+      "llm_target_units": [
+        {
+          "unit": "purple coat color",
+          "negative": "a dog"
+        }
+      ]
+    },
+    {
+      "case_id": "015-21",
+      "ours_scale": "0.7",
+      "identities": {
+        "figure": "dog",
+        "execution_row": "dog",
+        "llm_input": "dog",
+        "caption_record": "dog",
+        "contrast_output": "dog",
+        "benchmark_ledger": "dog"
+      },
+      "reference_id": "dreambench/dog7",
+      "subject_id": "dog7",
+      "execution_record": "Ours_scale0.7/execution_records/dreambench/015-21.json",
+      "execution_record_sha256": "5cbd877cba47afa4ac9f054d06a1d426509f2f1563f893e0a25458ce9a5c7e8f",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/dreambench_uno/manifest.json",
+      "label_source_available_locally": true,
+      "llm_target_units": [
+        {
+          "unit": "purple body color",
+          "negative": "a dog"
+        }
+      ]
+    },
+    {
+      "case_id": "014-21",
+      "ours_scale": "0.8",
+      "identities": {
+        "figure": "dog",
+        "execution_row": "dog",
+        "llm_input": "dog",
+        "caption_record": "dog",
+        "contrast_output": "dog",
+        "benchmark_ledger": "dog"
+      },
+      "reference_id": "dreambench/dog6",
+      "subject_id": "dog6",
+      "execution_record": "Ours_scale0.8/execution_records/images/dreambench/014-21.json",
+      "execution_record_sha256": "5a7f5520726515c61e4cabb5eb19dbeff10989f1e0768f6c119d8b303f8f0752",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/dreambench_uno/manifest.json",
+      "label_source_available_locally": true,
+      "llm_target_units": [
+        {
+          "unit": "purple body color",
+          "negative": "a dog"
+        }
+      ]
+    },
+    {
+      "case_id": "013-21",
+      "ours_scale": "0.8",
+      "identities": {
+        "figure": "dog",
+        "execution_row": "dog",
+        "llm_input": "dog",
+        "caption_record": "dog",
+        "contrast_output": "dog",
+        "benchmark_ledger": "dog"
+      },
+      "reference_id": "dreambench/dog5",
+      "subject_id": "dog5",
+      "execution_record": "Ours_scale0.8/execution_records/images/dreambench/013-21.json",
+      "execution_record_sha256": "fc0793736bd5b0f1565b440a2e9efa84559484e5bf4c800b77977718957636e7",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/dreambench_uno/manifest.json",
+      "label_source_available_locally": true,
+      "llm_target_units": [
+        {
+          "unit": "purple coat color",
+          "negative": "a dog"
+        }
+      ]
+    },
+    {
+      "case_id": "177-08",
+      "ours_scale": "0.7",
+      "identities": {
+        "figure": "cosmic nebula",
+        "execution_row": "cosmic nebula",
+        "llm_input": "cosmic nebula",
+        "caption_record": "cosmic nebula",
+        "contrast_output": "cosmic nebula",
+        "benchmark_ledger": "cosmic nebula"
+      },
+      "reference_id": "dreambench_plus/style/17",
+      "subject_id": "style/17",
+      "execution_record": "Ours_scale0.7/execution_records/dreambench_plus/177-08.json",
+      "execution_record_sha256": "bbe10cee010b44f33ad6aaf2d6a64477f7651981920396a0770d44e7d31816c8",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/17.txt",
+      "label_source_available_locally": false,
+      "llm_target_units": [
+        {
+          "unit": "ancient age",
+          "negative": "A sailboat navigating through a sea of stars and nebulae in cosmic nebula style"
+        },
+        {
+          "unit": "depicted sailboat",
+          "negative": "cosmic nebula style"
+        },
+        {
+          "unit": "navigation through a sea of stars and nebulae",
+          "negative": "An ancient sailboat in cosmic nebula style"
+        }
+      ]
+    },
+    {
+      "case_id": "166-05",
+      "ours_scale": "0.7",
+      "identities": {
+        "figure": "volcanic landscape",
+        "execution_row": "volcanic landscape",
+        "llm_input": "volcanic landscape",
+        "caption_record": "volcanic landscape",
+        "contrast_output": "volcanic landscape",
+        "benchmark_ledger": "volcanic landscape"
+      },
+      "reference_id": "dreambench_plus/style/06",
+      "subject_id": "style/06",
+      "execution_record": "Ours_scale0.7/execution_records/dreambench_plus/166-05.json",
+      "execution_record_sha256": "5ee50a2978c5eab52f296a253527951fd28ef6424dc34ce5cd4cc42bc65fbea4",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/06.txt",
+      "label_source_available_locally": false,
+      "llm_target_units": [
+        {
+          "unit": "recovering forest after an eruption",
+          "negative": "New growth sprouting through ash, in the style of a volcanic landscape"
+        },
+        {
+          "unit": "new growth sprouting through ash",
+          "negative": "A forest recovering after a volcanic eruption, in the style of a volcanic landscape"
+        }
+      ]
+    },
+    {
+      "case_id": "164-03",
+      "ours_scale": "0.7",
+      "identities": {
+        "figure": "Impressionist swirls",
+        "execution_row": "Impressionist swirls",
+        "llm_input": "Impressionist swirls",
+        "caption_record": "Impressionist swirls",
+        "contrast_output": "Impressionist swirls",
+        "benchmark_ledger": "Impressionist swirls"
+      },
+      "reference_id": "dreambench_plus/style/04",
+      "subject_id": "style/04",
+      "execution_record": "Ours_scale0.7/execution_records/dreambench_plus/164-03.json",
+      "execution_record_sha256": "5e434933135671e4af8c93b915e1073b5463dc5e4dfc2bbb133afa5c47c168cb",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/style/04.txt",
+      "label_source_available_locally": false,
+      "llm_target_units": [
+        {
+          "unit": "serene mood",
+          "negative": "A lakeside at sunset, depicted with vibrant Impressionist swirls"
+        },
+        {
+          "unit": "lakeside scene",
+          "negative": "vibrant Impressionist swirls"
+        },
+        {
+          "unit": "sunset timing",
+          "negative": "A serene lakeside, depicted with vibrant Impressionist swirls"
+        },
+        {
+          "unit": "vibrant swirl quality",
+          "negative": "A serene lakeside at sunset, depicted with Impressionist swirls"
+        }
+      ]
+    },
+    {
+      "case_id": "103-02",
+      "ours_scale": "0.6",
+      "identities": {
+        "figure": "tree",
+        "execution_row": "tree",
+        "llm_input": "tree",
+        "caption_record": "tree",
+        "contrast_output": "tree",
+        "benchmark_ledger": "tree"
+      },
+      "reference_id": "dreambench_plus/object/08",
+      "subject_id": "object/08",
+      "execution_record": "Ours_scale0.6/execution_records/images/dreambench_plus/103-02.json",
+      "execution_record_sha256": "57a1c83ecc763fd07a5ebd4db57b41548aca395b5a377da67eaa14f08f7d4d62",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/object/08.txt",
+      "label_source_available_locally": false,
+      "llm_target_units": [
+        {
+          "unit": "detailed photograph representation",
+          "negative": "A cherry tree in full blossom against a clear blue sky"
+        },
+        {
+          "unit": "cherry variety",
+          "negative": "A detailed photograph of a tree in full blossom against a clear blue sky"
+        },
+        {
+          "unit": "full blossom state",
+          "negative": "A detailed photograph of a cherry tree against a clear blue sky"
+        },
+        {
+          "unit": "clear blue sky background",
+          "negative": "A detailed photograph of a cherry tree in full blossom"
+        }
+      ]
+    },
+    {
+      "case_id": "043-04",
+      "ours_scale": "0.7",
+      "identities": {
+        "figure": "polar bear",
+        "execution_row": "polar bear",
+        "llm_input": "polar bear",
+        "caption_record": "polar bear",
+        "contrast_output": "polar bear",
+        "benchmark_ledger": "polar bear"
+      },
+      "reference_id": "dreambench_plus/live_subject/animal/13",
+      "subject_id": "live_subject/animal/13",
+      "execution_record": "Ours_scale0.7/execution_records/dreambench_plus/043-04.json",
+      "execution_record_sha256": "77e56b716579785b4ccb98dbf1d8fcb4ed8465cd36482480a760cd647f8735f6",
+      "source_png_sha256_verified": true,
+      "reference_bytes_sha256_verified": true,
+      "label_source": "datasets/XVerseBench/dreambench_plus_raw/extracted/data/captions/live_subject/animal/13.txt",
+      "label_source_available_locally": false,
+      "llm_target_units": [
+        {
+          "unit": "anime-style illustration",
+          "negative": "A polar bear wearing a scarf and sipping hot chocolate"
+        },
+        {
+          "unit": "wearing a scarf",
+          "negative": "An anime-style illustration of a polar bear sipping hot chocolate"
+        },
+        {
+          "unit": "sipping hot chocolate",
+          "negative": "An anime-style illustration of a polar bear wearing a scarf"
+        }
+      ]
+    }
+  ]
+}
