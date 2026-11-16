@@ -1,0 +1,37 @@
+% Shared standalone preview settings. Use XeLaTeX, LuaLaTeX, or Tectonic.
+\usepackage[paperwidth=220mm,paperheight=310mm,margin=12mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Times New Roman}
+}{
+  % Overleaf fallback: Times-compatible text when proprietary TNR is unavailable.
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Termes}
+}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\setmathfont{texgyretermes-math.otf}
+\usepackage{booktabs,array}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\captionsetup[algorithm]{font=normalsize,labelfont=bf,labelsep=space}
+\floatname{algorithm}{Algorithm}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\algrenewcommand\algorithmiccomment[1]{\hfill\(\triangleright\)\;#1}
+\algrenewcommand\alglinenumber[1]{\footnotesize #1:}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\unit}{\nu_{\varepsilon}}
+\newcommand{\Eimg}{E_{\mathrm{SigLIP}}^{\mathrm{img}}}
+\newcommand{\Etxt}{E_{\mathrm{SigLIP}}^{\mathrm{txt}}}
+\newcommand{\Cref}{\mathbf C_{\mathrm{ref}}}
+\newcommand{\vref}{\mathbf v_{\mathrm{ref}}}
+\newcommand{\vclean}{\mathbf v_{\mathrm{clean}}}
+\newcommand{\IPAttn}{\operatorname{IPAttn}}
+\newcommand{\JointAttn}{\operatorname{JointAttn}}
+\newcommand{\SelfAttn}{\operatorname{SelfAttn}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}

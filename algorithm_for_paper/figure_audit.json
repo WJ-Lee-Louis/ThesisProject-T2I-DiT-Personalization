@@ -1,0 +1,55 @@
+{
+  "engine": "/private/tmp/thesis-tectonic/tectonic",
+  "figures": [
+    {
+      "png": "vip_adapter_algorithm.png",
+      "dimensions": [
+        3148,
+        3343
+      ],
+      "dpi": 400,
+      "fonts": [
+        "BZIVMZ+TimesNewRomanPSMT",
+        "IHAIZV+TimesNewRomanPS-BoldMT",
+        "IXFAWU+TeXGyreTermesMath-Regular-Identity-H"
+      ],
+      "sha256": "ec34d9adfc90833f3045f22b5c66e9b303f1d75418ebe95fb892bb0d0cc061d3",
+      "single_page": true,
+      "latex_overflow_checks_passed": true
+    },
+    {
+      "png": "vip_adapter_preliminaries.png",
+      "dimensions": [
+        3149,
+        3371
+      ],
+      "dpi": 400,
+      "fonts": [
+        "BZIVMZ+TimesNewRomanPSMT",
+        "IHAIZV+TimesNewRomanPS-BoldMT",
+        "IXFAWU+TeXGyreTermesMath-Regular-Identity-H",
+        "TQTHRL+TimesNewRomanPS-ItalicMT"
+      ],
+      "sha256": "19b56bfcb7febff3ed7a35e78f03b196e996a781616b76e13f5e582e792f7a1d",
+      "single_page": true,
+      "latex_overflow_checks_passed": true
+    }
+  ],
+  "latex_sources": {
+    "vip_adapter_algorithm.tex": "51ca23a4587e3150e8400f40ceb7b2d54f883b805b0997671af9d8b037a295d3",
+    "vip_adapter_preliminaries_body.tex": "8024465e9c5b025e1c9129fbf6a6cfa30ee6aca258d42245c9ee7d3ec84147de",
+    "vip_adapter_preliminaries.tex": "923ed7bcb6535f57c4292eca90570b66c361c2b62bbbb400ab0e9f716d45f4b6",
+    "paper_preamble.tex": "c11f572809c4c238f436b4b2f0ec8975f762360667d547ac1646e2912fe3e41d",
+    "vip_adapter_algorithm_body.tex": "d4f93300b21d1d5f4b3508e570deda1437ccce64f23725c7a6e97e45e47263bb"
+  },
+  "implementation_sources": {
+    "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/contrast_directions.py": "caa42cb3a9471f1755f068860c2977fb10953a0e64c4ff9e436c5c12abb23564",
+    "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/orthogonalization.py": "05f5b738ad1fb049ce222ebd4850e881c565d075efb3a0647219aa4376d462bb",
+    "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/adapter.py": "affec1425ce706b7763b67b73bd17413bba5d5d101d91c6c65a1887c6dda9d80",
+    "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/attention_processor.py": "02a4ea549d9fb31b7e546d77400128dca0c439ac49ca2637f224c8f298b6f31f",
+    "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/semantic_contrasts.py": "6dabedcec16b5f3e0885ed1546af9fde61029b45649a3a02aa378262e9d5f962",
+    "Orthogonalization-InstantX-IP-Adapter/docs/prompts/module_a_caption_system_prompt.md": "9f83febdb6399cd8930bf678ebccc4138105656660267a38b362194e6899b1dd",
+    "Orthogonalization-InstantX-IP-Adapter/docs/prompts/module_b_contrast_system_prompt.md": "db6cfcabf8233f5874134ecac5073ebb68e39262a40a65bef2912420b99b4914"
+  },
+  "scope": "semantic_local source+target conditioning with single-stream gate; frozen pretrained models"
+}

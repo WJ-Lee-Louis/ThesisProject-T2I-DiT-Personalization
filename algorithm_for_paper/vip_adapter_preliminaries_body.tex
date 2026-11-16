@@ -1,0 +1,83 @@
+\textbf{Preliminaries and notation for VIP-Adapter}
+
+\textbf{1. Frozen reference conditioning.}
+Let $I_{\mathrm{ref}}$ be the reference image, $y$ the original target prompt, and
+$\iota$ the supplied identity term (a subject, style, or visual concept).
+The frozen SigLIP encoders map images and text into a shared $d$-dimensional
+pooled-feature space. The pretrained IP-Adapter projector maps a pooled visual
+feature to $m$ image-conditioning tokens:
+\begin{equation}
+\vref=\Eimg(I_{\mathrm{ref}})\in\mathbb R^d,\qquad
+\Cref=P_{\phi}(\vref)\in\mathbb R^{m\times d_c}.
+\end{equation}
+The original adapter is recovered when the proposed projection and gate are
+disabled. The evaluated InstantX adapter uses $m=128$ tokens.
+
+\textbf{2. Local semantic contrasts.}
+A vision-language module $\mathcal A$ produces a caption $s$ and baseline
+preservation phrases $\mathcal P$ from $(I_{\mathrm{ref}},\iota)$ alone.
+A joint text module $\mathcal B$ reads $(s,y,\iota,\mathcal P)$ and constructs
+source and target removal sets $\mathcal N_s,\mathcal N_y$. Each $a^-$ removes
+one semantic unit from the full original $a\in\{s,y\}$ while preserving the
+identity and the remaining meaning. Normalized text contrasts define
+\begin{equation}
+\mathbf d(a,a^-)=\unit\!\left(\unit(\Etxt(a))-\unit(\Etxt(a^-))\right),\qquad
+\mathbf D=[\mathbf d_1,\ldots,\mathbf d_M].
+\end{equation}
+Here $\unit(\mathbf z)=\mathbf z/\norm{\mathbf z}$ when
+$\norm{\mathbf z}>\varepsilon$, and $\unit(\mathbf z)=\mathbf 0$ otherwise,
+matching the implementation's safe normalization.
+The same SigLIP text encoder is used for both source and target contrasts;
+it is distinct from the FLUX text encoders used for generation.
+
+\textbf{3. Joint subspace projection and norm restoration.}
+Compute $\mathbf D=\mathbf U\Sigma\mathbf V^{\top}$ and retain
+$\mathbf B=\mathbf U_{:,\{i:\sigma_i>\rho\sigma_1\}}$.
+With projection strength $\lambda\in[0,1]$, edit the pooled visual feature
+\emph{before} the pretrained image-token projector:
+\begin{equation}
+\mathbf u=\unit(\vref)-\lambda\mathbf B\mathbf B^{\top}\unit(\vref),\qquad
+\vclean=\norm{\vref}\,\unit(\mathbf u),\qquad
+\Cref=P_{\phi}(\vclean).
+\end{equation}
+Source and target directions are concatenated into one basis, rather than
+applied as two sequential projections. Empty or zero-rank direction sets give
+no subspace removal. In the implementation, a residual with norm at most
+$\varepsilon$ is returned as zero during norm restoration.
+
+\textbf{4. IP-attention and the single-stream gate.}
+$\mathcal T$ denotes the initial FLUX text conditioning; $\mathbf T,\mathbf X$
+denote the evolving text and latent-image states within a transformer block.
+For block $\ell$, let $\mathbf Q$ be the original IP-branch queries and
+$N_Q^{\ell},N_K^{\ell}$ the frozen per-head query/key normalizations.
+The frozen IP branch is
+\begin{equation}
+\begin{aligned}
+\mathbf K_{\mathrm{ref}}^{\ell}
+ &=N_K^{\ell}(\Cref\mathbf W_{K,\mathrm{IP}}^{\ell}),
+&\quad \mathbf V_{\mathrm{ref}}^{\ell}
+ &=\Cref\mathbf W_{V,\mathrm{IP}}^{\ell},\\
+\IPAttn_{\ell}(\mathbf Q,\Cref)
+ &=\operatorname{softmax}\!\left(
+ \frac{N_Q^{\ell}(\mathbf Q)(\mathbf K_{\mathrm{ref}}^{\ell})^{\top}}{\sqrt{d_h}}
+ \right)\mathbf V_{\mathrm{ref}}^{\ell}.
+\end{aligned}
+\end{equation}
+This is per-head notation; head concatenation is implicit. These IP queries are
+taken before the rotary positional encoding used by the base attention.
+In double-stream blocks, the original IP residual updates image-token rows only.
+In single-stream blocks, $\mathbf H=[\mathbf T;\mathbf X]$ contains text then
+latent-image tokens. The proposed deterministic gate is
+\begin{equation}
+\mathbf G=\operatorname{diag}(\mathbf 0_{n_T},\mathbf 1_{n_X}),\qquad
+\mathbf O=\SelfAttn_{\ell}(\mathbf H)
+ +\alpha\mathbf G\,\IPAttn_{\ell}(\mathbf Q_H,\Cref).
+\end{equation}
+The gate blocks only the \emph{direct IP residual} on text rows; joint text--image
+attention and indirect cross-modal interactions remain active.
+
+\textbf{5. Separate control parameters.}
+$\alpha$ is the IP-conditioning scale; $\lambda$ is the projection strength;
+$\rho$ is the relative SVD rank tolerance. They are not interchangeable.
+The selected scale-0.8 method uses $\alpha=0.8$, $\lambda=1$, $\rho=10^{-3}$,
+24 sampling steps, and guidance 3.5. All pretrained parameters stay frozen.

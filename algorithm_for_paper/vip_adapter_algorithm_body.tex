@@ -1,0 +1,52 @@
+% Overleaf-ready body: requires amsmath, algorithm, algpseudocode and the macros
+% defined in paper_preamble.tex. All model parameters are frozen.
+\begin{algorithm}[H]
+\caption{VIP-Adapter: semantic projection and gated IP conditioning}
+\label{alg:vip-adapter}
+\begin{algorithmic}[1]
+\Require Reference image $I_{\mathrm{ref}}$; target prompt $y$; identity term $\iota$;
+\Statex \hspace{\algorithmicindent} frozen FLUX--IP-Adapter, SigLIP encoders, and image projector $P_{\phi}$;
+\Statex \hspace{\algorithmicindent} IP scale $\alpha$; projection strength $\lambda$; SVD tolerance $\rho$;
+\Statex \hspace{\algorithmicindent} noise schedule $1=t_0>\cdots>t_N=0$; normalization tolerance $\varepsilon$.
+\Ensure Generated image $\widehat I$.
+\State $(s,\mathcal P)\gets\mathcal A(I_{\mathrm{ref}},\iota)$ \Comment{Caption and preservation phrases; no $y$}
+\State $(\mathcal N_s,\mathcal N_y)\gets\mathcal B(s,y,\iota,\mathcal P)$ \Comment{Joint, identity-preserving local removals}
+\State $\mathbf D\gets[\;]$ \Comment{Column-stacked directions in the shared SigLIP space}
+\For{$(a,\mathcal N_a)\in\{(s,\mathcal N_s),(y,\mathcal N_y)\}$}
+  \For{$a^-\in\mathcal N_a$}
+    \State $\mathbf d\gets\unit\!\left(\unit(\Etxt(a))-\unit(\Etxt(a^-))\right)$
+    \State $\mathbf D\gets[\mathbf D,\mathbf d]$
+  \EndFor
+\EndFor
+\State $\mathbf B\gets\operatorname{SVD}_{\rho}(\mathbf D)$ \Comment{One rank-filtered basis for both sides}
+\State $\vref\gets\Eimg(I_{\mathrm{ref}})$
+\State $\mathbf u\gets\unit(\vref)-\lambda\mathbf B\mathbf B^{\top}\unit(\vref)$
+\State $\vclean\gets\norm{\vref}\,\unit(\mathbf u)$ \Comment{Restore the original pooled-feature norm}
+\State $\Cref\gets P_{\phi}(\vclean)$; $\mathcal T\gets E_{\mathrm{FLUX}}^{\mathrm{txt}}(y)$
+\State Use \Call{GatedIPAttention}{$\ell,\mathbf T,\mathbf X,\Cref,\alpha$} in FLUX attention blocks.
+\State $\mathbf x_0\sim\mathcal N(\mathbf 0,\mathbf I)$
+\For{$k=0,\ldots,N-1$}
+  \State $\widehat{\mathbf v}_k\gets v_{\theta}(\mathbf x_k,t_k,\mathcal T,\Cref;\alpha)$
+  \State $\mathbf x_{k+1}\gets\mathbf x_k+(t_{k+1}-t_k)\widehat{\mathbf v}_k$ \Comment{Frozen flow sampler}
+\EndFor
+\State \Return $\widehat I\gets\operatorname{Decode}(\mathbf x_N)$
+\Statex
+\Function{GatedIPAttention}{$\ell,\mathbf T,\mathbf X,\Cref,\alpha$}
+  \If{$\ell$ is a double-stream block}
+    \State $(\mathbf O_T,\mathbf O_X)\gets\JointAttn_{\ell}(\mathbf T,\mathbf X)$
+    \State $\mathbf O_X\gets\mathbf O_X+\alpha\,\IPAttn_{\ell}(\mathbf Q_X,\Cref)$
+    \State \Return $(\mathbf O_T,\mathbf O_X)$ through the original output projections.
+  \Else \Comment{Single-stream block: text tokens precede image tokens}
+    \State $\mathbf H\gets[\mathbf T;\mathbf X]$; $\mathbf O\gets\SelfAttn_{\ell}(\mathbf H)$
+    \State $\mathbf R\gets\IPAttn_{\ell}(\mathbf Q_H,\Cref)$; $\mathbf R_{1:n_T,:}\gets\mathbf 0$
+    \State \Return $\mathbf O+\alpha\mathbf R$
+  \EndIf
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+\vspace{-5pt}
+{\small $\unit$ is zero-safe $\ell_2$ normalization. $\operatorname{SVD}_{\rho}$ retains left singular
+vectors with $\sigma_i>\rho\sigma_1$; an empty direction set gives an empty basis.
+$\mathbf Q_X,\mathbf Q_H$ are the original query projections of $\mathbf X,\mathbf H$.
+$\IPAttn$ uses the frozen IP projections and query/key normalization.
+All remaining block operations and the original target prompt are unchanged.}
