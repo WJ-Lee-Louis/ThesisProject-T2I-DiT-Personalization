@@ -1,0 +1,985 @@
+{
+  "review_date": "2026-11-16",
+  "definition": "Dependency on weights trained specifically for reference-conditioned personalization; excludes generic foundation-model, vision/LLM/segmentation and inpainting pretraining. This is an explicitly defined taxonomy, not a universally standardized binary label.",
+  "upstream_snapshot_checks": [
+    {
+      "method": "uno",
+      "commit": "a563432dcfb4caf98df4368facb8102bf97d376c",
+      "repo": "https://github.com/bytedance/UNO",
+      "verified_files": [
+        {
+          "path": "uno/upstream/LICENSE",
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+        },
+        {
+          "path": "uno/upstream/README.md",
+          "sha256": "01acf0c1ae27a9ab97c650f023d5c052f9a1331051e97492701b4edd10372b55"
+        },
+        {
+          "path": "uno/upstream/datasets/dreambench_singleip.json",
+          "sha256": "920055b106f8522199f4f163c84ccc8fbcf583d20490ed57628040a37d559e86"
+        },
+        {
+          "path": "uno/upstream/eval/evaluate_clip_dino_score_single_subject.py",
+          "sha256": "16792f3341adf09d44522ef4cd67a780b818e67a96693d1b7f8ac43ee515e5bf"
+        },
+        {
+          "path": "uno/upstream/inference.py",
+          "sha256": "36b38f607b7d69890131eab4b6ae974a9e5425b86dfb15e648653f5d4bf87b8c"
+        },
+        {
+          "path": "uno/upstream/pyproject.toml",
+          "sha256": "96e29e529985f6e3ac27d3c4cad6a731cc1f7f167ffa23a2e446b84df41cfb22"
+        },
+        {
+          "path": "uno/upstream/requirements.txt",
+          "sha256": "b8f7831184863fba2f96da872d2882fc21e8d8b2d12238446396251166529071"
+        },
+        {
+          "path": "uno/upstream/uno/flux/math.py",
+          "sha256": "d94bae455e0d88e605bb746fe6336ea2ee3cf503b746151a1fdcda44933012b7"
+        },
+        {
+          "path": "uno/upstream/uno/flux/model.py",
+          "sha256": "3a9a411092e7a871ee2804530a5311da1a03c3db5d5bf8124e006fa515bc2b1c"
+        },
+        {
+          "path": "uno/upstream/uno/flux/modules/autoencoder.py",
+          "sha256": "30492e52b2e4157b631e10493b373b86a8eae5074b4db64f0a090df417959235"
+        },
+        {
+          "path": "uno/upstream/uno/flux/modules/conditioner.py",
+          "sha256": "78859f79ea1975282e853bee127f417bf0ecb673db669416878a97dcdd01d725"
+        },
+        {
+          "path": "uno/upstream/uno/flux/modules/layers.py",
+          "sha256": "c9723fcfc801ff18ce80ad2e55d6d01e93d116169efff0fa0547bde75d8a0fb8"
+        },
+        {
+          "path": "uno/upstream/uno/flux/pipeline.py",
+          "sha256": "cc4c20112b84d163ffffc712ca8bf9d484f675538275464fdbea6a784dde1cba"
+        },
+        {
+          "path": "uno/upstream/uno/flux/sampling.py",
+          "sha256": "c72cafd6721a66449db11f6871e17ba753e53df1c067dc884af790cb6541aba3"
+        },
+        {
+          "path": "uno/upstream/uno/flux/util.py",
+          "sha256": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e"
+        }
+      ]
+    },
+    {
+      "method": "dreamo",
+      "commit": "461e35ba6b068f42ca53b43f289b3d91b7f911cd",
+      "repo": "https://github.com/bytedance/DreamO",
+      "verified_files": [
+        {
+          "path": "dreamo/upstream/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "dreamo/upstream/README.md",
+          "sha256": "2fe06eb9eba3b4fd858ae1585a63e2578d8863d8656bac42236e33f452ddd21e"
+        },
+        {
+          "path": "dreamo/upstream/dreamo_v1.1.md",
+          "sha256": "de3b71c51ea07d6d98820f0d5b58a8a235a72b29ca25724fdeb558498f5eb3e9"
+        },
+        {
+          "path": "dreamo/upstream/requirements.txt",
+          "sha256": "33283141a66227655c8cc8c5396cd9a5983ab639fee1252cf6b40c129ece0ded"
+        },
+        {
+          "path": "dreamo/upstream/pyproject.toml",
+          "sha256": "750b6e24257f0726bd6b932bf0a966e4471e97aa0f54a2c8929f1d7b110c8fc4"
+        },
+        {
+          "path": "dreamo/upstream/app.py",
+          "sha256": "5f1fe2a978c5198ee192c29a1a53ff47c3d6c07330f939176c8d48cf8752e8f0"
+        },
+        {
+          "path": "dreamo/upstream/dreamo_generator.py",
+          "sha256": "caef72f110f70ca5881d18e77bd1c6371c414ab4fd49e8bd951fbd7cf9684882"
+        },
+        {
+          "path": "dreamo/upstream/dreamo/dreamo_pipeline.py",
+          "sha256": "c51010c960dddff9af552b4f32d1a1fd8f301e4dc59646d7154462cbe41012c5"
+        },
+        {
+          "path": "dreamo/upstream/dreamo/transformer.py",
+          "sha256": "c78c654524a5a7c482cb8a77975a7762f3313bd7db2075b09c83f5705d3a35ef"
+        },
+        {
+          "path": "dreamo/upstream/dreamo/utils.py",
+          "sha256": "a31a54cc5c083edf2d99a3485a80bfea4cbd19f2eae8d8c8c76d5dd26ec13985"
+        },
+        {
+          "path": "dreamo/upstream/tools/BEN2.py",
+          "sha256": "f4d6d4f61b33019768c71c4bcd4cb419a78bac184b135145146615a96c845f69"
+        }
+      ]
+    },
+    {
+      "method": "xverse",
+      "commit": "65e2581aac0faffe4607881a10cc486186f6499d",
+      "repo": "https://github.com/bytedance/XVerse",
+      "verified_files": [
+        {
+          "path": "xverse/upstream/LICENCE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "xverse/upstream/README.md",
+          "sha256": "cac697e9fe6167f7aa307a281fb57cf46857bf9b0bcbb85ba15fccbc7d8b200e"
+        },
+        {
+          "path": "xverse/upstream/checkpoints/download_ckpts.sh",
+          "sha256": "1a20fa1caed51c84136bce04449e40042837bd53a9a3dc78297c48acd8615aa7"
+        },
+        {
+          "path": "xverse/upstream/inference_single_sample.py",
+          "sha256": "8c58b7abd248017937a4576972fe5fcd49a83224e4ce36b26abade622facad43"
+        },
+        {
+          "path": "xverse/upstream/requirements.txt",
+          "sha256": "b513593802619d66c6ca864092d8763870227e13e24c2d8a43946d246c7b517b"
+        },
+        {
+          "path": "xverse/upstream/src/adapters/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "xverse/upstream/src/adapters/mod_adapters.py",
+          "sha256": "f2a753f0c5314d85553013e3335aaac56f9d03bfe0ac7ad2333d0570e9b993ea"
+        },
+        {
+          "path": "xverse/upstream/src/flux/block.py",
+          "sha256": "361397fa6d9a2ddeac668b66a6e7fd11d1a9c7d304df322bf7d163dcedac2670"
+        },
+        {
+          "path": "xverse/upstream/src/flux/condition.py",
+          "sha256": "0bd96b24dd8102d6652215424b7f965f2cd8fae07256484c1c4dad5d0a8f59e7"
+        },
+        {
+          "path": "xverse/upstream/src/flux/generate.py",
+          "sha256": "d541a6ccffcdfbea32d1cf659a9ab49a81eefabdd699f8f6b16ead9ee2be3342"
+        },
+        {
+          "path": "xverse/upstream/src/flux/lora_controller.py",
+          "sha256": "62d1068acc20d8ac85789c3bc7f9a087fd8e3873e0a42f0b00bffeb71608db78"
+        },
+        {
+          "path": "xverse/upstream/src/flux/pipeline_tools.py",
+          "sha256": "9760a15e1c41f9527dc3bc623abdd1b3cdfe53f434431a47a1cbbb043e4ddb73"
+        },
+        {
+          "path": "xverse/upstream/src/flux/transformer.py",
+          "sha256": "a35bd14ed5bd7f09433ec4b3b30d149f9c734cfa651fbc7812a58d534f9a3bb4"
+        },
+        {
+          "path": "xverse/upstream/src/utils/data_utils.py",
+          "sha256": "8f43748516cad78124e4e95a0bd429ab071728668ade19061815218017db0e45"
+        },
+        {
+          "path": "xverse/upstream/src/utils/gpu_momory_utils.py",
+          "sha256": "7b30f650d679956f51f7a114d9a6dba4054cf59f8e1157fe911de1986ce3ae81"
+        },
+        {
+          "path": "xverse/upstream/src/utils/modulation_utils.py",
+          "sha256": "11b5a577ea1d4f72ec6470ebade5226a85ab4e531c3531142fc4fd4f071a44c9"
+        },
+        {
+          "path": "xverse/upstream/train/config/XVerse_config_INF.yaml",
+          "sha256": "e28b2ae9f519b031329e2fe98811db22965b98f689c3ef8a598526b9f83de2eb"
+        },
+        {
+          "path": "xverse/upstream/train/config/XVerse_config_demo.yaml",
+          "sha256": "80b6df1c8bc6ee292ba975dfde8c72727959ab13890704c861d796e60d5f9906"
+        }
+      ]
+    },
+    {
+      "method": "uso",
+      "commit": "6587514aa3adf8e8f46e5f7e804239651d30b32d",
+      "repo": "https://github.com/bytedance/USO.git",
+      "verified_files": [
+        {
+          "path": "uso/upstream/example.env",
+          "sha256": "d08ac32683f5beec6fe2412f8eaf6d9c70dbd0ca27e9fc4315b4986934d5bc05"
+        },
+        {
+          "path": "uso/upstream/inference.py",
+          "sha256": "393794670c544fd8815f26bf72e48d0ba4ed26c765fe330109971bf7fafb30fb"
+        },
+        {
+          "path": "uso/upstream/LICENSE",
+          "sha256": "5ad8c213095c573921d7388edf93f6a9f54490b8ebf3b165ae8ef1947cf70846"
+        },
+        {
+          "path": "uso/upstream/README.md",
+          "sha256": "547e5e2ea814d259d0839face2da2c8a8a1a3d430506fbac7153fba86dbc5357"
+        },
+        {
+          "path": "uso/upstream/requirements.txt",
+          "sha256": "4dadfa42aa3f6f53f3c613a03a57acaf3b10f0a92daa48f5795e361bc4f3580d"
+        },
+        {
+          "path": "uso/upstream/uso/flux/math.py",
+          "sha256": "7dddf2e29506f74624e0cab01fa9d7385a7713e2653912bd4d886880f8d5066c"
+        },
+        {
+          "path": "uso/upstream/uso/flux/model.py",
+          "sha256": "3e14f8b1e8f6d880e2ec7590e4ee87e7d1668bb5a217df01d035ae693453ffa3"
+        },
+        {
+          "path": "uso/upstream/uso/flux/modules/autoencoder.py",
+          "sha256": "530ced9a5728bceb7cea480f3c29cb7fc18242d0044db357dcb8433e20f2fda9"
+        },
+        {
+          "path": "uso/upstream/uso/flux/modules/conditioner.py",
+          "sha256": "1016620a48498b07f58d8a2e94c1a1f22e73c9a943f260c3e89dc90dc7e84483"
+        },
+        {
+          "path": "uso/upstream/uso/flux/modules/layers.py",
+          "sha256": "358c9a82c5e0850812027871e3b310c628b3a300baab043e4d4e1de700ca56b4"
+        },
+        {
+          "path": "uso/upstream/uso/flux/pipeline.py",
+          "sha256": "0d3ec8f288470c7870b1797bf3d263d2bbd6174e1c789f24689eee2714500276"
+        },
+        {
+          "path": "uso/upstream/uso/flux/sampling.py",
+          "sha256": "e36e0ec67b7974b36f4eb01924808966592eb845b43be39f9a8b331dbd9955bf"
+        },
+        {
+          "path": "uso/upstream/uso/flux/util.py",
+          "sha256": "d1007e34453f60a20aec27c35426f051fe57f26fccb58dd47a65d0509c984b49"
+        },
+        {
+          "path": "uso/upstream/weights/downloader.py",
+          "sha256": "fae80b52d765eddfbd39be998fe0bca5fd543554ce25009536b5cc21168ffd92"
+        }
+      ]
+    },
+    {
+      "method": "mosaic",
+      "commit": "b3c90086d28778fb8bba2f0e372d2f99ceca0913",
+      "repo": "https://github.com/bytedance-fanqie-ai/MOSAIC",
+      "verified_files": [
+        {
+          "path": "mosaic/upstream/README.md",
+          "sha256": "3909a04f7297604e6f53a5d043ed18aaf998b6e4cef957eaed6bc71238732cda"
+        },
+        {
+          "path": "mosaic/upstream/requirements.txt",
+          "sha256": "7d7dc667eb8c0c67d66f564572ba124883eb308fe3ed369b7544ab6d3b118804"
+        },
+        {
+          "path": "mosaic/upstream/inference.py",
+          "sha256": "f9f6362bc883a01b0850e8c66b96beeca055d36e3d99875c4380995702070d87"
+        },
+        {
+          "path": "mosaic/upstream/utils.py",
+          "sha256": "544826b15e33ae65f323661272ff60443ae57591edd3fed2c0608be282e28cf7"
+        },
+        {
+          "path": "mosaic/upstream/src/flux_omini.py",
+          "sha256": "d42757bdc44ef229ecc9f237d52902c99da2bf348a5948160ba8a374a8fcd9fd"
+        },
+        {
+          "path": "mosaic/upstream/src/flux_omini_mosaic.py",
+          "sha256": "fcd43109f956feff0128a4359694317ef4968f20733a5d39786282dc46107240"
+        },
+        {
+          "path": "mosaic/upstream/example_cases.json",
+          "sha256": "416bee42aa2ee8acd34e36dc1f22241e4209b997a6bb471828acb340819385af"
+        }
+      ]
+    },
+    {
+      "method": "diptych",
+      "commit": "7a5099b3e0faeff19dcb8f83f1c7cdb52a7e82e3",
+      "repo": "https://github.com/chaehunshin/DiptychPrompting",
+      "verified_files": [
+        {
+          "path": "diptych/upstream/README.md",
+          "sha256": "14ef7465f549635051a8aeaa25d97be0bacc235e7070c20a2e0b6c4c80d4da35"
+        },
+        {
+          "path": "diptych/upstream/controlnet_flux.py",
+          "sha256": "9e66b2b747d810e627421d3d364741179ec8bba9d1c8477274fd9854e0d38b7a"
+        },
+        {
+          "path": "diptych/upstream/diptych_prompting_inference.py",
+          "sha256": "be161265ab6505d20f36841d322845ba91bd1211ae65db4d99f12f85de48a1b1"
+        },
+        {
+          "path": "diptych/upstream/pipeline_flux_controlnet_inpaint.py",
+          "sha256": "6656d25e34ce0809de623fcf7b7584f5e2fbc050d9fb9af90bade3b3c92b9361"
+        },
+        {
+          "path": "diptych/upstream/requirements.txt",
+          "sha256": "f0c5f5c926c2d95d5537d72d90859ca2bb755a2e42d588f635ab0b372ac0e45f"
+        },
+        {
+          "path": "diptych/upstream/transformer_flux.py",
+          "sha256": "d7da90bb30db77216f761f5b6cabc32b6f841f71d2cc440f6df1d28978920585"
+        }
+      ]
+    },
+    {
+      "method": "freecus",
+      "commit": "1f33f7111c1536b72de8775fd2b478f3d31d19ac",
+      "repo": "https://github.com/Monalissaa/FreeCus",
+      "verified_files": [
+        {
+          "path": "freecus/upstream/flux_utils.py",
+          "sha256": "c90b91a7f6b6d8a6f8276694618069828918ce71d0263f59ba756f72a6480349"
+        },
+        {
+          "path": "freecus/upstream/infer.py",
+          "sha256": "8ec805dcc5b0e89475ea013e7ec4fb55ca1253df18b43e6d71442c599a6a92fd"
+        },
+        {
+          "path": "freecus/upstream/LICENSE",
+          "sha256": "37f1a1fa8acc66e469848ac2a9601014bfda53af0f62faa69c93af10006e3080"
+        },
+        {
+          "path": "freecus/upstream/qwen_for_subject.py",
+          "sha256": "283f04859c0304e1a45fd55509030085e87de02a454cae3cf8bda9e71ef7fb3b"
+        },
+        {
+          "path": "freecus/upstream/README.md",
+          "sha256": "b6cc3ff1778268ac1dc636d6f13404d637d719fa3ea05e1c49584c0e8c2af8b5"
+        },
+        {
+          "path": "freecus/upstream/requirements.txt",
+          "sha256": "0dddcbd8f82ff09d3abf0ec46f412bd287a3438e6073b9975c72461d14fd0ae9"
+        },
+        {
+          "path": "freecus/upstream/sa_handler_for_flux_clean.py",
+          "sha256": "6c3a4c934207053cf3560246e908fa6cc0484487e57cbd4afcafb9424655fd15"
+        },
+        {
+          "path": "freecus/upstream/seg_birefnet.py",
+          "sha256": "f85c28363e73e60c8cb82a4ac933d7bb4d398fa6637004bb3c63a2639096ffcb"
+        }
+      ]
+    }
+  ],
+  "upstream_verified_file_count": 79,
+  "methods": [
+    {
+      "method": "IP-Adapter",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "instantx_flux_ip_adapter/model_loader.py",
+          "sha256": "486d84eb42398b48652fa067d8d30f3f099b7111d4d5f99a8d35b3d34d0b1efa",
+          "evidence_lines": [
+            {
+              "line": 12,
+              "text": "IP_ADAPTER_WEIGHT_NAME,"
+            },
+            {
+              "line": 21,
+              "text": "IP_ADAPTER_WEIGHT_NAME,"
+            },
+            {
+              "line": 52,
+              "text": "transformer = FluxTransformer2DModel.from_pretrained("
+            },
+            {
+              "line": 58,
+              "text": "pipe = FluxPipeline.from_pretrained("
+            },
+            {
+              "line": 68,
+              "text": "str(instantx_dir / IP_ADAPTER_WEIGHT_NAME),"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "method": "UNO",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "uno/runtime.py",
+          "sha256": "2b8e4b8745b097a8b8ae5ad87ae6cbc837f34070fe2bb6b7878b280e43269a8b",
+          "evidence_lines": [
+            {
+              "line": 19,
+              "text": "LORA=str(Path(paths[\"lora\"]) / \"dit_lora.safetensors\"),"
+            },
+            {
+              "line": 39,
+              "text": "module.eval().requires_grad_(False)"
+            },
+            {
+              "line": 56,
+              "text": "with torch.inference_mode():"
+            },
+            {
+              "line": 57,
+              "text": "return self.pipe(prompt=row[\"prompt\"], width=cfg[\"width\"], height=cfg[\"height\"],"
+            }
+          ]
+        },
+        {
+          "path": "uno/upstream/uno/flux/util.py",
+          "sha256": "ecb304a8fd404775677b4580785889d4ccb62c48db5e545dcc9184f8c461ba5e",
+          "evidence_lines": [
+            {
+              "line": 233,
+              "text": "def load_flow_model(name: str, device: str | torch.device = \"cuda\", hf_download: bool = True):"
+            },
+            {
+              "line": 256,
+              "text": "def load_flow_model_only_lora("
+            },
+            {
+              "line": 352,
+              "text": "def load_flow_model_quintized(name: str, device: str | torch.device = \"cuda\", hf_download: bool = True):"
+            }
+          ]
+        },
+        {
+          "path": "uno/config.512.json",
+          "sha256": "b2cf86c2eb03fabc464514b116ad1bb44ef5894915b3a84d3ed811199fba15fd",
+          "evidence_lines": []
+        },
+        {
+          "path": "uno/models.lock.json",
+          "sha256": "a674c5388b67593ecd08df10dfce93e9ea289ce3ad4035233b5ddf97ebf803c8",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "DreamO",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "dreamo/runtime.py",
+          "sha256": "300d13f0923c50ac27719d619fcb34876b07b168dbc14723b85a07f16d954521",
+          "evidence_lines": [
+            {
+              "line": 65,
+              "text": "self.pipe = official.DreamOPipeline.from_pretrained(paths[\"flux\"], torch_dtype=torch.bfloat16,"
+            },
+            {
+              "line": 95,
+              "text": "with torch.inference_mode():"
+            },
+            {
+              "line": 96,
+              "text": "return self.pipe(prompt=prompt, width=cfg[\"width\"], height=cfg[\"height\"],"
+            }
+          ]
+        },
+        {
+          "path": "dreamo/upstream/dreamo/dreamo_pipeline.py",
+          "sha256": "c51010c960dddff9af552b4f32d1a1fd8f301e4dc59646d7154462cbe41012c5",
+          "evidence_lines": [
+            {
+              "line": 78,
+              "text": "self.load_lora_weights(dreamo_diffuser_lora, adapter_name='dreamo')"
+            },
+            {
+              "line": 82,
+              "text": "self.load_lora_weights(cfg_diffuser_lora, adapter_name='cfg')"
+            },
+            {
+              "line": 88,
+              "text": "self.load_lora_weights("
+            },
+            {
+              "line": 100,
+              "text": "self.load_lora_weights(quality_lora_pos, adapter_name='quality_pos')"
+            },
+            {
+              "line": 104,
+              "text": "self.load_lora_weights(quality_lora_neg, adapter_name='quality_neg')"
+            },
+            {
+              "line": 108,
+              "text": "self.load_lora_weights(sft_lora, adapter_name='sft_lora')"
+            },
+            {
+              "line": 111,
+              "text": "self.load_lora_weights(dpo_lora, adapter_name='dpo_lora')"
+            },
+            {
+              "line": 116,
+              "text": "self.fuse_lora(adapter_names=adapter_names, lora_scale=1)"
+            },
+            {
+              "line": 117,
+              "text": "self.unload_lora_weights()"
+            },
+            {
+              "line": 194,
+              "text": "self.unload_lora_weights()"
+            }
+          ]
+        },
+        {
+          "path": "dreamo/models.lock.json",
+          "sha256": "deeebc702d223d142f7d52c6a3f0aa8544b34e15dcfe5c8472ee2dbb31329e10",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "XVerse",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "comparison_candidates/runtime.py",
+          "sha256": "fb782d73a9e2280dbcaa1b3a5940a5a774c0f20c71da23cec428aecdf018f063",
+          "evidence_lines": [
+            {
+              "line": 9,
+              "text": "def caption(row):"
+            },
+            {
+              "line": 24,
+              "text": "control = official.FluxControlNetModel.from_pretrained(paths['controlnet'], torch_dtype=torch.bfloat16)"
+            },
+            {
+              "line": 25,
+              "text": "self.pipe = official.FluxControlNetInpaintingPipeline.from_pretrained("
+            },
+            {
+              "line": 27,
+              "text": "self.segmentator = AutoModelForMaskGeneration.from_pretrained(paths['sam']).cuda()"
+            },
+            {
+              "line": 28,
+              "text": "self.processor = AutoProcessor.from_pretrained(paths['sam'])"
+            },
+            {
+              "line": 68,
+              "text": "output = self.pipe(prompt=prompt,height=height,width=width*2,control_image=control,control_mask=mask,"
+            },
+            {
+              "line": 82,
+              "text": "from src.flux.pipeline_tools import CustomFluxPipeline, load_modulation_adapter, load_dit_lora"
+            },
+            {
+              "line": 90,
+              "text": "self.model.pipe.unload_lora_weights()"
+            },
+            {
+              "line": 97,
+              "text": "adapter = load_modulation_adapter(self.model,cfg,torch.bfloat16,torch.device('cuda'),str(folder),is_training=False)"
+            },
+            {
+              "line": 99,
+              "text": "load_dit_lora(self.model,self.model.pipe,cfg,torch.bfloat16,torch.device('cuda'),"
+            }
+          ]
+        },
+        {
+          "path": "xverse/models.lock.json",
+          "sha256": "aca4304218a10f25d133e28c83386575a44b79c58494a1933f0164527757a48d",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "USO",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "uso/runtime.py",
+          "sha256": "064c80c6c0e5474737a2a6013fbb1bac68f6bcb32bac896e1cfb8e3a9a755573",
+          "evidence_lines": [
+            {
+              "line": 13,
+              "text": "LORA=str(Path(paths['lora']) / 'uso_flux_v1.0/dit_lora.safetensors'),"
+            },
+            {
+              "line": 14,
+              "text": "PROJECTION_MODEL=str(Path(paths['lora']) / 'uso_flux_v1.0/projector.safetensors'),"
+            },
+            {
+              "line": 23,
+              "text": "self.processor = SiglipImageProcessor.from_pretrained(paths['siglip'], local_files_only=True)"
+            },
+            {
+              "line": 24,
+              "text": "self.vision = SiglipVisionModel.from_pretrained(paths['siglip'], local_files_only=True).eval().to('cuda')"
+            },
+            {
+              "line": 29,
+              "text": "module.eval().requires_grad_(False)"
+            },
+            {
+              "line": 38,
+              "text": "with torch.inference_mode():"
+            },
+            {
+              "line": 42,
+              "text": "return self.pipe(prompt=row['prompt'], width=1024, height=1024, guidance=4.0,"
+            }
+          ]
+        },
+        {
+          "path": "uso/upstream/uso/flux/util.py",
+          "sha256": "d1007e34453f60a20aec27c35426f051fe57f26fccb58dd47a65d0509c984b49",
+          "evidence_lines": [
+            {
+              "line": 280,
+              "text": "def load_flow_model("
+            },
+            {
+              "line": 306,
+              "text": "def load_flow_model_only_lora("
+            },
+            {
+              "line": 340,
+              "text": "proj_ckpt_path = os.environ.get(\"PROJECTION_MODEL\", None)"
+            },
+            {
+              "line": 343,
+              "text": "proj_ckpt_path = os.environ.get(\"PROJECTION_MODEL\", None)"
+            },
+            {
+              "line": 444,
+              "text": "def load_flow_model_quintized("
+            }
+          ]
+        },
+        {
+          "path": "uso/models.lock.json",
+          "sha256": "60816b4ff525a87bfa79d95a69b28282b0fa707aa87267291c9208bd8a1fed0f",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "MOSAIC",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "mosaic/runtime.py",
+          "sha256": "c7c9fd3dde70b60a50219bdcaaabefc78f5b9a847b557c9651c6aca1f71978d0",
+          "evidence_lines": [
+            {
+              "line": 22,
+              "text": "self.pipe = FluxPipeline.from_pretrained(paths['flux'], torch_dtype=torch.bfloat16).to('cuda')"
+            },
+            {
+              "line": 23,
+              "text": "self.pipe.load_lora_weights(paths['mosaic'], weight_name='subject_512.safetensors', adapter_name='subject')"
+            }
+          ]
+        },
+        {
+          "path": "mosaic/models.lock.json",
+          "sha256": "9cbd223b2bc5b432758cbfa4d5cc2a04cecd82f4741f6b9d312fe00e37becac0",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "Diptych Prompting",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": false,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "comparison_candidates/runtime.py",
+          "sha256": "fb782d73a9e2280dbcaa1b3a5940a5a774c0f20c71da23cec428aecdf018f063",
+          "evidence_lines": [
+            {
+              "line": 9,
+              "text": "def caption(row):"
+            },
+            {
+              "line": 24,
+              "text": "control = official.FluxControlNetModel.from_pretrained(paths['controlnet'], torch_dtype=torch.bfloat16)"
+            },
+            {
+              "line": 25,
+              "text": "self.pipe = official.FluxControlNetInpaintingPipeline.from_pretrained("
+            },
+            {
+              "line": 27,
+              "text": "self.segmentator = AutoModelForMaskGeneration.from_pretrained(paths['sam']).cuda()"
+            },
+            {
+              "line": 28,
+              "text": "self.processor = AutoProcessor.from_pretrained(paths['sam'])"
+            },
+            {
+              "line": 68,
+              "text": "output = self.pipe(prompt=prompt,height=height,width=width*2,control_image=control,control_mask=mask,"
+            },
+            {
+              "line": 82,
+              "text": "from src.flux.pipeline_tools import CustomFluxPipeline, load_modulation_adapter, load_dit_lora"
+            },
+            {
+              "line": 90,
+              "text": "self.model.pipe.unload_lora_weights()"
+            },
+            {
+              "line": 97,
+              "text": "adapter = load_modulation_adapter(self.model,cfg,torch.bfloat16,torch.device('cuda'),str(folder),is_training=False)"
+            },
+            {
+              "line": 99,
+              "text": "load_dit_lora(self.model,self.model.pipe,cfg,torch.bfloat16,torch.device('cuda'),"
+            }
+          ]
+        },
+        {
+          "path": "diptych/models.lock.json",
+          "sha256": "b92883939c64ff43e25d9630c4feab9023b0429d419d0ea4e62081ce74d94bbc",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "FreeCus",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": false,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "freecus/runtime.py",
+          "sha256": "cf0e5636dc0ff9544a7be7237e42a530130e3b119ee1ba93d173eaa45b8b71ff",
+          "evidence_lines": [
+            {
+              "line": 28,
+              "text": "def caption(self, path, word, seed):"
+            },
+            {
+              "line": 67,
+              "text": "self.pipe = FluxPipeline.from_pretrained(cfg[\"models\"][\"flux\"], torch_dtype=torch.bfloat16).to(\"cuda\")"
+            },
+            {
+              "line": 84,
+              "text": "with torch.inference_mode():"
+            },
+            {
+              "line": 92,
+              "text": "self.pipe(**common, latents=trajectory[0], callback_on_step_end=callback,"
+            },
+            {
+              "line": 95,
+              "text": "return self.pipe(**common, generator=torch.Generator(\"cpu\").manual_seed(row[\"seed\"])).images[0], prompt"
+            }
+          ]
+        },
+        {
+          "path": "freecus/config.512.json",
+          "sha256": "5a5013d209e205a9bf64270923c99adaef18e7b008cf99ebc61ba753ca8784a6",
+          "evidence_lines": []
+        },
+        {
+          "path": "freecus/models.lock.json",
+          "sha256": "5b65c940d4211fc0dfff5c9c7da840ad9b87d2b1c93471958795a1da8bedecda",
+          "evidence_lines": []
+        },
+        {
+          "path": "freecus/runtime_src/sa_handler_for_flux_clean.py",
+          "sha256": "6e0fd1912536f577b1e786394d9a37e349d3f5950ae1c5ad3587d39f925fb86c",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "FreeGraftor",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": false,
+      "dependency_inherited_from_ip_adapter": false,
+      "vip_proposed_module_requires_training": null,
+      "evidence": [
+        {
+          "path": "freegrafor2/runpod/src_snapshot/src/pipeline.py",
+          "sha256": "40d4dc562ebee74db87230de080ab235e8b0895b0810f346125db91b737dd874",
+          "evidence_lines": [
+            {
+              "line": 15,
+              "text": "from flux.util import load_ae, load_clip, load_flow_model, load_t5"
+            },
+            {
+              "line": 75,
+              "text": "'flow': lambda: load_flow_model('flux-dev', self.device),"
+            },
+            {
+              "line": 107,
+              "text": "@torch.inference_mode()"
+            },
+            {
+              "line": 160,
+              "text": "@torch.inference_mode()"
+            },
+            {
+              "line": 184,
+              "text": "@torch.inference_mode()"
+            },
+            {
+              "line": 197,
+              "text": "@torch.inference_mode()"
+            },
+            {
+              "line": 207,
+              "text": "@torch.inference_mode()"
+            }
+          ]
+        },
+        {
+          "path": "freegrafor2/runpod/src_snapshot/src/flux/util.py",
+          "sha256": "3d4b39eb75be9fc1e22a991cd309ea57cee78367cada5f088924ceaa673c4dfe",
+          "evidence_lines": [
+            {
+              "line": 74,
+              "text": "def load_flow_model(name: str, device: str | torch.device = \"cuda\", hf_download: bool = True):"
+            }
+          ]
+        },
+        {
+          "path": "freegrafor2/runpod/PROVENANCE.json",
+          "sha256": "f22897740a287a5770c579d3b8f024d345684ecec5b7c0c6a2b8aafce64c233e",
+          "evidence_lines": []
+        }
+      ]
+    },
+    {
+      "method": "VIP-Adapter",
+      "subject_specific_tuning": false,
+      "personalization_trained_weight_dependency": true,
+      "dependency_inherited_from_ip_adapter": true,
+      "vip_proposed_module_requires_training": false,
+      "evidence": [
+        {
+          "path": "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/model_loader.py",
+          "sha256": "d9320850b0d45394461d4660a0e07fd1821ebba98b5abfdd2ac3b77be8d4ae67",
+          "evidence_lines": [
+            {
+              "line": 21,
+              "text": "IP_ADAPTER_WEIGHT_NAME,"
+            },
+            {
+              "line": 75,
+              "text": "class OrthogonalizedIPAdapter(OrthogonalizedIPAdapterMixin, IPAdapter):"
+            },
+            {
+              "line": 78,
+              "text": "transformer = FluxTransformer2DModel.from_pretrained("
+            },
+            {
+              "line": 85,
+              "text": "pipe = FluxPipeline.from_pretrained("
+            },
+            {
+              "line": 96,
+              "text": "str(instantx_dir / IP_ADAPTER_WEIGHT_NAME),"
+            }
+          ]
+        },
+        {
+          "path": "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/adapter.py",
+          "sha256": "affec1425ce706b7763b67b73bd17413bba5d5d101d91c6c65a1887c6dda9d80",
+          "evidence_lines": [
+            {
+              "line": 459,
+              "text": "class OrthogonalizedIPAdapterMixin:"
+            },
+            {
+              "line": 601,
+              "text": "self._siglip_text_encoder = SiglipTextModel.from_pretrained("
+            },
+            {
+              "line": 607,
+              "text": "parameter.requires_grad_(False)"
+            },
+            {
+              "line": 610,
+              "text": "@torch.inference_mode()"
+            },
+            {
+              "line": 938,
+              "text": "@torch.inference_mode()"
+            }
+          ]
+        },
+        {
+          "path": "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/orthogonalization.py",
+          "sha256": "05f5b738ad1fb049ce222ebd4850e881c565d075efb3a0647219aa4376d462bb",
+          "evidence_lines": [
+            {
+              "line": 450,
+              "text": "left, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)"
+            },
+            {
+              "line": 479,
+              "text": "def project_pooled_embedding("
+            }
+          ]
+        },
+        {
+          "path": "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/attention_processor.py",
+          "sha256": "02a4ea549d9fb31b7e546d77400128dca0c439ac49ca2637f224c8f298b6f31f",
+          "evidence_lines": [
+            {
+              "line": 43,
+              "text": "def build_single_stream_ip_row_gate("
+            },
+            {
+              "line": 83,
+              "text": "gate[:, :text_seq_len] = 0"
+            }
+          ]
+        },
+        {
+          "path": "Orthogonalization-InstantX-IP-Adapter/orthogonalization_instantx_ip_adapter/semantic_contrasts.py",
+          "sha256": "6dabedcec16b5f3e0885ed1546af9fde61029b45649a3a02aa378262e9d5f962",
+          "evidence_lines": [
+            {
+              "line": 662,
+              "text": "def caption(self, image_bytes: bytes, identity_term: str) -> CaptionRecord:"
+            },
+            {
+              "line": 678,
+              "text": "def contrast(self, source_caption: str, target_prompt: str, identity_term: str, preserve=None) -> JointContrastAnalysis:"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Source inspection and published claims, not reproduced training.",
+    "No new inference or metric evaluation.",
+    "No PNG or table generator changes.",
+    "FreeGraftor archived-source fingerprints are separate from upstream checks."
+  ]
+}

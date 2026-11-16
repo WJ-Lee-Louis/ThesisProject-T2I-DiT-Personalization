@@ -1,0 +1,1234 @@
+{
+  "metric_order": [
+    "CLIP-I",
+    "DINO-I",
+    "CLIP-T"
+  ],
+  "ranking_scope": "Within each PNG and each metric/subset column; higher is better.",
+  "ranking_precision": "Displayed four-decimal values; consistent with historical scale-0.7 precision.",
+  "tie_policy": "Dense ranks: all equal best values are bold; all equal second-distinct values are underlined.",
+  "missing_policy": "Missing values displayed as - and excluded from ranking.",
+  "group_definition": "TB comparison models depend on personalization-trained weights; TF comparison models do not require personalization-specific training. VIP-Adapter is an independently listed refinement of a pretrained IP-Adapter, not claimed to be free of that dependency.",
+  "source_sha256": {
+    "tables_for_paper/historical_rows.json": "4e239d11cd1520dc4641e6ff2fdfbf3e93eb78cfd1941354e699e0edde828a03",
+    "tables_for_paper/method_metrics.json": "e4cda8ead2941d862b5c47276765984c9804796583423733de0ba3ab9c9080b7",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/full/metrics/summary.json": "738bc57988c982f3c09fbb11cda5e010ac08a3a16d8f13ab40764c7914274d0e",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/scale_sweep_20261025/metrics/summary.json": "e9c4280c4b7727001d3a1718d09cdd8e3b599b7936b5c33a85f16a19f5b83db2",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ssg_only_scale_0.7_20261025/metrics/summary.json": "e9482e4661dee05fa5f7a584939e0c2f73e56f8981bab59911d51d15d554d960",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/source_only/metrics/summary.json": "1e3064078ba6fed8f4fd1317d5c468c5fd0df15dd13858a143560181ca3fdb8a",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/target_only/metrics/summary.json": "021fd26982c9ecf1a9037b183ef644a547979d3845e29a02673725588acd9744",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.8/metrics/summary.json": "5e8ebd0315b89c2dac2c4de7101e181947c6a69c22cbbe6f428287213054a003",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.9/metrics/summary.json": "f192cf61db1f735bb916e8e9c3f7927263023565cc8f921fe45637268c9b07cc"
+  },
+  "original_tables_preserved": true,
+  "artifacts": [
+    {
+      "filename": "01-TB-0.7.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "UNO",
+          "0.8213",
+          "0.6942",
+          "0.3219",
+          "0.7372",
+          "0.4169",
+          "0.3197"
+        ],
+        [
+          "DreamO",
+          "0.7996",
+          "0.6604",
+          "0.3356",
+          "0.7295",
+          "0.4268",
+          "0.3376"
+        ],
+        [
+          "XVerse",
+          "0.7969",
+          "0.6211",
+          "0.3254",
+          "0.7647",
+          "0.4920",
+          "0.3284"
+        ],
+        [
+          "USO",
+          "0.7835",
+          "0.6514",
+          "0.3494",
+          "0.7198",
+          "0.4165",
+          "0.3497"
+        ],
+        [
+          "MOSAIC",
+          "0.7667",
+          "0.5638",
+          "0.3408",
+          "0.6923",
+          "0.3116",
+          "0.3287"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8153",
+          "0.6345",
+          "0.3273",
+          "0.7865",
+          "0.4916",
+          "0.3325"
+        ]
+      ],
+      "png_sha256": "3e3e76cfb1e22358624a41f66fabe377a07bcd6c5f399c26108092646ce42415",
+      "comparison_group": "TB",
+      "ours_scale": "0.7",
+      "cell_ranks": [
+        [
+          null,
+          1,
+          1,
+          6,
+          3,
+          4,
+          6
+        ],
+        [
+          null,
+          3,
+          2,
+          3,
+          4,
+          3,
+          2
+        ],
+        [
+          null,
+          4,
+          5,
+          5,
+          2,
+          1,
+          5
+        ],
+        [
+          null,
+          5,
+          3,
+          1,
+          5,
+          5,
+          1
+        ],
+        [
+          null,
+          6,
+          6,
+          2,
+          6,
+          6,
+          4
+        ],
+        [
+          null,
+          2,
+          4,
+          4,
+          1,
+          2,
+          3
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "UNO",
+          "method_key": "uno",
+          "source_values": [
+            0.8213314219417736,
+            0.6942480268768775,
+            0.3218591412927351,
+            0.7372246636284723,
+            0.4168753993956165,
+            0.31967298719618054
+          ]
+        },
+        {
+          "label": "DreamO",
+          "method_key": "dreamo",
+          "source_values": [
+            0.799569102230235,
+            0.6604352888197471,
+            0.33561771751469016,
+            0.7295450846354167,
+            0.4268489081619514,
+            0.33760172526041665
+          ]
+        },
+        {
+          "label": "XVerse",
+          "method_key": "xverse",
+          "source_values": [
+            0.7968628973023505,
+            0.6211068094763745,
+            0.32537789630074787,
+            0.7646877712673611,
+            0.49199730058511093,
+            0.32835896809895837
+          ]
+        },
+        {
+          "label": "USO",
+          "method_key": "uso",
+          "source_values": [
+            0.78349609375,
+            0.6513908864850672,
+            0.3493999774639423,
+            0.7197808159722222,
+            0.41654725186526775,
+            0.3496771918402778
+          ]
+        },
+        {
+          "label": "MOSAIC",
+          "method_key": "mosaic",
+          "source_values": [
+            0.7667219634748932,
+            0.5637675871961138,
+            0.340772945045406,
+            0.6923027886284723,
+            0.31163125231137706,
+            0.32873399522569446
+          ]
+        },
+        {
+          "label": "VIP-Adapter (0.7)",
+          "method_key": "ours_0.7",
+          "source_values": [
+            0.8153,
+            0.6345,
+            0.3273,
+            0.7865,
+            0.4916,
+            0.3325
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "01-TF-0.7.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "Diptych Prompting",
+          "0.7787",
+          "0.5862",
+          "0.3395",
+          "0.7397",
+          "0.4086",
+          "0.3257"
+        ],
+        [
+          "FreeCus",
+          "0.8104",
+          "0.6513",
+          "0.3235",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "FreeGraftor",
+          "0.7601",
+          "0.5816",
+          "0.3425",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8153",
+          "0.6345",
+          "0.3273",
+          "0.7865",
+          "0.4916",
+          "0.3325"
+        ]
+      ],
+      "png_sha256": "3b869936b82d07ea5dad191ddfad2f02fdbd9598712fe9c0d4a380c502bbe5d8",
+      "comparison_group": "TF",
+      "ours_scale": "0.7",
+      "cell_ranks": [
+        [
+          null,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          null,
+          2,
+          1,
+          4,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          4,
+          4,
+          1,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          1,
+          2,
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "Diptych Prompting",
+          "method_key": "diptych",
+          "source_values": [
+            0.7786921574519231,
+            0.586188992124019,
+            0.339509778145032,
+            0.7396674262152778,
+            0.4085695876015557,
+            0.3257256401909722
+          ]
+        },
+        {
+          "label": "FreeCus",
+          "method_key": "freecus",
+          "source_values": [
+            0.8103536491720086,
+            0.6513220405731446,
+            0.3234699477497329,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "FreeGraftor",
+          "method_key": "freegrafor2",
+          "source_values": [
+            0.7600819644764957,
+            0.5816265634523753,
+            0.34252741887019234,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "VIP-Adapter (0.7)",
+          "method_key": "ours_0.7",
+          "source_values": [
+            0.8153,
+            0.6345,
+            0.3273,
+            0.7865,
+            0.4916,
+            0.3325
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "01-TB-0.8.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "UNO",
+          "0.8213",
+          "0.6942",
+          "0.3219",
+          "0.7372",
+          "0.4169",
+          "0.3197"
+        ],
+        [
+          "DreamO",
+          "0.7996",
+          "0.6604",
+          "0.3356",
+          "0.7295",
+          "0.4268",
+          "0.3376"
+        ],
+        [
+          "XVerse",
+          "0.7969",
+          "0.6211",
+          "0.3254",
+          "0.7647",
+          "0.4920",
+          "0.3284"
+        ],
+        [
+          "USO",
+          "0.7835",
+          "0.6514",
+          "0.3494",
+          "0.7198",
+          "0.4165",
+          "0.3497"
+        ],
+        [
+          "MOSAIC",
+          "0.7667",
+          "0.5638",
+          "0.3408",
+          "0.6923",
+          "0.3116",
+          "0.3287"
+        ],
+        [
+          "VIP-Adapter(Ours)",
+          "0.8303",
+          "0.6573",
+          "0.3204",
+          "0.8077",
+          "0.5377",
+          "0.3230"
+        ]
+      ],
+      "png_sha256": "6ea4473bcae729993f56de14498467cf79a83fd79f37ad236e9872e09cfa41f0",
+      "comparison_group": "TB",
+      "ours_scale": "0.8",
+      "cell_ranks": [
+        [
+          null,
+          2,
+          1,
+          5,
+          3,
+          4,
+          6
+        ],
+        [
+          null,
+          3,
+          2,
+          3,
+          4,
+          3,
+          2
+        ],
+        [
+          null,
+          4,
+          5,
+          4,
+          2,
+          2,
+          4
+        ],
+        [
+          null,
+          5,
+          4,
+          1,
+          5,
+          5,
+          1
+        ],
+        [
+          null,
+          6,
+          6,
+          2,
+          6,
+          6,
+          3
+        ],
+        [
+          null,
+          1,
+          3,
+          6,
+          1,
+          1,
+          5
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "UNO",
+          "method_key": "uno",
+          "source_values": [
+            0.8213314219417736,
+            0.6942480268768775,
+            0.3218591412927351,
+            0.7372246636284723,
+            0.4168753993956165,
+            0.31967298719618054
+          ]
+        },
+        {
+          "label": "DreamO",
+          "method_key": "dreamo",
+          "source_values": [
+            0.799569102230235,
+            0.6604352888197471,
+            0.33561771751469016,
+            0.7295450846354167,
+            0.4268489081619514,
+            0.33760172526041665
+          ]
+        },
+        {
+          "label": "XVerse",
+          "method_key": "xverse",
+          "source_values": [
+            0.7968628973023505,
+            0.6211068094763745,
+            0.32537789630074787,
+            0.7646877712673611,
+            0.49199730058511093,
+            0.32835896809895837
+          ]
+        },
+        {
+          "label": "USO",
+          "method_key": "uso",
+          "source_values": [
+            0.78349609375,
+            0.6513908864850672,
+            0.3493999774639423,
+            0.7197808159722222,
+            0.41654725186526775,
+            0.3496771918402778
+          ]
+        },
+        {
+          "label": "MOSAIC",
+          "method_key": "mosaic",
+          "source_values": [
+            0.7667219634748932,
+            0.5637675871961138,
+            0.340772945045406,
+            0.6923027886284723,
+            0.31163125231137706,
+            0.32873399522569446
+          ]
+        },
+        {
+          "label": "VIP-Adapter(Ours)",
+          "method_key": "ours_0.8",
+          "source_values": [
+            0.8303220569577991,
+            0.6572612061969235,
+            0.3204434386685363,
+            0.8077067057291667,
+            0.5377147261467244,
+            0.32303466796875
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "01-TF-0.8.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "Diptych Prompting",
+          "0.7787",
+          "0.5862",
+          "0.3395",
+          "0.7397",
+          "0.4086",
+          "0.3257"
+        ],
+        [
+          "FreeCus",
+          "0.8104",
+          "0.6513",
+          "0.3235",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "FreeGraftor",
+          "0.7601",
+          "0.5816",
+          "0.3425",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "VIP-Adapter(Ours)",
+          "0.8303",
+          "0.6573",
+          "0.3204",
+          "0.8077",
+          "0.5377",
+          "0.3230"
+        ]
+      ],
+      "png_sha256": "6830925c448f87b0c65de9717347d153f94f7a243a2856328a7bab393dfd0fc8",
+      "comparison_group": "TF",
+      "ours_scale": "0.8",
+      "cell_ranks": [
+        [
+          null,
+          3,
+          3,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          null,
+          2,
+          2,
+          3,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          4,
+          4,
+          1,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          1,
+          1,
+          4,
+          1,
+          1,
+          2
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "Diptych Prompting",
+          "method_key": "diptych",
+          "source_values": [
+            0.7786921574519231,
+            0.586188992124019,
+            0.339509778145032,
+            0.7396674262152778,
+            0.4085695876015557,
+            0.3257256401909722
+          ]
+        },
+        {
+          "label": "FreeCus",
+          "method_key": "freecus",
+          "source_values": [
+            0.8103536491720086,
+            0.6513220405731446,
+            0.3234699477497329,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "FreeGraftor",
+          "method_key": "freegrafor2",
+          "source_values": [
+            0.7600819644764957,
+            0.5816265634523753,
+            0.34252741887019234,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "VIP-Adapter(Ours)",
+          "method_key": "ours_0.8",
+          "source_values": [
+            0.8303220569577991,
+            0.6572612061969235,
+            0.3204434386685363,
+            0.8077067057291667,
+            0.5377147261467244,
+            0.32303466796875
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "02-TB-0.7.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "UNO",
+          "0.8349",
+          "0.7606",
+          "0.3023"
+        ],
+        [
+          "DreamO",
+          "0.8180",
+          "0.7436",
+          "0.3091"
+        ],
+        [
+          "XVerse",
+          "0.7970",
+          "0.6444",
+          "0.3016"
+        ],
+        [
+          "USO",
+          "0.8302",
+          "0.7730",
+          "0.3198"
+        ],
+        [
+          "MOSAIC",
+          "0.7927",
+          "0.6525",
+          "0.3193"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8022",
+          "0.6548",
+          "0.3123"
+        ]
+      ],
+      "png_sha256": "06e9b6124bd0ec51f6364634d8500410b58048e3e39ca8681447afc06b50f803",
+      "comparison_group": "TB",
+      "ours_scale": "0.7",
+      "cell_ranks": [
+        [
+          null,
+          1,
+          2,
+          5
+        ],
+        [
+          null,
+          3,
+          3,
+          4
+        ],
+        [
+          null,
+          5,
+          6,
+          6
+        ],
+        [
+          null,
+          2,
+          1,
+          1
+        ],
+        [
+          null,
+          6,
+          5,
+          2
+        ],
+        [
+          null,
+          4,
+          4,
+          3
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "UNO",
+          "method_key": "uno",
+          "source_values": [
+            0.8348561197916666,
+            0.7605656756560008,
+            0.3022999674479167
+          ]
+        },
+        {
+          "label": "DreamO",
+          "method_key": "dreamo",
+          "source_values": [
+            0.8179531250000001,
+            0.7436247057914734,
+            0.30911751302083335
+          ]
+        },
+        {
+          "label": "XVerse",
+          "method_key": "xverse",
+          "source_values": [
+            0.7969755859375,
+            0.644430628289779,
+            0.30164420572916667
+          ]
+        },
+        {
+          "label": "USO",
+          "method_key": "uso",
+          "source_values": [
+            0.830173828125,
+            0.7729698298772176,
+            0.3198050130208333
+          ]
+        },
+        {
+          "label": "MOSAIC",
+          "method_key": "mosaic",
+          "source_values": [
+            0.7927102864583334,
+            0.652545161018769,
+            0.31925634765625
+          ]
+        },
+        {
+          "label": "VIP-Adapter (0.7)",
+          "method_key": "ours_0.7",
+          "source_values": [
+            0.8022,
+            0.6548,
+            0.3123
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "02-TF-0.7.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "Diptych Prompting",
+          "0.8048",
+          "0.6939",
+          "0.3178"
+        ],
+        [
+          "FreeCus",
+          "0.8136",
+          "0.6678",
+          "0.3019"
+        ],
+        [
+          "FreeGraftor",
+          "0.7823",
+          "0.6549",
+          "0.3156"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8022",
+          "0.6548",
+          "0.3123"
+        ]
+      ],
+      "png_sha256": "8dafc1abbefa64ae6888f043cddfd9df0e1574283cb75b57915ba0f3e1b592e4",
+      "comparison_group": "TF",
+      "ours_scale": "0.7",
+      "cell_ranks": [
+        [
+          null,
+          2,
+          1,
+          1
+        ],
+        [
+          null,
+          1,
+          2,
+          4
+        ],
+        [
+          null,
+          4,
+          3,
+          2
+        ],
+        [
+          null,
+          3,
+          4,
+          3
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "Diptych Prompting",
+          "method_key": "diptych",
+          "source_values": [
+            0.8047981770833333,
+            0.6938665079871813,
+            0.31780094401041664
+          ]
+        },
+        {
+          "label": "FreeCus",
+          "method_key": "freecus",
+          "source_values": [
+            0.813583984375,
+            0.6678336187601089,
+            0.30192252604166664
+          ]
+        },
+        {
+          "label": "FreeGraftor",
+          "method_key": "freegrafor2",
+          "source_values": [
+            0.7823238932291667,
+            0.6548911551634471,
+            0.31560514322916666
+          ]
+        },
+        {
+          "label": "VIP-Adapter (0.7)",
+          "method_key": "ours_0.7",
+          "source_values": [
+            0.8022,
+            0.6548,
+            0.3123
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "02-TB-0.8.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "UNO",
+          "0.8349",
+          "0.7606",
+          "0.3023"
+        ],
+        [
+          "DreamO",
+          "0.8180",
+          "0.7436",
+          "0.3091"
+        ],
+        [
+          "XVerse",
+          "0.7970",
+          "0.6444",
+          "0.3016"
+        ],
+        [
+          "USO",
+          "0.8302",
+          "0.7730",
+          "0.3198"
+        ],
+        [
+          "MOSAIC",
+          "0.7927",
+          "0.6525",
+          "0.3193"
+        ],
+        [
+          "VIP-Adapter(Ours)",
+          "0.8144",
+          "0.6726",
+          "0.3078"
+        ]
+      ],
+      "png_sha256": "482eb09841fae1122e23a76b95a5ca701ffb6bed705d13bf737094f814090924",
+      "comparison_group": "TB",
+      "ours_scale": "0.8",
+      "cell_ranks": [
+        [
+          null,
+          1,
+          2,
+          5
+        ],
+        [
+          null,
+          3,
+          3,
+          3
+        ],
+        [
+          null,
+          5,
+          6,
+          6
+        ],
+        [
+          null,
+          2,
+          1,
+          1
+        ],
+        [
+          null,
+          6,
+          5,
+          2
+        ],
+        [
+          null,
+          4,
+          4,
+          4
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "UNO",
+          "method_key": "uno",
+          "source_values": [
+            0.8348561197916666,
+            0.7605656756560008,
+            0.3022999674479167
+          ]
+        },
+        {
+          "label": "DreamO",
+          "method_key": "dreamo",
+          "source_values": [
+            0.8179531250000001,
+            0.7436247057914734,
+            0.30911751302083335
+          ]
+        },
+        {
+          "label": "XVerse",
+          "method_key": "xverse",
+          "source_values": [
+            0.7969755859375,
+            0.644430628289779,
+            0.30164420572916667
+          ]
+        },
+        {
+          "label": "USO",
+          "method_key": "uso",
+          "source_values": [
+            0.830173828125,
+            0.7729698298772176,
+            0.3198050130208333
+          ]
+        },
+        {
+          "label": "MOSAIC",
+          "method_key": "mosaic",
+          "source_values": [
+            0.7927102864583334,
+            0.652545161018769,
+            0.31925634765625
+          ]
+        },
+        {
+          "label": "VIP-Adapter(Ours)",
+          "method_key": "ours_0.8",
+          "source_values": [
+            0.8143502604166667,
+            0.6725505407849948,
+            0.3077775065104167
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "02-TF-0.8.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "Diptych Prompting",
+          "0.8048",
+          "0.6939",
+          "0.3178"
+        ],
+        [
+          "FreeCus",
+          "0.8136",
+          "0.6678",
+          "0.3019"
+        ],
+        [
+          "FreeGraftor",
+          "0.7823",
+          "0.6549",
+          "0.3156"
+        ],
+        [
+          "VIP-Adapter(Ours)",
+          "0.8144",
+          "0.6726",
+          "0.3078"
+        ]
+      ],
+      "png_sha256": "29a921459886c3d8233c41a78f8a1ac6b8fda1d2b47c68157d0bcb546d3b3fb8",
+      "comparison_group": "TF",
+      "ours_scale": "0.8",
+      "cell_ranks": [
+        [
+          null,
+          3,
+          1,
+          1
+        ],
+        [
+          null,
+          2,
+          3,
+          4
+        ],
+        [
+          null,
+          4,
+          4,
+          2
+        ],
+        [
+          null,
+          1,
+          2,
+          3
+        ]
+      ],
+      "source_records": [
+        {
+          "label": "Diptych Prompting",
+          "method_key": "diptych",
+          "source_values": [
+            0.8047981770833333,
+            0.6938665079871813,
+            0.31780094401041664
+          ]
+        },
+        {
+          "label": "FreeCus",
+          "method_key": "freecus",
+          "source_values": [
+            0.813583984375,
+            0.6678336187601089,
+            0.30192252604166664
+          ]
+        },
+        {
+          "label": "FreeGraftor",
+          "method_key": "freegrafor2",
+          "source_values": [
+            0.7823238932291667,
+            0.6548911551634471,
+            0.31560514322916666
+          ]
+        },
+        {
+          "label": "VIP-Adapter(Ours)",
+          "method_key": "ours_0.8",
+          "source_values": [
+            0.8143502604166667,
+            0.6725505407849948,
+            0.3077775065104167
+          ]
+        }
+      ]
+    }
+  ]
+}

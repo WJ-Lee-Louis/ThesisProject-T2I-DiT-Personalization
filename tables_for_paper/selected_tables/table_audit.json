@@ -1,0 +1,396 @@
+{
+  "aggregation": "subject_macro; non-style pooled across 130 references, not equal class weights",
+  "ablation_scale": 0.7,
+  "main_vip_adapter_scale": 0.8,
+  "ip_adapter_comparison_scale": 0.7,
+  "precision_note": "Baseline 0.7 and VIP-Adapter 0.7 use retained historical four-decimal values; other rows use stored subject-macro measurements.",
+  "source_sha256": {
+    "tables_for_paper/historical_rows.json": "4e239d11cd1520dc4641e6ff2fdfbf3e93eb78cfd1941354e699e0edde828a03",
+    "tables_for_paper/method_metrics.json": "e4cda8ead2941d862b5c47276765984c9804796583423733de0ba3ab9c9080b7",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/full/metrics/summary.json": "738bc57988c982f3c09fbb11cda5e010ac08a3a16d8f13ab40764c7914274d0e",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/scale_sweep_20261025/metrics/summary.json": "e9c4280c4b7727001d3a1718d09cdd8e3b599b7936b5c33a85f16a19f5b83db2",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ssg_only_scale_0.7_20261025/metrics/summary.json": "e9482e4661dee05fa5f7a584939e0c2f73e56f8981bab59911d51d15d554d960",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/source_only/metrics/summary.json": "1e3064078ba6fed8f4fd1317d5c468c5fd0df15dd13858a143560181ca3fdb8a",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/target_only/metrics/summary.json": "021fd26982c9ecf1a9037b183ef644a547979d3845e29a02673725588acd9744",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.8/metrics/summary.json": "5e8ebd0315b89c2dac2c4de7101e181947c6a69c22cbbe6f428287213054a003",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.9/metrics/summary.json": "f192cf61db1f735bb916e8e9c3f7927263023565cc8f921fe45637268c9b07cc"
+  },
+  "artifacts": [
+    {
+      "filename": "01_dreambench_plus_comparison.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "IP-Adapter",
+          "0.8549",
+          "0.6914",
+          "0.3001",
+          "0.8436",
+          "0.6207",
+          "0.2945"
+        ],
+        [
+          "UNO",
+          "0.8213",
+          "0.6942",
+          "0.3219",
+          "0.7372",
+          "0.4169",
+          "0.3197"
+        ],
+        [
+          "DreamO",
+          "0.7996",
+          "0.6604",
+          "0.3356",
+          "0.7295",
+          "0.4268",
+          "0.3376"
+        ],
+        [
+          "XVerse",
+          "0.7969",
+          "0.6211",
+          "0.3254",
+          "0.7647",
+          "0.4920",
+          "0.3284"
+        ],
+        [
+          "USO",
+          "0.7835",
+          "0.6514",
+          "0.3494",
+          "0.7198",
+          "0.4165",
+          "0.3497"
+        ],
+        [
+          "MOSAIC",
+          "0.7667",
+          "0.5638",
+          "0.3408",
+          "0.6923",
+          "0.3116",
+          "0.3287"
+        ],
+        [
+          "Diptych Prompting",
+          "0.7787",
+          "0.5862",
+          "0.3395",
+          "0.7397",
+          "0.4086",
+          "0.3257"
+        ],
+        [
+          "FreeCus",
+          "0.8104",
+          "0.6513",
+          "0.3235",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "FreeGraftor",
+          "0.7601",
+          "0.5816",
+          "0.3425",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8153",
+          "0.6345",
+          "0.3273",
+          "0.7865",
+          "0.4916",
+          "0.3325"
+        ],
+        [
+          "VIP-Adapter",
+          "0.8303",
+          "0.6573",
+          "0.3204",
+          "0.8077",
+          "0.5377",
+          "0.3230"
+        ]
+      ],
+      "png_sha256": "a563b4a0d60e85d8b82acba43a5ca26c43d66da46606aa44cd2631d40f561cfe"
+    },
+    {
+      "filename": "02_dreambench_comparison.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "IP-Adapter",
+          "0.8319",
+          "0.6900",
+          "0.2939"
+        ],
+        [
+          "UNO",
+          "0.8349",
+          "0.7606",
+          "0.3023"
+        ],
+        [
+          "DreamO",
+          "0.8180",
+          "0.7436",
+          "0.3091"
+        ],
+        [
+          "XVerse",
+          "0.7970",
+          "0.6444",
+          "0.3016"
+        ],
+        [
+          "USO",
+          "0.8302",
+          "0.7730",
+          "0.3198"
+        ],
+        [
+          "MOSAIC",
+          "0.7927",
+          "0.6525",
+          "0.3193"
+        ],
+        [
+          "Diptych Prompting",
+          "0.8048",
+          "0.6939",
+          "0.3178"
+        ],
+        [
+          "FreeCus",
+          "0.8136",
+          "0.6678",
+          "0.3019"
+        ],
+        [
+          "FreeGraftor",
+          "0.7823",
+          "0.6549",
+          "0.3156"
+        ],
+        [
+          "VIP-Adapter (0.7)",
+          "0.8022",
+          "0.6548",
+          "0.3123"
+        ],
+        [
+          "VIP-Adapter",
+          "0.8144",
+          "0.6726",
+          "0.3078"
+        ]
+      ],
+      "png_sha256": "e0888b9b6113f9e87a4b827a7716e129ac783d2fb1b5e4e9995ecfad92ecba11"
+    },
+    {
+      "filename": "03_ablation.png",
+      "headers": [
+        "source-caption\nprojection",
+        "target-prompt\nprojection",
+        "single-stream\ngate"
+      ],
+      "groups": [
+        "DreamBench",
+        "DreamBench++"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          false,
+          false,
+          false,
+          "0.8319",
+          "0.6900",
+          "0.2939",
+          "0.8534",
+          "0.6820",
+          "0.2994"
+        ],
+        [
+          true,
+          false,
+          false,
+          "0.8305",
+          "0.6868",
+          "0.2953",
+          "0.8506",
+          "0.6778",
+          "0.3005"
+        ],
+        [
+          false,
+          true,
+          false,
+          "0.8265",
+          "0.6847",
+          "0.3003",
+          "0.8466",
+          "0.6714",
+          "0.3058"
+        ],
+        [
+          true,
+          true,
+          false,
+          "0.8244",
+          "0.6806",
+          "0.3017",
+          "0.8414",
+          "0.6618",
+          "0.3087"
+        ],
+        [
+          false,
+          false,
+          true,
+          "0.8069",
+          "0.6616",
+          "0.3090",
+          "0.8206",
+          "0.6335",
+          "0.3220"
+        ],
+        [
+          true,
+          true,
+          true,
+          "0.8022",
+          "0.6548",
+          "0.3123",
+          "0.8115",
+          "0.6154",
+          "0.3280"
+        ]
+      ],
+      "png_sha256": "c4dfdb952e0fe661211eca0d052ea0e1d0119b3201b78ec93efa3c7d3e6cbf45"
+    },
+    {
+      "filename": "04_scale_sensitivity.png",
+      "headers": [
+        "Method"
+      ],
+      "groups": [
+        "DreamBench",
+        "DreamBench++"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "VIP-Adapter (scale 0.6)",
+          "0.7870",
+          "0.6324",
+          "0.3165",
+          "0.7945",
+          "0.5869",
+          "0.3331"
+        ],
+        [
+          "VIP-Adapter (scale 0.7)",
+          "0.8022",
+          "0.6548",
+          "0.3123",
+          "0.8115",
+          "0.6154",
+          "0.3280"
+        ],
+        [
+          "VIP-Adapter (scale 0.8)",
+          "0.8144",
+          "0.6726",
+          "0.3078",
+          "0.8273",
+          "0.6413",
+          "0.3208"
+        ],
+        [
+          "VIP-Adapter (scale 0.9)",
+          "0.8252",
+          "0.6874",
+          "0.3037",
+          "0.8409",
+          "0.6637",
+          "0.3124"
+        ],
+        [
+          "VIP-Adapter (scale 1.0)",
+          "0.8354",
+          "0.7015",
+          "0.2991",
+          "0.8527",
+          "0.6804",
+          "0.3049"
+        ],
+        [
+          "IP-Adapter (scale 0.7)",
+          "0.8319",
+          "0.6900",
+          "0.2939",
+          "0.8534",
+          "0.6820",
+          "0.2994"
+        ],
+        [
+          "IP-Adapter (scale 0.8)",
+          "0.8487",
+          "0.7115",
+          "0.2833",
+          "0.8692",
+          "0.7066",
+          "0.2880"
+        ],
+        [
+          "IP-Adapter (scale 0.9)",
+          "0.8610",
+          "0.7257",
+          "0.2729",
+          "0.8816",
+          "0.7238",
+          "0.2778"
+        ]
+      ],
+      "png_sha256": "2378f8cb3085829656c2f1e5b63abadaf2f8e87e59119db7813450976a3f91c4"
+    }
+  ]
+}

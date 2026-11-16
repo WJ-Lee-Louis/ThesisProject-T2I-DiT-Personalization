@@ -1,0 +1,402 @@
+{
+  "ours_scale": 0.8,
+  "metric_order": [
+    "CLIP-I",
+    "DINO-I",
+    "CLIP-T"
+  ],
+  "ranking_scope": "All eligible methods within each PNG metric/subset column, across both training categories.",
+  "ranking_precision": "Displayed four-decimal values; dense ranks, shared rank on ties; missing - is unranked.",
+  "category_definition": "Baseline groups reflect reliance on personalization-trained weights. VIP-Adapter appears independently in the last row with no group label; it retains the pretrained IP-Adapter dependency while introducing no new training.",
+  "source_sha256": {
+    "tables_for_paper/historical_rows.json": "4e239d11cd1520dc4641e6ff2fdfbf3e93eb78cfd1941354e699e0edde828a03",
+    "tables_for_paper/method_metrics.json": "e4cda8ead2941d862b5c47276765984c9804796583423733de0ba3ab9c9080b7",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/full/metrics/summary.json": "738bc57988c982f3c09fbb11cda5e010ac08a3a16d8f13ab40764c7914274d0e",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/scale_sweep_20261025/metrics/summary.json": "e9c4280c4b7727001d3a1718d09cdd8e3b599b7936b5c33a85f16a19f5b83db2",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ssg_only_scale_0.7_20261025/metrics/summary.json": "e9482e4661dee05fa5f7a584939e0c2f73e56f8981bab59911d51d15d554d960",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/source_only/metrics/summary.json": "1e3064078ba6fed8f4fd1317d5c468c5fd0df15dd13858a143560181ca3fdb8a",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/target_only/metrics/summary.json": "021fd26982c9ecf1a9037b183ef644a547979d3845e29a02673725588acd9744",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.8/metrics/summary.json": "5e8ebd0315b89c2dac2c4de7101e181947c6a69c22cbbe6f428287213054a003",
+    "Orthogonalization-InstantX-IP-Adapter/results/runpod/ablation_20261026/baseline_0.9/metrics/summary.json": "f192cf61db1f735bb916e8e9c3f7927263023565cc8f921fe45637268c9b07cc"
+  },
+  "previous_pngs_preserved": true,
+  "artifacts": [
+    {
+      "filename": "01-0.8.png",
+      "headers": [
+        "Training\nDependency",
+        "Method"
+      ],
+      "groups": [
+        "DreamBench++ Subject",
+        "DreamBench++ Style"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "",
+          "UNO",
+          "0.8213",
+          "0.6942",
+          "0.3219",
+          "0.7372",
+          "0.4169",
+          "0.3197"
+        ],
+        [
+          "",
+          "DreamO",
+          "0.7996",
+          "0.6604",
+          "0.3356",
+          "0.7295",
+          "0.4268",
+          "0.3376"
+        ],
+        [
+          "",
+          "XVerse",
+          "0.7969",
+          "0.6211",
+          "0.3254",
+          "0.7647",
+          "0.4920",
+          "0.3284"
+        ],
+        [
+          "",
+          "USO",
+          "0.7835",
+          "0.6514",
+          "0.3494",
+          "0.7198",
+          "0.4165",
+          "0.3497"
+        ],
+        [
+          "",
+          "MOSAIC",
+          "0.7667",
+          "0.5638",
+          "0.3408",
+          "0.6923",
+          "0.3116",
+          "0.3287"
+        ],
+        [
+          "",
+          "Diptych Prompting",
+          "0.7787",
+          "0.5862",
+          "0.3395",
+          "0.7397",
+          "0.4086",
+          "0.3257"
+        ],
+        [
+          "",
+          "FreeCus",
+          "0.8104",
+          "0.6513",
+          "0.3235",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "",
+          "FreeGraftor",
+          "0.7601",
+          "0.5816",
+          "0.3425",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "",
+          "VIP-Adapter(Ours)",
+          "0.8303",
+          "0.6573",
+          "0.3204",
+          "0.8077",
+          "0.5377",
+          "0.3230"
+        ]
+      ],
+      "png_sha256": "9b18e234af096fcb62f32500bab5460b1172964de1e235b14938c26f8668d0d6",
+      "cell_ranks": [
+        [
+          null,
+          null,
+          2,
+          1,
+          8,
+          4,
+          4,
+          7
+        ],
+        [
+          null,
+          null,
+          4,
+          2,
+          5,
+          5,
+          3,
+          2
+        ],
+        [
+          null,
+          null,
+          5,
+          6,
+          6,
+          2,
+          2,
+          4
+        ],
+        [
+          null,
+          null,
+          6,
+          4,
+          1,
+          6,
+          5,
+          1
+        ],
+        [
+          null,
+          null,
+          8,
+          9,
+          3,
+          7,
+          7,
+          3
+        ],
+        [
+          null,
+          null,
+          7,
+          7,
+          4,
+          3,
+          6,
+          5
+        ],
+        [
+          null,
+          null,
+          3,
+          5,
+          7,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          9,
+          8,
+          2,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          1,
+          3,
+          9,
+          1,
+          1,
+          6
+        ]
+      ],
+      "training_based_rows": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_free_rows": [
+        5,
+        6,
+        7
+      ],
+      "independent_ours_rows": [
+        8
+      ]
+    },
+    {
+      "filename": "02-0.8.png",
+      "headers": [
+        "Training\nDependency",
+        "Method"
+      ],
+      "groups": [
+        "DreamBench"
+      ],
+      "metric_order": [
+        "CLIP-I",
+        "DINO-I",
+        "CLIP-T"
+      ],
+      "rows": [
+        [
+          "",
+          "UNO",
+          "0.8349",
+          "0.7606",
+          "0.3023"
+        ],
+        [
+          "",
+          "DreamO",
+          "0.8180",
+          "0.7436",
+          "0.3091"
+        ],
+        [
+          "",
+          "XVerse",
+          "0.7970",
+          "0.6444",
+          "0.3016"
+        ],
+        [
+          "",
+          "USO",
+          "0.8302",
+          "0.7730",
+          "0.3198"
+        ],
+        [
+          "",
+          "MOSAIC",
+          "0.7927",
+          "0.6525",
+          "0.3193"
+        ],
+        [
+          "",
+          "Diptych Prompting",
+          "0.8048",
+          "0.6939",
+          "0.3178"
+        ],
+        [
+          "",
+          "FreeCus",
+          "0.8136",
+          "0.6678",
+          "0.3019"
+        ],
+        [
+          "",
+          "FreeGraftor",
+          "0.7823",
+          "0.6549",
+          "0.3156"
+        ],
+        [
+          "",
+          "VIP-Adapter(Ours)",
+          "0.8144",
+          "0.6726",
+          "0.3078"
+        ]
+      ],
+      "png_sha256": "c82180b5a04c77c16a737fcb5a1bec2a4cbd01a69638e890aa025e7f4ba62e26",
+      "cell_ranks": [
+        [
+          null,
+          null,
+          1,
+          2,
+          7
+        ],
+        [
+          null,
+          null,
+          3,
+          3,
+          5
+        ],
+        [
+          null,
+          null,
+          7,
+          9,
+          9
+        ],
+        [
+          null,
+          null,
+          2,
+          1,
+          1
+        ],
+        [
+          null,
+          null,
+          8,
+          8,
+          2
+        ],
+        [
+          null,
+          null,
+          6,
+          4,
+          3
+        ],
+        [
+          null,
+          null,
+          5,
+          6,
+          8
+        ],
+        [
+          null,
+          null,
+          9,
+          7,
+          4
+        ],
+        [
+          null,
+          null,
+          4,
+          5,
+          6
+        ]
+      ],
+      "training_based_rows": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_free_rows": [
+        5,
+        6,
+        7
+      ],
+      "independent_ours_rows": [
+        8
+      ]
+    }
+  ]
+}
