@@ -1,0 +1,278 @@
+{
+  "layout": "Method headers above one horizontal image row; large two-line reference identity aligned with prompt band; divider starts at column two; Prompt label and sentence centered as one group over columns two through seven.",
+  "dimensions": [
+    5276,
+    1400
+  ],
+  "dpi": 288,
+  "font": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+  "prompt_font": "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
+  "ours_font": "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+  "note": "175-05 uses Ours 0.6 against existing 0.7 comparison variants; it is not a same-scale factorial ablation.",
+  "artifacts": [
+    {
+      "case_id": "175-06",
+      "benchmark": "dreambench_plus",
+      "ours_scale": "0.7",
+      "comparison_scale": "0.7",
+      "prompt": "A pair of worn leather boots, illustrated in a monochromatic ink sketch style",
+      "identity": "monochromatic ink sketch",
+      "prompt_spans": [
+        [
+          "A ",
+          "#000000"
+        ],
+        [
+          "pair of worn leather boots",
+          "#FF0000"
+        ],
+        [
+          ", illustrated in a ",
+          "#000000"
+        ],
+        [
+          "monochromatic ink sketch",
+          "#0070C0"
+        ],
+        [
+          " style",
+          "#000000"
+        ]
+      ],
+      "sources": [
+        {
+          "label": "Reference",
+          "method": "Reference",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__style__15.jpg",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "4b3a83e26079e82ebaf5fe7e220909d4d26538cb5c0a0391f77e6590210f4a5a"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "cb0052def3956821964c762e1a5d8ef8595e4525e51afc7ba68a18e9aa16df32",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/execution_records/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "baseline"
+        },
+        {
+          "label": "w/Source Proj.",
+          "method": "ablation_source_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_only_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "c413359b263aca05a0c4341e09f2c8d080096ada00e9da866c3297a7dee0e96f",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_only_scale0.7/execution_records/images/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "source_only"
+        },
+        {
+          "label": "w/Target Proj.",
+          "method": "ablation_target_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_target_only_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "400996101a9f0458b81fcc6b6f8e964fbd9b12bc69c97c3d4c03c98603aaf855",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_target_only_scale0.7/execution_records/images/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "target_only"
+        },
+        {
+          "label": "w/Source+Target\nProj.",
+          "method": "ablation_source_target_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_target_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "33a94eeab27c32dd823c125d5294570d67e6031eb40f595f8df0f9223d74fda7",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_target_scale0.7/execution_records/images/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "source_target"
+        },
+        {
+          "label": "w/SSG",
+          "method": "ablation_ssg_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_ssg_only_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "93995b7ac07882ccbb9c540f2d3ceaf9f1f8a75f01a65f0aadc322b7378c84e1",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_ssg_only_scale0.7/execution_records/images/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "ssg"
+        },
+        {
+          "label": "Ours",
+          "method": "Ours_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/dreambench_plus/175-06.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "9d7106b193e1a310b3689148dd7acb4f1da070c67dfde9ddc720bfeb92d34b37",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.7/execution_records/dreambench_plus/175-06.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "source_target_ssg"
+        }
+      ],
+      "png": "175-06.png",
+      "png_sha256": "12bc19baa5b57ee1032cf37a1660b989b2cc6bd560e29667aed76fcd0f3511e6"
+    },
+    {
+      "case_id": "175-05",
+      "benchmark": "dreambench_plus",
+      "ours_scale": "0.6",
+      "comparison_scale": "0.7",
+      "prompt": "A teapot steaming gently on an old wooden table, in a monochromatic ink sketch style",
+      "identity": "monochromatic ink sketch",
+      "prompt_spans": [
+        [
+          "A ",
+          "#000000"
+        ],
+        [
+          "teapot steaming gently",
+          "#FF0000"
+        ],
+        [
+          " on an ",
+          "#000000"
+        ],
+        [
+          "old wooden table",
+          "#FF0000"
+        ],
+        [
+          ", in a ",
+          "#000000"
+        ],
+        [
+          "monochromatic ink sketch",
+          "#0070C0"
+        ],
+        [
+          " style",
+          "#000000"
+        ]
+      ],
+      "sources": [
+        {
+          "label": "Reference",
+          "method": "Reference",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/references/dreambench_plus__style__15.jpg",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "4b3a83e26079e82ebaf5fe7e220909d4d26538cb5c0a0391f77e6590210f4a5a"
+        },
+        {
+          "label": "IP-Adapter",
+          "method": "baseline_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "08e26089b394b5b99c6f93136e26a294bb1fb11db5d6ebb74c4411f8670fb4f9",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/baseline_scale0.7/execution_records/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "baseline"
+        },
+        {
+          "label": "w/Source Proj.",
+          "method": "ablation_source_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_only_scale0.7/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "0b259541acdd6390cec1bc5c7a30708bbdbd2628653a065731bff6e81ff09f59",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_only_scale0.7/execution_records/images/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "source_only"
+        },
+        {
+          "label": "w/Target Proj.",
+          "method": "ablation_target_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_target_only_scale0.7/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "f845682f1f990dc8414aa4a7fc6e7fa4f893b9aa48d368a9ca5c53075acd9349",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_target_only_scale0.7/execution_records/images/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "target_only"
+        },
+        {
+          "label": "w/Source+Target\nProj.",
+          "method": "ablation_source_target_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_target_scale0.7/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "5a47efbe99afb19f80b5e932a963f3f5a365db7a76e114c800e1d9eb2bcd6752",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_source_target_scale0.7/execution_records/images/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "source_target"
+        },
+        {
+          "label": "w/SSG",
+          "method": "ablation_ssg_only_scale0.7",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/ablation_ssg_only_scale0.7/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "2c1e66a65f2463e5b3a9c057bd0b6dcd0fb921d272ece55915a287beb3bc13a6",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/ablation_ssg_only_scale0.7/execution_records/images/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.7,
+          "condition": "ssg"
+        },
+        {
+          "label": "Ours",
+          "method": "Ours_scale0.6",
+          "path": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.6/dreambench_plus/175-05.png",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "1d9b6e69ff300ac1094308f4edd4de57573987d7a7470e04b168d1a2163e47f9",
+          "metadata": "/Users/itaehwan/Downloads/ThesisProject/Ours_scale0.6/execution_records/images/dreambench_plus/175-05.json",
+          "identity_term": "monochromatic ink sketch",
+          "scale": 0.6,
+          "condition": "source_target_ssg"
+        }
+      ],
+      "png": "175-05.png",
+      "png_sha256": "c8c735e8f7ca590a08e5c7f875411d564aaa85ffff5ae79d56af1128b2ea3c80"
+    }
+  ]
+}
